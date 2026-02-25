@@ -1,0 +1,208 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "Infinity3D DEV-200",
+  "vendor": "Infinity3D",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "bed_shape": {
+      "3.0.0": "0x0,200x0,200x200,0x200"
+    },
+    "color_change_gcode": {
+      "3.0.0": "M600"
+    },
+    "cooling_tube_length": {
+      "3.0.0": "5"
+    },
+    "cooling_tube_retraction": {
+      "3.0.0": "91.5"
+    },
+    "default_filament_profile": {
+      "3.0.0": "Generic PLA @Infinity3D"
+    },
+    "default_print_profile": {
+      "3.0.0": "0.20mm GOOD @Infinity3D_DEV_200"
+    },
+    "end_gcode": {
+      "3.0.0": ";End GCode begin\\nM140 S0 ;Heated bed heater off\\nM104 S0 ;Extruder heater off\\nG90 ;absolute positioning\\nG92 E0 ;Retract the filament\\nG1 E-1 F300 ;retract the filament a bit before lifting the nozzle, to release some of the pressure\\nG1 Z240 E-1 F3000 ;move Z up a bit and retract filament even more\\nG1 X0 F3000 ;move X to min endstops, so the head is out of the way\\nG1 Y200 F3000 ;so the head is out of the way and Plate is moved forward\\nM84 ;stepper off\\nM107 ; fan off\\nM82 ; absolute extrusion\\n;End GCode end"
+    },
+    "extra_loading_move": {
+      "3.0.0": "-2"
+    },
+    "extruder_colour": {
+      "3.0.0": "\"\""
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0"
+    },
+    "gcode_flavor": {
+      "3.0.0": "marlin"
+    },
+    "high_current_on_filament_swap": {
+      "3.0.0": "0"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "time_estimate_only"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "10000"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "1000"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "1000"
+    },
+    "machine_max_acceleration_travel": {
+      "3.0.0": "1500"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "3000"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "3000"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "100"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "25"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "150"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "150"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "50"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "2.5"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "0.2"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.4"
+    },
+    "max_print_height": {
+      "3.0.0": "235"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.08"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.4"
+    },
+    "parking_pos_retraction": {
+      "3.0.0": "92"
+    },
+    "pause_print_gcode": {
+      "3.0.0": ""
+    },
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "remaining_times": {
+      "3.0.0": "0"
+    },
+    "retract_before_travel": {
+      "3.0.0": "2"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "0%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1"
+    },
+    "retract_length": {
+      "3.0.0": "2"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "10"
+    },
+    "retract_lift": {
+      "3.0.0": "0"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0"
+    },
+    "retract_lift_below": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_speed": {
+      "3.0.0": "60"
+    },
+    "deretract_speed": {
+      "3.0.0": "40"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "start_gcode": {
+      "3.0.0": "Start GCode begin\\nM140 S[first_layer_bed_temperature] ;Start Warming Bed\\nM104 S[first_layer_temperature] ;Preheat\\nG28 ;home\\nG29 ;Auto Bed-level\\nG90 ;absolute positioning\\nG1 X-10 Y-10 F3000 ;Move to corner\\nM190 S[first_layer_bed_temperature] ;Wait For Bed Temperature\\nM109 S[first_layer_temperature] ;Wait for Hotend Temperature\\nG92 E0 ;Zero set extruder position\\nG1 E3 F200 ;Feed filament to clear nozzle\\nG92 E0 ;Zero set extruder position"
+    },
+    "thumbnails": {
+      "3.0.0": ""
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "0"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "0"
+    },
+    "wipe": {
+      "3.0.0": "0"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "25"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "75"
+    },
+    "printer_model": {
+      "3.0.0": "DEV-200"
+    },
+    "printer_variant": {
+      "3.0.0": "0.4"
+    },
+    "printer_settings_id": {
+      "3.0.0": "Infinity3D DEV-200"
+    }
+  }
+}

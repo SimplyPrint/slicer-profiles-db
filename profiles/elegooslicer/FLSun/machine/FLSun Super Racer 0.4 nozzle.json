@@ -1,0 +1,408 @@
+{
+  "slicer": "elegooslicer",
+  "profile_type": "machine",
+  "name": "FLSun Super Racer 0.4 nozzle",
+  "vendor": "FLSun",
+  "first_seen": "1.3.0.11",
+  "last_seen": "1.3.0.11",
+  "filament_id": null,
+  "setting_id": "GM003",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "1.3.0.11": "machine"
+    },
+    "name": {
+      "1.3.0.11": "FLSun Super Racer 0.4 nozzle"
+    },
+    "from": {
+      "1.3.0.11": "system"
+    },
+    "instantiation": {
+      "1.3.0.11": "true"
+    },
+    "gcode_flavor": {
+      "1.3.0.11": "marlin"
+    },
+    "machine_start_gcode": {
+      "1.3.0.11": ";STARTGCODE\nM117 Initializing\n; Set coordinate modes\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\n; Reset speed and extrusion rates\nM200 D0 ; disable volumetric E\nM220 S100 ; reset speed\n; Set initial warmup temps\nM117 Nozzle preheat\nM104 S100 ; preheat extruder to no ooze temp\nM140 S[first_layer_bed_temperature] ; set bed temp\nM190 S[first_layer_bed_temperature] ; wait for bed final temp\nM300 S40 P10 ; Bip\n; Home\nM117 Homing\nG28 ; home all with default mesh bed level\n; For ABL users put G29 for a leveling request\n; Final warmup routine\nM117 Final warmup\nM104 S[first_layer_temperature] ; set extruder final temp\nM109 S[first_layer_temperature] ; wait for extruder final temp\nM190 S[first_layer_bed_temperature] ; wait for bed final temp\nM300 S440 P200     ; 1st beep for printer ready and allow some time to clean nozzle\nM300 S0 P250       ; wait between dual beep\nM300 S440 P200     ; 2nd beep for printer ready\nG4 S10             ; wait to clean the nozzle\nM300 S440 P200     ; 3rd beep for ready to start printing\n; Prime line routine\nM117 Printing prime line\n;M900 K0; Disable Linear Advance (Marlin) for prime line\nG92 E0.0; reset extrusion distance\nG1 F3000 Z1\nG1 X-150 Y0 Z0.4\nG92 E0\nG3 X0 Y-130 I150 Z0.3 E30 F2000\nG92 E0.0 ; reset extrusion distance\n; Final print adjustments\nM117 Preparing to print\n;M82 ; extruder absolute mode\nM221 S{if layer_height<0.075}100{else}95{endif}\nM300 S40 P10 ; chirp\nM117 Print [input_filename_base]; Display: Printing started..."
+    },
+    "machine_end_gcode": {
+      "1.3.0.11": "; printing object ENDGCODE\nG92 E0.0 ; prepare to retract\nG1 E-6 F3000; retract to avoid stringing\n; Anti-stringing end wiggle\n{if layer_z < max_print_height}G1 Z{min(layer_z+100, max_print_height)}{endif} F4000 ; Move print head up\nG1 X0 Y120 F3000 ; present print\n; Reset print setting overrides\nG92 E0\nM200 D0 ; disable volumetric e\nM220 S100 ; reset speed factor to 100%\nM221 S100 ; reset extruder factor to 100%\n;M900 K0 ; reset linear acceleration(Marlin)\n; Shut down printer\nM104 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\nM18 S180 ;disable motors after 180s\nM300 S40 P10 ; Bip\nM117 Print finish."
+    },
+    "extruder_colour": {
+      "1.3.0.11": [
+        "#018001"
+      ]
+    },
+    "extruder_offset": {
+      "1.3.0.11": [
+        "0x0"
+      ]
+    },
+    "machine_max_acceleration_e": {
+      "1.3.0.11": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "1.3.0.11": [
+        "5000",
+        "2000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "1.3.0.11": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "1.3.0.11": [
+        "3000",
+        "3000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "1.3.0.11": [
+        "5000",
+        "2000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "1.3.0.11": [
+        "5000",
+        "2000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "1.3.0.11": [
+        "1500",
+        "200"
+      ]
+    },
+    "machine_max_speed_e": {
+      "1.3.0.11": [
+        "30",
+        "25"
+      ]
+    },
+    "machine_max_speed_x": {
+      "1.3.0.11": [
+        "300",
+        "200"
+      ]
+    },
+    "machine_max_speed_y": {
+      "1.3.0.11": [
+        "300",
+        "200"
+      ]
+    },
+    "machine_max_speed_z": {
+      "1.3.0.11": [
+        "20",
+        "12"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "1.3.0.11": [
+        "2.5",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "1.3.0.11": [
+        "9",
+        "9"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "1.3.0.11": [
+        "9",
+        "9"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "1.3.0.11": [
+        "3",
+        "0.4"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "1.3.0.11": [
+        "0.2"
+      ]
+    },
+    "min_layer_height": {
+      "1.3.0.11": [
+        "0.08"
+      ]
+    },
+    "printable_height": {
+      "1.3.0.11": "330"
+    },
+    "extruder_clearance_radius": {
+      "1.3.0.11": "65"
+    },
+    "extruder_clearance_height_to_rod": {
+      "1.3.0.11": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "1.3.0.11": "140"
+    },
+    "nozzle_diameter": {
+      "1.3.0.11": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "1.3.0.11": ""
+    },
+    "printer_technology": {
+      "1.3.0.11": "FFF"
+    },
+    "printer_variant": {
+      "1.3.0.11": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "1.3.0.11": [
+        "1"
+      ]
+    },
+    "retract_before_wipe": {
+      "1.3.0.11": [
+        "70%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "1.3.0.11": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "1.3.0.11": [
+        "6.5"
+      ]
+    },
+    "retract_length_toolchange": {
+      "1.3.0.11": [
+        "2"
+      ]
+    },
+    "z_hop": {
+      "1.3.0.11": [
+        "0.3"
+      ]
+    },
+    "retract_restart_extra": {
+      "1.3.0.11": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "1.3.0.11": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "1.3.0.11": [
+        "40"
+      ]
+    },
+    "deretraction_speed": {
+      "1.3.0.11": [
+        "40"
+      ]
+    },
+    "silent_mode": {
+      "1.3.0.11": "0"
+    },
+    "single_extruder_multi_material": {
+      "1.3.0.11": "1"
+    },
+    "change_filament_gcode": {
+      "1.3.0.11": ";FILAMENT_CHANGE\nM600"
+    },
+    "before_layer_change_gcode": {
+      "1.3.0.11": ";BEFORE_LAYER_CHANGE\nG92 E0.0\n;[layer_z]"
+    },
+    "layer_change_gcode": {
+      "1.3.0.11": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "machine_pause_gcode": {
+      "1.3.0.11": "M600"
+    },
+    "wipe": {
+      "1.3.0.11": [
+        "1"
+      ]
+    },
+    "z_hop_types": {
+      "1.3.0.11": [
+        "Normal Lift"
+      ]
+    },
+    "setting_id": {
+      "1.3.0.11": "GM003"
+    },
+    "printer_model": {
+      "1.3.0.11": "FLSun Super Racer (SR)"
+    },
+    "default_print_profile": {
+      "1.3.0.11": "0.20mm Standard @FLSun SR"
+    },
+    "nozzle_type": {
+      "1.3.0.11": "brass"
+    },
+    "default_filament_profile": {
+      "1.3.0.11": [
+        "FLSun Generic PLA"
+      ]
+    },
+    "bed_exclude_area": {
+      "1.3.0.11": [
+        "0x0"
+      ]
+    },
+    "auxiliary_fan": {
+      "1.3.0.11": "0"
+    },
+    "machine_unload_filament_time": {
+      "1.3.0.11": "0"
+    },
+    "printable_area": {
+      "1.3.0.11": [
+        "134.486x11.766",
+        "132.949x23.4425",
+        "130.4x34.9406",
+        "126.859x46.1727",
+        "122.352x57.0535",
+        "116.913x67.5",
+        "110.586x77.4328",
+        "103.416x86.7763",
+        "95.4594x95.4594",
+        "86.7763x103.416",
+        "77.4328x110.586",
+        "67.5x116.913",
+        "57.0535x122.352",
+        "46.1727x126.859",
+        "34.9406x130.4",
+        "23.4425x132.949",
+        "11.766x134.486",
+        "8.26637e-15x135",
+        "-11.766x134.486",
+        "-23.4425x132.949",
+        "-34.9406x130.4",
+        "-46.1727x126.859",
+        "-57.0535x122.352",
+        "-67.5x116.913",
+        "-77.4328x110.586",
+        "-86.7763x103.416",
+        "-95.4594x95.4594",
+        "-103.416x86.7763",
+        "-110.586x77.4328",
+        "-116.913x67.5",
+        "-122.352x57.0535",
+        "-126.859x46.1727",
+        "-130.4x34.9406",
+        "-132.949x23.4425",
+        "-134.486x11.766",
+        "-135x1.65327e-14",
+        "-134.486x-11.766",
+        "-132.949x-23.4425",
+        "-130.4x-34.9406",
+        "-126.859x-46.1727",
+        "-122.352x-57.0535",
+        "-116.913x-67.5",
+        "-110.586x-77.4328",
+        "-103.416x-86.7763",
+        "-95.4594x-95.4594",
+        "-86.7763x-103.416",
+        "-77.4328x-110.586",
+        "-67.5x-116.913",
+        "-57.0535x-122.352",
+        "-46.1727x-126.859",
+        "-34.9406x-130.4",
+        "-23.4425x-132.949",
+        "-11.766x-134.486",
+        "-2.47991e-14x-135",
+        "11.766x-134.486",
+        "23.4425x-132.949",
+        "34.9406x-130.4",
+        "46.1727x-126.859",
+        "57.0535x-122.352",
+        "67.5x-116.913",
+        "77.4328x-110.586",
+        "86.7763x-103.416",
+        "95.4594x-95.4594",
+        "103.416x-86.7763",
+        "110.586x-77.4328",
+        "116.913x-67.5",
+        "122.352x-57.0535",
+        "126.859x-46.1727",
+        "130.4x-34.9406",
+        "132.949x-23.4425",
+        "134.486x-11.766",
+        "135x-3.30655e-14"
+      ]
+    },
+    "printhost_apikey": {
+      "1.3.0.11": ""
+    },
+    "printhost_authorization_type": {
+      "1.3.0.11": "key"
+    },
+    "printhost_cafile": {
+      "1.3.0.11": ""
+    },
+    "printhost_password": {
+      "1.3.0.11": ""
+    },
+    "printhost_port": {
+      "1.3.0.11": ""
+    },
+    "printhost_ssl_ignore_revoke": {
+      "1.3.0.11": "0"
+    },
+    "printhost_user": {
+      "1.3.0.11": ""
+    },
+    "retract_lift_above": {
+      "1.3.0.11": [
+        "0"
+      ]
+    },
+    "retract_lift_below": {
+      "1.3.0.11": [
+        "0"
+      ]
+    },
+    "template_custom_gcode": {
+      "1.3.0.11": ";FILAMENT_CHANGE\nM600"
+    },
+    "thumbnails": {
+      "1.3.0.11": [
+        "260x260"
+      ]
+    },
+    "wipe_distance": {
+      "1.3.0.11": [
+        "1"
+      ]
+    }
+  }
+}

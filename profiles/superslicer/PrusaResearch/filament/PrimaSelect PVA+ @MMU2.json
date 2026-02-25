@@ -1,0 +1,133 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "filament",
+  "name": "PrimaSelect PVA+ @MMU2",
+  "vendor": "PrusaResearch",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "cooling": {
+      "1.4.4": "0"
+    },
+    "compatible_printers": {
+      "1.4.4": ""
+    },
+    "compatible_printers_condition": {
+      "1.4.4": "printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material"
+    },
+    "end_filament_gcode": {
+      "1.4.4": "\"; Filament-specific end gcode\""
+    },
+    "extrusion_multiplier": {
+      "1.4.4": "1"
+    },
+    "filament_loading_speed": {
+      "1.4.4": "14"
+    },
+    "filament_loading_speed_start": {
+      "1.4.4": "19"
+    },
+    "filament_unloading_speed": {
+      "1.4.4": "20"
+    },
+    "filament_unloading_speed_start": {
+      "1.4.4": "100"
+    },
+    "filament_toolchange_delay": {
+      "1.4.4": "0"
+    },
+    "filament_cooling_moves": {
+      "1.4.4": "2"
+    },
+    "filament_cooling_initial_speed": {
+      "1.4.4": "4"
+    },
+    "filament_cooling_final_speed": {
+      "1.4.4": "2"
+    },
+    "filament_load_time": {
+      "1.4.4": "15"
+    },
+    "filament_unload_time": {
+      "1.4.4": "12"
+    },
+    "filament_ramming_parameters": {
+      "1.4.4": "\"120 110 3.83871 3.90323 3.96774 4.03226 4.09677 4.19355 4.3871 4.83871 5.67742 6.93548 8.54839 10.3226 11.9677 13.2581 14.129 14.5806| 0.05 3.8258 0.45 3.89676 0.95 4.05807 1.45 4.23548 1.95 5.18386 2.45 7.80651 2.95 11.5356 3.45 13.9872 3.95 14.7613 4.45 7.6 4.95 7.6\""
+    },
+    "filament_minimal_purge_on_wipe_tower": {
+      "1.4.4": "15"
+    },
+    "filament_cost": {
+      "1.4.4": "122.1"
+    },
+    "filament_density": {
+      "1.4.4": "1.24"
+    },
+    "filament_diameter": {
+      "1.4.4": "1.75"
+    },
+    "filament_notes": {
+      "1.4.4": "\"\""
+    },
+    "filament_settings_id": {
+      "1.4.4": "PrimaSelect PVA+ @MMU2"
+    },
+    "filament_soluble": {
+      "1.4.4": "1"
+    },
+    "min_print_speed": {
+      "1.4.4": "15"
+    },
+    "slowdown_below_layer_time": {
+      "1.4.4": "20"
+    },
+    "start_filament_gcode": {
+      "1.4.4": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.02{else}0.04{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K12{elsif nozzle_diameter[0]==0.8};{else}M900 K20{endif} ; Filament gcode LA 1.0\""
+    },
+    "filament_vendor": {
+      "1.4.4": "PrimaSelect"
+    },
+    "bed_temperature": {
+      "1.4.4": "60"
+    },
+    "bridge_fan_speed": {
+      "1.4.4": "100"
+    },
+    "disable_fan_first_layers": {
+      "1.4.4": "1"
+    },
+    "fan_always_on": {
+      "1.4.4": "0"
+    },
+    "fan_below_layer_time": {
+      "1.4.4": "100"
+    },
+    "filament_colour": {
+      "1.4.4": "#FFFFD7"
+    },
+    "filament_max_volumetric_speed": {
+      "1.4.4": "3.8"
+    },
+    "filament_type": {
+      "1.4.4": "PVA"
+    },
+    "first_layer_bed_temperature": {
+      "1.4.4": "60"
+    },
+    "first_layer_temperature": {
+      "1.4.4": "200"
+    },
+    "max_fan_speed": {
+      "1.4.4": "100"
+    },
+    "min_fan_speed": {
+      "1.4.4": "100"
+    },
+    "temperature": {
+      "1.4.4": "195"
+    }
+  }
+}

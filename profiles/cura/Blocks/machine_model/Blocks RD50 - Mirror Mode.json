@@ -1,0 +1,87 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Blocks RD50 - Mirror Mode",
+  "vendor": "Blocks",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Blocks RD50 - Mirror Mode"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "blocks_base"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "platform": {
+      "2026-02-25": "blocks_rd50_platform.stl"
+    },
+    "first_start_actions": {
+      "2026-02-25": [
+        "MachineSettingsAction"
+      ]
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "has_variants": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "blocks_rd50_extruder_0",
+        "1": "blocks_rd50_extruder_1"
+      }
+    },
+    "preferred_material": {
+      "2026-02-25": "generic_pla"
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "preferred_variant_name": {
+      "2026-02-25": "ST - 0.4mm"
+    },
+    "quality_definition": {
+      "2026-02-25": "blocks_base"
+    },
+    "variants_name": {
+      "2026-02-25": "Print Core"
+    },
+    "machine_depth": {
+      "2026-02-25": 500
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 S0 ;extruder heater off\nM140 S0 ;heated bed heater off (if you have it)\nG91 ;relative positioning\nG1 E-1 F300 ;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+1 E-1 X-20 Y-20 F6000 ;move Z up a bit and retract filament even more\nM605 S1      ; AUTO-PARK MODE\nG28 X Y ;move X/Y to min endstops, so the head is out of the way\nM84 ;steppers off\nG90 ;absolute positioning\n"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_height": {
+      "2026-02-25": 500
+    },
+    "machine_name": {
+      "2026-02-25": "Blocks RD50 - Mirror Mode"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ";INITIALIZE MIRROR MODE\nM605 S1      ; AUTO-PARK MODE\nT0           ; Set tool 0\nG28          ; Home all axes\nG28 X ; Home x axes\nM605 S2      ; Set duplication mode\n; PREHEAT\nM140 S{material_bed_temperature_layer_0}   ; Set Heat Bed temperature\nM104 S{material_print_temperature_layer_0} ; Set Extruder temperature\nM190 S{material_bed_temperature_layer_0}   ; Wait for Heat Bed temperature\nM109 S{material_print_temperature_layer_0} ; Wait for Extruder temperature\n;SET MIRROR MODE\nM605 S2 X622 ; Set duplication mode and nozzle offset\nG28 X\nG1 X-60 F3000\nM605 S3 X622 ; Set mirror mode and nozzle offset\nM82\nG92 E0       ; Reset Extruder\nG1 F200\nG1 E30 F200  ; Prime\nG12          ; Clean Nozzle\nG1 X125 F3000\nG92 E0 ; Reset Extruder\n"
+    },
+    "machine_width": {
+      "2026-02-25": 500
+    },
+    "retraction_retract_speed": {
+      "2026-02-25": 50
+    }
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "VORON Trident 350mm - 0.25mm Nozzle",
+  "vendor": "Voron",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "autoemit_temperature_commands": {
+      "3.0.0": "0"
+    },
+    "before_layer_gcode": {
+      "3.0.0": ";BEFORE_LAYER_CHANGE\\nG92 E0\\n;{layer_z}"
+    },
+    "binary_gcode": {
+      "3.0.0": "0"
+    },
+    "color_change_gcode": {
+      "3.0.0": "M600"
+    },
+    "cooling_tube_length": {
+      "3.0.0": "20"
+    },
+    "cooling_tube_retraction": {
+      "3.0.0": "45"
+    },
+    "deretract_speed": {
+      "3.0.0": "35"
+    },
+    "end_gcode": {
+      "3.0.0": "PRINT_END"
+    },
+    "extra_loading_move": {
+      "3.0.0": "-52"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "33"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "75"
+    },
+    "extruder_colour": {
+      "3.0.0": "\"\""
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0"
+    },
+    "gcode_flavor": {
+      "3.0.0": "klipper"
+    },
+    "layer_gcode": {
+      "3.0.0": ";AFTER_LAYER_CHANGE\\n;{layer_z}"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "time_estimate_only"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "5000,2500"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "7000,2500"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "2500,2500"
+    },
+    "machine_max_acceleration_travel": {
+      "3.0.0": "7000,2500"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "10000,2500"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "10000,2500"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "400,200"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "100,100"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "350,175"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "350,175"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "15,15"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "10,10"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "8,8"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "8,8"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "2,2"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0,0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0,0"
+    },
+    "multimaterial_purging": {
+      "3.0.0": "140"
+    },
+    "parking_pos_retraction": {
+      "3.0.0": "84"
+    },
+    "pause_print_gcode": {
+      "3.0.0": "PAUSE"
+    },
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "remaining_times": {
+      "3.0.0": "1"
+    },
+    "retract_before_travel": {
+      "3.0.0": "2.0"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "80%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "0"
+    },
+    "retract_length": {
+      "3.0.0": "0.5"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_lift": {
+      "3.0.0": "0.15"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0.25"
+    },
+    "retract_lift_below": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_speed": {
+      "3.0.0": "35"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "start_gcode": {
+      "3.0.0": "; @see https://github.com/jontek2/A-better-print_start-macro for the macro\\nPRINT_START EXTRUDER=[first_layer_temperature[initial_extruder]] BED=[first_layer_bed_temperature] CHAMBER=[chamber_temperature] CHAMBER_MINIMAL=[chamber_minimal_temperature]"
+    },
+    "thumbnails": {
+      "3.0.0": "32x32/PNG, 300x300/PNG, 400x300/PNG"
+    },
+    "travel_max_lift": {
+      "3.0.0": "1.5"
+    },
+    "travel_ramping_lift": {
+      "3.0.0": "0"
+    },
+    "travel_slope": {
+      "3.0.0": "1"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "variable_layer_height": {
+      "3.0.0": "1"
+    },
+    "wipe": {
+      "3.0.0": "0"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,350x0,350x350,0x350"
+    },
+    "max_print_height": {
+      "3.0.0": "210"
+    },
+    "printer_model": {
+      "3.0.0": "VT_350"
+    },
+    "printer_variant": {
+      "3.0.0": "0.25"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.25"
+    },
+    "nozzle_high_flow": {
+      "3.0.0": "0"
+    },
+    "default_print_profile": {
+      "3.0.0": "0.12mm Strength @TRIDENT - 0.25mm"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.15"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.05"
+    },
+    "printer_notes": {
+      "3.0.0": "Do not remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_MODEL_VORON_TRIDENT\\nPG\\nNO_TEMPLATES"
+    },
+    "printer_settings_id": {
+      "3.0.0": "VORON Trident 350mm - 0.25mm Nozzle"
+    }
+  }
+}

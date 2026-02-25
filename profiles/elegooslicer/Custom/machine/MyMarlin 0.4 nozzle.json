@@ -1,0 +1,250 @@
+{
+  "slicer": "elegooslicer",
+  "profile_type": "machine",
+  "name": "MyMarlin 0.4 nozzle",
+  "vendor": "Custom",
+  "first_seen": "1.3.0.11",
+  "last_seen": "1.3.0.11",
+  "filament_id": null,
+  "setting_id": "GM001",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "1.3.0.11": "machine"
+    },
+    "name": {
+      "1.3.0.11": "MyMarlin 0.4 nozzle"
+    },
+    "from": {
+      "1.3.0.11": "system"
+    },
+    "instantiation": {
+      "1.3.0.11": "true"
+    },
+    "printer_technology": {
+      "1.3.0.11": "FFF"
+    },
+    "deretraction_speed": {
+      "1.3.0.11": [
+        "35"
+      ]
+    },
+    "extruder_colour": {
+      "1.3.0.11": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "1.3.0.11": [
+        "0x0"
+      ]
+    },
+    "gcode_flavor": {
+      "1.3.0.11": "marlin"
+    },
+    "silent_mode": {
+      "1.3.0.11": "0"
+    },
+    "machine_max_acceleration_e": {
+      "1.3.0.11": [
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "1.3.0.11": [
+        "10000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "1.3.0.11": [
+        "1000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "1.3.0.11": [
+        "10000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "1.3.0.11": [
+        "10000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "1.3.0.11": [
+        "500"
+      ]
+    },
+    "machine_max_speed_e": {
+      "1.3.0.11": [
+        "60"
+      ]
+    },
+    "machine_max_speed_x": {
+      "1.3.0.11": [
+        "500"
+      ]
+    },
+    "machine_max_speed_y": {
+      "1.3.0.11": [
+        "500"
+      ]
+    },
+    "machine_max_speed_z": {
+      "1.3.0.11": [
+        "10"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "1.3.0.11": [
+        "5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "1.3.0.11": [
+        "8"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "1.3.0.11": [
+        "8"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "1.3.0.11": [
+        "0.4"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "1.3.0.11": [
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "1.3.0.11": [
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "1.3.0.11": [
+        "0.32"
+      ]
+    },
+    "min_layer_height": {
+      "1.3.0.11": [
+        "0.08"
+      ]
+    },
+    "printable_height": {
+      "1.3.0.11": "250"
+    },
+    "extruder_clearance_radius": {
+      "1.3.0.11": "65"
+    },
+    "extruder_clearance_height_to_rod": {
+      "1.3.0.11": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "1.3.0.11": "140"
+    },
+    "nozzle_diameter": {
+      "1.3.0.11": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "1.3.0.11": ""
+    },
+    "printer_variant": {
+      "1.3.0.11": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "1.3.0.11": [
+        "1"
+      ]
+    },
+    "retract_before_wipe": {
+      "1.3.0.11": [
+        "70%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "1.3.0.11": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "1.3.0.11": [
+        "0.9"
+      ]
+    },
+    "retract_length_toolchange": {
+      "1.3.0.11": [
+        "1"
+      ]
+    },
+    "z_hop": {
+      "1.3.0.11": [
+        "0.4"
+      ]
+    },
+    "retract_restart_extra": {
+      "1.3.0.11": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "1.3.0.11": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "1.3.0.11": [
+        "45"
+      ]
+    },
+    "single_extruder_multi_material": {
+      "1.3.0.11": "1"
+    },
+    "change_filament_gcode": {
+      "1.3.0.11": ""
+    },
+    "wipe": {
+      "1.3.0.11": [
+        "0"
+      ]
+    },
+    "default_print_profile": {
+      "1.3.0.11": ""
+    },
+    "machine_start_gcode": {
+      "1.3.0.11": "G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]\nM104 S[first_layer_temperature] ; set extruder temp\nM140 S[first_layer_bed_temperature] ; set bed temp\nG28 ; home all\nG1 Y1.0 Z0.3 F1000 ; move print head up\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nM109 S[first_layer_temperature] ; wait for extruder temp\nG92 E0.0\n; initial load\nG1 X205.0 E19 F1000\nG1 Y1.6\nG1 X5.0 E19 F1000\nG92 E0.0\n; intro line\nG1 Y2.0 Z0.2 F1000\nG1 X65.0 E9.0 F1000\nG1 X105.0 E12.5 F1000\nG92 E0.0"
+    },
+    "machine_end_gcode": {
+      "1.3.0.11": "G1 E-1.0 F2100 ; retract\nG92 E0.0\nG1{if max_layer_z < max_print_height} Z{z_offset+min(max_layer_z+30, max_print_height)}{endif} E-34.0 F720 ; move print head up & retract filament\nG4 ; wait\nM104 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\nG1 X0 Y105 F3000 ; park print head\nM84 ; disable motors"
+    },
+    "layer_change_gcode": {
+      "1.3.0.11": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "before_layer_change_gcode": {
+      "1.3.0.11": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "machine_pause_gcode": {
+      "1.3.0.11": "M601"
+    },
+    "setting_id": {
+      "1.3.0.11": "GM001"
+    },
+    "printer_model": {
+      "1.3.0.11": "Generic Marlin Printer"
+    },
+    "printable_area": {
+      "1.3.0.11": [
+        "0x0",
+        "250x0",
+        "250x250",
+        "0x250"
+      ]
+    }
+  }
+}

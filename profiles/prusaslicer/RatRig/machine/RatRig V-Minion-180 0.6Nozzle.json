@@ -1,0 +1,265 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "RatRig V-Minion-180 0.6Nozzle",
+  "vendor": "RatRig",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "before_layer_gcode": {
+      "3.0.0": ";BEFORE_LAYER_CHANGE\\n;[layer_z]\\nG92 E0\\n;{if layer_num == 2 }SET_FILAMENT_SENSOR SENSOR=my_sensor ENABLE=1{endif}\\n\\n"
+    },
+    "between_objects_gcode": {
+      "3.0.0": ";BETWEEN_OBJECTS\\nG92 E0"
+    },
+    "color_change_gcode": {
+      "3.0.0": "M600"
+    },
+    "cooling_tube_length": {
+      "3.0.0": "5"
+    },
+    "cooling_tube_retraction": {
+      "3.0.0": "91.5"
+    },
+    "default_filament_profile": {
+      "3.0.0": "\"PunkFil PETG @RatRig\""
+    },
+    "deretract_speed": {
+      "3.0.0": "100"
+    },
+    "end_gcode": {
+      "3.0.0": "END_PRINT\\n"
+    },
+    "extra_loading_move": {
+      "3.0.0": "-2"
+    },
+    "extruder_colour": {
+      "3.0.0": "\"#ceff00\""
+    },
+    "gcode_flavor": {
+      "3.0.0": "klipper"
+    },
+    "high_current_on_filament_swap": {
+      "3.0.0": "0"
+    },
+    "layer_gcode": {
+      "3.0.0": ";AFTER_LAYER_CHANGE\\n;[layer_z]\\n"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "time_estimate_only"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "5000"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "7000"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "7000"
+    },
+    "machine_max_acceleration_travel": {
+      "3.0.0": "4000,1250"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "4000"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "4000"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "25"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "60"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "250"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "250"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "5"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "5"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "5"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "0.4"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0"
+    },
+    "parking_pos_retraction": {
+      "3.0.0": "92"
+    },
+    "pause_print_gcode": {
+      "3.0.0": "M601"
+    },
+    "print_host": {
+      "3.0.0": ""
+    },
+    "printer_notes": {
+      "3.0.0": "VMinionsettings"
+    },
+    "remaining_times": {
+      "3.0.0": "1"
+    },
+    "retract_before_travel": {
+      "3.0.0": "1"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "0%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1"
+    },
+    "retract_length": {
+      "3.0.0": "0.8"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "1"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0"
+    },
+    "retract_lift_below": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_speed": {
+      "3.0.0": "100"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "start_gcode": {
+      "3.0.0": "SET_GCODE_VARIABLE MACRO=RatOS VARIABLE=relative_extrusion VALUE=True\\nSTART_PRINT EXTRUDER_TEMP=[first_layer_temperature] BED_TEMP=[first_layer_bed_temperature]"
+    },
+    "thumbnails": {
+      "3.0.0": "64x64,400x300"
+    },
+    "toolchange_gcode": {
+      "3.0.0": ""
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "wipe": {
+      "3.0.0": "0"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    },
+    "autoemit_temperature_commands": {
+      "3.0.0": "0"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "25"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "45"
+    },
+    "default_print_profile": {
+      "3.0.0": "QUALITY_SPEED_0.25mm_Nozzle_0.6_VM"
+    },
+    "retract_lift_first_layer": {
+      "3.0.0": "0"
+    },
+    "retract_lift_top": {
+      "3.0.0": "\"All surfaces\""
+    },
+    "start_gcode_manual": {
+      "3.0.0": "0"
+    },
+    "template_custom_gcode": {
+      "3.0.0": ""
+    },
+    "thumbnails_color": {
+      "3.0.0": "#018aff"
+    },
+    "thumbnails_custom_color": {
+      "3.0.0": "0"
+    },
+    "thumbnails_with_bed": {
+      "3.0.0": "1"
+    },
+    "time_estimation_compensation": {
+      "3.0.0": "100%"
+    },
+    "tool_name": {
+      "3.0.0": "\"\""
+    },
+    "wipe_advanced": {
+      "3.0.0": "0"
+    },
+    "wipe_advanced_algo": {
+      "3.0.0": "linear"
+    },
+    "wipe_advanced_multiplier": {
+      "3.0.0": "60"
+    },
+    "wipe_advanced_nozzle_melted_volume": {
+      "3.0.0": "120"
+    },
+    "wipe_extra_perimeter": {
+      "3.0.0": "0"
+    },
+    "z_step": {
+      "3.0.0": "0.00125"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,180x0,180x180,0x180"
+    },
+    "max_print_height": {
+      "3.0.0": "180"
+    },
+    "printer_model": {
+      "3.0.0": "VMINION"
+    },
+    "printer_variant": {
+      "3.0.0": "0.5"
+    },
+    "retract_lift": {
+      "3.0.0": "0.3"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.4"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.1"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.6"
+    },
+    "printer_settings_id": {
+      "3.0.0": "RatRig V-Minion-180 0.6Nozzle"
+    }
+  }
+}

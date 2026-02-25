@@ -1,0 +1,78 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Adventurer 4",
+  "vendor": "Flashforge",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Adventurer 4"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "flashforge_adventurer_base"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Jeremie-C"
+    },
+    "quality_definition": {
+      "2026-02-25": "flashforge_adventurer4"
+    },
+    "supports_network_connection": {
+      "2026-02-25": true
+    },
+    "gantry_height": {
+      "2026-02-25": "250"
+    },
+    "machine_depth": {
+      "2026-02-25": 200
+    },
+    "machine_end_gcode": {
+      "2026-02-25": ";End Gcode\nM104 S0 T0\nM140 S0 T0\nG162 Z F1800\nG28 X Y\nM132 X Y A B\nM652\nG91\nM18"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -20,
+          10
+        ],
+        [
+          -20,
+          -10
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          10,
+          -10
+        ]
+      ]
+    },
+    "machine_height": {
+      "2026-02-25": 250
+    },
+    "machine_name": {
+      "2026-02-25": "Adventurer 4"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ";Start Gcode\nG28\nM132 X Y Z A B\nG1 Z50.000 F420\nG161 X Y F3300\nM7 T0\nM6 T0\nM651 S255\n;End Start"
+    },
+    "machine_use_extruder_offset_to_offset_coords": {
+      "2026-02-25": false
+    },
+    "machine_width": {
+      "2026-02-25": 220
+    }
+  }
+}

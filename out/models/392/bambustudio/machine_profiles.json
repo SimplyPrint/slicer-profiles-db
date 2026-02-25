@@ -1,0 +1,177 @@
+[
+    {
+        "vendor": "Anycubic",
+        "machine_model": {
+            "type": "machine_model",
+            "name": "Anycubic Kobra Plus",
+            "model_id": "Anycubic-Kobra-Plus",
+            "nozzle_diameter": "0.4",
+            "machine_tech": "FFF",
+            "family": "Anycubic",
+            "bed_model": "sha256:7e9a98556f4b90461edea746c7e053bf458250035176f2cf8161f7b8ea7d4c71",
+            "bed_texture": "sha256:48d57d0d76ed27350f41d1a15b7c25f85c4816074ef8f31e377c50360e7847ca",
+            "hotend_model": "",
+            "default_materials": "Generic ABS @Anycubic;Generic PLA @Anycubic;Generic PLA-CF @Anycubic;Generic PETG @Anycubic;Generic TPU @Anycubic;Generic ASA @Anycubic;Generic PC @Anycubic;Generic PVA @Anycubic;Generic PA @Anycubic;Generic PA-CF @Anycubic"
+        },
+        "variants": {
+            "0.4": {
+                "name": "Anycubic Kobra Plus 0.4 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "Anycubic Kobra Plus 0.4 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "gcode_flavor": "marlin",
+                    "machine_start_gcode": "M104 S140;start the nozzle preheat and don't wait\nG21;metric values\nG90;absolute positioning\nM82;set extruder to absolute mode\nM107;start with the fan off\nG28;home all\nM190 S[bed_temperature_initial_layer_single] ; set wait for bed temp\nM355 S1;turn on the case light\nM109 S[nozzle_temperature_initial_layer]; wait for extruder temp\nG1 Z15.0 F1000 ;move the nozzle up 15mm\nG92 E0;zero the extruded length\nG1 F100 E60;extrude 60mm of feed stock\nG92 E0;zero the extruded length again",
+                    "machine_end_gcode": "M104 S0;extruder heater off\nM140 S0;heated bed heater off (if you have it)\nG91;relative positioning\nG1 Z+10 F3600 ;move Z up a bit\nG90;absolute positioning\nG1 X10 F3000; get the head off the bed\nG1 F3000 Y400 ;kick the bed out\nM84;steppers off\nM355 S0;turn off the case light",
+                    "extruder_colour": [
+                        "#018001"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "machine_max_acceleration_e": [
+                        "3000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "4000",
+                        "1250"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "1000",
+                        "1250"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "4000",
+                        "1250"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "700",
+                        "960"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "600",
+                        "960"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "100",
+                        "200"
+                    ],
+                    "machine_max_speed_e": [
+                        "60",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "300",
+                        "100"
+                    ],
+                    "machine_max_speed_y": [
+                        "300",
+                        "100"
+                    ],
+                    "machine_max_speed_z": [
+                        "40",
+                        "12"
+                    ],
+                    "machine_max_jerk_e": [
+                        "5",
+                        "4.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "20",
+                        "8"
+                    ],
+                    "machine_max_jerk_y": [
+                        "20",
+                        "8"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.3",
+                        "0.4"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.3"
+                    ],
+                    "min_layer_height": [
+                        "0.15"
+                    ],
+                    "printable_height": "350",
+                    "extruder_clearance_max_radius": "65",
+                    "extruder_clearance_dist_to_rod": "33",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_height_to_lid": "140",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "printer_settings_id": "Anycubic",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
+                    "retraction_minimum_travel": [
+                        "5"
+                    ],
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "6"
+                    ],
+                    "retract_length_toolchange": [
+                        "4"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "40"
+                    ],
+                    "deretraction_speed": [
+                        "40"
+                    ],
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "M600",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;G92 E0.0\n;[layer_z]\n\n",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_pause_gcode": "M601",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop_types": "Normal Lift",
+                    "setting_id": "GM_Anycubic_007",
+                    "printer_model": "Anycubic Kobra Plus",
+                    "default_print_profile": "0.20mm Standard @Anycubic KobraPlus",
+                    "printable_area": [
+                        "0x0",
+                        "300x0",
+                        "300x300",
+                        "0x300"
+                    ],
+                    "nozzle_type": "undefine",
+                    "auxiliary_fan": "0",
+                    "default_filament_profile": [
+                        "Anycubic Generic PLA"
+                    ],
+                    "scan_first_layer": "0"
+                }
+            }
+        }
+    }
+]

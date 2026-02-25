@@ -1,0 +1,488 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "Ginger G1 1.2 nozzle",
+  "vendor": "Ginger Additive",
+  "first_seen": "2.3.1",
+  "last_seen": "2.3.1",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.3.1": "machine"
+    },
+    "name": {
+      "2.3.1": "Ginger G1 1.2 nozzle"
+    },
+    "from": {
+      "2.3.1": "system"
+    },
+    "instantiation": {
+      "2.3.1": "true"
+    },
+    "adaptive_bed_mesh_margin": {
+      "2.3.1": "0"
+    },
+    "auxiliary_fan": {
+      "2.3.1": "0"
+    },
+    "bed_custom_texture": {
+      "2.3.1": ""
+    },
+    "bed_exclude_area": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "bed_mesh_max": {
+      "2.3.1": "99999,99999"
+    },
+    "bed_mesh_min": {
+      "2.3.1": "-99999,-99999"
+    },
+    "bed_mesh_probe_distance": {
+      "2.3.1": "50,50"
+    },
+    "before_layer_change_gcode": {
+      "2.3.1": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "best_object_pos": {
+      "2.3.1": "0.5,0.5"
+    },
+    "change_extrusion_role_gcode": {
+      "2.3.1": ""
+    },
+    "change_filament_gcode": {
+      "2.3.1": ""
+    },
+    "cooling_tube_length": {
+      "2.3.1": "5"
+    },
+    "cooling_tube_retraction": {
+      "2.3.1": "91.5"
+    },
+    "default_filament_profile": {
+      "2.3.1": [
+        "Ginger Generic PLA"
+      ]
+    },
+    "default_print_profile": {
+      "2.3.1": "1.50mm Standard @Ginger G1"
+    },
+    "deretraction_speed": {
+      "2.3.1": [
+        "200"
+      ]
+    },
+    "disable_m73": {
+      "2.3.1": "0"
+    },
+    "emit_machine_limits_to_gcode": {
+      "2.3.1": "1"
+    },
+    "enable_filament_ramming": {
+      "2.3.1": "1"
+    },
+    "extra_loading_move": {
+      "2.3.1": "-2"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.3.1": "200"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.3.1": "100"
+    },
+    "extruder_clearance_radius": {
+      "2.3.1": "200"
+    },
+    "extruder_colour": {
+      "2.3.1": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "fan_kickstart": {
+      "2.3.1": "0"
+    },
+    "fan_speedup_overhangs": {
+      "2.3.1": "1"
+    },
+    "fan_speedup_time": {
+      "2.3.1": "0"
+    },
+    "gcode_flavor": {
+      "2.3.1": "klipper"
+    },
+    "head_wrap_detect_zone": {
+      "2.3.1": []
+    },
+    "high_current_on_filament_swap": {
+      "2.3.1": "0"
+    },
+    "host_type": {
+      "2.3.1": "octoprint"
+    },
+    "layer_change_gcode": {
+      "2.3.1": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "machine_end_gcode": {
+      "2.3.1": "END_PRINT"
+    },
+    "machine_load_filament_time": {
+      "2.3.1": "0"
+    },
+    "machine_max_acceleration_e": {
+      "2.3.1": [
+        "1000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.3.1": [
+        "2500",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.3.1": [
+        "2500",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "2.3.1": [
+        "20000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.3.1": [
+        "2500",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.3.1": [
+        "2500",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.3.1": [
+        "500",
+        "200"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.3.1": [
+        "30",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.3.1": [
+        "7",
+        "9"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.3.1": [
+        "7",
+        "9"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.3.1": [
+        "7",
+        "0.4"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.3.1": [
+        "500",
+        "25"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.3.1": [
+        "300",
+        "200"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.3.1": [
+        "300",
+        "200"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.3.1": [
+        "12",
+        "12"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_pause_gcode": {
+      "2.3.1": "PAUSE"
+    },
+    "machine_start_gcode": {
+      "2.3.1": "START_PRINT BED_TEMPERATURE=[bed_temperature_initial_layer] KAMP_LEVELING=1 EXTRUDER_ROTATION_VOLUME={extruder_rotation_volume[0]} MIXING_STEPPER_ROTATION_VOLUME={mixing_stepper_rotation_volume[0]} PURGE_LAYER_HEIGHT=2 PURGE_PARKING_SPEED=10000 PURGE_LENGHT=500 PURGE_SPEED=500 PURGE_MATERIAL_QUANTITY=10000 EXTRUDER_TEMPERATURE=[nozzle_temperature] EXTRUDER_TEMPERATURE_INITIAL_LAYER=[nozzle_temperature_initial_layer] PRESSURE_ADVANCE=0.2 PRESSURE_ADVANCE_SMOOTH_TIME=0.5 ZONE_1_TEMPERATURE={multi_zone_1_initial_layer[0]} ZONE_2_TEMPERATURE={multi_zone_2_initial_layer[0]} ZONE_3_TEMPERATURE={multi_zone_3_initial_layer[0]}"
+    },
+    "machine_unload_filament_time": {
+      "2.3.1": "0"
+    },
+    "manual_filament_change": {
+      "2.3.1": "0"
+    },
+    "max_layer_height": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "min_layer_height": {
+      "2.3.1": [
+        "0.1"
+      ]
+    },
+    "nozzle_diameter": {
+      "2.3.1": [
+        "1.2"
+      ]
+    },
+    "nozzle_hrc": {
+      "2.3.1": "0"
+    },
+    "nozzle_type": {
+      "2.3.1": "undefine"
+    },
+    "nozzle_volume": {
+      "2.3.1": "0"
+    },
+    "parking_pos_retraction": {
+      "2.3.1": "92"
+    },
+    "preferred_orientation": {
+      "2.3.1": "0"
+    },
+    "print_host": {
+      "2.3.1": "G1OS.local"
+    },
+    "print_host_webui": {
+      "2.3.1": ""
+    },
+    "printable_area": {
+      "2.3.1": [
+        "0x0",
+        "1000x0",
+        "1000x1000",
+        "0x1000"
+      ]
+    },
+    "printable_height": {
+      "2.3.1": "1000"
+    },
+    "printer_notes": {
+      "2.3.1": ""
+    },
+    "printer_settings_id": {
+      "2.3.1": "Ginger G1 1.2 nozzle"
+    },
+    "printer_structure": {
+      "2.3.1": "undefine"
+    },
+    "printer_technology": {
+      "2.3.1": "FFF"
+    },
+    "printer_variant": {
+      "2.3.1": "1.2"
+    },
+    "printhost_apikey": {
+      "2.3.1": ""
+    },
+    "printhost_authorization_type": {
+      "2.3.1": "key"
+    },
+    "printhost_cafile": {
+      "2.3.1": ""
+    },
+    "printhost_password": {
+      "2.3.1": ""
+    },
+    "printhost_port": {
+      "2.3.1": ""
+    },
+    "printhost_ssl_ignore_revoke": {
+      "2.3.1": "0"
+    },
+    "printhost_user": {
+      "2.3.1": ""
+    },
+    "printing_by_object_gcode": {
+      "2.3.1": ""
+    },
+    "purge_in_prime_tower": {
+      "2.3.1": "1"
+    },
+    "retract_before_wipe": {
+      "2.3.1": [
+        "0%"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.3.1": [
+        "2"
+      ]
+    },
+    "retract_lift_above": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_lift_below": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_lift_enforce": {
+      "2.3.1": [
+        "All Surfaces"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.3.1": [
+        "35"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retraction_length": {
+      "2.3.1": [
+        "20"
+      ]
+    },
+    "retraction_minimum_travel": {
+      "2.3.1": [
+        "10"
+      ]
+    },
+    "retraction_speed": {
+      "2.3.1": [
+        "200"
+      ]
+    },
+    "scan_first_layer": {
+      "2.3.1": "0"
+    },
+    "silent_mode": {
+      "2.3.1": "0"
+    },
+    "single_extruder_multi_material": {
+      "2.3.1": "1"
+    },
+    "support_air_filtration": {
+      "2.3.1": "0"
+    },
+    "support_chamber_temp_control": {
+      "2.3.1": "0"
+    },
+    "support_multi_bed_types": {
+      "2.3.1": "0"
+    },
+    "template_custom_gcode": {
+      "2.3.1": ""
+    },
+    "thumbnails": {
+      "2.3.1": [
+        "50x50"
+      ]
+    },
+    "thumbnails_format": {
+      "2.3.1": "PNG"
+    },
+    "time_cost": {
+      "2.3.1": "0"
+    },
+    "time_lapse_gcode": {
+      "2.3.1": ""
+    },
+    "upward_compatible_machine": {
+      "2.3.1": []
+    },
+    "use_firmware_retraction": {
+      "2.3.1": "0"
+    },
+    "use_relative_e_distances": {
+      "2.3.1": "1"
+    },
+    "wipe": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "wipe_distance": {
+      "2.3.1": [
+        "10"
+      ]
+    },
+    "z_hop": {
+      "2.3.1": [
+        "1.5"
+      ]
+    },
+    "z_hop_types": {
+      "2.3.1": [
+        "Normal Lift"
+      ]
+    },
+    "z_offset": {
+      "2.3.1": "0"
+    },
+    "printer_model": {
+      "2.3.1": "Ginger G1"
+    },
+    "pellet_modded_printer": {
+      "2.3.1": "1"
+    },
+    "use_extruder_rotation_volume": {
+      "2.3.1": "1"
+    },
+    "use_active_pellet_feeding": {
+      "2.3.1": "1"
+    },
+    "multi_zone": {
+      "2.3.1": "1"
+    },
+    "multi_zone_number": {
+      "2.3.1": "3"
+    },
+    "active_feeder_motor_name": {
+      "2.3.1": [
+        "mixing_stepper"
+      ]
+    }
+  }
+}

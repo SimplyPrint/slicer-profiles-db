@@ -1,0 +1,193 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "filament",
+  "name": "Fiberthree F3 PA-CF Pro @XL",
+  "vendor": "PrusaResearch",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "cooling": {
+      "3.0.0": "1"
+    },
+    "compatible_printers": {
+      "3.0.0": ""
+    },
+    "compatible_printers_condition": {
+      "3.0.0": "nozzle_diameter[0]>=0.4 and nozzle_diameter[0]!=0.6 and nozzle_diameter[0]!=0.8 and printer_notes=~/.*XL.*/"
+    },
+    "end_filament_gcode": {
+      "3.0.0": "\"; Filament-specific end gcode\""
+    },
+    "extrusion_multiplier": {
+      "3.0.0": "1"
+    },
+    "filament_loading_speed": {
+      "3.0.0": "10"
+    },
+    "filament_loading_speed_start": {
+      "3.0.0": "50"
+    },
+    "filament_unloading_speed": {
+      "3.0.0": "100"
+    },
+    "filament_unloading_speed_start": {
+      "3.0.0": "100"
+    },
+    "filament_toolchange_delay": {
+      "3.0.0": "0"
+    },
+    "filament_cooling_moves": {
+      "3.0.0": "3"
+    },
+    "filament_cooling_initial_speed": {
+      "3.0.0": "5"
+    },
+    "filament_cooling_final_speed": {
+      "3.0.0": "2.5"
+    },
+    "filament_load_time": {
+      "3.0.0": "10.5"
+    },
+    "filament_unload_time": {
+      "3.0.0": "8.5"
+    },
+    "filament_ramming_parameters": {
+      "3.0.0": "\"250 100 42.4194 42.4194 42.4194 42.4194 42.4194| 0.05 42.4387 0.45 42.4387 0.95 42.4387 1.45 42.4387 1.95 42.4387 2.45 42.4387 2.95 42.4387 3.45 42.4387 3.95 42.4387 4.45 42.4387 4.95 42.4387\""
+    },
+    "filament_minimal_purge_on_wipe_tower": {
+      "3.0.0": "35"
+    },
+    "filament_cost": {
+      "3.0.0": "208.1"
+    },
+    "filament_density": {
+      "3.0.0": "1.25"
+    },
+    "filament_diameter": {
+      "3.0.0": "1.75"
+    },
+    "filament_notes": {
+      "3.0.0": "\"\""
+    },
+    "filament_settings_id": {
+      "3.0.0": "Fiberthree F3 PA-CF Pro @XL"
+    },
+    "filament_soluble": {
+      "3.0.0": "0"
+    },
+    "min_print_speed": {
+      "3.0.0": "15"
+    },
+    "slowdown_below_layer_time": {
+      "3.0.0": "10"
+    },
+    "start_filament_gcode": {
+      "3.0.0": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S45 ; set heatbreak target temp\""
+    },
+    "filament_vendor": {
+      "3.0.0": "Fiberthree"
+    },
+    "bed_temperature": {
+      "3.0.0": "105"
+    },
+    "first_layer_bed_temperature": {
+      "3.0.0": "90"
+    },
+    "first_layer_temperature": {
+      "3.0.0": "285"
+    },
+    "temperature": {
+      "3.0.0": "285"
+    },
+    "bridge_fan_speed": {
+      "3.0.0": "30"
+    },
+    "disable_fan_first_layers": {
+      "3.0.0": "3"
+    },
+    "fan_always_on": {
+      "3.0.0": "0"
+    },
+    "fan_below_layer_time": {
+      "3.0.0": "20"
+    },
+    "filament_colour": {
+      "3.0.0": "#DEE0E6"
+    },
+    "filament_max_volumetric_speed": {
+      "3.0.0": "5"
+    },
+    "filament_type": {
+      "3.0.0": "PA"
+    },
+    "max_fan_speed": {
+      "3.0.0": "0"
+    },
+    "min_fan_speed": {
+      "3.0.0": "0"
+    },
+    "filament_retract_length": {
+      "3.0.0": "2"
+    },
+    "filament_retract_speed": {
+      "3.0.0": "40"
+    },
+    "filament_retract_lift": {
+      "3.0.0": "nil"
+    },
+    "filament_retract_before_travel": {
+      "3.0.0": "1.5"
+    },
+    "filament_wipe": {
+      "3.0.0": "0"
+    },
+    "filament_abrasive": {
+      "3.0.0": "1"
+    },
+    "idle_temperature": {
+      "3.0.0": "70"
+    },
+    "filament_infill_max_speed": {
+      "3.0.0": "0"
+    },
+    "filament_infill_max_crossing_speed": {
+      "3.0.0": "140"
+    },
+    "cooling_slowdown_logic": {
+      "3.0.0": "consistent_surface"
+    },
+    "cooling_perimeter_transition_distance": {
+      "3.0.0": "10"
+    },
+    "filament_stamping_distance": {
+      "3.0.0": "45"
+    },
+    "filament_stamping_loading_speed": {
+      "3.0.0": "26.5"
+    },
+    "filament_multitool_ramming": {
+      "3.0.0": "1"
+    },
+    "filament_multitool_ramming_volume": {
+      "3.0.0": "5"
+    },
+    "filament_multitool_ramming_flow": {
+      "3.0.0": "40"
+    },
+    "filament_retract_length_toolchange": {
+      "3.0.0": "20"
+    },
+    "filament_travel_ramping_lift": {
+      "3.0.0": "1"
+    },
+    "filament_travel_max_lift": {
+      "3.0.0": "1.5"
+    },
+    "filament_travel_slope": {
+      "3.0.0": "1"
+    }
+  }
+}

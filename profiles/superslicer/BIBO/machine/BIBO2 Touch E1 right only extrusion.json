@@ -1,0 +1,193 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "machine",
+  "name": "BIBO2 Touch E1 right only extrusion",
+  "vendor": "BIBO",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "1.4.4": "FFF"
+    },
+    "bed_shape": {
+      "1.4.4": "-107x-93,107x-93,107x93,-107x93"
+    },
+    "before_layer_gcode": {
+      "1.4.4": ";BEFORE_LAYER_CHANGE\\n;[layer_z]\\nG92 E0\\n"
+    },
+    "between_objects_gcode": {
+      "1.4.4": ""
+    },
+    "deretract_speed": {
+      "1.4.4": "0 # Setting this value to 0 uses the retract speed"
+    },
+    "extruder_colour": {
+      "1.4.4": "#FFFF00"
+    },
+    "extruder_offset": {
+      "1.4.4": "0x0"
+    },
+    "gcode_flavor": {
+      "1.4.4": "marlin"
+    },
+    "silent_mode": {
+      "1.4.4": "0"
+    },
+    "remaining_times": {
+      "1.4.4": "0"
+    },
+    "machine_max_acceleration_e": {
+      "1.4.4": "1100"
+    },
+    "machine_max_acceleration_extruding": {
+      "1.4.4": "5000"
+    },
+    "machine_max_acceleration_retracting": {
+      "1.4.4": "1100"
+    },
+    "machine_max_acceleration_x": {
+      "1.4.4": "500"
+    },
+    "machine_max_acceleration_y": {
+      "1.4.4": "500"
+    },
+    "machine_max_acceleration_z": {
+      "1.4.4": "100"
+    },
+    "machine_max_feedrate_e": {
+      "1.4.4": "20"
+    },
+    "machine_max_feedrate_x": {
+      "1.4.4": "350"
+    },
+    "machine_max_feedrate_y": {
+      "1.4.4": "350"
+    },
+    "machine_max_feedrate_z": {
+      "1.4.4": "2"
+    },
+    "machine_max_jerk_e": {
+      "1.4.4": "5"
+    },
+    "machine_max_jerk_x": {
+      "1.4.4": "8"
+    },
+    "machine_max_jerk_y": {
+      "1.4.4": "8"
+    },
+    "machine_max_jerk_z": {
+      "1.4.4": "0.3"
+    },
+    "machine_min_extruding_rate": {
+      "1.4.4": "0"
+    },
+    "machine_min_travel_rate": {
+      "1.4.4": "0"
+    },
+    "layer_gcode": {
+      "1.4.4": ";AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "max_layer_height": {
+      "1.4.4": "0.30"
+    },
+    "min_layer_height": {
+      "1.4.4": "0.05"
+    },
+    "max_print_height": {
+      "1.4.4": "160"
+    },
+    "printer_notes": {
+      "1.4.4": "Do not remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_BIBO\\nPRINTER_MODEL_BIBO2"
+    },
+    "printer_settings_id": {
+      "1.4.4": "BIBO2 Touch E1 right only extrusion"
+    },
+    "printer_vendor": {
+      "1.4.4": "BIBO"
+    },
+    "retract_before_travel": {
+      "1.4.4": "1"
+    },
+    "retract_before_wipe": {
+      "1.4.4": "100%"
+    },
+    "retract_layer_change": {
+      "1.4.4": "1"
+    },
+    "retract_length": {
+      "1.4.4": "1.5"
+    },
+    "retract_length_toolchange": {
+      "1.4.4": "1.5"
+    },
+    "retract_lift": {
+      "1.4.4": "0"
+    },
+    "retract_lift_above": {
+      "1.4.4": "0"
+    },
+    "retract_lift_below": {
+      "1.4.4": "0"
+    },
+    "retract_restart_extra": {
+      "1.4.4": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "1.4.4": "0"
+    },
+    "retract_speed": {
+      "1.4.4": "20"
+    },
+    "single_extruder_multi_material": {
+      "1.4.4": "0"
+    },
+    "toolchange_gcode": {
+      "1.4.4": ""
+    },
+    "use_firmware_retraction": {
+      "1.4.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.4.4": "1"
+    },
+    "use_volumetric_e": {
+      "1.4.4": "0"
+    },
+    "variable_layer_height": {
+      "1.4.4": "1"
+    },
+    "wipe": {
+      "1.4.4": "1"
+    },
+    "z_offset": {
+      "1.4.4": "0"
+    },
+    "printer_model": {
+      "1.4.4": "BIBO2"
+    },
+    "default_print_profile": {
+      "1.4.4": "0.20mm NORMAL @BIBO2"
+    },
+    "default_filament_profile": {
+      "1.4.4": "Generic PLA @BIBO2"
+    },
+    "printer_variant": {
+      "1.4.4": "0.4"
+    },
+    "nozzle_diameter": {
+      "1.4.4": "0.4"
+    },
+    "start_gcode": {
+      "1.4.4": ";Start code PrusaSlicer BIBO 2 printers E1 only (i.e. T0)\\nG21            ; set units to metric\\nG90            ; absolute positioning\\nM107           ; start with the fan off\\nM190 S{first_layer_bed_temperature[0] - 5} ; wait for bed temp\\nM140 S{first_layer_bed_temperature[0]}  ; continue bed heating to full temp while other things are happening\\nM104 S{first_layer_temperature+extruder_temperature_offset} T0 ; set 1st nozzle heater to first layer temperature\\nM104 S{first_layer_temperature+extruder_temperature_offset * 0.791} T1 ; set 2nd nozzle heater to 79.1 percent standby temp\\nM105 ; Report Temperatures\\nM109 S{first_layer_temperature+extruder_temperature_offset} T0 ; wait for 1st nozzle heat to first layer temperature\\nM109 S{first_layer_temperature+extruder_temperature_offset * 0.791} T1 ; wait for 2nd nozzle heat to 79.1 percent standby temp\\nM105 ; Report Temperatures\\nG28 X0 Y0        ; move X/Y to min endstops\\nG28 Z0           ; move Z to min endstops\\nG1 Y0 F1200 E0   ; move Y to min endstop and extrude 0 filament\\nT[initial_tool]  ; switch to initial tool position\\nG92 E0.0         ; reset extruder\\nG28 ; Home all axis\\nG1 Y0 F1200 E0 ; move Y to min endstop and reset extruder\\nG92 E0.0 ; zero the current extruder coordinate\\nM117 Cleaning... ; Put Cleaning message on screen, Attempt Nozzle Wipe (for ooze free startup)\\nG1 X-15.0 Y-92.9 Z0.3 F2400.0     ; move to start-line position\\nG1 X15.0 Y-92.9 Z0.3 F1000.0 E2   ; draw 1st line\\nG1 X15.0 Y-92.6 Z0.3 F3000.0      ; move to side a little\\nG1 X-15.0 Y-92.6 Z0.3 F1000.0 E4  ; draw 2nd line\\nG1 X-15.0 Y-92.3 Z0.3 F3000.0     ; move to side a little\\nG1 X15.0 Y-92.3 Z0.3 F1000.0 E6   ; draw 3rd line\\nG1 X15.0 Y-92 Z0.3 F3000.0        ; move to side a little\\nG1 X-15.0 Y-92 Z0.3 F1000.0 E8    ; draw 4th line\\nG92 E0.0 ; reset extruder and zero the current extruder coordinate before printing\\nM117 BIBO E1 now Printing... ; Put now printing message on screen"
+    },
+    "end_gcode": {
+      "1.4.4": ";BIBO End GCode\\nM107 ; turn fans off\\nG91 ; Relative positioning\\nG1 Z1 F100\\nM140 S0    ; Disable heated bed\\nM104 T0 S0 ; extruder T0 heater off\\nM104 T1 S0 ; extruder T1 heater off\\nG1 Z+0.5 X-20 Y-20 F300 ; move Z down then move print head a bit out of the way\\nG28 X0 Y0 ; move X/Y to min endstops, so the head is out of the way\\nG90    ; Absolute positioning\\nG92 E0.0 ; Reset extruder position\\nM84    ; Turn steppers off\\nM117 BIBO Print complete ; Put print complete message on screen"
+    },
+    "thumbnails": {
+      "1.4.4": ""
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Vertex K8400",
+  "vendor": "Velleman N.V.",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Vertex K8400"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "manufacturer": {
+      "2026-02-25": "Velleman N.V."
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "Vertex_build_panel.3mf"
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "vertex_k8400_extruder_0"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        -3,
+        0
+      ]
+    },
+    "supported_actions": {
+      "2026-02-25": [
+        "MachineSettingsAction"
+      ]
+    },
+    "supports_usb_connection": {
+      "2026-02-25": true
+    },
+    "gantry_height": {
+      "2026-02-25": "18"
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 200
+    },
+    "machine_disallowed_areas": {
+      "2026-02-25": [
+        [
+          [
+            -100,
+            100
+          ],
+          [
+            -100,
+            80
+          ],
+          [
+            100,
+            80
+          ],
+          [
+            100,
+            100
+          ]
+        ]
+      ]
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "G1 X0 Y0 Z130 ;Get extruder out of way\nM107 ;Turn off fan\n;Disable all extruders\nG91 ;Relative positioning\nT0\nG1 E-1 ;Reduce filament pressure\nM104 T0 S0\nG90 ;Absolute positioning\nG92 E0 ;Reset extruder position\nM140 S0 ;Disable heated bed\nM84 ;Turn steppers off"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -60,
+          -40
+        ],
+        [
+          -60,
+          40
+        ],
+        [
+          18,
+          40
+        ],
+        [
+          18,
+          -40
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 190
+    },
+    "machine_name": {
+      "2026-02-25": "Vertex K8400"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "M104 T0 S{material_print_temperature_layer_0}\nG28 ;Home extruder\nG90 ;Absolute positioning\nM82 ;Extruder in absolute mode\nG1 Z1 F100\nG92 E0 ;Reset extruder position\nM109 T0 S{material_print_temperature_layer_0}\nG1 E20 F100\nG92 E0 ;Reset extruder position"
+    },
+    "machine_width": {
+      "2026-02-25": 200
+    }
+  }
+}

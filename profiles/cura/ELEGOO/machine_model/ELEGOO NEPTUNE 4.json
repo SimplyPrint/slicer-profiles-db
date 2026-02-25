@@ -1,0 +1,147 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "ELEGOO NEPTUNE 4",
+  "vendor": "ELEGOO",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "ELEGOO NEPTUNE 4"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "elegoo_base"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "mastercaution"
+    },
+    "acceleration_print": {
+      "2026-02-25": 10000
+    },
+    "acceleration_wall": {
+      "2026-02-25": "acceleration_print/2"
+    },
+    "cool_fan_full_layer": {
+      "2026-02-25": 2
+    },
+    "infill_line_width": {
+      "2026-02-25": "line_width + 0.05"
+    },
+    "infill_overlap": {
+      "2026-02-25": "0 if infill_sparse_density < 40.01 and infill_pattern != 'concentric' else -5"
+    },
+    "infill_pattern": {
+      "2026-02-25": "'lines' if infill_sparse_density > 35 else 'grid'"
+    },
+    "initial_layer_line_width_factor": {
+      "2026-02-25": "100.0 if resolveOrValue('adhesion_type') == 'raft' else 125 if line_width < 0.5 else 110"
+    },
+    "machine_acceleration": {
+      "2026-02-25": 5000
+    },
+    "machine_depth": {
+      "2026-02-25": 230
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "G91 ;Relative positionning\nG1 E-2 F2700 ;Retract a bit\nG1 E-2 Z0.2 F2400 ;Retract and raise Z\nG1 X5 Y5 F3000 ;Wipe out\nG1 Z2 ;Raise Z more\nG90 ;Absolute positionning\nG1 X0 Y{machine_depth - 5} ;Present print\nM106 S0 ;Turn-off fan\nM104 S0 ;Turn-off hotend\nM140 S0 ;Turn-off bed\nM84 X Y E ;Disable all steppers but Z"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -40,
+          50
+        ],
+        [
+          -40,
+          -30
+        ],
+        [
+          40,
+          50
+        ],
+        [
+          40,
+          -30
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 270
+    },
+    "machine_max_acceleration_e": {
+      "2026-02-25": 5000
+    },
+    "machine_max_acceleration_x": {
+      "2026-02-25": 20000
+    },
+    "machine_max_acceleration_y": {
+      "2026-02-25": 20000
+    },
+    "machine_name": {
+      "2026-02-25": "ELEGOO NEPTUNE 4"
+    },
+    "machine_nozzle_cool_down_speed": {
+      "2026-02-25": 0.75
+    },
+    "machine_nozzle_heat_up_speed": {
+      "2026-02-25": 1.6
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ";ELEGOO NEPTUNE 4 / 4 PRO\nM220 S100 ;Set the feed speed to 100%\nM221 S100 ;Set the flow rate to 100%\nM104 S140 ;Start heating extruder\nM190 S{material_bed_temperature_layer_0} ;Wait for the bed to reach print temp\nG90\nG28 ;home\nG1 Z10 F300\nG1 X67.5 Y0 F6000\nG1 Z0 F300\nM109 S{material_print_temperature_layer_0} ;Wait for extruder to reach print temp\nG92 E0 ;Reset Extruder\nG1 X67.5 Y0 Z0.4 F300 ;Move to start position\nG1 X167.5 E30 F400 ;Draw the first line\nG1 Z0.6 F120.0 ;Move to side a little\nG1 X162.5 F3000\nG92 E0 ;Reset Extruder"
+    },
+    "machine_width": {
+      "2026-02-25": 235
+    },
+    "retraction_amount": {
+      "2026-02-25": 0.5
+    },
+    "retraction_count_max": {
+      "2026-02-25": 80
+    },
+    "retraction_speed": {
+      "2026-02-25": 45
+    },
+    "speed_infill": {
+      "2026-02-25": "speed_print"
+    },
+    "speed_layer_0": {
+      "2026-02-25": 60
+    },
+    "speed_print": {
+      "2026-02-25": 250
+    },
+    "speed_topbottom": {
+      "2026-02-25": "speed_wall"
+    },
+    "speed_travel": {
+      "2026-02-25": "speed_print"
+    },
+    "speed_travel_layer_0": {
+      "2026-02-25": "speed_layer_0*2"
+    },
+    "speed_wall": {
+      "2026-02-25": "speed_print / 2"
+    },
+    "speed_wall_0": {
+      "2026-02-25": "speed_wall"
+    },
+    "speed_wall_x": {
+      "2026-02-25": "speed_wall + (speed_wall / 2)"
+    }
+  }
+}

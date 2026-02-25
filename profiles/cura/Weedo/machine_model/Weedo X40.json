@@ -1,0 +1,402 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Weedo X40",
+  "vendor": "Weedo",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Weedo X40"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "X40-Community.org"
+    },
+    "manufacturer": {
+      "2026-02-25": "Weedo"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "weedo_x40.3mf"
+    },
+    "exclude_materials": {
+      "2026-02-25": [
+        "generic_pc",
+        "generic_nylon",
+        "dsm_arnitel2045",
+        "dsm_novamid1070",
+        "imade3d_petg",
+        "imade3d_pla",
+        "innofill_innoflex60"
+      ]
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "has_variants": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "weedo_x40_extruder_left_0",
+        "1": "weedo_x40_extruder_right_0"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        193,
+        35
+      ]
+    },
+    "preferred_material": {
+      "2026-02-25": "generic_pla_175"
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "preferred_variant_name": {
+      "2026-02-25": "0.4mm Nozzle"
+    },
+    "variants_name": {
+      "2026-02-25": "Nozzle Type"
+    },
+    "acceleration_enabled": {
+      "2026-02-25": false
+    },
+    "acceleration_print": {
+      "2026-02-25": 1000
+    },
+    "acceleration_support": {
+      "2026-02-25": "math.ceil(acceleration_print * 2000 / 4000)"
+    },
+    "acceleration_support_interface": {
+      "2026-02-25": "acceleration_topbottom"
+    },
+    "acceleration_topbottom": {
+      "2026-02-25": "math.ceil(acceleration_print * 500 / 4000)"
+    },
+    "acceleration_travel": {
+      "2026-02-25": 2000
+    },
+    "acceleration_travel_layer_0": {
+      "2026-02-25": "acceleration_travel / 2"
+    },
+    "acceleration_wall": {
+      "2026-02-25": "math.ceil(acceleration_print * 1000 / 4000)"
+    },
+    "acceleration_wall_0": {
+      "2026-02-25": "math.ceil(acceleration_wall * 500 / 1000)"
+    },
+    "adhesion_type": {
+      "2026-02-25": "'brim'"
+    },
+    "bridge_settings_enabled": {
+      "2026-02-25": true
+    },
+    "brim_width": {
+      "2026-02-25": "8"
+    },
+    "cool_fan_full_at_height": {
+      "2026-02-25": "layer_height_0 + 2 * layer_height"
+    },
+    "cool_fan_speed": {
+      "2026-02-25": "50"
+    },
+    "cool_fan_speed_max": {
+      "2026-02-25": "100"
+    },
+    "cool_min_speed": {
+      "2026-02-25": "7"
+    },
+    "fill_outline_gaps": {
+      "2026-02-25": false
+    },
+    "gantry_height": {
+      "2026-02-25": "12"
+    },
+    "infill_before_walls": {
+      "2026-02-25": false
+    },
+    "infill_line_width": {
+      "2026-02-25": "round(line_width * 0.42 / 0.35, 2)"
+    },
+    "infill_overlap": {
+      "2026-02-25": 30.0
+    },
+    "infill_pattern": {
+      "2026-02-25": "'lines' if infill_sparse_density > 50 else 'cubic'"
+    },
+    "infill_wipe_dist": {
+      "2026-02-25": 0.0
+    },
+    "jerk_enabled": {
+      "2026-02-25": false
+    },
+    "jerk_print": {
+      "2026-02-25": 11
+    },
+    "jerk_travel": {
+      "2026-02-25": 18
+    },
+    "jerk_travel_layer_0": {
+      "2026-02-25": "jerk_travel"
+    },
+    "jerk_wall": {
+      "2026-02-25": "jerk_print - 2"
+    },
+    "layer_height_0": {
+      "2026-02-25": "round(layer_height * 1.5, 2)"
+    },
+    "machine_acceleration": {
+      "2026-02-25": 500
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 300
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "(*********end X40 End.gcode*******)\nG28 X Y F3000\nG91 ; Relative positioning\nG1 E-6 ; Reduce filament pressure\nG90 ; Absolute positioning\nG0 Y300 F3000 ; Move headbed\nM104 S0 T0 ; Cool down left extruder\nM104 S0 T1 ; Cool down right extruder\nM140 S0 ; Cool down heatbed\nM107 P0 ; Turn off left fan\nM107 P1 ; Turn off right fan\nM82; Extruder in absolute mode\nM73 P100 ; Set print progress to 100%"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -42.5,
+          18
+        ],
+        [
+          -42.5,
+          -50
+        ],
+        [
+          24.5,
+          18
+        ],
+        [
+          24.5,
+          -50.0
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 400
+    },
+    "machine_max_acceleration_e": {
+      "2026-02-25": 5000
+    },
+    "machine_max_acceleration_x": {
+      "2026-02-25": 500
+    },
+    "machine_max_acceleration_y": {
+      "2026-02-25": 500
+    },
+    "machine_max_acceleration_z": {
+      "2026-02-25": 100
+    },
+    "machine_max_feedrate_e": {
+      "2026-02-25": 50
+    },
+    "machine_max_feedrate_x": {
+      "2026-02-25": 500
+    },
+    "machine_max_feedrate_y": {
+      "2026-02-25": 500
+    },
+    "machine_max_feedrate_z": {
+      "2026-02-25": 10
+    },
+    "machine_max_jerk_e": {
+      "2026-02-25": 5
+    },
+    "machine_max_jerk_xy": {
+      "2026-02-25": 10
+    },
+    "machine_max_jerk_z": {
+      "2026-02-25": 0.4
+    },
+    "machine_min_cool_heat_time_window": {
+      "2026-02-25": 360
+    },
+    "machine_name": {
+      "2026-02-25": "Weedo X40"
+    },
+    "machine_nozzle_cool_down_speed": {
+      "2026-02-25": 0.75
+    },
+    "machine_nozzle_heat_up_speed": {
+      "2026-02-25": 1.6
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "; x40-community.org configuration Rev. 08\n;(**** start.gcode for WEEDO X40 DUAL****)\nT{initial_extruder_nr} S ; Selected start extruder\nM140 S{material_bed_temperature_layer_0} ; Preheat bed\nM109 S{material_print_temperature_layer_0}; Preheat nozzle\nM73 P0 ; Set current print progress percentage\nG21 ; Millimeter Units\nG90 ; Absolute positioning\nM82 ; Extruder in absolute mode\nT0 S ; Select left extruder\nM301 H1 P15.53 I1.32 D45.75 ; PID left extruder with Weedo X40 coolingsystem\n;M301 H1 P13.32 I0.98 D45.13 ; PID left extruder with X40 Community coolingsystem\nM92 E94.90 ; Calibrate left extruder\nT1 S ; Select right extruder\nM301 H1 P15.44 I1.29 D46.11 ; PID right extruder with Weedo X40 coolingsystem\n;M301 H1 P13.32 I0.98 D45.13 ; PID right extruder with X40 Community coolingsystem\nM92 E94.90 ; Calibrate right extruder\nT0 S ; Select left extruder\nG28 ; Auto home\nG29 ; Bed Leveling\nG1 X-47 F3000 ; Move left nozzle to parking position\nT1 S ; select right extruder\nG1 X351 F3000 ; Move right nozzle to parking position\nM107 P0 ; Turn off left fan\nM107 P1 ; Turn off right fan\nT{initial_extruder_nr} S ; Set start extruder\nM190 S{material_bed_temperature_layer_0} ; Waiting for bed temperature\nG1 E50 F100 ; Extrude in parking position\nM77 ; Stop heat up timer\nM75 ; Start print timer\n"
+    },
+    "machine_width": {
+      "2026-02-25": 300
+    },
+    "material_diameter": {
+      "2026-02-25": 1.75
+    },
+    "material_print_temp_prepend": {
+      "2026-02-25": false
+    },
+    "material_standby_temperature": {
+      "2026-02-25": "100"
+    },
+    "meshfix_maximum_resolution": {
+      "2026-02-25": "0.25"
+    },
+    "ooze_shield_dist": {
+      "2026-02-25": 3.0
+    },
+    "ooze_shield_enabled": {
+      "2026-02-25": false
+    },
+    "optimize_wall_printing_order": {
+      "2026-02-25": "True"
+    },
+    "raft_airgap": {
+      "2026-02-25": 0.22
+    },
+    "raft_base_speed": {
+      "2026-02-25": 20
+    },
+    "raft_interface_speed": {
+      "2026-02-25": 33
+    },
+    "raft_margin": {
+      "2026-02-25": 8
+    },
+    "retraction_amount": {
+      "2026-02-25": 4.5
+    },
+    "retraction_combing": {
+      "2026-02-25": "'off' if retraction_hop_enabled else 'noskin'"
+    },
+    "retraction_combing_max_distance": {
+      "2026-02-25": 30
+    },
+    "retraction_count_max": {
+      "2026-02-25": 100
+    },
+    "retraction_extrusion_window": {
+      "2026-02-25": 8
+    },
+    "retraction_hop": {
+      "2026-02-25": 0.5
+    },
+    "retraction_min_travel": {
+      "2026-02-25": 1.5
+    },
+    "retraction_speed": {
+      "2026-02-25": 28
+    },
+    "skin_overlap": {
+      "2026-02-25": 10.0
+    },
+    "speed_layer_0": {
+      "2026-02-25": "round(speed_print / 2.5, 2)"
+    },
+    "speed_print": {
+      "2026-02-25": 50.0
+    },
+    "speed_roofing": {
+      "2026-02-25": 30.0
+    },
+    "speed_support": {
+      "2026-02-25": "speed_wall_0"
+    },
+    "speed_support_bottom": {
+      "2026-02-25": 39.0
+    },
+    "speed_support_infill": {
+      "2026-02-25": 58.0
+    },
+    "speed_support_interface": {
+      "2026-02-25": "speed_print"
+    },
+    "speed_support_roof": {
+      "2026-02-25": 39.0
+    },
+    "speed_travel": {
+      "2026-02-25": "150"
+    },
+    "speed_travel_layer_0": {
+      "2026-02-25": 60
+    },
+    "speed_wall_x": {
+      "2026-02-25": "speed_wall"
+    },
+    "support_angle": {
+      "2026-02-25": 45
+    },
+    "support_fan_enable": {
+      "2026-02-25": true
+    },
+    "support_pattern": {
+      "2026-02-25": "'zigzag'"
+    },
+    "support_supported_skin_fan_speed": {
+      "2026-02-25": 100
+    },
+    "support_xy_distance": {
+      "2026-02-25": "wall_line_width_0 * 2"
+    },
+    "support_xy_distance_overhang": {
+      "2026-02-25": "wall_line_width_0"
+    },
+    "support_z_distance": {
+      "2026-02-25": "layer_height if layer_height >= 0.16 else layer_height*2"
+    },
+    "switch_extruder_retraction_amount": {
+      "2026-02-25": 0
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": "line_width * 2"
+    },
+    "travel_avoid_other_parts": {
+      "2026-02-25": true
+    },
+    "travel_avoid_supports": {
+      "2026-02-25": true
+    },
+    "travel_retract_before_outer_wall": {
+      "2026-02-25": true
+    },
+    "wall_0_wipe_dist": {
+      "2026-02-25": 0.0
+    },
+    "wall_thickness": {
+      "2026-02-25": "line_width * 2"
+    },
+    "z_seam_corner": {
+      "2026-02-25": "'z_seam_corner_weighted'"
+    },
+    "z_seam_type": {
+      "2026-02-25": "'back'"
+    }
+  }
+}

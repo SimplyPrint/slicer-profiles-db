@@ -1,0 +1,67 @@
+[
+    {
+        "vendor": "Geeetech",
+        "machine_model": {
+            "name": "Geeetech A30",
+            "version": 2,
+            "inherits": "fdmprinter",
+            "visible": true,
+            "author": "William & Cataldo URSO",
+            "manufacturer": "Geeetech",
+            "file_formats": "text/x-gcode",
+            "has_materials": true,
+            "machine_extruder_trains": {
+                "0": "geeetech_a30_extruder_0"
+            },
+            "preferred_quality_type": "draft",
+            "adhesion_type": "skirt",
+            "gantry_height": "55",
+            "layer_height": 0.1,
+            "layer_height_0": 0.3,
+            "machine_acceleration": 2000,
+            "machine_center_is_zero": false,
+            "machine_depth": 320,
+            "machine_end_gcode": "M104 S0;Cooling the heat end\nM140 S0;Cooling the heat bed\nG92 E1\nG1 E-1 F300\nG28 X0 Y0;Home X axis and Y axis\nM84",
+            "machine_gcode_flavor": "Repetier",
+            "machine_head_with_fans_polygon": [
+                [
+                    -75,
+                    35
+                ],
+                [
+                    18,
+                    35
+                ],
+                [
+                    18,
+                    -18
+                ],
+                [
+                    -75,
+                    -18
+                ]
+            ],
+            "machine_heated_bed": true,
+            "machine_height": 420,
+            "machine_max_acceleration_e": 10000,
+            "machine_max_acceleration_x": 2000,
+            "machine_max_acceleration_y": 2000,
+            "machine_max_acceleration_z": 100,
+            "machine_max_feedrate_e": 50,
+            "machine_max_feedrate_x": 300,
+            "machine_max_feedrate_y": 300,
+            "machine_max_feedrate_z": 7,
+            "machine_max_jerk_e": 5,
+            "machine_max_jerk_xy": 10,
+            "machine_max_jerk_z": 1,
+            "machine_name": "Geeetech A30",
+            "machine_nozzle_size": 0.4,
+            "machine_start_gcode": "G28 ;Home\nM190 S{material_bed_temperature}\nM109 S{material_print_temperature} T0\nG1 Z15.0 F6000 ;Move the platform down 15mm\nG92 E0\nG1 F200 E3\nG92 E0",
+            "machine_width": 320,
+            "material_diameter": 1.75,
+            "retraction_amount": 2,
+            "retraction_speed": 25
+        },
+        "variants": {}
+    }
+]

@@ -1,0 +1,284 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "filament",
+  "name": "Prusament PETG @CORE One",
+  "vendor": "Prusa",
+  "first_seen": "2.3.1",
+  "last_seen": "2.3.1",
+  "filament_id": "Prusament PETG @CORE One",
+  "setting_id": "GFSA04",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.3.1": "filament"
+    },
+    "name": {
+      "2.3.1": "Prusament PETG @CORE One"
+    },
+    "from": {
+      "2.3.1": "system"
+    },
+    "instantiation": {
+      "2.3.1": "true"
+    },
+    "cool_plate_temp": {
+      "2.3.1": [
+        "60"
+      ]
+    },
+    "eng_plate_temp": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "hot_plate_temp": {
+      "2.3.1": [
+        "85"
+      ]
+    },
+    "cool_plate_temp_initial_layer": {
+      "2.3.1": [
+        "60"
+      ]
+    },
+    "eng_plate_temp_initial_layer": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "hot_plate_temp_initial_layer": {
+      "2.3.1": [
+        "85"
+      ]
+    },
+    "overhang_fan_threshold": {
+      "2.3.1": [
+        "95%"
+      ]
+    },
+    "overhang_fan_speed": {
+      "2.3.1": [
+        "60"
+      ]
+    },
+    "slow_down_for_layer_cooling": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "close_fan_the_first_x_layers": {
+      "2.3.1": [
+        "3"
+      ]
+    },
+    "filament_end_gcode": {
+      "2.3.1": [
+        "; Filament-specific end gcode"
+      ]
+    },
+    "filament_flow_ratio": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "reduce_fan_stop_start_freq": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "fan_cooling_layer_time": {
+      "2.3.1": [
+        "25"
+      ]
+    },
+    "filament_cost": {
+      "2.3.1": [
+        "29.99"
+      ]
+    },
+    "filament_density": {
+      "2.3.1": [
+        "1.27"
+      ]
+    },
+    "filament_deretraction_speed": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_diameter": {
+      "2.3.1": [
+        "1.75"
+      ]
+    },
+    "filament_max_volumetric_speed": {
+      "2.3.1": [
+        "12"
+      ]
+    },
+    "filament_minimal_purge_on_wipe_tower": {
+      "2.3.1": [
+        "35"
+      ]
+    },
+    "filament_retraction_minimum_travel": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_retract_before_wipe": {
+      "2.3.1": [
+        "20"
+      ]
+    },
+    "filament_retract_when_changing_layer": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_retraction_length": {
+      "2.3.1": [
+        "0.8"
+      ]
+    },
+    "filament_z_hop": {
+      "2.3.1": [
+        "1.5"
+      ]
+    },
+    "filament_retract_restart_extra": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_retraction_speed": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_settings_id": {
+      "2.3.1": [
+        ""
+      ]
+    },
+    "filament_soluble": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "filament_type": {
+      "2.3.1": [
+        "PETG"
+      ]
+    },
+    "filament_vendor": {
+      "2.3.1": [
+        "Prusa Polymers"
+      ]
+    },
+    "filament_wipe": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "filament_wipe_distance": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "bed_type": {
+      "2.3.1": [
+        "Cool Plate"
+      ]
+    },
+    "nozzle_temperature_initial_layer": {
+      "2.3.1": [
+        "250"
+      ]
+    },
+    "full_fan_speed_layer": {
+      "2.3.1": [
+        "5"
+      ]
+    },
+    "fan_max_speed": {
+      "2.3.1": [
+        "60"
+      ]
+    },
+    "fan_min_speed": {
+      "2.3.1": [
+        "30"
+      ]
+    },
+    "slow_down_min_speed": {
+      "2.3.1": [
+        "15"
+      ]
+    },
+    "slow_down_layer_time": {
+      "2.3.1": [
+        "9"
+      ]
+    },
+    "filament_start_gcode": {
+      "2.3.1": [
+        "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.053{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.032{elsif nozzle_diameter[filament_extruder_id]==0.8}0.018{elsif nozzle_diameter[filament_extruder_id]==0.25}0.18{elsif nozzle_diameter[filament_extruder_id]==0.3}0.1{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+      ]
+    },
+    "nozzle_temperature": {
+      "2.3.1": [
+        "250"
+      ]
+    },
+    "temperature_vitrification": {
+      "2.3.1": [
+        "80"
+      ]
+    },
+    "filament_id": {
+      "2.3.1": "Prusament PETG @CORE One"
+    },
+    "idle_temperature": {
+      "2.3.1": [
+        "130"
+      ]
+    },
+    "nozzle_temperature_range_low": {
+      "2.3.1": [
+        "220"
+      ]
+    },
+    "nozzle_temperature_range_high": {
+      "2.3.1": [
+        "260"
+      ]
+    },
+    "setting_id": {
+      "2.3.1": "GFSA04"
+    },
+    "chamber_temperature": {
+      "2.3.1": [
+        "35"
+      ]
+    },
+    "compatible_printers": {
+      "2.3.1": [
+        "Prusa CORE One 0.25 nozzle",
+        "Prusa CORE One 0.3 nozzle",
+        "Prusa CORE One 0.4 nozzle",
+        "Prusa CORE One 0.5 nozzle"
+      ]
+    },
+    "filament_notes": {
+      "2.3.1": [
+        ""
+      ]
+    },
+    "filament_z_hop_types": {
+      "2.3.1": [
+        "Slope Lift"
+      ]
+    }
+  }
+}

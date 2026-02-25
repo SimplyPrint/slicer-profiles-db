@@ -1,0 +1,234 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Modix Base Printer",
+  "vendor": "Modix",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Modix Base Printer"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "author": {
+      "2026-02-25": "Modix"
+    },
+    "manufacturer": {
+      "2026-02-25": "Modix"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "has_variants": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "modix_v4_extruder_0",
+        "1": "modix_v4_extruder_1"
+      }
+    },
+    "preferred_variant_name": {
+      "2026-02-25": "0.4 mm Nozzle"
+    },
+    "variants_name": {
+      "2026-02-25": "Nozzle Size"
+    },
+    "adhesion_type": {
+      "2026-02-25": "skirt"
+    },
+    "cool_fan_full_at_height": {
+      "2026-02-25": "layer_height_0 + 2 * layer_height"
+    },
+    "fill_outline_gaps": {
+      "2026-02-25": false
+    },
+    "gantry_height": {
+      "2026-02-25": "90.0"
+    },
+    "infill_before_walls": {
+      "2026-02-25": false
+    },
+    "infill_overlap": {
+      "2026-02-25": 30.0
+    },
+    "infill_pattern": {
+      "2026-02-25": "'cubic'"
+    },
+    "infill_sparse_density": {
+      "2026-02-25": "15"
+    },
+    "layer_height_0": {
+      "2026-02-25": "round(machine_nozzle_size / 2, 1)"
+    },
+    "line_width": {
+      "2026-02-25": "machine_nozzle_size * 1.05"
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M83 ; extruder relative moves \nG1 E-5 F2700 ;retract a bit \nG10 P0 S0 R0 ; turn off extruder 0 \nM106 S0 ; turn off fans \nT-1 P0 ; deselect any tools \nG4 P1 ; dwell 1ms \nG91 ;relative positioning \nG1 Z2 F500 ; Move print head up 2mm \nG90 ; absolute positioning \nG1 X{move.axes[0].min+2} Y{move.axes[1].max-2} F6000 ; move to the back left \nM84 ; disable motors"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (RepRap)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -100,
+          30
+        ],
+        [
+          -100,
+          65
+        ],
+        [
+          30,
+          -105
+        ],
+        [
+          -31,
+          -100
+        ]
+      ]
+    },
+    "machine_name": {
+      "2026-02-25": "Modix Base Printer"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G28 ; home all axes"
+    },
+    "material_diameter": {
+      "2026-02-25": 1.75
+    },
+    "material_final_print_temperature": {
+      "2026-02-25": "material_print_temperature"
+    },
+    "material_initial_print_temperature": {
+      "2026-02-25": "material_print_temperature"
+    },
+    "minimum_interface_area": {
+      "2026-02-25": 10
+    },
+    "minimum_support_area": {
+      "2026-02-25": "2 if support_structure == 'normal' else 0"
+    },
+    "optimize_wall_printing_order": {
+      "2026-02-25": "True"
+    },
+    "retraction_amount": {
+      "2026-02-25": 1
+    },
+    "retraction_combing": {
+      "2026-02-25": "'off' if retraction_hop_enabled else 'infill'"
+    },
+    "retraction_combing_max_distance": {
+      "2026-02-25": 5
+    },
+    "retraction_count_max": {
+      "2026-02-25": 50
+    },
+    "retraction_extrusion_window": {
+      "2026-02-25": 1
+    },
+    "retraction_hop": {
+      "2026-02-25": 2
+    },
+    "retraction_hop_enabled": {
+      "2026-02-25": "support_enable"
+    },
+    "retraction_prime_speed": {
+      "2026-02-25": 40
+    },
+    "retraction_retract_speed": {
+      "2026-02-25": 40
+    },
+    "retraction_speed": {
+      "2026-02-25": 40
+    },
+    "skin_overlap": {
+      "2026-02-25": 10.0
+    },
+    "skirt_brim_minimal_length": {
+      "2026-02-25": 200
+    },
+    "skirt_gap": {
+      "2026-02-25": 5.0
+    },
+    "skirt_line_count": {
+      "2026-02-25": 3
+    },
+    "speed_layer_0": {
+      "2026-02-25": 20.0
+    },
+    "speed_prime_tower": {
+      "2026-02-25": "speed_topbottom"
+    },
+    "speed_support": {
+      "2026-02-25": "speed_wall_0"
+    },
+    "speed_support_interface": {
+      "2026-02-25": "speed_topbottom"
+    },
+    "speed_travel": {
+      "2026-02-25": 250.0
+    },
+    "speed_wall_x": {
+      "2026-02-25": "speed_wall"
+    },
+    "speed_z_hop": {
+      "2026-02-25": 5
+    },
+    "support_angle": {
+      "2026-02-25": 55
+    },
+    "support_brim_enable": {
+      "2026-02-25": true
+    },
+    "support_brim_width": {
+      "2026-02-25": 5
+    },
+    "support_infill_rate": {
+      "2026-02-25": "0 if support_enable and support_structure == 'tree' else 15"
+    },
+    "support_interface_density": {
+      "2026-02-25": 40
+    },
+    "support_interface_enable": {
+      "2026-02-25": true
+    },
+    "support_interface_height": {
+      "2026-02-25": "layer_height * 3"
+    },
+    "support_xy_distance": {
+      "2026-02-25": "wall_line_width_0 * 2"
+    },
+    "support_xy_distance_overhang": {
+      "2026-02-25": "wall_line_width_0"
+    },
+    "support_z_distance": {
+      "2026-02-25": "layer_height if layer_height >= 0.2 else layer_height * 2"
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": "layer_height_0 + layer_height * 3"
+    },
+    "travel_avoid_supports": {
+      "2026-02-25": true
+    },
+    "travel_retract_before_outer_wall": {
+      "2026-02-25": true
+    },
+    "wall_thickness": {
+      "2026-02-25": "line_width * 2"
+    },
+    "z_seam_corner": {
+      "2026-02-25": "'z_seam_corner_weighted'"
+    }
+  }
+}

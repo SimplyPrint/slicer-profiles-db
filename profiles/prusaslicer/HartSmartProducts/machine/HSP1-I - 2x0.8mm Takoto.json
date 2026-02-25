@@ -1,0 +1,208 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "HSP1-I - 2x0.8mm Takoto",
+  "vendor": "HartSmartProducts",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "autoemit_temperature_commands": {
+      "3.0.0": "0"
+    },
+    "color_change_gcode": {
+      "3.0.0": "M600"
+    },
+    "gcode_flavor": {
+      "3.0.0": "reprapfirmware"
+    },
+    "high_current_on_filament_swap": {
+      "3.0.0": "0"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "time_estimate_only"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "2400"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "5000"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "5000"
+    },
+    "machine_max_acceleration_travel": {
+      "3.0.0": "5000"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "5000"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "5000"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "300"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "100"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "500"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "500"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "15"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "4"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "4"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "2.5"
+    },
+    "max_print_height": {
+      "3.0.0": "1000"
+    },
+    "parking_pos_retraction": {
+      "3.0.0": "92"
+    },
+    "pause_print_gcode": {
+      "3.0.0": "M226"
+    },
+    "remaining_times": {
+      "3.0.0": "1"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "thumbnails": {
+      "3.0.0": "256x256/QOI"
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "1"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "90"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "95"
+    },
+    "default_filament_profile": {
+      "3.0.0": "Layer Line Engineering PLA @HSP1"
+    },
+    "end_gcode": {
+      "3.0.0": "; Stop the print\\nM0\\n\\n;NUM_LAYERS:[total_layer_count]\\n"
+    },
+    "before_layer_gcode": {
+      "3.0.0": ";LAYER:[layer_num]"
+    },
+    "printer_model": {
+      "3.0.0": "HSP1-I"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,650x0,650x640,0x640"
+    },
+    "extruder_colour": {
+      "3.0.0": "#FFFF00;#FF00FF"
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0,0x0"
+    },
+    "wipe": {
+      "3.0.0": "1,1"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "50%,50%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1,1"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "2,2"
+    },
+    "retract_lift": {
+      "3.0.0": "0.4,0.4"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0,0"
+    },
+    "retract_lift_below": {
+      "3.0.0": "0,0"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0,0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0,0"
+    },
+    "retract_speed": {
+      "3.0.0": "35,35"
+    },
+    "deretract_speed": {
+      "3.0.0": "0,0"
+    },
+    "toolchange_gcode": {
+      "3.0.0": "T{next_extruder}\\nM116 P{next_extruder} S5"
+    },
+    "layer_gcode": {
+      "3.0.0": "{if layer_num == 1}M140 S{max((is_extruder_used[0]? bed_temperature[0]:0),(is_extruder_used[1]? bed_temperature[1]:0))}{endif}"
+    },
+    "printer_notes": {
+      "3.0.0": ";Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_HSP\\nPRINTER_MODEL_HSP1-I\\n"
+    },
+    "start_gcode": {
+      "3.0.0": "; Run nozzle diameter and filament check\\nM98 P{\"{directories.system^\\\\\"/System Macros/Config Checks/nozzle_check.g\\\\\"}\"} {if is_extruder_used[0]}L{nozzle_diameter[0]}{endif} {if is_extruder_used[1]}S{nozzle_diameter[1]}{endif}\\nM98 P{\"{directories.system^\\\\\"/System Macros/Config Checks/filament_check.g\\\\\"}\"} {if is_extruder_used[0]}{if filament_notes[0] == \"\"}L\"{filament_type[0]}\"{else}A\"{filament_notes[0]}\"{endif}{endif} {if is_extruder_used[1]}{if filament_notes[1] == \"\"}S\"{filament_type[1]}\"{else}B\"{filament_notes[1]}\"{endif}{endif}\\n\\n; set extruder temp\\n{if is_extruder_used[0]}M568 P0 S{first_layer_temperature[0]} R{(!is_nil(idle_temperature[0])? idle_temperature[0]:first_layer_temperature[0]-60)} A1{endif}\\n{if is_extruder_used[1]}M568 P1 S{first_layer_temperature[1]} R{(!is_nil(idle_temperature[1])? idle_temperature[1]:first_layer_temperature[1]-60)} A1{endif}\\n\\n; Set and wait for bed temp\\nM190 S{max((is_extruder_used[0]? first_layer_bed_temperature[0]:0),(is_extruder_used[1]? first_layer_bed_temperature[1]:0))}\\n\\n; Home all axes\\nG28\\n\\n; Enable mesh compensation\\nM98 P{\"{directories.system^\\\\\"/System Macros/Config Checks/load_heightmap.g\\\\\"}\"}\\n\\n; Move to starting position\\nG0 H2 X{\"{move.axes[0].min}\"} Y50 F6000\\n\\n; Select first tool\\nT{initial_extruder}\\n\\n; Move near start\\nG1 X[first_layer_print_min_0] Y[first_layer_print_min_1] Z{first_layer_height + 2.0} F12000\\n"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.2"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.6"
+    },
+    "retract_before_travel": {
+      "3.0.0": "2"
+    },
+    "printer_variant": {
+      "3.0.0": "0.8"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.8,0.8"
+    },
+    "retract_length": {
+      "3.0.0": "1,1"
+    },
+    "default_print_profile": {
+      "3.0.0": "400 Micron Standard @HSP1"
+    },
+    "printer_settings_id": {
+      "3.0.0": "HSP1-I - 2x0.8mm Takoto"
+    }
+  }
+}

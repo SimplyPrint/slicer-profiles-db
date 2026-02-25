@@ -1,0 +1,217 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "AzteQ Industrial",
+  "vendor": "TriLAB",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "bed_shape": {
+      "3.0.0": "149.529x13.0821,147.82x26.0646,144.985x38.8487,141.048x51.3372,136.037x63.435,129.99x75.05,122.955x86.0938,114.983x96.4824,106.137x106.137,96.4824x114.983,86.0938x122.955,75.05x129.99,63.435x136.037,51.3372x141.048,38.8487x144.985,26.0646x147.82,13.0821x149.529,9.19097e-15x150.1,-13.0821x149.529,-26.0646x147.82,-38.8487x144.985,-51.3372x141.048,-63.435x136.037,-75.05x129.99,-86.0938x122.955,-96.4824x114.983,-106.137x106.137,-114.983x96.4824,-122.955x86.0938,-129.99x75.05,-136.037x63.435,-141.048x51.3372,-144.985x38.8487,-147.82x26.0646,-149.529x13.0821,-150.1x1.83819e-14,-149.529x-13.0821,-147.82x-26.0646,-144.985x-38.8487,-141.048x-51.3372,-136.037x-63.435,-129.99x-75.05,-122.955x-86.0938,-114.983x-96.4824,-106.137x-106.137,-96.4824x-114.983,-86.0938x-122.955,-75.05x-129.99,-63.435x-136.037,-51.3372x-141.048,-38.8487x-144.985,-26.0646x-147.82,-13.0821x-149.529,-2.75729e-14x-150.1,13.0821x-149.529,26.0646x-147.82,38.8487x-144.985,51.3372x-141.048,63.435x-136.037,75.05x-129.99,86.0938x-122.955,96.4824x-114.983,106.137x-106.137,114.983x-96.4824,122.955x-86.0938,129.99x-75.05,136.037x-63.435,141.048x-51.3372,144.985x-38.8487,147.82x-26.0646,149.529x-13.0821,150.1x-3.67639e-14"
+    },
+    "before_layer_gcode": {
+      "3.0.0": "; BEFORE_LAYER_CHANGE\\n;[layer_z]\\nG92 E0\\n"
+    },
+    "between_objects_gcode": {
+      "3.0.0": ""
+    },
+    "cooling_tube_length": {
+      "3.0.0": "5"
+    },
+    "cooling_tube_retraction": {
+      "3.0.0": "91.5"
+    },
+    "default_filament_profile": {
+      "3.0.0": "\"Prusament ASA @AQI\""
+    },
+    "default_print_profile": {
+      "3.0.0": "0.20mm Normal @AQ"
+    },
+    "deretract_speed": {
+      "3.0.0": "0"
+    },
+    "end_gcode": {
+      "3.0.0": "; END_GCODE\\n\\nM140 S0 ; Turn off bed heater\\nM141 S0 ; Turn off chamber heater\\nM104 S0 ; Turn off hotend heater\\n\\nG28 ; Home all axes\\n\\nM107 ; Turn off layer fan\\n\\nG90 ; Absolute positioning for motion\\nM220 S100 ; Feedmultiply back to 100percent\\n\\nM84 S5 ; Disable motor hold"
+    },
+    "extra_loading_move": {
+      "3.0.0": "-2"
+    },
+    "extruder_colour": {
+      "3.0.0": "#EC626F"
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0"
+    },
+    "gcode_flavor": {
+      "3.0.0": "reprapfirmware"
+    },
+    "layer_gcode": {
+      "3.0.0": "; AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.25"
+    },
+    "max_print_height": {
+      "3.0.0": "400"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.15"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.4"
+    },
+    "parking_pos_retraction": {
+      "3.0.0": "92"
+    },
+    "printer_model": {
+      "3.0.0": "AQI"
+    },
+    "printer_notes": {
+      "3.0.0": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_TRILAB\\nPRINTER_FAMILY_AQ\\nPRINTER_MODEL_AQI"
+    },
+    "printer_settings_id": {
+      "3.0.0": "AzteQ Industrial"
+    },
+    "printer_variant": {
+      "3.0.0": "0.4"
+    },
+    "printer_vendor": {
+      "3.0.0": "TriLAB Group s.r.o."
+    },
+    "remaining_times": {
+      "3.0.0": "0"
+    },
+    "retract_before_travel": {
+      "3.0.0": "3"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "100%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1"
+    },
+    "retract_length": {
+      "3.0.0": "4"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "10"
+    },
+    "retract_lift": {
+      "3.0.0": "0.2"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0"
+    },
+    "retract_lift_below": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_speed": {
+      "3.0.0": "30"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "start_gcode": {
+      "3.0.0": "; START_GCODE\\nT0\\nM220 S100 ; Set feedmultiply back to 100 percent\\n\\nG90 ; Absolute positioning for motion\\nM83 ; Relative extruder\\nM107 ; Layer fan off\\n\\nG28 ; Home all axes\\n\\nM140 S[first_layer_bed_temperature] ; Set bed temperature\\nM104 S{if filament_type[0]=~/(ABS)?(ABST)?(PC)?(PCABS)?(PA)?(PACF)?(PAGF)?/}180{else}150{endif} ; Set hotend material specific probing temperature\\n[start_filament_gcode]\\nM190 ; Wait for bed temperature\\nM109 ; Wait for hotend probing temperature\\n\\nG32 ; Probe Z and calculate Z plane\\nG29 ; Mesh bed probe\\n\\nM104 S[first_layer_temperature] ; Set hotend printing temperature\\n\\nG1009 ; Purge hotend\\nG92 E0 ; Zero extruder"
+    },
+    "thumbnails": {
+      "3.0.0": ""
+    },
+    "toolchange_gcode": {
+      "3.0.0": ""
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "0"
+    },
+    "wipe": {
+      "3.0.0": "1"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "65"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "65"
+    },
+    "pause_print_gcode": {
+      "3.0.0": "M25"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "time_estimate_only"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "9000"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "1000"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "1000"
+    },
+    "machine_max_acceleration_travel": {
+      "3.0.0": "2000"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "2000"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "2000"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "2000"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "50"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "300"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "300"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "300"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "20"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "10"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0"
+    }
+  }
+}

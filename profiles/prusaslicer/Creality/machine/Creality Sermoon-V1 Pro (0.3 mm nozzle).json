@@ -1,0 +1,202 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "Creality Sermoon-V1 Pro (0.3 mm nozzle)",
+  "vendor": "Creality",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "before_layer_gcode": {
+      "3.0.0": ";BEFORE_LAYER_CHANGE\\nG92 E0\\n;{layer_z}\\n\\n"
+    },
+    "between_objects_gcode": {
+      "3.0.0": ""
+    },
+    "pause_print_gcode": {
+      "3.0.0": ""
+    },
+    "deretract_speed": {
+      "3.0.0": "30"
+    },
+    "extruder_colour": {
+      "3.0.0": "#FCE94F"
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0"
+    },
+    "gcode_flavor": {
+      "3.0.0": "marlin"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "remaining_times": {
+      "3.0.0": "0"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "5000"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "500"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "1000"
+    },
+    "machine_max_acceleration_travel": {
+      "3.0.0": "500"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "500"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "500"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "100"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "60"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "500"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "500"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "5"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "8"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "8"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "0.4"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "emit_to_gcode"
+    },
+    "layer_gcode": {
+      "3.0.0": ";AFTER_LAYER_CHANGE\\n;{layer_z}"
+    },
+    "max_print_height": {
+      "3.0.0": "165"
+    },
+    "printer_notes": {
+      "3.0.0": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_CREALITY\\nPRINTER_MODEL_SERMOONV1PRO\\nPRINTER_HAS_ULTRADETAIL"
+    },
+    "printer_settings_id": {
+      "3.0.0": "Creality Sermoon-V1 Pro (0.3 mm nozzle)"
+    },
+    "retract_before_travel": {
+      "3.0.0": "1"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "0%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "1"
+    },
+    "retract_lift": {
+      "3.0.0": "0"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0.2"
+    },
+    "retract_lift_below": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_speed": {
+      "3.0.0": "30"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "toolchange_gcode": {
+      "3.0.0": ""
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "1"
+    },
+    "wipe": {
+      "3.0.0": "1"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    },
+    "printer_model": {
+      "3.0.0": "SERMOONV1PRO"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "25"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "55"
+    },
+    "default_filament_profile": {
+      "3.0.0": "\"Generic PLA @CREALITY\""
+    },
+    "start_gcode": {
+      "3.0.0": "G90 ; use absolute coordinates\\nM83 ; extruder relative mode\\nM104 S{is_nil(idle_temperature[0]) ? 150 : idle_temperature[0]} ; set temporary nozzle temp to prevent oozing during homing\\nM140 S{first_layer_bed_temperature[0]} ; set final bed temp\\nG4 S30 ; allow partial nozzle warmup\\nG28 ; home all axis\\nG1 Z50 F240\\nG1 X2.0 Y10 F3000\\nM104 S{first_layer_temperature[0]} ; set final nozzle temp\\nM190 S{first_layer_bed_temperature[0]} ; wait for bed temp to stabilize\\nM109 S{first_layer_temperature[0]} ; wait for nozzle temp to stabilize\\nG1 Z0.28 F240\\nG92 E0\\nG1 X2.0 Y140 E10 F1500 ; prime the nozzle\\nG1 X2.3 Y140 F5000\\nG92 E0\\nG1 X2.3 Y10 E10 F1200 ; prime the nozzle\\nG92 E0"
+    },
+    "end_gcode": {
+      "3.0.0": "{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+2, max_print_height)} F600{endif} ; Move print bed down\\nG1 X50 Y50 F{travel_speed*60} ; move print head out of the way\\n{if max_layer_z < max_print_height-10}G1 Z{z_offset+max_print_height-10} F600{endif} ; Move print bed close to the bottom\\nM140 S0 ; turn off heatbed\\nM104 S0 ; turn off temperature\\nM107 ; turn off fan\\nM84 X Y E ; disable motors"
+    },
+    "retract_length": {
+      "3.0.0": "0.8"
+    },
+    "bed_shape": {
+      "3.0.0": "5x5,170x5,170x170,5x170"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.3"
+    },
+    "printer_variant": {
+      "3.0.0": "0.3"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.06"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.24"
+    },
+    "default_print_profile": {
+      "3.0.0": "\"0.12 mm DETAIL (0.3 mm nozzle) @CREALITY\""
+    }
+  }
+}

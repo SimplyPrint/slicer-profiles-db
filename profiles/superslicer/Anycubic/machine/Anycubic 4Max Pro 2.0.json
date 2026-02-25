@@ -1,0 +1,181 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "machine",
+  "name": "Anycubic 4Max Pro 2.0",
+  "vendor": "Anycubic",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_model": {
+      "1.4.4": "4MAXPRO20"
+    },
+    "printer_variant": {
+      "1.4.4": "0.4"
+    },
+    "printer_technology": {
+      "1.4.4": "FFF"
+    },
+    "bed_shape": {
+      "1.4.4": "0x0,270x0,270x210,0x210"
+    },
+    "color_change_gcode": {
+      "1.4.4": "M600"
+    },
+    "default_filament_profile": {
+      "1.4.4": "Generic PLA @4Max Pro 2.0"
+    },
+    "default_print_profile": {
+      "1.4.4": "0.20mm Quality @4Max Pro 2.0"
+    },
+    "deretract_speed": {
+      "1.4.4": "25"
+    },
+    "end_gcode": {
+      "1.4.4": "M104 S0 ; turn off extruder heating\\nM140 S0 ; turn off bed heating\\nM107 ; turn off fans\\nG91 ; relative positioning\\nG0 Z+0.5 ; move Z up a tiny bit\\nG90 ; absolute positioning\\nG0 X135 Y105 F{machine_max_feedrate_x[0]*60} ; move extruder to center position\\nG0 Z190.5 F{machine_max_feedrate_z[0]*60} ; lower the plattform to Z min\\nM84 ; steppers off\\nG90 ; absolute positioning\\n"
+    },
+    "extruder_offset": {
+      "1.4.4": "0x0"
+    },
+    "gcode_flavor": {
+      "1.4.4": "marlin"
+    },
+    "machine_limits_usage": {
+      "1.4.4": "time_estimate_only"
+    },
+    "machine_max_acceleration_e": {
+      "1.4.4": "5000"
+    },
+    "machine_max_acceleration_extruding": {
+      "1.4.4": "1250"
+    },
+    "machine_max_acceleration_retracting": {
+      "1.4.4": "1250"
+    },
+    "machine_max_acceleration_travel": {
+      "1.4.4": "1500"
+    },
+    "machine_max_acceleration_x": {
+      "1.4.4": "900"
+    },
+    "machine_max_acceleration_y": {
+      "1.4.4": "900"
+    },
+    "machine_max_acceleration_z": {
+      "1.4.4": "100"
+    },
+    "machine_max_feedrate_e": {
+      "1.4.4": "120"
+    },
+    "machine_max_feedrate_x": {
+      "1.4.4": "200"
+    },
+    "machine_max_feedrate_y": {
+      "1.4.4": "200"
+    },
+    "machine_max_feedrate_z": {
+      "1.4.4": "16"
+    },
+    "machine_max_jerk_e": {
+      "1.4.4": "5"
+    },
+    "machine_max_jerk_x": {
+      "1.4.4": "6"
+    },
+    "machine_max_jerk_y": {
+      "1.4.4": "6"
+    },
+    "machine_max_jerk_z": {
+      "1.4.4": "0.2"
+    },
+    "machine_min_extruding_rate": {
+      "1.4.4": "0"
+    },
+    "machine_min_travel_rate": {
+      "1.4.4": "0"
+    },
+    "max_layer_height": {
+      "1.4.4": "0.3"
+    },
+    "max_print_height": {
+      "1.4.4": "190"
+    },
+    "min_layer_height": {
+      "1.4.4": "0.07"
+    },
+    "nozzle_diameter": {
+      "1.4.4": "0.4"
+    },
+    "pause_print_gcode": {
+      "1.4.4": "M601"
+    },
+    "remaining_times": {
+      "1.4.4": "0"
+    },
+    "retract_before_travel": {
+      "1.4.4": "2"
+    },
+    "retract_before_wipe": {
+      "1.4.4": "0%"
+    },
+    "retract_layer_change": {
+      "1.4.4": "1"
+    },
+    "retract_length": {
+      "1.4.4": "2.5"
+    },
+    "retract_length_toolchange": {
+      "1.4.4": "10"
+    },
+    "retract_lift": {
+      "1.4.4": "0"
+    },
+    "retract_lift_above": {
+      "1.4.4": "0"
+    },
+    "retract_lift_below": {
+      "1.4.4": "0"
+    },
+    "retract_restart_extra": {
+      "1.4.4": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "1.4.4": "0"
+    },
+    "retract_speed": {
+      "1.4.4": "35"
+    },
+    "silent_mode": {
+      "1.4.4": "0"
+    },
+    "single_extruder_multi_material": {
+      "1.4.4": "0"
+    },
+    "start_gcode": {
+      "1.4.4": "G21 ; metric values\\nG90 ; absolute positioning\\nM82 ; set extruder to absolute mode\\nM140 S[first_layer_bed_temperature] ; set bed temp\\nG28 X0 Y0 ; home X and Y\\nG28 Z0 ; home Z\\nG1 Z30 F{machine_max_feedrate_z[0]*60} ; move Z a bit down to not blow on the bed edge while heating\\nG1 X10 F3900 ; let some space on x to prevent the filament cooling exhaust from beeing blocked by the servo motor\\nM190 S[first_layer_bed_temperature] ; wait for bed temp\\nM104 S[first_layer_temperature] ; set extruder temp\\nM106 S80 ; turn on fan to prevent air nozzle melt while heating up\\nM109 S[first_layer_temperature] ; wait for extruder temp\\nM107 ; start with the fan off\\nG28 X0 ; goto X home again\\nG92 E0 ; zero the extruded length\\nG1 Z0.2 F360 ; move plattform upwards\\n; extrude material next to the plattform (comment or remove following lines to disable)\\nG1 F180 E20 ; extrude some material next to the plattform\\nG92 E0 ; zero the extruded length\\nG1 E-[retract_length] F{retract_speed[0]*60} ; do a filament retract\\nG92 E0 ; zero the extruded length again\\nG1 X5 F3900 ; move sideways to get rid of that string\\nG1 E[retract_length] F{retract_speed[0]*60} ; do a filament deretract with retract parameters\\nG92 E0 ; zero the extruded length again\\n; draw intro line (comment or remove following lines to disable)\\nG1 X30 E5 F700 ; draw intro line\\nG92 E0 ; zero the extruded length\\nG1 E-[retract_length] F{retract_speed[0]*60} ; do a filament retract\\nG1 X40 Z2.0 ; move away from the introline\\nG92 E0 ; zero the extruded length again\\nG1 E[retract_length] F{retract_speed[0]*60} ; do a filament deretract with retract parameters\\n; end of intro line code\\nM117 Printing...\\nG5"
+    },
+    "use_firmware_retraction": {
+      "1.4.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.4.4": "0"
+    },
+    "use_volumetric_e": {
+      "1.4.4": "0"
+    },
+    "variable_layer_height": {
+      "1.4.4": "1"
+    },
+    "wipe": {
+      "1.4.4": "0"
+    },
+    "z_offset": {
+      "1.4.4": "0"
+    },
+    "printer_settings_id": {
+      "1.4.4": "Anycubic 4Max Pro 2.0"
+    }
+  }
+}

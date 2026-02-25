@@ -1,0 +1,78 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Deltacomb DC-20 Flux",
+  "vendor": "Deltacomb 3D Printers",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Deltacomb DC-20 Flux"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "deltacomb_base"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "platform": {
+      "2026-02-25": "deltacomb_dc20.stl"
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "deltacomb_dc20flux_extruder_0",
+        "1": "deltacomb_dc20flux_extruder_1",
+        "2": "deltacomb_dc20flux_extruder_2",
+        "3": "deltacomb_dc20flux_extruder_3"
+      }
+    },
+    "preferred_variant_name": {
+      "2026-02-25": "FBE 0.40mm"
+    },
+    "quality_definition": {
+      "2026-02-25": "deltacomb_base"
+    },
+    "machine_depth": {
+      "2026-02-25": 190
+    },
+    "machine_end_gcode": {
+      "2026-02-25": ";---------------------------------------\n;Deltacomb end script\n;---------------------------------------\nG91 ;relative positioning\nG1 X8.0 E-10 F6000 ;wipe filament+material retraction\nG1 Z2 E9 ;Lift and start filament shaping\nG1 E-9\nG1 E8\nG1 E-8\nG1 E-10 F110\nG1 E-40 F5000 ; move to park position\nG28 ;home all axes (max endstops)\nM84 ;steppers off"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_height": {
+      "2026-02-25": 250
+    },
+    "machine_name": {
+      "2026-02-25": "Deltacomb DC-20 FLUX"
+    },
+    "machine_width": {
+      "2026-02-25": 190
+    },
+    "material_final_print_temperature": {
+      "2026-02-25": "material_print_temperature"
+    },
+    "material_initial_print_temperature": {
+      "2026-02-25": "material_print_temperature"
+    },
+    "material_standby_temperature": {
+      "2026-02-25": "material_print_temperature"
+    },
+    "prime_tower_enable": {
+      "2026-02-25": true
+    },
+    "prime_tower_min_volume": {
+      "2026-02-25": "50"
+    },
+    "switch_extruder_retraction_amount": {
+      "2026-02-25": "0"
+    }
+  }
+}

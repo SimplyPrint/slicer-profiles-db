@@ -1,0 +1,267 @@
+{
+  "slicer": "elegooslicer",
+  "profile_type": "machine",
+  "name": "VS30SC (0.4 nozzle)",
+  "vendor": "Volumic",
+  "first_seen": "1.3.0.11",
+  "last_seen": "1.3.0.11",
+  "filament_id": null,
+  "setting_id": "GM001",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "1.3.0.11": "machine"
+    },
+    "name": {
+      "1.3.0.11": "VS30SC (0.4 nozzle)"
+    },
+    "from": {
+      "1.3.0.11": "system"
+    },
+    "instantiation": {
+      "1.3.0.11": "true"
+    },
+    "gcode_flavor": {
+      "1.3.0.11": "marlin"
+    },
+    "emit_machine_limits_to_gcode": {
+      "1.3.0.11": [
+        "0"
+      ]
+    },
+    "printer_settings_id": {
+      "1.3.0.11": ""
+    },
+    "printer_technology": {
+      "1.3.0.11": "FFF"
+    },
+    "printer_variant": {
+      "1.3.0.11": "0.4"
+    },
+    "retract_before_wipe": {
+      "1.3.0.11": [
+        "70%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "1.3.0.11": [
+        "1"
+      ]
+    },
+    "retract_length_toolchange": {
+      "1.3.0.11": [
+        "6"
+      ]
+    },
+    "z_hop": {
+      "1.3.0.11": [
+        "0"
+      ]
+    },
+    "retraction_minimum_travel": {
+      "1.3.0.11": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "1.3.0.11": [
+        "2.4"
+      ]
+    },
+    "retraction_speed": {
+      "1.3.0.11": [
+        "30"
+      ]
+    },
+    "silent_mode": {
+      "1.3.0.11": "0"
+    },
+    "machine_max_acceleration_e": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "1.3.0.11": [
+        "2000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "1.3.0.11": [
+        "2000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "1.3.0.11": [
+        "50"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_speed_e": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_speed_x": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_speed_y": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_speed_z": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "single_extruder_multi_material": {
+      "1.3.0.11": "1"
+    },
+    "change_filament_gcode": {
+      "1.3.0.11": "M600"
+    },
+    "machine_pause_gcode": {
+      "1.3.0.11": "M601"
+    },
+    "wipe": {
+      "1.3.0.11": [
+        "1"
+      ]
+    },
+    "default_filament_profile": {
+      "1.3.0.11": [
+        "Volumic UNIVERSAL Ultra"
+      ]
+    },
+    "bed_exclude_area": {
+      "1.3.0.11": [
+        "0x0"
+      ]
+    },
+    "scan_first_layer": {
+      "1.3.0.11": "0"
+    },
+    "nozzle_type": {
+      "1.3.0.11": "undefine"
+    },
+    "machine_start_gcode": {
+      "1.3.0.11": "M117 Demarrage\nM106 S0\nM140 S[first_layer_bed_temperature]\nM104 T0 S[first_layer_temperature]\nG28\nG90\nM82\nG92 E0\nG1 Z5 F600\nG1 X1 Y199 F6000\nM109 T0 S[first_layer_temperature]\nM300 P350\nG92 E0\nM117 Impression"
+    },
+    "machine_end_gcode": {
+      "1.3.0.11": "M107\nM104 S0\nM140 S0\nG0 X1 Y199 F5000\nM84\nM300"
+    },
+    "before_layer_change_gcode": {
+      "1.3.0.11": "G92 E0"
+    },
+    "setting_id": {
+      "1.3.0.11": "GM001"
+    },
+    "printer_model": {
+      "1.3.0.11": "VS30SC"
+    },
+    "default_print_profile": {
+      "1.3.0.11": "Normal speed - 0.15mm"
+    },
+    "host_type": {
+      "1.3.0.11": "esp3d"
+    },
+    "print_host": {
+      "1.3.0.11": "192.168.0.60"
+    },
+    "nozzle_diameter": {
+      "1.3.0.11": [
+        "0.4"
+      ]
+    },
+    "printable_area": {
+      "1.3.0.11": [
+        "0x0",
+        "300x0",
+        "300x200",
+        "0x200"
+      ]
+    },
+    "printable_height": {
+      "1.3.0.11": "300"
+    },
+    "auxiliary_fan": {
+      "1.3.0.11": "0"
+    },
+    "max_layer_height": {
+      "1.3.0.11": [
+        "0.3"
+      ]
+    },
+    "min_layer_height": {
+      "1.3.0.11": [
+        "0.025"
+      ]
+    },
+    "deretraction_speed": {
+      "1.3.0.11": [
+        "30"
+      ]
+    }
+  }
+}

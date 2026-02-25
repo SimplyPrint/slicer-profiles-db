@@ -1,0 +1,104 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Vertex K8600",
+  "vendor": "Velleman N.V.",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Vertex K8600"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "manufacturer": {
+      "2026-02-25": "Velleman N.V."
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "vertex_nano_k8600_extruder_0"
+      }
+    },
+    "supported_actions": {
+      "2026-02-25": [
+        "MachineSettingsAction"
+      ]
+    },
+    "supports_usb_connection": {
+      "2026-02-25": true
+    },
+    "infill_line_width": {
+      "2026-02-25": 0.35
+    },
+    "infill_overlap": {
+      "2026-02-25": 5
+    },
+    "infill_sparse_density": {
+      "2026-02-25": 40
+    },
+    "line_width": {
+      "2026-02-25": 0.35
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 80
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "; Vertex Nano end G-Code G91 ; Relative positioning T0 G1 E-1 F1500; Reduce filament pressure M104 T0 S0 G90 ; Absolute positioning G92 E0 ; Reset extruder position G28 M84 ; Turn steppers off"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_heated_bed": {
+      "2026-02-25": false
+    },
+    "machine_height": {
+      "2026-02-25": 75
+    },
+    "machine_name": {
+      "2026-02-25": "Vertex K8600"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "; Vertex Nano Start G-code M0 is my nozzle clean M400 G28 ; Home extruder G90 ; Absolute positioning M82 ; Extruder in absolute mode M104 T0 S{material_print_temperature} G92 E0 ; Reset extruder position G1 Z1 F800 M109 T0 S{material_print_temperature} M117 Priming nozzle... M83 G1 E20 F100 ; purge/prime nozzle M82 G92 E0 ; Reset extruder position G4 S3 ; Wait 3 seconds G1 Z5 F2000 M117 Vertex Nano is printing"
+    },
+    "machine_width": {
+      "2026-02-25": 80
+    },
+    "min_infill_area": {
+      "2026-02-25": 0.1
+    },
+    "retract_at_layer_change": {
+      "2026-02-25": true
+    },
+    "retraction_count_max": {
+      "2026-02-25": 15
+    },
+    "retraction_extrusion_window": {
+      "2026-02-25": 1
+    },
+    "retraction_min_travel": {
+      "2026-02-25": 1
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": 0.6
+    },
+    "wall_thickness": {
+      "2026-02-25": "0.7"
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "filament",
+  "name": "Filatech FilaPLA @COREONE HF0.6",
+  "vendor": "PrusaResearch",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "cooling": {
+      "3.0.0": "1"
+    },
+    "compatible_printers": {
+      "3.0.0": ""
+    },
+    "compatible_printers_condition": {
+      "3.0.0": "printer_model=~/(COREONE|COREONEMMU3|COREONEL|COREONELMMU3)/ and nozzle_diameter[0]==0.6 and nozzle_high_flow[0]"
+    },
+    "end_filament_gcode": {
+      "3.0.0": "\"; Filament-specific end gcode\""
+    },
+    "extrusion_multiplier": {
+      "3.0.0": "1"
+    },
+    "filament_loading_speed": {
+      "3.0.0": "10"
+    },
+    "filament_loading_speed_start": {
+      "3.0.0": "50"
+    },
+    "filament_unloading_speed": {
+      "3.0.0": "100"
+    },
+    "filament_unloading_speed_start": {
+      "3.0.0": "100"
+    },
+    "filament_toolchange_delay": {
+      "3.0.0": "0"
+    },
+    "filament_cooling_moves": {
+      "3.0.0": "2"
+    },
+    "filament_cooling_initial_speed": {
+      "3.0.0": "10"
+    },
+    "filament_cooling_final_speed": {
+      "3.0.0": "1.5"
+    },
+    "filament_load_time": {
+      "3.0.0": "10.9"
+    },
+    "filament_unload_time": {
+      "3.0.0": "8.9"
+    },
+    "filament_ramming_parameters": {
+      "3.0.0": "\"250 100 39.871 39.871| 0.05 39.9547 0.45 39.9547 0.95 39.9547 1.45 39.9547 1.95 39.9547 2.45 39.9547 2.95 39.9547 3.45 39.9547 3.95 39.9547 4.45 39.9547 4.95 39.9547\""
+    },
+    "filament_minimal_purge_on_wipe_tower": {
+      "3.0.0": "15"
+    },
+    "filament_cost": {
+      "3.0.0": ""
+    },
+    "filament_density": {
+      "3.0.0": "1.3"
+    },
+    "filament_diameter": {
+      "3.0.0": "1.75"
+    },
+    "filament_notes": {
+      "3.0.0": "\"\""
+    },
+    "filament_settings_id": {
+      "3.0.0": "Filatech FilaPLA @COREONE HF0.6"
+    },
+    "filament_soluble": {
+      "3.0.0": "0"
+    },
+    "min_print_speed": {
+      "3.0.0": "15"
+    },
+    "slowdown_below_layer_time": {
+      "3.0.0": "15"
+    },
+    "start_filament_gcode": {
+      "3.0.0": "\"M572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.036{elsif nozzle_diameter[filament_extruder_id]==0.5}0.026{elsif nozzle_diameter[filament_extruder_id]==0.6}0.022{elsif nozzle_diameter[filament_extruder_id]==0.8}0.015{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.08{else}0{endif} ; Filament gcode\\n\\nM142 S36 ; set heatbreak target temp\""
+    },
+    "bed_temperature": {
+      "3.0.0": "55"
+    },
+    "bridge_fan_speed": {
+      "3.0.0": "100"
+    },
+    "disable_fan_first_layers": {
+      "3.0.0": "1"
+    },
+    "full_fan_speed_layer": {
+      "3.0.0": "3"
+    },
+    "fan_always_on": {
+      "3.0.0": "1"
+    },
+    "fan_below_layer_time": {
+      "3.0.0": "40"
+    },
+    "filament_colour": {
+      "3.0.0": "#FF8000"
+    },
+    "filament_max_volumetric_speed": {
+      "3.0.0": "30"
+    },
+    "filament_type": {
+      "3.0.0": "PLA"
+    },
+    "first_layer_bed_temperature": {
+      "3.0.0": "50"
+    },
+    "first_layer_temperature": {
+      "3.0.0": "235"
+    },
+    "max_fan_speed": {
+      "3.0.0": "100"
+    },
+    "min_fan_speed": {
+      "3.0.0": "85"
+    },
+    "temperature": {
+      "3.0.0": "225"
+    },
+    "filament_vendor": {
+      "3.0.0": "Filatech"
+    },
+    "idle_temperature": {
+      "3.0.0": "170"
+    },
+    "filament_travel_ramping_lift": {
+      "3.0.0": "1"
+    },
+    "filament_travel_max_lift": {
+      "3.0.0": "0.6"
+    },
+    "filament_travel_slope": {
+      "3.0.0": "1"
+    },
+    "filament_infill_max_speed": {
+      "3.0.0": "0"
+    },
+    "filament_infill_max_crossing_speed": {
+      "3.0.0": "0"
+    },
+    "cooling_slowdown_logic": {
+      "3.0.0": "consistent_surface"
+    },
+    "cooling_perimeter_transition_distance": {
+      "3.0.0": "10"
+    },
+    "filament_purge_multiplier": {
+      "3.0.0": "81.25%"
+    },
+    "filament_stamping_distance": {
+      "3.0.0": "45"
+    },
+    "filament_stamping_loading_speed": {
+      "3.0.0": "29"
+    },
+    "enable_dynamic_fan_speeds": {
+      "3.0.0": "1"
+    },
+    "overhang_fan_speed_0": {
+      "3.0.0": "100"
+    },
+    "overhang_fan_speed_1": {
+      "3.0.0": "100"
+    },
+    "chamber_temperature": {
+      "3.0.0": "20"
+    },
+    "chamber_minimal_temperature": {
+      "3.0.0": "0"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Innovo Inventor",
+  "vendor": "Innovo",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Innovo Inventor"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Adam Rumjahn"
+    },
+    "manufacturer": {
+      "2026-02-25": "Innovo"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "inventor_platform.3mf"
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "innovo_inventor_extruder_0"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        -180,
+        -0.25,
+        160
+      ]
+    },
+    "gantry_height": {
+      "2026-02-25": "82.3"
+    },
+    "layer_height": {
+      "2026-02-25": 0.15
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": true
+    },
+    "machine_depth": {
+      "2026-02-25": 300
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 S0 ; turn off extruders\nM140 S0 ; heated bed heater off\nG91 ; relative positioning\nG1 E-2 F5000; retract 2mm\nG28 Z; move bed down\nG90 ; absolute positioning\nM84   ; disable motors"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -43.7,
+          -19.2
+        ],
+        [
+          -43.7,
+          55
+        ],
+        [
+          43.7,
+          55
+        ],
+        [
+          43.7,
+          -19.2
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 290
+    },
+    "machine_name": {
+      "2026-02-25": "Innovo INVENTOR"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G28 ; Home extruder\nM107 ; Turn off fan\nG90 ; Absolute positioning\nM82 ; Extruder in absolute mode\nM190 S{material_bed_temperature}\nM104 T0 S{material_print_temperature}\nM109 T0 S{material_print_temperature}\nM104 T1 S{material_print_temperature}\nM109 T1 S{material_print_temperature}\n;G32 S3 ; auto level\nG92 E0 ; Reset extruder position"
+    },
+    "machine_width": {
+      "2026-02-25": 340
+    },
+    "speed_print": {
+      "2026-02-25": 50
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": 1.2
+    },
+    "wall_thickness": {
+      "2026-02-25": "0.8"
+    }
+  }
+}

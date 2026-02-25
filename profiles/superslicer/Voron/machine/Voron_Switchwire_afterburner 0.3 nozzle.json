@@ -1,0 +1,205 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "machine",
+  "name": "Voron_Switchwire_afterburner 0.3 nozzle",
+  "vendor": "Voron",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "1.4.4": "FFF"
+    },
+    "before_layer_gcode": {
+      "1.4.4": ";BEFORE_LAYER_CHANGE\\n;[layer_z]\\n\\n"
+    },
+    "between_objects_gcode": {
+      "1.4.4": ""
+    },
+    "deretract_speed": {
+      "1.4.4": "30"
+    },
+    "end_gcode": {
+      "1.4.4": "print_end    ;end script from macro"
+    },
+    "extruder_colour": {
+      "1.4.4": "#FFE3CA"
+    },
+    "extruder_offset": {
+      "1.4.4": "0x0"
+    },
+    "gcode_flavor": {
+      "1.4.4": "klipper"
+    },
+    "layer_gcode": {
+      "1.4.4": ";AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "machine_max_acceleration_e": {
+      "1.4.4": "10000"
+    },
+    "machine_max_acceleration_extruding": {
+      "1.4.4": "1500"
+    },
+    "machine_max_acceleration_retracting": {
+      "1.4.4": "1500"
+    },
+    "machine_max_acceleration_x": {
+      "1.4.4": "9000"
+    },
+    "machine_max_acceleration_y": {
+      "1.4.4": "9000"
+    },
+    "machine_max_acceleration_z": {
+      "1.4.4": "500"
+    },
+    "machine_max_feedrate_e": {
+      "1.4.4": "120"
+    },
+    "machine_max_feedrate_x": {
+      "1.4.4": "500"
+    },
+    "machine_max_feedrate_y": {
+      "1.4.4": "500"
+    },
+    "machine_max_feedrate_z": {
+      "1.4.4": "12"
+    },
+    "machine_max_jerk_e": {
+      "1.4.4": "2.5"
+    },
+    "machine_max_jerk_x": {
+      "1.4.4": "10"
+    },
+    "machine_max_jerk_y": {
+      "1.4.4": "10"
+    },
+    "machine_max_jerk_z": {
+      "1.4.4": "0.2"
+    },
+    "machine_min_extruding_rate": {
+      "1.4.4": "0"
+    },
+    "machine_min_travel_rate": {
+      "1.4.4": "0"
+    },
+    "machine_limits_usage": {
+      "1.4.4": "time_estimate_only"
+    },
+    "remaining_times": {
+      "1.4.4": "0"
+    },
+    "silent_mode": {
+      "1.4.4": "0"
+    },
+    "printer_notes": {
+      "1.4.4": "Unoffical profile.\\nE3DV6"
+    },
+    "printer_settings_id": {
+      "1.4.4": "Voron_Switchwire_afterburner 0.3 nozzle"
+    },
+    "retract_before_travel": {
+      "1.4.4": "3"
+    },
+    "retract_before_wipe": {
+      "1.4.4": "0%"
+    },
+    "retract_layer_change": {
+      "1.4.4": "0"
+    },
+    "retract_length": {
+      "1.4.4": "0.75"
+    },
+    "retract_length_toolchange": {
+      "1.4.4": "10"
+    },
+    "retract_lift": {
+      "1.4.4": "0.4"
+    },
+    "retract_lift_above": {
+      "1.4.4": "0.2"
+    },
+    "retract_lift_below": {
+      "1.4.4": "500"
+    },
+    "retract_restart_extra": {
+      "1.4.4": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "1.4.4": "0"
+    },
+    "retract_speed": {
+      "1.4.4": "50"
+    },
+    "single_extruder_multi_material": {
+      "1.4.4": "0"
+    },
+    "start_gcode": {
+      "1.4.4": "; M190 S0\\n; M109 S0 ; uncomment to remove set&wait temp gcode added automatically after this start gcode\\nprint_start EXTRUDER={first_layer_temperature[initial_extruder] + extruder_temperature_offset[initial_extruder]} BED=[first_layer_bed_temperature] CHAMBER=[chamber_temperature]"
+    },
+    "thumbnails": {
+      "1.4.4": "64x64,400x300"
+    },
+    "thumbnails_format": {
+      "1.4.4": "PNG"
+    },
+    "thumbnails_tag_format": {
+      "1.4.4": "0"
+    },
+    "thumbnails_with_bed": {
+      "1.4.4": "1"
+    },
+    "toolchange_gcode": {
+      "1.4.4": ""
+    },
+    "use_firmware_retraction": {
+      "1.4.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.4.4": "1"
+    },
+    "use_volumetric_e": {
+      "1.4.4": "0"
+    },
+    "variable_layer_height": {
+      "1.4.4": "1"
+    },
+    "wipe": {
+      "1.4.4": "0"
+    },
+    "z_offset": {
+      "1.4.4": "0"
+    },
+    "z_step": {
+      "1.4.4": "0.00625"
+    },
+    "default_filament_profile": {
+      "1.4.4": "Basic PLA @VORON"
+    },
+    "bed_shape": {
+      "1.4.4": "0x0,250x0,250x210,0x210"
+    },
+    "max_print_height": {
+      "1.4.4": "240"
+    },
+    "printer_model": {
+      "1.4.4": "Voron_Switchwire_afterburner"
+    },
+    "nozzle_diameter": {
+      "1.4.4": "0.3"
+    },
+    "max_layer_height": {
+      "1.4.4": "0.225"
+    },
+    "min_layer_height": {
+      "1.4.4": "0.025"
+    },
+    "printer_variant": {
+      "1.4.4": "0.3"
+    },
+    "default_print_profile": {
+      "1.4.4": "0.10mm 0.3nozzle"
+    }
+  }
+}

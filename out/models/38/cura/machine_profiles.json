@@ -1,0 +1,28 @@
+[
+    {
+        "vendor": "Flsun",
+        "machine_model": {
+            "name": "Flsun QQ",
+            "version": 2,
+            "inherits": "fdmprinter",
+            "visible": true,
+            "author": "Daniel Green",
+            "manufacturer": "Flsun",
+            "file_formats": "text/x-gcode",
+            "machine_extruder_trains": {
+                "0": "flsun_qq_extruder"
+            },
+            "machine_center_is_zero": true,
+            "machine_depth": 260,
+            "machine_end_gcode": "M104 S0\nM140 S0\n;Retract the filament\nG92 E1\nG1 E-1 F300\nG28 X0 Y0\nM84",
+            "machine_extruder_count": 1,
+            "machine_gcode_flavor": "RepRap (Marlin/Sprinter)",
+            "machine_heated_bed": true,
+            "machine_height": 285,
+            "machine_shape": "elliptic",
+            "machine_start_gcode": "G28 ;Home\nG1 Z15.0 F6000 ;Move the platform down 15mm\n;Prime the extruder\nG92 E0\nG1 F200 E3\nG92 E0",
+            "machine_width": 260
+        },
+        "variants": {}
+    }
+]

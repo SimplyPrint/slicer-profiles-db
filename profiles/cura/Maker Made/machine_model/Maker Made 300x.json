@@ -1,0 +1,420 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Maker Made 300x",
+  "vendor": "Maker Made",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Maker Made 300x"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "DragonJe"
+    },
+    "manufacturer": {
+      "2026-02-25": "Maker Made"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "has_machine_quality": {
+      "2026-02-25": false
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "has_variants": {
+      "2026-02-25": false
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "maker_made_300x_extruder_0"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        0,
+        0
+      ]
+    },
+    "preferred_material": {
+      "2026-02-25": "generic_pla"
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "acceleration_enabled": {
+      "2026-02-25": false
+    },
+    "acceleration_roofing": {
+      "2026-02-25": 3000
+    },
+    "adhesion_type": {
+      "2026-02-25": "'skirt'"
+    },
+    "alternate_extra_perimeter": {
+      "2026-02-25": false
+    },
+    "bottom_layers": {
+      "2026-02-25": 3
+    },
+    "bottom_thickness": {
+      "2026-02-25": 0.6
+    },
+    "carve_multiple_volumes": {
+      "2026-02-25": false
+    },
+    "cool_fan_enabled": {
+      "2026-02-25": true
+    },
+    "cool_fan_full_at_height": {
+      "2026-02-25": 0.32
+    },
+    "cool_fan_speed": {
+      "2026-02-25": 100
+    },
+    "cool_fan_speed_0": {
+      "2026-02-25": 0
+    },
+    "cool_lift_head": {
+      "2026-02-25": false
+    },
+    "default_material_bed_temperature": {
+      "2026-02-25": 50
+    },
+    "default_material_print_temperature": {
+      "2026-02-25": 220
+    },
+    "fill_outline_gaps": {
+      "2026-02-25": true
+    },
+    "gantry_height": {
+      "2026-02-25": "30"
+    },
+    "gradual_infill_steps": {
+      "2026-02-25": 0
+    },
+    "gradual_support_infill_steps": {
+      "2026-02-25": 0
+    },
+    "infill_before_walls": {
+      "2026-02-25": false
+    },
+    "infill_multiplier": {
+      "2026-02-25": 1
+    },
+    "infill_overlap": {
+      "2026-02-25": 10
+    },
+    "infill_sparse_density": {
+      "2026-02-25": 20
+    },
+    "infill_support_enabled": {
+      "2026-02-25": false
+    },
+    "infill_wall_line_count": {
+      "2026-02-25": 0
+    },
+    "infill_wipe_dist": {
+      "2026-02-25": 0.1
+    },
+    "initial_layer_line_width_factor": {
+      "2026-02-25": 100
+    },
+    "inset_direction": {
+      "2026-02-25": "'inside_out'"
+    },
+    "ironing_enabled": {
+      "2026-02-25": false
+    },
+    "jerk_enabled": {
+      "2026-02-25": false
+    },
+    "layer_height": {
+      "2026-02-25": 0.16
+    },
+    "layer_height_0": {
+      "2026-02-25": 0.32
+    },
+    "line_width": {
+      "2026-02-25": 0.4
+    },
+    "machine_depth": {
+      "2026-02-25": 300
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 S0\n M140 S0\n ;Retract the filament\n G92 E1\n G1 E-1 F300\n G28 X0 Y0\n G1 Y300 F3000 ;Move bed forward\n M84"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": " RepRap (Marlin/Sprinter)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -30,
+          34
+        ],
+        [
+          -30,
+          -32
+        ],
+        [
+          30,
+          -32
+        ],
+        [
+          30,
+          34
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 400
+    },
+    "machine_name": {
+      "2026-02-25": "Maker Made 300x"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G28 ;Home\n G29 ;Auto Level\n G92 E0 ;Reset Extruder\n G1 Z5.0 F3000 ;Move Z Axis up\n G1 X25 Y295.0 Z0.28 F3000.0 ;Move to extrude\n G1 X250 Y295.0 Z0.28 F1500.0 E15 ;Draw the first line\n G1 X25 Y290.0 Z0.28 F3000.0 ;Move to side a little\n G1 X250 Y290.0 Z0.28 F1500.0 E30 ;Draw the second line\n G92 E0 ;Reset Extruder\n G1 Z5.0 F3000 ;Move Z Axis up"
+    },
+    "machine_width": {
+      "2026-02-25": 300
+    },
+    "material_bed_temperature": {
+      "2026-02-25": 50
+    },
+    "material_diameter": {
+      "2026-02-25": 1.75
+    },
+    "material_final_print_temperature": {
+      "2026-02-25": 220
+    },
+    "material_flow": {
+      "2026-02-25": 100
+    },
+    "material_initial_print_temperature": {
+      "2026-02-25": 220
+    },
+    "material_print_temperature_layer_0": {
+      "2026-02-25": 220
+    },
+    "max_skin_angle_for_expansion": {
+      "2026-02-25": 90
+    },
+    "meshfix_extensive_stitching": {
+      "2026-02-25": false
+    },
+    "meshfix_keep_open_polygons": {
+      "2026-02-25": false
+    },
+    "meshfix_union_all": {
+      "2026-02-25": true
+    },
+    "meshfix_union_all_remove_holes": {
+      "2026-02-25": false
+    },
+    "multiple_mesh_overlap": {
+      "2026-02-25": "0.16"
+    },
+    "optimize_wall_printing_order": {
+      "2026-02-25": false
+    },
+    "retract_at_layer_change": {
+      "2026-02-25": false
+    },
+    "retraction_amount": {
+      "2026-02-25": 5
+    },
+    "retraction_combing": {
+      "2026-02-25": "'infill'"
+    },
+    "retraction_count_max": {
+      "2026-02-25": 90
+    },
+    "retraction_enable": {
+      "2026-02-25": true
+    },
+    "retraction_extra_prime_amount": {
+      "2026-02-25": 0
+    },
+    "retraction_extrusion_window": {
+      "2026-02-25": 5
+    },
+    "retraction_hop_enabled": {
+      "2026-02-25": false
+    },
+    "retraction_min_travel": {
+      "2026-02-25": 0.8
+    },
+    "retraction_speed": {
+      "2026-02-25": 45
+    },
+    "roofing_layer_count": {
+      "2026-02-25": 1
+    },
+    "skin_no_small_gaps_heuristic": {
+      "2026-02-25": true
+    },
+    "skin_outline_count": {
+      "2026-02-25": 1
+    },
+    "skin_overlap": {
+      "2026-02-25": 5
+    },
+    "skirt_gap": {
+      "2026-02-25": 3
+    },
+    "skirt_line_count": {
+      "2026-02-25": 2
+    },
+    "speed_layer_0": {
+      "2026-02-25": 10
+    },
+    "speed_print": {
+      "2026-02-25": 50
+    },
+    "speed_slowdown_layers": {
+      "2026-02-25": 2
+    },
+    "speed_travel": {
+      "2026-02-25": 150
+    },
+    "speed_travel_layer_0": {
+      "2026-02-25": 50
+    },
+    "support_angle": {
+      "2026-02-25": "50"
+    },
+    "support_bottom_enable": {
+      "2026-02-25": false
+    },
+    "support_bottom_stair_step_height": {
+      "2026-02-25": 0.3
+    },
+    "support_bottom_stair_step_width": {
+      "2026-02-25": 5.0
+    },
+    "support_brim_enable": {
+      "2026-02-25": true
+    },
+    "support_brim_line_count": {
+      "2026-02-25": 5
+    },
+    "support_enable": {
+      "2026-02-25": true
+    },
+    "support_fan_enable": {
+      "2026-02-25": false
+    },
+    "support_infill_rate": {
+      "2026-02-25": "15 if support_enable else 0"
+    },
+    "support_join_distance": {
+      "2026-02-25": 2.0
+    },
+    "support_offset": {
+      "2026-02-25": 0.2
+    },
+    "support_pattern": {
+      "2026-02-25": "'grid'"
+    },
+    "support_roof_density": {
+      "2026-02-25": 45
+    },
+    "support_roof_enable": {
+      "2026-02-25": true
+    },
+    "support_roof_height": {
+      "2026-02-25": 0.45
+    },
+    "support_roof_pattern": {
+      "2026-02-25": "'lines'"
+    },
+    "support_tower_diameter": {
+      "2026-02-25": 3
+    },
+    "support_tower_roof_angle": {
+      "2026-02-25": "65"
+    },
+    "support_type": {
+      "2026-02-25": "'everywhere'"
+    },
+    "support_wall_count": {
+      "2026-02-25": "1 if (support_structure == 'tree') else 0"
+    },
+    "support_xy_distance": {
+      "2026-02-25": 0.7
+    },
+    "support_xy_distance_overhang": {
+      "2026-02-25": 0.2
+    },
+    "support_z_distance": {
+      "2026-02-25": 0.2
+    },
+    "switch_extruder_retraction_amount": {
+      "2026-02-25": 16
+    },
+    "switch_extruder_retraction_speeds": {
+      "2026-02-25": 20
+    },
+    "top_bottom_pattern": {
+      "2026-02-25": "'lines'"
+    },
+    "top_bottom_pattern_0": {
+      "2026-02-25": "'lines'"
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": 0.6
+    },
+    "top_layers": {
+      "2026-02-25": 5
+    },
+    "top_thickness": {
+      "2026-02-25": 0.8
+    },
+    "travel_avoid_other_parts": {
+      "2026-02-25": true
+    },
+    "travel_retract_before_outer_wall": {
+      "2026-02-25": false
+    },
+    "wall_0_inset": {
+      "2026-02-25": 0
+    },
+    "wall_0_wipe_dist": {
+      "2026-02-25": 0.2
+    },
+    "wall_line_width_0": {
+      "2026-02-25": 0.4
+    },
+    "wall_thickness": {
+      "2026-02-25": 0.8
+    },
+    "xy_offset": {
+      "2026-02-25": 0
+    },
+    "zig_zaggify_infill": {
+      "2026-02-25": false
+    },
+    "zig_zaggify_support": {
+      "2026-02-25": false
+    }
+  }
+}

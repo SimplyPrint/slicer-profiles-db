@@ -1,0 +1,362 @@
+{
+  "slicer": "elegooslicer",
+  "profile_type": "machine",
+  "name": "FLSun Q5 0.4 nozzle",
+  "vendor": "FLSun",
+  "first_seen": "1.3.0.11",
+  "last_seen": "1.3.0.11",
+  "filament_id": null,
+  "setting_id": "GM003",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "1.3.0.11": "machine"
+    },
+    "name": {
+      "1.3.0.11": "FLSun Q5 0.4 nozzle"
+    },
+    "from": {
+      "1.3.0.11": "system"
+    },
+    "instantiation": {
+      "1.3.0.11": "true"
+    },
+    "gcode_flavor": {
+      "1.3.0.11": "marlin"
+    },
+    "machine_start_gcode": {
+      "1.3.0.11": ";STARTGCODE\nM117 Initializing\n; G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM107\nG28 ;Home\nM140 S[bed_temperature_initial_layer_single] ; set bed temp\nM190 S[bed_temperature_initial_layer_single] ; wait for bed temp\nM104 S[nozzle_temperature_initial_layer] ; set extruder temp\nM109 S[nozzle_temperature_initial_layer] ; wait for extruder temp\n\nG92 E0\nG1 X-98 Y0 Z0.2 F4000 ; move to arc start\nG3 X0 Y-98 I98 Z0.2 E40 F400 ; lay arc stripe 90deg\nG0 Z1 \nG92 E0.0\n"
+    },
+    "machine_end_gcode": {
+      "1.3.0.11": "M107\nM104 S0\nM140 S0\nG92 E1\nG1 E-1 F300\nG28 X0 Y0\n;M84\nM18 S180 ;disable motors after 180s\n"
+    },
+    "extruder_colour": {
+      "1.3.0.11": [
+        "#018001"
+      ]
+    },
+    "extruder_offset": {
+      "1.3.0.11": [
+        "0x0"
+      ]
+    },
+    "machine_max_acceleration_e": {
+      "1.3.0.11": [
+        "3000",
+        "800"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "1.3.0.11": [
+        "1500",
+        "800"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "1.3.0.11": [
+        "2000",
+        "800"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "1.3.0.11": [
+        "1500",
+        "800"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "1.3.0.11": [
+        "1500",
+        "800"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "1.3.0.11": [
+        "1500",
+        "800"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "1.3.0.11": [
+        "1500",
+        "800"
+      ]
+    },
+    "machine_max_speed_e": {
+      "1.3.0.11": [
+        "60",
+        "30"
+      ]
+    },
+    "machine_max_speed_x": {
+      "1.3.0.11": [
+        "200",
+        "150"
+      ]
+    },
+    "machine_max_speed_y": {
+      "1.3.0.11": [
+        "200",
+        "150"
+      ]
+    },
+    "machine_max_speed_z": {
+      "1.3.0.11": [
+        "200",
+        "150"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "1.3.0.11": [
+        "5",
+        "5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "1.3.0.11": [
+        "5",
+        "10"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "1.3.0.11": [
+        "5",
+        "10"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "1.3.0.11": [
+        "5",
+        "10"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "1.3.0.11": [
+        "0.32"
+      ]
+    },
+    "min_layer_height": {
+      "1.3.0.11": [
+        "0.08"
+      ]
+    },
+    "printable_height": {
+      "1.3.0.11": "200"
+    },
+    "extruder_clearance_radius": {
+      "1.3.0.11": "65"
+    },
+    "extruder_clearance_height_to_rod": {
+      "1.3.0.11": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "1.3.0.11": "140"
+    },
+    "nozzle_diameter": {
+      "1.3.0.11": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "1.3.0.11": "FLSun"
+    },
+    "printer_technology": {
+      "1.3.0.11": "FFF"
+    },
+    "printer_variant": {
+      "1.3.0.11": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "1.3.0.11": [
+        "2"
+      ]
+    },
+    "retract_before_wipe": {
+      "1.3.0.11": [
+        "70%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "1.3.0.11": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "1.3.0.11": [
+        "3"
+      ]
+    },
+    "retract_length_toolchange": {
+      "1.3.0.11": [
+        "1"
+      ]
+    },
+    "z_hop": {
+      "1.3.0.11": [
+        "0.4"
+      ]
+    },
+    "retract_restart_extra": {
+      "1.3.0.11": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "1.3.0.11": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "1.3.0.11": [
+        "30"
+      ]
+    },
+    "deretraction_speed": {
+      "1.3.0.11": [
+        "40"
+      ]
+    },
+    "silent_mode": {
+      "1.3.0.11": "0"
+    },
+    "single_extruder_multi_material": {
+      "1.3.0.11": "1"
+    },
+    "change_filament_gcode": {
+      "1.3.0.11": ""
+    },
+    "before_layer_change_gcode": {
+      "1.3.0.11": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "layer_change_gcode": {
+      "1.3.0.11": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "machine_pause_gcode": {
+      "1.3.0.11": "M400 U1\n"
+    },
+    "wipe": {
+      "1.3.0.11": [
+        "1"
+      ]
+    },
+    "z_hop_types": {
+      "1.3.0.11": "Normal Lift"
+    },
+    "setting_id": {
+      "1.3.0.11": "GM003"
+    },
+    "printer_model": {
+      "1.3.0.11": "FLSun Q5"
+    },
+    "default_print_profile": {
+      "1.3.0.11": "0.20mm Standard @FLSun Q5"
+    },
+    "thumbnails": {
+      "1.3.0.11": [
+        "260x260"
+      ]
+    },
+    "printable_area": {
+      "1.3.0.11": [
+        "99.6195x8.71557",
+        "98.4808x17.3648",
+        "96.5926x25.8819",
+        "93.9693x34.202",
+        "90.6308x42.2618",
+        "86.6025x50",
+        "81.9152x57.3576",
+        "76.6044x64.2788",
+        "70.7107x70.7107",
+        "64.2788x76.6044",
+        "57.3576x81.9152",
+        "50x86.6025",
+        "42.2618x90.6308",
+        "34.202x93.9693",
+        "25.8819x96.5926",
+        "17.3648x98.4808",
+        "8.71557x99.6195",
+        "6.12323e-15x100",
+        "-8.71557x99.6195",
+        "-17.3648x98.4808",
+        "-25.8819x96.5926",
+        "-34.202x93.9693",
+        "-42.2618x90.6308",
+        "-50x86.6025",
+        "-57.3576x81.9152",
+        "-64.2788x76.6044",
+        "-70.7107x70.7107",
+        "-76.6044x64.2788",
+        "-81.9152x57.3576",
+        "-86.6025x50",
+        "-90.6308x42.2618",
+        "-93.9693x34.202",
+        "-96.5926x25.8819",
+        "-98.4808x17.3648",
+        "-99.6195x8.71557",
+        "-100x1.22465e-14",
+        "-99.6195x-8.71557",
+        "-98.4808x-17.3648",
+        "-96.5926x-25.8819",
+        "-93.9693x-34.202",
+        "-90.6308x-42.2618",
+        "-86.6025x-50",
+        "-81.9152x-57.3576",
+        "-76.6044x-64.2788",
+        "-70.7107x-70.7107",
+        "-64.2788x-76.6044",
+        "-57.3576x-81.9152",
+        "-50x-86.6025",
+        "-42.2618x-90.6308",
+        "-34.202x-93.9693",
+        "-25.8819x-96.5926",
+        "-17.3648x-98.4808",
+        "-8.71557x-99.6195",
+        "-1.83697e-14x-100",
+        "8.71557x-99.6195",
+        "17.3648x-98.4808",
+        "25.8819x-96.5926",
+        "34.202x-93.9693",
+        "42.2618x-90.6308",
+        "50x-86.6025",
+        "57.3576x-81.9152",
+        "64.2788x-76.6044",
+        "70.7107x-70.7107",
+        "76.6044x-64.2788",
+        "81.9152x-57.3576",
+        "86.6025x-50",
+        "90.6308x-42.2618",
+        "93.9693x-34.202",
+        "96.5926x-25.8819",
+        "98.4808x-17.3648",
+        "99.6195x-8.71557",
+        "100x-2.44929e-14"
+      ]
+    },
+    "nozzle_type": {
+      "1.3.0.11": "hardened_steel"
+    },
+    "auxiliary_fan": {
+      "1.3.0.11": "0"
+    },
+    "default_filament_profile": {
+      "1.3.0.11": [
+        "FLSun Generic PLA"
+      ]
+    },
+    "scan_first_layer": {
+      "1.3.0.11": "0"
+    }
+  }
+}

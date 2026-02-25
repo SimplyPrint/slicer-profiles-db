@@ -1,0 +1,294 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "Artillery Hornet 0.4 nozzle",
+  "vendor": "Artillery",
+  "first_seen": "2.3.1",
+  "last_seen": "2.3.1",
+  "filament_id": null,
+  "setting_id": "GM003",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.3.1": "machine"
+    },
+    "name": {
+      "2.3.1": "Artillery Hornet 0.4 nozzle"
+    },
+    "from": {
+      "2.3.1": "system"
+    },
+    "instantiation": {
+      "2.3.1": "true"
+    },
+    "gcode_flavor": {
+      "2.3.1": "marlin"
+    },
+    "machine_start_gcode": {
+      "2.3.1": "G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM104 S150 ; set temporary nozzle temp to prevent oozing during homing and auto bed leveling\nM140 S{hot_plate_temp_initial_layer[0]} ; set final bed temp\nG4 S30 ; allow partial nozzle warmup\nG28 ; home all axis\nG29 ; auto bed levelling\nG1 Z50 F240\nG1 X2.0 Y10 F3000\nM104 S{nozzle_temperature_initial_layer[0]} ; set final nozzle temp\nM190 S{hot_plate_temp_initial_layer[0]} ; wait for bed temp to stabilize\nM109 S{nozzle_temperature_initial_layer[0]} ; wait for nozzle temp to stabilize\nG1 Z0.28 F240\nG92 E0\nG1 X2.0 Y140 E10 F1500 ; prime the nozzle\nG1 X2.3 Y140 F5000\nG92 E0\nG1 X2.3 Y10 E10 F1200 ; prime the nozzle\nG92 E0"
+    },
+    "machine_end_gcode": {
+      "2.3.1": "{if max_layer_z < printable_height}G1 Z{z_offset+min(max_layer_z+2, printable_height)} F600 ; Move print head up{endif}\nG1 X5 Y{print_bed_max[1]*0.85} F{travel_speed*60} ; present print\n{if max_layer_z < printable_height-10}G1 Z{z_offset+min(max_layer_z+70, printable_height-10)} F600 ; Move print head further up{endif}\n{if max_layer_z < printable_height*0.6}G1 Z{printable_height*0.6} F600 ; Move print head further up{endif}\nM140 S0 ; turn off heatbed\nM104 S0 ; turn off temperature\nM107 ; turn off fan\nM84 X Y E ; disable motors"
+    },
+    "extruder_colour": {
+      "2.3.1": [
+        "#018001"
+      ]
+    },
+    "extruder_offset": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "machine_max_acceleration_e": {
+      "2.3.1": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.3.1": [
+        "1000",
+        "1250"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.3.1": [
+        "1000",
+        "1250"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "2.3.1": [
+        "1000",
+        "1250"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.3.1": [
+        "2000",
+        "1000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.3.1": [
+        "2000",
+        "1000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.3.1": [
+        "500",
+        "200"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.3.1": [
+        "120",
+        "120"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.3.1": [
+        "500",
+        "200"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.3.1": [
+        "500",
+        "200"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.3.1": [
+        "12",
+        "12"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.3.1": [
+        "3",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.3.1": [
+        "7",
+        "10"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.3.1": [
+        "7",
+        "10"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.3.1": [
+        "0.2",
+        "0.4"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "2.3.1": [
+        "0.32"
+      ]
+    },
+    "min_layer_height": {
+      "2.3.1": [
+        "0.08"
+      ]
+    },
+    "printable_height": {
+      "2.3.1": "250"
+    },
+    "extruder_clearance_radius": {
+      "2.3.1": "65"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.3.1": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.3.1": "140"
+    },
+    "nozzle_diameter": {
+      "2.3.1": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "2.3.1": "Artillery"
+    },
+    "printer_technology": {
+      "2.3.1": "FFF"
+    },
+    "printer_variant": {
+      "2.3.1": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "2.3.1": [
+        "2"
+      ]
+    },
+    "retract_before_wipe": {
+      "2.3.1": [
+        "0%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "2.3.1": [
+        "2.2"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.3.1": [
+        "10"
+      ]
+    },
+    "z_hop": {
+      "2.3.1": [
+        "0.4"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "2.3.1": [
+        "30"
+      ]
+    },
+    "deretraction_speed": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "silent_mode": {
+      "2.3.1": "0"
+    },
+    "single_extruder_multi_material": {
+      "2.3.1": "1"
+    },
+    "change_filament_gcode": {
+      "2.3.1": ""
+    },
+    "before_layer_change_gcode": {
+      "2.3.1": ";BEFORE_LAYER_CHANGE\nG92 E0\n;[layer_z]\n\n"
+    },
+    "layer_change_gcode": {
+      "2.3.1": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "machine_pause_gcode": {
+      "2.3.1": "M0"
+    },
+    "wipe": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "z_hop_types": {
+      "2.3.1": "Normal Lift"
+    },
+    "setting_id": {
+      "2.3.1": "GM003"
+    },
+    "printer_model": {
+      "2.3.1": "Artillery Hornet"
+    },
+    "default_print_profile": {
+      "2.3.1": "0.20mm Standard @Artillery Hornet"
+    },
+    "bed_exclude_area": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "printable_area": {
+      "2.3.1": [
+        "0x0",
+        "230x0",
+        "230x230",
+        "0x230"
+      ]
+    },
+    "nozzle_type": {
+      "2.3.1": "hardened_steel"
+    },
+    "auxiliary_fan": {
+      "2.3.1": "0"
+    },
+    "default_filament_profile": {
+      "2.3.1": [
+        "Artillery Generic PLA"
+      ]
+    },
+    "scan_first_layer": {
+      "2.3.1": "0"
+    }
+  }
+}

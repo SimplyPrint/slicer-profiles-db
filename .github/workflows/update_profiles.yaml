@@ -1,0 +1,39 @@
+name: Update Slicer Profiles
+
+on:
+    schedule:
+        - cron: "0 0 * * *"
+    workflow_dispatch:
+
+jobs:
+    update:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-python@v5
+              with:
+                  python-version: "3.13"
+
+            - uses: astral-sh/setup-uv@v5
+
+            - run: uv sync
+
+            - name: Ingest profiles
+              run: uv run slicer-profiles-db ingest-all --version latest --overlay overlay
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Map profiles
+              run: uv run slicer-profiles-db map
+              env:
+                  SP_API_URL: ${{ secrets.SP_PRINTER_DB_MODELS_URL }}
+
+            - name: Commit
+              run: |
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git add profiles/ out/
+                  git diff --cached --quiet || (git commit -m "Update profiles" && git push)

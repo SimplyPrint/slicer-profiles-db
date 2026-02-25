@@ -1,0 +1,163 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "machine",
+  "name": "MakerGear M2 Dual 0.75 Nozzle",
+  "vendor": "MakerGear",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "before_layer_gcode": {
+      "1.4.4": ";BEFORE_LAYER_CHANGE\\n;[layer_z]\\n\\n"
+    },
+    "between_objects_gcode": {
+      "1.4.4": ""
+    },
+    "color_change_gcode": {
+      "1.4.4": ""
+    },
+    "extruder_colour": {
+      "1.4.4": "#FD8309;#E1E1E1"
+    },
+    "extruder_offset": {
+      "1.4.4": "0x0"
+    },
+    "gcode_flavor": {
+      "1.4.4": "marlin"
+    },
+    "layer_gcode": {
+      "1.4.4": ";AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "machine_limits_usage": {
+      "1.4.4": "time_estimate_only"
+    },
+    "nozzle_diameter": {
+      "1.4.4": "0.75,0.75"
+    },
+    "octoprint_apikey": {
+      "1.4.4": ""
+    },
+    "octoprint_host": {
+      "1.4.4": ""
+    },
+    "pause_print_gcode": {
+      "1.4.4": "M601"
+    },
+    "printer_notes": {
+      "1.4.4": "Dont remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_MAKERGEAR\\nPRINTER_MODEL_MAKERGEAR_M2_DUAL\\n"
+    },
+    "printer_settings_id": {
+      "1.4.4": "MakerGear M2 Dual 0.75 Nozzle"
+    },
+    "printer_technology": {
+      "1.4.4": "FFF"
+    },
+    "remaining_times": {
+      "1.4.4": "0"
+    },
+    "retract_length": {
+      "1.4.4": "1, 1"
+    },
+    "serial_port": {
+      "1.4.4": ""
+    },
+    "serial_speed": {
+      "1.4.4": "115200"
+    },
+    "slient_mode": {
+      "1.4.4": "0"
+    },
+    "use_firmware_retraction": {
+      "1.4.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.4.4": "0"
+    },
+    "use_volumetric_e": {
+      "1.4.4": "0"
+    },
+    "variable_layer_height": {
+      "1.4.4": "0"
+    },
+    "bed_shape": {
+      "1.4.4": "0x0,200x0,200x251,0x251"
+    },
+    "default_filament_profile": {
+      "1.4.4": "\"MakerGear PLA @MakerGear\""
+    },
+    "default_print_profile": {
+      "1.4.4": "0.25mm Quality @0.75 nozzle MakerGear"
+    },
+    "end_gcode": {
+      "1.4.4": "M104 S0 T1 ; turn off right extruder\\nM104 S0 T0 ; turn off left extruder\\nM140 S0 ; turn off bed\\nG91 ; relative mode\\nG1 Z10 ; lift 10mm\\nG90 ; absolute mode\\nG28 X0 ; home X axis\\nM84 ; disable motors"
+    },
+    "extruders_count": {
+      "1.4.4": "2"
+    },
+    "machine_max_acceleration_e": {
+      "1.4.4": "2000, 2000"
+    },
+    "machine_max_acceleration_extruding": {
+      "1.4.4": "1000, 1000"
+    },
+    "machine_max_acceleration_retracting": {
+      "1.4.4": "2000, 2000"
+    },
+    "machine_max_acceleration_x": {
+      "1.4.4": "1200, 1200"
+    },
+    "machine_max_acceleration_y": {
+      "1.4.4": "1200, 1200"
+    },
+    "machine_max_acceleration_z": {
+      "1.4.4": "10, 10"
+    },
+    "machine_max_feedrate_e": {
+      "1.4.4": "30, 30"
+    },
+    "machine_max_feedrate_x": {
+      "1.4.4": "300, 300"
+    },
+    "machine_max_feedrate_y": {
+      "1.4.4": "300, 300"
+    },
+    "machine_max_feedrate_z": {
+      "1.4.4": "10, 10"
+    },
+    "machine_max_jerk_e": {
+      "1.4.4": "10, 10"
+    },
+    "machine_max_jerk_x": {
+      "1.4.4": "5, 5"
+    },
+    "machine_max_jerk_y": {
+      "1.4.4": "5, 5"
+    },
+    "machine_max_jerk_z": {
+      "1.4.4": "1, 1"
+    },
+    "max_print_height": {
+      "1.4.4": "200"
+    },
+    "printer_model": {
+      "1.4.4": "MAKERGEAR_M2_DUAL"
+    },
+    "printer_variant": {
+      "1.4.4": "0.75"
+    },
+    "start_gcode": {
+      "1.4.4": "\\nM108 S0 ; Turn on M2 fans\\n; Turn off hotends to reduce ooze on the bed during startup\\n; NOTE: this does not explicitly wait for the hotends to completely cool down\\nM104 T0 S0\\nM104 T1 S0\\n\\n{if first_layer_bed_temperature[1] < first_layer_bed_temperature[0]}\\nM140 S{first_layer_bed_temperature[0]}     ; Set bed temperature\\nM190 S{first_layer_bed_temperature[0]}\t   ; Wait for bed to reach temperature\\n{endif}\\n\\n{if first_layer_bed_temperature[0] < first_layer_bed_temperature[1]}\\nM140 S{first_layer_bed_temperature[1]}     ; Set bed temperature\\nM190 S{first_layer_bed_temperature[1]}\t   ; Wait for bed to reach temperature\\n{endif}\\n\\nT1 ; Switch to right extruder offsets for homing\\nG28 ; Home all axes\\nT0 ; Switch to left extruder\\nG1 X0 Y50 Z0.3 F9600 ; Move forward to avoid binder clips\\nG1 X200 Z10 F3600 ; Move off platform\\n\\n; Set hotend temperature\\nM104 T0 S{first_layer_temperature[0]}\\nM104 T1 S{first_layer_temperature[1]}\\n\\n; Wait for hotends to reach temperature\\nM109 T0 S{first_layer_temperature[0]}\\nM109 T1 S{first_layer_temperature[1]}\\n\\n\\n{if temperature[1] == 0}\\n; Single Mode - Left Purge script\\n\\nG1 Z0.4 ; Position nozzle above buildplate\\nG92 E0 ; Zero extruder\\nG1 E25 F225 ; Purge left extruder\\nG92 E0 ; Zero extruder\\nG1 X160 Z0.1 E1.0 F1200 ; Slow wipe\\nG1 X140 Z0.25 ; Lift\\n{endif}\\n\\n{if temperature[0] == 0}\\n; Single Mode - Right Purge Script\\n\\nG1 Z0.4 ; Position nozzle above buildplate\\nT1 ; Switch to right extruder\\nG92 E0 ; Zero extruder\\nG1 E25 F225 ; Purge right extruder\\nG92 E0 ; Zero extruder\\nG1 X160 Z0.1 E1.0 F1200 ; Slow wipe\\nG1 X140 Z0.25 ; Lift\\n{endif}\\n\\n{if temperature[0] > 0 and temperature[1] > 0}\\n; Dual Mode - Purge Script\\nG1 Z0.4 ; Position nozzle above buildplate\\nG92 E0 ; Zero extruder\\nG1 E25 F225 ; Purge left extruder\\nG92 E0 ; Zero extruder\\nT1 ; Set right extruder\\nG1 E25 F225 ; Purge right extruder\\nG92 E0 ; Zero extruder\\nG1 X160 Z0.1 E1.0 F1200 ; Slow wipe\\nG1 X140 Z0.25 ; Lift\\nT0\\nG92 E0 ; Zero extruder\\n{endif}"
+    },
+    "max_layer_height": {
+      "1.4.4": "0.5"
+    },
+    "min_layer_height": {
+      "1.4.4": "0.15,0.15"
+    },
+    "retract_speed": {
+      "1.4.4": "35, 35"
+    }
+  }
+}

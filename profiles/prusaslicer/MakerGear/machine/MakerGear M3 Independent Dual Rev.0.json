@@ -1,0 +1,172 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "MakerGear M3 Independent Dual Rev.0",
+  "vendor": "MakerGear",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "before_layer_gcode": {
+      "3.0.0": ";BEFORE_LAYER_CHANGE\\n;[layer_z]\\n\\n"
+    },
+    "between_objects_gcode": {
+      "3.0.0": ""
+    },
+    "color_change_gcode": {
+      "3.0.0": ""
+    },
+    "extruder_colour": {
+      "3.0.0": "#FD8309;#E1E1E1"
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0,0x0"
+    },
+    "gcode_flavor": {
+      "3.0.0": "marlin"
+    },
+    "layer_gcode": {
+      "3.0.0": ";AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "time_estimate_only"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.35,0.35"
+    },
+    "octoprint_apikey": {
+      "3.0.0": ""
+    },
+    "octoprint_host": {
+      "3.0.0": ""
+    },
+    "pause_print_gcode": {
+      "3.0.0": "M601"
+    },
+    "printer_notes": {
+      "3.0.0": "Dont remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_MAKERGEAR\\nPRINTER_MODEL_MAKERGEAR_M3_ID_0\\n"
+    },
+    "printer_settings_id": {
+      "3.0.0": "MakerGear M3 Independent Dual Rev.0"
+    },
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "remaining_times": {
+      "3.0.0": "0"
+    },
+    "retract_length": {
+      "3.0.0": "2"
+    },
+    "serial_port": {
+      "3.0.0": ""
+    },
+    "serial_speed": {
+      "3.0.0": "115200"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "0"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "0"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "25"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "45"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,200x0,200x255,0x251"
+    },
+    "default_filament_profile": {
+      "3.0.0": "\"MakerGear PLA @MakerGear\""
+    },
+    "default_print_profile": {
+      "3.0.0": "0.20mm Normal @0.35 nozzle MakerGear"
+    },
+    "end_gcode": {
+      "3.0.0": "M104 S0 ; turn off extruder\\nM104 S0 T0 ; turn off extruder\\nM104 S0 T1; turn off extruder\\nM140 S0 ; turn off bed\\nM106 S0 ; turn off cooling fan\\nG91 ; relative mode\\nG1 Z20 ; move Z down 20mm if possible Max endstop will catch it if it is to far\\nG90;  absolute mode\\nG28 X ; home tool/s\\nT0 ; defualt tool should always be T0\\nG1 Y230 F10000 ; move build plate out\\nM84 ; disable motors"
+    },
+    "extruders_count": {
+      "3.0.0": "2"
+    },
+    "host_type": {
+      "3.0.0": "octoprint"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "2000, 2000"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "1000, 1000"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "2000, 2000"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "1200, 1200"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "1200, 1200"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "10, 10"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "30, 30"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "300, 300"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "300, 300"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "10, 10"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "10, 10"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "5, 5"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "5, 5"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "1, 1"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.28,0.28"
+    },
+    "max_print_height": {
+      "3.0.0": "200"
+    },
+    "printer_model": {
+      "3.0.0": "MAKERGEAR_M3_ID_0_DUPLICATION"
+    },
+    "printer_variant": {
+      "3.0.0": "0.35"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "4,4"
+    },
+    "start_gcode": {
+      "3.0.0": ";M3 Independent Dual Startup Script\\n\\n; Turn off hotends to reduce ooze on the bed during startup\\n; NOTE: this does not explicitly wait for the hotends to completely cool down\\nM104 T0 S0\\nM104 T1 S0\\n\\n{if first_layer_bed_temperature[1] < first_layer_bed_temperature[0]}\\nM140 S{first_layer_bed_temperature[0]}     ; Set bed temperature\\nM190 S{first_layer_bed_temperature[0]}\t; Wait for bed to reach temperature\\n{endif}\\n\\n{if first_layer_bed_temperature[0] < first_layer_bed_temperature[1]}\\nM140 S{first_layer_bed_temperature[1]}     ; Set bed temperature\\nM190 S{first_layer_bed_temperature[1]}\t; Wait for bed to reach temperature\\n{endif}\\n\\nM605 S0    ; Set to full independent control on x axes\\nT0         ; Switch to left hotend\\nG28        ; Home all axes probe/mesh if available\\n\\n; Set hotend temperature\\nM104 T0 S{first_layer_temperature[0]}\\nM104 T1 S{first_layer_temperature[1]}\\n\\n; Wait for hotends to reach temperature\\nM109 T0 S{first_layer_temperature[0]}\\nM109 T1 S{first_layer_temperature[1]}\\n\\n; Purge Scripts\\n{if temperature[1] == 0}\\n\\n; Single Mode - Left Purge\\nM211 S0 ; Turn off software endstops\\nG1 X205 Y210 Z0.1 F10000 ; Move off the bed and bring the bed up\\nG92 E0 ; Zero extruder\\nG1 X195 Z0.1 F1000 ; Scrape off any ooze\\nG1 Z10 ; Lift bed\\nG1 X160 Y240 F10000 ; move to unused front edge\\nG1 Z0.30 F1000\\nG1 X40 E20 F1000\\nG1 X30 Z0.05 F1000 ; wipe off tail\\nG1 Z10\\nG92 E0{endif}\\n\\n{if temperature[0] == 0}\\n; Single Mode - Right Purge\\nM211 S0 ; Turn off software endstops for purge moves\\nG1 X25 F9000 ; Move T0 past bedclips as to not damage probe\\nT1 ; Switch to right hotend\\nG1 X205 Y210 Z0.1 F10000 ; Move off the bed and bring the bed up\\nG92 E0 ; Zero extruder\\nG1 X195 Z0.1 F1000 ; Scrape off any ooze\\nG1 Z10 ; Lift\\nG1 X100 Y240 F10000 ; Move to unused front edge\\nG1 Z0.30 F1000\\nG1 X180 E9.25  F1000 ; Deposit extrusion line\\nG1 Y239  E9.45 F1000 ; Move Y-axis and extrude\\nG1 X130 E17.05; lift \\nF1000 ; deposit extrusion line\\nG1 X120 Z0.05 F1000 ; wipe off tail\\nG92 E0; zero extruder\\nG1 Z10 Y230 ; move back to safe bounds\\nT0\\nG1 X-20.77 ; move T0 back home\\nT1{endif}\\n\\n{if temperature[0] > 0 and temperature[1] > 0}\\n; M3-ID T0/T1 Starting Script\\nG1 X25 F9000; move T0 past bedclips as to not damage probe\\n\\nT1 ; Switch to right extruder\\nG1 X215 Y210 Z0.1 F10000 ; move off the bed and bring the bed up\\nG92 E0 ; zero extruder\\nG1 X195 Z0.1 F1000; scrape off any ooze\\nG1 Z10 ; lift\\nM211 S0 ; turn off soft endstops for purge moves\\nG1 X100 Y240 F10000; move to unused back edge\\nG1 Z0.30 F1000\\nG1 X180 E9.25  F1000; deposit extrusion line\\nG1 Y239  E9.45 F1000 ; move  and extrude y\\nG1 X130 E17.05; lift F1000; deposit extrusion line\\nG1 X100 Z0.05 F1000 ; wipe off tail\\nG92 E0; zero extruder\\nG1 Z10 Y225 ; move back to safe bounds\\nG1 X252 F4800; move T1 home\\n\\nT0;\\nG1 X205 Y210 Z0.1 F10000 ; move off the bed and bring the bed up\\nG92 E0 ; zero extruder\\nG1 X195 Z0.1 F1000; scrape off any ooze\\nG1 Z10 ; lift\\nG1 X100 Y240 F10000; move to unused back edge\\nG1 Z0.30 F1000\\nG1 X20 E9.25  F1000; deposit extrusion line\\nG1 Y239  E9.45 F1000 ; move  and extrude y\\nG1 X70 E17.05; lift F1000; deposit extrusion line\\nG1 X100 Z0.05 F1000 ; wipe off tail\\nG92 E0; zero extruder\\nG1 Z10 Y225 ; move back to safe bounds\\nG1 X-20.77 F4800 ; move T0 home\\nG92 E0{endif}\\n; ok now you can start"
+    },
+    "toolchange_gcode": {
+      "3.0.0": "{if next_extruder == 0}\\nT1 ; makes sure T1 is active\\nG90 ; switch into absolute mode\\nG1 X252\\nT0\\n{endif}\\n\\n{if next_extruder == 1}\\nT0 ; makes sure T0 is active\\nG90 ; switch into absolute mode\\nG1 X-4\\nT1\\n{endif}\\n"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+[
+    {
+        "vendor": "Creality3D",
+        "machine_model": {
+            "name": "Creality Ender-5 S1",
+            "version": 2,
+            "inherits": "creality_base",
+            "visible": true,
+            "quality_definition": "creality_base",
+            "build_volume_temperature": 195,
+            "cool_min_layer_time": 5,
+            "gantry_height": 25,
+            "machine_depth": 225,
+            "machine_end_gcode": "G91 ;Relative positionning\nG1 E-2 F2700 ;Retract a bit\nG1 E-2 Z0.2 F2400 ;Retract and raise Z\nG1 X5 Y5 F3000 ;Wipe out\nG1 Z10 ;Raise Z more\nG90 ;Absolute positionning\n\nG1 X0 Y0 ;Present print\nM106 S0 ;Turn-off fan\nM104 S0 ;Turn-off hotend\nM140 S0 ;Turn-off bed\n\nM84 X Y E ;Disable all steppers but Z\n",
+            "machine_head_with_fans_polygon": [
+                [
+                    -26,
+                    34
+                ],
+                [
+                    -26,
+                    -32
+                ],
+                [
+                    32,
+                    -32
+                ],
+                [
+                    32,
+                    34
+                ]
+            ],
+            "machine_height": 305,
+            "machine_name": "Creality Ender-5 S1",
+            "machine_width": 225,
+            "material_bed_temperature": 60,
+            "retraction_amount": 2,
+            "retraction_speed": 45,
+            "speed_print": 80.0,
+            "support_z_distance": 0.25,
+            "wall_thickness": "line_width * 3",
+            "z_seam_type": "'sharpest_corner'"
+        },
+        "variants": {}
+    }
+]

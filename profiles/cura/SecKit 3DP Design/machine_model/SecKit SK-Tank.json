@@ -1,0 +1,95 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "SecKit SK-Tank",
+  "vendor": "SecKit 3DP Design",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "SecKit SK-Tank"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Ernest Lin"
+    },
+    "manufacturer": {
+      "2026-02-25": "SecKit 3DP Design"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "has_machine_quality": {
+      "2026-02-25": false
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "seckit_sktank_extruder_0"
+      }
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "gantry_height": {
+      "2026-02-25": "50"
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 350
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (RepRap)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -10,
+          20
+        ],
+        [
+          -10,
+          -20
+        ],
+        [
+          10,
+          20
+        ],
+        [
+          10,
+          -20
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 400
+    },
+    "machine_name": {
+      "2026-02-25": "SecKit SK-Tank"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G32 ;auto bed tramming and find a correct Z datum\nG29 S1 ;load default mesh\nM572 D0 S0.08 ; Pressure advance\nG1 Z15.0 F6000 ;Move the platform down 15mm\n;Prime the extruder\nG92 E0\nG1 F200 E3\nG92 E0"
+    },
+    "machine_width": {
+      "2026-02-25": 350
+    }
+  }
+}

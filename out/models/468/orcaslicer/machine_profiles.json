@@ -1,0 +1,202 @@
+[
+    {
+        "vendor": "Kingroon",
+        "machine_model": {
+            "type": "machine_model",
+            "name": "Kingroon KP3S PRO V2",
+            "model_id": "Kingroon-KP3S-PRO-V2",
+            "nozzle_diameter": "0.4",
+            "machine_tech": "FFF",
+            "family": "Kingroon",
+            "bed_model": "sha256:45939f20efd63f1f612438e4e3016733c8e5d7814962dabd27c112ff69d55ed9",
+            "bed_texture": "sha256:da027c99fa16cdbde081637f756a7c90fdb5fae68d689fb0ec8c05a9336db873",
+            "hotend_model": "",
+            "default_materials": "Generic ABS @System;Generic PLA @System;Generic PLA-CF @System;Generic PETG @System;Generic TPU @System;Generic ASA @System;Generic PC @System;Generic PVA @System;Generic PA @System;Generic PA-CF @System"
+        },
+        "variants": {
+            "0.4": {
+                "name": "Kingroon KP3S PRO V2 0.4 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "Kingroon KP3S PRO V2 0.4 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "auxiliary_fan": "0",
+                    "fan_kickstart": "0",
+                    "fan_speedup_overhangs": "1",
+                    "fan_speedup_time": "0",
+                    "gcode_flavor": "klipper",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "machine_pause_gcode": "M601",
+                    "machine_end_gcode": "{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+2, max_print_height)} F600 ; Move print head up{endif}\nG1 X5 Y200 F6000 ; present print\n{if max_layer_z < max_print_height-10}G1 Z{z_offset+min(max_layer_z+20, max_print_height-10)} F600 ; Move print head further up{endif}\n{if max_layer_z < max_print_height*0.6}G1 Z{max_print_height*0.6} F600 ; Move print head further up{endif}\nM140 S0 ; turn off heatbed\nM104 S0 ; turn off temperature\nM107 ; turn off fan\nM84 X Y E ; disable motors\nEND_PRINT",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "extruder_clearance_radius": "45",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_height_to_lid": "140",
+                    "template_custom_gcode": "",
+                    "thumbnails": [
+                        "300x300"
+                    ],
+                    "upward_compatible_machine": [],
+                    "use_firmware_retraction": "1",
+                    "use_relative_e_distances": "1",
+                    "machine_load_filament_time": "0",
+                    "machine_max_acceleration_e": [
+                        "10000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "10000",
+                        "9000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "10000",
+                        "9000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "10000",
+                        "9000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "10000",
+                        "9000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "10000",
+                        "100"
+                    ],
+                    "machine_max_jerk_e": [
+                        "20",
+                        "5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "20",
+                        "7"
+                    ],
+                    "machine_max_jerk_y": [
+                        "20",
+                        "7"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.4",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "60",
+                        "60"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.32"
+                    ],
+                    "min_layer_height": [
+                        "0.05"
+                    ],
+                    "printhost_apikey": "",
+                    "printhost_authorization_type": "key",
+                    "printhost_cafile": "",
+                    "printhost_password": "",
+                    "printhost_port": "",
+                    "printhost_ssl_ignore_revoke": "0",
+                    "printhost_user": "",
+                    "printable_height": "200",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
+                    "printable_area": [
+                        "0x0",
+                        "205x0",
+                        "205x205",
+                        "0x205"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "nozzle_hrc": "0",
+                    "nozzle_type": "undefine",
+                    "nozzle_volume": "0",
+                    "print_host": "",
+                    "print_host_webui": "",
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_speed": [
+                        "45"
+                    ],
+                    "scan_first_layer": "0",
+                    "deretraction_speed": [
+                        "45"
+                    ],
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "M600",
+                    "wipe": [
+                        "0"
+                    ],
+                    "wipe_distance": [
+                        "2"
+                    ],
+                    "z_hop": [
+                        "0"
+                    ],
+                    "z_hop_types": "Normal Lift",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "machine_start_gcode": "START_PRINT EXTRUDER_TEMP=[first_layer_temperature] BED_TEMP=[first_layer_bed_temperature]\nCANCEL_POWEROFF\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\nG92 E0",
+                    "setting_id": "GM003",
+                    "printer_model": "Kingroon KP3S PRO V2",
+                    "default_filament_profile": "Generic PLA @System",
+                    "default_print_profile": "0.20mm Standard @Kingroon KP3S PRO V2"
+                }
+            }
+        }
+    }
+]

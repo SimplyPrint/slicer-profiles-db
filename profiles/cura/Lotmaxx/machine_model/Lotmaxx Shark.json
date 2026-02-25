@@ -1,0 +1,183 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Lotmaxx Shark",
+  "vendor": "Lotmaxx",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Lotmaxx Shark"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "lotmaxx.com"
+    },
+    "manufacturer": {
+      "2026-02-25": "Lotmaxx"
+    },
+    "platform": {
+      "2026-02-25": "lotmaxx_sc_10_20_platform.3mf"
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "lotmaxx_sc60_extruder_left",
+        "1": "lotmaxx_sc60_extruder_right"
+      }
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "acceleration_print": {
+      "2026-02-25": 1000
+    },
+    "acceleration_travel": {
+      "2026-02-25": 1000
+    },
+    "acceleration_travel_layer_0": {
+      "2026-02-25": 1000.0
+    },
+    "adhesion_type": {
+      "2026-02-25": "skirt"
+    },
+    "expand_skins_expand_distance": {
+      "2026-02-25": 0.8
+    },
+    "fill_outline_gaps": {
+      "2026-02-25": false
+    },
+    "gantry_height": {
+      "2026-02-25": 29
+    },
+    "infill_sparse_density": {
+      "2026-02-25": 15
+    },
+    "machine_depth": {
+      "2026-02-25": 235
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "G91 ;Relative positioning\nG1 E-2 F2700 ;Retract a bit\nG1 E-2 Z0.2 F2400 ;Retract and raise Z\nG1 X5 Y5 F3000 ;Wipe out\nG1 Z10 ;Raise Z more\nG90 ;Absolute positioning\n\nG1 X0 Y{machine_depth} ;Present print\nM106 S0 ;Turn-off fan\nM104 S0 ;Turn-off hotend\nM140 S0 ;Turn-off bed\n\nM84 X Y E ;Disable all steppers but Z\n"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -50.7,
+          16.8
+        ],
+        [
+          -50.7,
+          -29.5
+        ],
+        [
+          46.9,
+          -29.5
+        ],
+        [
+          49.9,
+          16.8
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 265
+    },
+    "machine_name": {
+      "2026-02-25": "Lotmaxx Shark"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G28 ;Home\nG92 E0 ;Reset Extruder\nG1 Z4.0 F3000 ;Move Z Axis up\nG1 X10.1 Y20 Z0.28 F5000.0 ;Move to start position\nG1 X10.1 Y200.0 Z0.28 F1500.0 E15 ;Draw the first line\nG1 X10.4 Y200.0 Z0.28 F5000.0 ;Move to side a little\nG1 X10.4 Y20 Z0.28 F1500.0 E30 ;Draw the second line\nG92 E0 ;Reset Extruder\nG1 Z2.0 F3000 ;Move Z Axis up\n"
+    },
+    "machine_width": {
+      "2026-02-25": 235
+    },
+    "meshfix_maximum_resolution": {
+      "2026-02-25": 0.25
+    },
+    "optimize_wall_printing_order": {
+      "2026-02-25": true
+    },
+    "prime_tower_enable": {
+      "2026-02-25": true
+    },
+    "prime_tower_min_volume": {
+      "2026-02-25": 30
+    },
+    "retract_at_layer_change": {
+      "2026-02-25": false
+    },
+    "retraction_amount": {
+      "2026-02-25": 4.5
+    },
+    "roofing_layer_count": {
+      "2026-02-25": 1
+    },
+    "skin_preshrink": {
+      "2026-02-25": 0.8
+    },
+    "speed_layer_0": {
+      "2026-02-25": 30
+    },
+    "speed_print": {
+      "2026-02-25": 45
+    },
+    "speed_roofing": {
+      "2026-02-25": 35
+    },
+    "speed_topbottom": {
+      "2026-02-25": 35
+    },
+    "speed_travel": {
+      "2026-02-25": 80
+    },
+    "speed_wall_0": {
+      "2026-02-25": 32
+    },
+    "speed_wall_x": {
+      "2026-02-25": 32
+    },
+    "support_infill_rate": {
+      "2026-02-25": 5
+    },
+    "support_pattern": {
+      "2026-02-25": "lines"
+    },
+    "switch_extruder_retraction_amount": {
+      "2026-02-25": 100
+    },
+    "switch_extruder_retraction_speeds": {
+      "2026-02-25": 60
+    },
+    "wall_overhang_speed_factor": {
+      "2026-02-25": 50
+    },
+    "z_seam_corner": {
+      "2026-02-25": "z_seam_corner_any"
+    },
+    "z_seam_relative": {
+      "2026-02-25": true
+    },
+    "z_seam_type": {
+      "2026-02-25": "sharpest_corner"
+    },
+    "zig_zaggify_infill": {
+      "2026-02-25": true
+    }
+  }
+}

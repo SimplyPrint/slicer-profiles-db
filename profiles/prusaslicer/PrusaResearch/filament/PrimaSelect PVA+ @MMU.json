@@ -1,0 +1,133 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "filament",
+  "name": "PrimaSelect PVA+ @MMU",
+  "vendor": "PrusaResearch",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "cooling": {
+      "3.0.0": "0"
+    },
+    "compatible_printers": {
+      "3.0.0": ""
+    },
+    "compatible_printers_condition": {
+      "3.0.0": "nozzle_diameter[0]!=0.25 and printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material"
+    },
+    "end_filament_gcode": {
+      "3.0.0": "\"; Filament-specific end gcode\""
+    },
+    "extrusion_multiplier": {
+      "3.0.0": "1"
+    },
+    "filament_loading_speed": {
+      "3.0.0": "14"
+    },
+    "filament_loading_speed_start": {
+      "3.0.0": "19"
+    },
+    "filament_unloading_speed": {
+      "3.0.0": "20"
+    },
+    "filament_unloading_speed_start": {
+      "3.0.0": "100"
+    },
+    "filament_toolchange_delay": {
+      "3.0.0": "0"
+    },
+    "filament_cooling_moves": {
+      "3.0.0": "2"
+    },
+    "filament_cooling_initial_speed": {
+      "3.0.0": "4"
+    },
+    "filament_cooling_final_speed": {
+      "3.0.0": "2"
+    },
+    "filament_load_time": {
+      "3.0.0": "15"
+    },
+    "filament_unload_time": {
+      "3.0.0": "12"
+    },
+    "filament_ramming_parameters": {
+      "3.0.0": "\"120 110 3.83871 3.90323 3.96774 4.03226 4.09677 4.19355 4.3871 4.83871 5.67742 6.93548 8.54839 10.3226 11.9677 13.2581 14.129 14.5806| 0.05 3.8258 0.45 3.89676 0.95 4.05807 1.45 4.23548 1.95 5.18386 2.45 7.80651 2.95 11.5356 3.45 13.9872 3.95 14.7613 4.45 7.6 4.95 7.6\""
+    },
+    "filament_minimal_purge_on_wipe_tower": {
+      "3.0.0": "15"
+    },
+    "filament_cost": {
+      "3.0.0": "122.1"
+    },
+    "filament_density": {
+      "3.0.0": "1.24"
+    },
+    "filament_diameter": {
+      "3.0.0": "1.75"
+    },
+    "filament_notes": {
+      "3.0.0": "\"\""
+    },
+    "filament_settings_id": {
+      "3.0.0": "PrimaSelect PVA+ @MMU"
+    },
+    "filament_soluble": {
+      "3.0.0": "1"
+    },
+    "min_print_speed": {
+      "3.0.0": "15"
+    },
+    "slowdown_below_layer_time": {
+      "3.0.0": "20"
+    },
+    "start_filament_gcode": {
+      "3.0.0": "\"{if printer_notes!~/.*(MK3.5|MINIIS).*/}\\nM900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.02{else}0.04{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K12{elsif nozzle_diameter[0]==0.8};{else}M900 K20{endif} ; Filament gcode LA 1.0\\n{endif}\\n\\n{if printer_notes=~/.*MINIIS.*/}\\nM572 S{if nozzle_diameter[0]==0.6}0.1{elsif nozzle_diameter[0]==0.8}0.07{elsif nozzle_diameter[0]==0.4}0.19{elsif nozzle_diameter[0]==0.25}0.55{else}0{endif}\\n{endif}\\n\\n{if printer_notes=~/.*MK3.5.*/}\\nM572 S{if nozzle_diameter[0]==0.4}0.02{elsif nozzle_diameter[0]==0.5}0.018{elsif nozzle_diameter[0]==0.6}0.012{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.25}0.09{elsif nozzle_diameter[0]==0.3}0.065{else}0{endif} ; Filament gcode\\n{endif}\""
+    },
+    "filament_vendor": {
+      "3.0.0": "PrimaSelect"
+    },
+    "bed_temperature": {
+      "3.0.0": "60"
+    },
+    "bridge_fan_speed": {
+      "3.0.0": "100"
+    },
+    "disable_fan_first_layers": {
+      "3.0.0": "1"
+    },
+    "fan_always_on": {
+      "3.0.0": "0"
+    },
+    "fan_below_layer_time": {
+      "3.0.0": "100"
+    },
+    "filament_colour": {
+      "3.0.0": "#FFFFD7"
+    },
+    "filament_max_volumetric_speed": {
+      "3.0.0": "3.8"
+    },
+    "filament_type": {
+      "3.0.0": "PVA"
+    },
+    "first_layer_bed_temperature": {
+      "3.0.0": "60"
+    },
+    "first_layer_temperature": {
+      "3.0.0": "200"
+    },
+    "max_fan_speed": {
+      "3.0.0": "100"
+    },
+    "min_fan_speed": {
+      "3.0.0": "100"
+    },
+    "temperature": {
+      "3.0.0": "195"
+    }
+  }
+}

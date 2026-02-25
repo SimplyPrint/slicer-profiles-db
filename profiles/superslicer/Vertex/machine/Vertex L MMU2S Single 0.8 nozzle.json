@@ -1,0 +1,208 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "machine",
+  "name": "Vertex L MMU2S Single 0.8 nozzle",
+  "vendor": "Vertex",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "1.4.4": "FFF"
+    },
+    "bed_shape": {
+      "1.4.4": "0x0,300x0,300x300,0x300"
+    },
+    "before_layer_gcode": {
+      "1.4.4": ";BEFORE_LAYER_CHANGE\\nG92 E0.0\\n;[layer_z]\\n\\n"
+    },
+    "between_objects_gcode": {
+      "1.4.4": ""
+    },
+    "deretract_speed": {
+      "1.4.4": "0"
+    },
+    "end_gcode": {
+      "1.4.4": "{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+10, max_print_height)}{endif} F720 ; Move print head up\\nG1 X0 Y210 F7200\\nG1 E2 F5000\\nG1 E2 F5500\\nG1 E2 F6000\\nG1 E-15.0000 F5800\\nG1 E-20.0000 F5500\\nG1 E10.0000 F3000\\nG1 E-10.0000 F3100\\nG1 E10.0000 F3150\\nG1 E-10.0000 F3250\\nG1 E10.0000 F3300\\n\\nM140 S0 ; turn off heatbed\\nM107 ; turn off fan\\nM702 C\\nG4 ; wait\\nM221 S100 ; reset flow\\nM900 K0 ; reset LA\\n{if print_settings_id=~/.*(DETAIL @VERTEX|QUALITY @VERTEX|@0.25 nozzle VERTEX).*/}M907 E538 ; reset extruder motor current{endif}\\nM104 S0 ; turn off temperature\\nM84 ; disable motors"
+    },
+    "extruder_offset": {
+      "1.4.4": "0x0"
+    },
+    "gcode_flavor": {
+      "1.4.4": "marlin"
+    },
+    "silent_mode": {
+      "1.4.4": "1"
+    },
+    "remaining_times": {
+      "1.4.4": "1"
+    },
+    "machine_max_acceleration_e": {
+      "1.4.4": "5000,5000"
+    },
+    "machine_max_acceleration_extruding": {
+      "1.4.4": "1250,1250"
+    },
+    "machine_max_acceleration_retracting": {
+      "1.4.4": "1250,1250"
+    },
+    "machine_max_acceleration_x": {
+      "1.4.4": "1000,960"
+    },
+    "machine_max_acceleration_y": {
+      "1.4.4": "1000,960"
+    },
+    "machine_max_acceleration_z": {
+      "1.4.4": "200,200"
+    },
+    "machine_max_feedrate_e": {
+      "1.4.4": "120,120"
+    },
+    "machine_max_feedrate_x": {
+      "1.4.4": "200,100"
+    },
+    "machine_max_feedrate_y": {
+      "1.4.4": "200,100"
+    },
+    "machine_max_feedrate_z": {
+      "1.4.4": "12,12"
+    },
+    "machine_max_jerk_e": {
+      "1.4.4": "4.5,4.5"
+    },
+    "machine_max_jerk_x": {
+      "1.4.4": "8,8"
+    },
+    "machine_max_jerk_y": {
+      "1.4.4": "8,8"
+    },
+    "machine_max_jerk_z": {
+      "1.4.4": "0.4,0.4"
+    },
+    "machine_min_extruding_rate": {
+      "1.4.4": "0,0"
+    },
+    "machine_min_travel_rate": {
+      "1.4.4": "0,0"
+    },
+    "layer_gcode": {
+      "1.4.4": ";AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "max_layer_height": {
+      "1.4.4": "0.64"
+    },
+    "min_layer_height": {
+      "1.4.4": "0.2"
+    },
+    "max_print_height": {
+      "1.4.4": "230"
+    },
+    "nozzle_diameter": {
+      "1.4.4": "0.8"
+    },
+    "octoprint_apikey": {
+      "1.4.4": ""
+    },
+    "octoprint_host": {
+      "1.4.4": ""
+    },
+    "printer_notes": {
+      "1.4.4": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_VERTEX\\nPRINTER_MODEL_L\\n"
+    },
+    "printer_settings_id": {
+      "1.4.4": "Vertex L MMU2S Single 0.8 nozzle"
+    },
+    "retract_before_travel": {
+      "1.4.4": "1"
+    },
+    "retract_before_wipe": {
+      "1.4.4": "0%"
+    },
+    "retract_layer_change": {
+      "1.4.4": "1"
+    },
+    "retract_length": {
+      "1.4.4": "1"
+    },
+    "retract_length_toolchange": {
+      "1.4.4": "3"
+    },
+    "retract_lift": {
+      "1.4.4": "0.4"
+    },
+    "retract_lift_above": {
+      "1.4.4": "0"
+    },
+    "retract_lift_below": {
+      "1.4.4": "229"
+    },
+    "retract_restart_extra": {
+      "1.4.4": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "1.4.4": "0"
+    },
+    "retract_speed": {
+      "1.4.4": "35"
+    },
+    "serial_port": {
+      "1.4.4": ""
+    },
+    "serial_speed": {
+      "1.4.4": "250000"
+    },
+    "single_extruder_multi_material": {
+      "1.4.4": "0"
+    },
+    "start_gcode": {
+      "1.4.4": "M862.3 P \\\"[printer_model]\\\" ; printer model check\\nM115 U3.10.2 ; tell printer latest fw version\\nM880; check the steel sheet\\nG90 ; use absolute coordinates\\nM83 ; extruder relative mode\\nM104 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; set extruder temp\\nM140 S[first_layer_bed_temperature] ; set bed temp\\nTx\\nM190 S[first_layer_bed_temperature] ; wait for bed temp\\nM109 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; wait for extruder temp\\nG28 W ; home all without mesh bed level\\nG80 ; mesh bed leveling\\n\\n;go outside print area\\nG1 Y-3.0 F1000.0\\nG1 Z0.4 F1000.0\\n; select extruder\\nTc\\n; purge line\\nG1 X55.0 F2000.0\\nG1 Z0.3 F1000.0\\nG92 E0.0\\nG1 X240.0 E25.0 F2200.0\\nG1 Y-2.0 F1000.0\\nG1 X55.0 E25 F1400.0\\nG1 Z0.20 F1000.0\\nG1 X5.0 E4.0 F1000.0\\n\\nM221 S{if layer_height<0.075}100{else}95{endif}\\nG92 E0.0"
+    },
+    "toolchange_gcode": {
+      "1.4.4": ""
+    },
+    "use_firmware_retraction": {
+      "1.4.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.4.4": "1"
+    },
+    "use_volumetric_e": {
+      "1.4.4": "0"
+    },
+    "variable_layer_height": {
+      "1.4.4": "1"
+    },
+    "wipe": {
+      "1.4.4": "1"
+    },
+    "z_offset": {
+      "1.4.4": "0"
+    },
+    "printer_model": {
+      "1.4.4": "VERTEX_LMMU2S"
+    },
+    "printer_variant": {
+      "1.4.4": "0.8"
+    },
+    "default_print_profile": {
+      "1.4.4": "0.40mm QUALITY @0.8 nozzle VERTEX"
+    },
+    "default_filament_profile": {
+      "1.4.4": "Prusament PLA @0.8 nozzle VERTEX"
+    },
+    "cooling_tube_length": {
+      "1.4.4": "20"
+    },
+    "cooling_tube_retraction": {
+      "1.4.4": "40"
+    },
+    "parking_pos_retraction": {
+      "1.4.4": "85"
+    },
+    "extra_loading_move": {
+      "1.4.4": "-25"
+    }
+  }
+}

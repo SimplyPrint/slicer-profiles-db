@@ -1,0 +1,104 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Malyan M180",
+  "vendor": "Malyan",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Malyan M180"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Ghostkeeper"
+    },
+    "manufacturer": {
+      "2026-02-25": "Malyan"
+    },
+    "file_formats": {
+      "2026-02-25": "application/x3g"
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "malyan_m180_extruder_0"
+      }
+    },
+    "machine_x3g_variant": {
+      "2026-02-25": "r1d"
+    },
+    "gantry_height": {
+      "2026-02-25": "55"
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": true
+    },
+    "machine_depth": {
+      "2026-02-25": 145
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "G92 Z0\nG1 Z10 F400\nM18\nM109 S0 T0\nM104 S0 T0\nM73 P100 (end  build progress)\nG162 X Y F3000\nM18"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -75,
+          35
+        ],
+        [
+          -75,
+          -18
+        ],
+        [
+          18,
+          -18
+        ],
+        [
+          18,
+          35
+        ]
+      ]
+    },
+    "machine_height": {
+      "2026-02-25": 165
+    },
+    "machine_max_feedrate_z": {
+      "2026-02-25": 400
+    },
+    "machine_name": {
+      "2026-02-25": "Malyan M180"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "M136\nM73 P0\nM103\nG21\nG90\nM320\n;(**** begin homing ****)\nG162 X Y F4000\nG161 Z F3500\nG92 Z-5\nG1 Z0.0\nG161 Z F100\nM132 X Y Z A B\n;(**** end homing ****)\nG92 X147 Y66 Z5\nG1 X105 Y-60 Z10 F4000.0\nG130 X127 Y127 A127 B127\nG0 X105 Y-60\nG1 Z0.3 F300\nG92 E0\nG1 X100 E10 F300\nG92 E0\nG1 Z0.0 F300\nM320"
+    },
+    "machine_steps_per_mm_e": {
+      "2026-02-25": 92
+    },
+    "machine_steps_per_mm_x": {
+      "2026-02-25": 93
+    },
+    "machine_steps_per_mm_y": {
+      "2026-02-25": 93
+    },
+    "machine_steps_per_mm_z": {
+      "2026-02-25": 1600
+    },
+    "machine_width": {
+      "2026-02-25": 230
+    }
+  }
+}

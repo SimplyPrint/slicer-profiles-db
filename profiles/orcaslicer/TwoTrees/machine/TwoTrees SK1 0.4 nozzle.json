@@ -1,0 +1,302 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "TwoTrees SK1 0.4 nozzle",
+  "vendor": "TwoTrees",
+  "first_seen": "2.3.1",
+  "last_seen": "2.3.1",
+  "filament_id": null,
+  "setting_id": "GM001",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.3.1": "machine"
+    },
+    "name": {
+      "2.3.1": "TwoTrees SK1 0.4 nozzle"
+    },
+    "from": {
+      "2.3.1": "system"
+    },
+    "instantiation": {
+      "2.3.1": "true"
+    },
+    "printer_technology": {
+      "2.3.1": "FFF"
+    },
+    "deretraction_speed": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "extruder_colour": {
+      "2.3.1": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "gcode_flavor": {
+      "2.3.1": "klipper"
+    },
+    "silent_mode": {
+      "2.3.1": "0"
+    },
+    "machine_max_acceleration_e": {
+      "2.3.1": [
+        "20000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.3.1": [
+        "20000",
+        "1250"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.3.1": [
+        "15000",
+        "1250"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.3.1": [
+        "20000",
+        "1000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.3.1": [
+        "20000",
+        "1000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.3.1": [
+        "100",
+        "200"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.3.1": [
+        "50",
+        "120"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.3.1": [
+        "730",
+        "200"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.3.1": [
+        "730",
+        "200"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.3.1": [
+        "15",
+        "12"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.3.1": [
+        "1",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.3.1": [
+        "5",
+        "10"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.3.1": [
+        "5",
+        "10"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.3.1": [
+        "0.2",
+        "0.4"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "2.3.1": "0.32"
+    },
+    "min_layer_height": {
+      "2.3.1": "0.08"
+    },
+    "printable_height": {
+      "2.3.1": "256"
+    },
+    "extruder_clearance_radius": {
+      "2.3.1": "50"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.3.1": "60"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.3.1": "350"
+    },
+    "nozzle_diameter": {
+      "2.3.1": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "2.3.1": ""
+    },
+    "printer_variant": {
+      "2.3.1": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "2.3.1": [
+        "2"
+      ]
+    },
+    "retract_before_wipe": {
+      "2.3.1": "100%"
+    },
+    "retract_when_changing_layer": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "2.3.1": "0.4"
+    },
+    "retract_length_toolchange": {
+      "2.3.1": "10"
+    },
+    "z_hop": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "2.3.1": [
+        "50"
+      ]
+    },
+    "single_extruder_multi_material": {
+      "2.3.1": "1"
+    },
+    "change_filament_gcode": {
+      "2.3.1": "PAUSE"
+    },
+    "wipe": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "default_print_profile": {
+      "2.3.1": "0.20mm Standard @SK1"
+    },
+    "before_layer_change_gcode": {
+      "2.3.1": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "machine_start_gcode": {
+      "2.3.1": [
+        "M107 ; Turn off the fan\nG21  ; set units to millimeters\nG90  ; use absolute coordinates\nM83  ; use relative distances for extrusion\n\nM104 S220     ; set extruder temp\nM140 S60  ; set bed temp\nM109 S220      ; wait for extruder temp\nM190 S60  ; wait for bed temp\nG1 E-1.5 F2100 ; retract\n\n;G32  ;Load bed mesh\nG28   ;home\nG29   ;bed leveling\n\nM104 S[first_layer_temperature]      ; set extruder temp\nM140 S[first_layer_bed_temperature]  ; set bed temp\nM109 S[first_layer_temperature]      ; wait for extruder temp\nM190 S[first_layer_bed_temperature]  ; wait for bed temp\n\nG0 Z2.0 F600;\nG0 X50 Y10 F12000;\n\nG92 E0.0 ; reset extruder distance position\nG0 Z0.4 F600;\nG1 X100.0 E10 F3000.0 ; intro line\nG92 E0.0 ; reset extruder distance position\nG1 X200.0 E15 F3000.0 ; intro line\nG92 E0.0 ; reset extruder distance position\nG0 Z0.8 F600;\nG1 X100.0 E15 F3000.0 ; intro line\n\nG1 Z0.4 F600     ;Wipe\nG0 Y12 F6000    ;Wipe\nG1 X100 F6000    ;Wipe\nG0 Y8 F12000   ;Wipe\nG1 X200 F6000    ;Wipe\nG1 X190 Y12 F6000 ;Wipe\nG1 X180 Y8 F6000 ;Wipe\nG1 X170 Y12 F6000 ;Wipe\nG1 X160 Y8 F6000 ;Wipe\nG1 X150 Y12 F6000 ;Wipe\n\n\n;G0 Z2.0 F600;\nG92 E0.0 ; reset extruder distance position\n\nSET_VELOCITY_LIMIT ACCEL_TO_DECEL=10000"
+      ]
+    },
+    "machine_end_gcode": {
+      "2.3.1": [
+        "M104 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\n\nG92 E0.0     ; reset extruder distance position\nG1 E-1 F2100 ; retract\n\nG0 X50 Y250 F12000;\nM84    ; disable motors\n\nM107   ; turn off fan\n\nSET_VELOCITY_LIMIT ACCEL_TO_DECEL=4000"
+      ]
+    },
+    "use_firmware_retraction": {
+      "2.3.1": "0"
+    },
+    "machine_max_acceleration_travel": {
+      "2.3.1": [
+        "1500",
+        "1250"
+      ]
+    },
+    "z_hop_types": {
+      "2.3.1": "Normal Lift"
+    },
+    "machine_pause_gcode": {
+      "2.3.1": "PAUSE"
+    },
+    "default_filament_profile": {
+      "2.3.1": [
+        "TwoTrees Generic PLA"
+      ]
+    },
+    "bed_exclude_area": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "layer_change_gcode": {
+      "2.3.1": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "scan_first_layer": {
+      "2.3.1": "0"
+    },
+    "nozzle_type": {
+      "2.3.1": "hardened_steel"
+    },
+    "auxiliary_fan": {
+      "2.3.1": "0"
+    },
+    "setting_id": {
+      "2.3.1": "GM001"
+    },
+    "printer_model": {
+      "2.3.1": "TwoTrees SK1"
+    },
+    "printable_area": {
+      "2.3.1": [
+        "0x0",
+        "256x0",
+        "256x256",
+        "0x256"
+      ]
+    },
+    "thumbnails": {
+      "2.3.1": [
+        "300x300"
+      ]
+    },
+    "thumbnails_format": {
+      "2.3.1": "PNG"
+    },
+    "support_multi_bed_types": {
+      "2.3.1": "1"
+    }
+  }
+}

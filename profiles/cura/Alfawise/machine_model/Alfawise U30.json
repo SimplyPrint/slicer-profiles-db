@@ -1,0 +1,153 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Alfawise U30",
+  "vendor": "Alfawise",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Alfawise U30"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Nicolas Nussbaum"
+    },
+    "manufacturer": {
+      "2026-02-25": "Alfawise"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "alfawise_u30_extruder_0"
+      }
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "fast"
+    },
+    "gantry_height": {
+      "2026-02-25": "25"
+    },
+    "layer_height_0": {
+      "2026-02-25": 0.2
+    },
+    "machine_acceleration": {
+      "2026-02-25": 300
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 220
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "; -- END GCODE --\nM104 S0                     ;extruder heater off\nM140 S0                     ;heated bed heater off (if you have it)\nG91                                    ;relative positioning\nG1 E-1 F300                            ;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+0.5 E-5 X-20 Y-20 F80 ;move Z up a bit and retract filament even more\nG28 X0 Y0                              ;move X/Y to min endstops, so the head is out of the way\nM84                         ;steppers off\nG90                         ;absolute positioning\nM107       ;turn the fan off; -- end of END GCODE --"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 250
+    },
+    "machine_max_acceleration_e": {
+      "2026-02-25": 3000
+    },
+    "machine_max_acceleration_x": {
+      "2026-02-25": 500
+    },
+    "machine_max_acceleration_y": {
+      "2026-02-25": 500
+    },
+    "machine_max_acceleration_z": {
+      "2026-02-25": 10
+    },
+    "machine_max_feedrate_e": {
+      "2026-02-25": 100
+    },
+    "machine_max_feedrate_x": {
+      "2026-02-25": 200
+    },
+    "machine_max_feedrate_y": {
+      "2026-02-25": 200
+    },
+    "machine_max_feedrate_z": {
+      "2026-02-25": 5
+    },
+    "machine_max_jerk_e": {
+      "2026-02-25": 5.0
+    },
+    "machine_max_jerk_xy": {
+      "2026-02-25": 20.0
+    },
+    "machine_max_jerk_z": {
+      "2026-02-25": 0.4
+    },
+    "machine_name": {
+      "2026-02-25": "Alfawise U30"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "; -- START GCODE --\nG21        ;metric values\nG90        ;absolute positioning\nM82        ;set extruder to absolute mode\nM107       ;start with the fan off\nG28 X0 Y0  ;move X/Y to min endstops\nG28 Z0     ;move Z to min endstops\nG1 Z1 F1000             ;move up slightly\nG1 Y60.0 Z0 E9.0 F1000.0;intro line\nG1 Y100.0 E21.5 F1000.0 ;continue line\nG92 E0                  ;zero the extruded length again\nG1 F80\n;Put printing message on LCD screen\nM117 Printing...\n; -- end of START GCODE --"
+    },
+    "machine_steps_per_mm_e": {
+      "2026-02-25": 93
+    },
+    "machine_steps_per_mm_x": {
+      "2026-02-25": 80
+    },
+    "machine_steps_per_mm_y": {
+      "2026-02-25": 80
+    },
+    "machine_steps_per_mm_z": {
+      "2026-02-25": 400
+    },
+    "machine_width": {
+      "2026-02-25": 220
+    },
+    "material_diameter": {
+      "2026-02-25": 1.75
+    },
+    "retraction_amount": {
+      "2026-02-25": 5
+    },
+    "retraction_enable": {
+      "2026-02-25": true
+    },
+    "retraction_speed": {
+      "2026-02-25": 45
+    },
+    "skirt_brim_minimal_length": {
+      "2026-02-25": 250
+    },
+    "skirt_line_count": {
+      "2026-02-25": 1
+    },
+    "speed_print": {
+      "2026-02-25": 40
+    },
+    "speed_z_hop": {
+      "2026-02-25": "machine_max_feedrate_z"
+    },
+    "support_enable": {
+      "2026-02-25": true
+    },
+    "wall_thickness": {
+      "2026-02-25": "1.2"
+    }
+  }
+}

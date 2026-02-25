@@ -1,0 +1,435 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Ultimaker 3",
+  "vendor": "Ultimaker B.V.",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Ultimaker 3"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "ultimaker"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Ultimaker"
+    },
+    "manufacturer": {
+      "2026-02-25": "Ultimaker B.V."
+    },
+    "file_formats": {
+      "2026-02-25": "application/gzip;text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "ultimaker3_platform.obj"
+    },
+    "bom_numbers": {
+      "2026-02-25": [
+        9066
+      ]
+    },
+    "exclude_materials": {
+      "2026-02-25": [
+        "generic_cffcpe",
+        "generic_cffpa",
+        "generic_flexible",
+        "generic_gffcpe",
+        "generic_gffpa",
+        "generic_hips",
+        "generic_petcf",
+        "structur3d_",
+        "ultimaker_petcf"
+      ]
+    },
+    "firmware_update_info": {
+      "2026-02-25": {
+        "check_urls": [
+          "https://software.ultimaker.com/releases/firmware/9066/stable/um-update.swu.version"
+        ],
+        "id": 9066,
+        "update_url": "https://ultimaker.com/firmware?utm_source=cura&utm_medium=software&utm_campaign=fw-update"
+      }
+    },
+    "first_start_actions": {
+      "2026-02-25": [
+        "DiscoverUM3Action"
+      ]
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "has_variants": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "ultimaker3_extruder_left",
+        "1": "ultimaker3_extruder_right"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        0,
+        0
+      ]
+    },
+    "platform_texture": {
+      "2026-02-25": "Ultimaker3backplate.png"
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "fast"
+    },
+    "preferred_variant_name": {
+      "2026-02-25": "AA 0.4"
+    },
+    "supported_actions": {
+      "2026-02-25": [
+        "DiscoverUM3Action"
+      ]
+    },
+    "supports_network_connection": {
+      "2026-02-25": true
+    },
+    "supports_usb_connection": {
+      "2026-02-25": false
+    },
+    "variants_name": {
+      "2026-02-25": "Print core"
+    },
+    "acceleration_enabled": {
+      "2026-02-25": true
+    },
+    "acceleration_prime_tower": {
+      "2026-02-25": "math.ceil(acceleration_print * 2000 / 3500)"
+    },
+    "acceleration_print": {
+      "2026-02-25": "3500"
+    },
+    "acceleration_support": {
+      "2026-02-25": "math.ceil(acceleration_print * 2000 / 3500)"
+    },
+    "acceleration_support_interface": {
+      "2026-02-25": "acceleration_topbottom"
+    },
+    "acceleration_topbottom": {
+      "2026-02-25": "math.ceil(acceleration_print * 1000 / 3500)"
+    },
+    "acceleration_wall": {
+      "2026-02-25": "math.ceil(acceleration_print * 1500 / 3500)"
+    },
+    "acceleration_wall_0": {
+      "2026-02-25": "math.ceil(acceleration_wall * 1000 / 3500)"
+    },
+    "brim_width": {
+      "2026-02-25": "3"
+    },
+    "cool_fan_speed": {
+      "2026-02-25": "50"
+    },
+    "default_material_print_temperature": {
+      "2026-02-25": "200"
+    },
+    "extruder_prime_pos_abs": {
+      "2026-02-25": true
+    },
+    "gantry_height": {
+      "2026-02-25": "60"
+    },
+    "infill_overlap": {
+      "2026-02-25": "0"
+    },
+    "infill_pattern": {
+      "2026-02-25": "'zigzag' if infill_sparse_density > 80 else 'triangles'"
+    },
+    "infill_wipe_dist": {
+      "2026-02-25": "0"
+    },
+    "jerk_enabled": {
+      "2026-02-25": "True"
+    },
+    "layer_start_x": {
+      "2026-02-25": "sum(extruderValues('machine_extruder_start_pos_x')) / len(extruderValues('machine_extruder_start_pos_x'))"
+    },
+    "layer_start_y": {
+      "2026-02-25": "sum(extruderValues('machine_extruder_start_pos_y')) / len(extruderValues('machine_extruder_start_pos_y'))"
+    },
+    "machine_acceleration": {
+      "2026-02-25": 3000
+    },
+    "machine_depth": {
+      "2026-02-25": 215
+    },
+    "machine_disallowed_areas": {
+      "2026-02-25": [
+        [
+          [
+            92.8,
+            -53.4
+          ],
+          [
+            92.8,
+            -97.5
+          ],
+          [
+            116.5,
+            -97.5
+          ],
+          [
+            116.5,
+            -53.4
+          ]
+        ],
+        [
+          [
+            73.8,
+            107.5
+          ],
+          [
+            73.8,
+            100.5
+          ],
+          [
+            116.5,
+            100.5
+          ],
+          [
+            116.5,
+            107.5
+          ]
+        ],
+        [
+          [
+            74.6,
+            107.5
+          ],
+          [
+            74.6,
+            100.5
+          ],
+          [
+            116.5,
+            100.5
+          ],
+          [
+            116.5,
+            107.5
+          ]
+        ],
+        [
+          [
+            74.9,
+            -97.5
+          ],
+          [
+            74.9,
+            -107.5
+          ],
+          [
+            116.5,
+            -107.5
+          ],
+          [
+            116.5,
+            -97.5
+          ]
+        ],
+        [
+          [
+            -116.5,
+            -103.5
+          ],
+          [
+            -116.5,
+            -107.5
+          ],
+          [
+            -100.9,
+            -107.5
+          ],
+          [
+            -100.9,
+            -103.5
+          ]
+        ],
+        [
+          [
+            -116.5,
+            105.8
+          ],
+          [
+            -96.9,
+            105.8
+          ],
+          [
+            -96.9,
+            107.5
+          ],
+          [
+            -116.5,
+            107.5
+          ]
+        ]
+      ]
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "G91 ;Relative movement\nG0 F15000 X8.0 Z0.5 E-4.5 ;Wiping+material retraction\nG0 F10000 Z1.5 E4.5 ;Compensation for the retraction\nG90 ;Disable relative movement"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "Griffin"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -41.9,
+          -45.8
+        ],
+        [
+          -41.9,
+          33.9
+        ],
+        [
+          59.9,
+          33.9
+        ],
+        [
+          59.9,
+          -45.8
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 200
+    },
+    "machine_max_feedrate_x": {
+      "2026-02-25": 300
+    },
+    "machine_max_feedrate_y": {
+      "2026-02-25": 300
+    },
+    "machine_max_feedrate_z": {
+      "2026-02-25": 40
+    },
+    "machine_min_cool_heat_time_window": {
+      "2026-02-25": "15"
+    },
+    "machine_name": {
+      "2026-02-25": "Ultimaker 3"
+    },
+    "machine_nozzle_cool_down_speed": {
+      "2026-02-25": 0.8
+    },
+    "machine_nozzle_heat_up_speed": {
+      "2026-02-25": 1.4
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ""
+    },
+    "machine_width": {
+      "2026-02-25": 233
+    },
+    "multiple_mesh_overlap": {
+      "2026-02-25": "0"
+    },
+    "optimize_wall_printing_order": {
+      "2026-02-25": "True"
+    },
+    "prime_blob_enable": {
+      "2026-02-25": true
+    },
+    "prime_tower_enable": {
+      "2026-02-25": true
+    },
+    "prime_tower_position_x": {
+      "2026-02-25": "185"
+    },
+    "prime_tower_wipe_enabled": {
+      "2026-02-25": false
+    },
+    "retraction_amount": {
+      "2026-02-25": "6.5"
+    },
+    "retraction_hop": {
+      "2026-02-25": "2"
+    },
+    "retraction_hop_enabled": {
+      "2026-02-25": "extruders_enabled_count > 1"
+    },
+    "retraction_hop_only_when_collides": {
+      "2026-02-25": "True"
+    },
+    "retraction_prime_speed": {
+      "2026-02-25": "15"
+    },
+    "skin_overlap": {
+      "2026-02-25": "10"
+    },
+    "speed_prime_tower": {
+      "2026-02-25": "speed_topbottom"
+    },
+    "speed_print": {
+      "2026-02-25": "35"
+    },
+    "speed_support": {
+      "2026-02-25": "speed_wall_0"
+    },
+    "speed_support_interface": {
+      "2026-02-25": "speed_topbottom"
+    },
+    "speed_topbottom": {
+      "2026-02-25": "math.ceil(speed_print * 20 / 35)"
+    },
+    "speed_travel": {
+      "2026-02-25": "250"
+    },
+    "speed_wall": {
+      "2026-02-25": "math.ceil(speed_print * 30 / 35)"
+    },
+    "speed_wall_0": {
+      "2026-02-25": "math.ceil(speed_wall * 20 / 30)"
+    },
+    "speed_wall_x": {
+      "2026-02-25": "speed_wall"
+    },
+    "support_angle": {
+      "2026-02-25": "45"
+    },
+    "switch_extruder_prime_speed": {
+      "2026-02-25": "15"
+    },
+    "switch_extruder_retraction_amount": {
+      "2026-02-25": "8"
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": "1"
+    },
+    "travel_avoid_distance": {
+      "2026-02-25": "3 if extruders_enabled_count > 1 else machine_nozzle_tip_outer_diameter / 2 * 1.5"
+    },
+    "wall_0_inset": {
+      "2026-02-25": "0"
+    },
+    "zig_zaggify_infill": {
+      "2026-02-25": "gradual_infill_steps == 0"
+    }
+  }
+}

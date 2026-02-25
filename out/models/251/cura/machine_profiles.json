@@ -1,0 +1,101 @@
+[
+    {
+        "vendor": "Renkforce",
+        "machine_model": {
+            "name": "Renkforce RF100 V2",
+            "version": 2,
+            "inherits": "fdmprinter",
+            "visible": true,
+            "author": "Simon Peter (based on RF100.ini by Conrad Electronic SE)",
+            "manufacturer": "Renkforce",
+            "file_formats": "text/x-gcode",
+            "machine_extruder_trains": {
+                "0": "renkforce_rf100_extruder_0"
+            },
+            "adhesion_type": "skirt",
+            "bottom_thickness": "0.6",
+            "brim_width": "3.0",
+            "cool_fan_enabled": "True",
+            "cool_fan_full_at_height": "0.5",
+            "cool_fan_speed_max": "100.0",
+            "cool_fan_speed_min": "100.0",
+            "cool_lift_head": "True",
+            "cool_min_layer_time": "1.0",
+            "cool_min_speed": "5.0",
+            "gantry_height": "8",
+            "infill_before_walls": "True",
+            "infill_line_width": "0.6",
+            "infill_overlap": "15.0",
+            "infill_sparse_density": "26.0",
+            "ironing_enabled": "True",
+            "layer_0_z_overlap": "0.11",
+            "layer_height_0": "0.3",
+            "machine_depth": "120",
+            "machine_end_gcode": ";End GCode\nG91 ;relative positioning\nG1 E-1 F300 ;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+0.5 E-4 F300 ;move Z up a bit and retract filament even more\nM104 S0 ;extruder heater off\nM140 S0 ;heated bed heater off (if you have it)\nG0 Z{machine_height} F1800 ;move the platform all the way down\nG28 X0 Y0 F1800 ;move X/Y to min endstops, so the head is out of the way\nM84 ;steppers off\nG90 ;absolute positioning\nM117 Done",
+            "machine_gcode_flavor": "RepRap (Marlin/Sprinter)",
+            "machine_head_with_fans_polygon": [
+                [
+                    -26,
+                    -27
+                ],
+                [
+                    38,
+                    -27
+                ],
+                [
+                    38,
+                    55
+                ],
+                [
+                    -26,
+                    55
+                ]
+            ],
+            "machine_height": "120",
+            "machine_name": "Renkforce RF100 V2",
+            "machine_start_gcode": ";Sliced at: {day} {date} {time}\nG21 ;metric values\nG90 ;absolute positioning\nM82 ;set extruder to absolute mode\nM107 ;start with the fan off\nG1 Z5.0 F1800 ;move Z to 5mm\nG28 X0 Y0 F1800 ;move X/Y to min endstops\nG28 Z0 ;move Z to min endstop\nG92 E0 ;zero the extruded length\nG1 F200 E6.0 ;extrude 6.0mm of feed stock to build pressure\nG1 Z5.0 F300 ;move the platform down 5mm\nG92 E0 ;zero the extruded length again\nG1 F1800\n;Put printing message on LCD screen\nM117 Printing...",
+            "machine_width": "120",
+            "material_flow": "110",
+            "ooze_shield_enabled": "True",
+            "raft_airgap": "0.33",
+            "raft_base_line_spacing": "3.0",
+            "raft_base_line_width": "1.0",
+            "raft_base_thickness": "0.3",
+            "raft_interface_line_spacing": "3.0",
+            "raft_interface_line_width": "0.4",
+            "raft_interface_thickness": "0.27",
+            "raft_margin": "6.0",
+            "raft_speed": "20.0",
+            "raft_surface_layers": "2",
+            "raft_surface_line_spacing": "0.4",
+            "raft_surface_line_width": "0.4",
+            "raft_surface_thickness": "0.1",
+            "retraction_amount": "5.0",
+            "retraction_combing": "'all'",
+            "retraction_enable": "True",
+            "retraction_min_travel": "1.5",
+            "skin_overlap": "15.0",
+            "skirt_brim_minimal_length": "150.0",
+            "skirt_gap": "3.0",
+            "skirt_line_count": "3",
+            "speed_infill": "50.0",
+            "speed_layer_0": "15.0",
+            "speed_print": "50.0",
+            "speed_topbottom": "30.0",
+            "speed_travel": "50.0",
+            "speed_wall_0": "25.0",
+            "speed_wall_x": "35.0",
+            "support_angle": "60.0",
+            "support_enable": "False",
+            "support_infill_rate": "15 if support_enable and support_structure == 'normal' else 0 if support_enable and support_structure == 'tree' else 15",
+            "support_line_width": "0.6",
+            "support_pattern": "lines",
+            "support_type": "everywhere",
+            "support_xy_distance": "0.7",
+            "support_z_distance": "0.35",
+            "top_bottom_thickness": "0.8",
+            "wall_thickness": "0.8"
+        },
+        "variants": {}
+    }
+]

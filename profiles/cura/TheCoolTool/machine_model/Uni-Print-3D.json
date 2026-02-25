@@ -1,0 +1,82 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Uni-Print-3D",
+  "vendor": "TheCoolTool",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Uni-Print-3D"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Alexander Rössler"
+    },
+    "manufacturer": {
+      "2026-02-25": "TheCoolTool"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-ngc;text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "uni_print_3d_platform.3mf"
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "uni_print_3d_extruder_0"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        0,
+        0
+      ]
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": true
+    },
+    "machine_depth": {
+      "2026-02-25": 220
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 P0 ; turn off hotend\nG0 X-80 Y100; move the extruder out of the way\nM420 R0.0 E0.1 D0.0 P0.6 ; signalize end of print\nM140 P0 ; turn off heatbed\nM65 P16 ; turn off external fan\nM65 P15 ; turn off power"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 230
+    },
+    "machine_name": {
+      "2026-02-25": "UNI-PRINT-3D"
+    },
+    "machine_nozzle_cool_down_speed": {
+      "2026-02-25": 2.0
+    },
+    "machine_nozzle_heat_up_speed": {
+      "2026-02-25": 2.0
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "M53; enable feed-hold\nG0 Z2.0; always start from the same height to compensate backlash\nG28; move extruder to 0\nM420 R0.0 E0.0 D0.0 P0.1 ; turn the lights on\nM107; turn off fan\nG64 P0.05 Q0.05; path blending settings\nG23; unretract"
+    },
+    "machine_width": {
+      "2026-02-25": 186
+    }
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "slicer": "bambustudio",
+  "profile_type": "machine",
+  "name": "Anycubic Chiron 0.4 nozzle",
+  "vendor": "Anycubic",
+  "first_seen": "02.05.01.52",
+  "last_seen": "02.05.01.52",
+  "filament_id": null,
+  "setting_id": "GM_Anycubic_002",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "02.05.01.52": "machine"
+    },
+    "name": {
+      "02.05.01.52": "Anycubic Chiron 0.4 nozzle"
+    },
+    "from": {
+      "02.05.01.52": "system"
+    },
+    "instantiation": {
+      "02.05.01.52": "true"
+    },
+    "gcode_flavor": {
+      "02.05.01.52": "marlin"
+    },
+    "machine_start_gcode": {
+      "02.05.01.52": "M104 S140;start the nozzle preheat and don't wait\nG21;metric values\nG90;absolute positioning\nM82;set extruder to absolute mode\nM107       ;start with the fan off\nG28;home all\nM190 S[bed_temperature_initial_layer_single]; set wait for bed temp\nM109 S[nozzle_temperature_initial_layer] ; wait for extruder temp\nG1 Z15.0 F3600 ;move the platform down 15mm\nG92 E0;zero the extruded length\nG1 F200 E40;extrude 40mm of feed stock\nG92 E0;zero the extruded length again\nG1 F3600"
+    },
+    "machine_end_gcode": {
+      "02.05.01.52": "M104 S0;extruder heater off\nM140 S0  ;heated bed heater off (if you have it)\nG91;relative positioning\nG1 E-4 F300;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+10 F3600 ;move Z up a bit\nG90;absolute positioning\nG1 X-10 F3000; get the head off the bed\nG1 F3000 Y400;kick the bed out\nM84;steppers off"
+    },
+    "extruder_colour": {
+      "02.05.01.52": [
+        "#018001"
+      ]
+    },
+    "extruder_offset": {
+      "02.05.01.52": [
+        "0x0"
+      ]
+    },
+    "machine_max_acceleration_e": {
+      "02.05.01.52": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "02.05.01.52": [
+        "1250",
+        "1250"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "02.05.01.52": [
+        "1250",
+        "1250"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "02.05.01.52": [
+        "1500",
+        "1250"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "02.05.01.52": [
+        "1000",
+        "960"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "02.05.01.52": [
+        "1000",
+        "960"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "02.05.01.52": [
+        "200",
+        "200"
+      ]
+    },
+    "machine_max_speed_e": {
+      "02.05.01.52": [
+        "120",
+        "120"
+      ]
+    },
+    "machine_max_speed_x": {
+      "02.05.01.52": [
+        "300",
+        "100"
+      ]
+    },
+    "machine_max_speed_y": {
+      "02.05.01.52": [
+        "300",
+        "100"
+      ]
+    },
+    "machine_max_speed_z": {
+      "02.05.01.52": [
+        "12",
+        "12"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "02.05.01.52": [
+        "4.5",
+        "4.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "02.05.01.52": [
+        "8",
+        "8"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "02.05.01.52": [
+        "8",
+        "8"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "02.05.01.52": [
+        "0.4",
+        "0.4"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "02.05.01.52": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "02.05.01.52": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "02.05.01.52": [
+        "0.3"
+      ]
+    },
+    "min_layer_height": {
+      "02.05.01.52": [
+        "0.1"
+      ]
+    },
+    "printable_height": {
+      "02.05.01.52": "450"
+    },
+    "extruder_clearance_max_radius": {
+      "02.05.01.52": "65"
+    },
+    "extruder_clearance_dist_to_rod": {
+      "02.05.01.52": "33"
+    },
+    "extruder_clearance_height_to_rod": {
+      "02.05.01.52": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "02.05.01.52": "140"
+    },
+    "nozzle_diameter": {
+      "02.05.01.52": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "02.05.01.52": "Anycubic"
+    },
+    "printer_technology": {
+      "02.05.01.52": "FFF"
+    },
+    "printer_variant": {
+      "02.05.01.52": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "02.05.01.52": [
+        "1"
+      ]
+    },
+    "retract_before_wipe": {
+      "02.05.01.52": [
+        "0%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "02.05.01.52": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "02.05.01.52": [
+        "2"
+      ]
+    },
+    "retract_length_toolchange": {
+      "02.05.01.52": [
+        "4"
+      ]
+    },
+    "z_hop": {
+      "02.05.01.52": [
+        "0.4"
+      ]
+    },
+    "retract_restart_extra": {
+      "02.05.01.52": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "02.05.01.52": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "02.05.01.52": [
+        "40"
+      ]
+    },
+    "deretraction_speed": {
+      "02.05.01.52": [
+        "0"
+      ]
+    },
+    "silent_mode": {
+      "02.05.01.52": "0"
+    },
+    "single_extruder_multi_material": {
+      "02.05.01.52": "0"
+    },
+    "change_filament_gcode": {
+      "02.05.01.52": "M600"
+    },
+    "before_layer_change_gcode": {
+      "02.05.01.52": ";BEFORE_LAYER_CHANGE\nG92 E0.0\n;[layer_z]\n\n"
+    },
+    "layer_change_gcode": {
+      "02.05.01.52": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "machine_pause_gcode": {
+      "02.05.01.52": "M601"
+    },
+    "wipe": {
+      "02.05.01.52": [
+        "1"
+      ]
+    },
+    "z_hop_types": {
+      "02.05.01.52": "Normal Lift"
+    },
+    "setting_id": {
+      "02.05.01.52": "GM_Anycubic_002"
+    },
+    "printer_model": {
+      "02.05.01.52": "Anycubic Chiron"
+    },
+    "default_print_profile": {
+      "02.05.01.52": "0.20mm Standard @Anycubic Chiron"
+    },
+    "extruder_type": {
+      "02.05.01.52": [
+        "Bowden"
+      ]
+    },
+    "printable_area": {
+      "02.05.01.52": [
+        "0x0",
+        "400x0",
+        "400x400",
+        "0x400"
+      ]
+    },
+    "retract_lift_below": {
+      "02.05.01.52": [
+        "449"
+      ]
+    },
+    "nozzle_type": {
+      "02.05.01.52": "undefine"
+    },
+    "auxiliary_fan": {
+      "02.05.01.52": "0"
+    },
+    "default_filament_profile": {
+      "02.05.01.52": [
+        "Generic PLA @Anycubic"
+      ]
+    },
+    "scan_first_layer": {
+      "02.05.01.52": "0"
+    }
+  }
+}

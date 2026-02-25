@@ -1,0 +1,359 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "Kingroon KP3S PRO V2 0.4 nozzle",
+  "vendor": "Kingroon",
+  "first_seen": "2.3.1",
+  "last_seen": "2.3.1",
+  "filament_id": null,
+  "setting_id": "GM003",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.3.1": "machine"
+    },
+    "name": {
+      "2.3.1": "Kingroon KP3S PRO V2 0.4 nozzle"
+    },
+    "from": {
+      "2.3.1": "system"
+    },
+    "instantiation": {
+      "2.3.1": "true"
+    },
+    "auxiliary_fan": {
+      "2.3.1": "0"
+    },
+    "fan_kickstart": {
+      "2.3.1": "0"
+    },
+    "fan_speedup_overhangs": {
+      "2.3.1": "1"
+    },
+    "fan_speedup_time": {
+      "2.3.1": "0"
+    },
+    "gcode_flavor": {
+      "2.3.1": "klipper"
+    },
+    "layer_change_gcode": {
+      "2.3.1": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "before_layer_change_gcode": {
+      "2.3.1": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "machine_pause_gcode": {
+      "2.3.1": "M601"
+    },
+    "machine_end_gcode": {
+      "2.3.1": "{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+2, max_print_height)} F600 ; Move print head up{endif}\nG1 X5 Y200 F6000 ; present print\n{if max_layer_z < max_print_height-10}G1 Z{z_offset+min(max_layer_z+20, max_print_height-10)} F600 ; Move print head further up{endif}\n{if max_layer_z < max_print_height*0.6}G1 Z{max_print_height*0.6} F600 ; Move print head further up{endif}\nM140 S0 ; turn off heatbed\nM104 S0 ; turn off temperature\nM107 ; turn off fan\nM84 X Y E ; disable motors\nEND_PRINT"
+    },
+    "extruder_colour": {
+      "2.3.1": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "extruder_clearance_radius": {
+      "2.3.1": "45"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.3.1": "25"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.3.1": "140"
+    },
+    "template_custom_gcode": {
+      "2.3.1": ""
+    },
+    "thumbnails": {
+      "2.3.1": [
+        "300x300"
+      ]
+    },
+    "upward_compatible_machine": {
+      "2.3.1": []
+    },
+    "use_firmware_retraction": {
+      "2.3.1": "1"
+    },
+    "use_relative_e_distances": {
+      "2.3.1": "1"
+    },
+    "machine_load_filament_time": {
+      "2.3.1": "0"
+    },
+    "machine_max_acceleration_e": {
+      "2.3.1": [
+        "10000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.3.1": [
+        "10000",
+        "9000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.3.1": [
+        "10000",
+        "9000"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "2.3.1": [
+        "20000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.3.1": [
+        "10000",
+        "9000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.3.1": [
+        "10000",
+        "9000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.3.1": [
+        "10000",
+        "100"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.3.1": [
+        "20",
+        "5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.3.1": [
+        "20",
+        "7"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.3.1": [
+        "20",
+        "7"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.3.1": [
+        "0.4",
+        "0.4"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.3.1": [
+        "60",
+        "60"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.3.1": [
+        "500",
+        "200"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.3.1": [
+        "500",
+        "200"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.3.1": [
+        "12",
+        "12"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "2.3.1": [
+        "0.32"
+      ]
+    },
+    "min_layer_height": {
+      "2.3.1": [
+        "0.05"
+      ]
+    },
+    "printhost_apikey": {
+      "2.3.1": ""
+    },
+    "printhost_authorization_type": {
+      "2.3.1": "key"
+    },
+    "printhost_cafile": {
+      "2.3.1": ""
+    },
+    "printhost_password": {
+      "2.3.1": ""
+    },
+    "printhost_port": {
+      "2.3.1": ""
+    },
+    "printhost_ssl_ignore_revoke": {
+      "2.3.1": "0"
+    },
+    "printhost_user": {
+      "2.3.1": ""
+    },
+    "printable_height": {
+      "2.3.1": "200"
+    },
+    "nozzle_diameter": {
+      "2.3.1": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "2.3.1": ""
+    },
+    "printer_technology": {
+      "2.3.1": "FFF"
+    },
+    "printer_variant": {
+      "2.3.1": "0.4"
+    },
+    "printable_area": {
+      "2.3.1": [
+        "0x0",
+        "205x0",
+        "205x205",
+        "0x205"
+      ]
+    },
+    "retraction_minimum_travel": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "retract_before_wipe": {
+      "2.3.1": [
+        "70%"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.3.1": [
+        "2"
+      ]
+    },
+    "nozzle_hrc": {
+      "2.3.1": "0"
+    },
+    "nozzle_type": {
+      "2.3.1": "undefine"
+    },
+    "nozzle_volume": {
+      "2.3.1": "0"
+    },
+    "print_host": {
+      "2.3.1": ""
+    },
+    "print_host_webui": {
+      "2.3.1": ""
+    },
+    "retract_restart_extra": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "2.3.1": [
+        "0.8"
+      ]
+    },
+    "retraction_speed": {
+      "2.3.1": [
+        "45"
+      ]
+    },
+    "scan_first_layer": {
+      "2.3.1": "0"
+    },
+    "deretraction_speed": {
+      "2.3.1": [
+        "45"
+      ]
+    },
+    "silent_mode": {
+      "2.3.1": "0"
+    },
+    "single_extruder_multi_material": {
+      "2.3.1": "1"
+    },
+    "change_filament_gcode": {
+      "2.3.1": "M600"
+    },
+    "wipe": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "wipe_distance": {
+      "2.3.1": [
+        "2"
+      ]
+    },
+    "z_hop": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "z_hop_types": {
+      "2.3.1": "Normal Lift"
+    },
+    "bed_exclude_area": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "machine_start_gcode": {
+      "2.3.1": "START_PRINT EXTRUDER_TEMP=[first_layer_temperature] BED_TEMP=[first_layer_bed_temperature]\nCANCEL_POWEROFF\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\nG92 E0"
+    },
+    "setting_id": {
+      "2.3.1": "GM003"
+    },
+    "printer_model": {
+      "2.3.1": "Kingroon KP3S PRO V2"
+    },
+    "default_filament_profile": {
+      "2.3.1": "Generic PLA @System"
+    },
+    "default_print_profile": {
+      "2.3.1": "0.20mm Standard @Kingroon KP3S PRO V2"
+    }
+  }
+}

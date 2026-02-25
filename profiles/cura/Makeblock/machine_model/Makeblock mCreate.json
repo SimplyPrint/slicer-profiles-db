@@ -1,0 +1,95 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Makeblock mCreate",
+  "vendor": "Makeblock",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Makeblock mCreate"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Makeblock"
+    },
+    "manufacturer": {
+      "2026-02-25": "Makeblock"
+    },
+    "file_formats": {
+      "2026-02-25": "application/gzip;text/x-gcode"
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "makeblock_mcreate_extruder_0"
+      }
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "gantry_height": {
+      "2026-02-25": 15.0
+    },
+    "machine_depth": {
+      "2026-02-25": 225
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "; Mcreate end Gcode \nG4 ; Wait command in buffer have finished \nG92 E0 \nG1 E-2 F300; retract filament \nG28 X Z; home x z axis \nG1 F3000 Y220;Move Heat Bed to the front for easy print removal \nM104 S0; Turn off the nozzle heat \nM140 S0; Turn off the bed heat \nM107 ; Turn off the Fan \nM84 ; Disable stepper motors \n; End of GCode"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 1
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 300
+    },
+    "machine_name": {
+      "2026-02-25": "Makeblock mCreate"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "; Mcreate Start Gcode \nG28 ; Home all axes \nG92 E0 ; Reset Extruder\nG1 X0 Y0 Z15 F3000.0 ; Move to start position \nG1 E10 F400 ;load filament \nG1 E2 F400 ;retarct filament \nG92 E0 ; Reset Extruder \nG1 X0 Y130 Z15 F3000.0 \nG12 ; clean nozzle \nG1 X0 Y0 Z0.3 F3000.0 ; Move to start position \nG1 E9.0 F400 ;loadsome filament \nG92 E0 ; Reset Extruder \n; End of start GCode"
+    },
+    "machine_width": {
+      "2026-02-25": 225
+    }
+  }
+}

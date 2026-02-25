@@ -1,0 +1,124 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Creality CR-X",
+  "vendor": "Creality3D",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Creality CR-X"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "SRC"
+    },
+    "manufacturer": {
+      "2026-02-25": "Creality3D"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "cr-x.3mf"
+    },
+    "has_machine_quality": {
+      "2026-02-25": false
+    },
+    "has_variants": {
+      "2026-02-25": false
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "cr-x_extruder_0",
+        "1": "cr-x_extruder_1"
+      }
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "draft"
+    },
+    "adhesion_type": {
+      "2026-02-25": "skirt"
+    },
+    "gantry_height": {
+      "2026-02-25": "30"
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 300
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 S0  ;hotend off\nM140 S0  ;bed off\nG92 E0\nG1 F2000 E-100  ;retract filament 100mm\nG92 E0\nG1 F3000 X0 Y270  ;move bed for easy part removal\nM84  ;disable steppers"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 400
+    },
+    "machine_max_acceleration_e": {
+      "2026-02-25": 5000
+    },
+    "machine_max_acceleration_x": {
+      "2026-02-25": 500
+    },
+    "machine_max_acceleration_y": {
+      "2026-02-25": 500
+    },
+    "machine_max_acceleration_z": {
+      "2026-02-25": 100
+    },
+    "machine_max_jerk_e": {
+      "2026-02-25": 5.0
+    },
+    "machine_max_jerk_xy": {
+      "2026-02-25": 5.0
+    },
+    "machine_max_jerk_z": {
+      "2026-02-25": 0.4
+    },
+    "machine_name": {
+      "2026-02-25": "Creality CR-X"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G21 ;metric values\nG28 ;home all\nG90 ;absolute positioning\nM107 ;start with the fan off\nG1 F2400 Z15.0 ;raise the nozzle 15mm\nM109 S{material_print_temperature} ;Set Extruder Temperature and Wait\nM190 S{material_bed_temperature}; Wait for bed temperature to reach target temp\nT0 ;Switch to Extruder 1\nG1 F3000 X5 Y10 Z0.2 ;move to prime start position\nG92 E0 ;reset extrusion distance\nG1 F600 X160 E15 ;prime nozzle in a line\nG1 F5000 X180 ;quick wipe\nG92 E0 ;reset extrusion distance"
+    },
+    "machine_width": {
+      "2026-02-25": 300
+    },
+    "retraction_amount": {
+      "2026-02-25": 3
+    },
+    "retraction_speed": {
+      "2026-02-25": 70
+    },
+    "speed_print": {
+      "2026-02-25": 60
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": 1
+    },
+    "wall_thickness": {
+      "2026-02-25": "1"
+    }
+  }
+}

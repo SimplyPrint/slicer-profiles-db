@@ -1,0 +1,205 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "machine",
+  "name": "Jubilee",
+  "vendor": "Jubilee",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "bed_shape": {
+      "1.4.4": "0x0,300x0,300x300,0x300"
+    },
+    "cooling_tube_length": {
+      "1.4.4": "5"
+    },
+    "cooling_tube_retraction": {
+      "1.4.4": "91.5"
+    },
+    "deretract_speed": {
+      "1.4.4": "0,0"
+    },
+    "end_gcode": {
+      "1.4.4": "T-1         ; desect current tool\\nG0 Z305  ; move bed all the way to the bottom\\nM104 S0 T0; turn off extruder 0\\nM104 S0 T1; turn off extruder 1\\nM140 S0 ; turn off bed\\nG0 X0 Y0 F30000; return home\\nM84 S600; disable motors after ten mins of inactivity\\n"
+    },
+    "extra_loading_move": {
+      "1.4.4": "-2"
+    },
+    "extruder_colour": {
+      "1.4.4": "#FF8000;#0080FF"
+    },
+    "extruder_offset": {
+      "1.4.4": "0x0,0x0"
+    },
+    "gcode_flavor": {
+      "1.4.4": "marlin"
+    },
+    "high_current_on_filament_swap": {
+      "1.4.4": "0"
+    },
+    "layer_gcode": {
+      "1.4.4": ""
+    },
+    "machine_max_acceleration_e": {
+      "1.4.4": "1500"
+    },
+    "machine_max_acceleration_extruding": {
+      "1.4.4": "1500"
+    },
+    "machine_max_acceleration_retracting": {
+      "1.4.4": "1500"
+    },
+    "machine_max_acceleration_x": {
+      "1.4.4": "1000"
+    },
+    "machine_max_acceleration_y": {
+      "1.4.4": "1000"
+    },
+    "machine_max_acceleration_z": {
+      "1.4.4": "20"
+    },
+    "machine_max_feedrate_e": {
+      "1.4.4": "8000"
+    },
+    "machine_max_feedrate_x": {
+      "1.4.4": "13000"
+    },
+    "machine_max_feedrate_y": {
+      "1.4.4": "13000"
+    },
+    "machine_max_feedrate_z": {
+      "1.4.4": "800"
+    },
+    "machine_max_jerk_e": {
+      "1.4.4": "50"
+    },
+    "machine_max_jerk_x": {
+      "1.4.4": "17"
+    },
+    "machine_max_jerk_y": {
+      "1.4.4": "17"
+    },
+    "machine_max_jerk_z": {
+      "1.4.4": "0.1"
+    },
+    "machine_min_extruding_rate": {
+      "1.4.4": "0"
+    },
+    "machine_min_travel_rate": {
+      "1.4.4": "0"
+    },
+    "machine_limits_usage": {
+      "1.4.4": "time_estimate_only"
+    },
+    "max_layer_height": {
+      "1.4.4": "0.3,0.3"
+    },
+    "max_print_height": {
+      "1.4.4": "300"
+    },
+    "min_layer_height": {
+      "1.4.4": "0.05,0.05"
+    },
+    "nozzle_diameter": {
+      "1.4.4": "0.4,0.4"
+    },
+    "parking_pos_retraction": {
+      "1.4.4": "92"
+    },
+    "printer_model": {
+      "1.4.4": "Jubilee"
+    },
+    "printer_technology": {
+      "1.4.4": "FFF"
+    },
+    "remaining_times": {
+      "1.4.4": "0"
+    },
+    "retract_before_travel": {
+      "1.4.4": "2,2"
+    },
+    "retract_before_wipe": {
+      "1.4.4": "0%,0%"
+    },
+    "retract_layer_change": {
+      "1.4.4": "0,0"
+    },
+    "retract_length": {
+      "1.4.4": "1,1"
+    },
+    "retract_length_toolchange": {
+      "1.4.4": "1,1"
+    },
+    "retract_lift": {
+      "1.4.4": "0.2,0.2"
+    },
+    "retract_lift_above": {
+      "1.4.4": "0,0"
+    },
+    "retract_lift_below": {
+      "1.4.4": "0,0"
+    },
+    "retract_restart_extra": {
+      "1.4.4": "0.05,0.05"
+    },
+    "retract_restart_extra_toolchange": {
+      "1.4.4": "0,0"
+    },
+    "retract_speed": {
+      "1.4.4": "133,133"
+    },
+    "silent_mode": {
+      "1.4.4": "0"
+    },
+    "single_extruder_multi_material": {
+      "1.4.4": "0"
+    },
+    "start_gcode": {
+      "1.4.4": "G91 ; relative moves\\nG1 Z1 F900 ; raise tool 1mm\\nG90 ; absolute moves\\nT-1 ; Make sure nothing is parked on the carriage\\nG0 X150 Y150 F10000; Move to the center of the print area\\nM558 F500  ; Set the probing speed\\nG30 ; Do a single probe\\nM558 F50 ; Set a slower probing speed\\nG30 ; Do a second probe\\nT[current_extruder]"
+    },
+    "thumbnails": {
+      "1.4.4": ""
+    },
+    "toolchange_gcode": {
+      "1.4.4": "T[next_extruder]"
+    },
+    "use_firmware_retraction": {
+      "1.4.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.4.4": "1"
+    },
+    "use_volumetric_e": {
+      "1.4.4": "0"
+    },
+    "variable_layer_height": {
+      "1.4.4": "0"
+    },
+    "wipe": {
+      "1.4.4": "0,0"
+    },
+    "z_offset": {
+      "1.4.4": "0"
+    },
+    "before_layer_gcode": {
+      "1.4.4": ";BEFORE_LAYER_CHANGE\\nG92 E0"
+    },
+    "default_filament_profile": {
+      "1.4.4": "\"Generic PLA @Jubilee; Generic PLA @Jubilee\""
+    },
+    "default_print_profile": {
+      "1.4.4": "0.2mm V6, aesthetic @Jubilee"
+    },
+    "printer_variant": {
+      "1.4.4": "0.4"
+    },
+    "printer_notes": {
+      "1.4.4": "V6"
+    },
+    "printer_settings_id": {
+      "1.4.4": "Jubilee"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+[
+    {
+        "vendor": "Two Trees",
+        "machine_model": {
+            "name": "Two Trees Sapphire Pro",
+            "version": 2,
+            "inherits": "two_trees_base",
+            "visible": true,
+            "platform": "sapphirepro_platform.stl",
+            "quality_definition": "two_trees_base",
+            "gantry_height": 65,
+            "infill_material_flow": 100,
+            "infill_overlap": 30,
+            "machine_depth": 220,
+            "machine_head_with_fans_polygon": [
+                [
+                    -30,
+                    19
+                ],
+                [
+                    30,
+                    19
+                ],
+                [
+                    30,
+                    -49
+                ],
+                [
+                    -30,
+                    -49
+                ]
+            ],
+            "machine_height": 220,
+            "machine_name": "Two Trees Sapphire Pro",
+            "machine_start_gcode": "G28 ;Home\nG92 E0 ;Reset Extruder\nG1 Z2.0 F3000 ;Move bed down\nG1 X10.1 Y20 Z0.28 F5000.0 ;Move to start position\nG1 X10.1 Y200.0 Z0.28 F1500.0 E15 ;Draw the first line\nG1 X10.4 Y200.0 Z0.28 F5000.0 ;Move to side a little\nG1 X10.4 Y20 Z0.28 F1500.0 E30 ;Draw the second line\nG92 E0 ;Reset Extruder\nG1 Z2.0 F3000 ;Move Bed up",
+            "machine_width": 220,
+            "material_flow": 90,
+            "retraction_amount": 7,
+            "retraction_speed": 40,
+            "skin_overlap": 20,
+            "speed_print": 60.0,
+            "speed_travel": 180,
+            "speed_travel_layer_0": 100
+        },
+        "variants": {}
+    }
+]

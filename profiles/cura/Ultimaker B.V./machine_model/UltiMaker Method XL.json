@@ -1,0 +1,183 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "UltiMaker Method XL",
+  "vendor": "Ultimaker B.V.",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "UltiMaker Method XL"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "ultimaker_methodx"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "UltiMaker"
+    },
+    "manufacturer": {
+      "2026-02-25": "Ultimaker B.V."
+    },
+    "file_formats": {
+      "2026-02-25": "application/x-makerbot"
+    },
+    "platform": {
+      "2026-02-25": "ultimaker_method_xl_platform.stl"
+    },
+    "has_machine_materials": {
+      "2026-02-25": true
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "has_variants": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "ultimaker_methodxl_extruder_left",
+        "1": "ultimaker_methodxl_extruder_right"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        0,
+        0
+      ]
+    },
+    "platform_texture": {
+      "2026-02-25": "MakerbotMethod.png"
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "draft"
+    },
+    "reference_machine_id": {
+      "2026-02-25": "magma_10"
+    },
+    "supports_network_connection": {
+      "2026-02-25": true
+    },
+    "supports_usb_connection": {
+      "2026-02-25": false
+    },
+    "variants_name": {
+      "2026-02-25": "Extruder"
+    },
+    "weight": {
+      "2026-02-25": -1
+    },
+    "machine_depth": {
+      "2026-02-25": 320
+    },
+    "machine_disallowed_areas": {
+      "2026-02-25": [
+        [
+          [
+            -204,
+            -160
+          ],
+          [
+            204,
+            -160
+          ],
+          [
+            204,
+            -154.5
+          ],
+          [
+            -204,
+            -154.5
+          ]
+        ],
+        [
+          [
+            -204,
+            160
+          ],
+          [
+            204,
+            160
+          ],
+          [
+            204,
+            154.5
+          ],
+          [
+            -204,
+            154.5
+          ]
+        ],
+        [
+          [
+            -205,
+            -160
+          ],
+          [
+            -154.5,
+            -160
+          ],
+          [
+            -154.5,
+            160
+          ],
+          [
+            -205,
+            160
+          ]
+        ],
+        [
+          [
+            154.5,
+            -160
+          ],
+          [
+            205,
+            -160
+          ],
+          [
+            205,
+            160
+          ],
+          [
+            154.5,
+            160
+          ]
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 320
+    },
+    "machine_name": {
+      "2026-02-25": "UltiMaker Method XL"
+    },
+    "machine_width": {
+      "2026-02-25": 410
+    },
+    "prime_tower_position_x": {
+      "2026-02-25": "(305 - (resolveOrValue('prime_tower_base_size') if (resolveOrValue('adhesion_type') == 'raft' or resolveOrValue('prime_tower_brim_enable')) else 0) - max(max(extruderValues('travel_avoid_distance')) + max(extruderValues('support_offset')) + (extruderValue(skirt_brim_extruder_nr, 'skirt_brim_line_width') * extruderValue(skirt_brim_extruder_nr, 'skirt_line_count') * extruderValue(skirt_brim_extruder_nr, 'initial_layer_line_width_factor') / 100 + extruderValue(skirt_brim_extruder_nr, 'skirt_gap') if resolveOrValue('adhesion_type') == 'skirt' else 0) + (resolveOrValue('draft_shield_dist') if resolveOrValue('draft_shield_enabled') else 0), max(map(abs, extruderValues('machine_nozzle_offset_x'))), 1)) - (305 / 2)"
+    },
+    "prime_tower_position_y": {
+      "2026-02-25": "305 - prime_tower_size - (resolveOrValue('prime_tower_base_size') if (resolveOrValue('adhesion_type') == 'raft' or resolveOrValue('prime_tower_brim_enable')) else 0) - max(max(extruderValues('travel_avoid_distance')) + max(extruderValues('support_offset')) + (extruderValue(skirt_brim_extruder_nr, 'skirt_brim_line_width') * extruderValue(skirt_brim_extruder_nr, 'skirt_line_count') * extruderValue(skirt_brim_extruder_nr, 'initial_layer_line_width_factor') / 100 + extruderValue(skirt_brim_extruder_nr, 'skirt_gap') if resolveOrValue('adhesion_type') == 'skirt' else 0) + (resolveOrValue('draft_shield_dist') if resolveOrValue('draft_shield_enabled') else 0), max(map(abs, extruderValues('machine_nozzle_offset_y'))), 1) - (305 / 2)"
+    },
+    "speed_travel": {
+      "2026-02-25": 500
+    }
+  }
+}

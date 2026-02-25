@@ -1,0 +1,178 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "filament",
+  "name": "Tectonic-3D AURA ASA+ @XL HF0.8",
+  "vendor": "PrusaResearch",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "cooling": {
+      "3.0.0": "1"
+    },
+    "compatible_printers": {
+      "3.0.0": ""
+    },
+    "compatible_printers_condition": {
+      "3.0.0": "printer_notes=~/.*XL.*/ and nozzle_diameter[0]==0.8 and printer_notes=~/.*HF_NOZZLE.*/"
+    },
+    "end_filament_gcode": {
+      "3.0.0": "\"; Filament-specific end gcode\""
+    },
+    "extrusion_multiplier": {
+      "3.0.0": "1"
+    },
+    "filament_loading_speed": {
+      "3.0.0": "10"
+    },
+    "filament_loading_speed_start": {
+      "3.0.0": "50"
+    },
+    "filament_unloading_speed": {
+      "3.0.0": "100"
+    },
+    "filament_unloading_speed_start": {
+      "3.0.0": "100"
+    },
+    "filament_toolchange_delay": {
+      "3.0.0": "0"
+    },
+    "filament_cooling_moves": {
+      "3.0.0": "3"
+    },
+    "filament_cooling_initial_speed": {
+      "3.0.0": "5"
+    },
+    "filament_cooling_final_speed": {
+      "3.0.0": "2.5"
+    },
+    "filament_load_time": {
+      "3.0.0": "10.5"
+    },
+    "filament_unload_time": {
+      "3.0.0": "8.5"
+    },
+    "filament_ramming_parameters": {
+      "3.0.0": "\"250 100 42.4194 42.4194 42.4194 42.4194 42.4194| 0.05 42.4387 0.45 42.4387 0.95 42.4387 1.45 42.4387 1.95 42.4387 2.45 42.4387 2.95 42.4387 3.45 42.4387 3.95 42.4387 4.45 42.4387 4.95 42.4387\""
+    },
+    "filament_minimal_purge_on_wipe_tower": {
+      "3.0.0": "35"
+    },
+    "filament_cost": {
+      "3.0.0": "38.7"
+    },
+    "filament_density": {
+      "3.0.0": "1.07"
+    },
+    "filament_diameter": {
+      "3.0.0": "1.75"
+    },
+    "filament_notes": {
+      "3.0.0": "\"\""
+    },
+    "filament_settings_id": {
+      "3.0.0": "Tectonic-3D AURA ASA+ @XL HF0.8"
+    },
+    "filament_soluble": {
+      "3.0.0": "0"
+    },
+    "min_print_speed": {
+      "3.0.0": "20"
+    },
+    "slowdown_below_layer_time": {
+      "3.0.0": "25"
+    },
+    "start_filament_gcode": {
+      "3.0.0": "\"M572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.02{elsif nozzle_diameter[filament_extruder_id]==0.5}0.018{elsif nozzle_diameter[filament_extruder_id]==0.6}0.015{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{elsif nozzle_diameter[filament_extruder_id]==0.25}0.09{elsif nozzle_diameter[filament_extruder_id]==0.3}0.065{else}0{endif} ; Filament gcode\\nM142 S40 ; set heatbreak target temp\""
+    },
+    "bed_temperature": {
+      "3.0.0": "90"
+    },
+    "bridge_fan_speed": {
+      "3.0.0": "25"
+    },
+    "disable_fan_first_layers": {
+      "3.0.0": "4"
+    },
+    "fan_always_on": {
+      "3.0.0": "1"
+    },
+    "fan_below_layer_time": {
+      "3.0.0": "20"
+    },
+    "filament_colour": {
+      "3.0.0": "#FFF2EC"
+    },
+    "filament_max_volumetric_speed": {
+      "3.0.0": "36"
+    },
+    "filament_type": {
+      "3.0.0": "ASA"
+    },
+    "first_layer_bed_temperature": {
+      "3.0.0": "90"
+    },
+    "first_layer_temperature": {
+      "3.0.0": "260"
+    },
+    "max_fan_speed": {
+      "3.0.0": "20"
+    },
+    "min_fan_speed": {
+      "3.0.0": "20"
+    },
+    "temperature": {
+      "3.0.0": "260"
+    },
+    "filament_vendor": {
+      "3.0.0": "Tectonic-3D"
+    },
+    "filament_spool_weight": {
+      "3.0.0": "200"
+    },
+    "filament_infill_max_crossing_speed": {
+      "3.0.0": "0"
+    },
+    "idle_temperature": {
+      "3.0.0": "100"
+    },
+    "filament_infill_max_speed": {
+      "3.0.0": "0"
+    },
+    "cooling_slowdown_logic": {
+      "3.0.0": "consistent_surface"
+    },
+    "cooling_perimeter_transition_distance": {
+      "3.0.0": "10"
+    },
+    "filament_stamping_distance": {
+      "3.0.0": "45"
+    },
+    "filament_stamping_loading_speed": {
+      "3.0.0": "26.5"
+    },
+    "filament_multitool_ramming": {
+      "3.0.0": "1"
+    },
+    "filament_multitool_ramming_volume": {
+      "3.0.0": "5"
+    },
+    "filament_multitool_ramming_flow": {
+      "3.0.0": "40"
+    },
+    "filament_retract_length_toolchange": {
+      "3.0.0": "20"
+    },
+    "filament_travel_ramping_lift": {
+      "3.0.0": "1"
+    },
+    "filament_travel_max_lift": {
+      "3.0.0": "1.5"
+    },
+    "filament_travel_slope": {
+      "3.0.0": "1"
+    }
+  }
+}

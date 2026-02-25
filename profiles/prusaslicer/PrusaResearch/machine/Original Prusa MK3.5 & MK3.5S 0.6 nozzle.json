@@ -1,0 +1,229 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "Original Prusa MK3.5 & MK3.5S 0.6 nozzle",
+  "vendor": "PrusaResearch",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,250x0,250x210,0x210"
+    },
+    "before_layer_gcode": {
+      "3.0.0": ";BEFORE_LAYER_CHANGE\\nG92 E0.0\\n;[layer_z]\\nM201 X{interpolate_table(extruded_weight_total, (0,4000), (1400,2500), (20000,2500))} Y{interpolate_table(extruded_weight_total, (0,4000), (1400,2500), (20000,2500))}\\n"
+    },
+    "between_objects_gcode": {
+      "3.0.0": ""
+    },
+    "deretract_speed": {
+      "3.0.0": "25"
+    },
+    "end_gcode": {
+      "3.0.0": "{if layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+1, max_print_height)} F720 ; Move print head up{endif}\\nM104 S0 ; turn off temperature\\nM140 S0 ; turn off heatbed\\nM107 ; turn off fan\\nG1 X241 Y201 F3600 ; park\\n{if layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+23, max_print_height)} F300 ; Move print head up{endif}\\nG4 ; wait\\nM572 S0 ; reset PA\\nM593 X T2 F0 ; disable IS\\nM593 Y T2 F0 ; disable IS\\nM84 X Y E ; disable motors\\n; max_layer_z = [max_layer_z]"
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0"
+    },
+    "gcode_flavor": {
+      "3.0.0": "marlin2"
+    },
+    "silent_mode": {
+      "3.0.0": "1"
+    },
+    "remaining_times": {
+      "3.0.0": "1"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "2500,2500"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "4000,2500"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "1250,1250"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "4000,2500"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "4000,2500"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "200,200"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "120,120"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "300,160"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "300,160"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "12,12"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "5,5"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "8,8"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "8,8"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "2,2"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0,0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0,0"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "emit_to_gcode"
+    },
+    "layer_gcode": {
+      "3.0.0": ";AFTER_LAYER_CHANGE\\n;[layer_z]\\n{if ! spiral_vase}M74 W[extruded_weight_total]{endif}\\n"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.40"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.15"
+    },
+    "max_print_height": {
+      "3.0.0": "210"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.6"
+    },
+    "octoprint_apikey": {
+      "3.0.0": ""
+    },
+    "octoprint_host": {
+      "3.0.0": ""
+    },
+    "printer_notes": {
+      "3.0.0": "Don't remove the following keywords. \\nPRINTER_MODEL_MK3.5\\n"
+    },
+    "printer_settings_id": {
+      "3.0.0": "Original Prusa MK3.5 & MK3.5S 0.6 nozzle"
+    },
+    "retract_before_travel": {
+      "3.0.0": "1.5"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "0%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1"
+    },
+    "retract_length": {
+      "3.0.0": "0.7"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_lift": {
+      "3.0.0": "0.2"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0"
+    },
+    "retract_lift_below": {
+      "3.0.0": "209"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_speed": {
+      "3.0.0": "35"
+    },
+    "serial_port": {
+      "3.0.0": ""
+    },
+    "serial_speed": {
+      "3.0.0": "250000"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "start_gcode": {
+      "3.0.0": "M17 ; enable steppers\\nM862.1 P[nozzle_diameter] A{(filament_abrasive[0] ? 1 : 0)} F{(nozzle_high_flow[0] ? 1 : 0)} ; nozzle check\\nM862.3 P \"MK3.5\" ; printer model check\\nM862.5 P2 ; g-code level check\\nM862.6 P\"Input shaper\" ; FW feature check\\nM115 U6.4.0+11974\\n\\nM555 X{(min(print_bed_max[0], first_layer_print_min[0] + 32) - 32)} Y{(max(0, first_layer_print_min[1]) - 4)} W{((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) - ((min(print_bed_max[0], first_layer_print_min[0] + 32) - 32))} H{((first_layer_print_max[1])) - ((max(0, first_layer_print_min[1]) - 4))}\\n\\nG90 ; use absolute coordinates\\nM83 ; extruder relative mode\\n\\nM140 S[first_layer_bed_temperature] ; set bed temp\\nM104 T0 S170 ; set extruder temp for bed leveling\\nM109 T0 R170 ; wait for temp\\nM190 S[first_layer_bed_temperature] ; wait for bed temp\\n\\nG28 ; home all\\n\\nG29 P1 ; invalidate mbl & probe print area\\nG29 P1 X23 Y5 W80 H20 C ; probe near purge place\\nG29 P3.2 ; interpolate mbl probes\\nG29 P3.13 ; extrapolate mbl outside probe area\\nG29 A ; activate mbl\\n\\n; prepare for purge\\nM104 S{first_layer_temperature[0]}\\nG0 X0 Y-4 Z15 F4800 ; move away and ready for the purge\\nM109 S{first_layer_temperature[0]}\\n\\n; Extrude purge line\\n\\nG92 E0 ; reset extruder position\\nG0 E7 X15 Z0.2 F500 ; purge\\nG0 X25 E4 F500 ; purge\\nG0 X35 E4 F650 ; purge\\nG0 X45 E4 F800 ; purge\\nG0 X48 Z0.05 F8000 ; wipe, move close to the bed\\nG0 X51 Z0.2 F8000 ; wipe, move quickly away from the bed\\n\\nG92 E0\\nM221 S100 ; reset flow to 100%\\n"
+    },
+    "toolchange_gcode": {
+      "3.0.0": ""
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "1"
+    },
+    "wipe": {
+      "3.0.0": "1"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    },
+    "printer_model": {
+      "3.0.0": "MK3.5"
+    },
+    "printer_variant": {
+      "3.0.0": "0.6"
+    },
+    "default_print_profile": {
+      "3.0.0": "0.25mm SPEED @MK3.5 0.6"
+    },
+    "default_filament_profile": {
+      "3.0.0": "\"Prusament PLA @MK3.5\""
+    },
+    "color_change_gcode": {
+      "3.0.0": "M600\\nG1 E0.3 F1500 ; prime after color change"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "20"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "45"
+    },
+    "machine_max_acceleration_travel": {
+      "3.0.0": "4000,2500"
+    },
+    "thumbnails": {
+      "3.0.0": "16x16/QOI, 313x173/QOI, 480x240/QOI, 380x285/PNG"
+    },
+    "high_current_on_filament_swap": {
+      "3.0.0": "0"
+    },
+    "binary_gcode": {
+      "3.0.0": "1"
+    },
+    "travel_ramping_lift": {
+      "3.0.0": "0"
+    },
+    "travel_slope": {
+      "3.0.0": "1"
+    },
+    "travel_max_lift": {
+      "3.0.0": "1.5"
+    }
+  }
+}

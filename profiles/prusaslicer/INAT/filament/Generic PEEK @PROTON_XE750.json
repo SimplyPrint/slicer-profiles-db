@@ -1,0 +1,85 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "filament",
+  "name": "Generic PEEK @PROTON_XE750",
+  "vendor": "INAT",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "filament_colour": {
+      "3.0.0": "#29B2B2"
+    },
+    "filament_diameter": {
+      "3.0.0": "1.75"
+    },
+    "extrusion_multiplier": {
+      "3.0.0": "1"
+    },
+    "filament_vendor": {
+      "3.0.0": "Generic"
+    },
+    "fan_always_on": {
+      "3.0.0": "0"
+    },
+    "cooling": {
+      "3.0.0": "0"
+    },
+    "bridge_fan_speed": {
+      "3.0.0": "0"
+    },
+    "disable_fan_first_layers": {
+      "3.0.0": "3"
+    },
+    "full_fan_speed_layer": {
+      "3.0.0": "0"
+    },
+    "fan_below_layer_time": {
+      "3.0.0": "10"
+    },
+    "slowdown_below_layer_time": {
+      "3.0.0": "5"
+    },
+    "min_print_speed": {
+      "3.0.0": "10"
+    },
+    "filament_soluble": {
+      "3.0.0": "0"
+    },
+    "temperature": {
+      "3.0.0": "440"
+    },
+    "bed_temperature": {
+      "3.0.0": "150"
+    },
+    "first_layer_temperature": {
+      "3.0.0": "440"
+    },
+    "first_layer_bed_temperature": {
+      "3.0.0": "150"
+    },
+    "filament_type": {
+      "3.0.0": "PEEK"
+    },
+    "filament_cost": {
+      "3.0.0": "500"
+    },
+    "filament_density": {
+      "3.0.0": "1.3"
+    },
+    "start_filament_gcode": {
+      "3.0.0": "\"; Filament start gcode BEGIN\\nM104 S[temperature[current_extruder]]\\nG4 S20\\n; Filament start gcode END\\n\""
+    },
+    "end_filament_gcode": {
+      "3.0.0": "\"; Filament end gcode BEGIN\\nG0 X-5 Y250 F10000\\nM104 S{temperature[current_extruder] - 50}\\n; Filament end gcode END\\n\""
+    },
+    "compatible_printers": {
+      "3.0.0": "\"Proton XE-750\""
+    },
+    "filament_settings_id": {
+      "3.0.0": "Generic PEEK @PROTON_XE750"
+    }
+  }
+}

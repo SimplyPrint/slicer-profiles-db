@@ -1,0 +1,93 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Dagoma Sigma Pro 500Z Dual",
+  "vendor": "Dagoma",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Dagoma Sigma Pro 500Z Dual"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "dagoma_delta"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Dagoma"
+    },
+    "manufacturer": {
+      "2026-02-25": "Dagoma"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "dagoma_sigma_pro.obj"
+    },
+    "first_start_actions": {
+      "2026-02-25": [
+        "MachineSettingsAction"
+      ]
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_variants": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "dagoma_sigma_pro_dual_extruder_right",
+        "1": "dagoma_sigma_pro_dual_extruder_left"
+      }
+    },
+    "platform_texture": {
+      "2026-02-25": "dagoma_sigma_pro.png"
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "h0.2"
+    },
+    "preferred_variant_name": {
+      "2026-02-25": "Brass 0.4mm"
+    },
+    "quality_definition": {
+      "2026-02-25": "dagoma_sigma_pro_dual"
+    },
+    "variants_name": {
+      "2026-02-25": "Nozzle"
+    },
+    "machine_depth": {
+      "2026-02-25": 200
+    },
+    "machine_end_gcode": {
+      "2026-02-25": ";End Gcode for {machine_name}\n;Author: Dagoma\nM104 S0\nM107 ;stop fan\nM140 S0 ;heated bed heater off (if you have it)\nG92 E0\nG1 E-55 F4600\nG27\nG90 ; Absolute positioning\nT0"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 501
+    },
+    "machine_name": {
+      "2026-02-25": "Dagoma Sigma Pro 500Z Dual"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ";Start Gcode for {machine_name}\n;Author: Dagoma\n;Sliced: {date} {time}\n;Estimated print time: {print_time}\n;Print speed: {speed_print}mm/s\n;Layer height: {layer_height}mm\n;Wall thickness: {wall_thickness}mm\n;Infill density: {infill_sparse_density}%\n;Infill pattern: {infill_pattern}\n;Support: {support_enable}\n;Print temperature: {material_print_temperature}°C\n;Flow: {material_flow}%\n;Retraction amount: {retraction_amount}mm\n;Retraction speed: {retraction_retract_speed}mm/s\nG90 ;absolute positioning\nM190 S{material_bed_temperature_layer_0};\nM109 S140;\nG1 F200 E-1.0\nM106 S255 ;Activating layers fans\nG28 ;Homing\nG29 ;Calibration\nM107 ;Off Ventilateur\nM109 S{material_print_temperature_layer_0} ;Temperature for the first layer only\nG92 E0 ;Zero the extruded length again\nG1 X0 Y-105 Z1 F3000\nG1 F{speed_travel}\nM117 Printing...\n"
+    },
+    "machine_width": {
+      "2026-02-25": 200
+    }
+  }
+}

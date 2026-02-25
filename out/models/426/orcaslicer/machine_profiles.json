@@ -1,0 +1,599 @@
+[
+    {
+        "vendor": "Qidi",
+        "machine_model": {
+            "type": "machine_model",
+            "name": "Qidi X-Smart 3",
+            "model_id": "Qidi-XSmart-3",
+            "nozzle_diameter": "0.4;0.2;0.6;0.8",
+            "machine_tech": "FFF",
+            "family": "Qidi",
+            "bed_model": "sha256:9cd07712c54879c8fda29680ae98a4386d53615a9975077d2de80317ac064dcb",
+            "bed_texture": "sha256:966ea2c45cb2c54de8a254347183b62d1ad8807c2b78c1eb9c97bc25ff03e3b4",
+            "hotend_model": "sha256:6bb01045b69bf4c4b0dd22aa3ef23db3cb653e8081d47cc3734dbf0350578aa6",
+            "default_materials": "QIDI PLA Rapido;QIDI ABS Rapido;QIDI PLA Rapido Matte;QIDI PETG Tough;QIDI ASA;Qidi Generic ASA;Qidi Generic ABS;Qidi Generic PETG;Qidi Generic PLA Silk;Qidi Generic PLA"
+        },
+        "variants": {
+            "0.4": {
+                "name": "Qidi X-Smart 3 0.4 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "Qidi X-Smart 3 0.4 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "printer_technology": "FFF",
+                    "deretraction_speed": [
+                        "0"
+                    ],
+                    "extruder_colour": [
+                        ""
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "gcode_flavor": "klipper",
+                    "silent_mode": "0",
+                    "machine_max_acceleration_e": [
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500"
+                    ],
+                    "machine_max_speed_e": [
+                        "30"
+                    ],
+                    "machine_max_speed_x": [
+                        "600"
+                    ],
+                    "machine_max_speed_y": [
+                        "600"
+                    ],
+                    "machine_max_speed_z": [
+                        "10"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2"
+                    ],
+                    "machine_max_jerk_x": [
+                        "9"
+                    ],
+                    "machine_max_jerk_y": [
+                        "9"
+                    ],
+                    "machine_max_jerk_z": [
+                        "3"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.32"
+                    ],
+                    "min_layer_height": [
+                        "0.07"
+                    ],
+                    "printable_height": "170",
+                    "extruder_clearance_radius": "65",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_height_to_lid": "140",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "printer_settings_id": "Qidi",
+                    "printer_variant": "0.4",
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retract_before_wipe": [
+                        "0%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop_types": [
+                        "Auto Lift"
+                    ],
+                    "default_print_profile": "0.20mm Standard @Qidi XSmart3",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "machine_start_gcode": "PRINT_START\nG28\nM141 S0\nG0 Z50 F600\nM190 S[hot_plate_temp_initial_layer]\nG28 Z\nG29; mesh bed leveling ,comment this code to close it\nG0 X0 Y0 Z50 F6000\nM141 S{overall_chamber_temperature}\nM109 S[nozzle_temperature_initial_layer]\nM106 P3 S255\nM83\nG4 P3000\nG0 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0)} Z5 F6000\nG0 Z[initial_layer_print_height] F600\nG1 E3 F1800\nG1 X{(min(print_bed_max[0], first_layer_print_min[0] + 80))} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 85} E{83 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 3} E{82 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0) + 12} E{-10 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 E{10 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\n",
+                    "machine_end_gcode": "M141 S0\nM104 S0\nM140 S0\nG1 E-3 F1800\nG0 Z{min(max_print_height, max_layer_z + 3)} F600\nG0 X0 Y0 F12000\n{if max_layer_z < max_print_height / 2}G1 Z{max_print_height / 2 + 10} F600{else}G1 Z{min(max_print_height, max_layer_z + 3)}{endif}",
+                    "time_lapse_gcode": ";TIMELAPSE_TAKE_FRAME\n",
+                    "auxiliary_fan": "1",
+                    "machine_pause_gcode": "M0",
+                    "support_chamber_temp_control": "1",
+                    "thumbnails": [
+                        "205x205/COLPIC",
+                        "140x140/COLPIC",
+                        "110x110/PNG"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM001",
+                    "printer_model": "Qidi X-Smart 3",
+                    "printable_area": [
+                        "0x0",
+                        "175x0",
+                        "175x180",
+                        "0x180"
+                    ],
+                    "nozzle_type": "hardened_steel",
+                    "default_filament_profile": [
+                        "Qidi Generic PLA"
+                    ]
+                }
+            },
+            "0.2": {
+                "name": "Qidi X-Smart 3 0.2 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "Qidi X-Smart 3 0.2 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "printer_technology": "FFF",
+                    "deretraction_speed": [
+                        "0"
+                    ],
+                    "extruder_colour": [
+                        ""
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "gcode_flavor": "klipper",
+                    "silent_mode": "0",
+                    "machine_max_acceleration_e": [
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500"
+                    ],
+                    "machine_max_speed_e": [
+                        "30"
+                    ],
+                    "machine_max_speed_x": [
+                        "600"
+                    ],
+                    "machine_max_speed_y": [
+                        "600"
+                    ],
+                    "machine_max_speed_z": [
+                        "10"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2"
+                    ],
+                    "machine_max_jerk_x": [
+                        "9"
+                    ],
+                    "machine_max_jerk_y": [
+                        "9"
+                    ],
+                    "machine_max_jerk_z": [
+                        "3"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.14"
+                    ],
+                    "min_layer_height": [
+                        "0.04"
+                    ],
+                    "printable_height": "170",
+                    "extruder_clearance_radius": "65",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_height_to_lid": "140",
+                    "nozzle_diameter": [
+                        "0.2"
+                    ],
+                    "printer_settings_id": "Qidi",
+                    "printer_variant": "0.2",
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retract_before_wipe": [
+                        "0%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.4"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop_types": [
+                        "Auto Lift"
+                    ],
+                    "default_print_profile": "0.10mm Standard @Qidi XSmart3 0.2 nozzle",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "machine_start_gcode": "PRINT_START\nG28\nM141 S0\nG0 Z50 F600\nM190 S[hot_plate_temp_initial_layer]\nG28 Z\nG29; mesh bed leveling ,comment this code to close it\nG0 X0 Y0 Z50 F6000\nM141 S{overall_chamber_temperature}\nM109 S[nozzle_temperature_initial_layer]\nM106 P3 S255\nM83\nG4 P3000\nG0 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0)} Z5 F6000\nG0 Z[initial_layer_print_height] F600\nG1 E3 F1800\nG1 X{(min(print_bed_max[0], first_layer_print_min[0] + 80))} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 85} E{83 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 3} E{82 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0) + 12} E{-10 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 E{10 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\n",
+                    "machine_end_gcode": "M141 S0\nM104 S0\nM140 S0\nG1 E-3 F1800\nG0 Z{min(max_print_height, max_layer_z + 3)} F600\nG0 X0 Y0 F12000\n{if max_layer_z < max_print_height / 2}G1 Z{max_print_height / 2 + 10} F600{else}G1 Z{min(max_print_height, max_layer_z + 3)}{endif}",
+                    "time_lapse_gcode": ";TIMELAPSE_TAKE_FRAME\n",
+                    "auxiliary_fan": "1",
+                    "machine_pause_gcode": "M0",
+                    "support_chamber_temp_control": "1",
+                    "thumbnails": [
+                        "205x205/COLPIC",
+                        "140x140/COLPIC",
+                        "110x110/PNG"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM008",
+                    "printer_model": "Qidi X-Smart 3",
+                    "printable_area": [
+                        "0x0",
+                        "175x0",
+                        "175x180",
+                        "0x180"
+                    ],
+                    "nozzle_type": "hardened_steel",
+                    "default_filament_profile": [
+                        "Qidi Generic PLA @Qidi X-Smart 3 0.2 nozzle"
+                    ]
+                }
+            },
+            "0.6": {
+                "name": "Qidi X-Smart 3 0.6 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "Qidi X-Smart 3 0.6 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "printer_technology": "FFF",
+                    "deretraction_speed": [
+                        "0"
+                    ],
+                    "extruder_colour": [
+                        ""
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "gcode_flavor": "klipper",
+                    "silent_mode": "0",
+                    "machine_max_acceleration_e": [
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500"
+                    ],
+                    "machine_max_speed_e": [
+                        "30"
+                    ],
+                    "machine_max_speed_x": [
+                        "600"
+                    ],
+                    "machine_max_speed_y": [
+                        "600"
+                    ],
+                    "machine_max_speed_z": [
+                        "10"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2"
+                    ],
+                    "machine_max_jerk_x": [
+                        "9"
+                    ],
+                    "machine_max_jerk_y": [
+                        "9"
+                    ],
+                    "machine_max_jerk_z": [
+                        "3"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.42"
+                    ],
+                    "min_layer_height": [
+                        "0.12"
+                    ],
+                    "printable_height": "170",
+                    "extruder_clearance_radius": "65",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_height_to_lid": "140",
+                    "nozzle_diameter": [
+                        "0.6"
+                    ],
+                    "printer_settings_id": "Qidi",
+                    "printer_variant": "0.6",
+                    "retraction_minimum_travel": [
+                        "3"
+                    ],
+                    "retract_before_wipe": [
+                        "0%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "1.4"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop_types": [
+                        "Auto Lift"
+                    ],
+                    "default_print_profile": "0.30mm Standard @Qidi XSmart3 0.6 nozzle",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "machine_start_gcode": "PRINT_START\nG28\nM141 S0\nG0 Z50 F600\nM190 S[hot_plate_temp_initial_layer]\nG28 Z\nG29; mesh bed leveling ,comment this code to close it\nG0 X0 Y0 Z50 F6000\nM141 S{overall_chamber_temperature}\nM109 S[nozzle_temperature_initial_layer]\nM106 P3 S255\nM83\nG4 P3000\nG0 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0)} Z5 F6000\nG0 Z[initial_layer_print_height] F600\nG1 E3 F1800\nG1 X{(min(print_bed_max[0], first_layer_print_min[0] + 80))} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 85} E{83 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 3} E{82 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0) + 12} E{-10 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 E{10 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\n",
+                    "machine_end_gcode": "M141 S0\nM104 S0\nM140 S0\nG1 E-3 F1800\nG0 Z{min(max_print_height, max_layer_z + 3)} F600\nG0 X0 Y0 F12000\n{if max_layer_z < max_print_height / 2}G1 Z{max_print_height / 2 + 10} F600{else}G1 Z{min(max_print_height, max_layer_z + 3)}{endif}",
+                    "time_lapse_gcode": ";TIMELAPSE_TAKE_FRAME\n",
+                    "auxiliary_fan": "1",
+                    "machine_pause_gcode": "M0",
+                    "support_chamber_temp_control": "1",
+                    "thumbnails": [
+                        "205x205/COLPIC",
+                        "140x140/COLPIC",
+                        "110x110/PNG"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM008",
+                    "printer_model": "Qidi X-Smart 3",
+                    "printable_area": [
+                        "0x0",
+                        "175x0",
+                        "175x180",
+                        "0x180"
+                    ],
+                    "nozzle_type": "hardened_steel",
+                    "default_filament_profile": [
+                        "Qidi Generic PLA"
+                    ]
+                }
+            },
+            "0.8": {
+                "name": "Qidi X-Smart 3 0.8 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "Qidi X-Smart 3 0.8 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "printer_technology": "FFF",
+                    "deretraction_speed": [
+                        "0"
+                    ],
+                    "extruder_colour": [
+                        ""
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "gcode_flavor": "klipper",
+                    "silent_mode": "0",
+                    "machine_max_acceleration_e": [
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500"
+                    ],
+                    "machine_max_speed_e": [
+                        "30"
+                    ],
+                    "machine_max_speed_x": [
+                        "600"
+                    ],
+                    "machine_max_speed_y": [
+                        "600"
+                    ],
+                    "machine_max_speed_z": [
+                        "10"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2"
+                    ],
+                    "machine_max_jerk_x": [
+                        "9"
+                    ],
+                    "machine_max_jerk_y": [
+                        "9"
+                    ],
+                    "machine_max_jerk_z": [
+                        "3"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.56"
+                    ],
+                    "min_layer_height": [
+                        "0.16"
+                    ],
+                    "printable_height": "170",
+                    "extruder_clearance_radius": "65",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_height_to_lid": "140",
+                    "nozzle_diameter": [
+                        "0.8"
+                    ],
+                    "printer_settings_id": "Qidi",
+                    "printer_variant": "0.8",
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retract_before_wipe": [
+                        "0%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "3"
+                    ],
+                    "retract_length_toolchange": [
+                        "3"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop_types": [
+                        "Auto Lift"
+                    ],
+                    "default_print_profile": "0.40mm Standard @Qidi XSmart3 0.8 nozzle",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "machine_start_gcode": "PRINT_START\nG28\nM141 S0\nG0 Z50 F600\nM190 S[hot_plate_temp_initial_layer]\nG28 Z\nG29; mesh bed leveling ,comment this code to close it\nG0 X0 Y0 Z50 F6000\nM141 S{overall_chamber_temperature}\nM109 S[nozzle_temperature_initial_layer]\nM106 P3 S255\nM83\nG4 P3000\nG0 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0)} Z5 F6000\nG0 Z[initial_layer_print_height] F600\nG1 E3 F1800\nG1 X{(min(print_bed_max[0], first_layer_print_min[0] + 80))} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 85} E{83 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 3} E{82 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0) + 12} E{-10 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 E{10 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\n",
+                    "machine_end_gcode": "M141 S0\nM104 S0\nM140 S0\nG1 E-3 F1800\nG0 Z{min(max_print_height, max_layer_z + 3)} F600\nG0 X0 Y0 F12000\n{if max_layer_z < max_print_height / 2}G1 Z{max_print_height / 2 + 10} F600{else}G1 Z{min(max_print_height, max_layer_z + 3)}{endif}",
+                    "time_lapse_gcode": ";TIMELAPSE_TAKE_FRAME\n",
+                    "auxiliary_fan": "1",
+                    "machine_pause_gcode": "M0",
+                    "support_chamber_temp_control": "1",
+                    "thumbnails": [
+                        "205x205/COLPIC",
+                        "140x140/COLPIC",
+                        "110x110/PNG"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM008",
+                    "printer_model": "Qidi X-Smart 3",
+                    "printable_area": [
+                        "0x0",
+                        "175x0",
+                        "175x180",
+                        "0x180"
+                    ],
+                    "nozzle_type": "hardened_steel",
+                    "default_filament_profile": [
+                        "Qidi Generic PLA"
+                    ]
+                }
+            }
+        }
+    }
+]

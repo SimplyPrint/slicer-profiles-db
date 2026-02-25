@@ -1,0 +1,181 @@
+[
+    {
+        "vendor": "Sovol",
+        "machine_model": {
+            "type": "machine_model",
+            "name": "Sovol SV07 Plus",
+            "model_id": "Sovol-SV07Plus",
+            "nozzle_diameter": "0.4",
+            "machine_tech": "FFF",
+            "family": "Sovol",
+            "bed_model": "sovol_sv07plus_buildplate_model.stl",
+            "bed_texture": "sha256:419483b36b211254ad82ed25191dc6e20bb6bc8afd696bb2f426ef71fbaa4761",
+            "hotend_model": "",
+            "default_materials": "Generic ABS @System;Generic PETG @System;Generic PLA @System"
+        },
+        "variants": {
+            "0.4": {
+                "name": "Sovol SV07 Plus 0.4 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "Sovol SV07 Plus 0.4 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "printer_technology": "FFF",
+                    "deretraction_speed": [
+                        "140"
+                    ],
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "gcode_flavor": "klipper",
+                    "silent_mode": "0",
+                    "machine_max_acceleration_e": [
+                        "20000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "4000",
+                        "1250"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "4000",
+                        "1250"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "8000",
+                        "960"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "8000",
+                        "960"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "400",
+                        "200"
+                    ],
+                    "machine_max_speed_e": [
+                        "500",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "100"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "100"
+                    ],
+                    "machine_max_speed_z": [
+                        "500",
+                        "12"
+                    ],
+                    "machine_max_jerk_e": [
+                        "15",
+                        "4.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "27",
+                        "8"
+                    ],
+                    "machine_max_jerk_y": [
+                        "27",
+                        "8"
+                    ],
+                    "machine_max_jerk_z": [
+                        "3.6",
+                        "0.4"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.25"
+                    ],
+                    "min_layer_height": [
+                        "0.07"
+                    ],
+                    "printable_height": "350",
+                    "extruder_clearance_radius": "65",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_height_to_lid": "140",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "printer_settings_id": "Sovol",
+                    "printer_variant": "0.4",
+                    "retraction_minimum_travel": [
+                        "0.5"
+                    ],
+                    "retract_before_wipe": [
+                        "0%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.5"
+                    ],
+                    "retract_length_toolchange": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "140"
+                    ],
+                    "retract_lift_below": [
+                        "0"
+                    ],
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "M600\nG1 E0.4 F1500 ; prime after color change",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_lift_type": "NormalLift",
+                    "z_hop_types": "Normal Lift",
+                    "default_print_profile": "0.20mm Standard @Sovol SV07 Plus",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;G92 E0.0\n;[layer_z]\n\n",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single] ; Setting bed temprature\nM109 S[nozzle_temperature_initial_layer] ; Setting hot-end temprature\nSTART_PRINT ; Running macro from klipper\n",
+                    "machine_end_gcode": "END_PRINT",
+                    "setting_id": "GM001",
+                    "printer_model": "Sovol SV07 Plus",
+                    "printable_area": [
+                        "0x0",
+                        "300x0",
+                        "300x300",
+                        "0x300"
+                    ],
+                    "nozzle_type": "undefine",
+                    "auxiliary_fan": "0",
+                    "machine_max_acceleration_travel": [
+                        "1500",
+                        "1250"
+                    ],
+                    "use_relative_e_distances": "0",
+                    "fan_kickstart": "0.2",
+                    "fan_speedup_overhangs": "0",
+                    "fan_speedup_time": "0.5",
+                    "machine_pause_gcode": "M601",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "scan_first_layer": "0"
+                }
+            }
+        }
+    }
+]

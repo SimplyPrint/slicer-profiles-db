@@ -1,0 +1,160 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "DeltiQ L",
+  "vendor": "TriLAB",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "bed_shape": {
+      "3.0.0": "124.315x13.0661,122.268x25.989,118.882x38.6271,114.193x50.8421,108.253x62.5,101.127x73.4732,92.8931x83.6413,83.6413x92.8931,73.4732x101.127,62.5x108.253,50.8421x114.193,38.6271x118.882,25.989x122.268,13.0661x124.315,3.54096e-014x125,-13.0661x124.315,-25.989x122.268,-38.6271x118.882,-50.8421x114.193,-62.5x108.253,-73.4732x101.127,-83.6413x92.8931,-92.8931x83.6413,-101.127x73.4732,-108.253x62.5,-114.193x50.8421,-118.882x38.6271,-122.268x25.989,-124.315x13.0661,-125x7.08192e-014,-124.315x-13.0661,-122.268x-25.989,-118.882x-38.6271,-114.193x-50.8421,-108.253x-62.5,-101.127x-73.4732,-92.8931x-83.6413,-83.6413x-92.8931,-73.4732x-101.127,-62.5x-108.253,-50.8421x-114.193,-38.6271x-118.882,-25.989x-122.268,-13.0661x-124.315,-2.29621e-014x-125,13.0661x-124.315,25.989x-122.268,38.6271x-118.882,50.8421x-114.193,62.5x-108.253,73.4732x-101.127,83.6413x-92.8931,92.8931x-83.6413,101.127x-73.4732,108.253x-62.5,114.193x-50.8421,118.882x-38.6271,122.268x-25.989,124.315x-13.0661,125x-1.41638e-013"
+    },
+    "before_layer_gcode": {
+      "3.0.0": ";BEFORE_LAYER_CHANGE\\nG92 E0\\n;[layer_z]"
+    },
+    "between_objects_gcode": {
+      "3.0.0": ""
+    },
+    "cooling_tube_length": {
+      "3.0.0": "5"
+    },
+    "cooling_tube_retraction": {
+      "3.0.0": "91.5"
+    },
+    "default_filament_profile": {
+      "3.0.0": "\"DeltiQ PLA\""
+    },
+    "default_print_profile": {
+      "3.0.0": "DeltiQ 0.20mm Normal"
+    },
+    "deretract_speed": {
+      "3.0.0": "0"
+    },
+    "end_gcode": {
+      "3.0.0": ";END\\nM104 S0 ; Turn extruder heater off\\nM140 S0 ; Turn bed heater off\\nG28 ; Home all axes\\nM84 S5 ; Stop all axes and hold inidle for 5 seconds\\nG90 ; Absolute positioning"
+    },
+    "extra_loading_move": {
+      "3.0.0": "-2"
+    },
+    "extruder_colour": {
+      "3.0.0": "#EC626F"
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0"
+    },
+    "gcode_flavor": {
+      "3.0.0": "repetier"
+    },
+    "layer_gcode": {
+      "3.0.0": ";AFTER_LAYER_CHANGE\\nM117 layer [layer_num] at [layer_z]mm\\n;[layer_z]\\n"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.25"
+    },
+    "max_print_height": {
+      "3.0.0": "300"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.15"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.4"
+    },
+    "parking_pos_retraction": {
+      "3.0.0": "92"
+    },
+    "printer_model": {
+      "3.0.0": "DQL"
+    },
+    "printer_notes": {
+      "3.0.0": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_TRILAB\\nPRINTER_FAMILY_DQ\\nPRINTER_MODEL_DQL"
+    },
+    "printer_settings_id": {
+      "3.0.0": "DeltiQ L"
+    },
+    "printer_variant": {
+      "3.0.0": "0.4"
+    },
+    "printer_vendor": {
+      "3.0.0": "TriLAB Group s.r.o."
+    },
+    "remaining_times": {
+      "3.0.0": "0"
+    },
+    "retract_before_travel": {
+      "3.0.0": "3"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "100%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1"
+    },
+    "retract_length": {
+      "3.0.0": "4.0"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "10"
+    },
+    "retract_lift": {
+      "3.0.0": "0.2"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0"
+    },
+    "retract_lift_below": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_speed": {
+      "3.0.0": "30"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "start_gcode": {
+      "3.0.0": ";START\\nM220 S100 ; Set feedmultiply back to 100percent\\nG90 ; Absolute positioning\\nM83 ; Relative extruder\\nM107 ; Layer fan OFF\\nM190 S[first_layer_bed_temperature] ; Set bed temperature and wait\\nM104 S[first_layer_temperature] ; Set extruder temperature\\nG28 ; Home all axes\\nG33 ; auto leveling rutine\\nG1 X-62 Y-108 Z0.3 F6000 ; Go to purge position start\\nG92 E0 ; Zero extruder\\nM109 S[first_layer_temperature] ; Set and wait - hotend temperature\\nG3 X62 Y-108 I62 J108 E10 F200 ; Go ARC to purge end\\nG92 E0 ; Zero extruder"
+    },
+    "thumbnails": {
+      "3.0.0": ""
+    },
+    "toolchange_gcode": {
+      "3.0.0": ""
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "0"
+    },
+    "wipe": {
+      "3.0.0": "1"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "60"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "45"
+    }
+  }
+}

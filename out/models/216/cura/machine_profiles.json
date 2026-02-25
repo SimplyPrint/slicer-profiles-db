@@ -1,0 +1,47 @@
+[
+    {
+        "vendor": "Two Trees",
+        "machine_model": {
+            "name": "Two Trees Bluer",
+            "version": 2,
+            "inherits": "two_trees_base",
+            "visible": true,
+            "platform": "twotrees235x235_generic.stl",
+            "quality_definition": "two_trees_base",
+            "gantry_height": 28,
+            "infill_material_flow": 100,
+            "infill_overlap": 30,
+            "machine_depth": 230,
+            "machine_head_with_fans_polygon": [
+                [
+                    -47,
+                    37
+                ],
+                [
+                    -47,
+                    -23
+                ],
+                [
+                    47,
+                    -23
+                ],
+                [
+                    47,
+                    37
+                ]
+            ],
+            "machine_height": 280,
+            "machine_name": "Two Trees Bluer",
+            "machine_start_gcode": "G28 ;Home\nG92 E0 ;Reset Extruder\nG1 Z2.0 F3000 ;Move bed down\nG1 X10.1 Y20 Z0.28 F5000.0 ;Move to start position\nG1 X10.1 Y200.0 Z0.28 F1500.0 E15 ;Draw the first line\nG1 X10.4 Y200.0 Z0.28 F5000.0 ;Move to side a little\nG1 X10.4 Y20 Z0.28 F1500.0 E30 ;Draw the second line\nG92 E0 ;Reset Extruder\nG1 Z2.0 F3000 ;Move Bed up",
+            "machine_width": 230,
+            "material_flow": 90,
+            "retraction_amount": 8,
+            "retraction_speed": 50,
+            "skin_overlap": 20,
+            "speed_print": 50.0,
+            "speed_travel": 180,
+            "speed_travel_layer_0": 100
+        },
+        "variants": {}
+    }
+]

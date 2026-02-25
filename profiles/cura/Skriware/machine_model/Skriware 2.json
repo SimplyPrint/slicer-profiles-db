@@ -1,0 +1,728 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Skriware 2",
+  "vendor": "Skriware",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Skriware 2"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Skriware"
+    },
+    "manufacturer": {
+      "2026-02-25": "Skriware"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "skriware_2_platform.3mf"
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "skriware_2_extruder_0",
+        "1": "skriware_2_extruder_1"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        0,
+        0
+      ]
+    },
+    "supports_usb_connection": {
+      "2026-02-25": false
+    },
+    "acceleration_enabled": {
+      "2026-02-25": true
+    },
+    "acceleration_infill": {
+      "2026-02-25": "400"
+    },
+    "acceleration_ironing": {
+      "2026-02-25": "250"
+    },
+    "acceleration_layer_0": {
+      "2026-02-25": "200"
+    },
+    "acceleration_prime_tower": {
+      "2026-02-25": "250"
+    },
+    "acceleration_print": {
+      "2026-02-25": 200
+    },
+    "acceleration_print_layer_0": {
+      "2026-02-25": "200"
+    },
+    "acceleration_roofing": {
+      "2026-02-25": "400"
+    },
+    "acceleration_skirt_brim": {
+      "2026-02-25": "250"
+    },
+    "acceleration_support": {
+      "2026-02-25": "200"
+    },
+    "acceleration_support_bottom": {
+      "2026-02-25": "250"
+    },
+    "acceleration_support_infill": {
+      "2026-02-25": "400"
+    },
+    "acceleration_support_interface": {
+      "2026-02-25": "250"
+    },
+    "acceleration_support_roof": {
+      "2026-02-25": "250"
+    },
+    "acceleration_topbottom": {
+      "2026-02-25": "200"
+    },
+    "acceleration_travel": {
+      "2026-02-25": "400"
+    },
+    "acceleration_travel_layer_0": {
+      "2026-02-25": "400"
+    },
+    "acceleration_wall": {
+      "2026-02-25": "200"
+    },
+    "acceleration_wall_0": {
+      "2026-02-25": "200"
+    },
+    "acceleration_wall_x": {
+      "2026-02-25": "200"
+    },
+    "adhesion_extruder_nr": {
+      "2026-02-25": "0"
+    },
+    "adhesion_type": {
+      "2026-02-25": "raft"
+    },
+    "bottom_layers": {
+      "2026-02-25": "3"
+    },
+    "bottom_skin_expand_distance": {
+      "2026-02-25": "0.8"
+    },
+    "bottom_skin_preshrink": {
+      "2026-02-25": "0.0"
+    },
+    "bottom_thickness": {
+      "2026-02-25": "0.8"
+    },
+    "bridge_skin_speed_2": {
+      "2026-02-25": "15"
+    },
+    "bridge_wall_speed": {
+      "2026-02-25": "10.0"
+    },
+    "brim_line_count": {
+      "2026-02-25": "17"
+    },
+    "brim_width": {
+      "2026-02-25": 10
+    },
+    "build_volume_temperature": {
+      "2026-02-25": 28
+    },
+    "coasting_enable": {
+      "2026-02-25": true
+    },
+    "connect_infill_polygons": {
+      "2026-02-25": "False"
+    },
+    "cool_fan_full_at_height": {
+      "2026-02-25": "0"
+    },
+    "cool_fan_full_layer": {
+      "2026-02-25": "1"
+    },
+    "cool_fan_speed_0": {
+      "2026-02-25": 0
+    },
+    "cool_lift_head": {
+      "2026-02-25": true
+    },
+    "cool_min_speed": {
+      "2026-02-25": 5
+    },
+    "cross_infill_pocket_size": {
+      "2026-02-25": "5.33"
+    },
+    "default_material_bed_temperature": {
+      "2026-02-25": "50"
+    },
+    "default_material_print_temperature": {
+      "2026-02-25": 200
+    },
+    "expand_skins_expand_distance": {
+      "2026-02-25": "0.8"
+    },
+    "extruders_enabled_count": {
+      "2026-02-25": "2"
+    },
+    "fill_outline_gaps": {
+      "2026-02-25": true
+    },
+    "gantry_height": {
+      "2026-02-25": "210"
+    },
+    "infill_before_walls": {
+      "2026-02-25": false
+    },
+    "infill_line_distance": {
+      "2026-02-25": "0 if infill_sparse_density == 0 else (infill_line_width * 100) / infill_sparse_density * (2 if infill_pattern == 'grid' else (3 if infill_pattern == 'triangles' or infill_pattern == 'trihexagon' or infill_pattern == 'cubic' or infill_pattern == 'cubicsubdiv' else (2 if infill_pattern == 'tetrahedral' or infill_pattern == 'quarter_cubic' else (1 if infill_pattern == 'cross' or infill_pattern == 'cross_3d' else 1))))"
+    },
+    "infill_material_flow": {
+      "2026-02-25": "99"
+    },
+    "infill_overlap": {
+      "2026-02-25": "0"
+    },
+    "infill_overlap_mm": {
+      "2026-02-25": "0.0"
+    },
+    "infill_sparse_density": {
+      "2026-02-25": 15
+    },
+    "infill_sparse_thickness": {
+      "2026-02-25": "0.2"
+    },
+    "infill_wipe_dist": {
+      "2026-02-25": "0"
+    },
+    "initial_bottom_layers": {
+      "2026-02-25": "3"
+    },
+    "initial_layer_line_width_factor": {
+      "2026-02-25": 120
+    },
+    "ironing_inset": {
+      "2026-02-25": "0.2 + (ironing_line_spacing - skin_line_width * (1.0 + ironing_flow / 100) / 2 if ironing_pattern == 'concentric' else skin_line_width * (1.0 - ironing_flow / 100) / 2)"
+    },
+    "jerk_enabled": {
+      "2026-02-25": true
+    },
+    "jerk_infill": {
+      "2026-02-25": "10"
+    },
+    "jerk_ironing": {
+      "2026-02-25": "5"
+    },
+    "jerk_layer_0": {
+      "2026-02-25": "5"
+    },
+    "jerk_prime_tower": {
+      "2026-02-25": "5"
+    },
+    "jerk_print": {
+      "2026-02-25": 10
+    },
+    "jerk_print_layer_0": {
+      "2026-02-25": "10"
+    },
+    "jerk_roofing": {
+      "2026-02-25": "10"
+    },
+    "jerk_skirt_brim": {
+      "2026-02-25": "5"
+    },
+    "jerk_support": {
+      "2026-02-25": "10"
+    },
+    "jerk_support_bottom": {
+      "2026-02-25": "5"
+    },
+    "jerk_support_infill": {
+      "2026-02-25": "10"
+    },
+    "jerk_support_interface": {
+      "2026-02-25": "5"
+    },
+    "jerk_support_roof": {
+      "2026-02-25": "5"
+    },
+    "jerk_topbottom": {
+      "2026-02-25": "10"
+    },
+    "jerk_travel": {
+      "2026-02-25": "10"
+    },
+    "jerk_travel_layer_0": {
+      "2026-02-25": "10"
+    },
+    "jerk_wall": {
+      "2026-02-25": "10"
+    },
+    "jerk_wall_0": {
+      "2026-02-25": "5"
+    },
+    "jerk_wall_x": {
+      "2026-02-25": "10"
+    },
+    "layer_0_z_overlap": {
+      "2026-02-25": "0.1"
+    },
+    "layer_height": {
+      "2026-02-25": 0.2
+    },
+    "layer_height_0": {
+      "2026-02-25": 0.2
+    },
+    "machine_depth": {
+      "2026-02-25": 260
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M59\nG92 E0\nG1 E-10 F300\nM104 T0 S0\nM104 T1 S0\nM140 S0\nG28 X0 Y0\nM84\nM106 S0\nM107\nM220 S100"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 210
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G90 ;absolute positioning\nM82 ;set extruder to absolute mode\nM420 S1 Z0.7 ;enable bed levelling\nG1 Z10 F250 ;move the platform down 10mm\nM107 ;fan off\nM42 P11 S255 ;turn on front fan\nM140 S{material_bed_temperature}\nM104 T0 S{material_print_temperature, 0}\nM104 T1 S{material_print_temperature, 1}\nG1 F2500 Y260 X0\nM190 S{material_bed_temperature}\nM109 T0 S{material_print_temperature, 0}\nM109 T1 S{material_print_temperature, 1}\nM60 ;enable E-FADE Algorithm\nM62 A ;filament sensor off\nG92 E0 ;zero the extruded length\nT1\nG92 E0;zero the extruded length\nG1 F300 Z0.3\nG1 F1200 X20\nG1 F1200 X180 E21 ;extrude 21 mm of feed stock\nG1 F1200 E11\nG1 F300 Z1.5\nG92 E0 ;zero the extruded length again\nT0\nG92 E0 ;zero the extruded length\nG1 F1200 Y258\nG1 F300 Z0.3\nG1 F1200 X40 E21 ;extrude 21 mm of feed stock\nG1 F1200 E11 ;retracting 10 mm\nG1 F300 Z1.5\nM63 A ;filament sensor reset\nM61 A ;filament sensor on\nG92 E0 ;zero the extruded length again\nM58 ;end of Start G-Code and signal retract management\nT{initial_extruder_nr}"
+    },
+    "machine_width": {
+      "2026-02-25": 210
+    },
+    "material_adhesion_tendency": {
+      "2026-02-25": 0
+    },
+    "material_bed_temperature_layer_0": {
+      "2026-02-25": "50"
+    },
+    "material_break_preparation_temperature": {
+      "2026-02-25": "195"
+    },
+    "material_diameter": {
+      "2026-02-25": 1.75
+    },
+    "material_flow": {
+      "2026-02-25": 99
+    },
+    "material_initial_print_temperature": {
+      "2026-02-25": "195"
+    },
+    "material_print_temperature_layer_0": {
+      "2026-02-25": "195"
+    },
+    "material_standby_temperature": {
+      "2026-02-25": 195
+    },
+    "max_skin_angle_for_expansion": {
+      "2026-02-25": 50
+    },
+    "meshfix_maximum_deviation": {
+      "2026-02-25": 0.003
+    },
+    "meshfix_maximum_travel_resolution": {
+      "2026-02-25": "0.8"
+    },
+    "min_infill_area": {
+      "2026-02-25": 1
+    },
+    "min_skin_width_for_expansion": {
+      "2026-02-25": "0.67"
+    },
+    "multiple_mesh_overlap": {
+      "2026-02-25": 0
+    },
+    "ooze_shield_angle": {
+      "2026-02-25": 50
+    },
+    "ooze_shield_dist": {
+      "2026-02-25": 4
+    },
+    "optimize_wall_printing_order": {
+      "2026-02-25": true
+    },
+    "prime_tower_flow": {
+      "2026-02-25": "99"
+    },
+    "prime_tower_min_volume": {
+      "2026-02-25": 4
+    },
+    "prime_tower_size": {
+      "2026-02-25": 1
+    },
+    "raft_acceleration": {
+      "2026-02-25": "400"
+    },
+    "raft_airgap": {
+      "2026-02-25": 0.2
+    },
+    "raft_base_acceleration": {
+      "2026-02-25": "400"
+    },
+    "raft_base_jerk": {
+      "2026-02-25": "10"
+    },
+    "raft_base_line_spacing": {
+      "2026-02-25": "0.8"
+    },
+    "raft_base_line_width": {
+      "2026-02-25": "0.4"
+    },
+    "raft_base_speed": {
+      "2026-02-25": "60"
+    },
+    "raft_base_thickness": {
+      "2026-02-25": "0.2"
+    },
+    "raft_fan_speed": {
+      "2026-02-25": 40
+    },
+    "raft_interface_acceleration": {
+      "2026-02-25": "400"
+    },
+    "raft_interface_fan_speed": {
+      "2026-02-25": "40"
+    },
+    "raft_interface_jerk": {
+      "2026-02-25": "10"
+    },
+    "raft_interface_line_spacing": {
+      "2026-02-25": "0.4"
+    },
+    "raft_interface_line_width": {
+      "2026-02-25": "0.4"
+    },
+    "raft_interface_speed": {
+      "2026-02-25": "60"
+    },
+    "raft_interface_thickness": {
+      "2026-02-25": "0.2"
+    },
+    "raft_jerk": {
+      "2026-02-25": "10"
+    },
+    "raft_margin": {
+      "2026-02-25": 4
+    },
+    "raft_speed": {
+      "2026-02-25": "60"
+    },
+    "raft_surface_acceleration": {
+      "2026-02-25": "400"
+    },
+    "raft_surface_fan_speed": {
+      "2026-02-25": "80"
+    },
+    "raft_surface_jerk": {
+      "2026-02-25": "10"
+    },
+    "raft_surface_layers": {
+      "2026-02-25": 1
+    },
+    "raft_surface_speed": {
+      "2026-02-25": "60"
+    },
+    "raft_surface_thickness": {
+      "2026-02-25": "0.2"
+    },
+    "remove_empty_first_layers": {
+      "2026-02-25": false
+    },
+    "retract_at_layer_change": {
+      "2026-02-25": true
+    },
+    "retraction_amount": {
+      "2026-02-25": 3
+    },
+    "retraction_combing": {
+      "2026-02-25": "'infill'"
+    },
+    "retraction_count_max": {
+      "2026-02-25": 30
+    },
+    "retraction_extrusion_window": {
+      "2026-02-25": "3"
+    },
+    "retraction_min_travel": {
+      "2026-02-25": "1"
+    },
+    "retraction_prime_speed": {
+      "2026-02-25": "60"
+    },
+    "retraction_retract_speed": {
+      "2026-02-25": "30"
+    },
+    "retraction_speed": {
+      "2026-02-25": 30
+    },
+    "roofing_layer_count": {
+      "2026-02-25": "1"
+    },
+    "roofing_material_flow": {
+      "2026-02-25": "99"
+    },
+    "skin_edge_support_layers": {
+      "2026-02-25": "0"
+    },
+    "skin_edge_support_thickness": {
+      "2026-02-25": "0"
+    },
+    "skin_material_flow": {
+      "2026-02-25": "99"
+    },
+    "skin_no_small_gaps_heuristic": {
+      "2026-02-25": true
+    },
+    "skin_outline_count": {
+      "2026-02-25": 0
+    },
+    "skin_overlap": {
+      "2026-02-25": "15"
+    },
+    "skin_overlap_mm": {
+      "2026-02-25": "0.06"
+    },
+    "skin_preshrink": {
+      "2026-02-25": "0.0"
+    },
+    "skirt_brim_line_width": {
+      "2026-02-25": "0.5"
+    },
+    "skirt_brim_material_flow": {
+      "2026-02-25": "99"
+    },
+    "skirt_brim_minimal_length": {
+      "2026-02-25": 50
+    },
+    "skirt_brim_speed": {
+      "2026-02-25": "10.0"
+    },
+    "skirt_line_count": {
+      "2026-02-25": 2
+    },
+    "speed_infill": {
+      "2026-02-25": "80"
+    },
+    "speed_layer_0": {
+      "2026-02-25": "20.0"
+    },
+    "speed_prime_tower": {
+      "2026-02-25": "20"
+    },
+    "speed_print": {
+      "2026-02-25": 20
+    },
+    "speed_print_layer_0": {
+      "2026-02-25": "10.0"
+    },
+    "speed_roofing": {
+      "2026-02-25": "20"
+    },
+    "speed_slowdown_layers": {
+      "2026-02-25": 1
+    },
+    "speed_support": {
+      "2026-02-25": "50"
+    },
+    "speed_support_bottom": {
+      "2026-02-25": "33.33"
+    },
+    "speed_support_infill": {
+      "2026-02-25": "80"
+    },
+    "speed_support_interface": {
+      "2026-02-25": "33.33"
+    },
+    "speed_support_roof": {
+      "2026-02-25": "33.33"
+    },
+    "speed_travel_layer_0": {
+      "2026-02-25": "80"
+    },
+    "speed_wall": {
+      "2026-02-25": "20"
+    },
+    "speed_wall_0": {
+      "2026-02-25": "20"
+    },
+    "speed_wall_x": {
+      "2026-02-25": "20"
+    },
+    "support_angle": {
+      "2026-02-25": 60
+    },
+    "support_bottom_distance": {
+      "2026-02-25": "0.2"
+    },
+    "support_bottom_extruder_nr": {
+      "2026-02-25": "0"
+    },
+    "support_bottom_material_flow": {
+      "2026-02-25": "99"
+    },
+    "support_brim_line_count": {
+      "2026-02-25": "16"
+    },
+    "support_enable": {
+      "2026-02-25": true
+    },
+    "support_extruder_nr": {
+      "2026-02-25": "0"
+    },
+    "support_extruder_nr_layer_0": {
+      "2026-02-25": "0"
+    },
+    "support_infill_extruder_nr": {
+      "2026-02-25": "0"
+    },
+    "support_infill_rate": {
+      "2026-02-25": "20"
+    },
+    "support_infill_sparse_thickness": {
+      "2026-02-25": "0.2"
+    },
+    "support_initial_layer_line_distance": {
+      "2026-02-25": "2"
+    },
+    "support_interface_extruder_nr": {
+      "2026-02-25": "0"
+    },
+    "support_interface_material_flow": {
+      "2026-02-25": "99"
+    },
+    "support_line_distance": {
+      "2026-02-25": "0 if support_infill_rate == 0 else (support_line_width * 100) / support_infill_rate * (2 if support_pattern == 'grid' else (3 if support_pattern == 'triangles' else 1))"
+    },
+    "support_material_flow": {
+      "2026-02-25": "98"
+    },
+    "support_roof_density": {
+      "2026-02-25": "70"
+    },
+    "support_roof_extruder_nr": {
+      "2026-02-25": "0"
+    },
+    "support_roof_height": {
+      "2026-02-25": "0.4"
+    },
+    "support_roof_line_distance": {
+      "2026-02-25": "0.57"
+    },
+    "support_roof_material_flow": {
+      "2026-02-25": "99"
+    },
+    "support_skip_some_zags": {
+      "2026-02-25": true
+    },
+    "support_skip_zag_per_mm": {
+      "2026-02-25": 10
+    },
+    "support_top_distance": {
+      "2026-02-25": "0.2"
+    },
+    "support_xy_distance": {
+      "2026-02-25": 0.6
+    },
+    "support_xy_distance_overhang": {
+      "2026-02-25": "0.5"
+    },
+    "support_z_distance": {
+      "2026-02-25": 0.2
+    },
+    "support_zag_skip_count": {
+      "2026-02-25": "8"
+    },
+    "switch_extruder_prime_speed": {
+      "2026-02-25": "60"
+    },
+    "switch_extruder_retraction_amount": {
+      "2026-02-25": "20"
+    },
+    "switch_extruder_retraction_speed": {
+      "2026-02-25": "30"
+    },
+    "switch_extruder_retraction_speeds": {
+      "2026-02-25": 30
+    },
+    "top_layers": {
+      "2026-02-25": "4"
+    },
+    "top_skin_expand_distance": {
+      "2026-02-25": "0.8"
+    },
+    "top_skin_preshrink": {
+      "2026-02-25": "0.0"
+    },
+    "travel_avoid_supports": {
+      "2026-02-25": true
+    },
+    "travel_retract_before_outer_wall": {
+      "2026-02-25": true
+    },
+    "wall_0_material_flow": {
+      "2026-02-25": "99"
+    },
+    "wall_0_wipe_dist": {
+      "2026-02-25": "0"
+    },
+    "wall_material_flow": {
+      "2026-02-25": "99"
+    },
+    "wall_thickness": {
+      "2026-02-25": "1.2"
+    },
+    "wall_x_material_flow": {
+      "2026-02-25": "99"
+    },
+    "wipe_hop_enable": {
+      "2026-02-25": "False"
+    },
+    "wipe_retraction_amount": {
+      "2026-02-25": "3"
+    },
+    "wipe_retraction_prime_speed": {
+      "2026-02-25": "30"
+    },
+    "wipe_retraction_retract_speed": {
+      "2026-02-25": "30"
+    },
+    "wipe_retraction_speed": {
+      "2026-02-25": "30"
+    },
+    "xy_offset": {
+      "2026-02-25": 0.0
+    },
+    "xy_offset_layer_0": {
+      "2026-02-25": "0.0"
+    },
+    "z_seam_corner": {
+      "2026-02-25": "z_seam_corner_weighted"
+    },
+    "z_seam_x": {
+      "2026-02-25": "115"
+    },
+    "z_seam_y": {
+      "2026-02-25": "180"
+    }
+  }
+}

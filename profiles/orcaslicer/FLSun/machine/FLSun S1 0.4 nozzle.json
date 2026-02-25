@@ -1,0 +1,363 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "FLSun S1 0.4 nozzle",
+  "vendor": "FLSun",
+  "first_seen": "2.3.1",
+  "last_seen": "2.3.1",
+  "filament_id": null,
+  "setting_id": "GM003",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.3.1": "machine"
+    },
+    "name": {
+      "2.3.1": "FLSun S1 0.4 nozzle"
+    },
+    "from": {
+      "2.3.1": "system"
+    },
+    "instantiation": {
+      "2.3.1": "true"
+    },
+    "gcode_flavor": {
+      "2.3.1": "klipper"
+    },
+    "machine_start_gcode": {
+      "2.3.1": "G90\nM82\nG28\n{if (first_layer_print_min[0] > 100 || first_layer_print_max[0] > 100 || first_layer_print_min[1] > 100 || first_layer_print_max[1] > 100 || first_layer_print_min[0] < -100 || first_layer_print_max[0] < -100 || first_layer_print_min[1] < -100 || first_layer_print_max[1] < -100)}M140 S[first_layer_bed_temperature] A1 B1{else}M140 S[first_layer_bed_temperature] A1 B0{endif}\nM104 S[first_layer_temperature] T0\nM107 T0\nM109 S[first_layer_temperature] T0\n{if (first_layer_print_min[0] > 100 || first_layer_print_max[0] > 100 || first_layer_print_min[1] > 100 || first_layer_print_max[1] > 100 || first_layer_print_min[0] < -100 || first_layer_print_max[0] < -100 || first_layer_print_min[1] < -100 || first_layer_print_max[1] < -100)}M190 S[first_layer_bed_temperature] A1 B1{else}M190 S[first_layer_bed_temperature] A1 B0{endif}\nG1 Z150 F6000\nG1 X-160 Y0 Z0.4 F4000\nG92 E0\nG3 X0 Y-160 I160 J0 Z0.3 E30 F2000\nG1 Z2 F2000\nG92 E0\nSET_TMC_CURRENT STEPPER=extruder CURRENT=0.8"
+    },
+    "machine_end_gcode": {
+      "2.3.1": "M107 T0\nM104 S0\nM140 S0\nM104 S0 T1\nG92 E0\nG91\nG1 E-1 F2100\nG1 Z+0.5 F6000\nG28\nG90"
+    },
+    "extruder_colour": {
+      "2.3.1": [
+        "#018001"
+      ]
+    },
+    "extruder_offset": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "machine_max_acceleration_e": {
+      "2.3.1": [
+        "40000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.3.1": [
+        "40000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.3.1": [
+        "40000"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "2.3.1": [
+        "20000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.3.1": [
+        "40000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.3.1": [
+        "40000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.3.1": [
+        "40000"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.3.1": [
+        "1200"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.3.1": [
+        "1200"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.3.1": [
+        "1200"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.3.1": [
+        "1200"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.3.1": [
+        "100"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.3.1": [
+        "20000"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.3.1": [
+        "20000"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.3.1": [
+        "10000"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "2.3.1": [
+        "0.3"
+      ]
+    },
+    "min_layer_height": {
+      "2.3.1": [
+        "0.08"
+      ]
+    },
+    "printable_height": {
+      "2.3.1": "430"
+    },
+    "extruder_clearance_radius": {
+      "2.3.1": "65"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.3.1": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.3.1": "140"
+    },
+    "nozzle_diameter": {
+      "2.3.1": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "2.3.1": ""
+    },
+    "printer_technology": {
+      "2.3.1": "FFF"
+    },
+    "printer_variant": {
+      "2.3.1": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "2.3.1": [
+        "2"
+      ]
+    },
+    "retract_before_wipe": {
+      "2.3.1": [
+        "30%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "z_hop": {
+      "2.3.1": [
+        "0.4"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.3.1": [
+        "-0.05"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.3.1": [
+        "-0.05"
+      ]
+    },
+    "retraction_speed": {
+      "2.3.1": [
+        "80"
+      ]
+    },
+    "deretraction_speed": {
+      "2.3.1": [
+        "80"
+      ]
+    },
+    "silent_mode": {
+      "2.3.1": "0"
+    },
+    "single_extruder_multi_material": {
+      "2.3.1": "1"
+    },
+    "change_filament_gcode": {
+      "2.3.1": "PAUSE"
+    },
+    "before_layer_change_gcode": {
+      "2.3.1": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "layer_change_gcode": {
+      "2.3.1": ""
+    },
+    "machine_pause_gcode": {
+      "2.3.1": "PAUSE"
+    },
+    "wipe": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "z_hop_types": {
+      "2.3.1": "Normal Lift"
+    },
+    "setting_id": {
+      "2.3.1": "GM003"
+    },
+    "printer_model": {
+      "2.3.1": "FLSun S1"
+    },
+    "default_print_profile": {
+      "2.3.1": "0.20mm Standard @FLSun S1"
+    },
+    "printer_structure": {
+      "2.3.1": "delta"
+    },
+    "bed_exclude_area": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "thumbnails": {
+      "2.3.1": [
+        "48x48/PNG, 300x300/PNG"
+      ]
+    },
+    "printable_area": {
+      "2.3.1": [
+        "159.391x13.9449",
+        "157.569x27.7837",
+        "154.548x41.411",
+        "150.351x54.7232",
+        "145.009x67.6189",
+        "138.564x80",
+        "131.064x91.7722",
+        "122.567x102.846",
+        "113.137x113.137",
+        "102.846x122.567",
+        "91.7722x131.064",
+        "80x138.564",
+        "67.6189x145.009",
+        "54.7232x150.351",
+        "41.411x154.548",
+        "27.7837x157.569",
+        "13.9449x159.391",
+        "9.79717e-15x160",
+        "-13.9449x159.391",
+        "-27.7837x157.569",
+        "-41.411x154.548",
+        "-54.7232x150.351",
+        "-67.6189x145.009",
+        "-80x138.564",
+        "-91.7722x131.064",
+        "-102.846x122.567",
+        "-113.137x113.137",
+        "-122.567x102.846",
+        "-131.064x91.7722",
+        "-138.564x80",
+        "-145.009x67.6189",
+        "-150.351x54.7232",
+        "-154.548x41.411",
+        "-157.569x27.7837",
+        "-159.391x13.9449",
+        "-160x1.95943e-14",
+        "-159.391x-13.9449",
+        "-157.569x-27.7837",
+        "-154.548x-41.411",
+        "-150.351x-54.7232",
+        "-145.009x-67.6189",
+        "-138.564x-80",
+        "-131.064x-91.7722",
+        "-122.567x-102.846",
+        "-113.137x-113.137",
+        "-102.846x-122.567",
+        "-91.7722x-131.064",
+        "-80x-138.564",
+        "-67.6189x-145.009",
+        "-54.7232x-150.351",
+        "-41.411x-154.548",
+        "-27.7837x-157.569",
+        "-13.9449x-159.391",
+        "-2.93915e-14x-160",
+        "13.9449x-159.391",
+        "27.7837x-157.569",
+        "41.411x-154.548",
+        "54.7232x-150.351",
+        "67.6189x-145.009",
+        "80x-138.564",
+        "91.7722x-131.064",
+        "102.846x-122.567",
+        "113.137x-113.137",
+        "122.567x-102.846",
+        "131.064x-91.7722",
+        "138.564x-80",
+        "145.009x-67.6189",
+        "150.351x-54.7232",
+        "154.548x-41.411",
+        "157.569x-27.7837",
+        "159.391x-13.9449",
+        "160x-3.91887e-14"
+      ]
+    },
+    "support_air_filtration": {
+      "2.3.1": "1"
+    },
+    "support_chamber_temp_control": {
+      "2.3.1": "0"
+    },
+    "scan_first_layer": {
+      "2.3.1": "0"
+    },
+    "nozzle_type": {
+      "2.3.1": "hardened_steel"
+    },
+    "adaptive_bed_mesh_margin": {
+      "2.3.1": "0"
+    },
+    "emit_machine_limits_to_gcode": {
+      "2.3.1": "0"
+    },
+    "auxiliary_fan": {
+      "2.3.1": "0"
+    }
+  }
+}

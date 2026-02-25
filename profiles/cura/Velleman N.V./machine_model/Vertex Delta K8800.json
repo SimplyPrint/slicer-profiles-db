@@ -1,0 +1,165 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Vertex Delta K8800",
+  "vendor": "Velleman N.V.",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Vertex Delta K8800"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Velleman N.V."
+    },
+    "manufacturer": {
+      "2026-02-25": "Velleman N.V."
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "vertex_delta_k8800_extruder_0"
+      }
+    },
+    "brim_width": {
+      "2026-02-25": 6
+    },
+    "cool_fan_full_at_height": {
+      "2026-02-25": 2
+    },
+    "cool_fan_full_layer": {
+      "2026-02-25": 11
+    },
+    "cool_min_layer_time": {
+      "2026-02-25": 8
+    },
+    "gantry_height": {
+      "2026-02-25": "0"
+    },
+    "infill_line_width": {
+      "2026-02-25": 0.35
+    },
+    "infill_overlap": {
+      "2026-02-25": 5
+    },
+    "infill_sparse_density": {
+      "2026-02-25": 40
+    },
+    "line_width": {
+      "2026-02-25": 0.35
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": true
+    },
+    "machine_depth": {
+      "2026-02-25": 200
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "; Vertex Delta end code\nM107 ; Turn off fan\nG91 ; Relative positioning\nT0\nG1 E-1 F1500; Reduce filament pressure\nM104 T0 S0\nG90 ; Absolute positioning\nG92 E0 ; Reset extruder position\nM300 S4000 P500\nM300 S3000 P500\nM300 S2000 P800\nG28\nM84 ; Turn steppers off"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_height": {
+      "2026-02-25": 225
+    },
+    "machine_shape": {
+      "2026-02-25": "elliptic"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "; Vertex Delta Start Gcode\nM0 Is my nozzle clean?\nM400\nG28 ; Home extruder\nM106 S128 ; Start fan\nM104 T0 R130 ; Set cold nozzle\nM109 T0 R130 ; Wait for cold nozzle\nM117 Leveling bed...\nG29 ; Level Bed\nG1 X0 Y100 Z1 F2000\nG92 Z0.9 ; Set Z position (SET Z OFFSET HERE -> 1 - OFFSET)\nM107 ; Stop fan\nG90 ; Absolute positioning\nM82 ; Extruder in absolute mode\nM104 T0 S{material_print_temperature}\nG92 E0 ; Reset extruder position\nM109 T0 S{material_print_temperature}\nM117 Priming nozzle...\nM83\nG1 E20 F100 ; purge/prime nozzle\nM82\nG92 E0 ; Reset extruder position\nG4 S3 ; Wait 3 seconds\nG1 Z5 F2000\nM117 Vertex Delta printing"
+    },
+    "machine_width": {
+      "2026-02-25": 200
+    },
+    "min_infill_area": {
+      "2026-02-25": 0.1
+    },
+    "retract_at_layer_change": {
+      "2026-02-25": true
+    },
+    "retraction_count_max": {
+      "2026-02-25": 15
+    },
+    "retraction_extrusion_window": {
+      "2026-02-25": 1
+    },
+    "retraction_hop": {
+      "2026-02-25": 0.1
+    },
+    "retraction_hop_enabled": {
+      "2026-02-25": true
+    },
+    "retraction_min_travel": {
+      "2026-02-25": 1
+    },
+    "skirt_brim_minimal_length": {
+      "2026-02-25": 50
+    },
+    "skirt_brim_speed": {
+      "2026-02-25": 20
+    },
+    "skirt_line_count": {
+      "2026-02-25": 2
+    },
+    "speed_infill": {
+      "2026-02-25": 40
+    },
+    "speed_layer_0": {
+      "2026-02-25": 20
+    },
+    "speed_print": {
+      "2026-02-25": 35
+    },
+    "speed_print_layer_0": {
+      "2026-02-25": 20
+    },
+    "speed_topbottom": {
+      "2026-02-25": 35
+    },
+    "speed_travel": {
+      "2026-02-25": 190
+    },
+    "speed_wall": {
+      "2026-02-25": 35
+    },
+    "speed_wall_x": {
+      "2026-02-25": 35
+    },
+    "support_xy_distance": {
+      "2026-02-25": 1
+    },
+    "support_z_distance": {
+      "2026-02-25": 0.4
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": 0.6
+    },
+    "travel_retract_before_outer_wall": {
+      "2026-02-25": false
+    },
+    "wall_thickness": {
+      "2026-02-25": "0.7"
+    }
+  }
+}

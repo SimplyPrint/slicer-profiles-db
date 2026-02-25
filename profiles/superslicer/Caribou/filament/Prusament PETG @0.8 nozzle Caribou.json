@@ -1,0 +1,145 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "filament",
+  "name": "Prusament PETG @0.8 nozzle Caribou",
+  "vendor": "Caribou",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "cooling": {
+      "1.4.4": "1"
+    },
+    "compatible_printers": {
+      "1.4.4": ""
+    },
+    "compatible_printers_condition": {
+      "1.4.4": "nozzle_diameter[0]==0.8 and !(printer_notes=~/.*PRINTER_VENDOR_CARIBOU3D.*/ and printer_notes=~/.*PRINTER_MODEL_(MK3S|MK3KLIPPER|DUET).*/ and single_extruder_multi_material)"
+    },
+    "end_filament_gcode": {
+      "1.4.4": "\"; Filament-specific end gcode\""
+    },
+    "extrusion_multiplier": {
+      "1.4.4": "0.95"
+    },
+    "filament_loading_speed": {
+      "1.4.4": "28"
+    },
+    "filament_loading_speed_start": {
+      "1.4.4": "3"
+    },
+    "filament_unloading_speed": {
+      "1.4.4": "90"
+    },
+    "filament_unloading_speed_start": {
+      "1.4.4": "100"
+    },
+    "filament_toolchange_delay": {
+      "1.4.4": "0"
+    },
+    "filament_cooling_moves": {
+      "1.4.4": "4"
+    },
+    "filament_cooling_initial_speed": {
+      "1.4.4": "2.2"
+    },
+    "filament_cooling_final_speed": {
+      "1.4.4": "3.4"
+    },
+    "filament_load_time": {
+      "1.4.4": "0"
+    },
+    "filament_unload_time": {
+      "1.4.4": "0"
+    },
+    "filament_ramming_parameters": {
+      "1.4.4": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\""
+    },
+    "filament_minimal_purge_on_wipe_tower": {
+      "1.4.4": "15"
+    },
+    "filament_cost": {
+      "1.4.4": "36.29"
+    },
+    "filament_density": {
+      "1.4.4": "1.27"
+    },
+    "filament_diameter": {
+      "1.4.4": "1.75"
+    },
+    "filament_notes": {
+      "1.4.4": "\"\""
+    },
+    "filament_settings_id": {
+      "1.4.4": "Prusament PETG @0.8 nozzle Caribou"
+    },
+    "filament_soluble": {
+      "1.4.4": "0"
+    },
+    "min_print_speed": {
+      "1.4.4": "15"
+    },
+    "slowdown_below_layer_time": {
+      "1.4.4": "20"
+    },
+    "start_filament_gcode": {
+      "1.4.4": "\"{if printer_notes=~/.*PRINTER_MODEL_MK3S.*/}M900 K{if nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0{endif}\""
+    },
+    "bed_temperature": {
+      "1.4.4": "90"
+    },
+    "bridge_fan_speed": {
+      "1.4.4": "50"
+    },
+    "disable_fan_first_layers": {
+      "1.4.4": "3"
+    },
+    "full_fan_speed_layer": {
+      "1.4.4": "5"
+    },
+    "fan_always_on": {
+      "1.4.4": "1"
+    },
+    "fan_below_layer_time": {
+      "1.4.4": "20"
+    },
+    "filament_colour": {
+      "1.4.4": "#FF8000"
+    },
+    "filament_max_volumetric_speed": {
+      "1.4.4": "20"
+    },
+    "filament_type": {
+      "1.4.4": "PETG"
+    },
+    "first_layer_bed_temperature": {
+      "1.4.4": "85"
+    },
+    "first_layer_temperature": {
+      "1.4.4": "250"
+    },
+    "max_fan_speed": {
+      "1.4.4": "50"
+    },
+    "min_fan_speed": {
+      "1.4.4": "30"
+    },
+    "temperature": {
+      "1.4.4": "260"
+    },
+    "filament_retract_length": {
+      "1.4.4": "0.6"
+    },
+    "filament_retract_lift": {
+      "1.4.4": "0.2"
+    },
+    "filament_vendor": {
+      "1.4.4": "Prusa Polymers"
+    },
+    "filament_spool_weight": {
+      "1.4.4": "201"
+    }
+  }
+}

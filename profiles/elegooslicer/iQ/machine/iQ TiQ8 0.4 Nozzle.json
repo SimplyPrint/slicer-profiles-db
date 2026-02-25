@@ -1,0 +1,499 @@
+{
+  "slicer": "elegooslicer",
+  "profile_type": "machine",
+  "name": "iQ TiQ8 0.4 Nozzle",
+  "vendor": "iQ",
+  "first_seen": "1.3.0.11",
+  "last_seen": "1.3.0.11",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "1.3.0.11": "machine"
+    },
+    "name": {
+      "1.3.0.11": "iQ TiQ8 0.4 Nozzle"
+    },
+    "from": {
+      "1.3.0.11": "system"
+    },
+    "instantiation": {
+      "1.3.0.11": "true"
+    },
+    "gcode_flavor": {
+      "1.3.0.11": "marlin"
+    },
+    "adaptive_bed_mesh_margin": {
+      "1.3.0.11": "0"
+    },
+    "auxiliary_fan": {
+      "1.3.0.11": "0"
+    },
+    "bed_custom_texture": {
+      "1.3.0.11": ""
+    },
+    "bed_exclude_area": {
+      "1.3.0.11": [
+        "0x0"
+      ]
+    },
+    "best_object_pos": {
+      "1.3.0.11": "0.5,0.5"
+    },
+    "change_extrusion_role_gcode": {
+      "1.3.0.11": ""
+    },
+    "change_filament_gcode": {
+      "1.3.0.11": "G1 Z{layer_z+2} F900 ; safe distance while tool change\n{if next_extruder==0}G1 X30 Y-12 F9000{endif}\nM109 S{nozzle_temperature[next_extruder]} T[next_extruder] ; set new tool temperature so it can start heating while changing"
+    },
+    "cooling_tube_length": {
+      "1.3.0.11": "5"
+    },
+    "cooling_tube_retraction": {
+      "1.3.0.11": "91.5"
+    },
+    "default_filament_profile": {
+      "1.3.0.11": [
+        "Fiberthree PACF Pro P1 @iQ TiQ2 0.4 Nozzle"
+      ]
+    },
+    "default_print_profile": {
+      "1.3.0.11": "0.20mm Standard @iQ TiQ2 P1 - PACF Pro Fiberthree (0.4 Nozzle)"
+    },
+    "deretraction_speed": {
+      "1.3.0.11": [
+        "30",
+        "30"
+      ]
+    },
+    "disable_m73": {
+      "1.3.0.11": "1"
+    },
+    "emit_machine_limits_to_gcode": {
+      "1.3.0.11": "0"
+    },
+    "enable_filament_ramming": {
+      "1.3.0.11": "0"
+    },
+    "extra_loading_move": {
+      "1.3.0.11": "-2"
+    },
+    "extruder_clearance_height_to_lid": {
+      "1.3.0.11": "140"
+    },
+    "extruder_clearance_height_to_rod": {
+      "1.3.0.11": "36"
+    },
+    "extruder_clearance_radius": {
+      "1.3.0.11": "65"
+    },
+    "extruder_colour": {
+      "1.3.0.11": [
+        "#FCE94F",
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "1.3.0.11": [
+        "0x0",
+        "0x0"
+      ]
+    },
+    "fan_kickstart": {
+      "1.3.0.11": "0"
+    },
+    "fan_speedup_overhangs": {
+      "1.3.0.11": "1"
+    },
+    "fan_speedup_time": {
+      "1.3.0.11": "0"
+    },
+    "head_wrap_detect_zone": {
+      "1.3.0.11": []
+    },
+    "high_current_on_filament_swap": {
+      "1.3.0.11": "0"
+    },
+    "layer_change_gcode": {
+      "1.3.0.11": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "before_layer_change_gcode": {
+      "1.3.0.11": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "machine_end_gcode": {
+      "1.3.0.11": "G1 X10 F3000 ; home X axis\nG1 Y10 F3000 ; home Y axis\nM104 S0 T0 ; turn off extruder\nM104 S0 T1 ; turn off extruder\nM104 S0 T2 ; turn off extruder\nM140 S0 ; turn off bed\n{if nozzle_temperature_initial_layer[current_extruder]>350}M140 S80{endif} ; Keep bed hot for easy part removal from PEI sheet\nM106 S0 ; turn off fan\nM806 S0 ; turn of housing fan\nM84 ; disable motor\n"
+    },
+    "machine_load_filament_time": {
+      "1.3.0.11": "0"
+    },
+    "machine_max_acceleration_e": {
+      "1.3.0.11": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "1.3.0.11": [
+        "20000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "1.3.0.11": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "1.3.0.11": [
+        "20000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "1.3.0.11": [
+        "1500",
+        "1500"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "1.3.0.11": [
+        "1500",
+        "1500"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "1.3.0.11": [
+        "500",
+        "200"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "1.3.0.11": [
+        "2.5",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "1.3.0.11": [
+        "9",
+        "9"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "1.3.0.11": [
+        "9",
+        "9"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "1.3.0.11": [
+        "0.2",
+        "0.4"
+      ]
+    },
+    "machine_max_speed_e": {
+      "1.3.0.11": [
+        "25",
+        "25"
+      ]
+    },
+    "machine_max_speed_x": {
+      "1.3.0.11": [
+        "500",
+        "500"
+      ]
+    },
+    "machine_max_speed_y": {
+      "1.3.0.11": [
+        "500",
+        "500"
+      ]
+    },
+    "machine_max_speed_z": {
+      "1.3.0.11": [
+        "15",
+        "12"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_pause_gcode": {
+      "1.3.0.11": "M10710 S0"
+    },
+    "machine_start_gcode": {
+      "1.3.0.11": "T[initial_extruder]\nM109 S{nozzle_temperature_initial_layer[current_extruder]}\n"
+    },
+    "machine_unload_filament_time": {
+      "1.3.0.11": "0"
+    },
+    "manual_filament_change": {
+      "1.3.0.11": "0"
+    },
+    "max_layer_height": {
+      "1.3.0.11": [
+        "0.32",
+        "0.32"
+      ]
+    },
+    "min_layer_height": {
+      "1.3.0.11": [
+        "0.08",
+        "0.08"
+      ]
+    },
+    "nozzle_hrc": {
+      "1.3.0.11": "0"
+    },
+    "nozzle_type": {
+      "1.3.0.11": "undefine"
+    },
+    "nozzle_volume": {
+      "1.3.0.11": "0"
+    },
+    "parking_pos_retraction": {
+      "1.3.0.11": "92"
+    },
+    "preferred_orientation": {
+      "1.3.0.11": "0"
+    },
+    "print_host": {
+      "1.3.0.11": "https://simplyprint.io/panel"
+    },
+    "print_host_webui": {
+      "1.3.0.11": ""
+    },
+    "printer_notes": {
+      "1.3.0.11": "Machine file version 1.1 20250516"
+    },
+    "printer_settings_id": {
+      "1.3.0.11": "iQ TiQ8 0.4 Nozzle"
+    },
+    "printer_structure": {
+      "1.3.0.11": "undefine"
+    },
+    "printer_technology": {
+      "1.3.0.11": "FFF"
+    },
+    "printhost_apikey": {
+      "1.3.0.11": ""
+    },
+    "printhost_authorization_type": {
+      "1.3.0.11": "key"
+    },
+    "printhost_cafile": {
+      "1.3.0.11": ""
+    },
+    "printhost_password": {
+      "1.3.0.11": ""
+    },
+    "printhost_port": {
+      "1.3.0.11": ""
+    },
+    "printhost_ssl_ignore_revoke": {
+      "1.3.0.11": "0"
+    },
+    "printhost_user": {
+      "1.3.0.11": ""
+    },
+    "printing_by_object_gcode": {
+      "1.3.0.11": ""
+    },
+    "purge_in_prime_tower": {
+      "1.3.0.11": "1"
+    },
+    "retract_before_wipe": {
+      "1.3.0.11": [
+        "70%",
+        "70%"
+      ]
+    },
+    "retract_length_toolchange": {
+      "1.3.0.11": [
+        "15",
+        "15"
+      ]
+    },
+    "retract_lift_above": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "retract_lift_below": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "retract_lift_enforce": {
+      "1.3.0.11": [
+        "All Surfaces",
+        "All Surfaces"
+      ]
+    },
+    "retract_restart_extra": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "1.3.0.11": [
+        "-0.2",
+        "-0.2"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "1.3.0.11": [
+        "1",
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "1.3.0.11": [
+        "0.8",
+        "0.9"
+      ]
+    },
+    "retraction_minimum_travel": {
+      "1.3.0.11": [
+        "1",
+        "1"
+      ]
+    },
+    "retraction_speed": {
+      "1.3.0.11": [
+        "30",
+        "30"
+      ]
+    },
+    "scan_first_layer": {
+      "1.3.0.11": "0"
+    },
+    "silent_mode": {
+      "1.3.0.11": "0"
+    },
+    "single_extruder_multi_material": {
+      "1.3.0.11": "0"
+    },
+    "support_air_filtration": {
+      "1.3.0.11": "1"
+    },
+    "support_chamber_temp_control": {
+      "1.3.0.11": "1"
+    },
+    "support_multi_bed_types": {
+      "1.3.0.11": "0"
+    },
+    "template_custom_gcode": {
+      "1.3.0.11": ""
+    },
+    "time_cost": {
+      "1.3.0.11": "0"
+    },
+    "time_lapse_gcode": {
+      "1.3.0.11": ""
+    },
+    "upward_compatible_machine": {
+      "1.3.0.11": []
+    },
+    "use_firmware_retraction": {
+      "1.3.0.11": "0"
+    },
+    "use_relative_e_distances": {
+      "1.3.0.11": "1"
+    },
+    "wipe": {
+      "1.3.0.11": [
+        "1",
+        "1"
+      ]
+    },
+    "wipe_distance": {
+      "1.3.0.11": [
+        "1",
+        "1"
+      ]
+    },
+    "z_hop": {
+      "1.3.0.11": [
+        "0.4",
+        "0.4"
+      ]
+    },
+    "z_hop_types": {
+      "1.3.0.11": [
+        "Normal Lift",
+        "Normal Lift"
+      ]
+    },
+    "z_offset": {
+      "1.3.0.11": "0"
+    },
+    "printer_model": {
+      "1.3.0.11": "TiQ8"
+    },
+    "printer_variant": {
+      "1.3.0.11": "0.4"
+    },
+    "host_type": {
+      "1.3.0.11": "simplyprint"
+    },
+    "long_retractions_when_cut": {
+      "1.3.0.11": [
+        "0",
+        "0"
+      ]
+    },
+    "nozzle_diameter": {
+      "1.3.0.11": [
+        "0.4",
+        "0.4"
+      ]
+    },
+    "printable_area": {
+      "1.3.0.11": [
+        "0x0",
+        "500x0",
+        "500x400",
+        "0x400"
+      ]
+    },
+    "printable_height": {
+      "1.3.0.11": "450"
+    },
+    "retract_on_top_layer": {
+      "1.3.0.11": [
+        "1",
+        "1"
+      ]
+    },
+    "retraction_distances_when_cut": {
+      "1.3.0.11": [
+        "18",
+        "18"
+      ]
+    },
+    "thumbnails": {
+      "1.3.0.11": ""
+    },
+    "travel_slope": {
+      "1.3.0.11": [
+        "3",
+        "3"
+      ]
+    }
+  }
+}

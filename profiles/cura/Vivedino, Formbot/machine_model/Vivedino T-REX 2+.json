@@ -1,0 +1,84 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Vivedino T-REX 2+",
+  "vendor": "Vivedino, Formbot",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Vivedino T-REX 2+"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "vivedino_base"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "platform": {
+      "2026-02-25": "vivedino_trex.stl"
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "trex2_extruder_0",
+        "1": "trex2_extruder_1"
+      }
+    },
+    "quality_definition": {
+      "2026-02-25": "vivedino_trex2plus"
+    },
+    "gantry_height": {
+      "2026-02-25": 30
+    },
+    "machine_depth": {
+      "2026-02-25": 400
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "G28 X0 Y0\nM104 S0 T1 ; turn off extruder\nM104 S0 T0\nM140 S0 ; turn off bed\nG28 X0\nM106 P0 S0\nM106 P1 S0\nM84 S0\nM84 XYE; disable motors except Z"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -30,
+          34
+        ],
+        [
+          -30,
+          -32
+        ],
+        [
+          30,
+          -32
+        ],
+        [
+          30,
+          34
+        ]
+      ]
+    },
+    "machine_heat_zone_length": {
+      "2026-02-25": "10"
+    },
+    "machine_height": {
+      "2026-02-25": 500
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "T0\nG28 ; home all axes\nM420 S1\nG1 X-42 F8000\nG92 E0\nG1 E5 F500\nG1 X0 F5000\nG1 X-40\nG1 X0\nG1 X-40\nG1 X0\nG1 X-40\nG1 X200\nG1 Y200 F5000"
+    },
+    "machine_width": {
+      "2026-02-25": 400
+    },
+    "retraction_amount": {
+      "2026-02-25": "2"
+    }
+  }
+}

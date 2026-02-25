@@ -1,0 +1,299 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "Vzbot 235 AWD 0.6 nozzle",
+  "vendor": "Vzbot",
+  "first_seen": "2.3.1",
+  "last_seen": "2.3.1",
+  "filament_id": null,
+  "setting_id": "GM003",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.3.1": "machine"
+    },
+    "name": {
+      "2.3.1": "Vzbot 235 AWD 0.6 nozzle"
+    },
+    "from": {
+      "2.3.1": "system"
+    },
+    "instantiation": {
+      "2.3.1": "true"
+    },
+    "printer_technology": {
+      "2.3.1": "FFF"
+    },
+    "deretraction_speed": {
+      "2.3.1": [
+        "80"
+      ]
+    },
+    "extruder_colour": {
+      "2.3.1": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "gcode_flavor": {
+      "2.3.1": "klipper"
+    },
+    "silent_mode": {
+      "2.3.1": "0"
+    },
+    "machine_max_acceleration_e": {
+      "2.3.1": [
+        "20000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.3.1": [
+        "50000",
+        "50000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.3.1": [
+        "10000",
+        "10000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.3.1": [
+        "50000",
+        "50000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.3.1": [
+        "50000",
+        "50000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.3.1": [
+        "1000",
+        "500"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.3.1": [
+        "100",
+        "100"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.3.1": [
+        "2000",
+        "2000"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.3.1": [
+        "2000",
+        "2000"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.3.1": [
+        "15",
+        "15"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "2.3.1": [
+        "0.32"
+      ]
+    },
+    "min_layer_height": {
+      "2.3.1": [
+        "0.08"
+      ]
+    },
+    "printable_height": {
+      "2.3.1": "200"
+    },
+    "extruder_clearance_radius": {
+      "2.3.1": "45"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.3.1": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.3.1": "140"
+    },
+    "nozzle_diameter": {
+      "2.3.1": [
+        "0.6"
+      ]
+    },
+    "printer_settings_id": {
+      "2.3.1": ""
+    },
+    "printer_variant": {
+      "2.3.1": "0.6"
+    },
+    "retraction_minimum_travel": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "retract_before_wipe": {
+      "2.3.1": [
+        "70%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "2.3.1": [
+        "0.5"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.3.1": [
+        "2"
+      ]
+    },
+    "z_hop": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "2.3.1": [
+        "30"
+      ]
+    },
+    "single_extruder_multi_material": {
+      "2.3.1": "1"
+    },
+    "change_filament_gcode": {
+      "2.3.1": ""
+    },
+    "wipe": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "default_print_profile": {
+      "2.3.1": "0.20mm Standard @Vzbot"
+    },
+    "before_layer_change_gcode": {
+      "2.3.1": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "machine_start_gcode": {
+      "2.3.1": "BED_MESH_PROFILE LOAD=default \nM190 S[bed_temperature_initial_layer_single] ;set bed temp \nG28; \nG1 X2 Y2 Z0 F9000  ; move to corner \nM109 S[nozzle_temperature_initial_layer] ; set nozzle temp \nG1 Z0.2 F300 ; raise nozzle to 0.2\nG92 E0.0 ; reset extruder distance position\nG1 X60.0 E9.0 F1000.0 ; intro line\nG1 X100.0 E21.5 F1000.0 ; intro line\nG0 Z2\n\nG92 E0.0 ; reset extruder distance position"
+    },
+    "machine_end_gcode": {
+      "2.3.1": "G91; //rel pos\nG1 E-5 f2000\nG1 Z10 F600 ; lift nozzle 10mm/s\nG1 E-29 f600\nM104 S0\nM140 S0 ; turn off bed\n\nM107\nG90\nG0 X117 Y200  F6000; move to back\nM84     ; disable motors\nDSLR_SNAPSHOT\nRSCS_off\n\nexhaustfan_on\nTIMELAPSE_RENDER\n\nG4 P60000 ; //Dwell for 1min\nM107 \nexhaustfan_off\n\nG4 P120000\n\npower_off ; //this is with moonraker"
+    },
+    "machine_max_acceleration_travel": {
+      "2.3.1": [
+        "50000",
+        "50000"
+      ]
+    },
+    "z_lift_type": {
+      "2.3.1": "NormalLift"
+    },
+    "machine_pause_gcode": {
+      "2.3.1": "PAUSE\n"
+    },
+    "default_filament_profile": {
+      "2.3.1": [
+        "Vzbot Generic ABS"
+      ]
+    },
+    "bed_exclude_area": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "layer_change_gcode": {
+      "2.3.1": ";DSLR_SNAPSHOT\nTIMELAPSE_TAKE_FRAME"
+    },
+    "scan_first_layer": {
+      "2.3.1": "0"
+    },
+    "nozzle_type": {
+      "2.3.1": "undefine"
+    },
+    "auxiliary_fan": {
+      "2.3.1": "0"
+    },
+    "setting_id": {
+      "2.3.1": "GM003"
+    },
+    "printer_model": {
+      "2.3.1": "Vzbot 235 AWD"
+    },
+    "printable_area": {
+      "2.3.1": [
+        "0x0",
+        "235x0",
+        "235x235",
+        "0x235"
+      ]
+    },
+    "upward_compatible_machine": {
+      "2.3.1": [
+        "Vzbot 235 AWD 0.4 nozzle"
+      ]
+    }
+  }
+}

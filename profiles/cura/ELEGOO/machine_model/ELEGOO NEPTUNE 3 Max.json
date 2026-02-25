@@ -1,0 +1,59 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "ELEGOO NEPTUNE 3 Max",
+  "vendor": "ELEGOO",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "ELEGOO NEPTUNE 3 Max"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "elegoo_neptune_3pro"
+    },
+    "platform": {
+      "2026-02-25": "elegoo_platform_max.3mf"
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        -2.1,
+        -0.2,
+        0
+      ]
+    },
+    "acceleration_wall": {
+      "2026-02-25": 700
+    },
+    "machine_acceleration": {
+      "2026-02-25": 700
+    },
+    "machine_depth": {
+      "2026-02-25": 426
+    },
+    "machine_height": {
+      "2026-02-25": 510
+    },
+    "machine_max_acceleration_x": {
+      "2026-02-25": 700
+    },
+    "machine_max_acceleration_y": {
+      "2026-02-25": 500
+    },
+    "machine_name": {
+      "2026-02-25": "ELEGOO NEPTUNE 3 Max"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ";ELEGOO NEPTUNE 3 Max\nM220 S100 ;Set the feed speed to 100%\nM221 S100 ;Set the flow rate to 100%\nG90\nG28 ;home\n;M420 S1 Z10;Uncomment to enable progressive compensation height of 10mm\nG92 E0 ;Reset Extruder\nG1 Z0.45 F300\nG1 X1.5 Y20 F5000.0 ;Move to start position\nG1 Y120.0 F600.0 E15 ;Draw the first line\nG1 X0.5 F1000.0 ;Move to side a little\nG1 Y20 F600 E30 ;Draw the second line\nG92 E0 ;Reset Extruder"
+    },
+    "machine_width": {
+      "2026-02-25": 426
+    }
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Trimaker Nebula",
+  "vendor": "Trimaker",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Trimaker Nebula"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Trimaker"
+    },
+    "manufacturer": {
+      "2026-02-25": "Trimaker"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "trimaker_nebula_platform.stl"
+    },
+    "exclude_materials": {
+      "2026-02-25": [
+        "dsm_arnitel2045",
+        "dsm_novamid1070",
+        "generic_abs",
+        "generic_cpe",
+        "generic_hips",
+        "generic_nylon",
+        "generic_pc",
+        "generic_petg",
+        "generic_pla",
+        "generic_pva",
+        "generic_tpu",
+        "imade3d_petg",
+        "imade3d_pla",
+        "innofill_innoflex60",
+        "verbatim_bvoh"
+      ]
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "trimaker_nebula_extruder"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        -117.5,
+        -40,
+        147.5
+      ]
+    },
+    "preferred_material": {
+      "2026-02-25": "redd_pla"
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "acceleration_enabled": {
+      "2026-02-25": true
+    },
+    "adhesion_type": {
+      "2026-02-25": "skirt"
+    },
+    "cool_fan_enabled": {
+      "2026-02-25": true
+    },
+    "cool_fan_speed": {
+      "2026-02-25": "100.0 if cool_fan_enabled else 0.0"
+    },
+    "default_material_bed_temperature": {
+      "2026-02-25": 60
+    },
+    "default_material_print_temperature": {
+      "2026-02-25": 200
+    },
+    "gantry_height": {
+      "2026-02-25": 2
+    },
+    "infill_pattern": {
+      "2026-02-25": "'grid'"
+    },
+    "infill_sparse_density": {
+      "2026-02-25": 25
+    },
+    "infill_sparse_thickness": {
+      "2026-02-25": "resolveOrValue('layer_height')"
+    },
+    "layer_height": {
+      "2026-02-25": 0.2
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 230
+    },
+    "machine_end_gcode": {
+      "2026-02-25": ";Trimaker Nebula End Code\n M107; Apagamos fan\n G90\n G92 E0\n G1 X0 Y200\n G91\n G1 Z5\n G92 E0\n M140 S0; Enfriamos\n M104 S0; Enfriamos\n M84\n G90\n M117 Impresion finalizada\n M300 S440 P700\n"
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 260
+    },
+    "machine_name": {
+      "2026-02-25": "Trimaker Nebula"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ";Trimaker Nebula Start Code\n G21; Unidades en mm\n G90; Posicion absoluta\n M82; Extrusor en modo absoluto\n M107; Fan apagado\n G28 X Y Z; Enviamos a home a todos los ejes\n M900 K=0; Linear advance desactivado\n M104 S110; Precalentamos el extrusor hasta 110 grados\n M190 S{material_bed_temperature_layer_0}; Calentamos cama y esperamos\n G29; Senso la cama\n M500\n G1 F5000 X0.5 Y0.5\n M109 S{material_print_temperature}; Calentamos extrusor y esperamos\n G92 E0; E=0\n G1 F200 X0.5 Y0.5 Z0.300\n G1 F900 X0.5 Y51.5 E2.56436; Hacemos una linea para limpiar extrusor\n"
+    },
+    "machine_width": {
+      "2026-02-25": 230
+    },
+    "material_diameter": {
+      "2026-02-25": 1.75
+    },
+    "material_flow": {
+      "2026-02-25": 100
+    },
+    "retraction_amount": {
+      "2026-02-25": 1
+    },
+    "retraction_enable": {
+      "2026-02-25": true
+    },
+    "retraction_speed": {
+      "2026-02-25": 45
+    },
+    "speed_print": {
+      "2026-02-25": 45
+    },
+    "speed_travel": {
+      "2026-02-25": "speed_print if magic_spiralize else 100"
+    },
+    "speed_wall_0": {
+      "2026-02-25": 35
+    },
+    "speed_wall_x": {
+      "2026-02-25": 45
+    },
+    "support_angle": {
+      "2026-02-25": 50
+    },
+    "support_enable": {
+      "2026-02-25": true
+    },
+    "support_pattern": {
+      "2026-02-25": "zigzag"
+    },
+    "support_type": {
+      "2026-02-25": "everywhere"
+    },
+    "support_xy_distance": {
+      "2026-02-25": 0.7
+    },
+    "support_z_distance": {
+      "2026-02-25": 0.17
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": "layer_height * 6"
+    },
+    "wall_thickness": {
+      "2026-02-25": "line_width * 3"
+    },
+    "xy_offset": {
+      "2026-02-25": 0
+    },
+    "xy_offset_layer_0": {
+      "2026-02-25": -0.1
+    }
+  }
+}

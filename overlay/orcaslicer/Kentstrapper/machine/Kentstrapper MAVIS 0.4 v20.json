@@ -1,0 +1,35 @@
+{
+    "type": "machine",
+    "printer_model": "Kentstrapper MAVIS",
+    "bed_exclude_area": [],
+    "extruder_clearance_height_to_rod": "15",
+    "extruder_clearance_radius": "100",
+    "from": "User",
+    "inherits": "MyKlipper 0.4 nozzle",
+    "instantiation": "true",
+    "is_custom_defined": "0",
+    "layer_change_gcode": "",
+    "machine_end_gcode": "END_PRINT",
+    "machine_start_gcode": ";;===== date: 31072025 =====================\n;INFO PROFILO B744S04 V20 Nuovo Fw\n\nM104 S[nozzle_temperature_initial_layer]\nM190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\n\nSTART_PRINT\n",
+    "min_layer_height": [
+        "0.12"
+    ],
+    "name": "Kentstrapper MAVIS 0.4 v20",
+    "print_host": "http://192.168.1.146",
+    "printable_area": [
+        "0x0",
+        "400x0",
+        "400x400",
+        "0x400"
+    ],
+    "printable_height": "700",
+    "printer_settings_id": "Kentstrapper MAVIS 0.4 v20",
+    "retract_before_wipe": [
+        "0%"
+    ],
+    "thumbnails": "48x48/PNG, 303x303/PNG",
+    "version": "1.6.0.0",
+    "z_hop_types": [
+        "Auto Lift"
+    ]
+}

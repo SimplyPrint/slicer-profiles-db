@@ -1,0 +1,104 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "PastePrinter",
+  "vendor": "FablabBcn",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "PastePrinter"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "eduardo_chamorro"
+    },
+    "manufacturer": {
+      "2026-02-25": "FablabBcn"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "first_start_actions": {
+      "2026-02-25": [
+        "MachineSettingsAction"
+      ]
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "fablabbcn_0"
+      }
+    },
+    "adhesion_type": {
+      "2026-02-25": "skirt"
+    },
+    "layer_height": {
+      "2026-02-25": 1.5
+    },
+    "layer_height_0": {
+      "2026-02-25": 1.5
+    },
+    "machine_always_write_active_tool": {
+      "2026-02-25": true
+    },
+    "machine_depth": {
+      "2026-02-25": 235
+    },
+    "machine_end_gcode": {
+      "2026-02-25": ";FOOTER\nG91; relative positioning\nM107; turn off layer fan\nG1 Z50 F1000\nM400;Wait finish move\nG90; absolute positioning\nG1 X235 Y235\n;ENDFOOTER"
+    },
+    "machine_height": {
+      "2026-02-25": 235
+    },
+    "machine_max_jerk_e": {
+      "2026-02-25": 50.0
+    },
+    "machine_max_jerk_xy": {
+      "2026-02-25": 50.0
+    },
+    "machine_max_jerk_z": {
+      "2026-02-25": 50.0
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ";HEADER;\nG21; Set to metric [change to G20 if you want Imperial]\nG91;Force coordinates to be absolute relative to the origin \nG1 Z10 F1000;\nG90; Force coordinates to be absolute relative to the origin\nG28 X; Home X axis\nG28 Y; Home Y axis\nG28 Z; Home Z axis\nM302 P1; Disable Cold Extrusion Checking\nG92 E0; Reset extruder to [0] zero end of cleaning run\nG91; Force coordinates to be absolute relative to the origin\nG1 Z10 F1000;\nG90;\nT0;\nM117 Printing...;ENDHEADER"
+    },
+    "machine_width": {
+      "2026-02-25": 235
+    },
+    "material_bed_temp_prepend": {
+      "2026-02-25": false
+    },
+    "material_bed_temp_wait": {
+      "2026-02-25": false
+    },
+    "material_diameter": {
+      "2026-02-25": 1.75
+    },
+    "material_print_temp_prepend": {
+      "2026-02-25": false
+    },
+    "material_print_temp_wait": {
+      "2026-02-25": false
+    },
+    "retraction_enable": {
+      "2026-02-25": false
+    },
+    "speed_print": {
+      "2026-02-25": 15
+    },
+    "top_bottom_pattern": {
+      "2026-02-25": "concentric"
+    }
+  }
+}

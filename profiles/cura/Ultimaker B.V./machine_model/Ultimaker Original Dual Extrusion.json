@@ -1,0 +1,146 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Ultimaker Original Dual Extrusion",
+  "vendor": "Ultimaker B.V.",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Ultimaker Original Dual Extrusion"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "ultimaker"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Ultimaker"
+    },
+    "manufacturer": {
+      "2026-02-25": "Ultimaker B.V."
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "ultimaker_platform.3mf"
+    },
+    "exclude_materials": {
+      "2026-02-25": [
+        "generic_cffcpe",
+        "generic_cffpa",
+        "generic_flexible",
+        "generic_gffcpe",
+        "generic_gffpa",
+        "generic_hips",
+        "generic_petcf",
+        "generic_petg",
+        "generic_pva",
+        "generic_tough_pla",
+        "structur3d_",
+        "ultimaker_bam",
+        "ultimaker_petcf",
+        "ultimaker_petg",
+        "ultimaker_pva",
+        "ultimaker_tough_pla"
+      ]
+    },
+    "firmware_file": {
+      "2026-02-25": "MarlinUltimaker-{baudrate}-dual.hex"
+    },
+    "firmware_hbk_file": {
+      "2026-02-25": "MarlinUltimaker-HBK-{baudrate}-dual.hex"
+    },
+    "first_start_actions": {
+      "2026-02-25": [
+        "UMOUpgradeSelection",
+        "BedLevel"
+      ]
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "ultimaker_original_dual_1st",
+        "1": "ultimaker_original_dual_2nd"
+      }
+    },
+    "quality_definition": {
+      "2026-02-25": "ultimaker_original"
+    },
+    "supported_actions": {
+      "2026-02-25": [
+        "UMOUpgradeSelection",
+        "BedLevel"
+      ]
+    },
+    "weight": {
+      "2026-02-25": 4
+    },
+    "gantry_height": {
+      "2026-02-25": "55"
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 195
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 T0 S0 ;1st extruder heater off\nM104 T1 S0 ;2nd extruder heater off\nM140 S0 ;heated bed heater off (if you have it)\nG91 ;relative positioning\nG1 E-1 F300  ;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+0.5 E-5 X-20 Y-20 F9000 ;move Z up a bit and retract filament even more\nG28 X0 Y0 ;move X/Y to min endstops, so the head is out of the way\nM84 ;steppers off\nG90 ;absolute positioning"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -75,
+          35
+        ],
+        [
+          -75,
+          -18
+        ],
+        [
+          18,
+          35
+        ],
+        [
+          18,
+          -18
+        ]
+      ]
+    },
+    "machine_height": {
+      "2026-02-25": 200
+    },
+    "machine_name": {
+      "2026-02-25": "Ultimaker Original"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G21 ;metric values\nG90 ;absolute positioning\nM82 ;set extruder to absolute mode\nM107 ;start with the fan off\nG28 X0 Y0 ;move X/Y to min endstops\nG28 Z0 ;move Z to min endstops\nG1 Z15.0 F9000 ;move the platform down 15mm\nT1 ;Switch to the 2nd extruder\nG92 E0 ;zero the extruded length\nG1 F200 E6 ;extrude 6 mm of feed stock\nG92 E0 ;zero the extruded length again\nG1 F200 E-{switch_extruder_retraction_amount}\nT0 ;Switch to the 1st extruder\nG92 E0 ;zero the extruded length\nG1 F200 E6 ;extrude 6 mm of feed stock\nG92 E0 ;zero the extruded length again\nG1 F9000\n;Put printing message on LCD screen\nM117 Printing..."
+    },
+    "machine_use_extruder_offset_to_offset_coords": {
+      "2026-02-25": true
+    },
+    "machine_width": {
+      "2026-02-25": 205
+    }
+  }
+}

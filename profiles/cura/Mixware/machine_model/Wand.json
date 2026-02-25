@@ -1,0 +1,180 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Wand",
+  "vendor": "Mixware",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Wand"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Mixware"
+    },
+    "manufacturer": {
+      "2026-02-25": "Mixware"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "mixware_wand_platform.stl"
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "has_variants": {
+      "2026-02-25": false
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "mixware_wand_extruder_0"
+      }
+    },
+    "preferred_material": {
+      "2026-02-25": "generic_pla"
+    },
+    "preferred_quality": {
+      "2026-02-25": "coarse"
+    },
+    "acceleration_enabled": {
+      "2026-02-25": true
+    },
+    "acceleration_print": {
+      "2026-02-25": 500
+    },
+    "acceleration_travel": {
+      "2026-02-25": 500
+    },
+    "adhesion_type": {
+      "2026-02-25": "raft"
+    },
+    "brim_width": {
+      "2026-02-25": 3
+    },
+    "infill_before_walls": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 102
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 S0\nM140 S0\n;Retract the filament\nG92 E1\nG1 E3 F300\nG1 F1500 Z100\nG28 X0 Y0\nM25\nM84"
+    },
+    "machine_height": {
+      "2026-02-25": 102
+    },
+    "machine_name": {
+      "2026-02-25": "Wand"
+    },
+    "machine_nozzle_size": {
+      "2026-02-25": 0.4
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G28 ;Home\n;Prime the extruder\nM117 Print\nG92 E0\nG1 F1500 X-2 Y0 Z0.28\nG1 F2400 X-2 Y70 Z0.28 E8\nG1 F1500 X-1.7 Y70 Z0.28\nG1 F2400 X-1.7 Y0 Z0.28 E16\nG92 E0\nG92 E0\nG1 Z0.18 F2400 ;Move Z Axis up"
+    },
+    "machine_width": {
+      "2026-02-25": 102
+    },
+    "material_bed_temperature": {
+      "2026-02-25": 0
+    },
+    "material_print_temperature": {
+      "2026-02-25": 200
+    },
+    "optimize_wall_printing_order": {
+      "2026-02-25": true
+    },
+    "raft_airgap": {
+      "2026-02-25": 0.23
+    },
+    "raft_base_line_spacing": {
+      "2026-02-25": 1.0
+    },
+    "raft_base_thickness": {
+      "2026-02-25": 0.36
+    },
+    "raft_margin": {
+      "2026-02-25": 1
+    },
+    "retraction_amount": {
+      "2026-02-25": 4
+    },
+    "retraction_extrusion_window": {
+      "2026-02-25": 3
+    },
+    "retraction_prime_speed": {
+      "2026-02-25": 40
+    },
+    "retraction_retract_speed": {
+      "2026-02-25": 40
+    },
+    "retraction_speed": {
+      "2026-02-25": 40
+    },
+    "skirt_gap": {
+      "2026-02-25": 2
+    },
+    "speed_print": {
+      "2026-02-25": 40
+    },
+    "speed_travel": {
+      "2026-02-25": 80
+    },
+    "support_angle": {
+      "2026-02-25": 60
+    },
+    "support_enable": {
+      "2026-02-25": true
+    },
+    "support_infill_rate": {
+      "2026-02-25": 20
+    },
+    "support_interface_enable": {
+      "2026-02-25": true
+    },
+    "support_offset": {
+      "2026-02-25": 0.2
+    },
+    "support_roof_enable": {
+      "2026-02-25": true
+    },
+    "support_top_distance": {
+      "2026-02-25": 0.25
+    },
+    "support_z_distance": {
+      "2026-02-25": 0.25
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": 1.0
+    },
+    "travel_avoid_other_parts": {
+      "2026-02-25": false
+    },
+    "travel_retract_before_outer_wall": {
+      "2026-02-25": true
+    },
+    "z_seam_type": {
+      "2026-02-25": "back"
+    },
+    "z_seam_y": {
+      "2026-02-25": 99
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Sovol-SV03 (Legacy)",
+  "vendor": "Sovol 3D",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Sovol-SV03 (Legacy)"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Sovol"
+    },
+    "manufacturer": {
+      "2026-02-25": "Sovol 3D"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "has_machine_quality": {
+      "2026-02-25": false
+    },
+    "has_variants": {
+      "2026-02-25": false
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "SV03_extruder_0"
+      }
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "draft"
+    },
+    "acceleration_enabled": {
+      "2026-02-25": false
+    },
+    "acceleration_print": {
+      "2026-02-25": 500
+    },
+    "acceleration_travel": {
+      "2026-02-25": 500
+    },
+    "acceleration_travel_layer_0": {
+      "2026-02-25": "acceleration_travel"
+    },
+    "adhesion_type": {
+      "2026-02-25": "'skirt'"
+    },
+    "infill_before_walls": {
+      "2026-02-25": false
+    },
+    "infill_overlap": {
+      "2026-02-25": 30.0
+    },
+    "infill_pattern": {
+      "2026-02-25": "'lines'"
+    },
+    "infill_wipe_dist": {
+      "2026-02-25": 0.0
+    },
+    "jerk_enabled": {
+      "2026-02-25": false
+    },
+    "jerk_print": {
+      "2026-02-25": 8
+    },
+    "jerk_travel": {
+      "2026-02-25": "jerk_print"
+    },
+    "jerk_travel_layer_0": {
+      "2026-02-25": "jerk_travel"
+    },
+    "machine_acceleration": {
+      "2026-02-25": 500
+    },
+    "machine_depth": {
+      "2026-02-25": 350
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "G91 ;Relative positioning\nG1 E-2 F2700 ;Retract a bit\nG1 E-2 Z0.2 F2400 ;Retract and raise Z\nG1 X0 Y240 F3000 ;Wipe out\nG1 Z10 ;Raise Z more\nG90 ;Absolute positioning\n\nG1 X0 Y{machine_depth} ;Present print\nM106 S0 ;Turn-off fan\nM104 S0 ;Turn-off hotend\nM140 S0 ;Turn-off bed\n\nM84 X Y E ;Disable all steppers but Z\n"
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 400
+    },
+    "machine_max_acceleration_e": {
+      "2026-02-25": 5000
+    },
+    "machine_max_acceleration_x": {
+      "2026-02-25": 500
+    },
+    "machine_max_acceleration_y": {
+      "2026-02-25": 500
+    },
+    "machine_max_acceleration_z": {
+      "2026-02-25": 100
+    },
+    "machine_max_feedrate_e": {
+      "2026-02-25": 50
+    },
+    "machine_max_feedrate_x": {
+      "2026-02-25": 500
+    },
+    "machine_max_feedrate_y": {
+      "2026-02-25": 500
+    },
+    "machine_max_feedrate_z": {
+      "2026-02-25": 10
+    },
+    "machine_max_jerk_e": {
+      "2026-02-25": 5
+    },
+    "machine_max_jerk_xy": {
+      "2026-02-25": 10
+    },
+    "machine_max_jerk_z": {
+      "2026-02-25": 0.4
+    },
+    "machine_name": {
+      "2026-02-25": "SV03"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "M201 X500.00 Y500.00 Z100.00 E5000.00 ;Setup machine max acceleration\nM203 X500.00 Y500.00 Z10.00 E50.00 ;Setup machine max feedrate\nM204 P500.00 R1000.00 T500.00 ;Setup Print/Retract/Travel acceleration\nM205 X8.00 Y8.00 Z0.40 E5.00 ;Setup Jerk\nM220 S100 ;Reset Feedrate\nM221 S100 ;Reset Flowrate\n\nG28 ;Home\nG29 ;Automatic Leveling\n\nG92 E0 ;Reset Extruder\nG1 Z2.0 F3000 ;Move Z Axis up\nG1 X10.1 Y20 Z0.28 F5000.0 ;Move to start position\nG1 X10.1 Y200.0 Z0.28 F1500.0 E15 ;Draw the first line\nG1 X10.4 Y200.0 Z0.28 F5000.0 ;Move to side a little\nG1 X10.4 Y20 Z0.28 F1500.0 E30 ;Draw the second line\nG92 E0 ;Reset Extruder\nG1 Z2.0 F3000 ;Move Z Axis up\n"
+    },
+    "machine_width": {
+      "2026-02-25": 350
+    },
+    "material_diameter": {
+      "2026-02-25": 1.75
+    },
+    "material_final_print_temperature": {
+      "2026-02-25": "material_print_temperature"
+    },
+    "material_initial_print_temperature": {
+      "2026-02-25": "material_print_temperature"
+    },
+    "optimize_wall_printing_order": {
+      "2026-02-25": "True"
+    },
+    "retraction_amount": {
+      "2026-02-25": 3
+    },
+    "retraction_speed": {
+      "2026-02-25": 50
+    },
+    "skin_overlap": {
+      "2026-02-25": 10.0
+    },
+    "skirt_brim_speed": {
+      "2026-02-25": "speed_layer_0"
+    },
+    "speed_print": {
+      "2026-02-25": 50.0
+    },
+    "wall_0_wipe_dist": {
+      "2026-02-25": 0.0
+    },
+    "z_seam_corner": {
+      "2026-02-25": "'z_seam_corner_weighted'"
+    },
+    "z_seam_type": {
+      "2026-02-25": "'back'"
+    }
+  }
+}

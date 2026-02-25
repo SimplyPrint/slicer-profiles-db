@@ -1,0 +1,41 @@
+[
+    {
+        "vendor": "Flashforge",
+        "machine_model": {
+            "name": "Adventurer 4",
+            "version": 2,
+            "inherits": "flashforge_adventurer_base",
+            "visible": true,
+            "author": "Jeremie-C",
+            "quality_definition": "flashforge_adventurer4",
+            "supports_network_connection": true,
+            "gantry_height": "250",
+            "machine_depth": 200,
+            "machine_end_gcode": ";End Gcode\nM104 S0 T0\nM140 S0 T0\nG162 Z F1800\nG28 X Y\nM132 X Y A B\nM652\nG91\nM18",
+            "machine_head_with_fans_polygon": [
+                [
+                    -20,
+                    10
+                ],
+                [
+                    -20,
+                    -10
+                ],
+                [
+                    10,
+                    10
+                ],
+                [
+                    10,
+                    -10
+                ]
+            ],
+            "machine_height": 250,
+            "machine_name": "Adventurer 4",
+            "machine_start_gcode": ";Start Gcode\nG28\nM132 X Y Z A B\nG1 Z50.000 F420\nG161 X Y F3300\nM7 T0\nM6 T0\nM651 S255\n;End Start",
+            "machine_use_extruder_offset_to_offset_coords": false,
+            "machine_width": 220
+        },
+        "variants": {}
+    }
+]

@@ -1,0 +1,220 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "machine",
+  "name": "Original Prusa MINI & MINI+ 0.6 nozzle",
+  "vendor": "PrusaResearch",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "1.4.4": "FFF"
+    },
+    "bed_shape": {
+      "1.4.4": "0x0,180x0,180x180,0x180"
+    },
+    "before_layer_gcode": {
+      "1.4.4": ";BEFORE_LAYER_CHANGE\\nG92 E0.0\\n;[layer_z]\\n\\n"
+    },
+    "between_objects_gcode": {
+      "1.4.4": ""
+    },
+    "deretract_speed": {
+      "1.4.4": "40"
+    },
+    "end_gcode": {
+      "1.4.4": "G1 E-1 F2100 ; retract\\n{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+2, max_print_height)} F720 ; Move print head up{endif}\\nG1 X178 Y178 F4200 ; park print head\\n{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+30, max_print_height)} F720 ; Move print head further up{endif}\\nG4 ; wait\\nM104 S0 ; turn off temperature\\nM140 S0 ; turn off heatbed\\nM107 ; turn off fan\\nM221 S100 ; reset flow\\nM900 K0 ; reset LA\\nM84 ; disable motors"
+    },
+    "extruder_offset": {
+      "1.4.4": "0x0"
+    },
+    "gcode_flavor": {
+      "1.4.4": "marlin2"
+    },
+    "silent_mode": {
+      "1.4.4": "0"
+    },
+    "remaining_times": {
+      "1.4.4": "1"
+    },
+    "machine_max_acceleration_e": {
+      "1.4.4": "5000"
+    },
+    "machine_max_acceleration_extruding": {
+      "1.4.4": "1250"
+    },
+    "machine_max_acceleration_retracting": {
+      "1.4.4": "1250"
+    },
+    "machine_max_acceleration_x": {
+      "1.4.4": "2500"
+    },
+    "machine_max_acceleration_y": {
+      "1.4.4": "2500"
+    },
+    "machine_max_acceleration_z": {
+      "1.4.4": "400"
+    },
+    "machine_max_feedrate_e": {
+      "1.4.4": "80"
+    },
+    "machine_max_feedrate_x": {
+      "1.4.4": "180"
+    },
+    "machine_max_feedrate_y": {
+      "1.4.4": "180"
+    },
+    "machine_max_feedrate_z": {
+      "1.4.4": "12"
+    },
+    "machine_max_jerk_e": {
+      "1.4.4": "10"
+    },
+    "machine_max_jerk_x": {
+      "1.4.4": "8"
+    },
+    "machine_max_jerk_y": {
+      "1.4.4": "8"
+    },
+    "machine_max_jerk_z": {
+      "1.4.4": "2"
+    },
+    "machine_min_extruding_rate": {
+      "1.4.4": "0"
+    },
+    "machine_min_travel_rate": {
+      "1.4.4": "0"
+    },
+    "machine_limits_usage": {
+      "1.4.4": "emit_to_gcode"
+    },
+    "layer_gcode": {
+      "1.4.4": ";AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "max_layer_height": {
+      "1.4.4": "0.40"
+    },
+    "min_layer_height": {
+      "1.4.4": "0.15"
+    },
+    "max_print_height": {
+      "1.4.4": "180"
+    },
+    "nozzle_diameter": {
+      "1.4.4": "0.6"
+    },
+    "octoprint_apikey": {
+      "1.4.4": ""
+    },
+    "octoprint_host": {
+      "1.4.4": ""
+    },
+    "printer_notes": {
+      "1.4.4": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_PRUSA3D\\nPRINTER_MODEL_MINI\\n"
+    },
+    "printer_settings_id": {
+      "1.4.4": "Original Prusa MINI & MINI+ 0.6 nozzle"
+    },
+    "retract_before_travel": {
+      "1.4.4": "1.5"
+    },
+    "retract_before_wipe": {
+      "1.4.4": "70%"
+    },
+    "retract_layer_change": {
+      "1.4.4": "1"
+    },
+    "retract_length": {
+      "1.4.4": "3.2"
+    },
+    "retract_length_toolchange": {
+      "1.4.4": "4"
+    },
+    "retract_lift": {
+      "1.4.4": "0.2"
+    },
+    "retract_lift_above": {
+      "1.4.4": "0"
+    },
+    "retract_lift_below": {
+      "1.4.4": "179"
+    },
+    "retract_restart_extra": {
+      "1.4.4": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "1.4.4": "0"
+    },
+    "retract_speed": {
+      "1.4.4": "70"
+    },
+    "serial_port": {
+      "1.4.4": ""
+    },
+    "serial_speed": {
+      "1.4.4": "250000"
+    },
+    "single_extruder_multi_material": {
+      "1.4.4": "0"
+    },
+    "start_gcode": {
+      "1.4.4": "M862.3 P \\\"[printer_model]\\\" ; printer model check\\nG90 ; use absolute coordinates\\nM83 ; extruder relative mode\\nM104 S170 ; set extruder temp for bed leveling\\nM140 S[first_layer_bed_temperature] ; set bed temp\\nM109 R170 ; wait for bed leveling temp\\nM190 S[first_layer_bed_temperature] ; wait for bed temp\\nM204 T1250 ; set travel acceleration\\nG28 ; home all without mesh bed level\\nG29 ; mesh bed leveling \\nM204 T[machine_max_acceleration_travel] ; restore travel acceleration\\nM104 S{first_layer_temperature+extruder_temperature_offset} ; set extruder temp\\nG92 E0\\nG1 Y-2 X179 F2400\\nG1 Z3 F720\\nM109 S{first_layer_temperature+extruder_temperature_offset} ; wait for extruder temp\\n\\n; intro line\\nG1 X170 F1000\\nG1 Z0.2 F720\\nG1 X110 E8 F900\\nG1 X40 E10 F700\\nG92 E0\\n\\nM221 S95 ; set flow"
+    },
+    "toolchange_gcode": {
+      "1.4.4": ""
+    },
+    "use_firmware_retraction": {
+      "1.4.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.4.4": "1"
+    },
+    "use_volumetric_e": {
+      "1.4.4": "0"
+    },
+    "variable_layer_height": {
+      "1.4.4": "1"
+    },
+    "wipe": {
+      "1.4.4": "1"
+    },
+    "z_offset": {
+      "1.4.4": "0"
+    },
+    "printer_model": {
+      "1.4.4": "MINI"
+    },
+    "printer_variant": {
+      "1.4.4": "0.6"
+    },
+    "default_print_profile": {
+      "1.4.4": "0.30mm QUALITY @0.6 nozzle MINI"
+    },
+    "default_filament_profile": {
+      "1.4.4": "\"Prusament PLA\""
+    },
+    "color_change_gcode": {
+      "1.4.4": "M600"
+    },
+    "printer_vendor": {
+      "1.4.4": ""
+    },
+    "thumbnails": {
+      "1.4.4": "16x16,220x124"
+    },
+    "thumbnails_format": {
+      "1.4.4": "PNG"
+    },
+    "thumbnails_tag_format": {
+      "1.4.4": "0"
+    },
+    "machine_max_acceleration_travel": {
+      "1.4.4": "2500"
+    },
+    "extruder_colour": {
+      "1.4.4": ""
+    }
+  }
+}

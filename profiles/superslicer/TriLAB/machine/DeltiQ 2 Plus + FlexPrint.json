@@ -1,0 +1,157 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "machine",
+  "name": "DeltiQ 2 Plus + FlexPrint",
+  "vendor": "TriLAB",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "bed_shape": {
+      "1.4.4": "124.315x13.0661,122.268x25.989,118.882x38.6271,114.193x50.8421,108.253x62.5,101.127x73.4732,92.8931x83.6413,83.6413x92.8931,73.4732x101.127,62.5x108.253,50.8421x114.193,38.6271x118.882,25.989x122.268,13.0661x124.315,3.54096e-014x125,-13.0661x124.315,-25.989x122.268,-38.6271x118.882,-50.8421x114.193,-62.5x108.253,-73.4732x101.127,-83.6413x92.8931,-92.8931x83.6413,-101.127x73.4732,-108.253x62.5,-114.193x50.8421,-118.882x38.6271,-122.268x25.989,-124.315x13.0661,-125x7.08192e-014,-124.315x-13.0661,-122.268x-25.989,-118.882x-38.6271,-114.193x-50.8421,-108.253x-62.5,-101.127x-73.4732,-92.8931x-83.6413,-83.6413x-92.8931,-73.4732x-101.127,-62.5x-108.253,-50.8421x-114.193,-38.6271x-118.882,-25.989x-122.268,-13.0661x-124.315,-2.29621e-014x-125,13.0661x-124.315,25.989x-122.268,38.6271x-118.882,50.8421x-114.193,62.5x-108.253,73.4732x-101.127,83.6413x-92.8931,92.8931x-83.6413,101.127x-73.4732,108.253x-62.5,114.193x-50.8421,118.882x-38.6271,122.268x-25.989,124.315x-13.0661,125x-1.41638e-013"
+    },
+    "before_layer_gcode": {
+      "1.4.4": "; BEFORE_LAYER_CHANGE\\n;[layer_z]\\nG92 E0\\n"
+    },
+    "between_objects_gcode": {
+      "1.4.4": ""
+    },
+    "cooling_tube_length": {
+      "1.4.4": "5"
+    },
+    "cooling_tube_retraction": {
+      "1.4.4": "91.5"
+    },
+    "default_filament_profile": {
+      "1.4.4": "\"DeltiQ FP2 - FLEX - Generic\""
+    },
+    "default_print_profile": {
+      "1.4.4": "DeltiQ 0.20mm FLEX"
+    },
+    "deretract_speed": {
+      "1.4.4": "0"
+    },
+    "end_gcode": {
+      "1.4.4": "; END_GCODE\\n\\nM140 S0 ; Turn off bed\\n\\nG28 ; Home\\n\\nM104 S0 ; Turn off extruder\\nM107 ; Turn off fan\\n\\nG90 ; Absolute positioning\\nM220 S100  ; Feedmultiply back to 100percent\\n\\nM84 S5; Disable motors"
+    },
+    "extra_loading_move": {
+      "1.4.4": "-2"
+    },
+    "extruder_colour": {
+      "1.4.4": "#FF0000"
+    },
+    "extruder_offset": {
+      "1.4.4": "0x0"
+    },
+    "gcode_flavor": {
+      "1.4.4": "reprapfirmware"
+    },
+    "layer_gcode": {
+      "1.4.4": "; AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "max_layer_height": {
+      "1.4.4": "0.25"
+    },
+    "max_print_height": {
+      "1.4.4": "500"
+    },
+    "min_layer_height": {
+      "1.4.4": "0.15"
+    },
+    "nozzle_diameter": {
+      "1.4.4": "0.4"
+    },
+    "parking_pos_retraction": {
+      "1.4.4": "92"
+    },
+    "printer_model": {
+      "1.4.4": "DQ2P+FP"
+    },
+    "printer_notes": {
+      "1.4.4": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_TRILAB\\nPRINTER_FAMILY_DQ\\nPRINTER_MODEL_DQ2+FP\\nFLEXPRINT1"
+    },
+    "printer_settings_id": {
+      "1.4.4": "DeltiQ 2 Plus + FlexPrint"
+    },
+    "printer_variant": {
+      "1.4.4": "0.4"
+    },
+    "printer_vendor": {
+      "1.4.4": "TriLAB Group s.r.o."
+    },
+    "remaining_times": {
+      "1.4.4": "0"
+    },
+    "retract_before_travel": {
+      "1.4.4": "3"
+    },
+    "retract_before_wipe": {
+      "1.4.4": "100%"
+    },
+    "retract_layer_change": {
+      "1.4.4": "1"
+    },
+    "retract_length": {
+      "1.4.4": "0.7"
+    },
+    "retract_length_toolchange": {
+      "1.4.4": "10"
+    },
+    "retract_lift": {
+      "1.4.4": "0.2"
+    },
+    "retract_lift_above": {
+      "1.4.4": "0"
+    },
+    "retract_lift_below": {
+      "1.4.4": "0"
+    },
+    "retract_restart_extra": {
+      "1.4.4": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "1.4.4": "0"
+    },
+    "retract_speed": {
+      "1.4.4": "25"
+    },
+    "silent_mode": {
+      "1.4.4": "0"
+    },
+    "single_extruder_multi_material": {
+      "1.4.4": "0"
+    },
+    "start_gcode": {
+      "1.4.4": "; START_GCODE\\n\\nM220 S100 ; Set feedmultiply back to 100percent\\n\\nT1 ; Select FlexPrint extruder\\n\\nG90 ; Absolute positioning\\nM83; Relative Extruder\\n\\nM190 S[first_layer_bed_temperature] ; Set and wait - bed temperature\\nM104 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]}\\n\\nG28 ; Home all axes\\nG32 ; Probe Z and calculate Z plane\\n\\nG29 ; Mesh bed probe\\n\\nG1009 ; Go ARC to purge end\\n\\nG92 E0 ; Zero extruder"
+    },
+    "thumbnails": {
+      "1.4.4": ""
+    },
+    "toolchange_gcode": {
+      "1.4.4": ""
+    },
+    "use_firmware_retraction": {
+      "1.4.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.4.4": "1"
+    },
+    "use_volumetric_e": {
+      "1.4.4": "0"
+    },
+    "variable_layer_height": {
+      "1.4.4": "0"
+    },
+    "wipe": {
+      "1.4.4": "1"
+    },
+    "z_offset": {
+      "1.4.4": "0"
+    },
+    "pause_print_gcode": {
+      "1.4.4": "M0"
+    }
+  }
+}

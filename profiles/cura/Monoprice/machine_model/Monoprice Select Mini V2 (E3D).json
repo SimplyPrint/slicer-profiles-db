@@ -1,0 +1,69 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Monoprice Select Mini V2 (E3D)",
+  "vendor": "Monoprice",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Monoprice Select Mini V2 (E3D)"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "malyan_m200"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Tyler Gibson"
+    },
+    "manufacturer": {
+      "2026-02-25": "Monoprice"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "monoprice_select_mini_v2_extruder_0"
+      }
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "adhesion_type": {
+      "2026-02-25": "brim"
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "G0 X0 Y120;(Stick out the part)\nM190 S0;(Turn off heat bed, don't wait.)\nG92 E10;(Set extruder to 10)\nG1 E7 F200;(retract 3mm)\nM104 S0;(Turn off nozzle, don't wait)\nG4 S300;(Delay 5 minutes)\nM107;(Turn off part fan)\nM84;(Turn off stepper motors.)"
+    },
+    "machine_name": {
+      "2026-02-25": "Monoprice Select Mini V2"
+    },
+    "material_print_temperature_layer_0": {
+      "2026-02-25": "material_print_temperature + 5"
+    },
+    "retraction_amount": {
+      "2026-02-25": 2.5
+    },
+    "retraction_combing": {
+      "2026-02-25": "'noskin'"
+    },
+    "retraction_speed": {
+      "2026-02-25": 40
+    }
+  }
+}

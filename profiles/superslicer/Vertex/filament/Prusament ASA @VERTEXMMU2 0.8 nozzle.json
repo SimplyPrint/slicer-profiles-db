@@ -1,0 +1,136 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "filament",
+  "name": "Prusament ASA @VERTEXMMU2 0.8 nozzle",
+  "vendor": "Vertex",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "cooling": {
+      "1.4.4": "1"
+    },
+    "compatible_printers": {
+      "1.4.4": ""
+    },
+    "compatible_printers_condition": {
+      "1.4.4": "nozzle_diameter[0]==0.8 and printer_notes=~/.*PRINTER_VENDOR_VERTEX.*/ and printer_notes=~/.*PRINTER_MODEL_(L|XL).*/ and single_extruder_multi_material"
+    },
+    "end_filament_gcode": {
+      "1.4.4": "\"; Filament-specific end gcode\""
+    },
+    "extrusion_multiplier": {
+      "1.4.4": "1"
+    },
+    "filament_loading_speed": {
+      "1.4.4": "14"
+    },
+    "filament_loading_speed_start": {
+      "1.4.4": "19"
+    },
+    "filament_unloading_speed": {
+      "1.4.4": "20"
+    },
+    "filament_unloading_speed_start": {
+      "1.4.4": "100"
+    },
+    "filament_toolchange_delay": {
+      "1.4.4": "0"
+    },
+    "filament_cooling_moves": {
+      "1.4.4": "1"
+    },
+    "filament_cooling_initial_speed": {
+      "1.4.4": "3"
+    },
+    "filament_cooling_final_speed": {
+      "1.4.4": "2"
+    },
+    "filament_load_time": {
+      "1.4.4": "15"
+    },
+    "filament_unload_time": {
+      "1.4.4": "12"
+    },
+    "filament_ramming_parameters": {
+      "1.4.4": "\"120 110 5.32258 5.45161 5.67742 6 6.48387 7.12903 7.90323 8.70968 9.3871 9.83871 10.0968 10.2258| 0.05 5.30967 0.45 5.50967 0.95 6.1871 1.45 7.39677 1.95 9.05484 2.45 10 2.95 10.3098 3.45 13.0839 3.95 7.6 4.45 7.6 4.95 7.6\";"
+    },
+    "filament_minimal_purge_on_wipe_tower": {
+      "1.4.4": "15"
+    },
+    "filament_cost": {
+      "1.4.4": "35.28"
+    },
+    "filament_density": {
+      "1.4.4": "1.07"
+    },
+    "filament_diameter": {
+      "1.4.4": "1.75"
+    },
+    "filament_notes": {
+      "1.4.4": "\"\""
+    },
+    "filament_settings_id": {
+      "1.4.4": "Prusament ASA @VERTEXMMU2 0.8 nozzle"
+    },
+    "filament_soluble": {
+      "1.4.4": "0"
+    },
+    "min_print_speed": {
+      "1.4.4": "15"
+    },
+    "slowdown_below_layer_time": {
+      "1.4.4": "20"
+    },
+    "start_filament_gcode": {
+      "1.4.4": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.02{else}0.04{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K12{elsif nozzle_diameter[0]==0.8};{else}M900 K20{endif} ; Filament gcode LA 1.0\""
+    },
+    "bed_temperature": {
+      "1.4.4": "110"
+    },
+    "bridge_fan_speed": {
+      "1.4.4": "30"
+    },
+    "disable_fan_first_layers": {
+      "1.4.4": "4"
+    },
+    "fan_always_on": {
+      "1.4.4": "1"
+    },
+    "fan_below_layer_time": {
+      "1.4.4": "30"
+    },
+    "filament_colour": {
+      "1.4.4": "#FFF2EC"
+    },
+    "filament_max_volumetric_speed": {
+      "1.4.4": "14"
+    },
+    "filament_type": {
+      "1.4.4": "ASA"
+    },
+    "first_layer_bed_temperature": {
+      "1.4.4": "105"
+    },
+    "first_layer_temperature": {
+      "1.4.4": "260"
+    },
+    "max_fan_speed": {
+      "1.4.4": "20"
+    },
+    "min_fan_speed": {
+      "1.4.4": "20"
+    },
+    "temperature": {
+      "1.4.4": "260"
+    },
+    "filament_vendor": {
+      "1.4.4": "Prusa Polymers"
+    },
+    "filament_spool_weight": {
+      "1.4.4": "201"
+    }
+  }
+}

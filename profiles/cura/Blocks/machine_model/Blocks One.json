@@ -1,0 +1,57 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Blocks One",
+  "vendor": "Blocks",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Blocks One"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "blocks_base"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "platform": {
+      "2026-02-25": "blocks_mk2_platform.stl"
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "blocks_one_extruder_0"
+      }
+    },
+    "quality_definition": {
+      "2026-02-25": "blocks_base"
+    },
+    "machine_depth": {
+      "2026-02-25": 200
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 S0 ;extruder heater off\nM140 S0 ;heated bed heater off (if you have it)\nG91 ;relative positioning\nG1 E-1 F300 ;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+0.5 E-5 X-20 Y-20 F6000 ;move Z up a bit and retract filament even more\nG28 X0 Y0 ;move X/Y to min endstops, so the head is out of the way\nM84 ;steppers off\nG90 ;absolute positioning\n"
+    },
+    "machine_height": {
+      "2026-02-25": 200
+    },
+    "machine_name": {
+      "2026-02-25": "Blocks One"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G21\nG90 ;absolute positioning\nM82 ;set extruder to absolute mode\nM107 ;start with the fan off\nG28 X0 Y0  ;move X/Y to min endstops\nG28 Z0 ;move Z to min endstops\nG1 Z15 F6000\nG92 E0\nG1 F200 E3\nG92 E0\nG1 F6000\nM117 Printing...\n"
+    },
+    "machine_width": {
+      "2026-02-25": 200
+    },
+    "retraction_retract_speed": {
+      "2026-02-25": 50
+    }
+  }
+}

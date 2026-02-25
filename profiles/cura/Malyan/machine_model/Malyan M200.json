@@ -1,0 +1,203 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Malyan M200",
+  "vendor": "Malyan",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Malyan M200"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Brian Corbino, Tyler Gibson"
+    },
+    "manufacturer": {
+      "2026-02-25": "Malyan"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "malyan_m200_platform.3mf"
+    },
+    "first_start_actions": {
+      "2026-02-25": [
+        "MachineSettingsAction"
+      ]
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "malyan_m200_extruder_0"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        -0.25,
+        0
+      ]
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "supported_actions": {
+      "2026-02-25": [
+        "MachineSettingsAction"
+      ]
+    },
+    "supports_usb_connection": {
+      "2026-02-25": true
+    },
+    "adhesion_type": {
+      "2026-02-25": "raft"
+    },
+    "brim_width": {
+      "2026-02-25": 5
+    },
+    "coasting_enable": {
+      "2026-02-25": true
+    },
+    "layer_height": {
+      "2026-02-25": 0.13125
+    },
+    "line_width": {
+      "2026-02-25": "round(machine_nozzle_size * 0.875, 2)"
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 120
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "G0 X0 Y120;(Stick out the part)\nM190 S0;(Turn off heat bed, don't wait.)\nG92 E10;(Set extruder to 10)\nG1 E7 F200;(retract 3mm)\nM104 S0;(Turn off nozzle, don't wait)\nG4 S300;(Delay 5 minutes)\nM107;(Turn off part fan)\nM84;(Turn off stepper motors.)"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 120
+    },
+    "machine_max_acceleration_e": {
+      "2026-02-25": 10000
+    },
+    "machine_max_acceleration_x": {
+      "2026-02-25": 800
+    },
+    "machine_max_acceleration_y": {
+      "2026-02-25": 800
+    },
+    "machine_max_acceleration_z": {
+      "2026-02-25": 20
+    },
+    "machine_max_feedrate_e": {
+      "2026-02-25": 100
+    },
+    "machine_max_feedrate_x": {
+      "2026-02-25": 150
+    },
+    "machine_max_feedrate_y": {
+      "2026-02-25": 150
+    },
+    "machine_max_feedrate_z": {
+      "2026-02-25": 1.5
+    },
+    "machine_max_jerk_e": {
+      "2026-02-25": 5
+    },
+    "machine_max_jerk_xy": {
+      "2026-02-25": 20
+    },
+    "machine_max_jerk_z": {
+      "2026-02-25": 0.4
+    },
+    "machine_name": {
+      "2026-02-25": "Malyan M200"
+    },
+    "machine_show_variants": {
+      "2026-02-25": true
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G21;(metric values)\nG90;(absolute positioning)\nM82;(set extruder to absolute mode)\nM107;(start with the fan off)\nG28;(Home the printer)\nG92 E0;(Reset the extruder to 0)\nG0 Z5 E5 F500;(Move up and prime the nozzle)\nG0 X-1 Z0;(Move outside the printable area)\nG1 Y60 E8 F500;(Draw a priming/wiping line to the rear)\nG1 X-1;(Move a little closer to the print area)\nG1 Y10 E16 F500;(draw more priming/wiping)\nG1 E15 F250;(Small retract)\nG92 E0;(Zero the extruder)"
+    },
+    "machine_width": {
+      "2026-02-25": 120
+    },
+    "material_bed_temperature_layer_0": {
+      "2026-02-25": "min(material_bed_temperature + 5, 70)"
+    },
+    "material_print_temperature_layer_0": {
+      "2026-02-25": "min(material_print_temperature + 5, 245)"
+    },
+    "raft_airgap": {
+      "2026-02-25": 0.2625
+    },
+    "raft_base_thickness": {
+      "2026-02-25": "0.30625"
+    },
+    "raft_interface_thickness": {
+      "2026-02-25": "0.21875"
+    },
+    "raft_margin": {
+      "2026-02-25": 5
+    },
+    "raft_surface_layers": {
+      "2026-02-25": 1
+    },
+    "retraction_amount": {
+      "2026-02-25": 4.5
+    },
+    "retraction_combing": {
+      "2026-02-25": "'noskin'"
+    },
+    "retraction_speed": {
+      "2026-02-25": 40
+    },
+    "skirt_line_count": {
+      "2026-02-25": 2
+    },
+    "speed_layer_0": {
+      "2026-02-25": "round(speed_print / 2.0, 2)"
+    },
+    "speed_print": {
+      "2026-02-25": 50
+    },
+    "speed_support": {
+      "2026-02-25": "speed_wall_0"
+    },
+    "speed_topbottom": {
+      "2026-02-25": "speed_print / 2"
+    },
+    "speed_wall_0": {
+      "2026-02-25": "round(speed_print * 0.75, 2)"
+    },
+    "speed_wall_x": {
+      "2026-02-25": "speed_print"
+    },
+    "speed_z_hop": {
+      "2026-02-25": 1.5
+    }
+  }
+}

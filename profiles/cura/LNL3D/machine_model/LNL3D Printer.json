@@ -1,0 +1,324 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "LNL3D Printer",
+  "vendor": "LNL3D",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "LNL3D Printer"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "author": {
+      "2026-02-25": "LNL3D"
+    },
+    "manufacturer": {
+      "2026-02-25": "LNL3D"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "first_start_actions": {
+      "2026-02-25": [
+        "MachineSettingsAction"
+      ]
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "has_variants": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "lnl3d_extruder_left",
+        "1": "lnl3d_extruder_right"
+      }
+    },
+    "preferred_material": {
+      "2026-02-25": "generic_pla"
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "standard"
+    },
+    "preferred_variant_name": {
+      "2026-02-25": "0.4mm Nozzle"
+    },
+    "quality_definition": {
+      "2026-02-25": "lnl3d_base"
+    },
+    "variants_name": {
+      "2026-02-25": "Nozzle Size"
+    },
+    "acceleration_print": {
+      "2026-02-25": 500
+    },
+    "acceleration_travel": {
+      "2026-02-25": 500
+    },
+    "acceleration_travel_layer_0": {
+      "2026-02-25": "acceleration_travel"
+    },
+    "adaptive_layer_height_variation": {
+      "2026-02-25": 0.04
+    },
+    "adaptive_layer_height_variation_step": {
+      "2026-02-25": 0.04
+    },
+    "adhesion_type": {
+      "2026-02-25": "'skirt'"
+    },
+    "brim_width": {
+      "2026-02-25": 4
+    },
+    "cool_fan_full_at_height": {
+      "2026-02-25": "layer_height_0 + 2 * layer_height"
+    },
+    "cool_min_layer_time": {
+      "2026-02-25": 10
+    },
+    "fill_outline_gaps": {
+      "2026-02-25": false
+    },
+    "infill_overlap": {
+      "2026-02-25": 30.0
+    },
+    "infill_pattern": {
+      "2026-02-25": "'lines'"
+    },
+    "infill_wipe_dist": {
+      "2026-02-25": 0.0
+    },
+    "initial_layer_line_width_factor": {
+      "2026-02-25": 130.0
+    },
+    "jerk_print": {
+      "2026-02-25": 8
+    },
+    "jerk_travel": {
+      "2026-02-25": "jerk_print"
+    },
+    "jerk_travel_layer_0": {
+      "2026-02-25": "jerk_travel"
+    },
+    "layer_height_0": {
+      "2026-02-25": 0.2
+    },
+    "machine_acceleration": {
+      "2026-02-25": 500
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 T0 S0                   ;left extruder heater off\nM104 T1 S0                   ;right extruder heater off\nM140 S0                      ;heated bed heater off (if you have it)\nG91                          ;relative positioning\nG1 E-1 F300                  ;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+0.5 E-5 X-20 Y-20 F9000 ;move Z up a bit and retract filament even more\nG28 X0 Y0                    ;move X/Y to min endstops, so the head is out of the way\nM84                          ;steppers off\nG90                          ;absolute positioning"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_max_acceleration_e": {
+      "2026-02-25": 5000
+    },
+    "machine_max_acceleration_x": {
+      "2026-02-25": 500
+    },
+    "machine_max_acceleration_y": {
+      "2026-02-25": 500
+    },
+    "machine_max_acceleration_z": {
+      "2026-02-25": 100
+    },
+    "machine_max_feedrate_e": {
+      "2026-02-25": 80
+    },
+    "machine_max_feedrate_x": {
+      "2026-02-25": 500
+    },
+    "machine_max_feedrate_y": {
+      "2026-02-25": 500
+    },
+    "machine_max_feedrate_z": {
+      "2026-02-25": 10
+    },
+    "machine_max_jerk_e": {
+      "2026-02-25": 5
+    },
+    "machine_max_jerk_xy": {
+      "2026-02-25": 10
+    },
+    "machine_max_jerk_z": {
+      "2026-02-25": 0.4
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G21              ;metric values\nG90              ;absolute positioning\nM82              ;set extruder to absolute mode\nM107             ;start with the fan off\nG28              ;move to min endstops\nG92 E0           ;reset extruder\nG1 E15 F1500     ;move extruder 15mm\nG1 Z15.0 F3000   ;move the header up 15mm\nM117 printing... ;LCD message"
+    },
+    "material_diameter": {
+      "2026-02-25": 1.75
+    },
+    "material_final_print_temperature": {
+      "2026-02-25": "material_print_temperature"
+    },
+    "material_initial_print_temperature": {
+      "2026-02-25": "material_print_temperature"
+    },
+    "meshfix_maximum_resolution": {
+      "2026-02-25": "0.25"
+    },
+    "meshfix_maximum_travel_resolution": {
+      "2026-02-25": "meshfix_maximum_resolution"
+    },
+    "minimum_interface_area": {
+      "2026-02-25": 10
+    },
+    "minimum_support_area": {
+      "2026-02-25": "2 if support_structure == 'normal' else 0"
+    },
+    "optimize_wall_printing_order": {
+      "2026-02-25": "True"
+    },
+    "prime_tower_brim_enable": {
+      "2026-02-25": true
+    },
+    "prime_tower_wipe_enabled": {
+      "2026-02-25": false
+    },
+    "raft_airgap": {
+      "2026-02-25": 0.2
+    },
+    "raft_margin": {
+      "2026-02-25": 2
+    },
+    "retraction_combing": {
+      "2026-02-25": "'off' if retraction_hop_enabled else 'noskin'"
+    },
+    "retraction_count_max": {
+      "2026-02-25": 100
+    },
+    "retraction_extrusion_window": {
+      "2026-02-25": 4
+    },
+    "retraction_hop": {
+      "2026-02-25": 0.2
+    },
+    "retraction_hop_after_extruder_switch_height": {
+      "2026-02-25": 0.0
+    },
+    "retraction_hop_enabled": {
+      "2026-02-25": "False"
+    },
+    "skin_overlap": {
+      "2026-02-25": 25
+    },
+    "skirt_line_count": {
+      "2026-02-25": 2
+    },
+    "speed_layer_0": {
+      "2026-02-25": 20.0
+    },
+    "speed_prime_tower": {
+      "2026-02-25": "speed_topbottom"
+    },
+    "speed_support": {
+      "2026-02-25": "speed_wall_0"
+    },
+    "speed_support_interface": {
+      "2026-02-25": "speed_topbottom"
+    },
+    "speed_travel": {
+      "2026-02-25": "80.0 if speed_print < 61 else 120.0 if speed_print > 100 else speed_print * 1.5"
+    },
+    "speed_travel_layer_0": {
+      "2026-02-25": "80 if speed_layer_0 < 21 else 100 if speed_layer_0 > 30 else speed_layer_0 * 5"
+    },
+    "speed_wall_x": {
+      "2026-02-25": "speed_wall"
+    },
+    "speed_z_hop": {
+      "2026-02-25": 5
+    },
+    "support_angle": {
+      "2026-02-25": "math.floor(math.degrees(math.atan(line_width/1.4/layer_height)))"
+    },
+    "support_brim_enable": {
+      "2026-02-25": true
+    },
+    "support_brim_width": {
+      "2026-02-25": 4
+    },
+    "support_infill_rate": {
+      "2026-02-25": "0 if support_enable and support_structure == 'tree' else 20"
+    },
+    "support_interface_density": {
+      "2026-02-25": 33.333
+    },
+    "support_interface_enable": {
+      "2026-02-25": true
+    },
+    "support_interface_height": {
+      "2026-02-25": "layer_height * 4"
+    },
+    "support_interface_pattern": {
+      "2026-02-25": "'grid'"
+    },
+    "support_pattern": {
+      "2026-02-25": "'zigzag'"
+    },
+    "support_xy_distance": {
+      "2026-02-25": "wall_line_width_0 * 2"
+    },
+    "support_xy_distance_overhang": {
+      "2026-02-25": "wall_line_width_0"
+    },
+    "support_xy_overrides_z": {
+      "2026-02-25": "'xy_overrides_z'"
+    },
+    "support_z_distance": {
+      "2026-02-25": "layer_height if layer_height >= 0.16 else layer_height*2"
+    },
+    "switch_extruder_retraction_amount": {
+      "2026-02-25": 8.0
+    },
+    "switch_extruder_retraction_speeds": {
+      "2026-02-25": 60.0
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": "layer_height_0 + layer_height * 4"
+    },
+    "travel_avoid_other_parts": {
+      "2026-02-25": false
+    },
+    "travel_avoid_supports": {
+      "2026-02-25": true
+    },
+    "travel_retract_before_outer_wall": {
+      "2026-02-25": true
+    },
+    "wall_0_wipe_dist": {
+      "2026-02-25": 0.0
+    },
+    "wall_thickness": {
+      "2026-02-25": "line_width * 2"
+    },
+    "z_seam_corner": {
+      "2026-02-25": "'z_seam_corner_weighted'"
+    },
+    "z_seam_type": {
+      "2026-02-25": "'back'"
+    },
+    "zig_zaggify_infill": {
+      "2026-02-25": true
+    }
+  }
+}

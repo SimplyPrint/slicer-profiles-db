@@ -1,0 +1,117 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Nwa3D A31",
+  "vendor": "Nwa 3D LLC",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Nwa3D A31"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "DragonJe"
+    },
+    "manufacturer": {
+      "2026-02-25": "Nwa 3D LLC"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "has_variants": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "nwa3d_a31_extruder_0"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        0,
+        0
+      ]
+    },
+    "preferred_material": {
+      "2026-02-25": "generic_pla"
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "preferred_variant_name": {
+      "2026-02-25": "Standard 0.4mm"
+    },
+    "variants_name": {
+      "2026-02-25": "Nozzle Size"
+    },
+    "gantry_height": {
+      "2026-02-25": "30"
+    },
+    "machine_depth": {
+      "2026-02-25": 300
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 S0\nM140 S0\n ; Retract the filament\nG92 E1\nG1 E-1 F300\nG28 X0 Y0\nM84"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -30,
+          34
+        ],
+        [
+          -30,
+          -32
+        ],
+        [
+          30,
+          -32
+        ],
+        [
+          30,
+          34
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 400
+    },
+    "machine_name": {
+      "2026-02-25": "NWA3D A31"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G28 ; Home\nG1 Z15.0 F6000 ; Move Z axis up 15mm\n ; Prime the extruder\nG92 E0\nG1 F200 E3\nG92 E0"
+    },
+    "machine_width": {
+      "2026-02-25": 300
+    },
+    "material_diameter": {
+      "2026-02-25": 1.75
+    }
+  }
+}

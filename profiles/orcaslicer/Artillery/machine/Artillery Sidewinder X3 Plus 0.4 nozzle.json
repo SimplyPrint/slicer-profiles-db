@@ -1,0 +1,477 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "Artillery Sidewinder X3 Plus 0.4 nozzle",
+  "vendor": "Artillery",
+  "first_seen": "2.3.1",
+  "last_seen": "2.3.1",
+  "filament_id": null,
+  "setting_id": "GM005",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.3.1": "machine"
+    },
+    "name": {
+      "2.3.1": "Artillery Sidewinder X3 Plus 0.4 nozzle"
+    },
+    "from": {
+      "2.3.1": "system"
+    },
+    "instantiation": {
+      "2.3.1": "true"
+    },
+    "gcode_flavor": {
+      "2.3.1": "marlin"
+    },
+    "machine_start_gcode": {
+      "2.3.1": "M140 S60\nM104 S140\nM190 S[first_layer_bed_temperature]\nM109 S{temperature_vitrification[0]}\nG28;\nNOZZLE_WIPE\nM140 S[first_layer_bed_temperature];\nM104 S[first_layer_temperature];\nDRAW_LINE_ONLY"
+    },
+    "machine_end_gcode": {
+      "2.3.1": "G91 ;Relative positioning\nG1 E-2 F2700 ;Retract a bit\nG1 E-2 Z0.2 F2400 ;Retract and raise Z\nG1 X5 Y5 F3000 ;Wipe out\nG1 Z10 ;Raise Z more\nG90 ;Absolute positionning\nM106 S0 ;Turn-off fan\nM104 S0 ;Turn-off hotend\nM140 S0 ;Turn-off bed\nM211 S1"
+    },
+    "extruder_colour": {
+      "2.3.1": [
+        "#018001"
+      ]
+    },
+    "extruder_offset": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "machine_max_acceleration_e": {
+      "2.3.1": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.3.1": [
+        "3000",
+        "1250"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.3.1": [
+        "1000",
+        "1250"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "2.3.1": [
+        "1000",
+        "1250"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.3.1": [
+        "3000",
+        "1000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.3.1": [
+        "3000",
+        "1000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.3.1": [
+        "500",
+        "200"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.3.1": [
+        "120",
+        "120"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.3.1": [
+        "500",
+        "200"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.3.1": [
+        "500",
+        "200"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.3.1": [
+        "12",
+        "12"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.3.1": [
+        "3",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.3.1": [
+        "7",
+        "10"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.3.1": [
+        "7",
+        "10"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.3.1": [
+        "0.2",
+        "0.4"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "2.3.1": [
+        "0.32"
+      ]
+    },
+    "min_layer_height": {
+      "2.3.1": [
+        "0.08"
+      ]
+    },
+    "printable_height": {
+      "2.3.1": "400"
+    },
+    "extruder_clearance_radius": {
+      "2.3.1": "65"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.3.1": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.3.1": "140"
+    },
+    "nozzle_diameter": {
+      "2.3.1": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "2.3.1": "Artillery X3Plus 0.4 nozzle"
+    },
+    "printer_technology": {
+      "2.3.1": "FFF"
+    },
+    "printer_variant": {
+      "2.3.1": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "2.3.1": [
+        "2"
+      ]
+    },
+    "retract_before_wipe": {
+      "2.3.1": [
+        "0%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "2.3.1": [
+        "2.2"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.3.1": [
+        "10"
+      ]
+    },
+    "z_hop": {
+      "2.3.1": [
+        "0.4"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "2.3.1": [
+        "30"
+      ]
+    },
+    "deretraction_speed": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "silent_mode": {
+      "2.3.1": "0"
+    },
+    "single_extruder_multi_material": {
+      "2.3.1": "1"
+    },
+    "change_filament_gcode": {
+      "2.3.1": ""
+    },
+    "before_layer_change_gcode": {
+      "2.3.1": "\n"
+    },
+    "layer_change_gcode": {
+      "2.3.1": ""
+    },
+    "machine_pause_gcode": {
+      "2.3.1": "M600"
+    },
+    "wipe": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "z_hop_types": {
+      "2.3.1": [
+        "Normal Lift"
+      ]
+    },
+    "setting_id": {
+      "2.3.1": "GM005"
+    },
+    "printer_model": {
+      "2.3.1": "Artillery Sidewinder X3 Plus"
+    },
+    "default_print_profile": {
+      "2.3.1": "0.20mm Standard @Artillery Genius"
+    },
+    "default_filament_profile": {
+      "2.3.1": [
+        "Artillery PLA Basic"
+      ]
+    },
+    "adaptive_bed_mesh_margin": {
+      "2.3.1": "0"
+    },
+    "auxiliary_fan": {
+      "2.3.1": "0"
+    },
+    "bbl_use_printhost": {
+      "2.3.1": "0"
+    },
+    "bed_custom_model": {
+      "2.3.1": ""
+    },
+    "bed_custom_texture": {
+      "2.3.1": ""
+    },
+    "bed_exclude_area": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "bed_mesh_max": {
+      "2.3.1": "99999,99999"
+    },
+    "bed_mesh_min": {
+      "2.3.1": "-99999,-99999"
+    },
+    "bed_mesh_probe_distance": {
+      "2.3.1": "50,50"
+    },
+    "best_object_pos": {
+      "2.3.1": "0.5,0.5"
+    },
+    "change_extrusion_role_gcode": {
+      "2.3.1": ""
+    },
+    "cooling_tube_length": {
+      "2.3.1": "5"
+    },
+    "cooling_tube_retraction": {
+      "2.3.1": "91.5"
+    },
+    "disable_m73": {
+      "2.3.1": "0"
+    },
+    "emit_machine_limits_to_gcode": {
+      "2.3.1": "0"
+    },
+    "enable_filament_ramming": {
+      "2.3.1": "1"
+    },
+    "extra_loading_move": {
+      "2.3.1": "-2"
+    },
+    "fan_kickstart": {
+      "2.3.1": "0"
+    },
+    "fan_speedup_overhangs": {
+      "2.3.1": "1"
+    },
+    "fan_speedup_time": {
+      "2.3.1": "0"
+    },
+    "head_wrap_detect_zone": {
+      "2.3.1": []
+    },
+    "high_current_on_filament_swap": {
+      "2.3.1": "0"
+    },
+    "host_type": {
+      "2.3.1": "octoprint"
+    },
+    "machine_load_filament_time": {
+      "2.3.1": "0"
+    },
+    "machine_unload_filament_time": {
+      "2.3.1": "0"
+    },
+    "manual_filament_change": {
+      "2.3.1": "0"
+    },
+    "nozzle_hrc": {
+      "2.3.1": "0"
+    },
+    "nozzle_type": {
+      "2.3.1": "brass"
+    },
+    "nozzle_volume": {
+      "2.3.1": "0"
+    },
+    "parking_pos_retraction": {
+      "2.3.1": "92"
+    },
+    "preferred_orientation": {
+      "2.3.1": "0"
+    },
+    "print_host": {
+      "2.3.1": ""
+    },
+    "print_host_webui": {
+      "2.3.1": ""
+    },
+    "printable_area": {
+      "2.3.1": [
+        "0x0",
+        "300x0",
+        "300x305",
+        "0x305"
+      ]
+    },
+    "printer_notes": {
+      "2.3.1": ""
+    },
+    "printer_structure": {
+      "2.3.1": "undefine"
+    },
+    "printhost_apikey": {
+      "2.3.1": ""
+    },
+    "printhost_authorization_type": {
+      "2.3.1": "key"
+    },
+    "printhost_cafile": {
+      "2.3.1": ""
+    },
+    "printhost_password": {
+      "2.3.1": ""
+    },
+    "printhost_port": {
+      "2.3.1": ""
+    },
+    "printhost_ssl_ignore_revoke": {
+      "2.3.1": "0"
+    },
+    "printhost_user": {
+      "2.3.1": ""
+    },
+    "printing_by_object_gcode": {
+      "2.3.1": ""
+    },
+    "purge_in_prime_tower": {
+      "2.3.1": "1"
+    },
+    "retract_lift_above": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_lift_below": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_lift_enforce": {
+      "2.3.1": [
+        "All Surfaces"
+      ]
+    },
+    "scan_first_layer": {
+      "2.3.1": "0"
+    },
+    "support_air_filtration": {
+      "2.3.1": "1"
+    },
+    "support_chamber_temp_control": {
+      "2.3.1": "1"
+    },
+    "support_multi_bed_types": {
+      "2.3.1": "0"
+    },
+    "template_custom_gcode": {
+      "2.3.1": ""
+    },
+    "thumbnails": {
+      "2.3.1": [
+        "300x300"
+      ]
+    },
+    "thumbnails_format": {
+      "2.3.1": "PNG"
+    },
+    "time_cost": {
+      "2.3.1": "0"
+    },
+    "time_lapse_gcode": {
+      "2.3.1": ""
+    },
+    "upward_compatible_machine": {
+      "2.3.1": []
+    },
+    "use_firmware_retraction": {
+      "2.3.1": "0"
+    },
+    "use_relative_e_distances": {
+      "2.3.1": "0"
+    },
+    "wipe_distance": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "z_offset": {
+      "2.3.1": "0"
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "E2D i310 0.4 nozzle",
+  "vendor": "E2D",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "gcode_flavor": {
+      "3.0.0": "marlin2"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "1"
+    },
+    "before_layer_gcode": {
+      "3.0.0": ";BEFORE_LAYER_CHANGE\\nG92 E0.0\\n;[layer_z]\\n\\n"
+    },
+    "layer_gcode": {
+      "3.0.0": ";AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "time_estimate_only"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "40"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "20"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,200x0,200x200,0x200"
+    },
+    "max_print_height": {
+      "3.0.0": "200"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "185"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "185"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "9"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "20"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "3000"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "3000"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "100"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "600"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "600"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "600"
+    },
+    "machine_max_acceleration_travel": {
+      "3.0.0": "3000"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "0.3"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "5.0"
+    },
+    "retract_length": {
+      "3.0.0": "1.8"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "start_gcode": {
+      "3.0.0": "G90 ; use absolute coordinates\\nM83 ; extruder relative mode\\nM104 S[first_layer_temperature] ; set extruder temp\\nM140 S[first_layer_bed_temperature] ; set bed temp\\nG28 ; home all\\nG29; Detailed Z-Probe\\nG1 Z3 F240\\nM190 S[first_layer_bed_temperature] ; wait for bed temp\\nM109 S[first_layer_temperature] ; wait for extruder temp\\nG1 X2 Y10 F3000\\nG1 Z0.28 F240\\nG92 E0.0\\nG1 Y190 E15.0 F1500.0 ; intro line\\nG1 X2.3 F5000\\nG1 Y10 E30 F1200.0 ; intro line\\nG92 E0.0"
+    },
+    "end_gcode": {
+      "3.0.0": "M104 S0 ; turn off temperature\\nM140 S0 ; turn off heatbed\\nM107 ; turn off fan\\n{if layer_z < max_print_height}G1 Z{z_offset+min(layer_z+10, max_print_height)} F600{endif} ; Move print head up\\nG1 X0 Y200 F3000 ; present print\\nM84 X Y E ; disable motors"
+    },
+    "printer_model": {
+      "3.0.0": "i310"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.4"
+    },
+    "printer_variant": {
+      "3.0.0": "0.4"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.10"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.25"
+    },
+    "printer_notes": {
+      "3.0.0": "Do not remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_E2D\\nPRINTER_MODEL_i310"
+    },
+    "default_print_profile": {
+      "3.0.0": "0.20mm NORMAL i310"
+    },
+    "printer_settings_id": {
+      "3.0.0": "E2D i310 0.4 nozzle"
+    }
+  }
+}

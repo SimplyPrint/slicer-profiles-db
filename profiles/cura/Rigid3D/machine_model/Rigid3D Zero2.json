@@ -1,0 +1,81 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Rigid3D Zero2",
+  "vendor": "Rigid3D",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Rigid3D Zero2"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "rigid3d_base"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "platform": {
+      "2026-02-25": "rigid3d_zero2_platform.3mf"
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "standard"
+    },
+    "quality_definition": {
+      "2026-02-25": "rigid3d_base"
+    },
+    "gantry_height": {
+      "2026-02-25": 25
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 200
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "; -- END GCODE --\nG1 X0 Y180 ; Konuma git\nM107 ; Fani kapat\nG91 ; Goreceli konumlama\nG0 Z20 ; Tablayi alcalt\nT0\nG1 E-2 ; Filaman basincini dusur\nM104 T0 S0 ; Ekstruder isiticiyi kapat\nG90 ; Mutlak konumlama\nG92 E0 ; Ekstruder konumu sifirla\nM140 S0 ; Tabla isiticiyi kapat\nM84 ; Motorlari durdur\nM300 S2093 P150 ; Baski sonu melodisi\nM300 S2637 P150\nM300 S3135 P150\nM300 S4186 P150\nM300 S3135 P150\nM300 S2637 P150\nM300 S2793 P150\nM300 S2349 P150\nM300 S1975 P150\nM300 S2093 P450\n; -- end of END GCODE --\n"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -30,
+          65
+        ],
+        [
+          -30,
+          -30
+        ],
+        [
+          30,
+          -30
+        ],
+        [
+          30,
+          65
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 192
+    },
+    "machine_name": {
+      "2026-02-25": "Rigid3D Zero2"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "; -- START GCODE --\nG21 ; mm olculer\nG28 ; Eksenleri sifirla\nM420 S1 ; Yazilim destekli tabla seviyeleme\nM107 ; Fani kapat\nG90 ; Mutlak konumlama\nG1 Z5 F180 ; Z eksenini 5mm yukselt\nG1 X30 Y30 F3000 ; Konuma git\nM82 ; Ekstruder mutlak mod\nG92 E0 ; Ekstruder konumu sifirla\n; -- end of START GCODE --"
+    },
+    "machine_width": {
+      "2026-02-25": 200
+    }
+  }
+}

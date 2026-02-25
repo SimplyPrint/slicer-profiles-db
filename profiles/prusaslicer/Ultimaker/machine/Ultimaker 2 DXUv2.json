@@ -1,0 +1,202 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "Ultimaker 2 DXUv2",
+  "vendor": "Ultimaker",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "before_layer_gcode": {
+      "3.0.0": ";BEFORE_LAYER_CHANGE\\n;M117 Layer [layer_num];\\n;LAYER:[layer_num]"
+    },
+    "between_objects_gcode": {
+      "3.0.0": ""
+    },
+    "deretract_speed": {
+      "3.0.0": "0"
+    },
+    "extruder_colour": {
+      "3.0.0": "#F9A800;#00387B"
+    },
+    "gcode_flavor": {
+      "3.0.0": "marlin2"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "remaining_times": {
+      "3.0.0": "0"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "10000"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "3000"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "3000"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "9000"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "9000"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "100"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "120"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "300"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "300"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "40"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "20"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "20"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "0.4"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0"
+    },
+    "layer_gcode": {
+      "3.0.0": ""
+    },
+    "octoprint_apikey": {
+      "3.0.0": ""
+    },
+    "octoprint_host": {
+      "3.0.0": ""
+    },
+    "printer_notes": {
+      "3.0.0": "Dont remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_ULTIMAKER\\nPRINTER_MODEL_ULTIMAKER2"
+    },
+    "printer_settings_id": {
+      "3.0.0": "Ultimaker 2 DXUv2"
+    },
+    "retract_before_travel": {
+      "3.0.0": "1.2,1.2"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "0%,0%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1"
+    },
+    "retract_length": {
+      "3.0.0": "6.5,6.5"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "16,16"
+    },
+    "retract_lift": {
+      "3.0.0": "0"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0"
+    },
+    "retract_lift_below": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_speed": {
+      "3.0.0": "25,25"
+    },
+    "serial_port": {
+      "3.0.0": ""
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "toolchange_gcode": {
+      "3.0.0": "{if previous_extruder>= 0}\\nM104 S{temperature[previous_extruder] + standby_temperature_delta}\\n{endif}\\n\\nM104 T{next_extruder} S{temperature[next_extruder]}\\n\\nT{next_extruder}\\nM109 S{temperature[next_extruder]}"
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "0"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "0"
+    },
+    "wipe": {
+      "3.0.0": "0"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "50"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "60"
+    },
+    "printer_model": {
+      "3.0.0": "ULTIMAKER2"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,224x0,224x225,0x225"
+    },
+    "max_print_height": {
+      "3.0.0": "212"
+    },
+    "printer_variant": {
+      "3.0.0": "0.4"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.4,0.4"
+    },
+    "default_print_profile": {
+      "3.0.0": "0.20mm NORMAL @ULTIMAKER"
+    },
+    "default_filament_profile": {
+      "3.0.0": "Generic PLA @ULTIMAKER"
+    },
+    "start_gcode": {
+      "3.0.0": "; Printer_Settings_ID: [printer_settings_id]\\n; DXUv2 improved PS start priming Gcode for dual nozzles for multi-material print\\nM355 S1 P25 ; Turn on case light dim\\nM190 S[first_layer_bed_temperature]\\nG28 ; Home all\\n;M420 S1 ; Enable and load bed mesh\\nG29 ; Run automatic bed leveling. Comment this line out if auto bed leveling is not desired.\\nM104 T0 S{temperature[0] + standby_temperature_delta} ; Preheat T0 to standby temp\\nM104 T1 S{temperature[1] + standby_temperature_delta} ; Preheat T1 to standby temp\\nG21 ; Metric values\\nG90 ; Absolute positioning\\nM82 ; Set extruder to absolute mode\\nM107 ; Start with the fan off\\nM200 D0 T0 ; Reset filament diameter\\nM200 D0 T1 ; Reset filament diameter\\nG0 X200 F7200 ; Move to safe X and Y location from right side after ending ABL homing. Move X before Y to avoid hitting switching lever.\\nG1 Y150 F7200\\n; Prime routine for T1 in normally \\nT1 ; move to the nozzle 2\\nM104 T1 S{temperature[1]} ; Start heating up T1\\nG0 Z10 F2400 ; move the platform down to 10mm\\nM109 T1 S{temperature[1]} ; Heat up and wait for T1\\nG0 Y150 F7200 ; Move printhead to safe Y location to move right.\\nG0 X50 Y1 F7200 ; Add HOTEND_OFFSET_Y index 1 to Y0 (or forward-most safe Y location when T1 is active) to get Gcode Y parameter\\nG0 X95 Z0.3 F2400 ; lower nozzle\\nG92 E0 ; reset E location\\nG1 X225 Y1 Z0.3 E{retract_length_toolchange[1]} F1500 ; Add HOTEND_OFFSET_X index 1 to X217 (or right-most safe X location when T1 is active) to get actual Gcode X parameter.\\nG3 X235 Y11 I0 J10 F7200\\nG0 X235 Y11 Z0.3 F7200\\nM104 T1 S{temperature[1] + standby_temperature_delta} ; Start cooling down nozzle to reduce oozing\\nG92 E0\\nG1 Y70 E3 F1000 ; intro line\\nM104 T1 S{temperature[1] + standby_temperature_delta}\\nG92 E0 \\nG1 E-{retract_length_toolchange[1]} F1200 ; retract\\nG0 Y105 F18000 ; break line\\nG0 Y150 Z10 F2400 ; raise nozzle\\n; Prime routine for T0\\nT0 ; move to the nozzle 1\\nM104 T0 S{temperature[0]} ; Start heating up T0\\nG0 Z10 F2400\\nM109 T0 S{temperature[0]}\\nG0 Y150 F7200 ; Move printhead to safe Y location to move right.\\nG0 X32 Y3 F7200\\nG0 X77 Z0.3 F2400\\nG92 E0 ; reset E location\\nG1 X207 Y3 Z0.3 E{retract_length_toolchange[0]} F1500\\nG3 X217 Y13 I0 J10 F7200\\nG0 X217 Y13 Z0.3 F7200\\nM104 T0 S{temperature[0] + standby_temperature_delta} ; Start cooling down nozzle to reduce oozing\\nG92 E0 ; reset E location\\nG1 Y72 E3 F1000 ; intro line\\nM104 T0 S{temperature[0] + standby_temperature_delta}\\nM104 T{initial_extruder} S{temperature[initial_extruder]} ; Start heating initial nozzle. Do not wait.\\nG92 E0\\nG1 E-{retract_length_toolchange[0]} F1200 ; retract\\nG0 Y105 F18000 ; break line\\nG0 Y150 Z10 F2400 ; raise nozzle\\n; Final prime and wipe sequence for initial extruder (usually T0)\\nT{initial_extruder} ; move to the initial nozzle used for print\\nM400 ;finish all moves\\nG0 Z20 F2400\\nG0 X212 F7200\\nG0 Y70 F7200\\nM109 T{initial_extruder} S{temperature[initial_extruder]} ; Wait for initial nozzle to reach temp\\nG92 E0\\nG1 E{retract_length_toolchange[initial_extruder]} F1200 ; prime by switching length\\nG0 X217 Y50 Z0.5 F7200\\nG92 E0\\nG0 Y9.4 Z0.5 E3 F7200\\nG2 X212 Y3.4 Z0.4 I-6 J0 F7200\\nM104 T{initial_extruder} S{first_layer_temperature[initial_extruder]} ; Start heating to first layer temp\\nG0 X207 Y3.4 Z0.4 F7200\\nG2 X205 Y5.4 Z0.3 I0 J2 F7200\\nG0 X205 Y5.4 Z0.3 F7200\\nG1 Y10 F18000 ; break line\\nG92 E0\\nG1 Y50 E2 F1000 ; extrude line\\nG92 E0\\nG1 E-0.5 F1500 ; retract slightly\\nG1 Y100 F18000 ; break line\\nG92 E0\\nM355 S1 P255; Turn on case light brighter\\n;end of startup sequence"
+    },
+    "end_gcode": {
+      "3.0.0": ";End G-code\\nG91 ;Relative movement\\nG0 X-8.0 Y-8.0 Z3.5 E-4.5 F18000 ;Wiping+material retraction ;increase bed lower 0.5>5.0 and add Y movement\\nG0 F10000 Z1.5 E4.5 ;Compensation for the retraction\\nG90 ;Disable relative movement\\nM400 ;wait for all moves in planner to complete\\nG90 ;absolute positioning\\nM104 S0 T0 ;extruder heater off\\nM104 S0 T1\\nM140 S0 ;turn off bed\\nT0 ; move to the first head\\nG27; park toolhead\\nM107 ;fan off\\nM355 S0;turn off case light"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.3"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.06"
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0,0x0 ; stock DXUv2 offset is X18 Y0 but this should be applied in firmware and PS does not provide option to turn off extruder offset correction so we leave it at 0 in slicer"
+    }
+  }
+}

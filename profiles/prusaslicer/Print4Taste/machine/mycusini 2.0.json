@@ -1,0 +1,67 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "mycusini 2.0",
+  "vendor": "Print4Taste",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_model": {
+      "3.0.0": "MC2.0"
+    },
+    "printer_variant": {
+      "3.0.0": "1.0"
+    },
+    "bed_shape": {
+      "3.0.0": "5x2.5,105x2.5,105x112.5,5x112.5"
+    },
+    "color_change_gcode": {
+      "3.0.0": ""
+    },
+    "end_gcode": {
+      "3.0.0": "M83 ;Relative mode to retract\\nG1 F2400 E-0.1 ;Retract\\nM84 ;Back to absolute mode after retract\\nG0 F2400 X90 Y55 Z45 ;Park"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.75"
+    },
+    "max_print_height": {
+      "3.0.0": "45"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.3"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "1"
+    },
+    "pause_print_gcode": {
+      "3.0.0": ""
+    },
+    "printer_notes": {
+      "3.0.0": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_PRINT4TASTE\\nPRINTER_MODEL_MYCUSINI2.0\\nNO_TEMPLATES"
+    },
+    "retract_length": {
+      "3.0.0": "0.1"
+    },
+    "start_gcode": {
+      "3.0.0": "G1 F2400 E-0.3 ;Retract\\nG0 F2400 X100 Y55 Z20.7 ;Full coordinates to prevent ramming down\\nG0 F2400 X100 Y40 Z0.5 ;Start purge line\\nG0 F570 X100 Y10 Z0.5 E0.025 ;Purge slightly more, should make a line only a few mm long"
+    },
+    "default_print_profile": {
+      "3.0.0": "0.50mm SOLID @MC2.0"
+    },
+    "default_filament_profile": {
+      "3.0.0": "mycusini 3D Choco @MC2.0"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "45"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "40"
+    },
+    "printer_settings_id": {
+      "3.0.0": "mycusini 2.0"
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "Snapmaker A250 Dual BKit (0.6 nozzle)",
+  "vendor": "Snapmaker",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "gcode_flavor": {
+      "3.0.0": "marlin2"
+    },
+    "pause_gcode": {
+      "3.0.0": "M600 ;pause print"
+    },
+    "nozzle_type": {
+      "3.0.0": "hardened_steel"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "auxiliary_fan": {
+      "3.0.0": "0"
+    },
+    "remaining_times": {
+      "3.0.0": "0"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "purge_in_prime_tower": {
+      "3.0.0": "1"
+    },
+    "enable_filament_ramming": {
+      "3.0.0": "0"
+    },
+    "nozzle_volume": {
+      "3.0.0": "0"
+    },
+    "cooling_tube_retraction": {
+      "3.0.0": "0"
+    },
+    "cooling_tube_length": {
+      "3.0.0": "0"
+    },
+    "parking_pos_retraction": {
+      "3.0.0": "0"
+    },
+    "extra_loading_move": {
+      "3.0.0": "-2"
+    },
+    "high_current_on_filament_swap": {
+      "3.0.0": "0"
+    },
+    "wipe": {
+      "3.0.0": "1"
+    },
+    "wipe_distance": {
+      "3.0.0": "2"
+    },
+    "retract_when_changing_layer": {
+      "3.0.0": "1"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "0%"
+    },
+    "fan_speedup_overhangs": {
+      "3.0.0": "1"
+    },
+    "name": {
+      "3.0.0": "Snapmaker A250 Dual BKit (0.6 nozzle)"
+    },
+    "retract_length": {
+      "3.0.0": "0.8"
+    },
+    "retract_speed": {
+      "3.0.0": "35,35"
+    },
+    "deretract_speed": {
+      "3.0.0": "35,35"
+    },
+    "retract_before_travel": {
+      "3.0.0": "1"
+    },
+    "retract_lift": {
+      "3.0.0": "0.4"
+    },
+    "extruder_clearance_height_to_rod": {
+      "3.0.0": "60"
+    },
+    "extruder_clearance_height_to_lid": {
+      "3.0.0": "285"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "3500"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "3500"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "3000"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "3000"
+    },
+    "machine_max_acceleration_travel": {
+      "3.0.0": "3500"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "3500"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "3500"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "5"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "5"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "3"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "3"
+    },
+    "thumbnails": {
+      "3.0.0": "300x150"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "18,18"
+    },
+    "default_filament_profile": {
+      "3.0.0": "Snapmaker PLA,Snapmaker PETG"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "150"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "150"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "40"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "45"
+    },
+    "printer_notes": {
+      "3.0.0": "PRINTER_MODEL_SNAPMAKER_A250_DUAL\\nPRINTER_MODEL_SNAPMAKER_A250_DUAL_BRACINGKIT\\n"
+    },
+    "bed_exclude_area": {
+      "3.0.0": "0x228,230x228,230x250,0x250"
+    },
+    "start_gcode": {
+      "3.0.0": "; Model: Snapmaker A250 Dual ({nozzle_diameter[0]}/{nozzle_diameter[1]})\\n; Update: 20240428\\n; Maintained by https://github.com/macdylan/3dp-configs\\n; Printer : [printer_preset]\\n; Profile : [print_preset]\\n; Plate   : [physical_printer_preset]\\n; --- initial_extruder: [initial_extruder]\\n; --- has_wipe_tower: [has_wipe_tower]\\n; --- total_toolchanges: [total_toolchanges]\\n; --- T0: {is_extruder_used[0]}\\n; --- T1: {is_extruder_used[1]}\\n\\nM201 X[machine_max_acceleration_x] Y[machine_max_acceleration_y] Z[machine_max_acceleration_z] E[machine_max_acceleration_e]\\nM203 X[machine_max_feedrate_x] Y[machine_max_feedrate_y] Z[machine_max_feedrate_z] E[machine_max_feedrate_e]\\nM204 P[machine_max_acceleration_extruding] R[machine_max_acceleration_retracting] T[machine_max_acceleration_travel]\\nM205 X[machine_max_jerk_x] Y[machine_max_jerk_y] Z[machine_max_jerk_z] E[machine_max_jerk_e]\\n\\nT[initial_extruder]\\n\\nM140 S{first_layer_bed_temperature[initial_extruder]}\\n\\n; you can clean the nozzle\\n{if is_extruder_used[0]}M104 T0 S165{endif}\\n{if is_extruder_used[1]}M104 T1 S165{endif}\\nM204 S100\\nG28\\nG0 Z126 F960.0\\nG0 Y125.0 F3420.0\\nG0 X115.0\\n\\nM190 R{first_layer_bed_temperature[initial_extruder]}\\n\\nG28\\n{if 1==1}\\n  G0 X0\\n  G0 Z0.2 F960.0\\n  G0 Y0 F3420.0\\n  G0 X230\\n  G0 Y250\\n  G0 X0\\n  G0 Y0\\n{endif}\\n\\nM83\\n{if 1==1 && max(first_layer_bed_temperature[initial_extruder], bed_temperature[initial_extruder]) >= 90}\\nG0 Z0.06 ;raise z to counteract thermal expansion\\nG92 Z0 ;reset z\\n{endif}\\n\\n{if is_extruder_used[0]}M104 T0 S{max(250, min(290, first_layer_temperature[0] + 15))}{endif}\\n{if is_extruder_used[1]}M104 T1 S{max(250, min(290, first_layer_temperature[1] + 15))}{endif}\\n\\n{if is_extruder_used[0] and initial_extruder != 0}\\n  T0\\nM104 S{max(250, min(290, first_layer_temperature[0] + 15))}; common flush temp\\nG0 Z1.6 F960.0\\nG0 X{if 0 == 0}100.0{else}130.0{endif} F3420.0\\nG0 Y0 F3420.0\\n\\nM109 S{max(250, min(290, first_layer_temperature[0] + 15))} C2 W1; common flush temp\\nG1 E20 F80.0\\nG92 E0\\n\\nM106 S{min(255, (max_fan_speed[0] + 10) * 2.55)}\\n\\nM104 S{first_layer_temperature[0] + 5}\\n\\nG1 E12.0 F200\\nG92 E0\\nG1 E8.0 Z4.6 F200\\nG92 E0\\n\\nG0 Z5.6 F200\\nM107\\n\\nG0 X{if 0 == 0}55.0{else}175.0{endif} F3420.0\\nG0 Z0.3 F960.0\\nM109 S{first_layer_temperature[0]} C3 W1\\nG1 E3 F200\\nG92 E0\\nG1 X{if 0 == 0}0{else}230{endif} E3.42995 F3420.0\\nG92 E0\\n\\nG1 E-{retract_length_toolchange[0]} F200\\nG92 E0\\nG0 Y20 F3420.0\\n\\n  M104 S{is_nil(idle_temperature[0]) ? temperature[0] + standby_temperature_delta : idle_temperature[0]}\\n{endif}\\n{if is_extruder_used[1] and initial_extruder != 1}\\n  T1\\nM104 S{max(250, min(290, first_layer_temperature[1] + 15))}; common flush temp\\nG0 Z1.6 F960.0\\nG0 X{if 1 == 0}100.0{else}130.0{endif} F3420.0\\nG0 Y0 F3420.0\\n\\nM109 S{max(250, min(290, first_layer_temperature[1] + 15))} C2 W1; common flush temp\\nG1 E20 F80.0\\nG92 E0\\n\\nM106 S{min(255, (max_fan_speed[1] + 10) * 2.55)}\\n\\nM104 S{first_layer_temperature[1] + 5}\\n\\nG1 E12.0 F200\\nG92 E0\\nG1 E8.0 Z4.6 F200\\nG92 E0\\n\\nG0 Z5.6 F200\\nM107\\n\\nG0 X{if 1 == 0}55.0{else}175.0{endif} F3420.0\\nG0 Z0.3 F960.0\\nM109 S{first_layer_temperature[1]} C3 W1\\nG1 E3 F200\\nG92 E0\\nG1 X{if 1 == 0}0{else}230{endif} E3.42995 F3420.0\\nG92 E0\\n\\nG1 E-{retract_length_toolchange[1]} F200\\nG92 E0\\nG0 Y20 F3420.0\\n\\n  M104 S{is_nil(idle_temperature[1]) ? temperature[1] + standby_temperature_delta : idle_temperature[1]}\\n{endif}\\n\\nT[initial_extruder]\\nM104 S{max(250, min(290, first_layer_temperature[initial_extruder] + 15))}; common flush temp\\nG0 Z1.6 F960.0\\nG0 X{if initial_extruder == 0}100.0{else}130.0{endif} F3420.0\\nG0 Y0 F3420.0\\n\\nM109 S{max(250, min(290, first_layer_temperature[initial_extruder] + 15))} C2 W1; common flush temp\\nG1 E20 F80.0\\nG92 E0\\n\\nM106 S{min(255, (max_fan_speed[initial_extruder] + 10) * 2.55)}\\n\\nM104 S{first_layer_temperature[initial_extruder] + 5}\\n\\nG1 E12.0 F200\\nG92 E0\\nG1 E8.0 Z4.6 F200\\nG92 E0\\n\\nG0 Z5.6 F200\\nM107\\n\\nG0 X{if initial_extruder == 0}55.0{else}175.0{endif} F3420.0\\nG0 Z0.3 F960.0\\nM109 S{first_layer_temperature[initial_extruder]} C3 W1\\nG1 E3 F200\\nG92 E0\\nG1 X{if initial_extruder == 0}0{else}230{endif} E3.42995 F3420.0\\nG92 E0\\n\\nG1 E-{retract_length[initial_extruder]} F200\\nG92 E0\\nG0 Y20 F3420.0\\n\\n; ready [physical_printer_preset]"
+    },
+    "end_gcode": {
+      "3.0.0": "G92 E0\\n\\nG0 Z{max_layer_z + 2.0} F600\\n; retract the filament to make it easier to replace\\nG0 E-10 F200\\nG28\\n\\n    {if is_extruder_used[0]}M104 T0 S0{endif}\\n    {if is_extruder_used[1]}M104 T1 S0{endif}\\nM140 S0\\nM107\\nM220 S100\\nM84\\n\\n;\\n; DON'T REMOVE these lines if you're using the smfix (https://github.com/macdylan/SMFix)\\n; min_x = [first_layer_print_min_0]\\n; min_y = [first_layer_print_min_1]\\n; max_x = [first_layer_print_max_0]\\n; max_y = [first_layer_print_max_1]\\n; max_z = [max_layer_z]\\n; total_layer_number = [layer_num]\\n;"
+    },
+    "toolchange_gcode": {
+      "3.0.0": ";***** Update: 20231010\\n{if current_extruder != next_extruder }\\n; Change T[current_extruder] -> T[next_extruder] (layer:[layer_num] tc:[total_toolchanges])\\n{if has_wipe_tower}\\nG1 E-{retract_length_toolchange[current_extruder]} X{wipe_tower_x} Y{wipe_tower_y} F{travel_speed*60}\\n{else}\\nG1 E-{retract_length_toolchange[current_extruder]} F{retract_speed[current_extruder]*60}\\n{endif}\\nT{next_extruder}\\n\\nM107 P[current_extruder] ;fan off T[current_extruder]\\nM104 T[current_extruder] S{is_nil(idle_temperature[current_extruder]) ? temperature[current_extruder] + standby_temperature_delta : idle_temperature[current_extruder]} ;standby T[current_extruder]\\n\\n{if layer_num == 1 &&\\n ((filament_type[current_extruder] == \"PLA\" || filament_type[current_extruder] == \"TPU\")\\n  || (filament_type[next_extruder] == \"PLA\" || filament_type[next_extruder] == \"TPU\"))\\n}\\n; set bed temp: {filament_type[current_extruder]}({bed_temperature[current_extruder]}) -> {filament_type[next_extruder]}({bed_temperature[next_extruder]})\\nM140 S{min(bed_temperature[current_extruder], bed_temperature[next_extruder])}\\n{endif}\\n\\nM109 T[next_extruder] S{layer_num < 1 ? first_layer_temperature[next_extruder] : temperature[next_extruder]} C3 W1 ;wait T{next_extruder}\\n{if layer_num >= disable_fan_first_layers[next_extruder]}\\n  M106 P[next_extruder] S{min_fan_speed[next_extruder] * 255.0 / 100.0} ; restore fan speed for T[next_extruder]\\n{endif}\\nG1 E{retract_length_toolchange[next_extruder]} F100\\n\\n{if layer_z <= (first_layer_height + 0.001)}\\n  M204 S[first_layer_acceleration] ;first layer accel\\n{elsif default_acceleration > 0}\\n  M204 S[default_acceleration] ;default accel\\n{endif}\\n\\n{endif}"
+    },
+    "before_layer_gcode": {
+      "3.0.0": "; layer: [layer_num]\\nG92 E0"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,230x0,230x250,0x250"
+    },
+    "max_print_height": {
+      "3.0.0": "184"
+    },
+    "printer_model": {
+      "3.0.0": "Snapmaker A250 Dual BKit"
+    },
+    "default_print_profile": {
+      "3.0.0": "0.18 Standard @Snapmaker (0.6 nozzle)"
+    },
+    "printer_variant": {
+      "3.0.0": "0.6"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.42"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.18"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.6,0.6"
+    },
+    "printer_settings_id": {
+      "3.0.0": "Snapmaker A250 Dual BKit (0.6 nozzle)"
+    }
+  }
+}

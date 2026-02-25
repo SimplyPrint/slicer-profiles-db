@@ -1,0 +1,86 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "MBot3D Grid 4 Dual",
+  "vendor": "Magicfirm",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "MBot3D Grid 4 Dual"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Magicfirm"
+    },
+    "manufacturer": {
+      "2026-02-25": "Magicfirm"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "mbot3d_grid4_extruder_left",
+        "1": "mbot3d_grid4_extruder_right"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        0,
+        0
+      ]
+    },
+    "adhesion_type": {
+      "2026-02-25": "skirt"
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 210
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 S0 ; turn off extruder\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\nG1 Z190 F900\nG28 X Y  ;home X Y axes\nM84 ; disable motors"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 190
+    },
+    "machine_name": {
+      "2026-02-25": "MBot3D Grid 4 Dual"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ";---------- START GCODE ----------\nG21 ; set units to millimeters\nG28 ; home all axes\nG29 ;Autolevel bed\nG1 Z10 F400\nG1 X145 Z10 F2400\nG92 E0\nG1 X145 Z0.5 F400\nG1 X120 Z0.5 E20 F360\nG92 E0.0\n;----------END START GCODE ----------\n"
+    },
+    "machine_width": {
+      "2026-02-25": 210
+    },
+    "material_flow": {
+      "2026-02-25": 100
+    }
+  }
+}

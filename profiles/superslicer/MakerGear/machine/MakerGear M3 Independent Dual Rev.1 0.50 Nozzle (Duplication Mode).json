@@ -1,0 +1,169 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "machine",
+  "name": "MakerGear M3 Independent Dual Rev.1 0.50 Nozzle (Duplication Mode)",
+  "vendor": "MakerGear",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "before_layer_gcode": {
+      "1.4.4": ";BEFORE_LAYER_CHANGE\\n;[layer_z]\\n\\n"
+    },
+    "between_objects_gcode": {
+      "1.4.4": ""
+    },
+    "color_change_gcode": {
+      "1.4.4": ""
+    },
+    "extruder_colour": {
+      "1.4.4": "#FD8309;#E1E1E1"
+    },
+    "extruder_offset": {
+      "1.4.4": "0x0,0x0"
+    },
+    "gcode_flavor": {
+      "1.4.4": "marlin"
+    },
+    "layer_gcode": {
+      "1.4.4": ";AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "machine_limits_usage": {
+      "1.4.4": "time_estimate_only"
+    },
+    "nozzle_diameter": {
+      "1.4.4": "0.50"
+    },
+    "octoprint_apikey": {
+      "1.4.4": ""
+    },
+    "octoprint_host": {
+      "1.4.4": ""
+    },
+    "pause_print_gcode": {
+      "1.4.4": "M601"
+    },
+    "printer_notes": {
+      "1.4.4": "Dont remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_MAKERGEAR\\nPRINTER_MODEL_MAKERGEAR_M3_ID_1_DUPLICATION\\n"
+    },
+    "printer_settings_id": {
+      "1.4.4": "MakerGear M3 Independent Dual Rev.1 0.50 Nozzle (Duplication Mode)"
+    },
+    "printer_technology": {
+      "1.4.4": "FFF"
+    },
+    "remaining_times": {
+      "1.4.4": "0"
+    },
+    "retract_length": {
+      "1.4.4": "2"
+    },
+    "serial_port": {
+      "1.4.4": ""
+    },
+    "serial_speed": {
+      "1.4.4": "115200"
+    },
+    "slient_mode": {
+      "1.4.4": "0"
+    },
+    "use_firmware_retraction": {
+      "1.4.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.4.4": "0"
+    },
+    "use_volumetric_e": {
+      "1.4.4": "0"
+    },
+    "variable_layer_height": {
+      "1.4.4": "0"
+    },
+    "bed_shape": {
+      "1.4.4": "0x0,100x0,100x251,0x251"
+    },
+    "default_filament_profile": {
+      "1.4.4": "\"MakerGear PLA @MakerGear\""
+    },
+    "default_print_profile": {
+      "1.4.4": "0.20mm Quality @0.50 nozzle MakerGear"
+    },
+    "end_gcode": {
+      "1.4.4": "M605 S0 ; set to full independent control\\nM104 S0 ; turn off extruder\\nM104 S0 T0 ; turn off extruder\\nM104 S0 T1 ; turn off extruder\\nM140 S0 ; turn off bed\\nM106 S0 ; turn off cooling fan\\nG91 ; relative mode\\nG1 Z20 ; move Z down 20mm if possible Max endstop will catch it if it is to far\\nG90 ;  absolute mode\\nG28 X ; home tools\\nT0 ; default tool should always be T0\\nG1 Y230 F10000 ; move build plate out\\nM84 ; disable motors"
+    },
+    "extruders_count": {
+      "1.4.4": "1"
+    },
+    "host_type": {
+      "1.4.4": "octoprint"
+    },
+    "machine_max_acceleration_e": {
+      "1.4.4": "2000, 2000"
+    },
+    "machine_max_acceleration_extruding": {
+      "1.4.4": "1000, 1000"
+    },
+    "machine_max_acceleration_retracting": {
+      "1.4.4": "2000, 2000"
+    },
+    "machine_max_acceleration_x": {
+      "1.4.4": "1200, 1200"
+    },
+    "machine_max_acceleration_y": {
+      "1.4.4": "1200, 1200"
+    },
+    "machine_max_acceleration_z": {
+      "1.4.4": "10, 10"
+    },
+    "machine_max_feedrate_e": {
+      "1.4.4": "30, 30"
+    },
+    "machine_max_feedrate_x": {
+      "1.4.4": "300, 300"
+    },
+    "machine_max_feedrate_y": {
+      "1.4.4": "300, 300"
+    },
+    "machine_max_feedrate_z": {
+      "1.4.4": "10, 10"
+    },
+    "machine_max_jerk_e": {
+      "1.4.4": "10, 10"
+    },
+    "machine_max_jerk_x": {
+      "1.4.4": "5, 5"
+    },
+    "machine_max_jerk_y": {
+      "1.4.4": "5, 5"
+    },
+    "machine_max_jerk_z": {
+      "1.4.4": "1, 1"
+    },
+    "max_layer_height": {
+      "1.4.4": "0.35"
+    },
+    "max_print_height": {
+      "1.4.4": "200"
+    },
+    "printer_model": {
+      "1.4.4": "MAKERGEAR_M3_ID_1_DUPLICATION"
+    },
+    "printer_variant": {
+      "1.4.4": "0.50"
+    },
+    "retract_length_toolchange": {
+      "1.4.4": "4,4"
+    },
+    "start_gcode": {
+      "1.4.4": ";M3 ID Duplication Mode startup script\\nM211 S1 ; turn on soft endstops to protect the machine\\nM605 S0 ; set to full independent control on x axes\\nG28 XYZ ; home without mesh level compensation\\n\\n; Set hotend temperature\\nM104 T0 S{first_layer_temperature[0]}\\nM104 T1 S{first_layer_temperature[0]}\\n\\n; Wait for hotend's to reach temperature\\nM109 T0 S{first_layer_temperature[0]}\\nM109 T1 S{first_layer_temperature[0]}\\n\\nT0 ; Make sure we're on T0\\nM605 S2 R0 X100 ; set X to duplication mode 0 temperature difference 100 X difference\\nG28 X ; home x axes to engange mode\\nM211 S0 ; turn off soft endstops to let us move to back of the bed\\nG1 X20 F1000 ; move to start x position\\nG1 Y243 Z0.1 F10000 ; move off the bed and bring the bed up\\nG92 E0 ; zero extruder\\nG1 Y240 Z0.1 F1000 ; scrape off any ooze\\nG1 Z0.30 F1000 ; lift\\nG1 X80 E9.25 ; lift F1000 ; deposit extrusion line\\nG1 Y239  E9.45 F1000 ; move  and extrude y\\nG1 X30 E17.05 ; lift F1000 ; deposit extrusion line\\nG1 X20 Z0.05 F1000 ; wipe off tail\\nG1 Z10 Y223 ; lift to avoid clips and move back to safe bounds\\nM400 ; wait for moves to finish before proceeding so that T1 doesn't get caught in a deadzone when switching back to Soft endstops on \\n;\\n;\\nM211 S0 ; turn off soft endstops  \\nG92 E0; zero extruder"
+    },
+    "toolchange_gcode": {
+      "1.4.4": "{if next_extruder == 0}\\nT1 ; makes sure T1 is active\\nG90 ; switch into absolute mode\\nG1 X252\\nT0\\n{endif}\\n\\n{if next_extruder == 1}\\nT0 ; makes sure T0 is active\\nG90 ; switch into absolute mode\\nG1 X-20.77\\nT1\\n{endif}\\n"
+    },
+    "min_layer_height": {
+      "1.4.4": "0.1"
+    }
+  }
+}

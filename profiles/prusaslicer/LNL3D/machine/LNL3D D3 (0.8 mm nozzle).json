@@ -1,0 +1,202 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "LNL3D D3 (0.8 mm nozzle)",
+  "vendor": "LNL3D",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "before_layer_gcode": {
+      "3.0.0": ";BEFORE_LAYER_CHANGE\\nG92 E0\\n;{layer_z}\\n\\n"
+    },
+    "between_objects_gcode": {
+      "3.0.0": ""
+    },
+    "pause_print_gcode": {
+      "3.0.0": ""
+    },
+    "deretract_speed": {
+      "3.0.0": "40,40"
+    },
+    "extruder_colour": {
+      "3.0.0": "#FCE94F;#FCE94F"
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0,0x0"
+    },
+    "gcode_flavor": {
+      "3.0.0": "marlin"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "remaining_times": {
+      "3.0.0": "0"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "5000"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "500"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "1000"
+    },
+    "machine_max_acceleration_travel": {
+      "3.0.0": "500"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "500"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "500"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "100"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "60"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "500"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "500"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "5"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "8"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "8"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "0.4"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "time_estimate_only"
+    },
+    "layer_gcode": {
+      "3.0.0": ";AFTER_LAYER_CHANGE\\n;{layer_z}"
+    },
+    "printer_notes": {
+      "3.0.0": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_LNL3D\\nPRINTER_MODEL_LNL3D_D3\\nPRINTER_HAS_ULTRADETAIL\\nPRINTER_HAS_HIGHSPEED\\nPRINTER_HAS_SUPERSPEED"
+    },
+    "printer_settings_id": {
+      "3.0.0": "LNL3D D3 (0.8 mm nozzle)"
+    },
+    "retract_before_travel": {
+      "3.0.0": "2,2"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "70%,70%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1,1"
+    },
+    "retract_length": {
+      "3.0.0": "1,1"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "1,1"
+    },
+    "retract_lift": {
+      "3.0.0": "0,0"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0.3,0.3"
+    },
+    "retract_lift_below": {
+      "3.0.0": "0,0"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0,0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0,0"
+    },
+    "retract_speed": {
+      "3.0.0": "60,60"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "toolchange_gcode": {
+      "3.0.0": "(if current extruder ==0}\\nG1 F1800\\n{if current_extruder ==1}\\nG1 F1800\\n{endif}"
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "1"
+    },
+    "wipe": {
+      "3.0.0": "1,1"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    },
+    "printer_model": {
+      "3.0.0": "LNL3D_D3"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "5"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "36"
+    },
+    "default_filament_profile": {
+      "3.0.0": "\"Generic PLA @LNL3D\""
+    },
+    "start_gcode": {
+      "3.0.0": "G21                                        ; Metric values\\nG90                                        ; Absolute positioning\\nM82                                        ; Set extruder to absolute mode\\nM107                                       ; Start with the fan off\\nG28                                        ; Move to min endstops\\nG92 E0                                     ; Reset extruder\\nG1 Z15.0 F3000                             ; Move the header up 15mm\\nM117 Final warmup                          ; LCD message\\nM140 S[first_layer_bed_temperature]        ; Set bed temp\\nM190 S{first_layer_bed_temperature[0] - 5} ; Wait for bed temp-5\\nM104 S[first_layer_temperature]            ; Heat extruder rest of the way after heatbed\\nM109 S[first_layer_temperature]            ; Wait for extruder temp\\nG1 X40 Y5 Z4 F5000.0                       ; Move to position to prevent hitting clamps or bed\\nG1 X50 Y5 Z0.3 F5000.0                     ; Move to start position\\nG1 X110 Y5 Z0.3 F1500.0 E15                ; First purge line\\nG1 X70 Y5 Z0.3 F1500.0 E8                  ; Second pass\\nM117 Printing...                           ; LCD message\\n"
+    },
+    "end_gcode": {
+      "3.0.0": "M104 T0 S0                   ;left extruder heater off\\nM104 T1 S0                   ;right extruder heater off\\nM140 S0                      ;heated bed heater off (if you have it)\\nG91                          ;relative positioning\\nG1 E-1 F300                  ;retract the filament a bit before lifting the nozzle, to release some of the pressure\\nG1 Z+0.5 E-5 X-20 Y-20 F9000 ;move Z up a bit and retract filament even more\\nG28 X0 Y0                    ;move X/Y to min endstops, so the head is out of the way\\nM84                          ;steppers off\\nG90                          ;absolute positioning"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,300x0,300x300,0x300"
+    },
+    "max_print_height": {
+      "3.0.0": "350"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.8,0.8"
+    },
+    "printer_variant": {
+      "3.0.0": "0.8"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.08,0.08"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.48,0.48"
+    },
+    "default_print_profile": {
+      "3.0.0": "\"0.36 mm CHUNKY (0.8 mm nozzle) @LNL3D\""
+    }
+  }
+}

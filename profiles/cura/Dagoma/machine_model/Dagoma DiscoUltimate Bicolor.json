@@ -1,0 +1,74 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Dagoma DiscoUltimate Bicolor",
+  "vendor": "Dagoma",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Dagoma DiscoUltimate Bicolor"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "dagoma_disco"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Dagoma"
+    },
+    "manufacturer": {
+      "2026-02-25": "Dagoma"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "dagoma_discoultimate_bicolor.3mf"
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "dagoma_discoultimate_extruder_0",
+        "1": "dagoma_discoultimate_extruder_1"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        -58.5,
+        -11
+      ]
+    },
+    "preferred_material": {
+      "2026-02-25": "chromatik_pla"
+    },
+    "machine_end_gcode": {
+      "2026-02-25": ";Begin End Gcode for Dagoma DiscoUltimate Bicolor\n\nM106 S255 ;Fan on full\nM104 S0 ;Cool hotend\nM140 S0 ;Cool heated bed\nG91 ;Relative positioning\nG1 E-3 F5000 ;Retract filament to stop oozing\nG1 E-60 F5000 ;Retract filament multi-extruder\nG0 Z+3 ;Withdraw\nG90 ; Absolute positioning\nG28 X Y ;Home\nM109 R{material_standby_temperature} ;Wait until head has cooled to standby temp\nM107 ;Fan off\nM18 ;Stepper motors off\n\n;Finish End Gcode for Dagoma DiscoUltimate Bicolor\n"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_extruders_share_heater": {
+      "2026-02-25": true
+    },
+    "machine_name": {
+      "2026-02-25": "Dagoma DiscoUltimate Bicolor"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ";Begin Start Gcode for Dagoma DiscoUltimate Bicolor\n;Sliced: {date} {time}\n;Initial extruder: {initial_extruder_nr}\n\nG90 ;Absolute positioning\nM106 S255 ;Fan on full\nG28 X Y ;Home stop X Y\nG1 X100 ;Centre back during cooldown in case of oozing\nM109 R{material_standby_temperature} ;Cooldown in case too hot\nG28 ;Centre\nG29 ;Auto-level\nM104 S{material_print_temperature_layer_0} ;Pre-heat\nM107 ;Fan off\nG0 X100 Y5 Z0.5 ;Front centre for degunk\nM109 S{material_print_temperature_layer_0} ;Wait for initial temp\n;M83 ;E Relative\n;G1 E60 F3000 ;Reverse multi-extruder retract\n;G1 E10 F200 ;Degunk\n;G1 E-3 F5000 ;Retract\nG0 Z3 ;Withdraw\n;M82 ;E absolute\n;G92 E0 ;E reset\n;G1 F6000 ;Set feedrate\n\n;Finish Start Gcode for Dagoma DiscoUltimate Bicolor\n"
+    }
+  }
+}

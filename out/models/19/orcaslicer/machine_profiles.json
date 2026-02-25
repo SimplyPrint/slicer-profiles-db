@@ -1,0 +1,339 @@
+[
+    {
+        "vendor": "Folgertech",
+        "machine_model": {
+            "type": "machine_model",
+            "name": "Folgertech FT-5",
+            "model_id": "FT-5",
+            "nozzle_diameter": "0.4;0.6",
+            "machine_tech": "FFF",
+            "family": "Folgertech",
+            "bed_model": "sha256:5eaaa8f7b617fe07337785815fa19d2240c292d5fd1de8dd918f66d447a7708e",
+            "bed_texture": "sha256:90b82e3f0e184f1141c5c108ed223ed66f9de3402bbb95bf8d7a400bfdf932ad",
+            "hotend_model": "sha256:ddc23390ee63a855412e547cc264dbec04193a0224699b9a7b9dd70064780058",
+            "default_materials": "Generic PLA @System;Generic PETG @System;Generic ABS @System;"
+        },
+        "variants": {
+            "0.4": {
+                "name": "Folgertech FT-5 0.4 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "Folgertech FT-5 0.4 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "printer_technology": "FFF",
+                    "deretraction_speed": [
+                        "40"
+                    ],
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "gcode_flavor": "marlin",
+                    "silent_mode": "0",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "1000",
+                        "1000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "3000",
+                        "3000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "3000",
+                        "3000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "100",
+                        "100"
+                    ],
+                    "machine_max_speed_e": [
+                        "60",
+                        "60"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "10",
+                        "10"
+                    ],
+                    "machine_max_jerk_e": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "8",
+                        "8"
+                    ],
+                    "machine_max_jerk_y": [
+                        "8",
+                        "8"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.4",
+                        "0.4"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.32"
+                    ],
+                    "min_layer_height": [
+                        "0.08"
+                    ],
+                    "printable_height": "400",
+                    "extruder_clearance_radius": "47",
+                    "extruder_clearance_height_to_rod": "34",
+                    "extruder_clearance_height_to_lid": "34",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "printer_settings_id": "",
+                    "printer_variant": "0.4",
+                    "retraction_minimum_travel": [
+                        "2"
+                    ],
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "4.5"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "40"
+                    ],
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_lift_type": "NormalLift",
+                    "default_print_profile": "0.20mm Standard @FT",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "machine_start_gcode": "G28 ; Home all axis\nG1 X0 Y5 Z0.2 F3000 ; Get ready to prime\nG92 E0 ; Reset extrusion distance\nG1 X250 E20 F600 ; Prime nozzle",
+                    "machine_end_gcode": "M140 S0 ; turn off heatbed\nM104 S0 ; turn off temperature\nM107 ; turn off fan\nG28 X Y ; Home X and Y axis\nM84 X Y E ; disable motors",
+                    "machine_max_acceleration_travel": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_pause_gcode": "M25 ;pause print",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "layer_change_gcode": "",
+                    "scan_first_layer": "0",
+                    "nozzle_type": "undefine",
+                    "auxiliary_fan": "0",
+                    "setting_id": "GM001",
+                    "printer_model": "Folgertech FT-5",
+                    "printable_area": [
+                        "0x0",
+                        "300x0",
+                        "300x300",
+                        "0x300"
+                    ]
+                }
+            },
+            "0.6": {
+                "name": "Folgertech FT-5 0.6 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "Folgertech FT-5 0.6 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "printer_technology": "FFF",
+                    "deretraction_speed": [
+                        "40"
+                    ],
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "gcode_flavor": "marlin",
+                    "silent_mode": "0",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "1000",
+                        "1000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "3000",
+                        "3000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "3000",
+                        "3000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "100",
+                        "100"
+                    ],
+                    "machine_max_speed_e": [
+                        "60",
+                        "60"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "10",
+                        "10"
+                    ],
+                    "machine_max_jerk_e": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "8",
+                        "8"
+                    ],
+                    "machine_max_jerk_y": [
+                        "8",
+                        "8"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.4",
+                        "0.4"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.32"
+                    ],
+                    "min_layer_height": [
+                        "0.08"
+                    ],
+                    "printable_height": "400",
+                    "extruder_clearance_radius": "47",
+                    "extruder_clearance_height_to_rod": "34",
+                    "extruder_clearance_height_to_lid": "34",
+                    "nozzle_diameter": [
+                        "0.6"
+                    ],
+                    "printer_settings_id": "",
+                    "printer_variant": "0.6",
+                    "retraction_minimum_travel": [
+                        "2"
+                    ],
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "4.5"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "40"
+                    ],
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_lift_type": "NormalLift",
+                    "default_print_profile": "0.30mm Standard @FT 0.6 Nozzle",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "machine_start_gcode": "G28 ; Home all axis\nG1 X0 Y5 Z0.2 F3000 ; Get ready to prime\nG92 E0 ; Reset extrusion distance\nG1 X250 E20 F600 ; Prime nozzle",
+                    "machine_end_gcode": "M140 S0 ; turn off heatbed\nM104 S0 ; turn off temperature\nM107 ; turn off fan\nG28 X Y ; Home X and Y axis\nM84 X Y E ; disable motors",
+                    "machine_max_acceleration_travel": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_pause_gcode": "M25 ;pause print",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "layer_change_gcode": "",
+                    "scan_first_layer": "0",
+                    "nozzle_type": "undefine",
+                    "auxiliary_fan": "0",
+                    "setting_id": "GM001",
+                    "printer_model": "Folgertech FT-5",
+                    "printable_area": [
+                        "0x0",
+                        "300x0",
+                        "300x300",
+                        "0x300"
+                    ]
+                }
+            }
+        }
+    }
+]

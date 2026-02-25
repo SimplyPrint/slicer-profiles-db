@@ -1,0 +1,121 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "MP Mini Delta V2",
+  "vendor": "Monoprice",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "MP Mini Delta V2"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "mpminidelta subreddit"
+    },
+    "manufacturer": {
+      "2026-02-25": "Monoprice"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "mp_mini_delta_platform.3mf"
+    },
+    "has_machine_materials": {
+      "2026-02-25": false
+    },
+    "has_machine_quality": {
+      "2026-02-25": false
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "has_variant_materials": {
+      "2026-02-25": false
+    },
+    "has_variants": {
+      "2026-02-25": false
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "mp_mini_delta_v2_extruder_0"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        0,
+        0
+      ]
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "supports_usb_connection": {
+      "2026-02-25": true
+    },
+    "line_width": {
+      "2026-02-25": "round(machine_nozzle_size, 2)"
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": true
+    },
+    "machine_depth": {
+      "2026-02-25": 110
+    },
+    "machine_end_gcode": {
+      "2026-02-25": ";(**** end.gcode for MP Mini Delta V2****)\nG28;(Stick out the part)\nM190 S0;(Turn off heat bed, don't wait.)\nG92 E10;(Set extruder to 10)\nG1 E7 F200;(retract 3mm)\nM104 S0;(Turn off nozzle, don't wait)\nG4 S300;(Delay 5 minutes)\nM107;(Turn off part fan)\nM84;(Turn off stepper motors.)"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 120
+    },
+    "machine_nozzle_size": {
+      "2026-02-25": 0.4
+    },
+    "machine_shape": {
+      "2026-02-25": "elliptic"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ";(**** start.gcode for MP Mini Delta V2****)\nG21\nG90\nM82\nM107\nM104 S170\nG28 X0 Y0\nG28 Z0\nG29 Z0.4\nG1 Z15 F300\nM109 S{material_print_temperature_layer_0}\nG92 E0\nG1 F200 E3\nG92 E0\nG1 F2000\n"
+    },
+    "machine_width": {
+      "2026-02-25": 110
+    },
+    "material_bed_temperature": {
+      "2026-02-25": 40
+    },
+    "material_print_temp_prepend": {
+      "2026-02-25": false
+    },
+    "retract_at_layer_change": {
+      "2026-02-25": true
+    },
+    "retraction_amount": {
+      "2026-02-25": 5
+    },
+    "retraction_hop_enabled": {
+      "2026-02-25": false
+    },
+    "retraction_speed": {
+      "2026-02-25": 28
+    }
+  }
+}

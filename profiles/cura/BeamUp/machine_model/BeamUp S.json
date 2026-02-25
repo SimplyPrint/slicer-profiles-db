@@ -1,0 +1,91 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "BeamUp S",
+  "vendor": "BeamUp",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "BeamUp S"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "BeamUp"
+    },
+    "manufacturer": {
+      "2026-02-25": "BeamUp"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "beamup_s.3mf"
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "beamup_s_extruder_0"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        -5,
+        -10
+      ]
+    },
+    "gantry_height": {
+      "2026-02-25": "0"
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 180
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "G28 ; home\nM104 S0 ; turn off\n M140 S0 ; turn off\nM84 ; disable motors\nM107 ; fan off"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_heated_bed": {
+      "2026-02-25": false
+    },
+    "machine_height": {
+      "2026-02-25": 130
+    },
+    "machine_name": {
+      "2026-02-25": "BeamUp S"
+    },
+    "machine_nozzle_cool_down_speed": {
+      "2026-02-25": 2
+    },
+    "machine_nozzle_heat_up_speed": {
+      "2026-02-25": 2
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G28 ; home\nG29 ; level\nM80 ; led\nG1 Z15.0 F6000\nT0\nG92 E0.0000\nG1 E-1.4500 F1800\nG1 X5 Y0 Z0.300 F6000\nM300 S3000 P300\nG1 E1.0000 F1800\nG92 E0.0000\nG1 X180 Y0 E15 F662"
+    },
+    "machine_width": {
+      "2026-02-25": 200
+    }
+  }
+}

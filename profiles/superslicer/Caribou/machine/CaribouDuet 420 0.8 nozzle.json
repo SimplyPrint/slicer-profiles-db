@@ -1,0 +1,220 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "machine",
+  "name": "CaribouDuet 420 0.8 nozzle",
+  "vendor": "Caribou",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "1.4.4": "FFF"
+    },
+    "bed_shape": {
+      "1.4.4": "0x0,250x0,250x210,0x210"
+    },
+    "before_layer_gcode": {
+      "1.4.4": ";BEFORE_LAYER_CHANGE\\nG92 E0.0\\n;[layer_z]\\n\\n"
+    },
+    "between_objects_gcode": {
+      "1.4.4": ""
+    },
+    "deretract_speed": {
+      "1.4.4": "0"
+    },
+    "end_gcode": {
+      "1.4.4": "G4 ; wait\\nM104 S0 ; turn off temperature\\nM140 S0 ; turn off heatbed\\nM107 ; turn off fan\\n{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+30, max_print_height)}{endif} ; Move print head up\\nG1 X0 Y200 F3000 ; home X axis\\nM84 ; disable motors"
+    },
+    "extruder_offset": {
+      "1.4.4": "0x0"
+    },
+    "gcode_flavor": {
+      "1.4.4": "reprapfirmware"
+    },
+    "silent_mode": {
+      "1.4.4": "1"
+    },
+    "remaining_times": {
+      "1.4.4": "1"
+    },
+    "machine_max_acceleration_e": {
+      "1.4.4": "5000,5000"
+    },
+    "machine_max_acceleration_extruding": {
+      "1.4.4": "1250,1250"
+    },
+    "machine_max_acceleration_retracting": {
+      "1.4.4": "1250,1250"
+    },
+    "machine_max_acceleration_x": {
+      "1.4.4": "1000,960"
+    },
+    "machine_max_acceleration_y": {
+      "1.4.4": "1000,960"
+    },
+    "machine_max_acceleration_z": {
+      "1.4.4": "200,200"
+    },
+    "machine_max_feedrate_e": {
+      "1.4.4": "120,120"
+    },
+    "machine_max_feedrate_x": {
+      "1.4.4": "200,100"
+    },
+    "machine_max_feedrate_y": {
+      "1.4.4": "200,100"
+    },
+    "machine_max_feedrate_z": {
+      "1.4.4": "12,12"
+    },
+    "machine_max_jerk_e": {
+      "1.4.4": "4.5,4.5"
+    },
+    "machine_max_jerk_x": {
+      "1.4.4": "8,8"
+    },
+    "machine_max_jerk_y": {
+      "1.4.4": "8,8"
+    },
+    "machine_max_jerk_z": {
+      "1.4.4": "0.4,0.4"
+    },
+    "machine_min_extruding_rate": {
+      "1.4.4": "0,0"
+    },
+    "machine_min_travel_rate": {
+      "1.4.4": "0,0"
+    },
+    "layer_gcode": {
+      "1.4.4": ";AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "max_layer_height": {
+      "1.4.4": "0.64"
+    },
+    "min_layer_height": {
+      "1.4.4": "0.2"
+    },
+    "max_print_height": {
+      "1.4.4": "417"
+    },
+    "nozzle_diameter": {
+      "1.4.4": "0.8"
+    },
+    "octoprint_apikey": {
+      "1.4.4": ""
+    },
+    "octoprint_host": {
+      "1.4.4": ""
+    },
+    "printer_notes": {
+      "1.4.4": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_CARIBOU3D\\nPRINTER_MODEL_DUET\\n"
+    },
+    "printer_settings_id": {
+      "1.4.4": "CaribouDuet 420 0.8 nozzle"
+    },
+    "retract_before_travel": {
+      "1.4.4": "1"
+    },
+    "retract_before_wipe": {
+      "1.4.4": "0%"
+    },
+    "retract_layer_change": {
+      "1.4.4": "1"
+    },
+    "retract_length": {
+      "1.4.4": "1"
+    },
+    "retract_length_toolchange": {
+      "1.4.4": "4"
+    },
+    "retract_lift": {
+      "1.4.4": "0.4"
+    },
+    "retract_lift_above": {
+      "1.4.4": "0"
+    },
+    "retract_lift_below": {
+      "1.4.4": "416"
+    },
+    "retract_restart_extra": {
+      "1.4.4": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "1.4.4": "0"
+    },
+    "retract_speed": {
+      "1.4.4": "25"
+    },
+    "serial_port": {
+      "1.4.4": ""
+    },
+    "serial_speed": {
+      "1.4.4": "250000"
+    },
+    "single_extruder_multi_material": {
+      "1.4.4": "0"
+    },
+    "start_gcode": {
+      "1.4.4": "G28 W ; home all without mesh bed level\\nG90 ; use absolute coordinates\\nM83 ; extruder relative mode\\nG0 X60 Y-3 Z80 ; move extruder above bed, keep extruder in front for cleaning and checking\\nM104 S160 T0; pre-heat extruder to 160C\\nM140 S[first_layer_bed_temperature] ; set bed temp\\nM190 S[first_layer_bed_temperature] ; wait for bed temp\\nG29 ; mesh bed leveling using defined mesh grid\\nG0 X0 Y-3 Z0.6 ; go outside print area\\nM104 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; wait for extruder temp\\nM109 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; wait for extruder temp\\nM98 P\"0:/sys/primeLine.g\"; execute primeline macro\\nG92 E0.0M572 D0 S0.07 ; set pressure advance"
+    },
+    "thumbnails": {
+      "1.4.4": "0x0,160x160"
+    },
+    "thumbnails_color": {
+      "1.4.4": "#107C18"
+    },
+    "thumbnails_custom_color": {
+      "1.4.4": "1"
+    },
+    "thumbnails_end_file": {
+      "1.4.4": "0"
+    },
+    "thumbnails_with_bed": {
+      "1.4.4": "1"
+    },
+    "thumbnails_format": {
+      "1.4.4": "QOI"
+    },
+    "thumbnails_tag_format": {
+      "1.4.4": "1"
+    },
+    "toolchange_gcode": {
+      "1.4.4": ""
+    },
+    "use_firmware_retraction": {
+      "1.4.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.4.4": "1"
+    },
+    "use_volumetric_e": {
+      "1.4.4": "0"
+    },
+    "variable_layer_height": {
+      "1.4.4": "1"
+    },
+    "wipe": {
+      "1.4.4": "1"
+    },
+    "z_offset": {
+      "1.4.4": "0"
+    },
+    "z_step": {
+      "1.4.4": "0.0025"
+    },
+    "printer_variant": {
+      "1.4.4": "0.8"
+    },
+    "default_print_profile": {
+      "1.4.4": "0.40mm QUALITY @0.8 nozzle Caribou"
+    },
+    "default_filament_profile": {
+      "1.4.4": "Prusament PLA @0.8 nozzle Caribou"
+    },
+    "printer_model": {
+      "1.4.4": "Caribou_Duet_420"
+    }
+  }
+}

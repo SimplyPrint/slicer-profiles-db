@@ -1,0 +1,296 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "filament",
+  "name": "Prusament PC-CF @XL",
+  "vendor": "Prusa",
+  "first_seen": "2.3.1",
+  "last_seen": "2.3.1",
+  "filament_id": "GFC98",
+  "setting_id": "GFSA04",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.3.1": "filament"
+    },
+    "name": {
+      "2.3.1": "Prusament PC-CF @XL"
+    },
+    "from": {
+      "2.3.1": "system"
+    },
+    "instantiation": {
+      "2.3.1": "true"
+    },
+    "cool_plate_temp": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "eng_plate_temp": {
+      "2.3.1": [
+        "110"
+      ]
+    },
+    "hot_plate_temp": {
+      "2.3.1": "105"
+    },
+    "cool_plate_temp_initial_layer": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "eng_plate_temp_initial_layer": {
+      "2.3.1": [
+        "110"
+      ]
+    },
+    "hot_plate_temp_initial_layer": {
+      "2.3.1": "100"
+    },
+    "overhang_fan_threshold": {
+      "2.3.1": [
+        "25%"
+      ]
+    },
+    "overhang_fan_speed": {
+      "2.3.1": [
+        "30"
+      ]
+    },
+    "slow_down_for_layer_cooling": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "close_fan_the_first_x_layers": {
+      "2.3.1": [
+        "4"
+      ]
+    },
+    "filament_end_gcode": {
+      "2.3.1": [
+        "; filament end gcode \n"
+      ]
+    },
+    "filament_flow_ratio": {
+      "2.3.1": [
+        "1.04"
+      ]
+    },
+    "reduce_fan_stop_start_freq": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "fan_cooling_layer_time": {
+      "2.3.1": [
+        "30"
+      ]
+    },
+    "filament_cost": {
+      "2.3.1": [
+        "20"
+      ]
+    },
+    "filament_density": {
+      "2.3.1": [
+        "1.04"
+      ]
+    },
+    "filament_deretraction_speed": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_diameter": {
+      "2.3.1": [
+        "1.75"
+      ]
+    },
+    "filament_max_volumetric_speed": {
+      "2.3.1": [
+        "8"
+      ]
+    },
+    "filament_minimal_purge_on_wipe_tower": {
+      "2.3.1": [
+        "15"
+      ]
+    },
+    "filament_retraction_minimum_travel": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_retract_before_wipe": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_retract_when_changing_layer": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_retraction_length": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_z_hop": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_retract_restart_extra": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_retraction_speed": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_settings_id": {
+      "2.3.1": [
+        ""
+      ]
+    },
+    "filament_soluble": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "filament_type": {
+      "2.3.1": [
+        "PC-CF"
+      ]
+    },
+    "filament_vendor": {
+      "2.3.1": [
+        "Generic"
+      ]
+    },
+    "filament_wipe": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "filament_wipe_distance": {
+      "2.3.1": [
+        "nil"
+      ]
+    },
+    "bed_type": {
+      "2.3.1": [
+        "Cool Plate"
+      ]
+    },
+    "nozzle_temperature_initial_layer": {
+      "2.3.1": [
+        "270"
+      ]
+    },
+    "full_fan_speed_layer": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "fan_max_speed": {
+      "2.3.1": [
+        "10"
+      ]
+    },
+    "fan_min_speed": {
+      "2.3.1": [
+        "10"
+      ]
+    },
+    "slow_down_min_speed": {
+      "2.3.1": [
+        "15"
+      ]
+    },
+    "slow_down_layer_time": {
+      "2.3.1": [
+        "20"
+      ]
+    },
+    "filament_start_gcode": {
+      "2.3.1": [
+        "; filament start gcode\nM900 K{if nozzle_diameter[0]==0.4}0.07{elsif nozzle_diameter[0]==0.3}0.09{elsif nozzle_diameter[0]==0.35}0.08{elsif nozzle_diameter[0]==0.6}0.04{elsif nozzle_diameter[0]==0.5}0.05{elsif nozzle_diameter[0]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*PRINTER_MODEL_XLIS.*/}\nM572 S{if nozzle_diameter[0]==0.4}0.05{elsif nozzle_diameter[0]==0.5}0.035{elsif nozzle_diameter[0]==0.6}0.025{elsif nozzle_diameter[0]==0.8}0.016{elsif nozzle_diameter[0]==0.25}0.14{elsif nozzle_diameter[0]==0.3}0.09{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S45 ; set heatbreak target temp"
+      ]
+    },
+    "nozzle_temperature": {
+      "2.3.1": "285"
+    },
+    "temperature_vitrification": {
+      "2.3.1": [
+        "140"
+      ]
+    },
+    "filament_id": {
+      "2.3.1": "GFC98"
+    },
+    "idle_temperature": {
+      "2.3.1": "0"
+    },
+    "nozzle_temperature_range_low": {
+      "2.3.1": [
+        "260"
+      ]
+    },
+    "nozzle_temperature_range_high": {
+      "2.3.1": [
+        "280"
+      ]
+    },
+    "setting_id": {
+      "2.3.1": "GFSA04"
+    },
+    "nozzle_temperature_intial_layer": {
+      "2.3.1": "285"
+    },
+    "filament_loading_speed_start": {
+      "2.3.1": "19"
+    },
+    "filament_loading_speed": {
+      "2.3.1": "14"
+    },
+    "filament_unloading_speed_start": {
+      "2.3.1": "100"
+    },
+    "filament_unloading_speed": {
+      "2.3.1": "20"
+    },
+    "filament_load_time": {
+      "2.3.1": "15"
+    },
+    "filament_unload_time": {
+      "2.3.1": "12"
+    },
+    "filament_cooling_moves": {
+      "2.3.1": "5"
+    },
+    "filament_cooling_initial_speed": {
+      "2.3.1": "10"
+    },
+    "filament_cooling_final_speed": {
+      "2.3.1": "50"
+    },
+    "filament_retract_lift_below": {
+      "2.3.1": "1.5"
+    },
+    "compatible_printers": {
+      "2.3.1": [
+        "Prusa XL 0.25 nozzle",
+        "Prusa XL 0.3 nozzle",
+        "Prusa XL 0.4 nozzle",
+        "Prusa XL 0.5 nozzle",
+        "Prusa XL 0.6 nozzle",
+        "Prusa XL 0.8 nozzle"
+      ]
+    }
+  }
+}

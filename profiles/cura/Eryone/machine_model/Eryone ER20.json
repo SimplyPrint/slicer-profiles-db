@@ -1,0 +1,269 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Eryone ER20",
+  "vendor": "Eryone",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Eryone ER20"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Eryone3d"
+    },
+    "manufacturer": {
+      "2026-02-25": "Eryone"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "eryone_er20_plateform.stl"
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "eryone_er20_extruder_0"
+      }
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "high"
+    },
+    "acceleration_enabled": {
+      "2026-02-25": true
+    },
+    "acceleration_travel": {
+      "2026-02-25": 1800
+    },
+    "adhesion_type": {
+      "2026-02-25": "'brim'"
+    },
+    "bottom_layers": {
+      "2026-02-25": "4"
+    },
+    "bottom_thickness": {
+      "2026-02-25": "layer_height * 4"
+    },
+    "brim_width": {
+      "2026-02-25": 5
+    },
+    "cool_fan_full_at_height": {
+      "2026-02-25": 0.5
+    },
+    "cool_fan_speed": {
+      "2026-02-25": 100
+    },
+    "cool_fan_speed_0": {
+      "2026-02-25": 100
+    },
+    "default_material_bed_temperature": {
+      "2026-02-25": 60
+    },
+    "default_material_print_temperature": {
+      "2026-02-25": 205
+    },
+    "gantry_height": {
+      "2026-02-25": "0"
+    },
+    "infill_before_walls": {
+      "2026-02-25": false
+    },
+    "infill_overlap": {
+      "2026-02-25": "25 if infill_sparse_density < 95 and infill_pattern != 'concentric' else 0"
+    },
+    "infill_pattern": {
+      "2026-02-25": "'grid'"
+    },
+    "infill_sparse_density": {
+      "2026-02-25": 20
+    },
+    "initial_layer_line_width_factor": {
+      "2026-02-25": 105
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 220
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "G91 ;Relative positioning\nG1 Z5 F720 ;Raise Z\nG1 E-5 F300 ;Retract a bit to protect nozzle\nM104 S0 ;Turn off extruder\nM140 S0 ;Turn off bed\nM107 ;Turn off all fans\nG90 ;Absolute positioning\nG1 X230 Y200 F4800 ;Parking the hotend\nM84 X Y E ;All steppers off but left Z\n"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -10,
+          -10
+        ],
+        [
+          -10,
+          10
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          10,
+          -10
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 200
+    },
+    "machine_name": {
+      "2026-02-25": "Eryone ER20"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G21 ;Metric values\nG90 ;Absolute positioning\nM82 ;Set extruder to absolute mode\nM107 ;Start with the fan off\nG28 ;Homing the hotend\nG29 ;Auto bed leveling detecting\nG92 E0 ;Reset the extruded length\nG1 F200 E3 ;Extrude 3mm of filament\nG92 E0 ;Reset the extruded length again\nG1 Y-3 F1200 ;Move y axis to prime\nG1 X150 F6000 ;Move x axis to prime\nG1 Z0.2 F720 ;Move z axis to prime\nG1 X80.0 E8.0 F900 ;Prime line\nG1 X20.0 E10.0 F700 ;Prime line\nG92 E0 ;Reset the extruded length\nG5 ;Enable resume from power failure\nM117 Printing...\n"
+    },
+    "machine_width": {
+      "2026-02-25": 250
+    },
+    "material_bed_temperature_layer_0": {
+      "2026-02-25": 65
+    },
+    "material_final_print_temperature": {
+      "2026-02-25": 205
+    },
+    "material_initial_print_temperature": {
+      "2026-02-25": 205
+    },
+    "material_print_temperature_layer_0": {
+      "2026-02-25": 215
+    },
+    "optimize_wall_printing_order": {
+      "2026-02-25": true
+    },
+    "retract_at_layer_change": {
+      "2026-02-25": true
+    },
+    "retraction_amount": {
+      "2026-02-25": 4
+    },
+    "retraction_combing": {
+      "2026-02-25": "'noskin'"
+    },
+    "retraction_hop": {
+      "2026-02-25": 0.075
+    },
+    "retraction_hop_enabled": {
+      "2026-02-25": false
+    },
+    "retraction_hop_only_when_collides": {
+      "2026-02-25": true
+    },
+    "retraction_min_travel": {
+      "2026-02-25": 1.5
+    },
+    "retraction_prime_speed": {
+      "2026-02-25": "math.ceil(retraction_speed * 0.4)"
+    },
+    "retraction_speed": {
+      "2026-02-25": 85
+    },
+    "skin_overlap": {
+      "2026-02-25": 10
+    },
+    "skirt_brim_speed": {
+      "2026-02-25": 40
+    },
+    "skirt_gap": {
+      "2026-02-25": 5
+    },
+    "skirt_line_count": {
+      "2026-02-25": 3
+    },
+    "smooth_spiralized_contours": {
+      "2026-02-25": false
+    },
+    "speed_layer_0": {
+      "2026-02-25": "20"
+    },
+    "speed_topbottom": {
+      "2026-02-25": "math.ceil(speed_print * 20 / 50)"
+    },
+    "speed_travel": {
+      "2026-02-25": "150"
+    },
+    "speed_wall": {
+      "2026-02-25": "speed_print"
+    },
+    "speed_wall_0": {
+      "2026-02-25": "math.ceil(speed_print * 30 / 50)"
+    },
+    "speed_wall_x": {
+      "2026-02-25": "speed_print"
+    },
+    "support_angle": {
+      "2026-02-25": 50
+    },
+    "support_enable": {
+      "2026-02-25": false
+    },
+    "support_interface_enable": {
+      "2026-02-25": true
+    },
+    "support_pattern": {
+      "2026-02-25": "'triangles'"
+    },
+    "support_roof_enable": {
+      "2026-02-25": true
+    },
+    "support_type": {
+      "2026-02-25": "'everywhere'"
+    },
+    "support_xy_distance": {
+      "2026-02-25": 0.7
+    },
+    "support_xy_distance_overhang": {
+      "2026-02-25": 0.2
+    },
+    "support_z_distance": {
+      "2026-02-25": 0.3
+    },
+    "top_layers": {
+      "2026-02-25": "5"
+    },
+    "top_thickness": {
+      "2026-02-25": "layer_height * 5"
+    },
+    "travel_retract_before_outer_wall": {
+      "2026-02-25": true
+    },
+    "wall_line_count": {
+      "2026-02-25": 3
+    },
+    "wall_thickness": {
+      "2026-02-25": "1.2"
+    },
+    "z_seam_corner": {
+      "2026-02-25": "'z_seam_corner_inner'"
+    },
+    "z_seam_type": {
+      "2026-02-25": "'shortest'"
+    }
+  }
+}

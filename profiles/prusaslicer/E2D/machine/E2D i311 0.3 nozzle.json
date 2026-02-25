@@ -1,0 +1,169 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "E2D i311 0.3 nozzle",
+  "vendor": "E2D",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "gcode_flavor": {
+      "3.0.0": "marlin2"
+    },
+    "silent_mode": {
+      "3.0.0": "1"
+    },
+    "variable_layer_height": {
+      "3.0.0": "1"
+    },
+    "before_layer_gcode": {
+      "3.0.0": ";BEFORE_LAYER_CHANGE\\nG92 E0.0\\n;[layer_z]\\n\\n"
+    },
+    "layer_gcode": {
+      "3.0.0": ";AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "time_estimate_only"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "40"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "20"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,220x0,220x220,0x220"
+    },
+    "max_print_height": {
+      "3.0.0": "200"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "200,150"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "200,150"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "8,8"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "20,20"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "2000,1500"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "2000,2500"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "100,100"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "4000,2500"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "1200,1200"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "10000,20000"
+    },
+    "machine_max_acceleration_travel": {
+      "3.0.0": "4000,2500"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "10,10"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "10,10"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "0.3,0.3"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "5.0,5.0"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0,0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0,0"
+    },
+    "start_gcode": {
+      "3.0.0": "G90 ; use absolute coordinates\\nM83 ; extruder relative mode\\nM104 S[first_layer_temperature] ; set extruder temp\\nM140 S[first_layer_bed_temperature] ; set bed temp\\nG28 ; home all\\nG29; Detailed Z-Probe\\n;M420 S1; Bed Leveling State\\nG1 Z3 F240\\nG1 X-5 Y2 F3000\\nM190 S[first_layer_bed_temperature] ; wait for bed temp\\nM109 S[first_layer_temperature] ; wait for extruder temp\\n;\\n; Extrude purge line\\n;\\nG92 E0 ; reset extruder position\\nG1 E{(filament_type[0] == \"FLEX\" ? 4 : 2)} F2400 ; deretraction after the initial one before nozzle cleaning\\nG0 E7 X15 Z0.2 F500 ; purge\\nG0 X25 E4 F500 ; purge\\nG0 X35 E4 F650 ; purge\\nG0 X45 E4 F800 ; purge\\nG0 X{45 + 3} Z{0.05} F{8000} ; wipe, move close to the bed\\nG0 X{45 + 3 * 2} Z0.2 F{8000} ; wipe, move quickly away from the bed\\n\\nG92 E0\\nM221 S100 ; set flow to 100%"
+    },
+    "end_gcode": {
+      "3.0.0": "M104 S0 ; turn off temperature\\nM140 S0 ; turn off heatbed\\nM107 ; turn off fan\\n{if layer_z < max_print_height}G1 Z{z_offset+min(layer_z+10, max_print_height)} F600{endif} ; Move print head up\\nG27 ; present print\\nG1 E-6 F300  ;retract the filament a bit before lifting the nozzle, to release some of the pressure\\nM84 X Y E ; disable motors"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "retract_lift": {
+      "3.0.0": "0.2"
+    },
+    "travel_ramping_lift": {
+      "3.0.0": "1"
+    },
+    "travel_max_lift": {
+      "3.0.0": "1.5"
+    },
+    "travel_slope": {
+      "3.0.0": "1"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0"
+    },
+    "retract_lift_below": {
+      "3.0.0": "198"
+    },
+    "retract_length": {
+      "3.0.0": "0.7"
+    },
+    "retract_speed": {
+      "3.0.0": "35"
+    },
+    "deretract_speed": {
+      "3.0.0": "25"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_before_travel": {
+      "3.0.0": "1.5"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "80%"
+    },
+    "printer_model": {
+      "3.0.0": "i311"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.3"
+    },
+    "printer_variant": {
+      "3.0.0": "0.3"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.05"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.22"
+    },
+    "printer_notes": {
+      "3.0.0": "Do not remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_E2D\\nPRINTER_MODEL_i311"
+    },
+    "default_print_profile": {
+      "3.0.0": "0.20mm NORMAL @0.30 nozzle i311"
+    },
+    "printer_settings_id": {
+      "3.0.0": "E2D i311 0.3 nozzle"
+    }
+  }
+}

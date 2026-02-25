@@ -1,0 +1,103 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "filament",
+  "name": "Layer Line DuraPET @HSP1 1.0 Takoto",
+  "vendor": "HartSmartProducts",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "cooling": {
+      "3.0.0": "1"
+    },
+    "compatible_printers": {
+      "3.0.0": ""
+    },
+    "filament_cost": {
+      "3.0.0": "29.99"
+    },
+    "filament_density": {
+      "3.0.0": "1.29"
+    },
+    "filament_diameter": {
+      "3.0.0": "1.75"
+    },
+    "filament_notes": {
+      "3.0.0": "Layer Line DuraPET"
+    },
+    "filament_settings_id": {
+      "3.0.0": "Layer Line DuraPET @HSP1 1.0 Takoto"
+    },
+    "filament_soluble": {
+      "3.0.0": "0"
+    },
+    "min_print_speed": {
+      "3.0.0": "15"
+    },
+    "slowdown_below_layer_time": {
+      "3.0.0": "10"
+    },
+    "compatible_printers_condition": {
+      "3.0.0": "nozzle_diameter[0]==1.0"
+    },
+    "filament_type": {
+      "3.0.0": "PETG"
+    },
+    "temperature": {
+      "3.0.0": "285"
+    },
+    "bed_temperature": {
+      "3.0.0": "80"
+    },
+    "first_layer_temperature": {
+      "3.0.0": "280"
+    },
+    "first_layer_bed_temperature": {
+      "3.0.0": "80"
+    },
+    "idle_temperature": {
+      "3.0.0": "180"
+    },
+    "filament_max_volumetric_speed": {
+      "3.0.0": "25"
+    },
+    "extrusion_multiplier": {
+      "3.0.0": "1.00"
+    },
+    "filament_colour": {
+      "3.0.0": "#FF8000"
+    },
+    "fan_always_on": {
+      "3.0.0": "1"
+    },
+    "min_fan_speed": {
+      "3.0.0": "80"
+    },
+    "max_fan_speed": {
+      "3.0.0": "80"
+    },
+    "bridge_fan_speed": {
+      "3.0.0": "80"
+    },
+    "disable_fan_first_layers": {
+      "3.0.0": "3"
+    },
+    "full_fan_speed_layers": {
+      "3.0.0": "7"
+    },
+    "fan_below_layer_time": {
+      "3.0.0": "20"
+    },
+    "filament_vendor": {
+      "3.0.0": "HartSmart Products"
+    },
+    "filament_spool_weight": {
+      "3.0.0": "200"
+    },
+    "start_filament_gcode": {
+      "3.0.0": "\"; Filament gcode\\n{local pressure_advance = 0.0}\\n{if printer_notes=~/.*DUPLICATOR_MODE.*/}\\nM572 D0:1 S{pressure_advance}\\n{else}\\nM572 D{current_extruder} S{pressure_advance}\\n{endif}\""
+    }
+  }
+}

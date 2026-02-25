@@ -1,0 +1,82 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Hellbot Magna 2 500 dual",
+  "vendor": "Hellbot",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Hellbot Magna 2 500 dual"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Hellbot Development Team"
+    },
+    "manufacturer": {
+      "2026-02-25": "Hellbot"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "Hellbot_Magna_2_500.obj"
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "hellbot_magna_2_500_dual_extruder_0",
+        "1": "hellbot_magna_2_500_dual_extruder_1"
+      }
+    },
+    "platform_texture": {
+      "2026-02-25": "Magna2_500.png"
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 500
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 T0 S0\nM104 T1 S0\nM140 S0\nG92 E1\nG1 E-1 F300\nG28 X0 Y0\nM84"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_extruders_share_heater": {
+      "2026-02-25": true
+    },
+    "machine_extruders_share_nozzle": {
+      "2026-02-25": true
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 500
+    },
+    "machine_name": {
+      "2026-02-25": "Hellbot Magna 2 500 Dual"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "M104 T0 S{material_print_temperature}\nM104 T1 S{material_print_temperature}\nM109 T0 S{material_print_temperature}\nM109 T1 S{material_print_temperature}\nG21\nG90 \nG28 X0 Y0 \nG28 Z0 \nG1 Z15.0 F300 \nT0 \nG92 E0 \nG1 F700 E-80 \nT1 \nG92 E0 \nG1 F1000 X1 Y1 Z0.3 \nG1 F600 X200 E60 \nG1 F1000 Y3 \nG1 F600 X1 E120 \nT1 \nG92 E0 \nG28 X0 Y0 \nG1 F700 E-80 \nT0 \nG92 E0"
+    },
+    "machine_width": {
+      "2026-02-25": 500
+    }
+  }
+}

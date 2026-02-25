@@ -1,0 +1,121 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "machine",
+  "name": "Bowden 0.5 nozzle",
+  "vendor": "Basic",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "end_gcode": {
+      "1.4.4": "G1 E-4 F2100.00000\\nG91\\nG1 Z1 F7200.000\\nG90\\nG1 X195 Y1\\nG1 X190 E4\\nG1 F4000\\nG1 X180 E2.7  \\nG1 F4600\\nG1 X110 E2.8\\nG1 F5200\\nG1 X40 E3  \\nG1 E-15.0000 F5000\\nG1 E-50.0000 F5400\\nG1 E-15.0000 F3000\\nG1 E-12.0000 F2000\\nG1 F1600\\nG1 X0 Y1 E3.0000\\nG1 X50 Y1 E-5.0000\\nG1 F2000\\nG1 X0 Y1 E5.0000\\nG1 X50 Y1 E-5.0000\\nG1 F2400\\nG1 X0 Y1 E5.0000\\nG1 X50 Y1 E-5.0000\\nG1 F2400\\nG1 X0 Y1 E5.0000\\nG1 X50 Y1 E-3.0000\\nG4 S0\\nM107 ; turn off fan\\n{if layer_z < max_print_height}G1 Z{z_offset+min(layer_z+30, max_print_height)}{endif} ; Move print head up\\nM104 S0 ; turn off temperature\\nM140 S0 ; turn off heatbed\\nG28 X0  ; home X axis\\nM84     ; disable motors\\n\\n"
+    },
+    "extruder_offset": {
+      "1.4.4": "0x0"
+    },
+    "gcode_flavor": {
+      "1.4.4": "marlin"
+    },
+    "before_layer_gcode": {
+      "1.4.4": ";BEFORE_LAYER_CHANGE\\n;[layer_z]\\n\\n"
+    },
+    "layer_gcode": {
+      "1.4.4": ";AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "pressure_advance": {
+      "1.4.4": "0"
+    },
+    "retract_before_travel": {
+      "1.4.4": "1"
+    },
+    "retract_before_wipe": {
+      "1.4.4": "0%"
+    },
+    "retract_layer_change": {
+      "1.4.4": "1"
+    },
+    "retract_length": {
+      "1.4.4": "8"
+    },
+    "retract_lift": {
+      "1.4.4": "0.6"
+    },
+    "retract_lift_above": {
+      "1.4.4": "0"
+    },
+    "retract_lift_below": {
+      "1.4.4": "9999"
+    },
+    "retract_restart_extra": {
+      "1.4.4": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "1.4.4": "0"
+    },
+    "retract_speed": {
+      "1.4.4": "60"
+    },
+    "start_gcode": {
+      "1.4.4": "M115 U3.1.0 ; tell printer latest fw version\\nM83  ; extruder relative mode\\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting] ; ENDER3 firmware may only supports the old M204 format\\nG28 W ; home all\\nM104 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; set extruder temp\\nM140 S[first_layer_bed_temperature] ; set bed temp\\nM190 S[first_layer_bed_temperature] ; wait for bed temp\\nM109 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; wait for extruder temp\\nG1 X0.0 Y0.0 F1000.0 ; go outside print area\\nG92 E0.0\\nG1 X150.0 E20  F1000.0 ; intro line\\nG92 E0.0"
+    },
+    "toolchange_gcode": {
+      "1.4.4": "{if layer_num > -1}M600{endif}"
+    },
+    "use_firmware_retraction": {
+      "1.4.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.4.4": "0"
+    },
+    "use_volumetric_e": {
+      "1.4.4": "0"
+    },
+    "variable_layer_height": {
+      "1.4.4": "1"
+    },
+    "wipe": {
+      "1.4.4": "1"
+    },
+    "z_offset": {
+      "1.4.4": "0"
+    },
+    "bed_shape": {
+      "1.4.4": "0x0,200x0,200x200,0x200"
+    },
+    "max_print_height": {
+      "1.4.4": "200"
+    },
+    "default_filament_profile": {
+      "1.4.4": "Basic PLA @BASIC"
+    },
+    "silent_mode": {
+      "1.4.4": "0"
+    },
+    "deretract_speed": {
+      "1.4.4": "40"
+    },
+    "printer_model": {
+      "1.4.4": "Bowden_1.75mm"
+    },
+    "nozzle_diameter": {
+      "1.4.4": "0.5"
+    },
+    "max_layer_height": {
+      "1.4.4": "0.4"
+    },
+    "min_layer_height": {
+      "1.4.4": "0.075"
+    },
+    "printer_variant": {
+      "1.4.4": "0.5"
+    },
+    "default_print_profile": {
+      "1.4.4": "0.20mm NORMAL .5N"
+    },
+    "printer_settings_id": {
+      "1.4.4": "Bowden 0.5 nozzle"
+    }
+  }
+}

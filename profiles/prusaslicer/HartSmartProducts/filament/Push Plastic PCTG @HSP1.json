@@ -1,0 +1,103 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "filament",
+  "name": "Push Plastic PCTG @HSP1",
+  "vendor": "HartSmartProducts",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "cooling": {
+      "3.0.0": "1"
+    },
+    "compatible_printers": {
+      "3.0.0": ""
+    },
+    "filament_cost": {
+      "3.0.0": "39.99"
+    },
+    "filament_density": {
+      "3.0.0": "1.21"
+    },
+    "filament_diameter": {
+      "3.0.0": "1.75"
+    },
+    "filament_notes": {
+      "3.0.0": "Push Plastic PCTG"
+    },
+    "filament_settings_id": {
+      "3.0.0": "Push Plastic PCTG @HSP1"
+    },
+    "filament_soluble": {
+      "3.0.0": "0"
+    },
+    "min_print_speed": {
+      "3.0.0": "15"
+    },
+    "slowdown_below_layer_time": {
+      "3.0.0": "10"
+    },
+    "compatible_printers_condition": {
+      "3.0.0": "printer_notes=~/.*PRINTER_VENDOR_HSP.*/"
+    },
+    "filament_type": {
+      "3.0.0": "PCTG"
+    },
+    "temperature": {
+      "3.0.0": "250"
+    },
+    "bed_temperature": {
+      "3.0.0": "80"
+    },
+    "first_layer_temperature": {
+      "3.0.0": "245"
+    },
+    "first_layer_bed_temperature": {
+      "3.0.0": "80"
+    },
+    "idle_temperature": {
+      "3.0.0": "190"
+    },
+    "filament_max_volumetric_speed": {
+      "3.0.0": "12"
+    },
+    "extrusion_multiplier": {
+      "3.0.0": "1.00"
+    },
+    "filament_colour": {
+      "3.0.0": "#FF8000"
+    },
+    "fan_always_on": {
+      "3.0.0": "1"
+    },
+    "min_fan_speed": {
+      "3.0.0": "70"
+    },
+    "max_fan_speed": {
+      "3.0.0": "70"
+    },
+    "bridge_fan_speed": {
+      "3.0.0": "70"
+    },
+    "disable_fan_first_layers": {
+      "3.0.0": "3"
+    },
+    "full_fan_speed_layers": {
+      "3.0.0": "7"
+    },
+    "fan_below_layer_time": {
+      "3.0.0": "20"
+    },
+    "filament_vendor": {
+      "3.0.0": "Push Plastic"
+    },
+    "filament_spool_weight": {
+      "3.0.0": "320 # 750g spools weight 350g"
+    },
+    "start_filament_gcode": {
+      "3.0.0": "\"; Filament gcode\\n{if nozzle_diameter[initial_extruder] == 0.6}{local pressure_advance = 0.018}\\n{elsif nozzle_diameter[initial_extruder] == 0.4}{local pressure_advance = 0.026}\\n{elsif nozzle_diameter[initial_extruder] == 0.8}{local pressure_advance = 0.0}\\n{elsif nozzle_diameter[initial_extruder] == 1.0}{local pressure_advance = 0.0}\\n{endif}\\n{if printer_notes=~/.*DUPLICATOR_MODE.*/}\\nM572 D0:1 S{pressure_advance}\\n{else}\\nM572 D{current_extruder} S{pressure_advance}\\n{endif}\""
+    }
+  }
+}

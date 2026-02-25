@@ -1,0 +1,144 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "ELEGOO NEPTUNE 4 Max",
+  "vendor": "ELEGOO",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "ELEGOO NEPTUNE 4 Max"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "elegoo_neptune_4"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "mastercaution"
+    },
+    "platform": {
+      "2026-02-25": "elegoo_platform_max.3mf"
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        -2.1,
+        -0.2,
+        0
+      ]
+    },
+    "quality_definition": {
+      "2026-02-25": "elegoo_neptune_4"
+    },
+    "acceleration_print": {
+      "2026-02-25": 2500
+    },
+    "machine_depth": {
+      "2026-02-25": 430
+    },
+    "machine_height": {
+      "2026-02-25": 482
+    },
+    "machine_max_acceleration_e": {
+      "2026-02-25": 5000
+    },
+    "machine_max_acceleration_x": {
+      "2026-02-25": 15000
+    },
+    "machine_max_acceleration_y": {
+      "2026-02-25": 15000
+    },
+    "machine_name": {
+      "2026-02-25": "ELEGOO NEPTUNE 4 Max"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ";ELEGOO NEPTUNE 4 MAX\nM220 S100 ;Set the feed speed to 100%\nM221 S100 ;Set the flow rate to 100%\nM104 S140 ;Start heating extruder\nM190 S{material_bed_temperature_layer_0} ;Wait for the bed to reach print temp\nG90\nG28 ;home\nG1 Z10 F300\nG1 X165 Y0 F6000\nG1 Z0 F300\nM109 S{material_print_temperature_layer_0} ;Wait for extruder to reach print temp\nG92 E0 ;Reset Extruder\nG1 X165 Y0 Z0.4 F300 ;Move to start position\nG1 X265 E30 F400 ;Draw the first line\nG1 Z0.6 F120.0 ;Move to side a little\nG1 X260 F3000\nG92 E0 ;Reset Extruder"
+    },
+    "machine_width": {
+      "2026-02-25": 430
+    },
+    "nozzle_disallowed_areas": {
+      "2026-02-25": [
+        [
+          [
+            -215,
+            -215
+          ],
+          [
+            -215,
+            215
+          ],
+          [
+            -211,
+            215
+          ],
+          [
+            -211,
+            -215
+          ]
+        ],
+        [
+          [
+            215,
+            215
+          ],
+          [
+            215,
+            -215
+          ],
+          [
+            211,
+            -215
+          ],
+          [
+            211,
+            215
+          ]
+        ],
+        [
+          [
+            -215,
+            -215
+          ],
+          [
+            215,
+            -215
+          ],
+          [
+            -215,
+            -211
+          ],
+          [
+            215,
+            -211
+          ]
+        ],
+        [
+          [
+            -215,
+            215
+          ],
+          [
+            215,
+            215
+          ],
+          [
+            -215,
+            211
+          ],
+          [
+            215,
+            211
+          ]
+        ]
+      ]
+    }
+  }
+}

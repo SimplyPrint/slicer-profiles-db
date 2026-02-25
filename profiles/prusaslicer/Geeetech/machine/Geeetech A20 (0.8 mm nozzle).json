@@ -1,0 +1,190 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "Geeetech A20 (0.8 mm nozzle)",
+  "vendor": "Geeetech",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "before_layer_gcode": {
+      "3.0.0": "\\nG92 E0\\n"
+    },
+    "between_objects_gcode": {
+      "3.0.0": ""
+    },
+    "pause_print_gcode": {
+      "3.0.0": "M25 ; pause print"
+    },
+    "deretract_speed": {
+      "3.0.0": "40"
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0"
+    },
+    "gcode_flavor": {
+      "3.0.0": "marlin"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "remaining_times": {
+      "3.0.0": "0"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "500"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "500"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "5"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "25"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "500"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "500"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "100"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "1000"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "500"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "1000"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "0.3"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "5"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0"
+    },
+    "layer_gcode": {
+      "3.0.0": ";▩▩▩▩▩▩▩▩▩▩【A20】# layer No：[layer_num] ———>Print Height：[layer_z] mm ▩▩▩▩▩▩▩▩▩▩"
+    },
+    "max_print_height": {
+      "3.0.0": "250"
+    },
+    "printer_notes": {
+      "3.0.0": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_Geeetech\\nPRINTER_MODEL_A20\\nPRINTER_HAS_BOWDEN"
+    },
+    "printer_settings_id": {
+      "3.0.0": "Geeetech A20 (0.8 mm nozzle)"
+    },
+    "retract_before_travel": {
+      "3.0.0": "2"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "70%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "1"
+    },
+    "retract_lift": {
+      "3.0.0": "0"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0.3"
+    },
+    "retract_lift_below": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_speed": {
+      "3.0.0": "45"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "toolchange_gcode": {
+      "3.0.0": ""
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "1"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    },
+    "printer_model": {
+      "3.0.0": "A20"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "34"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "47"
+    },
+    "default_filament_profile": {
+      "3.0.0": "Generic PLA @Geeetech"
+    },
+    "start_gcode": {
+      "3.0.0": ";Custom Start G-code\\nM104 S[first_layer_temperature] ; set extruder temp\\nM140 S[first_layer_bed_temperature] ; set bed temp\\nM190 S[first_layer_bed_temperature] ; wait for bed temp\\nM109 S[first_layer_temperature] ; wait for extruder temp\\nG92 E0 ; Reset Extruder\\nG28 ; Home all axes\\nM107 ;Off Fan\\nG1 Z5.0 F3000 ;Move Z Axis up little to prevent scratching of Heat Bed\\nG1 X0.1 Y20 Z0.8 F5000 ; Move to start position\\nG1 X0.1 Y200.0 Z1.2 F1500 E30 ; Draw the first line\\nG92 E0 ; Reset Extruder\\nG1 X0.4 Y200.0 Z1.2 F3000 ; Move to side a little\\nG1 X0.4 Y20 Z1.2 F1500 E25 ; Draw the second line\\nG92 E0 ; Reset Extruder\\nG1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed\\nG1 X5 Y20 Z0.4 F3000.0 ; Move over to prevent blob squish\\n\\nM221 S{if layer_height<0.2}110{else}100{endif}\\nG92 E0"
+    },
+    "end_gcode": {
+      "3.0.0": "{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+2, max_print_height)} F600 ; Move print head up{endif}\\nG1 X5 Y{print_bed_max[1]*0.8} F{travel_speed*60} ; present print\\n{if max_layer_z < max_print_height-10}G1 Z{z_offset+min(max_layer_z+70, max_print_height-10)} F600 ; Move print head further up{endif}\\n{if max_layer_z < max_print_height*0.6}G1 Z{max_print_height*0.6} F600 ; Move print head further up{endif}\\nM140 S0 ; turn off heatbed\\nM104 S0 ; turn off temperature\\nM107 ; turn off fan\\nM84 X Y E ; disable motors"
+    },
+    "retract_length": {
+      "3.0.0": "6.5"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,250x0,250x250,0x250"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.8"
+    },
+    "printer_variant": {
+      "3.0.0": "0.8"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.08"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.48"
+    },
+    "default_print_profile": {
+      "3.0.0": "0.44 mm SUPERCHUNKY (0.8mm nozzle) @Geeetech"
+    }
+  }
+}

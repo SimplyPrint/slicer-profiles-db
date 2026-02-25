@@ -1,0 +1,186 @@
+[
+    {
+        "vendor": "Anycubic",
+        "machine_model": {
+            "type": "machine_model",
+            "name": "Anycubic 4Max Pro",
+            "model_id": "AC-4maxpro",
+            "nozzle_diameter": "0.4",
+            "machine_tech": "FFF",
+            "family": "Anycubic",
+            "bed_model": "sha256:3941b1c594916fe8db4f1bc6a00ca779a1c06443b6457d05e047cd32742515eb",
+            "bed_texture": "sha256:4fa801a191aa00fc21c9b246c22656f272ff9083e6afb963475ba9f59b88ef77",
+            "hotend_model": "",
+            "default_materials": "Generic ABS @Anycubic;Generic PLA @Anycubic;Generic PLA-CF @Anycubic;Generic PETG @Anycubic;Generic TPU @Anycubic;Generic ASA @Anycubic;Generic PC @Anycubic;Generic PVA @Anycubic;Generic PA @Anycubic;Generic PA-CF @Anycubic"
+        },
+        "variants": {
+            "0.4": {
+                "name": "Anycubic 4Max Pro 0.4 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "Anycubic 4Max Pro 0.4 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "gcode_flavor": "marlin",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
+                    "machine_end_gcode": "PRINT_END",
+                    "extruder_colour": [
+                        "#018001"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "2000",
+                        "2000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "3000",
+                        "3000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "2000",
+                        "2000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "2000",
+                        "2000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "300",
+                        "200"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "300",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "300",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "9",
+                        "9"
+                    ],
+                    "machine_max_jerk_y": [
+                        "9",
+                        "9"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.3"
+                    ],
+                    "min_layer_height": [
+                        "0.08"
+                    ],
+                    "printable_height": "200",
+                    "extruder_clearance_max_radius": "65",
+                    "extruder_clearance_dist_to_rod": "33",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_height_to_lid": "140",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "layer_change_gcode": "",
+                    "machine_pause_gcode": "M601",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop_types": "Normal Lift",
+                    "setting_id": "GM_Anycubic_000",
+                    "printer_model": "Anycubic 4Max Pro",
+                    "default_print_profile": "0.20mm Standard @Anycubic 4MaxPro",
+                    "extruder_type": [
+                        "Bowden"
+                    ],
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "printable_area": [
+                        "0x0",
+                        "270x0",
+                        "270x205",
+                        "0x205"
+                    ],
+                    "default_filament_profile": [
+                        "Generic PLA @Anycubic"
+                    ],
+                    "retract_lift_below": [
+                        "199"
+                    ],
+                    "scan_first_layer": "0",
+                    "nozzle_type": "hardened_steel",
+                    "auxiliary_fan": "0"
+                }
+            }
+        }
+    }
+]

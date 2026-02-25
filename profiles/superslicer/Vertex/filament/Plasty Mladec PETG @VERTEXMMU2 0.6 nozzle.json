@@ -1,0 +1,145 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "filament",
+  "name": "Plasty Mladec PETG @VERTEXMMU2 0.6 nozzle",
+  "vendor": "Vertex",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "cooling": {
+      "1.4.4": "1"
+    },
+    "compatible_printers": {
+      "1.4.4": ""
+    },
+    "compatible_printers_condition": {
+      "1.4.4": "nozzle_diameter[0]==0.6 and (printer_notes=~/.*PRINTER_VENDOR_VERTEX.*/ and printer_notes=~/.*PRINTER_MODEL_(L|XL).*/ and single_extruder_multi_material)"
+    },
+    "end_filament_gcode": {
+      "1.4.4": "\"; Filament-specific end gcode\""
+    },
+    "extrusion_multiplier": {
+      "1.4.4": "1"
+    },
+    "filament_loading_speed": {
+      "1.4.4": "14"
+    },
+    "filament_loading_speed_start": {
+      "1.4.4": "19"
+    },
+    "filament_unloading_speed": {
+      "1.4.4": "20"
+    },
+    "filament_unloading_speed_start": {
+      "1.4.4": "120"
+    },
+    "filament_toolchange_delay": {
+      "1.4.4": "0"
+    },
+    "filament_cooling_moves": {
+      "1.4.4": "1"
+    },
+    "filament_cooling_initial_speed": {
+      "1.4.4": "2"
+    },
+    "filament_cooling_final_speed": {
+      "1.4.4": "1"
+    },
+    "filament_load_time": {
+      "1.4.4": "15"
+    },
+    "filament_unload_time": {
+      "1.4.4": "12"
+    },
+    "filament_ramming_parameters": {
+      "1.4.4": "\"120 140 4.70968 4.74194 4.77419 4.80645 4.83871 4.87097 4.90323 5 5.25806 5.67742 6.29032 7.06452 7.83871 8.3871| 0.05 4.72901 0.45 4.73545 0.95 4.83226 1.45 4.88067 1.95 5.05483 2.45 5.93553 2.95 7.53556 3.45 8.6323 3.95 7.6 4.45 7.6 4.95 7.6\""
+    },
+    "filament_minimal_purge_on_wipe_tower": {
+      "1.4.4": "15"
+    },
+    "filament_cost": {
+      "1.4.4": "27.82"
+    },
+    "filament_density": {
+      "1.4.4": "1.27"
+    },
+    "filament_diameter": {
+      "1.4.4": "1.75"
+    },
+    "filament_notes": {
+      "1.4.4": "\"\""
+    },
+    "filament_settings_id": {
+      "1.4.4": "Plasty Mladec PETG @VERTEXMMU2 0.6 nozzle"
+    },
+    "filament_soluble": {
+      "1.4.4": "0"
+    },
+    "min_print_speed": {
+      "1.4.4": "15"
+    },
+    "slowdown_below_layer_time": {
+      "1.4.4": "15"
+    },
+    "start_filament_gcode": {
+      "1.4.4": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.02{elsif nozzle_diameter[0]==0.6}0.04{else}0.08{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K24{elsif nozzle_diameter[0]==0.8};{else}M900 K45{endif} ; Filament gcode LA 1.0\""
+    },
+    "bed_temperature": {
+      "1.4.4": "90"
+    },
+    "bridge_fan_speed": {
+      "1.4.4": "50"
+    },
+    "disable_fan_first_layers": {
+      "1.4.4": "3"
+    },
+    "full_fan_speed_layer": {
+      "1.4.4": "5"
+    },
+    "fan_always_on": {
+      "1.4.4": "1"
+    },
+    "fan_below_layer_time": {
+      "1.4.4": "20"
+    },
+    "filament_colour": {
+      "1.4.4": "#FF8000"
+    },
+    "filament_max_volumetric_speed": {
+      "1.4.4": "13"
+    },
+    "filament_type": {
+      "1.4.4": "PETG"
+    },
+    "first_layer_bed_temperature": {
+      "1.4.4": "85"
+    },
+    "first_layer_temperature": {
+      "1.4.4": "230"
+    },
+    "max_fan_speed": {
+      "1.4.4": "50"
+    },
+    "min_fan_speed": {
+      "1.4.4": "30"
+    },
+    "temperature": {
+      "1.4.4": "230"
+    },
+    "filament_retract_length": {
+      "1.4.4": "1.4"
+    },
+    "filament_retract_lift": {
+      "1.4.4": "0.2"
+    },
+    "filament_vendor": {
+      "1.4.4": "Plasty Mladec"
+    },
+    "filament_spool_weight": {
+      "1.4.4": "230"
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Series 1 2014",
+  "vendor": "TypeAMachines",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Series 1 2014"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "TypeAMachines"
+    },
+    "manufacturer": {
+      "2026-02-25": "TypeAMachines"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "tam_series1.3mf"
+    },
+    "has_materials": {
+      "2026-02-25": false
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "tam_extruder_0"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        -580.0,
+        -6.23,
+        253.5
+      ]
+    },
+    "gantry_height": {
+      "2026-02-25": "35"
+    },
+    "infill_pattern": {
+      "2026-02-25": "'tetrahedral'"
+    },
+    "infill_sparse_density": {
+      "2026-02-25": 5
+    },
+    "layer_height": {
+      "2026-02-25": 0.2
+    },
+    "layer_height_0": {
+      "2026-02-25": 0.3
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 305
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 S0 ;extruder heater off\nM140 S0 ;heated bed heater off (if you have it)\nG91 ;relative positioning\nG1 E-1 F300  ;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+0.5 E-5 X-20 Y-20 F9000 ;move Z up a bit and retract filament even more\nG28 X0 Y0 ;move X/Y to min endstops, so the head is out of the way\nM84 ;steppers off\nG90 ;absolute positioning"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -35,
+          65
+        ],
+        [
+          -35,
+          -55
+        ],
+        [
+          55,
+          65
+        ],
+        [
+          55,
+          -55
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 305
+    },
+    "machine_max_acceleration_e": {
+      "2026-02-25": 175
+    },
+    "machine_max_acceleration_x": {
+      "2026-02-25": 6000
+    },
+    "machine_max_acceleration_y": {
+      "2026-02-25": 6000
+    },
+    "machine_max_acceleration_z": {
+      "2026-02-25": 12000
+    },
+    "machine_name": {
+      "2026-02-25": "TypeAMachines"
+    },
+    "machine_nozzle_head_distance": {
+      "2026-02-25": 3
+    },
+    "machine_nozzle_tip_outer_diameter": {
+      "2026-02-25": 1
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ";-- START GCODE --\n;Sliced for Type A Machines Series 1\n;Sliced at: {day} {date} {time}\n;Basic settings:\n;Layer height: {layer_height}\n;Walls: {wall_thickness}\n;Fill: {fill_distance}\n;Print Speed: {print_speed}\n;Support: {support}\n;Retraction Speed: {retraction_speed}\n;Retraction Distance: {retraction_amount}\n;Print time: {print_time}\n;Filament used: {filament_amount}m {filament_weight}g\n;Settings based on: {material_profile}\nG21 ;metric values\nG90 ;absolute positioning\nG28 ;move to endstops\nG29 ;allows for auto-levelling\nG1 Z15.0 F12000 ;move the platform down 15mm\nG1 X150 Y5 F9000 ;center\nM140 S{material_bed_temperature} ;Prep Heat Bed\nM109 S{default_material_print_temperature} ;Heat To temp\nM190 S{material_bed_temperature} ;Heat Bed to temp\nG1 X150 Y5 Z0.3 ;move the platform to purge extrusion\nG92 E0 ;zero the extruded length\nG1 F200 X250 E30 ;extrude 30mm of feed stock\nG92 E0 ;zero the extruded length again\nG1 X150 Y150  Z25 F12000 ;recenter and begin\nG1 F9000"
+    },
+    "machine_use_extruder_offset_to_offset_coords": {
+      "2026-02-25": true
+    },
+    "machine_width": {
+      "2026-02-25": 305
+    },
+    "retraction_amount": {
+      "2026-02-25": 0.4
+    },
+    "retraction_speed": {
+      "2026-02-25": 35
+    },
+    "speed_print": {
+      "2026-02-25": 60
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": 1
+    },
+    "wall_thickness": {
+      "2026-02-25": "1"
+    },
+    "xy_offset": {
+      "2026-02-25": -0.01
+    }
+  }
+}

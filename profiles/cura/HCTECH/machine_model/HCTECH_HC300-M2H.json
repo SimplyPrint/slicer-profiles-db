@@ -1,0 +1,132 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "HCTECH_HC300-M2H",
+  "vendor": "HCTECH",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "HCTECH_HC300-M2H"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "HCTECH"
+    },
+    "manufacturer": {
+      "2026-02-25": "HCTECH"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "hctech_hc300-m2h.3mf"
+    },
+    "has_machine_quality": {
+      "2026-02-25": false
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "hctech_hc300-m2h_extruder_0",
+        "1": "hctech_hc300-m2h_extruder_1"
+      }
+    },
+    "adhesion_type": {
+      "2026-02-25": "skirt"
+    },
+    "cool_fan_speed": {
+      "2026-02-25": 75
+    },
+    "gantry_height": {
+      "2026-02-25": "55"
+    },
+    "infill_before_walls": {
+      "2026-02-25": false
+    },
+    "line_width": {
+      "2026-02-25": 0.38
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 300
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "G91 ;Relative positioning\nG1 E-1 F2700 ;Retract a bit\nG1 Z1 E-1 F2400 ;Retract and raise Z\nG1 Z2 ;Raise Z\nG90 ;Absolute positioning\nG12 ;clean nozzle\nG1 X5 Y319 ;Return to Start Point\nM106 S0 ;Switch off part cooling fan\nM104 S0 ;turn off temperature\nM140 S0 ;turn off Heated Bed\nM84 X Y E ;Disable all steppers but Z\nM81 ;turn-off power"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -61,
+          86
+        ],
+        [
+          -61,
+          -37
+        ],
+        [
+          85,
+          -37
+        ],
+        [
+          85,
+          86
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 300
+    },
+    "machine_name": {
+      "2026-02-25": "HCTECH HC300-M2H"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G1 Z2 ;Raise Z\nG28 X Y ;Home XY\nT1 ;switch to right extruder\nG1 X5 Y319 F4000 ;Move to Start Position\nG92 E0 ;Reset Extruder\nG1 E20 F60 ;extrude\nM400 ;Wait move\nG92 E0 ;Reset Extruder\nG1 E-2 F2700 ;Retract\nG92 E0 ;Reset Extruder\nG1 X150 F5000 ;Clean Nozzle\nG1 X5 ;Clean Nozzle\nG1 X220 ;Repeat\nG1 X5 ;Back to start posotion\nT0 ;switch to left extruder\nG1 X5 Y319 F4000 ;Move to Start Position\nG92 E0 ;Reset Extruder\nG1 E20 F60 ;extrude\nM400 ;Wait move\nG92 E0 ;Reset Extruder\nG4 S15 ;Wait 15s\nG1 E-2 F2700; Retract\nG92 E0 ;Reset Extruder\nG1 X150 F5000 ;Clean Nozzle\nG1 X5 ;Clean nozzle\nG1 X220 ;Repeat\nG1 X5 ;Back to start position\nG28 Z ;home Z\nG29 ;Measure the bed\nM500 ;Store parameters\nG1 X0 Y300 F4000 ;Move to corner"
+    },
+    "machine_width": {
+      "2026-02-25": 300
+    },
+    "material_diameter": {
+      "2026-02-25": 1.75
+    },
+    "retraction_amount": {
+      "2026-02-25": 0.3
+    },
+    "retraction_speed": {
+      "2026-02-25": 35
+    },
+    "speed_print": {
+      "2026-02-25": 60.0
+    },
+    "travel_avoid_distance": {
+      "2026-02-25": 1
+    },
+    "travel_avoid_supports": {
+      "2026-02-25": true
+    },
+    "travel_retract_before_outer_wall": {
+      "2026-02-25": true
+    }
+  }
+}

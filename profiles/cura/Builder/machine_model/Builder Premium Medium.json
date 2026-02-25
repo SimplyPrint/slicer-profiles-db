@@ -1,0 +1,271 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Builder Premium Medium",
+  "vendor": "Builder",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Builder Premium Medium"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Builder SZ"
+    },
+    "manufacturer": {
+      "2026-02-25": "Builder"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "builder_premium_platform.3mf"
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "builder_premium_medium_rear",
+        "1": "builder_premium_medium_front"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        -126,
+        -36,
+        117
+      ]
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "quality_definition": {
+      "2026-02-25": "builder_premium_small"
+    },
+    "acceleration_enabled": {
+      "2026-02-25": true
+    },
+    "acceleration_layer_0": {
+      "2026-02-25": "acceleration_topbottom"
+    },
+    "acceleration_prime_tower": {
+      "2026-02-25": "math.ceil(acceleration_print * 2000 / 4000)"
+    },
+    "acceleration_print": {
+      "2026-02-25": "3000"
+    },
+    "acceleration_support": {
+      "2026-02-25": "math.ceil(acceleration_print * 2000 / 4000)"
+    },
+    "acceleration_support_interface": {
+      "2026-02-25": "acceleration_topbottom"
+    },
+    "acceleration_topbottom": {
+      "2026-02-25": "math.ceil(acceleration_print * 1000 / 3000)"
+    },
+    "acceleration_travel": {
+      "2026-02-25": "acceleration_print"
+    },
+    "acceleration_wall": {
+      "2026-02-25": "math.ceil(acceleration_print * 1000 / 3000)"
+    },
+    "acceleration_wall_0": {
+      "2026-02-25": "math.ceil(acceleration_wall * 1000 / 1000)"
+    },
+    "adhesion_type": {
+      "2026-02-25": "skirt"
+    },
+    "cool_fan_full_at_height": {
+      "2026-02-25": "layer_height_0 + 2 * layer_height"
+    },
+    "cool_min_layer_time": {
+      "2026-02-25": 10
+    },
+    "default_material_print_temperature": {
+      "2026-02-25": "215"
+    },
+    "gantry_height": {
+      "2026-02-25": "55"
+    },
+    "infill_before_walls": {
+      "2026-02-25": false
+    },
+    "infill_pattern": {
+      "2026-02-25": "'triangles'"
+    },
+    "jerk_enabled": {
+      "2026-02-25": "True"
+    },
+    "jerk_layer_0": {
+      "2026-02-25": "jerk_topbottom"
+    },
+    "jerk_prime_tower": {
+      "2026-02-25": "math.ceil(jerk_print * 15 / 25)"
+    },
+    "jerk_print": {
+      "2026-02-25": "25"
+    },
+    "jerk_support": {
+      "2026-02-25": "math.ceil(jerk_print * 15 / 25)"
+    },
+    "jerk_support_interface": {
+      "2026-02-25": "jerk_topbottom"
+    },
+    "jerk_topbottom": {
+      "2026-02-25": "math.ceil(jerk_print * 5 / 25)"
+    },
+    "jerk_wall": {
+      "2026-02-25": "math.ceil(jerk_print * 10 / 25)"
+    },
+    "jerk_wall_0": {
+      "2026-02-25": "math.ceil(jerk_wall * 5 / 10)"
+    },
+    "machine_acceleration": {
+      "2026-02-25": 1000
+    },
+    "machine_depth": {
+      "2026-02-25": 205
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 S0 ;extruder heater off\nM140 S0 ;heated bed heater off (if you have it)\nG91 ;relative positioning\nG1 E-1 F300  ;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+0.5 E-5 X-20 Y-20 F9000 ;move Z up a bit and retract filament even more\nG28 X0 Y0 ;move X/Y to min endstops, so the head is out of the way\nM84 ;steppers off\nG90 ;absolute positioning"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -75,
+          -18
+        ],
+        [
+          -75,
+          35
+        ],
+        [
+          18,
+          35
+        ],
+        [
+          18,
+          -18
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 400
+    },
+    "machine_max_acceleration_z": {
+      "2026-02-25": 500
+    },
+    "machine_max_feedrate_x": {
+      "2026-02-25": 300
+    },
+    "machine_max_feedrate_y": {
+      "2026-02-25": 300
+    },
+    "machine_max_feedrate_z": {
+      "2026-02-25": 40
+    },
+    "machine_max_jerk_xy": {
+      "2026-02-25": 10
+    },
+    "machine_name": {
+      "2026-02-25": "Builder Premium Medium"
+    },
+    "machine_nozzle_cool_down_speed": {
+      "2026-02-25": 2
+    },
+    "machine_nozzle_heat_up_speed": {
+      "2026-02-25": 2
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G21 ;metric values\nG90 ;absolute positioning\nM82 ;set extruder to absolute mode\nM107 ;start with the fan off\nG28 X0 Y0 ;move X/Y to min endstops\nG28 Z0 ;move Z to min endstops\nG1 Z15.0 F9000 ;move the platform down 15mm\nG92 E0 ;zero the extruded length\nG1 F200 E15 ;extrude 15mm of feed stock\nG92 E0 ;zero the extruded length again\nG1 F9000\nT0 ;Start with Rear Extruder\n;Put printing message on LCD screen\nM117 Printing..."
+    },
+    "machine_width": {
+      "2026-02-25": 215
+    },
+    "material_print_temperature_layer_0": {
+      "2026-02-25": "material_print_temperature + 5"
+    },
+    "material_standby_temperature": {
+      "2026-02-25": "material_print_temperature"
+    },
+    "prime_tower_min_volume": {
+      "2026-02-25": 50
+    },
+    "prime_tower_wipe_enabled": {
+      "2026-02-25": false
+    },
+    "retraction_amount": {
+      "2026-02-25": 3
+    },
+    "retraction_speed": {
+      "2026-02-25": 15
+    },
+    "skin_overlap": {
+      "2026-02-25": "15"
+    },
+    "speed_layer_0": {
+      "2026-02-25": "20"
+    },
+    "speed_prime_tower": {
+      "2026-02-25": "speed_topbottom"
+    },
+    "speed_print": {
+      "2026-02-25": "40"
+    },
+    "speed_support": {
+      "2026-02-25": "speed_wall_0"
+    },
+    "speed_support_interface": {
+      "2026-02-25": "speed_topbottom"
+    },
+    "speed_topbottom": {
+      "2026-02-25": "math.ceil(speed_print * 20 / 35)"
+    },
+    "speed_travel": {
+      "2026-02-25": "100"
+    },
+    "speed_wall": {
+      "2026-02-25": "math.ceil(speed_print * 30 / 40)"
+    },
+    "speed_wall_0": {
+      "2026-02-25": "math.ceil(speed_wall * 20 / 25)"
+    },
+    "speed_wall_x": {
+      "2026-02-25": "speed_wall"
+    },
+    "switch_extruder_retraction_amount": {
+      "2026-02-25": 1
+    },
+    "switch_extruder_retraction_speeds": {
+      "2026-02-25": 15
+    },
+    "travel_retract_before_outer_wall": {
+      "2026-02-25": true
+    },
+    "wall_thickness": {
+      "2026-02-25": "1.2"
+    }
+  }
+}

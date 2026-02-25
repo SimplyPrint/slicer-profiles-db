@@ -1,0 +1,139 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "filament",
+  "name": "Fiberlogy HD PLA",
+  "vendor": "PrusaResearch",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "cooling": {
+      "1.4.4": "1"
+    },
+    "compatible_printers": {
+      "1.4.4": ""
+    },
+    "compatible_printers_condition": {
+      "1.4.4": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)"
+    },
+    "end_filament_gcode": {
+      "1.4.4": "\"; Filament-specific end gcode\""
+    },
+    "extrusion_multiplier": {
+      "1.4.4": "1"
+    },
+    "filament_loading_speed": {
+      "1.4.4": "28"
+    },
+    "filament_loading_speed_start": {
+      "1.4.4": "3"
+    },
+    "filament_unloading_speed": {
+      "1.4.4": "90"
+    },
+    "filament_unloading_speed_start": {
+      "1.4.4": "100"
+    },
+    "filament_toolchange_delay": {
+      "1.4.4": "0"
+    },
+    "filament_cooling_moves": {
+      "1.4.4": "4"
+    },
+    "filament_cooling_initial_speed": {
+      "1.4.4": "2.2"
+    },
+    "filament_cooling_final_speed": {
+      "1.4.4": "3.4"
+    },
+    "filament_load_time": {
+      "1.4.4": "0"
+    },
+    "filament_unload_time": {
+      "1.4.4": "0"
+    },
+    "filament_ramming_parameters": {
+      "1.4.4": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\""
+    },
+    "filament_minimal_purge_on_wipe_tower": {
+      "1.4.4": "15"
+    },
+    "filament_cost": {
+      "1.4.4": "30.59"
+    },
+    "filament_density": {
+      "1.4.4": "1.24"
+    },
+    "filament_diameter": {
+      "1.4.4": "1.75"
+    },
+    "filament_notes": {
+      "1.4.4": "\"\""
+    },
+    "filament_settings_id": {
+      "1.4.4": "Fiberlogy HD PLA"
+    },
+    "filament_soluble": {
+      "1.4.4": "0"
+    },
+    "min_print_speed": {
+      "1.4.4": "15"
+    },
+    "slowdown_below_layer_time": {
+      "1.4.4": "15"
+    },
+    "start_filament_gcode": {
+      "1.4.4": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\""
+    },
+    "bed_temperature": {
+      "1.4.4": "60"
+    },
+    "bridge_fan_speed": {
+      "1.4.4": "100"
+    },
+    "disable_fan_first_layers": {
+      "1.4.4": "1"
+    },
+    "full_fan_speed_layer": {
+      "1.4.4": "4"
+    },
+    "fan_always_on": {
+      "1.4.4": "1"
+    },
+    "fan_below_layer_time": {
+      "1.4.4": "100"
+    },
+    "filament_colour": {
+      "1.4.4": "#FF8000"
+    },
+    "filament_max_volumetric_speed": {
+      "1.4.4": "15"
+    },
+    "filament_type": {
+      "1.4.4": "PLA"
+    },
+    "first_layer_bed_temperature": {
+      "1.4.4": "60"
+    },
+    "first_layer_temperature": {
+      "1.4.4": "230"
+    },
+    "max_fan_speed": {
+      "1.4.4": "100"
+    },
+    "min_fan_speed": {
+      "1.4.4": "100"
+    },
+    "temperature": {
+      "1.4.4": "230"
+    },
+    "filament_vendor": {
+      "1.4.4": "Fiberlogy"
+    },
+    "filament_spool_weight": {
+      "1.4.4": "330"
+    }
+  }
+}

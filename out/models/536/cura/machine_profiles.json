@@ -1,0 +1,56 @@
+[
+    {
+        "vendor": "Nwa 3D LLC",
+        "machine_model": {
+            "name": "Nwa3D A5",
+            "version": 2,
+            "inherits": "fdmprinter",
+            "visible": true,
+            "author": "DragonJe",
+            "manufacturer": "Nwa 3D LLC",
+            "file_formats": "text/x-gcode",
+            "has_machine_quality": true,
+            "has_materials": true,
+            "has_variants": false,
+            "machine_extruder_trains": {
+                "0": "nwa3d_a5_extruder_0"
+            },
+            "platform_offset": [
+                0,
+                0,
+                0
+            ],
+            "preferred_material": "generic_pla",
+            "preferred_quality_type": "normal",
+            "gantry_height": "30",
+            "machine_depth": 150,
+            "machine_end_gcode": "M104 S0\nM140 S0\n ; Retract the filament\nG92 E1\nG1 E-1 F300\nG28 X0 Y0\nM84",
+            "machine_gcode_flavor": "RepRap (RepRap)",
+            "machine_head_with_fans_polygon": [
+                [
+                    -30,
+                    34
+                ],
+                [
+                    -30,
+                    -32
+                ],
+                [
+                    30,
+                    -32
+                ],
+                [
+                    30,
+                    34
+                ]
+            ],
+            "machine_heated_bed": false,
+            "machine_height": 100,
+            "machine_name": "NWA3D A5",
+            "machine_start_gcode": "G28 ; Home\nG1 Z15.0 F6000 ; Move Z axis up 15mm\n ; Prime the extruder\nG92 E0\nG1 F200 E3\nG92 E0",
+            "machine_width": 125,
+            "material_diameter": 1.75
+        },
+        "variants": {}
+    }
+]

@@ -1,0 +1,286 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "X-Plus 3 0.2 nozzle",
+  "vendor": "QIDITechnology",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "autoemit_temperature_commands": {
+      "3.0.0": "1"
+    },
+    "auxiliary_fan": {
+      "3.0.0": "1"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "40"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "60"
+    },
+    "bed_custom_model": {
+      "3.0.0": ""
+    },
+    "bed_custom_texture": {
+      "3.0.0": ""
+    },
+    "bed_exclude_area": {
+      "3.0.0": "0x0"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,280x0,280x280,0x280"
+    },
+    "before_layer_gcode": {
+      "3.0.0": ""
+    },
+    "between_objects_gcode": {
+      "3.0.0": ""
+    },
+    "binary_gcode": {
+      "3.0.0": "0"
+    },
+    "chamber_fan": {
+      "3.0.0": "1"
+    },
+    "color_change_gcode": {
+      "3.0.0": "M0"
+    },
+    "cooling_tube_length": {
+      "3.0.0": "5"
+    },
+    "cooling_tube_retraction": {
+      "3.0.0": "91.5"
+    },
+    "default_filament_profile": {
+      "3.0.0": "Generic PLA @X-Plus 3 0.2 nozzle"
+    },
+    "default_print_profile": {
+      "3.0.0": "0.12mm Fine @X-Plus 3 0.2 nozzle"
+    },
+    "deretract_speed": {
+      "3.0.0": "0"
+    },
+    "end_gcode": {
+      "3.0.0": "M141 S0\\nM104 S0\\nM140 S0\\nG1 E-3 F1800\\nG0 Z{min(max_print_height, max_layer_z + 3)} F600\\nG0 X0 Y0 F12000\\n{if max_layer_z < max_print_height / 2}G1 Z{max_print_height / 2 + 10} F600{else}G1 Z{min(max_print_height, max_layer_z + 3)}{endif}"
+    },
+    "extra_loading_move": {
+      "3.0.0": "-2"
+    },
+    "extruder_colour": {
+      "3.0.0": "\"\""
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0"
+    },
+    "gcode_flavor": {
+      "3.0.0": "klipper"
+    },
+    "high_current_on_filament_swap": {
+      "3.0.0": "0"
+    },
+    "host_type": {
+      "3.0.0": "moonraker"
+    },
+    "layer_gcode": {
+      "3.0.0": "G92 E0"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "time_estimate_only"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "5000"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "20000"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "5000"
+    },
+    "machine_max_acceleration_travel": {
+      "3.0.0": "1500"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "20000"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "20000"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "500"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "30"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "600"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "600"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "2"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "9"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "9"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "3"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.14"
+    },
+    "max_print_height": {
+      "3.0.0": "270"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.04"
+    },
+    "multimaterial_purging": {
+      "3.0.0": "45"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.2"
+    },
+    "parking_pos_retraction": {
+      "3.0.0": "0"
+    },
+    "pause_print_gcode": {
+      "3.0.0": "M0"
+    },
+    "print_host": {
+      "3.0.0": ""
+    },
+    "printer_model": {
+      "3.0.0": "X-Plus 3"
+    },
+    "printer_notes": {
+      "3.0.0": ""
+    },
+    "printer_settings_id": {
+      "3.0.0": "X-Plus 3 0.2 nozzle"
+    },
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "printer_variant": {
+      "3.0.0": "0.2"
+    },
+    "printer_vendor": {
+      "3.0.0": "QIDI"
+    },
+    "printhost_apikey": {
+      "3.0.0": ""
+    },
+    "printhost_cafile": {
+      "3.0.0": ""
+    },
+    "remaining_times": {
+      "3.0.0": "1"
+    },
+    "retract_before_travel": {
+      "3.0.0": "1"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "0%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1"
+    },
+    "retract_length": {
+      "3.0.0": "0.4"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "2"
+    },
+    "retract_lift": {
+      "3.0.0": "0.4"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0"
+    },
+    "retract_lift_below": {
+      "3.0.0": "269"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_speed": {
+      "3.0.0": "30"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "start_gcode": {
+      "3.0.0": "PRINT_START\\nG28\\nM141 S0\\nG0 Z50 F600\\nM190 S[first_layer_bed_temperature]\\nM191 S[chamber_temperature]\\nG28 Z\\nG29; mesh bed leveling ,comment this code to close it\\nG0 X0 Y0 Z50 F6000\\nM109 S[first_layer_temperature]\\nM106 P3 S255\\nM83\\nG4 P3000\\nG0 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0)} Z5 F6000\\nG0 Z[first_layer_height] F600\\nG1 E3 F1800\\nG1 X{(min(print_bed_max[0], first_layer_print_min[0] + 80))} E{85 * 0.5 * first_layer_height * nozzle_diameter[0]} F3000\\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 2} E{2 * 0.5 * first_layer_height * nozzle_diameter[0]} F3000\\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} E{85 * 0.5 * first_layer_height * nozzle_diameter[0]} F3000\\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 85} E{83 * 0.5 * first_layer_height * nozzle_diameter[0]} F3000\\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0) + 2} E{2 * 0.5 * first_layer_height * nozzle_diameter[0]} F3000\\nG1 Y{max((min(print_bed_max[1], first_layer_print_min[1] + 80) - 85),0) + 3} E{82 * 0.5 * first_layer_height * nozzle_diameter[0]} F3000\\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0) + 12} E{-10 * 0.5 * first_layer_height * nozzle_diameter[0]} F3000\\nG1 E{10 * 0.5 * first_layer_height * nozzle_diameter[0]} F3000\\n"
+    },
+    "template_custom_gcode": {
+      "3.0.0": ""
+    },
+    "thumbnails": {
+      "3.0.0": "380x380/PNG, 210x210/PNG"
+    },
+    "thumbnails_format": {
+      "3.0.0": "PNG"
+    },
+    "travel_lift_before_obstacle": {
+      "3.0.0": "0"
+    },
+    "travel_max_lift": {
+      "3.0.0": "0.4"
+    },
+    "travel_ramping_lift": {
+      "3.0.0": "1"
+    },
+    "travel_slope": {
+      "3.0.0": "3"
+    },
+    "toolchange_gcode": {
+      "3.0.0": ""
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "1"
+    },
+    "wipe": {
+      "3.0.0": "1"
+    },
+    "wipe_device": {
+      "3.0.0": "0"
+    },
+    "wipe_distance": {
+      "3.0.0": "2"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    }
+  }
+}

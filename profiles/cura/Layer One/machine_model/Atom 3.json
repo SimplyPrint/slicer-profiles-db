@@ -1,0 +1,233 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Atom 3",
+  "vendor": "Layer One",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Atom 3"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Daniel Kurth"
+    },
+    "manufacturer": {
+      "2026-02-25": "Layer One"
+    },
+    "platform": {
+      "2026-02-25": "Atom 3 bed.3mf"
+    },
+    "has_machine_quality": {
+      "2026-02-25": false
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "has_variants": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "atom3_extruder_0"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        0,
+        0
+      ]
+    },
+    "preferred_material": {
+      "2026-02-25": "layer_one_dark_gray_pla"
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "preferred_variant_name": {
+      "2026-02-25": "PTFE hotend + 0.4mm brass nozzle"
+    },
+    "variants_name": {
+      "2026-02-25": "Tool:"
+    },
+    "adhesion_type": {
+      "2026-02-25": "skirt"
+    },
+    "cool_lift_head": {
+      "2026-02-25": false
+    },
+    "cool_min_layer_time": {
+      "2026-02-25": 5
+    },
+    "cool_min_speed": {
+      "2026-02-25": 10
+    },
+    "default_material_bed_temperature": {
+      "2026-02-25": 60
+    },
+    "default_material_print_temperature": {
+      "2026-02-25": 200
+    },
+    "infill_before_walls": {
+      "2026-02-25": false
+    },
+    "infill_sparse_density": {
+      "2026-02-25": 17
+    },
+    "initial_layer_line_width_factor": {
+      "2026-02-25": 100
+    },
+    "layer_height": {
+      "2026-02-25": 0.2
+    },
+    "layer_height_0": {
+      "2026-02-25": 0.2
+    },
+    "line_width": {
+      "2026-02-25": "machine_nozzle_size"
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": true
+    },
+    "machine_depth": {
+      "2026-02-25": 270
+    },
+    "machine_end_gcode": {
+      "2026-02-25": ";MACHINE END CODE\nG91 ;relative positioning\nG1 E-1 F300  ;retract  filament release pressure\nG1 Z+1.0 E-5 F9000 ;move up a and retract more\nG90 ;absolute positioning\nG28; home\nM84 ;steppers off\n;MACHINE END CODE"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -23.82,
+          51.25
+        ],
+        [
+          23.82,
+          51.25
+        ],
+        [
+          56.292,
+          -5.0
+        ],
+        [
+          32.476,
+          -46.25
+        ],
+        [
+          -32.476,
+          -46.25
+        ],
+        [
+          -56.292,
+          -5.0
+        ]
+      ]
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 340
+    },
+    "machine_name": {
+      "2026-02-25": "Atom 3"
+    },
+    "machine_nozzle_head_distance": {
+      "2026-02-25": 6
+    },
+    "machine_shape": {
+      "2026-02-25": "elliptic"
+    },
+    "machine_show_variants": {
+      "2026-02-25": true
+    },
+    "machine_start_gcode": {
+      "2026-02-25": ";MACHINE START CODE\nG21 ;metric values\nG90 ;absolute positioning\nG28 ;home\nG1 Z5 F9000\n;MACHINE START CODE"
+    },
+    "machine_width": {
+      "2026-02-25": 270
+    },
+    "material_bed_temperature": {
+      "2026-02-25": "round(default_material_bed_temperature-(-0.202 * default_material_bed_temperature + 7.16)) if default_material_bed_temperature > 40 else default_material_bed_temperature"
+    },
+    "material_diameter": {
+      "2026-02-25": 1.75
+    },
+    "material_final_print_temperature": {
+      "2026-02-25": "material_print_temperature"
+    },
+    "material_initial_print_temperature": {
+      "2026-02-25": "material_print_temperature_layer_0"
+    },
+    "retraction_amount": {
+      "2026-02-25": 7
+    },
+    "retraction_hop": {
+      "2026-02-25": 0.5
+    },
+    "retraction_hop_enabled": {
+      "2026-02-25": true
+    },
+    "retraction_speed": {
+      "2026-02-25": 70
+    },
+    "skirt_brim_minimal_length": {
+      "2026-02-25": 750
+    },
+    "skirt_gap": {
+      "2026-02-25": 1
+    },
+    "speed_layer_0": {
+      "2026-02-25": "20"
+    },
+    "speed_print": {
+      "2026-02-25": 40
+    },
+    "speed_slowdown_layers": {
+      "2026-02-25": 1
+    },
+    "speed_wall": {
+      "2026-02-25": "speed_print * 0.75"
+    },
+    "speed_wall_0": {
+      "2026-02-25": "speed_print * 0.5"
+    },
+    "speed_wall_x": {
+      "2026-02-25": "speed_print * 0.75"
+    },
+    "support_angle": {
+      "2026-02-25": 60
+    },
+    "support_type": {
+      "2026-02-25": "everywhere"
+    },
+    "support_xy_distance_overhang": {
+      "2026-02-25": "machine_nozzle_size"
+    },
+    "support_z_distance": {
+      "2026-02-25": "layer_height"
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": 1.0
+    },
+    "zig_zaggify_infill": {
+      "2026-02-25": true
+    }
+  }
+}

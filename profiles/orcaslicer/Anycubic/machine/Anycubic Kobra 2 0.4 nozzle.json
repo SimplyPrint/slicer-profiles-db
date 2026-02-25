@@ -1,0 +1,289 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "Anycubic Kobra 2 0.4 nozzle",
+  "vendor": "Anycubic",
+  "first_seen": "2.3.1",
+  "last_seen": "2.3.1",
+  "filament_id": null,
+  "setting_id": "GM001",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.3.1": "machine"
+    },
+    "name": {
+      "2.3.1": "Anycubic Kobra 2 0.4 nozzle"
+    },
+    "from": {
+      "2.3.1": "system"
+    },
+    "instantiation": {
+      "2.3.1": "true"
+    },
+    "gcode_flavor": {
+      "2.3.1": "marlin"
+    },
+    "machine_start_gcode": {
+      "2.3.1": "G90 ;Use absolute coordinates\nM83 ;Extruder relative mode\nM104 S[first_layer_temperature] ;Set extruder temp\nM140 S[first_layer_bed_temperature] ;Set bed temp\nM190 S[first_layer_bed_temperature] ;Wait for bed temp\nM109 S[first_layer_temperature] ;Wait for extruder temp\nG28 ;Move X/Y/Z to min endstops\nG1 Z0.28 ;Lift nozzle a bit\nG92 E0 ;Specify current extruder position as zero\nG1 Y3 F1800 ;Move Y to purge point\nG1 X60 E25 F500 ;Extrude 25mm of filament in a 5cm line\nG92 E0 ;Zero the extruded length again\nG1 E-2 F500 ;Retract a little\nG1 X70 F4000 ;Quickly wipe away from the filament line\nM117"
+    },
+    "machine_end_gcode": {
+      "2.3.1": "M104 S0 ;Extruder off\nM140 S0 ;Heatbed off\nM107 ;Fan off\nG91 ;Relative positioning\nG1 E-5 F3000 ;Retract filament\nG1 Z+0.3 F3000 ;Lift print head\nG28 X0 F3000 ;Home X axis\nM84 ;Disable stepper motors"
+    },
+    "extruder_colour": {
+      "2.3.1": [
+        "#018001"
+      ]
+    },
+    "extruder_offset": {
+      "2.3.1": [
+        "0x0"
+      ]
+    },
+    "machine_max_acceleration_e": {
+      "2.3.1": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.3.1": [
+        "2500",
+        "2500"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.3.1": [
+        "2500",
+        "2500"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "2.3.1": [
+        "3000",
+        "1250"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.3.1": [
+        "2500",
+        "2500"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.3.1": [
+        "2500",
+        "2500"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.3.1": [
+        "800",
+        "800"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.3.1": [
+        "80",
+        "80"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.3.1": [
+        "300",
+        "300"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.3.1": [
+        "250",
+        "250"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.3.1": [
+        "8",
+        "8"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.3.1": [
+        "10",
+        "10"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.3.1": [
+        "15",
+        "15"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.3.1": [
+        "10",
+        "10"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.3.1": [
+        "2",
+        "2"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.3.1": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "2.3.1": [
+        "0.32"
+      ]
+    },
+    "min_layer_height": {
+      "2.3.1": [
+        "0.04"
+      ]
+    },
+    "printable_height": {
+      "2.3.1": "250"
+    },
+    "extruder_clearance_radius": {
+      "2.3.1": "65"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.3.1": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.3.1": "140"
+    },
+    "nozzle_diameter": {
+      "2.3.1": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "2.3.1": "Anycubic"
+    },
+    "printer_technology": {
+      "2.3.1": "FFF"
+    },
+    "printer_variant": {
+      "2.3.1": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "retract_before_wipe": {
+      "2.3.1": [
+        "70%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "2.3.1": [
+        "2"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "z_hop": {
+      "2.3.1": [
+        "0.4"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.3.1": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "2.3.1": [
+        "80"
+      ]
+    },
+    "deretraction_speed": {
+      "2.3.1": [
+        "80"
+      ]
+    },
+    "silent_mode": {
+      "2.3.1": "0"
+    },
+    "single_extruder_multi_material": {
+      "2.3.1": "1"
+    },
+    "change_filament_gcode": {
+      "2.3.1": "M600"
+    },
+    "before_layer_change_gcode": {
+      "2.3.1": ";BEFORE_LAYER_CHANGE\n[layer_num] @ [layer_z]mm/nG92 E0"
+    },
+    "layer_change_gcode": {
+      "2.3.1": ";AFTER_LAYER_CHANGE\n[layer_num] @ [layer_z]mm"
+    },
+    "machine_pause_gcode": {
+      "2.3.1": "M601"
+    },
+    "wipe": {
+      "2.3.1": [
+        "1"
+      ]
+    },
+    "z_hop_types": {
+      "2.3.1": "Normal Lift"
+    },
+    "setting_id": {
+      "2.3.1": "GM001"
+    },
+    "printer_model": {
+      "2.3.1": "Anycubic Kobra 2"
+    },
+    "default_print_profile": {
+      "2.3.1": "0.20mm Standard @Anycubic Kobra2"
+    },
+    "printable_area": {
+      "2.3.1": [
+        "0x0",
+        "220x0",
+        "220x220",
+        "0x220"
+      ]
+    },
+    "nozzle_type": {
+      "2.3.1": "undefine"
+    },
+    "auxiliary_fan": {
+      "2.3.1": "0"
+    },
+    "default_filament_profile": {
+      "2.3.1": [
+        "Anycubic Generic PLA"
+      ]
+    },
+    "scan_first_layer": {
+      "2.3.1": "0"
+    }
+  }
+}

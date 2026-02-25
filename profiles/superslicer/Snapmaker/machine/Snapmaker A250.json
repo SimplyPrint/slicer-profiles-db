@@ -1,0 +1,208 @@
+{
+  "slicer": "superslicer",
+  "profile_type": "machine",
+  "name": "Snapmaker A250",
+  "vendor": "Snapmaker",
+  "first_seen": "1.4.4",
+  "last_seen": "1.4.4",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "bed_shape": {
+      "1.4.4": "0x0,230x0,230x250,0x250"
+    },
+    "color_change_gcode": {
+      "1.4.4": "M600"
+    },
+    "cooling_tube_length": {
+      "1.4.4": "5"
+    },
+    "cooling_tube_retraction": {
+      "1.4.4": "91.5"
+    },
+    "default_filament_profile": {
+      "1.4.4": "Generic PLA @Snapmaker"
+    },
+    "default_print_profile": {
+      "1.4.4": "0.20mm NORMAL @SnapmakerA250"
+    },
+    "end_gcode": {
+      "1.4.4": "M140 S0\\n;End GCode begin\\nM104 S0 ;extruder heater off\\nM140 S0 ;heated bed heater off (if you have it)\\nG90 ;absolute positioning\\nG92 E0\\nG1 E-2 F300 ;retract the filament a bit before lifting the nozzle, to release some of the pressure\\nG1 Z330 E-1 F80 ;move Z up a bit and retract filament even more\\nG1 X0 F3000 ;move X to min endstops, so the head is out of the way\\nG1 Y250 F3000 ;so the head is out of the way and Plate is moved forward\\nM84 ;steppers off\\n;End GCode end\\nM82 ;absolute extrusion mode\\nM104 S0\\nM107\\n;End of Gcode"
+    },
+    "extra_loading_move": {
+      "1.4.4": "-2"
+    },
+    "extruder_colour": {
+      "1.4.4": "\"\""
+    },
+    "extruder_offset": {
+      "1.4.4": "0x0"
+    },
+    "gcode_flavor": {
+      "1.4.4": "marlin"
+    },
+    "high_current_on_filament_swap": {
+      "1.4.4": "0"
+    },
+    "machine_limits_usage": {
+      "1.4.4": "time_estimate_only"
+    },
+    "machine_max_acceleration_e": {
+      "1.4.4": "10000"
+    },
+    "machine_max_acceleration_extruding": {
+      "1.4.4": "1000"
+    },
+    "machine_max_acceleration_retracting": {
+      "1.4.4": "1000"
+    },
+    "machine_max_acceleration_travel": {
+      "1.4.4": "1500"
+    },
+    "machine_max_acceleration_x": {
+      "1.4.4": "3000"
+    },
+    "machine_max_acceleration_y": {
+      "1.4.4": "3000"
+    },
+    "machine_max_acceleration_z": {
+      "1.4.4": "100"
+    },
+    "machine_max_feedrate_e": {
+      "1.4.4": "25"
+    },
+    "machine_max_feedrate_x": {
+      "1.4.4": "150"
+    },
+    "machine_max_feedrate_y": {
+      "1.4.4": "150"
+    },
+    "machine_max_feedrate_z": {
+      "1.4.4": "50"
+    },
+    "machine_max_jerk_e": {
+      "1.4.4": "2.5"
+    },
+    "machine_max_jerk_x": {
+      "1.4.4": "10"
+    },
+    "machine_max_jerk_y": {
+      "1.4.4": "10"
+    },
+    "machine_max_jerk_z": {
+      "1.4.4": "0.2"
+    },
+    "machine_min_extruding_rate": {
+      "1.4.4": "0"
+    },
+    "machine_min_travel_rate": {
+      "1.4.4": "0"
+    },
+    "max_layer_height": {
+      "1.4.4": "0.3"
+    },
+    "max_print_height": {
+      "1.4.4": "235"
+    },
+    "min_layer_height": {
+      "1.4.4": "0.08"
+    },
+    "nozzle_diameter": {
+      "1.4.4": "0.4"
+    },
+    "parking_pos_retraction": {
+      "1.4.4": "92"
+    },
+    "pause_print_gcode": {
+      "1.4.4": ""
+    },
+    "printer_technology": {
+      "1.4.4": "FFF"
+    },
+    "remaining_times": {
+      "1.4.4": "0"
+    },
+    "retract_before_travel": {
+      "1.4.4": "2"
+    },
+    "retract_before_wipe": {
+      "1.4.4": "0%"
+    },
+    "retract_layer_change": {
+      "1.4.4": "1"
+    },
+    "retract_length": {
+      "1.4.4": "3"
+    },
+    "retract_length_toolchange": {
+      "1.4.4": "10"
+    },
+    "retract_lift": {
+      "1.4.4": "0"
+    },
+    "retract_lift_above": {
+      "1.4.4": "0"
+    },
+    "retract_lift_below": {
+      "1.4.4": "0"
+    },
+    "retract_restart_extra": {
+      "1.4.4": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "1.4.4": "0"
+    },
+    "retract_speed": {
+      "1.4.4": "60"
+    },
+    "deretract_speed": {
+      "1.4.4": "40"
+    },
+    "silent_mode": {
+      "1.4.4": "0"
+    },
+    "single_extruder_multi_material": {
+      "1.4.4": "0"
+    },
+    "start_gcode": {
+      "1.4.4": "M82 ;absolute extrusion mode\\n;Start GCode begin\\nM140 S[first_layer_bed_temperature]   ;Start Warming Bed\\nM104 S160 ;Preheat Nozzle\\nG28 ; home all axes\\nG90 ;absolute positioning\\nG1 X-10 Y-10 F3000\\nG1 Z0 F1800\\nG1 Z5 F5000 ; lift nozzle\\nM190 S[first_layer_bed_temperature]   ;Wait For Bed Temperature\\nM109 S{first_layer_temperature+extruder_temperature_offset} ;Wait for Hotend Temperature\\nG92 E0\\nG1 E10 F200\\nG1 E-2 F300\\nG92 E0\\n;Start GCode end\\nG1 F3600 E-2"
+    },
+    "thumbnails": {
+      "1.4.4": ""
+    },
+    "thumbnails_format": {
+      "1.4.4": "PNG"
+    },
+    "thumbnails_tag_format": {
+      "1.4.4": "0"
+    },
+    "use_firmware_retraction": {
+      "1.4.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.4.4": "0"
+    },
+    "use_volumetric_e": {
+      "1.4.4": "0"
+    },
+    "variable_layer_height": {
+      "1.4.4": "0"
+    },
+    "wipe": {
+      "1.4.4": "0"
+    },
+    "z_offset": {
+      "1.4.4": "0"
+    },
+    "printer_model": {
+      "1.4.4": "A250"
+    },
+    "printer_variant": {
+      "1.4.4": "0.4"
+    },
+    "printer_settings_id": {
+      "1.4.4": "Snapmaker A250"
+    }
+  }
+}

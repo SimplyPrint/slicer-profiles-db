@@ -1,0 +1,76 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "PBR 3D Gen-I",
+  "vendor": "PBR Research",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "PBR 3D Gen-I"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Kapil H. Sonone, Prof. Bahubali P. Fuladi"
+    },
+    "manufacturer": {
+      "2026-02-25": "PBR Research"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "pbr3d_g1_buildplate.stl"
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "pbr3d_g1_extruder_0"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        -5,
+        0
+      ]
+    },
+    "gantry_height": {
+      "2026-02-25": "200"
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 200
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "M104 S0\nM140 S0\n;Retract the Filament\nG92 E1\nG1 E-1 F300\nG28 X0 Y0\nM84"
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 200
+    },
+    "machine_name": {
+      "2026-02-25": "PBR 3D Gen-I"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "G28 ;Home\nG1 Z15.0 F6000 ;Move the Platform down 15mm\n;Prime the extruder\nG92 E0\nG1 F200 E3\nG92 E0"
+    },
+    "machine_width": {
+      "2026-02-25": 200
+    }
+  }
+}

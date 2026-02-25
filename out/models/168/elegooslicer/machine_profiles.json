@@ -1,0 +1,182 @@
+[
+    {
+        "vendor": "Qidi",
+        "machine_model": {
+            "type": "machine_model",
+            "name": "Qidi X-Max",
+            "model_id": "Qidi-XMax",
+            "nozzle_diameter": "0.4",
+            "machine_tech": "FFF",
+            "family": "Qidi",
+            "bed_model": "sha256:09989428c6d69f40144560f3508c38be796cd949be9811925e45a26a900f3976",
+            "bed_texture": "sha256:ac8fc2c2f0f1274e277ca54844b263b5c37fda1dc717da1a7d66ba51de0cc8a4",
+            "hotend_model": "sha256:6886e8c4e3a6dbcb0f75e718e0fc3f157e57188349dfef99024433188a852dbb",
+            "default_materials": "QIDI PLA Rapido;QIDI ABS Rapido;QIDI PETG Tough;QIDI PET-CF;QIDI PA12-CF;QIDI PAHT-CF;QIDI ABS-GF25;QIDI PA-Ultra;Qidi Generic ASA;Qidi Generic ABS;Qidi Generic PA-CF;Qidi Generic PA;Qidi Generic PC;Qidi Generic PETG-CF;Qidi Generic PETG;Qidi Generic PLA Silk;Qidi Generic PLA;Qidi Generic PLA-CF;Qidi Generic PVA;Qidi Generic TPU 95A"
+        },
+        "variants": {
+            "0.4": {
+                "name": "Qidi X-Max 0.4 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "Qidi X-Max 0.4 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "printer_technology": "FFF",
+                    "deretraction_speed": [
+                        "0"
+                    ],
+                    "extruder_colour": [
+                        ""
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "gcode_flavor": "marlin",
+                    "silent_mode": "0",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "1500",
+                        "1250"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "1500",
+                        "1250"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "9000",
+                        "1000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "9000",
+                        "1000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_e": [
+                        "120",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "10",
+                        "10"
+                    ],
+                    "machine_max_jerk_y": [
+                        "10",
+                        "10"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.32"
+                    ],
+                    "min_layer_height": [
+                        "0.07"
+                    ],
+                    "printable_height": "300",
+                    "extruder_clearance_radius": "47",
+                    "extruder_clearance_height_to_rod": "34",
+                    "extruder_clearance_height_to_lid": "34",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "printer_settings_id": "Qidi",
+                    "printer_variant": "0.4",
+                    "retraction_minimum_travel": [
+                        "2"
+                    ],
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "2"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "60"
+                    ],
+                    "single_extruder_multi_material": "0",
+                    "change_filament_gcode": "",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop_types": [
+                        "Auto Lift"
+                    ],
+                    "default_print_profile": "0.20mm Standard @Qidi XMax",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "machine_start_gcode": "G28\nG92 E0\nG0 X300 Y5 Z50 F3600\nM190 S[bed_temperature_initial_layer_single]\nM109 S[first_layer_temperature]\nG92 E-19\n",
+                    "machine_end_gcode": "M104 S0\nM140 S0\n;Retract the filament\nG92 E0\nG1 E-3 F300\nG28\nM84\n",
+                    "time_lapse_gcode": ";TIMELAPSE_TAKE_FRAME\n",
+                    "machine_max_acceleration_travel": [
+                        "1500",
+                        "1250"
+                    ],
+                    "machine_pause_gcode": "M0",
+                    "default_filament_profile": [
+                        "Qidi Generic PLA"
+                    ],
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "layer_change_gcode": "",
+                    "scan_first_layer": "0",
+                    "nozzle_type": "hardened_steel",
+                    "auxiliary_fan": "0",
+                    "setting_id": "GM001",
+                    "printer_model": "Qidi X-Max",
+                    "printable_area": [
+                        "0x0",
+                        "300x0",
+                        "300x250",
+                        "0x250"
+                    ]
+                }
+            }
+        }
+    }
+]

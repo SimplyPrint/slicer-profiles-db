@@ -1,0 +1,205 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "Mini Aero 0.5mm",
+  "vendor": "LulzBot",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_model": {
+      "3.0.0": "MINI_AERO"
+    },
+    "printer_variant": {
+      "3.0.0": "0.5"
+    },
+    "default_print_profile": {
+      "3.0.0": "0.25mm STANDARD @lulzbot"
+    },
+    "default_filament_profile": {
+      "3.0.0": "Jessie PLA @lulzbot"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,154x0,154x154,0x154"
+    },
+    "before_layer_gcode": {
+      "3.0.0": ""
+    },
+    "between_objects_gcode": {
+      "3.0.0": ""
+    },
+    "cooling_tube_length": {
+      "3.0.0": "5"
+    },
+    "cooling_tube_retraction": {
+      "3.0.0": "91.5"
+    },
+    "deretract_speed": {
+      "3.0.0": "20"
+    },
+    "end_gcode": {
+      "3.0.0": "M400                                      ; wait for moves to finish\\nM140 S40 ; start bed cooling\\nM104 S0                                   ; disable hotend\\nM107                                      ; disable fans\\nG92 E1                                    ; set extruder to 1mm for retract on print end (LulzBot Cura had 5mm, might be a contributing factor to between print Aerostruder jamming)\\nM117 Cooling please wait                  ; progress indicator message on LCD\\nG1 X5 Y5 Z158 E0 F10000                   ; move to cooling position\\nG1 E1                                     ; re-prime extruder\\nM190 R40 ; wait for bed to cool down to removal temp\\nM77\t\t\t\t\t  ; Stop GLCD Timer\\nG1 X145 F1000                             ; move extruder out of the way\\nG1 Y175 F1000                             ; present finished print\\nM140 S0; cool downs\\nM84                                       ; disable steppers\\nG90                                       ; absolute positioning\\nM117 Print Complete.                      ; print complete message\\n"
+    },
+    "extra_loading_move": {
+      "3.0.0": "-2"
+    },
+    "extruder_colour": {
+      "3.0.0": "\"\""
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0"
+    },
+    "gcode_flavor": {
+      "3.0.0": "marlin"
+    },
+    "high_current_on_filament_swap": {
+      "3.0.0": "0"
+    },
+    "layer_gcode": {
+      "3.0.0": ""
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "10000"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "1500"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "1500"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "9000"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "9000"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "100"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "40"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "300"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "300"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "8"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "2.5"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "20"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "20"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "0.2"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "time_estimate_only"
+    },
+    "max_layer_height": {
+      "3.0.0": "0"
+    },
+    "max_print_height": {
+      "3.0.0": "158"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.07"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.5"
+    },
+    "parking_pos_retraction": {
+      "3.0.0": "92"
+    },
+    "printer_notes": {
+      "3.0.0": "LulzBot Mini w/ Aerostruder profile for Delaware Library System, Rt9 Library and Innovation Center."
+    },
+    "remaining_times": {
+      "3.0.0": "0"
+    },
+    "retract_before_travel": {
+      "3.0.0": "2"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "0%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1"
+    },
+    "retract_length": {
+      "3.0.0": "1"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "10"
+    },
+    "retract_lift": {
+      "3.0.0": "0"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0"
+    },
+    "retract_lift_below": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_speed": {
+      "3.0.0": "30"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "start_gcode": {
+      "3.0.0": ";This G-Code has been generated specifically for the LulzBot Mini with Aerosturder\\nM73 P0 ; clear GLCD progress bar\\nM75 ; start GLCD timer\\nG26 ; clear potential 'probe fail' condition\\nM107 ; disable fans\\nM420 S0 ; disable leveling matrix\\nG90 ; absolute positioning\\nM82 ; set extruder to absolute mode\\nG92 E0 ; set extruder position to 0\\nM140 S{first_layer_bed_temperature[0]} ; start bed heating up\\nG28; home all axes\\nG0 X0 Y187 Z156 F200 ; move away from endstops\\nM109 R{first_layer_temperature[0] - 60} ; soften filament before retraction\\n;G1 E-15 F75 ; retract filament (LulzBot Cura is apparently trying to cold pull, might be a contributing factor to hob gear filling with filament)\\nM109 R{first_layer_temperature[0] - 60} ; wait for extruder to reach wiping temp\\nG1 X45 Y173 F11520 ; move above wiper pad\\nG1 Z0 F1200 ; push nozzle into wiper\\nG1 X42 Y173 Z-.5 F4000 ; wiping\\nG1 X52 Y171 Z-.5 F4000 ; wiping\\nG1 X42 Y173 Z0 F4000 ; wiping\\nG1 X52 Y171 F4000 ; wiping\\nG1 X42 Y173 F4000 ; wiping\\nG1 X52 Y171 F4000 ; wiping\\nG1 X42 Y173 F4000 ; wiping\\nG1 X52 Y171 F4000 ; wiping\\nG1 X57 Y173 F4000 ; wiping\\nG1 X77 Y171 F4000 ; wiping\\nG1 X57 Y173 F4000 ; wiping\\nG1 X77 Y171 F4000 ; wiping\\nG1 X57 Y173 F4000 ; wiping\\nG1 X87 Y171 F4000 ; wiping\\nG1 X77 Y173 F4000 ; wiping\\nG1 X97 Y171 F4000 ; wiping\\nG1 X77 Y173 F4000 ; wiping\\nG1 X97 Y171 F4000 ; wiping\\nG1 X77 Y173 F4000 ; wiping\\nG1 X97 Y171 F4000 ; wiping\\nG1 X107 Y173 F4000 ; wiping\\nG1 X97 Y171 F4000 ; wiping\\nG1 X107 Y173 F4000 ; wiping\\nG1 X97 Y171 F4000 ; wiping\\nG1 X107 Y173 F4000 ; wiping\\nG1 X112 Y171 Z-0.5 F1000 ; wiping\\nG1 Z10 ; raise extruder\\nG28 X0 Y0 ; home X and Y\\nG0 X0 Y187 F200 ; move away from endstops\\nM109 R{first_layer_temperature[0] - 60} ; wait for extruder to reach probe temp\\nM204 S300 ; set probing acceleration\\nG29       ; start auto-leveling sequence\\nM420 S1   ; enable leveling matrix\\nM425 Z    ; use measured Z backlash for compensation\\nM425 Z F0 ; turn off measured Z backlash compensation. (if activated in the quality settings, this command will automatically be ignored)\\nM204 S2000 ; restore standard acceleration\\nG28 X0 Y0 ; re-home to account for build variance of earlier mini builds\\nG0 X0 Y187 F200 ; move away from endstops\\nG0 Y152 F4000 ; move in front of wiper pad\\nG4 S1 ; pause\\nM400 ; wait for moves to finish\\nM117 Heating... ; progress indicator message on LCD\\nM109 R{first_layer_temperature[0]}  ; wait for extruder to reach printing temp\\nM190 R{first_layer_bed_temperature[0]} ; wait for bed to reach printing temp\\nG1 Z2 E0 F75 ; prime tiny bit of filament into the nozzle\\nM117 Mini Printing... ; progress indicator message on LCD\\nM221 S74 ; Printer specific extrusion modifier."
+    },
+    "thumbnails": {
+      "3.0.0": ""
+    },
+    "toolchange_gcode": {
+      "3.0.0": ""
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "0"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "1"
+    },
+    "wipe": {
+      "3.0.0": "1"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    },
+    "printer_settings_id": {
+      "3.0.0": "Mini Aero 0.5mm"
+    }
+  }
+}

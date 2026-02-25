@@ -1,0 +1,103 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "filament",
+  "name": "Essentium Support S10 @HSP1 0.6 Takoto",
+  "vendor": "HartSmartProducts",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "cooling": {
+      "3.0.0": "1"
+    },
+    "compatible_printers": {
+      "3.0.0": ""
+    },
+    "filament_cost": {
+      "3.0.0": "100.00"
+    },
+    "filament_density": {
+      "3.0.0": "1.14"
+    },
+    "filament_diameter": {
+      "3.0.0": "1.75"
+    },
+    "filament_notes": {
+      "3.0.0": "Essentium Support S10"
+    },
+    "filament_settings_id": {
+      "3.0.0": "Essentium Support S10 @HSP1 0.6 Takoto"
+    },
+    "filament_soluble": {
+      "3.0.0": "1"
+    },
+    "min_print_speed": {
+      "3.0.0": "15"
+    },
+    "slowdown_below_layer_time": {
+      "3.0.0": "10"
+    },
+    "compatible_printers_condition": {
+      "3.0.0": "nozzle_diameter[0]==0.6"
+    },
+    "filament_type": {
+      "3.0.0": "PVA"
+    },
+    "temperature": {
+      "3.0.0": "215"
+    },
+    "bed_temperature": {
+      "3.0.0": "60"
+    },
+    "first_layer_temperature": {
+      "3.0.0": "210"
+    },
+    "first_layer_bed_temperature": {
+      "3.0.0": "60"
+    },
+    "idle_temperature": {
+      "3.0.0": "120"
+    },
+    "filament_max_volumetric_speed": {
+      "3.0.0": "10"
+    },
+    "extrusion_multiplier": {
+      "3.0.0": "0.90"
+    },
+    "filament_colour": {
+      "3.0.0": "#FF3232"
+    },
+    "fan_always_on": {
+      "3.0.0": "1"
+    },
+    "min_fan_speed": {
+      "3.0.0": "5"
+    },
+    "max_fan_speed": {
+      "3.0.0": "10"
+    },
+    "bridge_fan_speed": {
+      "3.0.0": "10"
+    },
+    "disable_fan_first_layers": {
+      "3.0.0": "4"
+    },
+    "fan_below_layer_time": {
+      "3.0.0": "30"
+    },
+    "compatible_prints_condition": {
+      "3.0.0": "notes=~/.*SOLUBLE_SUPPORT.*/"
+    },
+    "filament_vendor": {
+      "3.0.0": "Essentium"
+    },
+    "filament_spool_weight": {
+      "3.0.0": "325"
+    },
+    "start_filament_gcode": {
+      "3.0.0": "\"; Filament gcode\\n{local pressure_advance = 0.04}\\n{if printer_notes=~/.*DUPLICATOR_MODE.*/}\\nM572 D0:1 S{pressure_advance}\\n{else}\\nM572 D{current_extruder} S{pressure_advance}\\n{endif}\""
+    }
+  }
+}

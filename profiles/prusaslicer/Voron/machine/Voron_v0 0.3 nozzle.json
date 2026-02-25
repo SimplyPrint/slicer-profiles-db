@@ -1,0 +1,202 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "Voron_v0 0.3 nozzle",
+  "vendor": "Voron",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "before_layer_gcode": {
+      "3.0.0": ";BEFORE_LAYER_CHANGE\\n;[layer_z]\\nG92 E0\\n"
+    },
+    "between_objects_gcode": {
+      "3.0.0": ""
+    },
+    "deretract_speed": {
+      "3.0.0": "30"
+    },
+    "end_gcode": {
+      "3.0.0": "print_end    ;end script from macro"
+    },
+    "extruder_colour": {
+      "3.0.0": "#FFE3CA"
+    },
+    "extruder_offset": {
+      "3.0.0": "0x0"
+    },
+    "gcode_flavor": {
+      "3.0.0": "klipper"
+    },
+    "autoemit_temperature_commands": {
+      "3.0.0": "0"
+    },
+    "layer_gcode": {
+      "3.0.0": ";AFTER_LAYER_CHANGE\\n;[layer_z]"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "10000"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "1500"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "1500"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "9000"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "9000"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "500"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "120"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "500"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "500"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "12"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "2.5"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "0.2"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0"
+    },
+    "machine_limits_usage": {
+      "3.0.0": "time_estimate_only"
+    },
+    "remaining_times": {
+      "3.0.0": "0"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "printer_notes": {
+      "3.0.0": "Unoffical profile.\\nPRINTER_HAS_BOWDEN\\nE3DV6"
+    },
+    "printer_settings_id": {
+      "3.0.0": "Voron_v0 0.3 nozzle"
+    },
+    "retract_before_travel": {
+      "3.0.0": "3"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "0%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "0"
+    },
+    "retract_length": {
+      "3.0.0": "2.0"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "10"
+    },
+    "retract_lift": {
+      "3.0.0": "0.4"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0.2"
+    },
+    "retract_lift_below": {
+      "3.0.0": "500"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_speed": {
+      "3.0.0": "50"
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "start_gcode": {
+      "3.0.0": "print_start EXTRUDER=[first_layer_temperature[initial_tool]] BED=[first_layer_bed_temperature]"
+    },
+    "thumbnails": {
+      "3.0.0": "64x64,400x300"
+    },
+    "toolchange_gcode": {
+      "3.0.0": ""
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "1"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "1"
+    },
+    "wipe": {
+      "3.0.0": "0"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    },
+    "default_filament_profile": {
+      "3.0.0": "Basic PLA @VORON"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "38"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "34"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,120x0,120x120,0x120"
+    },
+    "max_print_height": {
+      "3.0.0": "120"
+    },
+    "printer_model": {
+      "3.0.0": "Voron_v0_120"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.3"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.225"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.025"
+    },
+    "printer_variant": {
+      "3.0.0": "0.3"
+    },
+    "default_print_profile": {
+      "3.0.0": "0.10mm 0.3nozzle"
+    }
+  }
+}

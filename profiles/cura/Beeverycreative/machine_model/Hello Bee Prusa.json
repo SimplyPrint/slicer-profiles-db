@@ -1,0 +1,110 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Hello Bee Prusa",
+  "vendor": "Beeverycreative",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Hello Bee Prusa"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Beeverycreative"
+    },
+    "manufacturer": {
+      "2026-02-25": "Beeverycreative"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "BEEVERYCREATIVE-helloBEEprusa.3mf"
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "hBp_extruder_left",
+        "1": "hBp_extruder_right"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        -226,
+        -75,
+        -196
+      ]
+    },
+    "infill_sparse_density": {
+      "2026-02-25": 20
+    },
+    "layer_height": {
+      "2026-02-25": 0.2
+    },
+    "layer_height_0": {
+      "2026-02-25": 0.2
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 200
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "; -- END GCODE --\nM104 S0                 ;set extruder temperature to zero (turned off)\nM140 S0                 ;set bed temperature to zero (turned off)\nG28 X0 Y0               ;move to the X/Y origin (Home)\nM84                     ;turn off steppers\n; -- end of END GCODE --"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 2
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 190
+    },
+    "machine_name": {
+      "2026-02-25": "hello BEE prusa"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "; -- START GCODE --\nG21                     ;set units to millimetres\nG90                     ;set to absolute positioning\nM107                    ;set fan speed to zero (turned off)\nG28 X0 Y0               ;move to the X/Y origin (Home)\nG28 Z0                  ;move to the Z origin (Home)\nG92 E0                  ;zero the extruded length\nG1 F3600                ;set feedrate to 60 mm/sec\nM420 S1 \n; -- end of START GCODE --"
+    },
+    "machine_width": {
+      "2026-02-25": 185
+    },
+    "retraction_amount": {
+      "2026-02-25": 1.5
+    },
+    "retraction_speed": {
+      "2026-02-25": 15.0
+    },
+    "skirt_brim_minimal_length": {
+      "2026-02-25": 30
+    },
+    "skirt_gap": {
+      "2026-02-25": 6
+    },
+    "skirt_line_count": {
+      "2026-02-25": 4
+    },
+    "speed_print": {
+      "2026-02-25": 60
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": 1.2
+    },
+    "wall_thickness": {
+      "2026-02-25": "1.2"
+    }
+  }
+}

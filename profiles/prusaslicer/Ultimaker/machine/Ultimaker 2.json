@@ -1,0 +1,199 @@
+{
+  "slicer": "prusaslicer",
+  "profile_type": "machine",
+  "name": "Ultimaker 2",
+  "vendor": "Ultimaker",
+  "first_seen": "3.0.0",
+  "last_seen": "3.0.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "printer_technology": {
+      "3.0.0": "FFF"
+    },
+    "before_layer_gcode": {
+      "3.0.0": ";BEFORE_LAYER_CHANGE\\n;M117 Layer [layer_num];\\n;LAYER:[layer_num]"
+    },
+    "between_objects_gcode": {
+      "3.0.0": ""
+    },
+    "deretract_speed": {
+      "3.0.0": "0"
+    },
+    "extruder_colour": {
+      "3.0.0": "#F9A800;#00387B"
+    },
+    "gcode_flavor": {
+      "3.0.0": "marlin"
+    },
+    "silent_mode": {
+      "3.0.0": "0"
+    },
+    "remaining_times": {
+      "3.0.0": "0"
+    },
+    "machine_max_acceleration_e": {
+      "3.0.0": "10000"
+    },
+    "machine_max_acceleration_extruding": {
+      "3.0.0": "3000"
+    },
+    "machine_max_acceleration_retracting": {
+      "3.0.0": "3000"
+    },
+    "machine_max_acceleration_x": {
+      "3.0.0": "9000"
+    },
+    "machine_max_acceleration_y": {
+      "3.0.0": "9000"
+    },
+    "machine_max_acceleration_z": {
+      "3.0.0": "100"
+    },
+    "machine_max_feedrate_e": {
+      "3.0.0": "120"
+    },
+    "machine_max_feedrate_x": {
+      "3.0.0": "300"
+    },
+    "machine_max_feedrate_y": {
+      "3.0.0": "300"
+    },
+    "machine_max_feedrate_z": {
+      "3.0.0": "40"
+    },
+    "machine_max_jerk_e": {
+      "3.0.0": "10"
+    },
+    "machine_max_jerk_x": {
+      "3.0.0": "20"
+    },
+    "machine_max_jerk_y": {
+      "3.0.0": "20"
+    },
+    "machine_max_jerk_z": {
+      "3.0.0": "0.4"
+    },
+    "machine_min_extruding_rate": {
+      "3.0.0": "0"
+    },
+    "machine_min_travel_rate": {
+      "3.0.0": "0"
+    },
+    "layer_gcode": {
+      "3.0.0": ""
+    },
+    "octoprint_apikey": {
+      "3.0.0": ""
+    },
+    "octoprint_host": {
+      "3.0.0": ""
+    },
+    "printer_notes": {
+      "3.0.0": "Dont remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_ULTIMAKER\\nPRINTER_MODEL_ULTIMAKER2"
+    },
+    "printer_settings_id": {
+      "3.0.0": "Ultimaker 2"
+    },
+    "retract_before_travel": {
+      "3.0.0": "1.2,1.2"
+    },
+    "retract_before_wipe": {
+      "3.0.0": "0%,0%"
+    },
+    "retract_layer_change": {
+      "3.0.0": "1"
+    },
+    "retract_length": {
+      "3.0.0": "6.5,6.5"
+    },
+    "retract_length_toolchange": {
+      "3.0.0": "16,16"
+    },
+    "retract_lift": {
+      "3.0.0": "0"
+    },
+    "retract_lift_above": {
+      "3.0.0": "0"
+    },
+    "retract_lift_below": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra": {
+      "3.0.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "3.0.0": "0"
+    },
+    "retract_speed": {
+      "3.0.0": "25,25"
+    },
+    "serial_port": {
+      "3.0.0": ""
+    },
+    "single_extruder_multi_material": {
+      "3.0.0": "0"
+    },
+    "toolchange_gcode": {
+      "3.0.0": ""
+    },
+    "use_firmware_retraction": {
+      "3.0.0": "0"
+    },
+    "use_relative_e_distances": {
+      "3.0.0": "0"
+    },
+    "use_volumetric_e": {
+      "3.0.0": "0"
+    },
+    "variable_layer_height": {
+      "3.0.0": "0"
+    },
+    "wipe": {
+      "3.0.0": "0"
+    },
+    "z_offset": {
+      "3.0.0": "0"
+    },
+    "extruder_clearance_height": {
+      "3.0.0": "50"
+    },
+    "extruder_clearance_radius": {
+      "3.0.0": "60"
+    },
+    "printer_model": {
+      "3.0.0": "ULTIMAKER2"
+    },
+    "bed_shape": {
+      "3.0.0": "0x0,224x0,224x225,0x225"
+    },
+    "max_print_height": {
+      "3.0.0": "212"
+    },
+    "printer_variant": {
+      "3.0.0": "0.4"
+    },
+    "nozzle_diameter": {
+      "3.0.0": "0.4"
+    },
+    "default_print_profile": {
+      "3.0.0": "0.20mm NORMAL @ULTIMAKER"
+    },
+    "default_filament_profile": {
+      "3.0.0": "Generic PLA @ULTIMAKER"
+    },
+    "start_gcode": {
+      "3.0.0": "; Printer_Settings_ID: [printer_settings_id]\\n\\n; # # # # # # START Header\\nG21 \t\t; metric values\\nG90 \t\t; absolute positioning\\nM82 \t\t; set extruder to absolute mode\\nM107 \t\t; start with the fan off\\n\\nM140 S[first_layer_bed_temperature]\t; start bed heating\\n\\nG28 X0 Y0 Z0\t; move X/Y/Z to endstops\\nG1 X1 Y6 F15000\t; move X/Y to start position\\nG1 Z35 F9000\t; move Z to start position\\n\\n; Wait for bed and nozzle temperatures\\nM190 S{first_layer_bed_temperature[0] - 5}\t; wait for bed temperature - 5\\nM140 S[first_layer_bed_temperature]\t; continue bed heating\\nM109 S[first_layer_temperature]\t; wait for nozzle temperature\\n\\n; Purge and prime\\nM83 \t\t; set extruder to relative mode\\nG92 E0           ; reset extrusion distance\\nG0 X0 Y1 F10000\\nG1 F150 E20 ; compress the bowden tube\\nG1 E-8 F1200\\nG0 X30 Y1 F5000    \\nG0 F1200 Z{first_layer_height/2} ; Cut the connection to priming blob\\nG0 X100 F10000 ; disconnect with the prime blob\\nG0 X50         ; Avoid the metal clip holding the Ultimaker glass plate\\nG0 Z0.2 F720\\nG1 E8 F1200\\nG1 X80 E3 F1000  ; intro line 1\\nG1 X110 E4 F1000 ; intro line 2\\nG1 X140 F600        ; drag filament to decompress bowden tube\\nG1 X100 F3200       ; wipe backwards a bit\\nG1 X150 F3200       ; back to where there is no plastic: avoid dragging\\nG92 E0           ; reset extruder reference\\nM82 \t\t; set extruder to absolute mode\\n\\n; # # # # # # END Header"
+    },
+    "end_gcode": {
+      "3.0.0": "; # # # # # # START Footer\\nG91 \t\t\t; relative coordinates\\n;G1 E-1 F1200\t\t; retract the filament\\nG1 Z+15  X-10 Y-10 E-7  F6000\t\t; move Z a bit\\n; G1 X-10 Y-10 F6000\t; move XY a bit\\nG1 E-5.5 F300\t\t; retract the filament\\nG28 X0 Y0\t\t; move X/Y to min endstops, so the head is out of the way\\nM104 S0\t\t\t; extruder heater off\\nM140 S0\t\t\t; heated bed heater off (if you have it)\\nM84 \t\t\t; disable motors\\n; # # # # # # END Footer\\n"
+    },
+    "max_layer_height": {
+      "3.0.0": "0.3"
+    },
+    "min_layer_height": {
+      "3.0.0": "0.06"
+    }
+  }
+}

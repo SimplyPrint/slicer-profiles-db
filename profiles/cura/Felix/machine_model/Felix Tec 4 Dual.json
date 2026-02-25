@@ -1,0 +1,125 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Felix Tec 4 Dual",
+  "vendor": "Felix",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Felix Tec 4 Dual"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "kerog777@gmail.com"
+    },
+    "manufacturer": {
+      "2026-02-25": "Felix"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "platform": {
+      "2026-02-25": "FelixTec4_platform.3mf"
+    },
+    "has_materials": {
+      "2026-02-25": true
+    },
+    "has_variants": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "felixtec4_dual_extruder_0",
+        "1": "felixtec4_dual_extruder_1"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        -128,
+        0,
+        102
+      ]
+    },
+    "preferred_variant_name": {
+      "2026-02-25": "0.35 mm"
+    },
+    "variants_name": {
+      "2026-02-25": "Nozzle Diam"
+    },
+    "adhesion_type": {
+      "2026-02-25": "skirt"
+    },
+    "infill_pattern": {
+      "2026-02-25": "'tetrahedral'"
+    },
+    "infill_sparse_density": {
+      "2026-02-25": 20
+    },
+    "layer_height": {
+      "2026-02-25": 0.2
+    },
+    "layer_height_0": {
+      "2026-02-25": 0.3
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 205
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "; FELIXprinters End Code Tec Series v1.0\n; Modified by kerog777@gmail.com\n; ================================= \n; Move extruder to park position\nG91       ; Make coordinates relative\nG1 Z2 F1000       ; Move z 2mm up\nG90       ; Use absolute coordinates again\nG1 X0 Y0 F15240   ; Move bed and printhead to ergonomic position\n\n; ================================= ; Turn off heaters\nM140 S0    ; Turn off bed heater\nT0    ; Select left extruder\nM104 T0 S0    ; Turn off heater and continue\nG92 E0    ; Reset extruder position\nG1 E-6    ; Retract filament 8mm\nG92 E0    ; Reset extruder position\nT1    ; Select right extruder\nM104 T1 S0    ; Turn off heater and continue\nG92 E0    ; Reset extruder position\nG1 E-6    ; Retract filament 8mm\nG92 E0    ; Reset extruder position\nT0    ; Select left extruder\n\n; ================================= ; Turn the rest off\nM107        ; Turn off fan\nM84    ; Disable steppers\nM117 Finished Printing!"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "Repetier"
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 225
+    },
+    "machine_name": {
+      "2026-02-25": "FelixTec4Dual"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "; FELIXprinters | www.FELIXprinters.com | Zeemanlaan 15 3401 MV IJsselstein The Netherlands\n; FELIX Tec 4 | Start Code Dual Extruders v1.0\n; Modified by kerog777@gmail.com\n;================================ \n;Initializing\nM80   ; Turn on the power supply\nM107     ; Turn off fans\nM117 Heating up\nM190 S{material_bed_temperature}   ; Heatup Bed\nM104 T0 S120\nM104 T1 S120\nG28             ; Home all\nM109 T0 S{material_print_temperature_layer_0}   ; Heatup hot-end\nM117 Purging\nT0    ; Select extruder 1\nG92 E0    ; Reset extruder\nG1 X10.0 Y1.1 Z5.0 F15240   ; Move to start-line position\nG1 Z0.3 F15240    ; Move z up\nG1 X127.0 Y1.1 Z0.3 F1500.0 E15    ; Purge 1st line\nG92 E0    ; Reset extruder\n\n;================================ ; Initializing done\nM117 FELIXprinting"
+    },
+    "machine_width": {
+      "2026-02-25": 255
+    },
+    "material_flow": {
+      "2026-02-25": 95
+    },
+    "retraction_amount": {
+      "2026-02-25": 1
+    },
+    "retraction_speed": {
+      "2026-02-25": 50
+    },
+    "skirt_brim_minimal_length": {
+      "2026-02-25": 130
+    },
+    "speed_print": {
+      "2026-02-25": 60
+    },
+    "top_bottom_thickness": {
+      "2026-02-25": 1
+    },
+    "wall_thickness": {
+      "2026-02-25": "1"
+    }
+  }
+}

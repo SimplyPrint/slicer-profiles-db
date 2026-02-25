@@ -1,0 +1,173 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Zyyx Agile",
+  "vendor": "Magicfirm Europe",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Zyyx Agile"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "author": {
+      "2026-02-25": "Magicfirm Europe"
+    },
+    "manufacturer": {
+      "2026-02-25": "Magicfirm Europe"
+    },
+    "file_formats": {
+      "2026-02-25": "application/x3g"
+    },
+    "platform": {
+      "2026-02-25": "zyyx_platform.3mf"
+    },
+    "has_machine_quality": {
+      "2026-02-25": true
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "zyyx_agile_extruder_0"
+      }
+    },
+    "machine_x3g_variant": {
+      "2026-02-25": "z"
+    },
+    "preferred_material": {
+      "2026-02-25": "zyyx_pro_pla"
+    },
+    "preferred_quality_type": {
+      "2026-02-25": "normal"
+    },
+    "quality_definition": {
+      "2026-02-25": "zyyx_agile"
+    },
+    "gantry_height": {
+      "2026-02-25": "10"
+    },
+    "infill_overlap": {
+      "2026-02-25": "12 if infill_sparse_density < 95 and infill_pattern != 'concentric' else 0"
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": true
+    },
+    "machine_depth": {
+      "2026-02-25": 225
+    },
+    "machine_end_gcode": {
+      "2026-02-25": "; ZYYX 3D Printer end gcode\nM73 P100 ; end build progress\nG0 Z195 F1000 ; send Z axis to bottom of machine\nM104 S0 T0 ; cool down extruder\nM127 ; stop blower fan\nG162 X Y F3000 ; home XY maximum\nM18 ; disable stepper\nM70 P5 (ZYYX Print Finished!)\nM72 P1 ; play Ta-Da song\n"
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "Makerbot"
+    },
+    "machine_head_with_fans_polygon": {
+      "2026-02-25": [
+        [
+          -37,
+          50
+        ],
+        [
+          25,
+          50
+        ],
+        [
+          25,
+          -40
+        ],
+        [
+          -37,
+          -40
+        ]
+      ]
+    },
+    "machine_height": {
+      "2026-02-25": 195
+    },
+    "machine_name": {
+      "2026-02-25": "ZYYX Agile"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": "; ZYYX 3D Printer start gcode\nM73 P0; enable build progress\nG21; set units to mm\nG90; set positioning to absolute\nG130 X80 Y80 A127 B127 ; Set Stepper Vref to default value\nG162 X Y F3000; home XY axes maximum\nM133 T0 ; stabilize extruder temperature\nG161 Z F450\nG161 Z F450; home Z axis minimum\nG92 X0 Y0 Z0 E0\nG1 X0 Y0 Z5 F200\nG161 Z F200; home Z axis minimum again\nG92 X0 Y0 Z0 E0\nM131 A; store surface calibration point 1\nG1 X0 Y0 Z5 F200\nG1 X-177 Y0 Z5 F3000; move to 2nd probing point\nG161 Z F200\nM131 B; store surface calibration point 2\nG92 X-177 Y0 Z0 E0\nG1 X-177 Y0 Z5 F200\nG1 X0 Y0 Z5 F3000; move to home point\nG161 Z F200; home Z axis minimum again\nG92 X0 Y0 Z0 E0; set reference again\nG1 X0 Y0 Z5 F200; clear Z\nG1 X0 Y-225 Z5 F3000; move to 3rd calibration point\nG161 Z F200\nM131 AB; store surface calibration point 3\nM132 AB; activate auto leveling\nG92 X0 Y-225 Z0 E0\nG1 X0 Y-225 Z5 F200\nG162 X Y F3000\nG161 Z F200\nG92 X135 Y115 Z0 E0\nM132 Z; Recall stored home offset for Z axis\nG1 X135 Y115 Z5 F450; clear nozzle from hole\nG1 X0 Y115 Z5 F3000; clear nozzle from hole\nG92 E0 ; Set E to 0"
+    },
+    "machine_steps_per_mm_e": {
+      "2026-02-25": 96.27520187033366
+    },
+    "machine_steps_per_mm_x": {
+      "2026-02-25": 88.888889
+    },
+    "machine_steps_per_mm_y": {
+      "2026-02-25": 88.888889
+    },
+    "machine_steps_per_mm_z": {
+      "2026-02-25": 400
+    },
+    "machine_width": {
+      "2026-02-25": 265
+    },
+    "material_final_print_temperature": {
+      "2026-02-25": "material_print_temperature"
+    },
+    "material_initial_print_temperature": {
+      "2026-02-25": "material_print_temperature"
+    },
+    "raft_airgap": {
+      "2026-02-25": 0.15
+    },
+    "raft_margin": {
+      "2026-02-25": 6
+    },
+    "retract_at_layer_change": {
+      "2026-02-25": true
+    },
+    "retraction_amount": {
+      "2026-02-25": 0.7
+    },
+    "retraction_speed": {
+      "2026-02-25": 15
+    },
+    "speed_layer_0": {
+      "2026-02-25": 15
+    },
+    "speed_print": {
+      "2026-02-25": 50
+    },
+    "speed_travel": {
+      "2026-02-25": 80
+    },
+    "speed_wall": {
+      "2026-02-25": 25
+    },
+    "speed_wall_x": {
+      "2026-02-25": 35
+    },
+    "support_interface_density": {
+      "2026-02-25": 80
+    },
+    "support_interface_enable": {
+      "2026-02-25": true
+    },
+    "support_interface_height": {
+      "2026-02-25": 0.8
+    },
+    "support_interface_pattern": {
+      "2026-02-25": "grid"
+    },
+    "travel_avoid_other_parts": {
+      "2026-02-25": false
+    },
+    "travel_retract_before_outer_wall": {
+      "2026-02-25": true
+    }
+  }
+}

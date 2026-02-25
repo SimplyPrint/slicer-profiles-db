@@ -1,0 +1,124 @@
+{
+  "slicer": "cura",
+  "profile_type": "machine_model",
+  "name": "Robo 3D R1",
+  "vendor": "Robo 3D",
+  "first_seen": "2026-02-25",
+  "last_seen": "2026-02-25",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "name": {
+      "2026-02-25": "Robo 3D R1"
+    },
+    "version": {
+      "2026-02-25": 2
+    },
+    "inherits": {
+      "2026-02-25": "fdmprinter"
+    },
+    "visible": {
+      "2026-02-25": true
+    },
+    "manufacturer": {
+      "2026-02-25": "Robo 3D"
+    },
+    "file_formats": {
+      "2026-02-25": "text/x-gcode"
+    },
+    "machine_extruder_trains": {
+      "2026-02-25": {
+        "0": "robo_3d_r1_extruder_0"
+      }
+    },
+    "platform_offset": {
+      "2026-02-25": [
+        0,
+        0,
+        0
+      ]
+    },
+    "adhesion_type": {
+      "2026-02-25": "raft"
+    },
+    "cool_min_layer_time": {
+      "2026-02-25": 7
+    },
+    "cool_min_speed": {
+      "2026-02-25": 19
+    },
+    "infill_sparse_density": {
+      "2026-02-25": 10
+    },
+    "layer_height": {
+      "2026-02-25": 0.2
+    },
+    "layer_height_0": {
+      "2026-02-25": 0.15
+    },
+    "machine_center_is_zero": {
+      "2026-02-25": false
+    },
+    "machine_depth": {
+      "2026-02-25": 245
+    },
+    "machine_end_gcode": {
+      "2026-02-25": " M104 S0                     ;extruder heater off\n M140 S0                     ;heated bed heater off (if you have it)\n G91                                    ;relative positioning\n G1 E-1 F300                            ;retract the filament a bit before lifting the nozzle, to release some of the pressure\n G1 Z+0.5 E-5 X-20 Y-20 F{speed_travel} ;move Z up a bit and retract filament even more\n G28 X0 Y0                              ;move X/Y to min endstops, so the head is out of the way\n M84                         ;steppers off\n G90                         ;absolute positioning\n"
+    },
+    "machine_extruder_count": {
+      "2026-02-25": 1
+    },
+    "machine_gcode_flavor": {
+      "2026-02-25": "RepRap (Marlin/Sprinter)"
+    },
+    "machine_heated_bed": {
+      "2026-02-25": true
+    },
+    "machine_height": {
+      "2026-02-25": 210
+    },
+    "machine_name": {
+      "2026-02-25": "ROBO 3D R1"
+    },
+    "machine_start_gcode": {
+      "2026-02-25": " G92 E0 ;\n M565 Z-1 ;\n G1 Z5 F5000 ;\n G29 ;\n"
+    },
+    "machine_width": {
+      "2026-02-25": 225
+    },
+    "material_flow": {
+      "2026-02-25": 100
+    },
+    "prime_tower_size": {
+      "2026-02-25": 8.660254037844387
+    },
+    "raft_airgap": {
+      "2026-02-25": 0.2
+    },
+    "retraction_amount": {
+      "2026-02-25": 3
+    },
+    "retraction_combing": {
+      "2026-02-25": "'off'"
+    },
+    "retraction_speed": {
+      "2026-02-25": 50
+    },
+    "speed_print": {
+      "2026-02-25": 40
+    },
+    "support_angle": {
+      "2026-02-25": 50
+    },
+    "support_enable": {
+      "2026-02-25": true
+    },
+    "support_z_distance": {
+      "2026-02-25": 0.22
+    },
+    "wall_thickness": {
+      "2026-02-25": "1.2"
+    }
+  }
+}
