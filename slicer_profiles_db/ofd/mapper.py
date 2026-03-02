@@ -143,24 +143,6 @@ class SlicerMapper:
                         existing_name = existing_slicer.get("profile_name")
 
                         existing_id = existing_slicer.get("id")
-
-                        has_conflict = False
-
-                        if existing_name and existing_name != result.profile_name:
-                            report.conflicts.append(
-                                MappingConflict(
-                                    filament_path=filament_path,
-                                    slicer=slicer,
-                                    field="profile_name",
-                                    existing=existing_name,
-                                    derived=result.profile_name,
-                                )
-                            )
-                            has_conflict = True
-
-                        if has_conflict:
-                            continue
-
                         existing_generic_id = existing_slicer.get("generic_id")
 
                         name_matches = existing_name == result.profile_name
