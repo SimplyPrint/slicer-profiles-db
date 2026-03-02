@@ -16,7 +16,9 @@ class ProgressReporter(Protocol):
     """Protocol for pipeline progress reporting."""
 
     def update_status(self, message: str) -> None: ...
-    def create_download_bar(self, total_bytes: int, description: str) -> DownloadProgress: ...
+    def create_download_bar(
+        self, total_bytes: int, description: str
+    ) -> DownloadProgress: ...
     def step(self, step_name: str, current: int, total: int) -> None: ...
 
 
@@ -31,7 +33,9 @@ class RichProgressReporter:
     def update_status(self, message: str) -> None:
         self.console.print(f"[bold blue]>>>[/] {message}")
 
-    def create_download_bar(self, total_bytes: int, description: str) -> RichDownloadProgress:
+    def create_download_bar(
+        self, total_bytes: int, description: str
+    ) -> RichDownloadProgress:
         from rich.progress import (
             BarColumn,
             DownloadColumn,
@@ -76,7 +80,9 @@ class NullProgressReporter:
     def update_status(self, message: str) -> None:
         pass
 
-    def create_download_bar(self, total_bytes: int, description: str) -> NullDownloadProgress:
+    def create_download_bar(
+        self, total_bytes: int, description: str
+    ) -> NullDownloadProgress:
         return NullDownloadProgress()
 
     def step(self, step_name: str, current: int, total: int) -> None:

@@ -4,8 +4,6 @@ Brand name normalization.
 Maps slicer-specific vendor/brand names to SimplyPrint brand names.
 """
 
-import re
-
 from .models import SlicerType
 
 # Shared brand mappings used across multiple slicers.
@@ -111,11 +109,11 @@ def strip_brand_from_name(
 
     idx = name_lower.find(brand)
     if idx != -1:
-        return name_lower[idx + len(brand):].strip()
+        return name_lower[idx + len(brand) :].strip()
 
     if original_brand and original_brand != brand:
         idx = name_lower.find(original_brand)
         if idx != -1:
-            return name_lower[idx + len(original_brand):].strip()
+            return name_lower[idx + len(original_brand) :].strip()
 
     return name_lower

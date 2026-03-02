@@ -82,7 +82,9 @@ def split_prusaslicer_bundle(
 
     # Determine which section prefixes to process
     if section_types:
-        prefixes = {p: pt for p, pt in _INI_SECTION_PREFIXES.items() if p in section_types}
+        prefixes = {
+            p: pt for p, pt in _INI_SECTION_PREFIXES.items() if p in section_types
+        }
     else:
         prefixes = _INI_SECTION_PREFIXES.copy()
 
@@ -91,8 +93,10 @@ def split_prusaslicer_bundle(
     for section in config:
         for prefix, profile_type in prefixes.items():
             if section.name.startswith(prefix):
-                name = section.name[len(prefix):]
-                profiles_by_type.setdefault(profile_type, {})[name] = dict(section.items())
+                name = section.name[len(prefix) :]
+                profiles_by_type.setdefault(profile_type, {})[name] = dict(
+                    section.items()
+                )
                 break
 
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -181,7 +185,9 @@ def squash_slic3r_profiles(
 
     # Also load shared library profiles if provided
     if filament_library_dir and filament_library_dir.exists():
-        library_profiles = _load_json_from_folder(filament_library_dir, profile_type_filter=None)
+        library_profiles = _load_json_from_folder(
+            filament_library_dir, profile_type_filter=None
+        )
         # Library profiles serve as base; vendor profiles with same name override
         merged = library_profiles.copy()
         merged.update(profiles)
@@ -260,7 +266,9 @@ def squash_slic3r_profiles(
         except (KeyError, RecursionError) as e:
             logger.warning(
                 "Failed to squash profile: vendor=%s, profile=%s: %s",
-                vendor_dir.name, name, e,
+                vendor_dir.name,
+                name,
+                e,
             )
             continue
 
@@ -443,6 +451,7 @@ def iter_ini_bundle_versions(
 
     # Group by version string, sort groups oldest-first
     from collections import defaultdict
+
     groups: dict[str, list[tuple[str, Path]]] = defaultdict(list)
     for ver, vendor_name, ini_path in triples:
         groups[ver].append((vendor_name, ini_path))

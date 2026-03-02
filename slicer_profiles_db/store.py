@@ -116,7 +116,9 @@ class ProfileStore:
                 # Handle renames: merge history from old-name profile
                 old_name = self._extract_renamed_from(p.settings)
                 if old_name:
-                    old_profile = self._load(slicer, p.profile_type.value, p.vendor, old_name)
+                    old_profile = self._load(
+                        slicer, p.profile_type.value, p.vendor, old_name
+                    )
                     if old_profile is not None:
                         self._merge_rename(stored, old_profile)
                         self._delete(slicer, p.profile_type.value, p.vendor, old_name)
@@ -254,10 +256,18 @@ class ProfileStore:
         )
 
     def _profile_key(
-        self, slicer: SlicerType, profile_type: ProfileType | str, vendor: str, name: str
+        self,
+        slicer: SlicerType,
+        profile_type: ProfileType | str,
+        vendor: str,
+        name: str,
     ) -> str:
         """Compute a unique key for a profile."""
-        pt = profile_type.value if isinstance(profile_type, ProfileType) else profile_type
+        pt = (
+            profile_type.value
+            if isinstance(profile_type, ProfileType)
+            else profile_type
+        )
         return f"{slicer.value}/{vendor}/{pt}/{name}"
 
     def _profile_path(
@@ -362,7 +372,9 @@ class ProfileStore:
                     return old_name
         return None
 
-    def _merge_rename(self, new_profile: StoredProfile, old_profile: StoredProfile) -> None:
+    def _merge_rename(
+        self, new_profile: StoredProfile, old_profile: StoredProfile
+    ) -> None:
         """Merge version history from an old (renamed) profile into a new one.
 
         Prepends the old profile's versioned settings so that the new profile

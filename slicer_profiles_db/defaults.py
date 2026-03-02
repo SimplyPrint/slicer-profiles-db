@@ -60,7 +60,9 @@ def fetch_slicer_defaults(slicer: SlicerType) -> dict[str, Any]:
         return {}
 
     printer_data = _get_slicer_config_artifact(f"{artifact_name}/machine.json")
-    config_def_data = _get_slicer_config_artifact(f"{artifact_name}/print_config_def.json")
+    config_def_data = _get_slicer_config_artifact(
+        f"{artifact_name}/print_config_def.json"
+    )
 
     if not printer_data:
         return {}
@@ -83,14 +85,19 @@ def fetch_slicer_defaults(slicer: SlicerType) -> dict[str, Any]:
 
     # Get the default value for each option
     for option_key in tmp_out:
-        if option_key in config_def_data and "default_value" in config_def_data[option_key]:
+        if (
+            option_key in config_def_data
+            and "default_value" in config_def_data[option_key]
+        ):
             tmp_out[option_key] = config_def_data[option_key]["default_value"]
 
     # Only return options that have defaults
     return {k: v for k, v in tmp_out.items() if v is not None}
 
 
-def fetch_all_slicer_defaults(output_dir: Path | None = None) -> dict[SlicerType, dict[str, Any]]:
+def fetch_all_slicer_defaults(
+    output_dir: Path | None = None,
+) -> dict[SlicerType, dict[str, Any]]:
     """
     Fetch defaults for all supported slicers.
 

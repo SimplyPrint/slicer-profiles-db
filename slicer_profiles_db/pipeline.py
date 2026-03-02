@@ -10,7 +10,6 @@ import shutil
 import tempfile
 from datetime import date
 from pathlib import Path
-from typing import Optional
 
 from .models import (
     SlicerType,
@@ -128,7 +127,9 @@ class ProfilePipeline:
         # Resolve special version keywords
         is_nightly = version == "nightly"
         if version == "latest":
-            self.reporter.update_status(f"Resolving latest version for {slicer.value}...")
+            self.reporter.update_status(
+                f"Resolving latest version for {slicer.value}..."
+            )
             version = self._resolve_latest_version(slicer)
         elif is_nightly:
             version = self._resolve_nightly_version(slicer)
@@ -180,7 +181,9 @@ class ProfilePipeline:
 
         # Step 1: Download and extract
         self.reporter.update_status(f"Downloading {slicer.value} {version}...")
-        result = download_and_extract(config, version, work, profile_types, reporter=self.reporter)
+        result = download_and_extract(
+            config, version, work, profile_types, reporter=self.reporter
+        )
         extracted = result.extracted_dir
 
         # Step 2: Collect and persist resource files (STL/SVG/PNG)
@@ -198,7 +201,9 @@ class ProfilePipeline:
             self.reporter.update_status(f"Resolving inheritance for {slicer.value}...")
             squash_all_slic3r_vendors(
                 extracted,
-                profile_type=profile_types[0] if profile_types and len(profile_types) == 1 else None,
+                profile_type=profile_types[0]
+                if profile_types and len(profile_types) == 1
+                else None,
                 filament_library_name=config.filament_library_name,
             )
             # Remove the shared library dir after squashing — it was only
@@ -216,7 +221,9 @@ class ProfilePipeline:
         # Step 5: Parse
         self.reporter.update_status(f"Parsing {slicer.value} profiles...")
         parser = self._parsers[slicer]
-        parsed = list(parser.parse_directory(extracted, profile_type_filter=profile_types))
+        parsed = list(
+            parser.parse_directory(extracted, profile_type_filter=profile_types)
+        )
 
         # Step 6: Rewrite resource references in parsed profiles
         if resource_map:
@@ -289,12 +296,18 @@ class ProfilePipeline:
 
         try:
             # Step 1: Download branch once
-            self.reporter.update_status(f"Downloading {slicer.value} {config.branch}...")
-            result = download_and_extract(config, config.branch, work, profile_types, reporter=self.reporter)
+            self.reporter.update_status(
+                f"Downloading {slicer.value} {config.branch}..."
+            )
+            result = download_and_extract(
+                config, config.branch, work, profile_types, reporter=self.reporter
+            )
             extracted = result.extracted_dir
 
             # Step 2: Enumerate all version groups
-            self.reporter.update_status(f"Enumerating INI bundle versions for {slicer.value}...")
+            self.reporter.update_status(
+                f"Enumerating INI bundle versions for {slicer.value}..."
+            )
             version_groups = iter_ini_bundle_versions(extracted, config.min_version)
 
             if not version_groups:
@@ -306,7 +319,9 @@ class ProfilePipeline:
             )
 
             # Step 3: Collect resources once (outside the version loop)
-            resource_store = ResourceStore(self.store.root / slicer.value / "_resources")
+            resource_store = ResourceStore(
+                self.store.root / slicer.value / "_resources"
+            )
             resource_map = collect_resources(extracted, resource_store)
 
             # Step 4: Process each version oldest-to-newest
@@ -333,9 +348,11 @@ class ProfilePipeline:
                         apply_overlays(split_dir, self.overlay_dir, slicer)
 
                     # Parse the split directory
-                    parsed = list(parser.parse_directory(
-                        split_dir, profile_type_filter=profile_types
-                    ))
+                    parsed = list(
+                        parser.parse_directory(
+                            split_dir, profile_type_filter=profile_types
+                        )
+                    )
 
                     # Rewrite resource references
                     if resource_map:
@@ -430,7 +447,9 @@ class ProfilePipeline:
                 report = self.ingest(slicer, tag.raw, profile_types)
                 reports.append(report)
             except Exception as e:
-                self.reporter.update_status(f"Failed to ingest {slicer.value} {tag.raw}: {e}")
+                self.reporter.update_status(
+                    f"Failed to ingest {slicer.value} {tag.raw}: {e}"
+                )
                 continue
 
         return reports
@@ -472,7 +491,9 @@ class ProfilePipeline:
         if not tags:
             if config.branch:
                 return config.branch
-            raise ValueError(f"No tags found for {slicer.value} in {config.github_repo}")
+            raise ValueError(
+                f"No tags found for {slicer.value} in {config.github_repo}"
+            )
 
         stable_tags = [t for t in tags if not is_prerelease(t.raw)]
         if not stable_tags:

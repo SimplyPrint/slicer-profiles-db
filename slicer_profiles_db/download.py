@@ -236,7 +236,9 @@ def _download_zip(
             last_error = e
 
         if attempt < max_retries:
-            logger.warning("Download attempt %d/%d failed: %s", attempt, max_retries, last_error)
+            logger.warning(
+                "Download attempt %d/%d failed: %s", attempt, max_retries, last_error
+            )
 
     raise last_error  # type: ignore[misc]
 
@@ -284,10 +286,14 @@ def _extract_repo(
             # JSON-profile slicers (BambuStudio, OrcaSlicer, ElegooSlicer)
             if profile_types:
                 type_dirs = [
-                    profile_type_dirs[pt] for pt in profile_types if pt in profile_type_dirs
+                    profile_type_dirs[pt]
+                    for pt in profile_types
+                    if pt in profile_type_dirs
                 ]
                 dir_pattern = "|".join(re.escape(d) for d in type_dirs)
-                pattern = re.compile(rf".*/(?:.*\.(?:stl|svg|png)|(?:{dir_pattern})/.*)")
+                pattern = re.compile(
+                    rf".*/(?:.*\.(?:stl|svg|png)|(?:{dir_pattern})/.*)"
+                )
             else:
                 dirs = "|".join(re.escape(d) for d in profile_type_dirs.values())
                 pattern = re.compile(rf".*/(?:.*\.(?:stl|svg|png)|(?:{dirs})/.*)")

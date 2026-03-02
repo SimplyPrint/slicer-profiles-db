@@ -96,7 +96,9 @@ class OFDFilamentIndex:
             OFD filesystem path (e.g. "bambu_lab/PLA/aero") or None.
         """
         # Strip " @printer" suffix — OFD stores base names only
-        base_name = profile_name.split(" @")[0] if " @" in profile_name else profile_name
+        base_name = (
+            profile_name.split(" @")[0] if " @" in profile_name else profile_name
+        )
 
         # Sanitise filament_id — some slicers store profile names as IDs
         if filament_id and (" @" in filament_id or " " in filament_id):
@@ -117,7 +119,10 @@ class OFDFilamentIndex:
             if fil:
                 bn_lower = base_name.lower()
                 brand_lower = fil.brand_name.lower()
-                if brand_lower in bn_lower or fil.brand_id.replace("_", " ") in bn_lower:
+                if (
+                    brand_lower in bn_lower
+                    or fil.brand_id.replace("_", " ") in bn_lower
+                ):
                     return fil.fs_path
 
         # Strategy 3: Brand/material/name decomposition
@@ -129,14 +134,22 @@ class OFDFilamentIndex:
                 candidate_brand = " ".join(parts[:i]).lower()
                 remaining = parts[i:]
                 # Check if remaining starts with material
-                if remaining and remaining[0].upper() == material_upper and len(remaining) > 1:
+                if (
+                    remaining
+                    and remaining[0].upper() == material_upper
+                    and len(remaining) > 1
+                ):
                     candidate_name = " ".join(remaining[1:]).lower()
                     key = (candidate_brand, material_upper, candidate_name)
                     fil = self.by_brand_material_name.get(key)
                     if fil:
                         return fil.fs_path
                 # When name equals material or material is embedded in name
-                if remaining and remaining[0].upper() == material_upper and len(remaining) == 1:
+                if (
+                    remaining
+                    and remaining[0].upper() == material_upper
+                    and len(remaining) == 1
+                ):
                     key = (candidate_brand, material_upper, material_upper.lower())
                     fil = self.by_brand_material_name.get(key)
                     if fil:

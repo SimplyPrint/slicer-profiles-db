@@ -5,7 +5,6 @@ Version normalization and GitHub tag enumeration.
 import logging
 import os
 import re
-import sys
 from pathlib import Path
 
 import requests
@@ -54,7 +53,7 @@ def normalize_version(raw: str) -> str:
     """
     s = raw.strip()
     if s.lower().startswith("version_"):
-        s = s[len("version_"):]
+        s = s[len("version_") :]
     elif s.lower().startswith("v"):
         s = s[1:]
     return s

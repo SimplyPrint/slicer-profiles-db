@@ -30,7 +30,10 @@ class BaseParser(ABC):
             for path in self._glob_profiles(vendor_dir):
                 try:
                     profile = self.parse_file(path)
-                    if profile_type_filter and profile.profile_type not in profile_type_filter:
+                    if (
+                        profile_type_filter
+                        and profile.profile_type not in profile_type_filter
+                    ):
                         continue
                     yield profile
                 except Exception:

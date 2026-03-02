@@ -56,11 +56,15 @@ Environment variables:
     )
 
     parser.add_argument(
-        "--verbose", "-V", action="store_true",
+        "--verbose",
+        "-V",
+        action="store_true",
         help="Enable debug logging",
     )
     parser.add_argument(
-        "--quiet", "-q", action="store_true",
+        "--quiet",
+        "-q",
+        action="store_true",
         help="Suppress non-error output (logging only)",
     )
 
@@ -215,9 +219,7 @@ Environment variables:
     )
     diff_parser.add_argument("from_version", help="Starting version")
     diff_parser.add_argument("to_version", help="Ending version")
-    diff_parser.add_argument(
-        "--profile", help="Filter to a specific profile name"
-    )
+    diff_parser.add_argument("--profile", help="Filter to a specific profile name")
     diff_parser.add_argument("--vendor", help="Vendor (required with --profile)")
     diff_parser.add_argument(
         "--type",
@@ -230,9 +232,7 @@ Environment variables:
         default=None,
         help="Store directory path (default: $SLICER_PROFILES_STORE or 'profiles')",
     )
-    diff_parser.add_argument(
-        "--json", action="store_true", help="Output as JSON"
-    )
+    diff_parser.add_argument("--json", action="store_true", help="Output as JSON")
     diff_parser.set_defaults(func=run_diff)
 
     # --- versions ---
@@ -251,9 +251,7 @@ Environment variables:
         default=None,
         help="Store directory path (default: $SLICER_PROFILES_STORE or 'profiles')",
     )
-    versions_parser.add_argument(
-        "--json", action="store_true", help="Output as JSON"
-    )
+    versions_parser.add_argument("--json", action="store_true", help="Output as JSON")
     versions_parser.set_defaults(func=run_versions)
 
     # --- list ---
@@ -277,9 +275,7 @@ Environment variables:
         default=None,
         help="Store directory path (default: $SLICER_PROFILES_STORE or 'profiles')",
     )
-    list_parser.add_argument(
-        "--json", action="store_true", help="Output as JSON"
-    )
+    list_parser.add_argument("--json", action="store_true", help="Output as JSON")
     list_parser.set_defaults(func=run_list)
 
     # --- evaluate ---
@@ -306,9 +302,7 @@ Environment variables:
         default=None,
         help="Store directory path (default: $SLICER_PROFILES_STORE or 'profiles')",
     )
-    eval_parser.add_argument(
-        "--json", action="store_true", help="Output as JSON"
-    )
+    eval_parser.add_argument("--json", action="store_true", help="Output as JSON")
     eval_parser.set_defaults(func=run_evaluate)
 
     # --- map ---
@@ -340,9 +334,7 @@ Environment variables:
         default=None,
         help="Path to OFD repo data/ dir (resolves filament_db_ids to OFD paths)",
     )
-    map_parser.add_argument(
-        "--json", action="store_true", help="Output report as JSON"
-    )
+    map_parser.add_argument("--json", action="store_true", help="Output report as JSON")
     map_parser.set_defaults(func=run_map)
 
     # --- ofd-map ---
@@ -378,9 +370,7 @@ Environment variables:
         default=None,
         help="Filter to a single brand_id",
     )
-    ofd_map_parser.add_argument(
-        "--json", action="store_true", help="Output as JSON"
-    )
+    ofd_map_parser.add_argument("--json", action="store_true", help="Output as JSON")
     ofd_map_parser.set_defaults(func=run_ofd_map)
 
     return parser
@@ -402,17 +392,22 @@ def run_ingest_local(args: argparse.Namespace) -> int:
     report = store.ingest(slicer, args.version, profiles_dir)
 
     if getattr(args, "json", False):
-        print(json.dumps({
-            "slicer": report.slicer.value,
-            "version": report.version,
-            "profiles_processed": report.profiles_processed,
-            "added": report.added,
-            "removed": report.removed,
-            "changed": report.changed,
-            "unchanged": report.unchanged,
-        }, indent=2))
+        print(
+            json.dumps(
+                {
+                    "slicer": report.slicer.value,
+                    "version": report.version,
+                    "profiles_processed": report.profiles_processed,
+                    "added": report.added,
+                    "removed": report.removed,
+                    "changed": report.changed,
+                    "unchanged": report.unchanged,
+                },
+                indent=2,
+            )
+        )
     else:
-        print(f"\nIngestion complete:")
+        print("\nIngestion complete:")
         print(f"  Profiles processed: {report.profiles_processed}")
         print(f"  Added:     {len(report.added)}")
         print(f"  Changed:   {len(report.changed)}")
@@ -420,21 +415,21 @@ def run_ingest_local(args: argparse.Namespace) -> int:
         print(f"  Removed:   {len(report.removed)}")
 
         if report.added:
-            print(f"\nNew profiles:")
+            print("\nNew profiles:")
             for name in report.added[:20]:
                 print(f"  + {name}")
             if len(report.added) > 20:
                 print(f"  ... and {len(report.added) - 20} more")
 
         if report.changed:
-            print(f"\nChanged profiles:")
+            print("\nChanged profiles:")
             for name, keys in list(report.changed.items())[:20]:
                 print(f"  ~ {name} ({len(keys)} settings)")
             if len(report.changed) > 20:
                 print(f"  ... and {len(report.changed) - 20} more")
 
         if report.removed:
-            print(f"\nRemoved profiles:")
+            print("\nRemoved profiles:")
             for key in report.removed[:20]:
                 print(f"  - {key}")
 
@@ -454,6 +449,7 @@ def _default_overlay() -> str:
 def _make_reporter(use_json: bool):
     """Create the appropriate progress reporter."""
     from slicer_profiles_db.progress import RichProgressReporter, NullProgressReporter
+
     return NullProgressReporter() if use_json else RichProgressReporter()
 
 
@@ -496,21 +492,32 @@ def run_ingest(args: argparse.Namespace) -> int:
     # Apply --min-version override if provided
     if args.min_version:
         from slicer_profiles_db.download import DEFAULT_CONFIGS
+
         config = DEFAULT_CONFIGS[slicer]
-        DEFAULT_CONFIGS[slicer] = config.model_copy(update={"min_version": args.min_version})
+        DEFAULT_CONFIGS[slicer] = config.model_copy(
+            update={"min_version": args.min_version}
+        )
 
     if is_all_versions:
         reporter.update_status(f"Ingesting all versions for {slicer.value}...")
         reports = pipeline.ingest_all_versions(slicer, profile_types)
         if use_json:
-            print(json.dumps([{
-                "slicer": r.slicer.value,
-                "version": r.version,
-                "profiles_processed": r.profiles_processed,
-                "added": len(r.added),
-                "changed": len(r.changed),
-                "unchanged": r.unchanged,
-            } for r in reports], indent=2))
+            print(
+                json.dumps(
+                    [
+                        {
+                            "slicer": r.slicer.value,
+                            "version": r.version,
+                            "profiles_processed": r.profiles_processed,
+                            "added": len(r.added),
+                            "changed": len(r.changed),
+                            "unchanged": r.unchanged,
+                        }
+                        for r in reports
+                    ],
+                    indent=2,
+                )
+            )
         else:
             print(f"\nIngested {len(reports)} versions:")
             for r in reports:
@@ -527,17 +534,22 @@ def run_ingest(args: argparse.Namespace) -> int:
         )
 
         if use_json:
-            print(json.dumps({
-                "slicer": report.slicer.value,
-                "version": report.version,
-                "profiles_processed": report.profiles_processed,
-                "added": report.added,
-                "removed": report.removed,
-                "changed": report.changed,
-                "unchanged": report.unchanged,
-            }, indent=2))
+            print(
+                json.dumps(
+                    {
+                        "slicer": report.slicer.value,
+                        "version": report.version,
+                        "profiles_processed": report.profiles_processed,
+                        "added": report.added,
+                        "removed": report.removed,
+                        "changed": report.changed,
+                        "unchanged": report.unchanged,
+                    },
+                    indent=2,
+                )
+            )
         else:
-            print(f"\nPipeline complete:")
+            print("\nPipeline complete:")
             print(f"  Profiles processed: {report.profiles_processed}")
             print(f"  Added:     {len(report.added)}")
             print(f"  Changed:   {len(report.changed)}")
@@ -607,23 +619,33 @@ def run_ingest_all(args: argparse.Namespace) -> int:
 
     # Output
     if use_json:
-        print(json.dumps({
-            "reports": [{
-                "slicer": r.slicer.value,
-                "version": r.version,
-                "profiles_processed": r.profiles_processed,
-                "added": len(r.added),
-                "changed": len(r.changed),
-                "unchanged": r.unchanged,
-            } for r in reports],
-            "errors": [{"slicer": s, "error": e} for s, e in errors],
-        }, indent=2))
+        print(
+            json.dumps(
+                {
+                    "reports": [
+                        {
+                            "slicer": r.slicer.value,
+                            "version": r.version,
+                            "profiles_processed": r.profiles_processed,
+                            "added": len(r.added),
+                            "changed": len(r.changed),
+                            "unchanged": r.unchanged,
+                        }
+                        for r in reports
+                    ],
+                    "errors": [{"slicer": s, "error": e} for s, e in errors],
+                },
+                indent=2,
+            )
+        )
     else:
         reporter.update_status("Pipeline complete!")
         total_profiles = sum(r.profiles_processed for r in reports)
         total_added = sum(len(r.added) for r in reports)
         total_changed = sum(len(r.changed) for r in reports)
-        print(f"\n  Total: {total_profiles} profiles ({total_added} added, {total_changed} changed)")
+        print(
+            f"\n  Total: {total_profiles} profiles ({total_added} added, {total_changed} changed)"
+        )
         print()
         for r in reports:
             print(
@@ -665,7 +687,9 @@ def run_diff(args: argparse.Namespace) -> int:
             if not changes:
                 print("No changes.")
             else:
-                print(f"Changes in {args.vendor}/{args.profile} ({args.from_version} -> {args.to_version}):")
+                print(
+                    f"Changes in {args.vendor}/{args.profile} ({args.from_version} -> {args.to_version}):"
+                )
                 for key, (old, new) in changes.items():
                     print(f"  {key}: {old} -> {new}")
     else:
@@ -723,15 +747,17 @@ def run_list(args: argparse.Namespace) -> int:
     if getattr(args, "json", False):
         output = []
         for p in profiles:
-            output.append({
-                "name": p.name,
-                "vendor": p.vendor,
-                "profile_type": p.profile_type,
-                "first_seen": p.first_seen,
-                "last_seen": p.last_seen,
-                "filament_id": p.filament_id,
-                "settings_count": len(p.settings),
-            })
+            output.append(
+                {
+                    "name": p.name,
+                    "vendor": p.vendor,
+                    "profile_type": p.profile_type,
+                    "first_seen": p.first_seen,
+                    "last_seen": p.last_seen,
+                    "filament_id": p.filament_id,
+                    "settings_count": len(p.settings),
+                }
+            )
         print(json.dumps(output, indent=2))
     else:
         if not profiles:
@@ -739,7 +765,9 @@ def run_list(args: argparse.Namespace) -> int:
         else:
             print(f"Profiles for {slicer.value} ({len(profiles)} total):")
             for p in sorted(profiles, key=lambda x: (x.vendor, x.name)):
-                print(f"  {p.vendor}/{p.name} ({p.profile_type}, {len(p.settings)} settings)")
+                print(
+                    f"  {p.vendor}/{p.name} ({p.profile_type}, {len(p.settings)} settings)"
+                )
 
     return 0
 
@@ -752,7 +780,9 @@ def run_evaluate(args: argparse.Namespace) -> int:
 
     profile = store.get(slicer, args.type, args.vendor, args.profile)
     if not profile:
-        logger.error("Profile not found: %s/%s (%s)", args.vendor, args.profile, args.type)
+        logger.error(
+            "Profile not found: %s/%s (%s)", args.vendor, args.profile, args.type
+        )
         return 1
 
     snapshot = profile.evaluate(args.version)
@@ -801,27 +831,32 @@ def run_map(args: argparse.Namespace) -> int:
         return 1
 
     if use_json:
-        print(json.dumps({
-            "models_mapped": len(model_map.model_to_profiles),
-            "failed_brands": sorted(model_map.failed_brands),
-            "failed_models": sorted(model_map.failed_models),
-            "output_dir": str(output_dir),
-        }, indent=2))
+        print(
+            json.dumps(
+                {
+                    "models_mapped": len(model_map.model_to_profiles),
+                    "failed_brands": sorted(model_map.failed_brands),
+                    "failed_models": sorted(model_map.failed_models),
+                    "output_dir": str(output_dir),
+                },
+                indent=2,
+            )
+        )
     else:
         reporter.update_status("Mapping complete!")
-        print(f"\nMapping complete:")
+        print("\nMapping complete:")
         print(f"  Models mapped:  {len(model_map.model_to_profiles)}")
         print(f"  Failed brands:  {len(model_map.failed_brands)}")
         print(f"  Failed models:  {len(model_map.failed_models)}")
         print(f"  Output:         {output_dir}")
 
         if model_map.failed_brands:
-            print(f"\n  Unmatched brands:")
+            print("\n  Unmatched brands:")
             for b in sorted(model_map.failed_brands):
                 print(f"    - {b}")
 
         if model_map.failed_models:
-            print(f"\n  Unmatched models:")
+            print("\n  Unmatched models:")
             for m in sorted(model_map.failed_models)[:30]:
                 print(f"    - {m}")
             if len(model_map.failed_models) > 30:
@@ -893,8 +928,7 @@ def run_ofd_map(args: argparse.Namespace) -> int:
                 for c in report.conflicts
             ],
             "skipped": [
-                {"path": str(p), "reason": reason}
-                for p, reason in report.skipped
+                {"path": str(p), "reason": reason} for p, reason in report.skipped
             ],
         }
         print(json.dumps(output, indent=2))
@@ -921,7 +955,9 @@ def run_ofd_map(args: argparse.Namespace) -> int:
             for r in report.updated:
                 id_str = f" (id={r.slicer_id})" if r.slicer_id else ""
                 gid_str = f" (generic_id={r.generic_id})" if r.generic_id else ""
-                print(f"  {r.filament_path} [{r.slicer}] -> {r.profile_name}{id_str}{gid_str}")
+                print(
+                    f"  {r.filament_path} [{r.slicer}] -> {r.profile_name}{id_str}{gid_str}"
+                )
 
         if report.already_correct:
             print(f"\nAlready correct: {len(report.already_correct)}")

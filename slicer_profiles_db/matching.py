@@ -8,7 +8,7 @@ slicer printer names against SimplyPrint model names.
 import re
 from typing import Callable
 
-from .brands import normalize_brand, strip_brand_from_name, BRAND_MAPS
+from .brands import strip_brand_from_name
 
 # Pre-compiled patterns used by multiple algorithms.
 _MMU_RE = re.compile(r"mmu[0-9]s?")
@@ -29,10 +29,9 @@ def remove_spaces(sp_name: str, slicer_name: str, brand: str) -> bool:
 
 
 def remove_parentheses(sp_name: str, slicer_name: str, brand: str) -> bool:
-    return (
-        sp_name.replace("(", "").replace(")", "")
-        == slicer_name.replace("(", "").replace(")", "")
-    )
+    return sp_name.replace("(", "").replace(")", "") == slicer_name.replace(
+        "(", ""
+    ).replace(")", "")
 
 
 def remove_bltouch(sp_name: str, slicer_name: str, brand: str) -> bool:

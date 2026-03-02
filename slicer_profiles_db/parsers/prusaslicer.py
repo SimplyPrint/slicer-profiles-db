@@ -27,7 +27,9 @@ class PrusaSlicerParser(BaseParser):
         # Name extraction per type
         name = self._extract_name(data, profile_type, path)
 
-        filament_type = data.get("filament_type") if profile_type == ProfileType.FILAMENT else None
+        filament_type = (
+            data.get("filament_type") if profile_type == ProfileType.FILAMENT else None
+        )
 
         return ParsedProfile(
             slicer=self.slicer_type,

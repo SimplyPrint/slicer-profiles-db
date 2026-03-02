@@ -131,7 +131,10 @@ class SlicerMapper:
                         )
                         if result is None:
                             report.skipped.append(
-                                (filament_path, f"no match for {brand_name} {material}/{filament_data.get('name', '')} [{slicer}]")
+                                (
+                                    filament_path,
+                                    f"no match for {brand_name} {material}/{filament_data.get('name', '')} [{slicer}]",
+                                )
                             )
                             continue
 
@@ -155,46 +158,6 @@ class SlicerMapper:
                             )
                             has_conflict = True
 
-                        if (
-                            result.slicer_id
-                            and existing_id
-                            and existing_id != result.slicer_id
-                        ):
-                            # If the existing ID isn't in the profile store,
-                            # it was manually curated (likely a variant-specific
-                            # ID like EPETGPROB00).  Keep it and don't conflict.
-                            try:
-                                slicer_type = SlicerType(slicer)
-                                existing_in_store = bool(
-                                    self.index.find_by_slicer_id(slicer_type, existing_id)
-                                )
-                            except (ValueError, AttributeError):
-                                existing_in_store = False
-
-                            if not existing_in_store:
-                                # Preserve the manually curated ID — override
-                                # the derived one so downstream treats it as
-                                # already correct.
-                                result = MappingResult(
-                                    filament_path=result.filament_path,
-                                    slicer=result.slicer,
-                                    profile_name=result.profile_name,
-                                    slicer_id=existing_id,
-                                    generic_id=result.generic_id,
-                                    vendor=result.vendor,
-                                )
-                            else:
-                                report.conflicts.append(
-                                    MappingConflict(
-                                        filament_path=filament_path,
-                                        slicer=slicer,
-                                        field="slicer_id",
-                                        existing=existing_id,
-                                        derived=result.slicer_id,
-                                    )
-                                )
-                                has_conflict = True
-
                         if has_conflict:
                             continue
 
@@ -202,8 +165,7 @@ class SlicerMapper:
 
                         name_matches = existing_name == result.profile_name
                         id_matches = (
-                            not result.slicer_id
-                            or existing_id == result.slicer_id
+                            not result.slicer_id or existing_id == result.slicer_id
                         )
                         gid_matches = (
                             not result.generic_id
@@ -254,7 +216,9 @@ class SlicerMapper:
         for prefix in prefixes:
             candidates = self._compose_candidates(prefix, material, filament_name)
             for candidate in candidates:
-                matches = self.index.find_by_base_name_any_vendor(slicer_type, candidate)
+                matches = self.index.find_by_base_name_any_vendor(
+                    slicer_type, candidate
+                )
                 if matches:
                     vendor, profiles = matches[0]
                     profile_base_name = profiles[0].name.split(" @")[0]
@@ -312,7 +276,7 @@ class SlicerMapper:
             # e.g., name="PLA-Matte" for material="PLA" → also try "{prefix} {MATERIAL} Matte"
             name_upper = filament_name.upper()
             if name_upper.startswith(material_upper):
-                suffix = filament_name[len(material_upper):].lstrip("-+ ")
+                suffix = filament_name[len(material_upper) :].lstrip("-+ ")
                 if suffix:
                     candidates.append(f"{prefix} {material_upper} {suffix}")
 
@@ -341,7 +305,9 @@ class SlicerMapper:
             # Migrate any existing slicer_ids into slicer_settings
             if "slicer_ids" in data:
                 for slicer_key, sid in data["slicer_ids"].items():
-                    ss = data.setdefault("slicer_settings", {}).setdefault(slicer_key, {})
+                    ss = data.setdefault("slicer_settings", {}).setdefault(
+                        slicer_key, {}
+                    )
                     if "id" not in ss:
                         ss["id"] = sid
                 del data["slicer_ids"]

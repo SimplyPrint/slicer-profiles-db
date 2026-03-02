@@ -17,18 +17,21 @@ from typing import Any
 
 import requests
 
-from .brands import BRAND_MAPS, normalize_brand, strip_brand_from_name
+from .brands import BRAND_MAPS, normalize_brand
 from .conditions import evaluate_printer_condition
 from .index import (
-    ProfileIndex, is_profile_generic, is_profile_model_specific,
-    build_generic_profile_index, resolve_generic_id,
+    ProfileIndex,
+    is_profile_model_specific,
+    build_generic_profile_index,
+    resolve_generic_id,
 )
 from .matching import match_printer_model
 from .models import ProfileType, SlicerType, StoredProfile
-from .resources import ResourceStore, RESOURCE_SETTING_KEYS
+from .resources import ResourceStore
 from .store import ProfileStore
 
 logger = logging.getLogger(__name__)
+
 
 def _get_sp_api_url() -> str:
     """Get the SimplyPrint API URL from the SP_API_URL environment variable."""
@@ -39,6 +42,7 @@ def _get_sp_api_url() -> str:
             "Set it to the full SimplyPrint printer model endpoint URL."
         )
     return url
+
 
 # Slicers that participate in model mapping.
 _MAPPING_SLICERS = [
@@ -156,8 +160,12 @@ def map_printer_models(
             vendor = profile.vendor
 
             ids = match_printer_model(
-                sp_models, sp_brands, sp_slicer_names,
-                vendor, name, brand_map,
+                sp_models,
+                sp_brands,
+                sp_slicer_names,
+                vendor,
+                name,
+                brand_map,
             )
 
             if ids:
@@ -230,10 +238,13 @@ def _build_variant_map(
         model_id = data.get("model_id")
         if model_id and model_id != printer_model:
             alt_key = model_id + variant
-            result.variant_map[slicer_val].setdefault(alt_key, {
-                "name": profile_name,
-                "data": data,
-            })
+            result.variant_map[slicer_val].setdefault(
+                alt_key,
+                {
+                    "name": profile_name,
+                    "data": data,
+                },
+            )
 
 
 def map_filament_profiles(
@@ -267,7 +278,9 @@ def map_filament_profiles(
 
             for profile_key in profile_keys:
                 vendor, name = profile_key.split("/", 1)
-                mm_profile = index.find_by_type(slicer, ProfileType.MACHINE_MODEL, vendor, name)
+                mm_profile = index.find_by_type(
+                    slicer, ProfileType.MACHINE_MODEL, vendor, name
+                )
                 if not mm_profile:
                     continue
                 mm = mm_profile[0]
@@ -306,7 +319,9 @@ def map_filament_profiles(
                     printer_name = variant_data.get("name", lookup["name"])
 
                     # Find all filament profiles for this vendor
-                    filament_profiles = index.find_by_type(slicer, ProfileType.FILAMENT, vendor)
+                    filament_profiles = index.find_by_type(
+                        slicer, ProfileType.FILAMENT, vendor
+                    )
                     for fp in filament_profiles:
                         fp_data = _evaluate_stable(fp)
                         filament_name = fp_data.get("name", fp.name)
@@ -317,7 +332,11 @@ def map_filament_profiles(
                         # Check compatibility
                         compat = fp_data.get("compatible_printers", [])
                         if isinstance(compat, str):
-                            compat = [x.strip().strip('"') for x in compat.split(";") if x.strip()]
+                            compat = [
+                                x.strip().strip('"')
+                                for x in compat.split(";")
+                                if x.strip()
+                            ]
 
                         is_compatible = False
                         if printer_name in compat:
@@ -336,8 +355,11 @@ def map_filament_profiles(
                         filament_db_id = None
                         if ofd_index:
                             filament_db_id = ofd_index.resolve_path(
-                                fp.vendor, filament_type, filament_name,
-                                slicer_val, filament_id=fp.filament_id,
+                                fp.vendor,
+                                filament_type,
+                                filament_name,
+                                slicer_val,
+                                filament_id=fp.filament_id,
                             )
 
                         # Add to output, grouping by filament name
@@ -365,7 +387,8 @@ def map_filament_profiles(
                             # "Generic PLA Silk" before "Generic PLA").
                             gid = resolve_generic_id(
                                 _generic_profiles.get(slicer_val, []),
-                                filament_type, filament_name,
+                                filament_type,
+                                filament_name,
                             )
                             if gid:
                                 entry["generic_id"] = gid
@@ -376,8 +399,14 @@ def map_filament_profiles(
                                 cp[model_name] = []
                             if variant not in cp[model_name]:
                                 cp[model_name].append(variant)
-                            if filament_db_id and filament_db_id not in existing_entry.get("filament_db_ids", []):
-                                existing_entry.setdefault("filament_db_ids", []).append(filament_db_id)
+                            if (
+                                filament_db_id
+                                and filament_db_id
+                                not in existing_entry.get("filament_db_ids", [])
+                            ):
+                                existing_entry.setdefault("filament_db_ids", []).append(
+                                    filament_db_id
+                                )
 
             # Flatten into output
             if compatible_filaments:
@@ -410,7 +439,9 @@ def map_print_profiles(
 
             for profile_key in profile_keys:
                 vendor, name = profile_key.split("/", 1)
-                mm_profile = index.find_by_type(slicer, ProfileType.MACHINE_MODEL, vendor, name)
+                mm_profile = index.find_by_type(
+                    slicer, ProfileType.MACHINE_MODEL, vendor, name
+                )
                 if not mm_profile:
                     continue
                 mm = mm_profile[0]
@@ -457,12 +488,20 @@ def map_print_profiles(
 
                     for pp in print_profiles:
                         pp_data = _evaluate_stable(pp)
-                        print_name = pp_data.get("name") or pp_data.get("print_settings_id") or pp.name
+                        print_name = (
+                            pp_data.get("name")
+                            or pp_data.get("print_settings_id")
+                            or pp.name
+                        )
 
                         # Check compatibility
                         compat = pp_data.get("compatible_printers", [])
                         if isinstance(compat, str):
-                            compat = [x.strip().strip('"') for x in compat.split(";") if x.strip()]
+                            compat = [
+                                x.strip().strip('"')
+                                for x in compat.split(";")
+                                if x.strip()
+                            ]
 
                         is_compatible = False
                         if printer_name in compat:
@@ -492,7 +531,9 @@ def map_print_profiles(
                             out["compatible_printers"][model_name].append(variant)
 
             if compatible_prints:
-                output.setdefault(model_id, {})[slicer_val] = list(compatible_prints.values())
+                output.setdefault(model_id, {})[slicer_val] = list(
+                    compatible_prints.values()
+                )
 
     return output
 
@@ -537,7 +578,9 @@ def export_output(
 
             for profile_key in profile_keys:
                 vendor, name = profile_key.split("/", 1)
-                mm_profiles = index.find_by_type(slicer, ProfileType.MACHINE_MODEL, vendor, name)
+                mm_profiles = index.find_by_type(
+                    slicer, ProfileType.MACHINE_MODEL, vendor, name
+                )
                 if not mm_profiles:
                     continue
                 mm = mm_profiles[0]
@@ -601,8 +644,9 @@ def export_output(
     if ofd_index is not None:
         filament_map_data = ofd_index.build_filament_map()
         _write_json(output_dir / "ofd_filament_map.json", filament_map_data)
-        logger.info("Wrote ofd_filament_map.json with %d slicers",
-                     len(filament_map_data))
+        logger.info(
+            "Wrote ofd_filament_map.json with %d slicers", len(filament_map_data)
+        )
 
     # --- Resource manifest for SHA-256 resolution ---
     _write_resource_manifest(store, output_dir)
@@ -667,8 +711,11 @@ def _export_generic_filaments(
                         filament_db_id = None
                         if ofd_index:
                             filament_db_id = ofd_index.resolve_path(
-                                fp.vendor, filament_type, name,
-                                slicer_val, filament_id=fp.filament_id,
+                                fp.vendor,
+                                filament_type,
+                                name,
+                                slicer_val,
+                                filament_id=fp.filament_id,
                             )
                         entry = {
                             "name": name,
@@ -681,9 +728,7 @@ def _export_generic_filaments(
             if generic_data:
                 out_path = brands_dir / slicer_val / vendor
                 out_path.mkdir(parents=True, exist_ok=True)
-                _write_json(
-                    out_path / "generic_filament_profiles.json", generic_data
-                )
+                _write_json(out_path / "generic_filament_profiles.json", generic_data)
 
 
 def _all_vendors(index: ProfileIndex, slicer: SlicerType) -> set[str]:
@@ -765,6 +810,7 @@ def run_mapping_pipeline(
     ofd_index = None
     if ofd_path is not None:
         from .ofd import OFDRepo, OFDFilamentIndex
+
         logger.info("Loading OFD data from %s ...", ofd_path)
         ofd_repo = OFDRepo(ofd_path)
         ofd_index = OFDFilamentIndex(ofd_repo)
@@ -793,6 +839,8 @@ def run_mapping_pipeline(
 
     # Step 4: Export
     logger.info("Exporting to %s ...", output_dir)
-    export_output(model_map, filament_map, print_map, store, index, output_dir, ofd_index)
+    export_output(
+        model_map, filament_map, print_map, store, index, output_dir, ofd_index
+    )
 
     return model_map

@@ -2,7 +2,7 @@
 ProfileIndex: in-memory O(1) lookups over stored profiles.
 """
 
-from typing import Any, Optional
+from typing import Optional
 
 from .models import SlicerType, ProfileType, StoredProfile
 from .store import ProfileStore
@@ -67,9 +67,9 @@ class ProfileIndex:
             ).append(profile)
 
         # Index by vendor + name
-        self._by_name.setdefault(slicer, {}).setdefault(
-            profile.vendor, {}
-        ).setdefault(profile.name, []).append(profile)
+        self._by_name.setdefault(slicer, {}).setdefault(profile.vendor, {}).setdefault(
+            profile.name, []
+        ).append(profile)
 
         # Index by base name (name before " @") for mapper lookups
         # Keyed case-insensitively for flexible matching
@@ -110,7 +110,9 @@ class ProfileIndex:
         self, slicer: SlicerType, vendor: str, base_name: str
     ) -> list[StoredProfile]:
         """O(1) case-insensitive lookup by vendor and base profile name (without @ printer suffix)."""
-        entry = self._by_base_name.get(slicer, {}).get(vendor, {}).get(base_name.lower())
+        entry = (
+            self._by_base_name.get(slicer, {}).get(vendor, {}).get(base_name.lower())
+        )
         return entry[1] if entry else []
 
     def find_by_base_name_any_vendor(
@@ -147,7 +149,11 @@ class ProfileIndex:
         Returns:
             List of matching stored profiles.
         """
-        pt = profile_type.value if isinstance(profile_type, ProfileType) else profile_type
+        pt = (
+            profile_type.value
+            if isinstance(profile_type, ProfileType)
+            else profile_type
+        )
         type_idx = self._by_type.get(slicer, {}).get(pt, {})
 
         if vendor and name:
@@ -188,7 +194,9 @@ class ProfileIndex:
                 return profile
 
             condition = profile.get_latest("compatible_printers_condition")
-            if condition and evaluate_printer_condition(condition, printer_data, slicer):
+            if condition and evaluate_printer_condition(
+                condition, printer_data, slicer
+            ):
                 return profile
 
         return None
@@ -212,7 +220,9 @@ class ProfileIndex:
                 continue
 
             condition = profile.get_latest("compatible_printers_condition")
-            if condition and evaluate_printer_condition(condition, printer_data, slicer):
+            if condition and evaluate_printer_condition(
+                condition, printer_data, slicer
+            ):
                 compatible.append(profile)
 
         return compatible
@@ -243,7 +253,9 @@ class ProfileIndex:
 
         # 1. Specific
         candidates = self.find_by_name(slicer, vendor, filament_name)
-        result = self.find_compatible(candidates, printer_name, printer_data, slicer_str)
+        result = self.find_compatible(
+            candidates, printer_name, printer_data, slicer_str
+        )
         if result:
             return result
 
@@ -255,7 +267,9 @@ class ProfileIndex:
 
         # 3. Printer-generic
         candidates = self.find_generic(slicer, vendor, filament_type)
-        result = self.find_compatible(candidates, printer_name, printer_data, slicer_str)
+        result = self.find_compatible(
+            candidates, printer_name, printer_data, slicer_str
+        )
         if result:
             return result
 
@@ -299,10 +313,7 @@ def is_profile_model_specific(
         condition = profile.get_latest("compatible_printers_condition")
         if not condition:
             return False
-        return (
-            ".*PRINTER_MODEL_" in condition
-            or "printer_model=" in condition
-        )
+        return ".*PRINTER_MODEL_" in condition or "printer_model=" in condition
 
     # For BBS/Orca, compare compatible_printers count to total model count
     compat = profile.get_latest("compatible_printers") or []
@@ -370,7 +381,7 @@ def resolve_generic_id(
         if gen_ft != ft_upper:
             continue
         prefix = f"generic {gen_ft.lower()}"
-        suffix = gen_name[len(prefix):].strip() if gen_name.startswith(prefix) else ""
+        suffix = gen_name[len(prefix) :].strip() if gen_name.startswith(prefix) else ""
         if suffix:
             if suffix in name_lower:
                 return gen_fid

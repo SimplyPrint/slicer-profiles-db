@@ -90,9 +90,7 @@ def collect_resources(extracted_dir: Path, store: ResourceStore) -> dict[str, st
     return resource_map
 
 
-def rewrite_resource_refs(
-    profiles: list, resource_map: dict[str, str]
-) -> None:
+def rewrite_resource_refs(profiles: list, resource_map: dict[str, str]) -> None:
     """Rewrite bare filename references in profile settings to sha256:{hash}.
 
     Mutates profiles in place. Handles both flat string values and
@@ -113,7 +111,9 @@ def collect_referenced_hashes(store_root: Path, slicer_value: str) -> set[str]:
     slicer_dir = store_root / slicer_value
     for json_file in slicer_dir.rglob("*.json"):
         # Skip _resources/ and _meta.json
-        if any(part.startswith("_") for part in json_file.relative_to(slicer_dir).parts):
+        if any(
+            part.startswith("_") for part in json_file.relative_to(slicer_dir).parts
+        ):
             continue
         try:
             data = json.loads(json_file.read_text(encoding="utf-8"))

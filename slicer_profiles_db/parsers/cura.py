@@ -41,7 +41,11 @@ class CuraParser(BaseParser):
             label = (name_elem.findtext("m:label", "", NS) or "").strip()
 
         profile_name = label or f"{brand} {material} {color}".strip()
-        guid = (metadata.findtext("m:GUID", "", NS) or "").strip() if metadata is not None else ""
+        guid = (
+            (metadata.findtext("m:GUID", "", NS) or "").strip()
+            if metadata is not None
+            else ""
+        )
         color_code = (
             (metadata.findtext("m:color_code", "", NS) or "").strip()
             if metadata is not None
@@ -90,7 +94,9 @@ class CuraParser(BaseParser):
                 for setting in machine.findall("m:setting", NS):
                     key = setting.get("key", "")
                     if key:
-                        machine_key = f"machine:{machine_id}:{key}" if machine_id else key
+                        machine_key = (
+                            f"machine:{machine_id}:{key}" if machine_id else key
+                        )
                         settings[machine_key] = (setting.text or "").strip()
 
         vendor = brand or "Generic"
@@ -141,7 +147,9 @@ class CuraParser(BaseParser):
             source_path=path,
         )
 
-    def parse_directory(self, directory: Path, profile_type_filter=None) -> Iterator[ParsedProfile]:
+    def parse_directory(
+        self, directory: Path, profile_type_filter=None
+    ) -> Iterator[ParsedProfile]:
         """Cura profiles may be flat files or in vendor subdirectories."""
         seen_paths: set[Path] = set()
 
@@ -154,13 +162,18 @@ class CuraParser(BaseParser):
 
         if has_flat_materials:
             for path in sorted(directory.iterdir()):
-                if path.suffix == ".fdm_material" or path.name.endswith(".xml.fdm_material"):
+                if path.suffix == ".fdm_material" or path.name.endswith(
+                    ".xml.fdm_material"
+                ):
                     if path in seen_paths:
                         continue
                     seen_paths.add(path)
                     try:
                         profile = self.parse_file(path)
-                        if profile_type_filter and profile.profile_type not in profile_type_filter:
+                        if (
+                            profile_type_filter
+                            and profile.profile_type not in profile_type_filter
+                        ):
                             continue
                         yield profile
                     except Exception:
@@ -221,7 +234,10 @@ class CuraParser(BaseParser):
                 seen_paths.add(path)
                 try:
                     profile = self.parse_file(path)
-                    if profile_type_filter and profile.profile_type not in profile_type_filter:
+                    if (
+                        profile_type_filter
+                        and profile.profile_type not in profile_type_filter
+                    ):
                         continue
                     yield profile
                 except Exception:

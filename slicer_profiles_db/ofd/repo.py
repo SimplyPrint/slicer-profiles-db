@@ -16,12 +16,12 @@ logger = logging.getLogger(__name__)
 class OFDFilament:
     """A single filament entry from the OFD repository."""
 
-    brand_id: str       # "bambu_lab"
-    brand_name: str     # "Bambu Lab"
-    material: str       # "PLA"
-    filament_id: str    # "aero"
+    brand_id: str  # "bambu_lab"
+    brand_name: str  # "Bambu Lab"
+    material: str  # "PLA"
+    filament_id: str  # "aero"
     filament_name: str  # "Aero"
-    fs_path: str        # "bambu_lab/PLA/aero"
+    fs_path: str  # "bambu_lab/PLA/aero"
     slicer_settings: dict = field(default_factory=dict)
     slicer_ids: dict = field(default_factory=dict)
 
@@ -79,15 +79,17 @@ class OFDRepo:
                     filament_name = filament_data.get("name", filament_id)
                     fs_path = f"{brand_id}/{material}/{filament_id}"
 
-                    self.filaments.append(OFDFilament(
-                        brand_id=brand_id,
-                        brand_name=brand_name,
-                        material=material,
-                        filament_id=filament_id,
-                        filament_name=filament_name,
-                        fs_path=fs_path,
-                        slicer_settings=filament_data.get("slicer_settings", {}),
-                        slicer_ids=filament_data.get("slicer_ids", {}),
-                    ))
+                    self.filaments.append(
+                        OFDFilament(
+                            brand_id=brand_id,
+                            brand_name=brand_name,
+                            material=material,
+                            filament_id=filament_id,
+                            filament_name=filament_name,
+                            fs_path=fs_path,
+                            slicer_settings=filament_data.get("slicer_settings", {}),
+                            slicer_ids=filament_data.get("slicer_ids", {}),
+                        )
+                    )
 
         logger.info("Loaded %d filaments from OFD", len(self.filaments))

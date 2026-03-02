@@ -94,9 +94,7 @@ def _evaluate_expression(
             inner = condition[start_idx + 1 : end_idx]
             inner_result = _evaluate_expression(inner, get_value, slicer)
             condition = (
-                condition[:start_idx]
-                + str(inner_result)
-                + condition[end_idx + 1 :]
+                condition[:start_idx] + str(inner_result) + condition[end_idx + 1 :]
             )
     elif ")" in condition:
         raise ValueError("Unmatched parentheses in condition")

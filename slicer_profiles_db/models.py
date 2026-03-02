@@ -32,6 +32,7 @@ def _version_key(v: str) -> tuple[int, ...]:
     depending on versions.py (which imports models.py).
     """
     import re
+
     parts: list[int] = []
     for part in re.split(r"[.\-_]", v):
         try:
@@ -103,7 +104,9 @@ class StoredProfile(BaseModel):
                 result = val
         return result
 
-    def changed_settings(self, from_version: str, to_version: str) -> dict[str, tuple[Any, Any]]:
+    def changed_settings(
+        self, from_version: str, to_version: str
+    ) -> dict[str, tuple[Any, Any]]:
         """Return settings that changed between two versions: { key: (old_value, new_value) }."""
         changes: dict[str, tuple[Any, Any]] = {}
         for key in self.settings:
