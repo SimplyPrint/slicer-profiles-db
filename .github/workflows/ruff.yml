@@ -1,0 +1,21 @@
+name: Ruff
+
+on:
+  push:
+    paths:
+      - "slicer_profiles_db/**/*.py"
+  pull_request:
+    paths:
+      - "slicer_profiles_db/**/*.py"
+
+jobs:
+  ruff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/ruff-action@v3
+        with:
+          args: "format --check slicer_profiles_db/"
+      - uses: astral-sh/ruff-action@v3
+        with:
+          args: "check slicer_profiles_db/"
