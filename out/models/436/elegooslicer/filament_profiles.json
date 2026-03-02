@@ -1,850 +1,5 @@
 [
     {
-        "name": "Prusa Generic ABS @MK4",
-        "compatible_printers": {
-            "Prusa MK4": [
-                "0.25",
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Prusa Generic ABS @MK4",
-            "from": "system",
-            "instantiation": "true",
-            "cool_plate_temp": [
-                "105"
-            ],
-            "eng_plate_temp": [
-                "105"
-            ],
-            "hot_plate_temp": [
-                "105"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "105"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "105"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "105"
-            ],
-            "overhang_fan_threshold": [
-                "25%"
-            ],
-            "overhang_fan_speed": [
-                "80"
-            ],
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "close_fan_the_first_x_layers": [
-                "3"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "0.926"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "fan_cooling_layer_time": [
-                "30"
-            ],
-            "filament_cost": [
-                "20"
-            ],
-            "filament_density": [
-                "1.04"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_max_volumetric_speed": [
-                "12"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_type": [
-                "ABS"
-            ],
-            "filament_vendor": [
-                "Generic"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "260"
-            ],
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "fan_max_speed": [
-                "80"
-            ],
-            "fan_min_speed": [
-                "10"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "slow_down_layer_time": [
-                "3"
-            ],
-            "filament_start_gcode": [
-                "; Filament gcode\nM900 K{if nozzle_diameter[0]==0.4}0.03{elsif nozzle_diameter[0]==0.25}0.1{elsif nozzle_diameter[0]==0.3}0.06{elsif nozzle_diameter[0]==0.35}0.05{elsif nozzle_diameter[0]==0.5}0.03{elsif nozzle_diameter[0]==0.6}0.02{elsif nozzle_diameter[0]==0.8}0.01{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*PRINTER_MODEL_MK4IS.*/}\nM572 S{if nozzle_diameter[0]==0.4}0.02{elsif nozzle_diameter[0]==0.5}0.018{elsif nozzle_diameter[0]==0.6}0.012{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.25}0.09{elsif nozzle_diameter[0]==0.3}0.065{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S40 ; set heatbreak target temp"
-            ],
-            "nozzle_temperature": [
-                "260"
-            ],
-            "temperature_vitrification": [
-                "110"
-            ],
-            "filament_id": "GFB99",
-            "idle_temperature": "0",
-            "nozzle_temperature_range_low": [
-                "240"
-            ],
-            "nozzle_temperature_range_high": [
-                "270"
-            ],
-            "setting_id": "GFSA04",
-            "filament_ramming_parameters": [
-                "250 100 42.4 42.4 42.4 42.4 42.4 | 0.05 42.4 0.45 42.4 0.95 42.4 1.45 42.4 1.95 42.4 2.45 42.4 2.95 42.4 3.45 42.4 3.95 42.4 4.45 42.4 4.95 42.4"
-            ],
-            "compatible_printers": [
-                "Prusa MK4 0.25 nozzle",
-                "Prusa MK4 0.4 nozzle",
-                "Prusa MK4 0.6 nozzle",
-                "Prusa MK4 0.8 nozzle"
-            ]
-        },
-        "generic_id": "GFB99"
-    },
-    {
-        "name": "Prusa Generic ASA @MK4",
-        "compatible_printers": {
-            "Prusa MK4": [
-                "0.25",
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Prusa Generic ASA @MK4",
-            "from": "system",
-            "instantiation": "true",
-            "cool_plate_temp": [
-                "105"
-            ],
-            "eng_plate_temp": [
-                "105"
-            ],
-            "hot_plate_temp": [
-                "105"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "105"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "105"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "105"
-            ],
-            "overhang_fan_threshold": [
-                "25%"
-            ],
-            "overhang_fan_speed": [
-                "80"
-            ],
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "close_fan_the_first_x_layers": [
-                "3"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "0.93"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "fan_cooling_layer_time": [
-                "35"
-            ],
-            "filament_cost": [
-                "20"
-            ],
-            "filament_density": [
-                "1.04"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_max_volumetric_speed": [
-                "12"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_type": [
-                "ASA"
-            ],
-            "filament_vendor": [
-                "Generic"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "260"
-            ],
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "fan_max_speed": [
-                "80"
-            ],
-            "fan_min_speed": [
-                "10"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "slow_down_layer_time": [
-                "3"
-            ],
-            "filament_start_gcode": [
-                "; Filament gcode\nM900 K{if nozzle_diameter[0]==0.4}0.03{elsif nozzle_diameter[0]==0.25}0.1{elsif nozzle_diameter[0]==0.3}0.06{elsif nozzle_diameter[0]==0.35}0.05{elsif nozzle_diameter[0]==0.5}0.03{elsif nozzle_diameter[0]==0.6}0.02{elsif nozzle_diameter[0]==0.8}0.01{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*PRINTER_MODEL_MK4IS.*/}\nM572 S{if nozzle_diameter[0]==0.4}0.02{elsif nozzle_diameter[0]==0.5}0.018{elsif nozzle_diameter[0]==0.6}0.012{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.25}0.09{elsif nozzle_diameter[0]==0.3}0.065{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S40 ; set heatbreak target temp"
-            ],
-            "nozzle_temperature": [
-                "260"
-            ],
-            "temperature_vitrification": [
-                "110"
-            ],
-            "filament_id": "GFB98",
-            "idle_temperature": "0",
-            "nozzle_temperature_range_low": [
-                "240"
-            ],
-            "nozzle_temperature_range_high": [
-                "270"
-            ],
-            "setting_id": "GFSA04",
-            "compatible_printers": [
-                "Prusa MK4 0.25 nozzle",
-                "Prusa MK4 0.4 nozzle",
-                "Prusa MK4 0.6 nozzle",
-                "Prusa MK4 0.8 nozzle"
-            ]
-        },
-        "generic_id": "GFB98"
-    },
-    {
-        "name": "Prusa Generic PA-CF",
-        "compatible_printers": {
-            "Prusa MK4": [
-                "0.25",
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Prusa Generic PA-CF",
-            "from": "system",
-            "instantiation": "true",
-            "cool_plate_temp": [
-                "0"
-            ],
-            "eng_plate_temp": [
-                "100"
-            ],
-            "hot_plate_temp": [
-                "100"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "0"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "100"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "95%"
-            ],
-            "overhang_fan_speed": [
-                "30"
-            ],
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "close_fan_the_first_x_layers": [
-                "3"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "1"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "0"
-            ],
-            "fan_cooling_layer_time": [
-                "4"
-            ],
-            "filament_cost": [
-                "20"
-            ],
-            "filament_density": [
-                "1.04"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_max_volumetric_speed": [
-                "8"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_type": [
-                "PA-CF"
-            ],
-            "filament_vendor": [
-                "Generic"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "280"
-            ],
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "fan_max_speed": [
-                "60"
-            ],
-            "fan_min_speed": [
-                "0"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "slow_down_layer_time": [
-                "2"
-            ],
-            "filament_start_gcode": [
-                "; Filament gcode\n"
-            ],
-            "nozzle_temperature": [
-                "280"
-            ],
-            "temperature_vitrification": [
-                "108"
-            ],
-            "filament_id": "GFN99",
-            "idle_temperature": "0",
-            "nozzle_temperature_range_low": [
-                "270"
-            ],
-            "nozzle_temperature_range_high": [
-                "300"
-            ],
-            "setting_id": "GFSA04",
-            "compatible_printers": [
-                "Prusa MK3S 0.25 nozzle",
-                "Prusa MK3S 0.4 nozzle",
-                "Prusa MK3S 0.6 nozzle",
-                "Prusa MK3S 0.8 nozzle",
-                "Prusa MINI 0.25 nozzle",
-                "Prusa MINI 0.4 nozzle",
-                "Prusa MINI 0.6 nozzle",
-                "Prusa MINI 0.8 nozzle",
-                "Prusa MK4 0.25 nozzle",
-                "Prusa MK4 0.4 nozzle",
-                "Prusa MK4 0.6 nozzle",
-                "Prusa MK4 0.8 nozzle",
-                "Prusa MINIIS 0.4 nozzle",
-                "Prusa MINIIS 0.25 nozzle",
-                "Prusa MINIIS 0.6 nozzle",
-                "Prusa MINIIS 0.8 nozzle"
-            ]
-        },
-        "generic_id": "GFN98"
-    },
-    {
-        "name": "Prusa Generic PA",
-        "compatible_printers": {
-            "Prusa MK4": [
-                "0.25",
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Prusa Generic PA",
-            "from": "system",
-            "instantiation": "true",
-            "cool_plate_temp": [
-                "0"
-            ],
-            "eng_plate_temp": [
-                "100"
-            ],
-            "hot_plate_temp": [
-                "100"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "0"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "100"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "95%"
-            ],
-            "overhang_fan_speed": [
-                "30"
-            ],
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "close_fan_the_first_x_layers": [
-                "3"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "1"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "0"
-            ],
-            "fan_cooling_layer_time": [
-                "4"
-            ],
-            "filament_cost": [
-                "20"
-            ],
-            "filament_density": [
-                "1.04"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_max_volumetric_speed": [
-                "12"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_type": [
-                "PA"
-            ],
-            "filament_vendor": [
-                "Generic"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "280"
-            ],
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "fan_max_speed": [
-                "60"
-            ],
-            "fan_min_speed": [
-                "0"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "slow_down_layer_time": [
-                "2"
-            ],
-            "filament_start_gcode": [
-                "; Filament gcode\n"
-            ],
-            "nozzle_temperature": [
-                "280"
-            ],
-            "temperature_vitrification": [
-                "108"
-            ],
-            "filament_id": "GFN99",
-            "idle_temperature": "0",
-            "nozzle_temperature_range_low": [
-                "270"
-            ],
-            "nozzle_temperature_range_high": [
-                "300"
-            ],
-            "setting_id": "GFSA04",
-            "compatible_printers": [
-                "Prusa MK3S 0.25 nozzle",
-                "Prusa MK3S 0.4 nozzle",
-                "Prusa MK3S 0.6 nozzle",
-                "Prusa MK3S 0.8 nozzle",
-                "Prusa MINI 0.25 nozzle",
-                "Prusa MINI 0.4 nozzle",
-                "Prusa MINI 0.6 nozzle",
-                "Prusa MINI 0.8 nozzle",
-                "Prusa MK4 0.25 nozzle",
-                "Prusa MK4 0.4 nozzle",
-                "Prusa MK4 0.6 nozzle",
-                "Prusa MK4 0.8 nozzle",
-                "Prusa MINIIS 0.4 nozzle",
-                "Prusa MINIIS 0.25 nozzle",
-                "Prusa MINIIS 0.6 nozzle",
-                "Prusa MINIIS 0.8 nozzle"
-            ]
-        },
-        "generic_id": "GFN99"
-    },
-    {
-        "name": "Prusa Generic PC",
-        "compatible_printers": {
-            "Prusa MK4": [
-                "0.25",
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Prusa Generic PC",
-            "from": "system",
-            "instantiation": "true",
-            "cool_plate_temp": [
-                "0"
-            ],
-            "eng_plate_temp": [
-                "100"
-            ],
-            "hot_plate_temp": [
-                "100"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "0"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "100"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "25%"
-            ],
-            "overhang_fan_speed": [
-                "60"
-            ],
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "close_fan_the_first_x_layers": [
-                "3"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "0.94"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "fan_cooling_layer_time": [
-                "30"
-            ],
-            "filament_cost": [
-                "20"
-            ],
-            "filament_density": [
-                "1.04"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_max_volumetric_speed": [
-                "12"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_type": [
-                "PC"
-            ],
-            "filament_vendor": [
-                "Generic"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "270"
-            ],
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "fan_max_speed": [
-                "60"
-            ],
-            "fan_min_speed": [
-                "10"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "slow_down_layer_time": [
-                "2"
-            ],
-            "filament_start_gcode": [
-                "; Filament gcode\n"
-            ],
-            "nozzle_temperature": [
-                "280"
-            ],
-            "temperature_vitrification": [
-                "140"
-            ],
-            "filament_id": "GFC99",
-            "idle_temperature": "0",
-            "nozzle_temperature_range_low": [
-                "260"
-            ],
-            "nozzle_temperature_range_high": [
-                "280"
-            ],
-            "setting_id": "GFSA04",
-            "compatible_printers": [
-                "Prusa MK3S 0.25 nozzle",
-                "Prusa MK3S 0.4 nozzle",
-                "Prusa MK3S 0.6 nozzle",
-                "Prusa MK3S 0.8 nozzle",
-                "Prusa MK4 0.25 nozzle",
-                "Prusa MK4 0.4 nozzle",
-                "Prusa MK4 0.6 nozzle",
-                "Prusa MK4 0.8 nozzle",
-                "Prusa MINI 0.25 nozzle",
-                "Prusa MINI 0.4 nozzle",
-                "Prusa MINI 0.6 nozzle",
-                "Prusa MINI 0.8 nozzle"
-            ]
-        },
-        "generic_id": "GFC99"
-    },
-    {
         "name": "Prusa Generic PETG @MK4",
         "compatible_printers": {
             "Prusa MK4": [
@@ -1010,7 +165,7 @@
         "generic_id": "GFG99"
     },
     {
-        "name": "Prusa Generic PLA @MK4",
+        "name": "Prusa Generic TPU @MK4",
         "compatible_printers": {
             "Prusa MK4": [
                 "0.25",
@@ -1021,29 +176,29 @@
         },
         "data": {
             "type": "filament",
-            "name": "Prusa Generic PLA @MK4",
+            "name": "Prusa Generic TPU @MK4",
             "from": "system",
             "instantiation": "true",
             "cool_plate_temp": [
-                "35"
+                "30"
             ],
             "eng_plate_temp": [
-                "0"
+                "30"
             ],
             "hot_plate_temp": [
-                "60"
-            ],
-            "cool_plate_temp_initial_layer": [
                 "35"
             ],
+            "cool_plate_temp_initial_layer": [
+                "30"
+            ],
             "eng_plate_temp_initial_layer": [
-                "0"
+                "30"
             ],
             "hot_plate_temp_initial_layer": [
-                "60"
+                "35"
             ],
             "overhang_fan_threshold": [
-                "50%"
+                "95%"
             ],
             "overhang_fan_speed": [
                 "100"
@@ -1058,7 +213,7 @@
                 "; filament end gcode \n"
             ],
             "filament_flow_ratio": [
-                "0.98"
+                "1.08"
             ],
             "reduce_fan_stop_start_freq": [
                 "1"
@@ -1071,6 +226,171 @@
             ],
             "filament_density": [
                 "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_max_volumetric_speed": [
+                "3.2"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.4"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_type": [
+                "TPU"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "240"
+            ],
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "100"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "slow_down_layer_time": [
+                "8"
+            ],
+            "filament_start_gcode": [
+                "; filament start gcode\n"
+            ],
+            "nozzle_temperature": [
+                "240"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "filament_id": "GFU99",
+            "idle_temperature": "0",
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "nozzle_temperature_range_low": [
+                "200"
+            ],
+            "nozzle_temperature_range_high": [
+                "250"
+            ],
+            "setting_id": "GFSA04",
+            "compatible_printers": [
+                "Prusa MK4 0.25 nozzle",
+                "Prusa MK4 0.4 nozzle",
+                "Prusa MK4 0.6 nozzle",
+                "Prusa MK4 0.8 nozzle"
+            ]
+        },
+        "generic_id": "GFU99"
+    },
+    {
+        "name": "Prusa Generic ABS @MK4",
+        "compatible_printers": {
+            "Prusa MK4": [
+                "0.25",
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "name": "Prusa Generic ABS @MK4",
+            "from": "system",
+            "instantiation": "true",
+            "cool_plate_temp": [
+                "105"
+            ],
+            "eng_plate_temp": [
+                "105"
+            ],
+            "hot_plate_temp": [
+                "105"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "105"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "105"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "105"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "overhang_fan_speed": [
+                "80"
+            ],
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.926"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.04"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -1112,7 +432,7 @@
                 "0"
             ],
             "filament_type": [
-                "PLA"
+                "ABS"
             ],
             "filament_vendor": [
                 "Generic"
@@ -1127,46 +447,43 @@
                 "Cool Plate"
             ],
             "nozzle_temperature_initial_layer": [
-                "220"
+                "260"
             ],
             "full_fan_speed_layer": [
                 "0"
             ],
             "fan_max_speed": [
-                "100"
+                "80"
             ],
             "fan_min_speed": [
-                "100"
+                "10"
             ],
             "slow_down_min_speed": [
                 "10"
             ],
             "slow_down_layer_time": [
-                "8"
+                "3"
             ],
             "filament_start_gcode": [
-                "; filament start gcode\nM900 K{if nozzle_diameter[0]==0.4}0.026{elsif nozzle_diameter[0]==0.25}0.14{elsif nozzle_diameter[0]==0.3}0.07{elsif nozzle_diameter[0]==0.35}0.06{elsif nozzle_diameter[0]==0.6}0.03{elsif nozzle_diameter[0]==0.5}0.035{elsif nozzle_diameter[0]==0.8}0.015{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*PRINTER_MODEL_MK4IS.*/}\nM572 S{if nozzle_diameter[0]==0.4}0.026{elsif nozzle_diameter[0]==0.5}0.025{elsif nozzle_diameter[0]==0.6}0.02{elsif nozzle_diameter[0]==0.8}0.014{elsif nozzle_diameter[0]==0.25}0.12{elsif nozzle_diameter[0]==0.3}0.08{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+                "; Filament gcode\nM900 K{if nozzle_diameter[0]==0.4}0.03{elsif nozzle_diameter[0]==0.25}0.1{elsif nozzle_diameter[0]==0.3}0.06{elsif nozzle_diameter[0]==0.35}0.05{elsif nozzle_diameter[0]==0.5}0.03{elsif nozzle_diameter[0]==0.6}0.02{elsif nozzle_diameter[0]==0.8}0.01{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*PRINTER_MODEL_MK4IS.*/}\nM572 S{if nozzle_diameter[0]==0.4}0.02{elsif nozzle_diameter[0]==0.5}0.018{elsif nozzle_diameter[0]==0.6}0.012{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.25}0.09{elsif nozzle_diameter[0]==0.3}0.065{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S40 ; set heatbreak target temp"
             ],
             "nozzle_temperature": [
-                "220"
+                "260"
             ],
             "temperature_vitrification": [
-                "60"
+                "110"
             ],
-            "filament_id": "GFL99",
+            "filament_id": "GFB99",
             "idle_temperature": "0",
             "nozzle_temperature_range_low": [
-                "190"
+                "240"
             ],
             "nozzle_temperature_range_high": [
-                "230"
-            ],
-            "additional_cooling_fan_speed": [
-                "70"
+                "270"
             ],
             "setting_id": "GFSA04",
             "filament_ramming_parameters": [
-                "250 100 40 40 40 40 40 | 0.05 40 0.45 40 0.95 40 1.45 40 1.95 40 2.45 40 2.95 40 3.45 40 3.95 40 4.45 40 4.95 40"
+                "250 100 42.4 42.4 42.4 42.4 42.4 | 0.05 42.4 0.45 42.4 0.95 42.4 1.45 42.4 1.95 42.4 2.45 42.4 2.95 42.4 3.45 42.4 3.95 42.4 4.45 42.4 4.95 42.4"
             ],
             "compatible_printers": [
                 "Prusa MK4 0.25 nozzle",
@@ -1175,7 +492,7 @@
                 "Prusa MK4 0.8 nozzle"
             ]
         },
-        "generic_id": "GFL99"
+        "generic_id": "GFB99"
     },
     {
         "name": "Prusa Generic PLA-CF",
@@ -1358,6 +675,512 @@
         "generic_id": "GFL98"
     },
     {
+        "name": "Prusa Generic PA-CF",
+        "compatible_printers": {
+            "Prusa MK4": [
+                "0.25",
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "name": "Prusa Generic PA-CF",
+            "from": "system",
+            "instantiation": "true",
+            "cool_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp": [
+                "100"
+            ],
+            "hot_plate_temp": [
+                "100"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "100"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "95%"
+            ],
+            "overhang_fan_speed": [
+                "30"
+            ],
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "4"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.04"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_max_volumetric_speed": [
+                "8"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_type": [
+                "PA-CF"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "280"
+            ],
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "fan_max_speed": [
+                "60"
+            ],
+            "fan_min_speed": [
+                "0"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "slow_down_layer_time": [
+                "2"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "nozzle_temperature": [
+                "280"
+            ],
+            "temperature_vitrification": [
+                "108"
+            ],
+            "filament_id": "GFN99",
+            "idle_temperature": "0",
+            "nozzle_temperature_range_low": [
+                "270"
+            ],
+            "nozzle_temperature_range_high": [
+                "300"
+            ],
+            "setting_id": "GFSA04",
+            "compatible_printers": [
+                "Prusa MK3S 0.25 nozzle",
+                "Prusa MK3S 0.4 nozzle",
+                "Prusa MK3S 0.6 nozzle",
+                "Prusa MK3S 0.8 nozzle",
+                "Prusa MINI 0.25 nozzle",
+                "Prusa MINI 0.4 nozzle",
+                "Prusa MINI 0.6 nozzle",
+                "Prusa MINI 0.8 nozzle",
+                "Prusa MK4 0.25 nozzle",
+                "Prusa MK4 0.4 nozzle",
+                "Prusa MK4 0.6 nozzle",
+                "Prusa MK4 0.8 nozzle",
+                "Prusa MINIIS 0.4 nozzle",
+                "Prusa MINIIS 0.25 nozzle",
+                "Prusa MINIIS 0.6 nozzle",
+                "Prusa MINIIS 0.8 nozzle"
+            ]
+        },
+        "generic_id": "GFN98"
+    },
+    {
+        "name": "Prusa Generic PC",
+        "compatible_printers": {
+            "Prusa MK4": [
+                "0.25",
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "name": "Prusa Generic PC",
+            "from": "system",
+            "instantiation": "true",
+            "cool_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp": [
+                "100"
+            ],
+            "hot_plate_temp": [
+                "100"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "100"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "overhang_fan_speed": [
+                "60"
+            ],
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.94"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.04"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_max_volumetric_speed": [
+                "12"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_type": [
+                "PC"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "270"
+            ],
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "fan_max_speed": [
+                "60"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "slow_down_layer_time": [
+                "2"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "nozzle_temperature": [
+                "280"
+            ],
+            "temperature_vitrification": [
+                "140"
+            ],
+            "filament_id": "GFC99",
+            "idle_temperature": "0",
+            "nozzle_temperature_range_low": [
+                "260"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "setting_id": "GFSA04",
+            "compatible_printers": [
+                "Prusa MK3S 0.25 nozzle",
+                "Prusa MK3S 0.4 nozzle",
+                "Prusa MK3S 0.6 nozzle",
+                "Prusa MK3S 0.8 nozzle",
+                "Prusa MK4 0.25 nozzle",
+                "Prusa MK4 0.4 nozzle",
+                "Prusa MK4 0.6 nozzle",
+                "Prusa MK4 0.8 nozzle",
+                "Prusa MINI 0.25 nozzle",
+                "Prusa MINI 0.4 nozzle",
+                "Prusa MINI 0.6 nozzle",
+                "Prusa MINI 0.8 nozzle"
+            ]
+        },
+        "generic_id": "GFC99"
+    },
+    {
+        "name": "Prusa Generic ASA @MK4",
+        "compatible_printers": {
+            "Prusa MK4": [
+                "0.25",
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "name": "Prusa Generic ASA @MK4",
+            "from": "system",
+            "instantiation": "true",
+            "cool_plate_temp": [
+                "105"
+            ],
+            "eng_plate_temp": [
+                "105"
+            ],
+            "hot_plate_temp": [
+                "105"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "105"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "105"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "105"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "overhang_fan_speed": [
+                "80"
+            ],
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.93"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "fan_cooling_layer_time": [
+                "35"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.04"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_max_volumetric_speed": [
+                "12"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_type": [
+                "ASA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "260"
+            ],
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "fan_max_speed": [
+                "80"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "slow_down_layer_time": [
+                "3"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\nM900 K{if nozzle_diameter[0]==0.4}0.03{elsif nozzle_diameter[0]==0.25}0.1{elsif nozzle_diameter[0]==0.3}0.06{elsif nozzle_diameter[0]==0.35}0.05{elsif nozzle_diameter[0]==0.5}0.03{elsif nozzle_diameter[0]==0.6}0.02{elsif nozzle_diameter[0]==0.8}0.01{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*PRINTER_MODEL_MK4IS.*/}\nM572 S{if nozzle_diameter[0]==0.4}0.02{elsif nozzle_diameter[0]==0.5}0.018{elsif nozzle_diameter[0]==0.6}0.012{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.25}0.09{elsif nozzle_diameter[0]==0.3}0.065{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S40 ; set heatbreak target temp"
+            ],
+            "nozzle_temperature": [
+                "260"
+            ],
+            "temperature_vitrification": [
+                "110"
+            ],
+            "filament_id": "GFB98",
+            "idle_temperature": "0",
+            "nozzle_temperature_range_low": [
+                "240"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "setting_id": "GFSA04",
+            "compatible_printers": [
+                "Prusa MK4 0.25 nozzle",
+                "Prusa MK4 0.4 nozzle",
+                "Prusa MK4 0.6 nozzle",
+                "Prusa MK4 0.8 nozzle"
+            ]
+        },
+        "generic_id": "GFB98"
+    },
+    {
         "name": "Prusa Generic PVA",
         "compatible_printers": {
             "Prusa MK4": [
@@ -1534,7 +1357,7 @@
         "generic_id": "GFS99"
     },
     {
-        "name": "Prusa Generic TPU @MK4",
+        "name": "Prusa Generic PLA @MK4",
         "compatible_printers": {
             "Prusa MK4": [
                 "0.25",
@@ -1545,29 +1368,29 @@
         },
         "data": {
             "type": "filament",
-            "name": "Prusa Generic TPU @MK4",
+            "name": "Prusa Generic PLA @MK4",
             "from": "system",
             "instantiation": "true",
             "cool_plate_temp": [
-                "30"
+                "35"
             ],
             "eng_plate_temp": [
-                "30"
+                "0"
             ],
             "hot_plate_temp": [
-                "35"
+                "60"
             ],
             "cool_plate_temp_initial_layer": [
-                "30"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "30"
-            ],
-            "hot_plate_temp_initial_layer": [
                 "35"
             ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
             "overhang_fan_threshold": [
-                "95%"
+                "50%"
             ],
             "overhang_fan_speed": [
                 "100"
@@ -1582,7 +1405,7 @@
                 "; filament end gcode \n"
             ],
             "filament_flow_ratio": [
-                "1.08"
+                "0.98"
             ],
             "reduce_fan_stop_start_freq": [
                 "1"
@@ -1603,7 +1426,7 @@
                 "1.75"
             ],
             "filament_max_volumetric_speed": [
-                "3.2"
+                "12"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -1618,7 +1441,7 @@
                 "nil"
             ],
             "filament_retraction_length": [
-                "0.4"
+                "nil"
             ],
             "filament_z_hop": [
                 "nil"
@@ -1636,7 +1459,7 @@
                 "0"
             ],
             "filament_type": [
-                "TPU"
+                "PLA"
             ],
             "filament_vendor": [
                 "Generic"
@@ -1651,7 +1474,7 @@
                 "Cool Plate"
             ],
             "nozzle_temperature_initial_layer": [
-                "240"
+                "220"
             ],
             "full_fan_speed_layer": [
                 "0"
@@ -1669,26 +1492,29 @@
                 "8"
             ],
             "filament_start_gcode": [
-                "; filament start gcode\n"
+                "; filament start gcode\nM900 K{if nozzle_diameter[0]==0.4}0.026{elsif nozzle_diameter[0]==0.25}0.14{elsif nozzle_diameter[0]==0.3}0.07{elsif nozzle_diameter[0]==0.35}0.06{elsif nozzle_diameter[0]==0.6}0.03{elsif nozzle_diameter[0]==0.5}0.035{elsif nozzle_diameter[0]==0.8}0.015{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*PRINTER_MODEL_MK4IS.*/}\nM572 S{if nozzle_diameter[0]==0.4}0.026{elsif nozzle_diameter[0]==0.5}0.025{elsif nozzle_diameter[0]==0.6}0.02{elsif nozzle_diameter[0]==0.8}0.014{elsif nozzle_diameter[0]==0.25}0.12{elsif nozzle_diameter[0]==0.3}0.08{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
             ],
             "nozzle_temperature": [
-                "240"
+                "220"
             ],
             "temperature_vitrification": [
                 "60"
             ],
-            "filament_id": "GFU99",
+            "filament_id": "GFL99",
             "idle_temperature": "0",
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "nozzle_temperature_range_high": [
+                "230"
+            ],
             "additional_cooling_fan_speed": [
                 "70"
             ],
-            "nozzle_temperature_range_low": [
-                "200"
-            ],
-            "nozzle_temperature_range_high": [
-                "250"
-            ],
             "setting_id": "GFSA04",
+            "filament_ramming_parameters": [
+                "250 100 40 40 40 40 40 | 0.05 40 0.45 40 0.95 40 1.45 40 1.95 40 2.45 40 2.95 40 3.45 40 3.95 40 4.45 40 4.95 40"
+            ],
             "compatible_printers": [
                 "Prusa MK4 0.25 nozzle",
                 "Prusa MK4 0.4 nozzle",
@@ -1696,6 +1522,180 @@
                 "Prusa MK4 0.8 nozzle"
             ]
         },
-        "generic_id": "GFU99"
+        "generic_id": "GFL99"
+    },
+    {
+        "name": "Prusa Generic PA",
+        "compatible_printers": {
+            "Prusa MK4": [
+                "0.25",
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "name": "Prusa Generic PA",
+            "from": "system",
+            "instantiation": "true",
+            "cool_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp": [
+                "100"
+            ],
+            "hot_plate_temp": [
+                "100"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "100"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "95%"
+            ],
+            "overhang_fan_speed": [
+                "30"
+            ],
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "4"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.04"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_max_volumetric_speed": [
+                "12"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_type": [
+                "PA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "280"
+            ],
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "fan_max_speed": [
+                "60"
+            ],
+            "fan_min_speed": [
+                "0"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "slow_down_layer_time": [
+                "2"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "nozzle_temperature": [
+                "280"
+            ],
+            "temperature_vitrification": [
+                "108"
+            ],
+            "filament_id": "GFN99",
+            "idle_temperature": "0",
+            "nozzle_temperature_range_low": [
+                "270"
+            ],
+            "nozzle_temperature_range_high": [
+                "300"
+            ],
+            "setting_id": "GFSA04",
+            "compatible_printers": [
+                "Prusa MK3S 0.25 nozzle",
+                "Prusa MK3S 0.4 nozzle",
+                "Prusa MK3S 0.6 nozzle",
+                "Prusa MK3S 0.8 nozzle",
+                "Prusa MINI 0.25 nozzle",
+                "Prusa MINI 0.4 nozzle",
+                "Prusa MINI 0.6 nozzle",
+                "Prusa MINI 0.8 nozzle",
+                "Prusa MK4 0.25 nozzle",
+                "Prusa MK4 0.4 nozzle",
+                "Prusa MK4 0.6 nozzle",
+                "Prusa MK4 0.8 nozzle",
+                "Prusa MINIIS 0.4 nozzle",
+                "Prusa MINIIS 0.25 nozzle",
+                "Prusa MINIIS 0.6 nozzle",
+                "Prusa MINIIS 0.8 nozzle"
+            ]
+        },
+        "generic_id": "GFN99"
     }
 ]

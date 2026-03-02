@@ -3,673 +3,6 @@
         "vendor": "Custom",
         "machine_model": {
             "type": "machine_model",
-            "name": "Generic Klipper Printer",
-            "model_id": "my_klipper_01",
-            "nozzle_diameter": "0.4;0.2;0.6;0.8",
-            "machine_tech": "FFF",
-            "family": "MyPrinter",
-            "bed_model": "",
-            "bed_texture": "sha256:093d33cee2003307456a7b7b18f4a7522f4b9a68ef80256218dd0997079860fd",
-            "hotend_model": "",
-            "default_materials": "Generic ABS @System;Generic PLA @System;Generic PLA-CF @System;Generic PETG @System;Generic TPU @System;Generic ASA @System;Generic PC @System;Generic PVA @System;Generic PA @System;Generic PA-CF @System"
-        },
-        "variants": {
-            "0.4": {
-                "name": "MyKlipper 0.4 nozzle",
-                "data": {
-                    "type": "machine",
-                    "name": "MyKlipper 0.4 nozzle",
-                    "inherits": "fdm_klipper_common",
-                    "from": "system",
-                    "setting_id": "GM001",
-                    "instantiation": "true",
-                    "printer_model": "Generic Klipper Printer",
-                    "nozzle_diameter": [
-                        "0.4"
-                    ],
-                    "printer_variant": "0.4",
-                    "printable_area": [
-                        "0x0",
-                        "250x0",
-                        "250x250",
-                        "0x250"
-                    ],
-                    "printable_height": "250"
-                }
-            },
-            "0.2": {
-                "name": "MyKlipper 0.2 nozzle",
-                "data": {
-                    "type": "machine",
-                    "name": "MyKlipper 0.2 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
-                    "deretraction_speed": [
-                        "30"
-                    ],
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "gcode_flavor": "klipper",
-                    "silent_mode": "0",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "25",
-                        "25"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "9",
-                        "9"
-                    ],
-                    "machine_max_jerk_y": [
-                        "9",
-                        "9"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.2",
-                        "0.4"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "max_layer_height": [
-                        "0.16"
-                    ],
-                    "min_layer_height": [
-                        "0.04"
-                    ],
-                    "printable_height": "250",
-                    "extruder_clearance_radius": "65",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_height_to_lid": "140",
-                    "nozzle_diameter": [
-                        "0.2"
-                    ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.2",
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retraction_speed": [
-                        "30"
-                    ],
-                    "single_extruder_multi_material": "1",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @MyKlipper",
-                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n",
-                    "machine_end_gcode": "PRINT_END",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "machine_pause_gcode": "PAUSE",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "default_filament_profile": [
-                        "Generic PLA @System"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
-                    "setting_id": "GM002",
-                    "printer_model": "Generic Klipper Printer",
-                    "printable_area": [
-                        "0x0",
-                        "250x0",
-                        "250x250",
-                        "0x250"
-                    ]
-                }
-            },
-            "0.6": {
-                "name": "MyKlipper 0.6 nozzle",
-                "data": {
-                    "type": "machine",
-                    "name": "MyKlipper 0.6 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
-                    "deretraction_speed": [
-                        "30"
-                    ],
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "gcode_flavor": "klipper",
-                    "silent_mode": "0",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "25",
-                        "25"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "9",
-                        "9"
-                    ],
-                    "machine_max_jerk_y": [
-                        "9",
-                        "9"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.2",
-                        "0.4"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "max_layer_height": [
-                        "0.4"
-                    ],
-                    "min_layer_height": [
-                        "0.12"
-                    ],
-                    "printable_height": "250",
-                    "extruder_clearance_radius": "65",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_height_to_lid": "140",
-                    "nozzle_diameter": [
-                        "0.6"
-                    ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.6",
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retraction_speed": [
-                        "30"
-                    ],
-                    "single_extruder_multi_material": "1",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @MyKlipper",
-                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n",
-                    "machine_end_gcode": "PRINT_END",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "machine_pause_gcode": "PAUSE",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "default_filament_profile": [
-                        "Generic PLA @System"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
-                    "setting_id": "GM003",
-                    "printer_model": "Generic Klipper Printer",
-                    "printable_area": [
-                        "0x0",
-                        "250x0",
-                        "250x250",
-                        "0x250"
-                    ]
-                }
-            },
-            "0.8": {
-                "name": "MyKlipper 0.8 nozzle",
-                "data": {
-                    "type": "machine",
-                    "name": "MyKlipper 0.8 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
-                    "deretraction_speed": [
-                        "30"
-                    ],
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "gcode_flavor": "klipper",
-                    "silent_mode": "0",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "25",
-                        "25"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "9",
-                        "9"
-                    ],
-                    "machine_max_jerk_y": [
-                        "9",
-                        "9"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.2",
-                        "0.4"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "max_layer_height": [
-                        "0.6"
-                    ],
-                    "min_layer_height": [
-                        "0.2"
-                    ],
-                    "printable_height": "250",
-                    "extruder_clearance_radius": "65",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_height_to_lid": "140",
-                    "nozzle_diameter": [
-                        "0.8"
-                    ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.8",
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retraction_speed": [
-                        "30"
-                    ],
-                    "single_extruder_multi_material": "1",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @MyKlipper",
-                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n",
-                    "machine_end_gcode": "PRINT_END",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "machine_pause_gcode": "PAUSE",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "default_filament_profile": [
-                        "Generic PLA @System"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
-                    "setting_id": "GM004",
-                    "printer_model": "Generic Klipper Printer",
-                    "printable_area": [
-                        "0x0",
-                        "250x0",
-                        "250x250",
-                        "0x250"
-                    ]
-                }
-            }
-        }
-    },
-    {
-        "vendor": "Custom",
-        "machine_model": {
-            "type": "machine_model",
-            "name": "Generic Marlin Printer",
-            "model_id": "my_marlin_01",
-            "nozzle_diameter": "0.4",
-            "machine_tech": "FFF",
-            "family": "MyPrinter",
-            "bed_model": "",
-            "bed_texture": "sha256:093d33cee2003307456a7b7b18f4a7522f4b9a68ef80256218dd0997079860fd",
-            "hotend_model": "",
-            "default_materials": "Generic ABS @System;Generic PLA @System;Generic PLA-CF @System;Generic PETG @System;Generic TPU @System;Generic ASA @System;Generic PC @System;Generic PVA @System;Generic PA @System;Generic PA-CF @System"
-        },
-        "variants": {
-            "0.4": {
-                "name": "MyMarlin 0.4 nozzle",
-                "data": {
-                    "type": "machine",
-                    "name": "MyMarlin 0.4 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
-                    "deretraction_speed": [
-                        "35"
-                    ],
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "gcode_flavor": "marlin",
-                    "silent_mode": "0",
-                    "machine_max_acceleration_e": [
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "10000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "1000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "10000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "10000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500"
-                    ],
-                    "machine_max_speed_e": [
-                        "60"
-                    ],
-                    "machine_max_speed_x": [
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
-                        "10"
-                    ],
-                    "machine_max_jerk_e": [
-                        "5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "8"
-                    ],
-                    "machine_max_jerk_y": [
-                        "8"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.4"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0"
-                    ],
-                    "max_layer_height": [
-                        "0.32"
-                    ],
-                    "min_layer_height": [
-                        "0.08"
-                    ],
-                    "printable_height": "250",
-                    "extruder_clearance_radius": "65",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_height_to_lid": "140",
-                    "nozzle_diameter": [
-                        "0.4"
-                    ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.4",
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.9"
-                    ],
-                    "retract_length_toolchange": [
-                        "1"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retraction_speed": [
-                        "45"
-                    ],
-                    "single_extruder_multi_material": "1",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "0"
-                    ],
-                    "default_print_profile": "",
-                    "machine_start_gcode": "G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]\nM104 S[first_layer_temperature] ; set extruder temp\nM140 S[first_layer_bed_temperature] ; set bed temp\nG28 ; home all\nG1 Y1.0 Z0.3 F1000 ; move print head up\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nM109 S[first_layer_temperature] ; wait for extruder temp\nG92 E0.0\n; initial load\nG1 X205.0 E19 F1000\nG1 Y1.6\nG1 X5.0 E19 F1000\nG92 E0.0\n; intro line\nG1 Y2.0 Z0.2 F1000\nG1 X65.0 E9.0 F1000\nG1 X105.0 E12.5 F1000\nG92 E0.0",
-                    "machine_end_gcode": "G1 E-1.0 F2100 ; retract\nG92 E0.0\nG1{if max_layer_z < max_print_height} Z{z_offset+min(max_layer_z+30, max_print_height)}{endif} E-34.0 F720 ; move print head up & retract filament\nG4 ; wait\nM104 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\nG1 X0 Y105 F3000 ; park print head\nM84 ; disable motors",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "machine_pause_gcode": "M601",
-                    "setting_id": "GM001",
-                    "printer_model": "Generic Marlin Printer",
-                    "printable_area": [
-                        "0x0",
-                        "250x0",
-                        "250x250",
-                        "0x250"
-                    ]
-                }
-            }
-        }
-    },
-    {
-        "vendor": "Custom",
-        "machine_model": {
-            "type": "machine_model",
             "name": "Generic RRF Printer",
             "model_id": "my_rrf_01",
             "nozzle_diameter": "0.4",
@@ -1951,6 +1284,673 @@
                         "350x0",
                         "350x350",
                         "0x350"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "vendor": "Custom",
+        "machine_model": {
+            "type": "machine_model",
+            "name": "Generic Marlin Printer",
+            "model_id": "my_marlin_01",
+            "nozzle_diameter": "0.4",
+            "machine_tech": "FFF",
+            "family": "MyPrinter",
+            "bed_model": "",
+            "bed_texture": "sha256:093d33cee2003307456a7b7b18f4a7522f4b9a68ef80256218dd0997079860fd",
+            "hotend_model": "",
+            "default_materials": "Generic ABS @System;Generic PLA @System;Generic PLA-CF @System;Generic PETG @System;Generic TPU @System;Generic ASA @System;Generic PC @System;Generic PVA @System;Generic PA @System;Generic PA-CF @System"
+        },
+        "variants": {
+            "0.4": {
+                "name": "MyMarlin 0.4 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "MyMarlin 0.4 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "printer_technology": "FFF",
+                    "deretraction_speed": [
+                        "35"
+                    ],
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "gcode_flavor": "marlin",
+                    "silent_mode": "0",
+                    "machine_max_acceleration_e": [
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "10000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "1000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "10000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "10000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500"
+                    ],
+                    "machine_max_speed_e": [
+                        "60"
+                    ],
+                    "machine_max_speed_x": [
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "10"
+                    ],
+                    "machine_max_jerk_e": [
+                        "5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "8"
+                    ],
+                    "machine_max_jerk_y": [
+                        "8"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.4"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.32"
+                    ],
+                    "min_layer_height": [
+                        "0.08"
+                    ],
+                    "printable_height": "250",
+                    "extruder_clearance_radius": "65",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_height_to_lid": "140",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "printer_settings_id": "",
+                    "printer_variant": "0.4",
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.9"
+                    ],
+                    "retract_length_toolchange": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "45"
+                    ],
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "",
+                    "wipe": [
+                        "0"
+                    ],
+                    "default_print_profile": "",
+                    "machine_start_gcode": "G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]\nM104 S[first_layer_temperature] ; set extruder temp\nM140 S[first_layer_bed_temperature] ; set bed temp\nG28 ; home all\nG1 Y1.0 Z0.3 F1000 ; move print head up\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nM109 S[first_layer_temperature] ; wait for extruder temp\nG92 E0.0\n; initial load\nG1 X205.0 E19 F1000\nG1 Y1.6\nG1 X5.0 E19 F1000\nG92 E0.0\n; intro line\nG1 Y2.0 Z0.2 F1000\nG1 X65.0 E9.0 F1000\nG1 X105.0 E12.5 F1000\nG92 E0.0",
+                    "machine_end_gcode": "G1 E-1.0 F2100 ; retract\nG92 E0.0\nG1{if max_layer_z < max_print_height} Z{z_offset+min(max_layer_z+30, max_print_height)}{endif} E-34.0 F720 ; move print head up & retract filament\nG4 ; wait\nM104 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\nG1 X0 Y105 F3000 ; park print head\nM84 ; disable motors",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "machine_pause_gcode": "M601",
+                    "setting_id": "GM001",
+                    "printer_model": "Generic Marlin Printer",
+                    "printable_area": [
+                        "0x0",
+                        "250x0",
+                        "250x250",
+                        "0x250"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "vendor": "Custom",
+        "machine_model": {
+            "type": "machine_model",
+            "name": "Generic Klipper Printer",
+            "model_id": "my_klipper_01",
+            "nozzle_diameter": "0.4;0.2;0.6;0.8",
+            "machine_tech": "FFF",
+            "family": "MyPrinter",
+            "bed_model": "",
+            "bed_texture": "sha256:093d33cee2003307456a7b7b18f4a7522f4b9a68ef80256218dd0997079860fd",
+            "hotend_model": "",
+            "default_materials": "Generic ABS @System;Generic PLA @System;Generic PLA-CF @System;Generic PETG @System;Generic TPU @System;Generic ASA @System;Generic PC @System;Generic PVA @System;Generic PA @System;Generic PA-CF @System"
+        },
+        "variants": {
+            "0.4": {
+                "name": "MyKlipper 0.4 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "MyKlipper 0.4 nozzle",
+                    "inherits": "fdm_klipper_common",
+                    "from": "system",
+                    "setting_id": "GM001",
+                    "instantiation": "true",
+                    "printer_model": "Generic Klipper Printer",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "printer_variant": "0.4",
+                    "printable_area": [
+                        "0x0",
+                        "250x0",
+                        "250x250",
+                        "0x250"
+                    ],
+                    "printable_height": "250"
+                }
+            },
+            "0.2": {
+                "name": "MyKlipper 0.2 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "MyKlipper 0.2 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "printer_technology": "FFF",
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "gcode_flavor": "klipper",
+                    "silent_mode": "0",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "9",
+                        "9"
+                    ],
+                    "machine_max_jerk_y": [
+                        "9",
+                        "9"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.16"
+                    ],
+                    "min_layer_height": [
+                        "0.04"
+                    ],
+                    "printable_height": "250",
+                    "extruder_clearance_radius": "65",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_height_to_lid": "140",
+                    "nozzle_diameter": [
+                        "0.2"
+                    ],
+                    "printer_settings_id": "",
+                    "printer_variant": "0.2",
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "",
+                    "wipe": [
+                        "1"
+                    ],
+                    "default_print_profile": "0.20mm Standard @MyKlipper",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n",
+                    "machine_end_gcode": "PRINT_END",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "z_hop_types": "Normal Lift",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "scan_first_layer": "0",
+                    "nozzle_type": "undefine",
+                    "auxiliary_fan": "0",
+                    "setting_id": "GM002",
+                    "printer_model": "Generic Klipper Printer",
+                    "printable_area": [
+                        "0x0",
+                        "250x0",
+                        "250x250",
+                        "0x250"
+                    ]
+                }
+            },
+            "0.6": {
+                "name": "MyKlipper 0.6 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "MyKlipper 0.6 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "printer_technology": "FFF",
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "gcode_flavor": "klipper",
+                    "silent_mode": "0",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "9",
+                        "9"
+                    ],
+                    "machine_max_jerk_y": [
+                        "9",
+                        "9"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.4"
+                    ],
+                    "min_layer_height": [
+                        "0.12"
+                    ],
+                    "printable_height": "250",
+                    "extruder_clearance_radius": "65",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_height_to_lid": "140",
+                    "nozzle_diameter": [
+                        "0.6"
+                    ],
+                    "printer_settings_id": "",
+                    "printer_variant": "0.6",
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "",
+                    "wipe": [
+                        "1"
+                    ],
+                    "default_print_profile": "0.20mm Standard @MyKlipper",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n",
+                    "machine_end_gcode": "PRINT_END",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "z_hop_types": "Normal Lift",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "scan_first_layer": "0",
+                    "nozzle_type": "undefine",
+                    "auxiliary_fan": "0",
+                    "setting_id": "GM003",
+                    "printer_model": "Generic Klipper Printer",
+                    "printable_area": [
+                        "0x0",
+                        "250x0",
+                        "250x250",
+                        "0x250"
+                    ]
+                }
+            },
+            "0.8": {
+                "name": "MyKlipper 0.8 nozzle",
+                "data": {
+                    "type": "machine",
+                    "name": "MyKlipper 0.8 nozzle",
+                    "from": "system",
+                    "instantiation": "true",
+                    "printer_technology": "FFF",
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "gcode_flavor": "klipper",
+                    "silent_mode": "0",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "9",
+                        "9"
+                    ],
+                    "machine_max_jerk_y": [
+                        "9",
+                        "9"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "max_layer_height": [
+                        "0.6"
+                    ],
+                    "min_layer_height": [
+                        "0.2"
+                    ],
+                    "printable_height": "250",
+                    "extruder_clearance_radius": "65",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_height_to_lid": "140",
+                    "nozzle_diameter": [
+                        "0.8"
+                    ],
+                    "printer_settings_id": "",
+                    "printer_variant": "0.8",
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "single_extruder_multi_material": "1",
+                    "change_filament_gcode": "",
+                    "wipe": [
+                        "1"
+                    ],
+                    "default_print_profile": "0.20mm Standard @MyKlipper",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n",
+                    "machine_end_gcode": "PRINT_END",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "z_hop_types": "Normal Lift",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "scan_first_layer": "0",
+                    "nozzle_type": "undefine",
+                    "auxiliary_fan": "0",
+                    "setting_id": "GM004",
+                    "printer_model": "Generic Klipper Printer",
+                    "printable_area": [
+                        "0x0",
+                        "250x0",
+                        "250x250",
+                        "0x250"
                     ]
                 }
             }

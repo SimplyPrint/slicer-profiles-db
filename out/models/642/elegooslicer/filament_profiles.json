@@ -89,7 +89,7 @@
         }
     },
     {
-        "name": "Generic PC @Sovol SV08 MAX",
+        "name": "Generic PLA @Sovol SV08 MAX",
         "compatible_printers": {
             "Sovol SV08 MAX": [
                 "0.4",
@@ -101,38 +101,117 @@
             "type": "filament",
             "filament_id": "GFL99",
             "setting_id": "GFSA04",
-            "name": "Generic PC @Sovol SV08 MAX",
+            "name": "Generic PLA @Sovol SV08 MAX",
             "from": "system",
             "instantiation": "true",
             "filament_flow_ratio": [
                 "0.98"
             ],
             "filament_max_volumetric_speed": [
-                "18"
+                "21"
             ],
             "compatible_printers": [
                 "Sovol SV08 MAX 0.4 nozzle",
                 "Sovol SV08 MAX 0.6 nozzle",
                 "Sovol SV08 MAX 0.8 nozzle"
             ],
-            "close_fan_the_first_x_layers": "3",
             "nozzle_temperature_initial_layer": [
-                "280"
+                "250"
             ],
             "nozzle_temperature": [
-                "260"
+                "230"
             ],
             "nozzle_temperature_range_low": [
                 "190"
             ],
             "nozzle_temperature_range_high": [
-                "350"
+                "250"
             ],
             "hot_plate_temp": [
-                "100"
+                "65"
             ],
             "hot_plate_temp_initial_layer": [
+                "65"
+            ],
+            "fan_min_speed": [
+                "80"
+            ],
+            "fan_max_speed": [
                 "100"
+            ],
+            "fan_cooling_layer_time": [
+                "50"
+            ],
+            "slow_down_layer_time": [
+                "6"
+            ],
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "dont_slow_down_outer_wall": "0",
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "enable_pressure_advance": "1",
+            "pressure_advance": "0.036",
+            "additional_cooling_fan_speed": "75%",
+            "activate_air_filtration": [
+                "0"
+            ],
+            "during_print_exhaust_fan_speed": "50%",
+            "complete_print_exhaust_fan_speed": "50%"
+        }
+    },
+    {
+        "name": "Polymaker PETG @Sovol SV08 MAX",
+        "compatible_printers": {
+            "Sovol SV08 MAX": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "filament_id": "GFL99",
+            "setting_id": "GFSA04",
+            "name": "Polymaker PETG @Sovol SV08 MAX",
+            "from": "system",
+            "instantiation": "true",
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_max_volumetric_speed": [
+                "12"
+            ],
+            "enable_pressure_advance": "1",
+            "pressure_advance": "0.08",
+            "nozzle_temperature_initial_layer": [
+                "275"
+            ],
+            "nozzle_temperature": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "230"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "hot_plate_temp": [
+                "80"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "80"
             ],
             "fan_min_speed": [
                 "10"
@@ -152,22 +231,210 @@
             "slow_down_min_speed": [
                 "10"
             ],
-            "dont_slow_down_outer_wall": "0",
             "overhang_fan_speed": [
-                "60"
+                "100"
             ],
             "overhang_fan_threshold": [
-                "25%"
+                "10%"
             ],
             "temperature_vitrification": [
                 "60"
             ],
-            "additional_cooling_fan_speed": "0",
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "filament_retraction_length": [
+                "0.5"
+            ],
+            "filament_z_hop": [
+                "0.4"
+            ],
+            "dont_slow_down_outer_wall": "1",
             "activate_air_filtration": [
                 "0"
             ],
             "during_print_exhaust_fan_speed": "50",
-            "complete_print_exhaust_fan_speed": "50"
+            "complete_print_exhaust_fan_speed": "50",
+            "compatible_printers": [
+                "Sovol SV08 MAX 0.4 nozzle",
+                "Sovol SV08 MAX 0.6 nozzle",
+                "Sovol SV08 MAX 0.8 nozzle"
+            ]
+        }
+    },
+    {
+        "name": "Generic PLA Silk @Sovol SV08 MAX",
+        "compatible_printers": {
+            "Sovol SV08 MAX": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "filament_id": "GFL99",
+            "setting_id": "GFSA04",
+            "name": "Generic PLA Silk @Sovol SV08 MAX",
+            "from": "system",
+            "instantiation": "true",
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "compatible_printers": [
+                "Sovol SV08 MAX 0.4 nozzle",
+                "Sovol SV08 MAX 0.6 nozzle",
+                "Sovol SV08 MAX 0.8 nozzle"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "250"
+            ],
+            "nozzle_temperature": [
+                "230"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "nozzle_temperature_range_high": [
+                "250"
+            ],
+            "hot_plate_temp": [
+                "65"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "65"
+            ],
+            "fan_min_speed": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_cooling_layer_time": [
+                "50"
+            ],
+            "slow_down_layer_time": [
+                "6"
+            ],
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "dont_slow_down_outer_wall": "0",
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "enable_pressure_advance": "1",
+            "pressure_advance": "0.038",
+            "filament_z_hop": "0.4",
+            "additional_cooling_fan_speed": "75%",
+            "activate_air_filtration": [
+                "0"
+            ],
+            "during_print_exhaust_fan_speed": "50%",
+            "complete_print_exhaust_fan_speed": "50%"
+        }
+    },
+    {
+        "name": "SUNLU PETG @Sovol SV08 MAX",
+        "compatible_printers": {
+            "Sovol SV08 MAX": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "filament_id": "GFL99",
+            "setting_id": "GFSA04",
+            "name": "SUNLU PETG @Sovol SV08 MAX",
+            "from": "system",
+            "instantiation": "true",
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_max_volumetric_speed": [
+                "13"
+            ],
+            "enable_pressure_advance": "1",
+            "pressure_advance": "0.052",
+            "nozzle_temperature_initial_layer": [
+                "265"
+            ],
+            "nozzle_temperature": [
+                "255"
+            ],
+            "nozzle_temperature_range_low": [
+                "230"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "hot_plate_temp": [
+                "80"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "80"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "fan_max_speed": [
+                "40"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "slow_down_layer_time": [
+                "12"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "10%"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "filament_retraction_length": [
+                "0.5"
+            ],
+            "filament_z_hop": [
+                "0.4"
+            ],
+            "dont_slow_down_outer_wall": "1",
+            "activate_air_filtration": [
+                "0"
+            ],
+            "during_print_exhaust_fan_speed": "50",
+            "complete_print_exhaust_fan_speed": "50",
+            "compatible_printers": [
+                "Sovol SV08 MAX 0.4 nozzle",
+                "Sovol SV08 MAX 0.6 nozzle",
+                "Sovol SV08 MAX 0.8 nozzle"
+            ]
         }
     },
     {
@@ -261,173 +528,6 @@
         }
     },
     {
-        "name": "Generic PLA @Sovol SV08 MAX",
-        "compatible_printers": {
-            "Sovol SV08 MAX": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "filament_id": "GFL99",
-            "setting_id": "GFSA04",
-            "name": "Generic PLA @Sovol SV08 MAX",
-            "from": "system",
-            "instantiation": "true",
-            "filament_flow_ratio": [
-                "0.98"
-            ],
-            "filament_max_volumetric_speed": [
-                "21"
-            ],
-            "compatible_printers": [
-                "Sovol SV08 MAX 0.4 nozzle",
-                "Sovol SV08 MAX 0.6 nozzle",
-                "Sovol SV08 MAX 0.8 nozzle"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "250"
-            ],
-            "nozzle_temperature": [
-                "230"
-            ],
-            "nozzle_temperature_range_low": [
-                "190"
-            ],
-            "nozzle_temperature_range_high": [
-                "250"
-            ],
-            "hot_plate_temp": [
-                "65"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "65"
-            ],
-            "fan_min_speed": [
-                "80"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_cooling_layer_time": [
-                "50"
-            ],
-            "slow_down_layer_time": [
-                "6"
-            ],
-            "full_fan_speed_layer": [
-                "3"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "dont_slow_down_outer_wall": "0",
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "50%"
-            ],
-            "temperature_vitrification": [
-                "60"
-            ],
-            "enable_pressure_advance": "1",
-            "pressure_advance": "0.036",
-            "additional_cooling_fan_speed": "75%",
-            "activate_air_filtration": [
-                "0"
-            ],
-            "during_print_exhaust_fan_speed": "50%",
-            "complete_print_exhaust_fan_speed": "50%"
-        }
-    },
-    {
-        "name": "Generic PLA Silk @Sovol SV08 MAX",
-        "compatible_printers": {
-            "Sovol SV08 MAX": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "filament_id": "GFL99",
-            "setting_id": "GFSA04",
-            "name": "Generic PLA Silk @Sovol SV08 MAX",
-            "from": "system",
-            "instantiation": "true",
-            "filament_flow_ratio": [
-                "0.98"
-            ],
-            "filament_max_volumetric_speed": [
-                "15"
-            ],
-            "compatible_printers": [
-                "Sovol SV08 MAX 0.4 nozzle",
-                "Sovol SV08 MAX 0.6 nozzle",
-                "Sovol SV08 MAX 0.8 nozzle"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "250"
-            ],
-            "nozzle_temperature": [
-                "230"
-            ],
-            "nozzle_temperature_range_low": [
-                "190"
-            ],
-            "nozzle_temperature_range_high": [
-                "250"
-            ],
-            "hot_plate_temp": [
-                "65"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "65"
-            ],
-            "fan_min_speed": [
-                "80"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_cooling_layer_time": [
-                "50"
-            ],
-            "slow_down_layer_time": [
-                "6"
-            ],
-            "full_fan_speed_layer": [
-                "3"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "dont_slow_down_outer_wall": "0",
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "50%"
-            ],
-            "temperature_vitrification": [
-                "60"
-            ],
-            "enable_pressure_advance": "1",
-            "pressure_advance": "0.038",
-            "filament_z_hop": "0.4",
-            "additional_cooling_fan_speed": "75%",
-            "activate_air_filtration": [
-                "0"
-            ],
-            "during_print_exhaust_fan_speed": "50%",
-            "complete_print_exhaust_fan_speed": "50%"
-        }
-    },
-    {
         "name": "Generic TPU @Sovol SV08 MAX",
         "compatible_printers": {
             "Sovol SV08 MAX": [
@@ -514,7 +614,7 @@
         }
     },
     {
-        "name": "Polymaker PETG @Sovol SV08 MAX",
+        "name": "Generic PC @Sovol SV08 MAX",
         "compatible_printers": {
             "Sovol SV08 MAX": [
                 "0.4",
@@ -526,34 +626,38 @@
             "type": "filament",
             "filament_id": "GFL99",
             "setting_id": "GFSA04",
-            "name": "Polymaker PETG @Sovol SV08 MAX",
+            "name": "Generic PC @Sovol SV08 MAX",
             "from": "system",
             "instantiation": "true",
             "filament_flow_ratio": [
                 "0.98"
             ],
             "filament_max_volumetric_speed": [
-                "12"
+                "18"
             ],
-            "enable_pressure_advance": "1",
-            "pressure_advance": "0.08",
+            "compatible_printers": [
+                "Sovol SV08 MAX 0.4 nozzle",
+                "Sovol SV08 MAX 0.6 nozzle",
+                "Sovol SV08 MAX 0.8 nozzle"
+            ],
+            "close_fan_the_first_x_layers": "3",
             "nozzle_temperature_initial_layer": [
-                "275"
-            ],
-            "nozzle_temperature": [
-                "270"
-            ],
-            "nozzle_temperature_range_low": [
-                "230"
-            ],
-            "nozzle_temperature_range_high": [
                 "280"
             ],
+            "nozzle_temperature": [
+                "260"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "nozzle_temperature_range_high": [
+                "350"
+            ],
             "hot_plate_temp": [
-                "80"
+                "100"
             ],
             "hot_plate_temp_initial_layer": [
-                "80"
+                "100"
             ],
             "fan_min_speed": [
                 "10"
@@ -573,132 +677,22 @@
             "slow_down_min_speed": [
                 "10"
             ],
+            "dont_slow_down_outer_wall": "0",
             "overhang_fan_speed": [
-                "100"
+                "60"
             ],
             "overhang_fan_threshold": [
-                "10%"
+                "25%"
             ],
             "temperature_vitrification": [
                 "60"
             ],
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "filament_retraction_length": [
-                "0.5"
-            ],
-            "filament_z_hop": [
-                "0.4"
-            ],
-            "dont_slow_down_outer_wall": "1",
+            "additional_cooling_fan_speed": "0",
             "activate_air_filtration": [
                 "0"
             ],
             "during_print_exhaust_fan_speed": "50",
-            "complete_print_exhaust_fan_speed": "50",
-            "compatible_printers": [
-                "Sovol SV08 MAX 0.4 nozzle",
-                "Sovol SV08 MAX 0.6 nozzle",
-                "Sovol SV08 MAX 0.8 nozzle"
-            ]
-        },
-        "filament_db_ids": [
-            "polymaker/PETG/petg"
-        ]
-    },
-    {
-        "name": "SUNLU PETG @Sovol SV08 MAX",
-        "compatible_printers": {
-            "Sovol SV08 MAX": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "filament_id": "GFL99",
-            "setting_id": "GFSA04",
-            "name": "SUNLU PETG @Sovol SV08 MAX",
-            "from": "system",
-            "instantiation": "true",
-            "filament_flow_ratio": [
-                "0.98"
-            ],
-            "filament_max_volumetric_speed": [
-                "13"
-            ],
-            "enable_pressure_advance": "1",
-            "pressure_advance": "0.052",
-            "nozzle_temperature_initial_layer": [
-                "265"
-            ],
-            "nozzle_temperature": [
-                "255"
-            ],
-            "nozzle_temperature_range_low": [
-                "230"
-            ],
-            "nozzle_temperature_range_high": [
-                "280"
-            ],
-            "hot_plate_temp": [
-                "80"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "80"
-            ],
-            "fan_min_speed": [
-                "10"
-            ],
-            "fan_max_speed": [
-                "40"
-            ],
-            "fan_cooling_layer_time": [
-                "30"
-            ],
-            "full_fan_speed_layer": [
-                "3"
-            ],
-            "slow_down_layer_time": [
-                "12"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "10%"
-            ],
-            "temperature_vitrification": [
-                "60"
-            ],
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "filament_retraction_length": [
-                "0.5"
-            ],
-            "filament_z_hop": [
-                "0.4"
-            ],
-            "dont_slow_down_outer_wall": "1",
-            "activate_air_filtration": [
-                "0"
-            ],
-            "during_print_exhaust_fan_speed": "50",
-            "complete_print_exhaust_fan_speed": "50",
-            "compatible_printers": [
-                "Sovol SV08 MAX 0.4 nozzle",
-                "Sovol SV08 MAX 0.6 nozzle",
-                "Sovol SV08 MAX 0.8 nozzle"
-            ]
-        },
-        "filament_db_ids": [
-            "sunlu/PETG/petg"
-        ]
+            "complete_print_exhaust_fan_speed": "50"
+        }
     }
 ]

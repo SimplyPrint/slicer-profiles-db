@@ -1,6 +1,6 @@
 [
     {
-        "name": "Elegoo ASA @EN2 Series",
+        "name": "Elegoo PLA Wood @EN2 Series",
         "compatible_printers": {
             "Elegoo Neptune 3": [
                 "0.4",
@@ -10,11 +10,215 @@
         },
         "data": {
             "type": "filament",
-            "name": "Elegoo ASA @EN2 Series",
+            "name": "Elegoo PLA Wood @EN2 Series",
             "from": "system",
             "instantiation": "true",
             "activate_air_filtration": [
                 "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "80"
+            ],
+            "filament_cost": [
+                "0"
+            ],
+            "filament_density": [
+                "1.25"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Elegoo"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "nozzle_temperature": [
+                "220"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "220"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "4"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "temperature_vitrification": [
+                "45"
+            ],
+            "textured_plate_temp": [
+                "60"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "60"
+            ],
+            "compatible_printers": [
+                "Elegoo Neptune 0.4 nozzle",
+                "Elegoo Neptune 0.6 nozzle",
+                "Elegoo Neptune 0.8 nozzle",
+                "Elegoo Neptune 2 0.4 nozzle",
+                "Elegoo Neptune 2 0.6 nozzle",
+                "Elegoo Neptune 2 0.8 nozzle",
+                "Elegoo Neptune 2S 0.4 nozzle",
+                "Elegoo Neptune 2S 0.6 nozzle",
+                "Elegoo Neptune 2S 0.8 nozzle",
+                "Elegoo Neptune 2D 0.4 nozzle",
+                "Elegoo Neptune 2D 0.6 nozzle",
+                "Elegoo Neptune 2D 0.8 nozzle",
+                "Elegoo Neptune X 0.4 nozzle",
+                "Elegoo Neptune X 0.6 nozzle",
+                "Elegoo Neptune X 0.8 nozzle",
+                "Elegoo Neptune 3 0.4 nozzle",
+                "Elegoo Neptune 3 0.6 nozzle",
+                "Elegoo Neptune 3 0.8 nozzle"
+            ],
+            "filament_start_gcode": [
+                "; filament start gcode\n{if  (bed_temperature[current_extruder] >55)||(bed_temperature_initial_layer[current_extruder] >55)}M106 P3 S200\n{elsif(bed_temperature[current_extruder] >50)||(bed_temperature_initial_layer[current_extruder] >50)}M106 P3 S150\n{elsif(bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S50\n{endif}\n\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "nozzle_temperature_range_low": [
+                "200"
+            ],
+            "nozzle_temperature_range_high": [
+                "240"
+            ],
+            "additional_cooling_fan_speed": [
+                "0"
+            ],
+            "filament_id": "EPLAB00",
+            "setting_id": "EPLAWOODEN2",
+            "pressure_advance": [
+                "0.024"
+            ]
+        },
+        "generic_id": "GFL99"
+    },
+    {
+        "name": "Generic ASA @Elegoo",
+        "compatible_printers": {
+            "Elegoo Neptune 3": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "name": "Generic ASA @Elegoo",
+            "from": "system",
+            "instantiation": "true",
+            "activate_air_filtration": [
+                "1"
             ],
             "chamber_temperatures": [
                 "0"
@@ -44,7 +248,7 @@
                 "35"
             ],
             "fan_max_speed": [
-                "100"
+                "80"
             ],
             "fan_min_speed": [
                 "10"
@@ -62,13 +266,13 @@
                 "1.75"
             ],
             "filament_flow_ratio": [
-                "0.98"
+                "1"
             ],
             "filament_is_support": [
                 "0"
             ],
             "filament_max_volumetric_speed": [
-                "8"
+                "12"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -101,7 +305,7 @@
                 "ASA"
             ],
             "filament_vendor": [
-                "Elegoo"
+                "Generic"
             ],
             "filament_wipe": [
                 "nil"
@@ -178,10 +382,42 @@
                 "Elegoo Neptune X 0.8 nozzle",
                 "Elegoo Neptune 3 0.4 nozzle",
                 "Elegoo Neptune 3 0.6 nozzle",
-                "Elegoo Neptune 3 0.8 nozzle"
+                "Elegoo Neptune 3 0.8 nozzle",
+                "Elegoo Neptune 3 Pro 0.4 nozzle",
+                "Elegoo Neptune 3 Pro 0.6 nozzle",
+                "Elegoo Neptune 3 Pro 0.8 nozzle",
+                "Elegoo Neptune 3 Pro 1.0 nozzle",
+                "Elegoo Neptune 3 Plus 0.4 nozzle",
+                "Elegoo Neptune 3 Plus 0.6 nozzle",
+                "Elegoo Neptune 3 Plus 0.8 nozzle",
+                "Elegoo Neptune 3 Plus 1.0 nozzle",
+                "Elegoo Neptune 3 Max 0.4 nozzle",
+                "Elegoo Neptune 3 Max 0.6 nozzle",
+                "Elegoo Neptune 3 Max 0.8 nozzle",
+                "Elegoo Neptune 3 Max 1.0 nozzle",
+                "Elegoo Neptune 4 0.2 nozzle",
+                "Elegoo Neptune 4 0.4 nozzle",
+                "Elegoo Neptune 4 0.6 nozzle",
+                "Elegoo Neptune 4 0.8 nozzle",
+                "Elegoo Neptune 4 1.0 nozzle",
+                "Elegoo Neptune 4 Max 0.2 nozzle",
+                "Elegoo Neptune 4 Pro 0.4 nozzle",
+                "Elegoo Neptune 4 Pro 0.6 nozzle",
+                "Elegoo Neptune 4 Pro 0.8 nozzle",
+                "Elegoo Neptune 4 Pro 1.0 nozzle",
+                "Elegoo Neptune 4 Plus 0.2 nozzle",
+                "Elegoo Neptune 4 Plus 0.4 nozzle",
+                "Elegoo Neptune 4 Plus 0.6 nozzle",
+                "Elegoo Neptune 4 Plus 0.8 nozzle",
+                "Elegoo Neptune 4 Plus 1.0 nozzle",
+                "Elegoo Neptune 4 Pro 0.2 nozzle",
+                "Elegoo Neptune 4 Max 0.4 nozzle",
+                "Elegoo Neptune 4 Max 0.6 nozzle",
+                "Elegoo Neptune 4 Max 0.8 nozzle",
+                "Elegoo Neptune 4 Max 1.0 nozzle"
             ],
             "filament_start_gcode": [
-                "; Filament start gcode\n"
+                "; Filament gcode\n"
             ],
             "filament_end_gcode": [
                 "; filament end gcode \n"
@@ -192,16 +428,16 @@
             "nozzle_temperature_range_low": [
                 "240"
             ],
-            "filament_id": "EASAB00",
-            "setting_id": "EASAEN2"
+            "filament_id": "GASAB00",
+            "setting_id": "GFSA04",
+            "bed_type": [
+                "Cool Plate"
+            ]
         },
-        "filament_db_ids": [
-            "elegoo/ASA/asa"
-        ],
         "generic_id": "GFB98"
     },
     {
-        "name": "Elegoo PETG @EN2 Series",
+        "name": "Elegoo PLA Galaxy @EN2 Series",
         "compatible_printers": {
             "Elegoo Neptune 3": [
                 "0.4",
@@ -211,7 +447,7 @@
         },
         "data": {
             "type": "filament",
-            "name": "Elegoo PETG @EN2 Series",
+            "name": "Elegoo PLA Galaxy @EN2 Series",
             "from": "system",
             "instantiation": "true",
             "activate_air_filtration": [
@@ -221,34 +457,34 @@
                 "0"
             ],
             "close_fan_the_first_x_layers": [
-                "3"
+                "1"
             ],
             "complete_print_exhaust_fan_speed": [
                 "70"
             ],
             "cool_plate_temp": [
-                "0"
+                "35"
             ],
             "cool_plate_temp_initial_layer": [
-                "0"
+                "35"
             ],
             "during_print_exhaust_fan_speed": [
                 "70"
             ],
             "eng_plate_temp": [
-                "70"
+                "0"
             ],
             "eng_plate_temp_initial_layer": [
-                "70"
+                "0"
             ],
             "fan_cooling_layer_time": [
-                "30"
+                "80"
             ],
             "fan_max_speed": [
-                "40"
+                "100"
             ],
             "fan_min_speed": [
-                "10"
+                "80"
             ],
             "filament_cost": [
                 "0"
@@ -269,7 +505,7 @@
                 "0"
             ],
             "filament_max_volumetric_speed": [
-                "11"
+                "18"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -299,7 +535,7 @@
                 "0"
             ],
             "filament_type": [
-                "PETG"
+                "PLA"
             ],
             "filament_vendor": [
                 "Elegoo"
@@ -320,19 +556,19 @@
                 "0"
             ],
             "hot_plate_temp": [
-                "70"
+                "60"
             ],
             "hot_plate_temp_initial_layer": [
-                "70"
+                "60"
             ],
             "nozzle_temperature": [
-                "250"
+                "220"
             ],
             "nozzle_temperature_initial_layer": [
-                "250"
+                "220"
             ],
             "overhang_fan_speed": [
-                "90"
+                "100"
             ],
             "overhang_fan_threshold": [
                 "50%"
@@ -347,19 +583,19 @@
                 "1"
             ],
             "slow_down_layer_time": [
-                "12"
+                "4"
             ],
             "slow_down_min_speed": [
-                "10"
+                "20"
             ],
             "temperature_vitrification": [
-                "70"
+                "45"
             ],
             "textured_plate_temp": [
-                "70"
+                "60"
             ],
             "textured_plate_temp_initial_layer": [
-                "70"
+                "60"
             ],
             "compatible_printers": [
                 "Elegoo Neptune 0.4 nozzle",
@@ -382,30 +618,30 @@
                 "Elegoo Neptune 3 0.8 nozzle"
             ],
             "filament_start_gcode": [
-                "; Filament start gcode\n"
+                "; filament start gcode\n{if  (bed_temperature[current_extruder] >55)||(bed_temperature_initial_layer[current_extruder] >55)}M106 P3 S200\n{elsif(bed_temperature[current_extruder] >50)||(bed_temperature_initial_layer[current_extruder] >50)}M106 P3 S150\n{elsif(bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S50\n{endif}\n\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
             ],
             "filament_end_gcode": [
                 "; filament end gcode \n"
             ],
-            "nozzle_temperature_range_high": [
-                "270"
-            ],
             "nozzle_temperature_range_low": [
-                "230"
+                "190"
             ],
-            "filament_id": "EPETGB00",
-            "setting_id": "EPETGEN2",
+            "nozzle_temperature_range_high": [
+                "220"
+            ],
+            "additional_cooling_fan_speed": [
+                "0"
+            ],
+            "filament_id": "EPLAB00",
+            "setting_id": "EPLAGALAXYEN2",
             "pressure_advance": [
                 "0.024"
             ]
         },
-        "filament_db_ids": [
-            "elegoo/PETG/petg"
-        ],
-        "generic_id": "GFG99"
+        "generic_id": "GFL99"
     },
     {
-        "name": "Elegoo PETG PRO @EN2 Series",
+        "name": "Elegoo PLA Sparkle @EN2 Series",
         "compatible_printers": {
             "Elegoo Neptune 3": [
                 "0.4",
@@ -415,7 +651,7 @@
         },
         "data": {
             "type": "filament",
-            "name": "Elegoo PETG PRO @EN2 Series",
+            "name": "Elegoo PLA Sparkle @EN2 Series",
             "from": "system",
             "instantiation": "true",
             "activate_air_filtration": [
@@ -425,34 +661,34 @@
                 "0"
             ],
             "close_fan_the_first_x_layers": [
-                "3"
+                "1"
             ],
             "complete_print_exhaust_fan_speed": [
                 "70"
             ],
             "cool_plate_temp": [
-                "0"
+                "35"
             ],
             "cool_plate_temp_initial_layer": [
-                "0"
+                "35"
             ],
             "during_print_exhaust_fan_speed": [
                 "70"
             ],
             "eng_plate_temp": [
-                "70"
+                "0"
             ],
             "eng_plate_temp_initial_layer": [
-                "70"
+                "0"
             ],
             "fan_cooling_layer_time": [
-                "30"
+                "80"
             ],
             "fan_max_speed": [
                 "100"
             ],
             "fan_min_speed": [
-                "50"
+                "80"
             ],
             "filament_cost": [
                 "0"
@@ -473,7 +709,7 @@
                 "0"
             ],
             "filament_max_volumetric_speed": [
-                "8"
+                "18"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -503,7 +739,7 @@
                 "0"
             ],
             "filament_type": [
-                "PETG"
+                "PLA"
             ],
             "filament_vendor": [
                 "Elegoo"
@@ -524,22 +760,22 @@
                 "0"
             ],
             "hot_plate_temp": [
-                "70"
+                "60"
             ],
             "hot_plate_temp_initial_layer": [
-                "70"
+                "60"
             ],
             "nozzle_temperature": [
-                "230"
+                "220"
             ],
             "nozzle_temperature_initial_layer": [
-                "230"
+                "220"
             ],
             "overhang_fan_speed": [
-                "90"
+                "100"
             ],
             "overhang_fan_threshold": [
-                "10%"
+                "50%"
             ],
             "reduce_fan_stop_start_freq": [
                 "1"
@@ -551,19 +787,19 @@
                 "1"
             ],
             "slow_down_layer_time": [
-                "12"
+                "4"
             ],
             "slow_down_min_speed": [
-                "10"
+                "20"
             ],
             "temperature_vitrification": [
-                "70"
+                "45"
             ],
             "textured_plate_temp": [
-                "70"
+                "60"
             ],
             "textured_plate_temp_initial_layer": [
-                "70"
+                "60"
             ],
             "compatible_printers": [
                 "Elegoo Neptune 0.4 nozzle",
@@ -586,225 +822,27 @@
                 "Elegoo Neptune 3 0.8 nozzle"
             ],
             "filament_start_gcode": [
-                "; Filament start gcode\n"
+                "; filament start gcode\n{if  (bed_temperature[current_extruder] >55)||(bed_temperature_initial_layer[current_extruder] >55)}M106 P3 S200\n{elsif(bed_temperature[current_extruder] >50)||(bed_temperature_initial_layer[current_extruder] >50)}M106 P3 S150\n{elsif(bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S50\n{endif}\n\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
             ],
             "filament_end_gcode": [
                 "; filament end gcode \n"
             ],
-            "nozzle_temperature_range_high": [
-                "270"
-            ],
             "nozzle_temperature_range_low": [
-                "230"
-            ],
-            "filament_id": "EPETGB00",
-            "setting_id": "EPETGPROEN2"
-        },
-        "filament_db_ids": [
-            "elegoo/PETG/petg_pro"
-        ],
-        "generic_id": "GFG99"
-    },
-    {
-        "name": "Elegoo PETG Translucent @EN2 Series",
-        "compatible_printers": {
-            "Elegoo Neptune 3": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Elegoo PETG Translucent @EN2 Series",
-            "from": "system",
-            "instantiation": "true",
-            "activate_air_filtration": [
-                "0"
-            ],
-            "chamber_temperatures": [
-                "0"
-            ],
-            "close_fan_the_first_x_layers": [
-                "3"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "cool_plate_temp": [
-                "0"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "0"
-            ],
-            "during_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "eng_plate_temp": [
-                "70"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "70"
-            ],
-            "fan_cooling_layer_time": [
-                "30"
-            ],
-            "fan_max_speed": [
-                "35"
-            ],
-            "fan_min_speed": [
-                "10"
-            ],
-            "filament_cost": [
-                "0"
-            ],
-            "filament_density": [
-                "1.25"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_flow_ratio": [
-                "0.98"
-            ],
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_max_volumetric_speed": [
-                "10"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_type": [
-                "PETG"
-            ],
-            "filament_vendor": [
-                "Elegoo"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "70"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "70"
-            ],
-            "nozzle_temperature": [
-                "255"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "255"
-            ],
-            "overhang_fan_speed": [
-                "90"
-            ],
-            "overhang_fan_threshold": [
-                "10%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "3"
-            ],
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "12"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "temperature_vitrification": [
-                "70"
-            ],
-            "textured_plate_temp": [
-                "70"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "70"
-            ],
-            "compatible_printers": [
-                "Elegoo Neptune 0.4 nozzle",
-                "Elegoo Neptune 0.6 nozzle",
-                "Elegoo Neptune 0.8 nozzle",
-                "Elegoo Neptune 2 0.4 nozzle",
-                "Elegoo Neptune 2 0.6 nozzle",
-                "Elegoo Neptune 2 0.8 nozzle",
-                "Elegoo Neptune 2S 0.4 nozzle",
-                "Elegoo Neptune 2S 0.6 nozzle",
-                "Elegoo Neptune 2S 0.8 nozzle",
-                "Elegoo Neptune 2D 0.4 nozzle",
-                "Elegoo Neptune 2D 0.6 nozzle",
-                "Elegoo Neptune 2D 0.8 nozzle",
-                "Elegoo Neptune X 0.4 nozzle",
-                "Elegoo Neptune X 0.6 nozzle",
-                "Elegoo Neptune X 0.8 nozzle",
-                "Elegoo Neptune 3 0.4 nozzle",
-                "Elegoo Neptune 3 0.6 nozzle",
-                "Elegoo Neptune 3 0.8 nozzle"
-            ],
-            "filament_start_gcode": [
-                "; Filament start gcode\n"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
+                "190"
             ],
             "nozzle_temperature_range_high": [
-                "270"
+                "220"
             ],
-            "nozzle_temperature_range_low": [
-                "230"
+            "additional_cooling_fan_speed": [
+                "0"
             ],
-            "filament_id": "EPETGB00",
-            "setting_id": "EPETGTRANSEN2",
+            "filament_id": "EPLAB00",
+            "setting_id": "EPLASPARKLEEN2",
             "pressure_advance": [
                 "0.024"
             ]
         },
-        "generic_id": "GFG99"
+        "generic_id": "GFL99"
     },
     {
         "name": "Elegoo PETG-CF @EN2 Series",
@@ -1005,9 +1043,204 @@
                 "0.024"
             ]
         },
-        "filament_db_ids": [
-            "elegoo/PETG/petg_cf"
-        ],
+        "generic_id": "GFG99"
+    },
+    {
+        "name": "Elegoo PETG PRO @EN2 Series",
+        "compatible_printers": {
+            "Elegoo Neptune 3": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "name": "Elegoo PETG PRO @EN2 Series",
+            "from": "system",
+            "instantiation": "true",
+            "activate_air_filtration": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "70"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "70"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "50"
+            ],
+            "filament_cost": [
+                "0"
+            ],
+            "filament_density": [
+                "1.25"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_max_volumetric_speed": [
+                "8"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Elegoo"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "70"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "70"
+            ],
+            "nozzle_temperature": [
+                "230"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "230"
+            ],
+            "overhang_fan_speed": [
+                "90"
+            ],
+            "overhang_fan_threshold": [
+                "10%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "12"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "temperature_vitrification": [
+                "70"
+            ],
+            "textured_plate_temp": [
+                "70"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "70"
+            ],
+            "compatible_printers": [
+                "Elegoo Neptune 0.4 nozzle",
+                "Elegoo Neptune 0.6 nozzle",
+                "Elegoo Neptune 0.8 nozzle",
+                "Elegoo Neptune 2 0.4 nozzle",
+                "Elegoo Neptune 2 0.6 nozzle",
+                "Elegoo Neptune 2 0.8 nozzle",
+                "Elegoo Neptune 2S 0.4 nozzle",
+                "Elegoo Neptune 2S 0.6 nozzle",
+                "Elegoo Neptune 2S 0.8 nozzle",
+                "Elegoo Neptune 2D 0.4 nozzle",
+                "Elegoo Neptune 2D 0.6 nozzle",
+                "Elegoo Neptune 2D 0.8 nozzle",
+                "Elegoo Neptune X 0.4 nozzle",
+                "Elegoo Neptune X 0.6 nozzle",
+                "Elegoo Neptune X 0.8 nozzle",
+                "Elegoo Neptune 3 0.4 nozzle",
+                "Elegoo Neptune 3 0.6 nozzle",
+                "Elegoo Neptune 3 0.8 nozzle"
+            ],
+            "filament_start_gcode": [
+                "; Filament start gcode\n"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "230"
+            ],
+            "filament_id": "EPETGB00",
+            "setting_id": "EPETGPROEN2"
+        },
         "generic_id": "GFG99"
     },
     {
@@ -1209,13 +1442,10 @@
                 "0.024"
             ]
         },
-        "filament_db_ids": [
-            "elegoo/PETG/petg_gf"
-        ],
         "generic_id": "GFG99"
     },
     {
-        "name": "Elegoo PLA @EN2 Series",
+        "name": "Elegoo PLA Silk @EN2 Series",
         "compatible_printers": {
             "Elegoo Neptune 3": [
                 "0.4",
@@ -1225,7 +1455,208 @@
         },
         "data": {
             "type": "filament",
-            "name": "Elegoo PLA @EN2 Series",
+            "name": "Elegoo PLA Silk @EN2 Series",
+            "from": "system",
+            "instantiation": "true",
+            "activate_air_filtration": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "80"
+            ],
+            "filament_cost": [
+                "0"
+            ],
+            "filament_density": [
+                "1.32"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_max_volumetric_speed": [
+                "9"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Elegoo"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "nozzle_temperature": [
+                "210"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "210"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "75%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "8"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "temperature_vitrification": [
+                "45"
+            ],
+            "textured_plate_temp": [
+                "65"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "65"
+            ],
+            "compatible_printers": [
+                "Elegoo Neptune 0.4 nozzle",
+                "Elegoo Neptune 0.6 nozzle",
+                "Elegoo Neptune 0.8 nozzle",
+                "Elegoo Neptune 2 0.4 nozzle",
+                "Elegoo Neptune 2 0.6 nozzle",
+                "Elegoo Neptune 2 0.8 nozzle",
+                "Elegoo Neptune 2S 0.4 nozzle",
+                "Elegoo Neptune 2S 0.6 nozzle",
+                "Elegoo Neptune 2S 0.8 nozzle",
+                "Elegoo Neptune 2D 0.4 nozzle",
+                "Elegoo Neptune 2D 0.6 nozzle",
+                "Elegoo Neptune 2D 0.8 nozzle",
+                "Elegoo Neptune X 0.4 nozzle",
+                "Elegoo Neptune X 0.6 nozzle",
+                "Elegoo Neptune X 0.8 nozzle",
+                "Elegoo Neptune 3 0.4 nozzle",
+                "Elegoo Neptune 3 0.6 nozzle",
+                "Elegoo Neptune 3 0.8 nozzle"
+            ],
+            "filament_start_gcode": [
+                "; filament start gcode\n"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "nozzle_temperature_range_high": [
+                "240"
+            ],
+            "additional_cooling_fan_speed": [
+                "0"
+            ],
+            "filament_id": "EPLAB00",
+            "setting_id": "EPLASEN2"
+        },
+        "generic_id": "GFL96"
+    },
+    {
+        "name": "Elegoo PLA Matte @EN2 Series",
+        "compatible_printers": {
+            "Elegoo Neptune 3": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "name": "Elegoo PLA Matte @EN2 Series",
             "from": "system",
             "instantiation": "true",
             "activate_air_filtration": [
@@ -1361,7 +1792,7 @@
                 "1"
             ],
             "slow_down_layer_time": [
-                "8"
+                "6"
             ],
             "slow_down_min_speed": [
                 "10"
@@ -1411,11 +1842,8 @@
                 "0"
             ],
             "filament_id": "EPLAB00",
-            "setting_id": "EPLAEN2"
+            "setting_id": "EPLAMEN2"
         },
-        "filament_db_ids": [
-            "elegoo/PLA/pla"
-        ],
         "generic_id": "GFL99"
     },
     {
@@ -1623,7 +2051,7 @@
         "generic_id": "GFL99"
     },
     {
-        "name": "Elegoo PLA Galaxy @EN2 Series",
+        "name": "Elegoo PLA @EN2 Series",
         "compatible_printers": {
             "Elegoo Neptune 3": [
                 "0.4",
@@ -1633,7 +2061,7 @@
         },
         "data": {
             "type": "filament",
-            "name": "Elegoo PLA Galaxy @EN2 Series",
+            "name": "Elegoo PLA @EN2 Series",
             "from": "system",
             "instantiation": "true",
             "activate_air_filtration": [
@@ -1691,7 +2119,7 @@
                 "0"
             ],
             "filament_max_volumetric_speed": [
-                "18"
+                "9"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -1748,16 +2176,16 @@
                 "60"
             ],
             "nozzle_temperature": [
-                "220"
+                "210"
             ],
             "nozzle_temperature_initial_layer": [
-                "220"
+                "210"
             ],
             "overhang_fan_speed": [
                 "100"
             ],
             "overhang_fan_threshold": [
-                "50%"
+                "75%"
             ],
             "reduce_fan_stop_start_freq": [
                 "1"
@@ -1769,10 +2197,10 @@
                 "1"
             ],
             "slow_down_layer_time": [
-                "4"
+                "8"
             ],
             "slow_down_min_speed": [
-                "20"
+                "10"
             ],
             "temperature_vitrification": [
                 "45"
@@ -1804,7 +2232,7 @@
                 "Elegoo Neptune 3 0.8 nozzle"
             ],
             "filament_start_gcode": [
-                "; filament start gcode\n{if  (bed_temperature[current_extruder] >55)||(bed_temperature_initial_layer[current_extruder] >55)}M106 P3 S200\n{elsif(bed_temperature[current_extruder] >50)||(bed_temperature_initial_layer[current_extruder] >50)}M106 P3 S150\n{elsif(bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S50\n{endif}\n\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
+                "; filament start gcode\n"
             ],
             "filament_end_gcode": [
                 "; filament end gcode \n"
@@ -1813,18 +2241,481 @@
                 "190"
             ],
             "nozzle_temperature_range_high": [
-                "220"
+                "240"
             ],
             "additional_cooling_fan_speed": [
                 "0"
             ],
             "filament_id": "EPLAB00",
-            "setting_id": "EPLAGALAXYEN2",
-            "pressure_advance": [
-                "0.024"
-            ]
+            "setting_id": "EPLAEN2"
         },
         "generic_id": "GFL99"
+    },
+    {
+        "name": "Generic PETG PRO @Elegoo",
+        "compatible_printers": {
+            "Elegoo Neptune 3": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "name": "Generic PETG PRO @Elegoo",
+            "from": "system",
+            "instantiation": "true",
+            "activate_air_filtration": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "70"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "70"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "40"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "filament_cost": [
+                "0"
+            ],
+            "filament_density": [
+                "1.25"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_max_volumetric_speed": [
+                "8"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "70"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "70"
+            ],
+            "nozzle_temperature": [
+                "240"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "240"
+            ],
+            "overhang_fan_speed": [
+                "90"
+            ],
+            "overhang_fan_threshold": [
+                "10%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "12"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "temperature_vitrification": [
+                "70"
+            ],
+            "textured_plate_temp": [
+                "70"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "70"
+            ],
+            "compatible_printers": [
+                "Elegoo Neptune 0.4 nozzle",
+                "Elegoo Neptune 0.6 nozzle",
+                "Elegoo Neptune 0.8 nozzle",
+                "Elegoo Neptune 2 0.4 nozzle",
+                "Elegoo Neptune 2 0.6 nozzle",
+                "Elegoo Neptune 2 0.8 nozzle",
+                "Elegoo Neptune 2S 0.4 nozzle",
+                "Elegoo Neptune 2S 0.6 nozzle",
+                "Elegoo Neptune 2S 0.8 nozzle",
+                "Elegoo Neptune 2D 0.4 nozzle",
+                "Elegoo Neptune 2D 0.6 nozzle",
+                "Elegoo Neptune 2D 0.8 nozzle",
+                "Elegoo Neptune X 0.4 nozzle",
+                "Elegoo Neptune X 0.6 nozzle",
+                "Elegoo Neptune X 0.8 nozzle",
+                "Elegoo Neptune 3 0.4 nozzle",
+                "Elegoo Neptune 3 0.6 nozzle",
+                "Elegoo Neptune 3 0.8 nozzle",
+                "Elegoo Neptune 3 Pro 0.4 nozzle",
+                "Elegoo Neptune 3 Pro 0.6 nozzle",
+                "Elegoo Neptune 3 Pro 0.8 nozzle",
+                "Elegoo Neptune 3 Pro 1.0 nozzle",
+                "Elegoo Neptune 3 Plus 0.4 nozzle",
+                "Elegoo Neptune 3 Plus 0.6 nozzle",
+                "Elegoo Neptune 3 Plus 0.8 nozzle",
+                "Elegoo Neptune 3 Plus 1.0 nozzle",
+                "Elegoo Neptune 3 Max 0.4 nozzle",
+                "Elegoo Neptune 3 Max 0.6 nozzle",
+                "Elegoo Neptune 3 Max 0.8 nozzle",
+                "Elegoo Neptune 3 Max 1.0 nozzle",
+                "Elegoo Neptune 4 0.2 nozzle",
+                "Elegoo Neptune 4 0.4 nozzle",
+                "Elegoo Neptune 4 0.6 nozzle",
+                "Elegoo Neptune 4 0.8 nozzle",
+                "Elegoo Neptune 4 1.0 nozzle",
+                "Elegoo Neptune 4 Max 0.2 nozzle",
+                "Elegoo Neptune 4 Pro 0.4 nozzle",
+                "Elegoo Neptune 4 Pro 0.6 nozzle",
+                "Elegoo Neptune 4 Pro 0.8 nozzle",
+                "Elegoo Neptune 4 Pro 1.0 nozzle",
+                "Elegoo Neptune 4 Plus 0.2 nozzle",
+                "Elegoo Neptune 4 Plus 0.4 nozzle",
+                "Elegoo Neptune 4 Plus 0.6 nozzle",
+                "Elegoo Neptune 4 Plus 0.8 nozzle",
+                "Elegoo Neptune 4 Plus 1.0 nozzle",
+                "Elegoo Neptune 4 Pro 0.2 nozzle",
+                "Elegoo Neptune 4 Max 0.4 nozzle",
+                "Elegoo Neptune 4 Max 0.6 nozzle",
+                "Elegoo Neptune 4 Max 0.8 nozzle",
+                "Elegoo Neptune 4 Max 1.0 nozzle"
+            ],
+            "filament_start_gcode": [
+                "; Filament start gcode\n"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "230"
+            ],
+            "filament_id": "GPETGB00",
+            "setting_id": "GFSG99",
+            "bed_type": [
+                "Cool Plate"
+            ]
+        },
+        "generic_id": "GFG99"
+    },
+    {
+        "name": "Generic PETG @Elegoo",
+        "compatible_printers": {
+            "Elegoo Neptune 3": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "name": "Generic PETG @Elegoo",
+            "from": "system",
+            "instantiation": "true",
+            "activate_air_filtration": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "50"
+            ],
+            "fan_min_speed": [
+                "20"
+            ],
+            "filament_cost": [
+                "0"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_flow_ratio": [
+                "0.95"
+            ],
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_max_volumetric_speed": [
+                "10"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "80"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "80"
+            ],
+            "nozzle_temperature": [
+                "240"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "240"
+            ],
+            "overhang_fan_speed": [
+                "90"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "8"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "temperature_vitrification": [
+                "70"
+            ],
+            "textured_plate_temp": [
+                "80"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "80"
+            ],
+            "compatible_printers": [
+                "Elegoo Neptune 0.4 nozzle",
+                "Elegoo Neptune 0.6 nozzle",
+                "Elegoo Neptune 0.8 nozzle",
+                "Elegoo Neptune 2 0.4 nozzle",
+                "Elegoo Neptune 2 0.6 nozzle",
+                "Elegoo Neptune 2 0.8 nozzle",
+                "Elegoo Neptune 2S 0.4 nozzle",
+                "Elegoo Neptune 2S 0.6 nozzle",
+                "Elegoo Neptune 2S 0.8 nozzle",
+                "Elegoo Neptune 2D 0.4 nozzle",
+                "Elegoo Neptune 2D 0.6 nozzle",
+                "Elegoo Neptune 2D 0.8 nozzle",
+                "Elegoo Neptune X 0.4 nozzle",
+                "Elegoo Neptune X 0.6 nozzle",
+                "Elegoo Neptune X 0.8 nozzle",
+                "Elegoo Neptune 3 0.4 nozzle",
+                "Elegoo Neptune 3 0.6 nozzle",
+                "Elegoo Neptune 3 0.8 nozzle",
+                "Elegoo Neptune 3 Pro 0.4 nozzle",
+                "Elegoo Neptune 3 Pro 0.6 nozzle",
+                "Elegoo Neptune 3 Pro 0.8 nozzle",
+                "Elegoo Neptune 3 Pro 1.0 nozzle",
+                "Elegoo Neptune 3 Plus 0.4 nozzle",
+                "Elegoo Neptune 3 Plus 0.6 nozzle",
+                "Elegoo Neptune 3 Plus 0.8 nozzle",
+                "Elegoo Neptune 3 Plus 1.0 nozzle",
+                "Elegoo Neptune 3 Max 0.4 nozzle",
+                "Elegoo Neptune 3 Max 0.6 nozzle",
+                "Elegoo Neptune 3 Max 0.8 nozzle",
+                "Elegoo Neptune 3 Max 1.0 nozzle",
+                "Elegoo Neptune 4 0.2 nozzle",
+                "Elegoo Neptune 4 0.4 nozzle",
+                "Elegoo Neptune 4 0.6 nozzle",
+                "Elegoo Neptune 4 0.8 nozzle",
+                "Elegoo Neptune 4 1.0 nozzle",
+                "Elegoo Neptune 4 Max 0.2 nozzle",
+                "Elegoo Neptune 4 Pro 0.4 nozzle",
+                "Elegoo Neptune 4 Pro 0.6 nozzle",
+                "Elegoo Neptune 4 Pro 0.8 nozzle",
+                "Elegoo Neptune 4 Pro 1.0 nozzle",
+                "Elegoo Neptune 4 Plus 0.2 nozzle",
+                "Elegoo Neptune 4 Plus 0.4 nozzle",
+                "Elegoo Neptune 4 Plus 0.6 nozzle",
+                "Elegoo Neptune 4 Plus 0.8 nozzle",
+                "Elegoo Neptune 4 Plus 1.0 nozzle",
+                "Elegoo Neptune 4 Pro 0.2 nozzle",
+                "Elegoo Neptune 4 Max 0.4 nozzle",
+                "Elegoo Neptune 4 Max 0.6 nozzle",
+                "Elegoo Neptune 4 Max 0.8 nozzle",
+                "Elegoo Neptune 4 Max 1.0 nozzle"
+            ],
+            "filament_start_gcode": [
+                "; filament start gcode\n"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "nozzle_temperature_range_high": [
+                "260"
+            ],
+            "nozzle_temperature_range_low": [
+                "220"
+            ],
+            "filament_id": "GPETGB00",
+            "setting_id": "GFSG99",
+            "bed_type": [
+                "Cool Plate"
+            ]
+        },
+        "generic_id": "GFG99"
     },
     {
         "name": "Elegoo PLA Marble @EN2 Series",
@@ -2031,7 +2922,7 @@
         "generic_id": "GFL99"
     },
     {
-        "name": "Elegoo PLA Matte @EN2 Series",
+        "name": "Elegoo RAPID PLA+ @EN2 Series",
         "compatible_printers": {
             "Elegoo Neptune 3": [
                 "0.4",
@@ -2041,7 +2932,7 @@
         },
         "data": {
             "type": "filament",
-            "name": "Elegoo PLA Matte @EN2 Series",
+            "name": "Elegoo RAPID PLA+ @EN2 Series",
             "from": "system",
             "instantiation": "true",
             "activate_air_filtration": [
@@ -2099,7 +2990,7 @@
                 "0"
             ],
             "filament_max_volumetric_speed": [
-                "9"
+                "12"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -2227,12 +3118,408 @@
                 "0"
             ],
             "filament_id": "EPLAB00",
-            "setting_id": "EPLAMEN2"
+            "setting_id": "ERPLAPLUSEN2"
         },
-        "filament_db_ids": [
-            "elegoo/PLA/pla_matte"
-        ],
         "generic_id": "GFL99"
+    },
+    {
+        "name": "Elegoo ASA @EN2 Series",
+        "compatible_printers": {
+            "Elegoo Neptune 3": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "name": "Elegoo ASA @EN2 Series",
+            "from": "system",
+            "instantiation": "true",
+            "activate_air_filtration": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "90"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "90"
+            ],
+            "fan_cooling_layer_time": [
+                "35"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "filament_cost": [
+                "0"
+            ],
+            "filament_density": [
+                "1.1"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_max_volumetric_speed": [
+                "8"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_type": [
+                "ASA"
+            ],
+            "filament_vendor": [
+                "Elegoo"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "90"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "90"
+            ],
+            "nozzle_temperature": [
+                "260"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "260"
+            ],
+            "overhang_fan_speed": [
+                "80"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "3"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "temperature_vitrification": [
+                "100"
+            ],
+            "textured_plate_temp": [
+                "90"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "90"
+            ],
+            "compatible_printers": [
+                "Elegoo Neptune 0.4 nozzle",
+                "Elegoo Neptune 0.6 nozzle",
+                "Elegoo Neptune 0.8 nozzle",
+                "Elegoo Neptune 2 0.4 nozzle",
+                "Elegoo Neptune 2 0.6 nozzle",
+                "Elegoo Neptune 2 0.8 nozzle",
+                "Elegoo Neptune 2S 0.4 nozzle",
+                "Elegoo Neptune 2S 0.6 nozzle",
+                "Elegoo Neptune 2S 0.8 nozzle",
+                "Elegoo Neptune 2D 0.4 nozzle",
+                "Elegoo Neptune 2D 0.6 nozzle",
+                "Elegoo Neptune 2D 0.8 nozzle",
+                "Elegoo Neptune X 0.4 nozzle",
+                "Elegoo Neptune X 0.6 nozzle",
+                "Elegoo Neptune X 0.8 nozzle",
+                "Elegoo Neptune 3 0.4 nozzle",
+                "Elegoo Neptune 3 0.6 nozzle",
+                "Elegoo Neptune 3 0.8 nozzle"
+            ],
+            "filament_start_gcode": [
+                "; Filament start gcode\n"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "nozzle_temperature_range_low": [
+                "240"
+            ],
+            "filament_id": "EASAB00",
+            "setting_id": "EASAEN2"
+        },
+        "generic_id": "GFB98"
+    },
+    {
+        "name": "Elegoo PETG Translucent @EN2 Series",
+        "compatible_printers": {
+            "Elegoo Neptune 3": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "type": "filament",
+            "name": "Elegoo PETG Translucent @EN2 Series",
+            "from": "system",
+            "instantiation": "true",
+            "activate_air_filtration": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "70"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "70"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "35"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "filament_cost": [
+                "0"
+            ],
+            "filament_density": [
+                "1.25"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_max_volumetric_speed": [
+                "10"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Elegoo"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "70"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "70"
+            ],
+            "nozzle_temperature": [
+                "255"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "255"
+            ],
+            "overhang_fan_speed": [
+                "90"
+            ],
+            "overhang_fan_threshold": [
+                "10%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "12"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "temperature_vitrification": [
+                "70"
+            ],
+            "textured_plate_temp": [
+                "70"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "70"
+            ],
+            "compatible_printers": [
+                "Elegoo Neptune 0.4 nozzle",
+                "Elegoo Neptune 0.6 nozzle",
+                "Elegoo Neptune 0.8 nozzle",
+                "Elegoo Neptune 2 0.4 nozzle",
+                "Elegoo Neptune 2 0.6 nozzle",
+                "Elegoo Neptune 2 0.8 nozzle",
+                "Elegoo Neptune 2S 0.4 nozzle",
+                "Elegoo Neptune 2S 0.6 nozzle",
+                "Elegoo Neptune 2S 0.8 nozzle",
+                "Elegoo Neptune 2D 0.4 nozzle",
+                "Elegoo Neptune 2D 0.6 nozzle",
+                "Elegoo Neptune 2D 0.8 nozzle",
+                "Elegoo Neptune X 0.4 nozzle",
+                "Elegoo Neptune X 0.6 nozzle",
+                "Elegoo Neptune X 0.8 nozzle",
+                "Elegoo Neptune 3 0.4 nozzle",
+                "Elegoo Neptune 3 0.6 nozzle",
+                "Elegoo Neptune 3 0.8 nozzle"
+            ],
+            "filament_start_gcode": [
+                "; Filament start gcode\n"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "230"
+            ],
+            "filament_id": "EPETGB00",
+            "setting_id": "EPETGTRANSEN2",
+            "pressure_advance": [
+                "0.024"
+            ]
+        },
+        "generic_id": "GFG99"
     },
     {
         "name": "Elegoo PLA PRO @EN2 Series",
@@ -2433,13 +3720,10 @@
             "filament_id": "EPLAB00",
             "setting_id": "EPLAPROEN2"
         },
-        "filament_db_ids": [
-            "elegoo/PLA/pla_pro"
-        ],
         "generic_id": "GFL99"
     },
     {
-        "name": "Elegoo PLA Silk @EN2 Series",
+        "name": "Elegoo RAPID TPU 95A @EN2 Series",
         "compatible_printers": {
             "Elegoo Neptune 3": [
                 "0.4",
@@ -2449,7 +3733,7 @@
         },
         "data": {
             "type": "filament",
-            "name": "Elegoo PLA Silk @EN2 Series",
+            "name": "Elegoo RAPID TPU 95A @EN2 Series",
             "from": "system",
             "instantiation": "true",
             "activate_air_filtration": [
@@ -2465,34 +3749,34 @@
                 "70"
             ],
             "cool_plate_temp": [
-                "35"
+                "30"
             ],
             "cool_plate_temp_initial_layer": [
-                "35"
+                "30"
             ],
             "during_print_exhaust_fan_speed": [
                 "70"
             ],
             "eng_plate_temp": [
-                "0"
+                "30"
             ],
             "eng_plate_temp_initial_layer": [
-                "0"
+                "30"
             ],
             "fan_cooling_layer_time": [
-                "80"
+                "100"
             ],
             "fan_max_speed": [
                 "100"
             ],
             "fan_min_speed": [
-                "80"
+                "100"
             ],
             "filament_cost": [
                 "0"
             ],
             "filament_density": [
-                "1.32"
+                "1.21"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -2501,13 +3785,13 @@
                 "1.75"
             ],
             "filament_flow_ratio": [
-                "0.98"
+                "0.96"
             ],
             "filament_is_support": [
                 "0"
             ],
             "filament_max_volumetric_speed": [
-                "9"
+                "12"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -2522,7 +3806,7 @@
                 "nil"
             ],
             "filament_retraction_length": [
-                "nil"
+                "0.4"
             ],
             "filament_retraction_minimum_travel": [
                 "nil"
@@ -2537,7 +3821,7 @@
                 "0"
             ],
             "filament_type": [
-                "PLA"
+                "TPU"
             ],
             "filament_vendor": [
                 "Elegoo"
@@ -2558,22 +3842,22 @@
                 "0"
             ],
             "hot_plate_temp": [
-                "60"
+                "35"
             ],
             "hot_plate_temp_initial_layer": [
-                "60"
+                "35"
             ],
             "nozzle_temperature": [
-                "210"
+                "230"
             ],
             "nozzle_temperature_initial_layer": [
-                "210"
+                "230"
             ],
             "overhang_fan_speed": [
                 "100"
             ],
             "overhang_fan_threshold": [
-                "75%"
+                "95%"
             ],
             "reduce_fan_stop_start_freq": [
                 "1"
@@ -2591,13 +3875,13 @@
                 "10"
             ],
             "temperature_vitrification": [
-                "45"
+                "30"
             ],
             "textured_plate_temp": [
-                "65"
+                "35"
             ],
             "textured_plate_temp_initial_layer": [
-                "65"
+                "35"
             ],
             "compatible_printers": [
                 "Elegoo Neptune 0.4 nozzle",
@@ -2625,430 +3909,22 @@
             "filament_end_gcode": [
                 "; filament end gcode \n"
             ],
-            "nozzle_temperature_range_low": [
-                "190"
-            ],
-            "nozzle_temperature_range_high": [
-                "240"
-            ],
             "additional_cooling_fan_speed": [
                 "0"
             ],
-            "filament_id": "EPLAB00",
-            "setting_id": "EPLASEN2"
-        },
-        "generic_id": "GFL96"
-    },
-    {
-        "name": "Elegoo PLA Sparkle @EN2 Series",
-        "compatible_printers": {
-            "Elegoo Neptune 3": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Elegoo PLA Sparkle @EN2 Series",
-            "from": "system",
-            "instantiation": "true",
-            "activate_air_filtration": [
-                "0"
-            ],
-            "chamber_temperatures": [
-                "0"
-            ],
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "cool_plate_temp": [
-                "35"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "35"
-            ],
-            "during_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "eng_plate_temp": [
-                "0"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "0"
-            ],
-            "fan_cooling_layer_time": [
-                "80"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "80"
-            ],
-            "filament_cost": [
-                "0"
-            ],
-            "filament_density": [
-                "1.25"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_flow_ratio": [
-                "0.98"
-            ],
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_max_volumetric_speed": [
-                "18"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_type": [
-                "PLA"
-            ],
-            "filament_vendor": [
-                "Elegoo"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "60"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "60"
-            ],
-            "nozzle_temperature": [
-                "220"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "220"
-            ],
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "50%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "3"
-            ],
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "4"
-            ],
-            "slow_down_min_speed": [
-                "20"
-            ],
-            "temperature_vitrification": [
-                "45"
-            ],
-            "textured_plate_temp": [
-                "60"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "60"
-            ],
-            "compatible_printers": [
-                "Elegoo Neptune 0.4 nozzle",
-                "Elegoo Neptune 0.6 nozzle",
-                "Elegoo Neptune 0.8 nozzle",
-                "Elegoo Neptune 2 0.4 nozzle",
-                "Elegoo Neptune 2 0.6 nozzle",
-                "Elegoo Neptune 2 0.8 nozzle",
-                "Elegoo Neptune 2S 0.4 nozzle",
-                "Elegoo Neptune 2S 0.6 nozzle",
-                "Elegoo Neptune 2S 0.8 nozzle",
-                "Elegoo Neptune 2D 0.4 nozzle",
-                "Elegoo Neptune 2D 0.6 nozzle",
-                "Elegoo Neptune 2D 0.8 nozzle",
-                "Elegoo Neptune X 0.4 nozzle",
-                "Elegoo Neptune X 0.6 nozzle",
-                "Elegoo Neptune X 0.8 nozzle",
-                "Elegoo Neptune 3 0.4 nozzle",
-                "Elegoo Neptune 3 0.6 nozzle",
-                "Elegoo Neptune 3 0.8 nozzle"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n{if  (bed_temperature[current_extruder] >55)||(bed_temperature_initial_layer[current_extruder] >55)}M106 P3 S200\n{elsif(bed_temperature[current_extruder] >50)||(bed_temperature_initial_layer[current_extruder] >50)}M106 P3 S150\n{elsif(bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S50\n{endif}\n\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "nozzle_temperature_range_low": [
-                "190"
-            ],
             "nozzle_temperature_range_high": [
-                "220"
-            ],
-            "additional_cooling_fan_speed": [
-                "0"
-            ],
-            "filament_id": "EPLAB00",
-            "setting_id": "EPLASPARKLEEN2",
-            "pressure_advance": [
-                "0.024"
-            ]
-        },
-        "filament_db_ids": [
-            "elegoo/PLA/pla_sparkle"
-        ],
-        "generic_id": "GFL99"
-    },
-    {
-        "name": "Elegoo PLA Wood @EN2 Series",
-        "compatible_printers": {
-            "Elegoo Neptune 3": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Elegoo PLA Wood @EN2 Series",
-            "from": "system",
-            "instantiation": "true",
-            "activate_air_filtration": [
-                "0"
-            ],
-            "chamber_temperatures": [
-                "0"
-            ],
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "cool_plate_temp": [
-                "35"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "35"
-            ],
-            "during_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "eng_plate_temp": [
-                "0"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "0"
-            ],
-            "fan_cooling_layer_time": [
-                "80"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "80"
-            ],
-            "filament_cost": [
-                "0"
-            ],
-            "filament_density": [
-                "1.25"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_flow_ratio": [
-                "0.98"
-            ],
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_max_volumetric_speed": [
-                "15"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_type": [
-                "PLA"
-            ],
-            "filament_vendor": [
-                "Elegoo"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "60"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "60"
-            ],
-            "nozzle_temperature": [
-                "220"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "220"
-            ],
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "50%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "3"
-            ],
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "4"
-            ],
-            "slow_down_min_speed": [
-                "20"
-            ],
-            "temperature_vitrification": [
-                "45"
-            ],
-            "textured_plate_temp": [
-                "60"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "60"
-            ],
-            "compatible_printers": [
-                "Elegoo Neptune 0.4 nozzle",
-                "Elegoo Neptune 0.6 nozzle",
-                "Elegoo Neptune 0.8 nozzle",
-                "Elegoo Neptune 2 0.4 nozzle",
-                "Elegoo Neptune 2 0.6 nozzle",
-                "Elegoo Neptune 2 0.8 nozzle",
-                "Elegoo Neptune 2S 0.4 nozzle",
-                "Elegoo Neptune 2S 0.6 nozzle",
-                "Elegoo Neptune 2S 0.8 nozzle",
-                "Elegoo Neptune 2D 0.4 nozzle",
-                "Elegoo Neptune 2D 0.6 nozzle",
-                "Elegoo Neptune 2D 0.8 nozzle",
-                "Elegoo Neptune X 0.4 nozzle",
-                "Elegoo Neptune X 0.6 nozzle",
-                "Elegoo Neptune X 0.8 nozzle",
-                "Elegoo Neptune 3 0.4 nozzle",
-                "Elegoo Neptune 3 0.6 nozzle",
-                "Elegoo Neptune 3 0.8 nozzle"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n{if  (bed_temperature[current_extruder] >55)||(bed_temperature_initial_layer[current_extruder] >55)}M106 P3 S200\n{elsif(bed_temperature[current_extruder] >50)||(bed_temperature_initial_layer[current_extruder] >50)}M106 P3 S150\n{elsif(bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S50\n{endif}\n\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
+                "230"
             ],
             "nozzle_temperature_range_low": [
                 "200"
             ],
-            "nozzle_temperature_range_high": [
-                "240"
-            ],
-            "additional_cooling_fan_speed": [
-                "0"
-            ],
-            "filament_id": "EPLAB00",
-            "setting_id": "EPLAWOODEN2",
+            "filament_id": "ETPUB00",
+            "setting_id": "ERTPU95AEN2",
             "pressure_advance": [
                 "0.024"
             ]
         },
-        "generic_id": "GFL99"
+        "generic_id": "GFU99"
     },
     {
         "name": "Elegoo PLA+ @EN2 Series",
@@ -3450,9 +4326,6 @@
             "filament_id": "EPLAB00",
             "setting_id": "EPLACFEN2"
         },
-        "filament_db_ids": [
-            "elegoo/PLA/pla_cf"
-        ],
         "generic_id": "GFL99"
     },
     {
@@ -3651,13 +4524,10 @@
             "filament_id": "EPETGB00",
             "setting_id": "ERPETGEN2"
         },
-        "filament_db_ids": [
-            "elegoo/PETG/rapid_petg"
-        ],
         "generic_id": "GFG99"
     },
     {
-        "name": "Elegoo RAPID PLA+ @EN2 Series",
+        "name": "Elegoo PETG @EN2 Series",
         "compatible_printers": {
             "Elegoo Neptune 3": [
                 "0.4",
@@ -3667,7 +4537,7 @@
         },
         "data": {
             "type": "filament",
-            "name": "Elegoo RAPID PLA+ @EN2 Series",
+            "name": "Elegoo PETG @EN2 Series",
             "from": "system",
             "instantiation": "true",
             "activate_air_filtration": [
@@ -3677,34 +4547,34 @@
                 "0"
             ],
             "close_fan_the_first_x_layers": [
-                "1"
+                "3"
             ],
             "complete_print_exhaust_fan_speed": [
                 "70"
             ],
             "cool_plate_temp": [
-                "35"
+                "0"
             ],
             "cool_plate_temp_initial_layer": [
-                "35"
+                "0"
             ],
             "during_print_exhaust_fan_speed": [
                 "70"
             ],
             "eng_plate_temp": [
-                "0"
+                "70"
             ],
             "eng_plate_temp_initial_layer": [
-                "0"
+                "70"
             ],
             "fan_cooling_layer_time": [
-                "80"
+                "30"
             ],
             "fan_max_speed": [
-                "100"
+                "40"
             ],
             "fan_min_speed": [
-                "80"
+                "10"
             ],
             "filament_cost": [
                 "0"
@@ -3725,7 +4595,7 @@
                 "0"
             ],
             "filament_max_volumetric_speed": [
-                "12"
+                "11"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -3755,7 +4625,7 @@
                 "0"
             ],
             "filament_type": [
-                "PLA"
+                "PETG"
             ],
             "filament_vendor": [
                 "Elegoo"
@@ -3776,22 +4646,22 @@
                 "0"
             ],
             "hot_plate_temp": [
-                "60"
+                "70"
             ],
             "hot_plate_temp_initial_layer": [
-                "60"
+                "70"
             ],
             "nozzle_temperature": [
-                "210"
+                "250"
             ],
             "nozzle_temperature_initial_layer": [
-                "210"
+                "250"
             ],
             "overhang_fan_speed": [
-                "100"
+                "90"
             ],
             "overhang_fan_threshold": [
-                "75%"
+                "50%"
             ],
             "reduce_fan_stop_start_freq": [
                 "1"
@@ -3803,220 +4673,19 @@
                 "1"
             ],
             "slow_down_layer_time": [
-                "6"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "temperature_vitrification": [
-                "45"
-            ],
-            "textured_plate_temp": [
-                "60"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "60"
-            ],
-            "compatible_printers": [
-                "Elegoo Neptune 0.4 nozzle",
-                "Elegoo Neptune 0.6 nozzle",
-                "Elegoo Neptune 0.8 nozzle",
-                "Elegoo Neptune 2 0.4 nozzle",
-                "Elegoo Neptune 2 0.6 nozzle",
-                "Elegoo Neptune 2 0.8 nozzle",
-                "Elegoo Neptune 2S 0.4 nozzle",
-                "Elegoo Neptune 2S 0.6 nozzle",
-                "Elegoo Neptune 2S 0.8 nozzle",
-                "Elegoo Neptune 2D 0.4 nozzle",
-                "Elegoo Neptune 2D 0.6 nozzle",
-                "Elegoo Neptune 2D 0.8 nozzle",
-                "Elegoo Neptune X 0.4 nozzle",
-                "Elegoo Neptune X 0.6 nozzle",
-                "Elegoo Neptune X 0.8 nozzle",
-                "Elegoo Neptune 3 0.4 nozzle",
-                "Elegoo Neptune 3 0.6 nozzle",
-                "Elegoo Neptune 3 0.8 nozzle"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "nozzle_temperature_range_low": [
-                "190"
-            ],
-            "nozzle_temperature_range_high": [
-                "240"
-            ],
-            "additional_cooling_fan_speed": [
-                "0"
-            ],
-            "filament_id": "EPLAB00",
-            "setting_id": "ERPLAPLUSEN2"
-        },
-        "generic_id": "GFL99"
-    },
-    {
-        "name": "Elegoo RAPID TPU 95A @EN2 Series",
-        "compatible_printers": {
-            "Elegoo Neptune 3": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Elegoo RAPID TPU 95A @EN2 Series",
-            "from": "system",
-            "instantiation": "true",
-            "activate_air_filtration": [
-                "0"
-            ],
-            "chamber_temperatures": [
-                "0"
-            ],
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "cool_plate_temp": [
-                "30"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "30"
-            ],
-            "during_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "eng_plate_temp": [
-                "30"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "30"
-            ],
-            "fan_cooling_layer_time": [
-                "100"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "100"
-            ],
-            "filament_cost": [
-                "0"
-            ],
-            "filament_density": [
-                "1.21"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_flow_ratio": [
-                "0.96"
-            ],
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_max_volumetric_speed": [
                 "12"
             ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "0.4"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_type": [
-                "TPU"
-            ],
-            "filament_vendor": [
-                "Elegoo"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "35"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "35"
-            ],
-            "nozzle_temperature": [
-                "230"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "230"
-            ],
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "95%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "3"
-            ],
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "8"
-            ],
             "slow_down_min_speed": [
                 "10"
             ],
             "temperature_vitrification": [
-                "30"
+                "70"
             ],
             "textured_plate_temp": [
-                "35"
+                "70"
             ],
             "textured_plate_temp_initial_layer": [
-                "35"
+                "70"
             ],
             "compatible_printers": [
                 "Elegoo Neptune 0.4 nozzle",
@@ -4039,30 +4708,24 @@
                 "Elegoo Neptune 3 0.8 nozzle"
             ],
             "filament_start_gcode": [
-                "; filament start gcode\n"
+                "; Filament start gcode\n"
             ],
             "filament_end_gcode": [
                 "; filament end gcode \n"
             ],
-            "additional_cooling_fan_speed": [
-                "0"
-            ],
             "nozzle_temperature_range_high": [
-                "230"
+                "270"
             ],
             "nozzle_temperature_range_low": [
-                "200"
+                "230"
             ],
-            "filament_id": "ETPUB00",
-            "setting_id": "ERTPU95AEN2",
+            "filament_id": "EPETGB00",
+            "setting_id": "EPETGEN2",
             "pressure_advance": [
                 "0.024"
             ]
         },
-        "filament_db_ids": [
-            "elegoo/TPU/rapid_tpu_95a"
-        ],
-        "generic_id": "GFU99"
+        "generic_id": "GFG99"
     },
     {
         "name": "Generic ABS @Elegoo",
@@ -4298,7 +4961,7 @@
         "generic_id": "GFB99"
     },
     {
-        "name": "Generic ASA @Elegoo",
+        "name": "Generic PLA Matte @Elegoo",
         "compatible_printers": {
             "Elegoo Neptune 3": [
                 "0.4",
@@ -4308,283 +4971,50 @@
         },
         "data": {
             "type": "filament",
-            "name": "Generic ASA @Elegoo",
+            "name": "Generic PLA Matte @Elegoo",
             "from": "system",
             "instantiation": "true",
             "activate_air_filtration": [
-                "1"
+                "0"
             ],
             "chamber_temperatures": [
                 "0"
             ],
             "close_fan_the_first_x_layers": [
-                "3"
+                "1"
             ],
             "complete_print_exhaust_fan_speed": [
                 "70"
             ],
             "cool_plate_temp": [
-                "0"
+                "60"
             ],
             "cool_plate_temp_initial_layer": [
-                "0"
+                "60"
             ],
             "during_print_exhaust_fan_speed": [
                 "70"
             ],
             "eng_plate_temp": [
-                "90"
+                "60"
             ],
             "eng_plate_temp_initial_layer": [
-                "90"
+                "60"
             ],
             "fan_cooling_layer_time": [
-                "35"
-            ],
-            "fan_max_speed": [
-                "80"
-            ],
-            "fan_min_speed": [
-                "10"
-            ],
-            "filament_cost": [
-                "0"
-            ],
-            "filament_density": [
-                "1.1"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_flow_ratio": [
-                "1"
-            ],
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_max_volumetric_speed": [
-                "12"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_type": [
-                "ASA"
-            ],
-            "filament_vendor": [
-                "Generic"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "90"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "90"
-            ],
-            "nozzle_temperature": [
-                "260"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "260"
-            ],
-            "overhang_fan_speed": [
-                "80"
-            ],
-            "overhang_fan_threshold": [
-                "25%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "3"
-            ],
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "3"
-            ],
-            "slow_down_min_speed": [
-                "20"
-            ],
-            "temperature_vitrification": [
                 "100"
             ],
-            "textured_plate_temp": [
-                "90"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "90"
-            ],
-            "compatible_printers": [
-                "Elegoo Neptune 0.4 nozzle",
-                "Elegoo Neptune 0.6 nozzle",
-                "Elegoo Neptune 0.8 nozzle",
-                "Elegoo Neptune 2 0.4 nozzle",
-                "Elegoo Neptune 2 0.6 nozzle",
-                "Elegoo Neptune 2 0.8 nozzle",
-                "Elegoo Neptune 2S 0.4 nozzle",
-                "Elegoo Neptune 2S 0.6 nozzle",
-                "Elegoo Neptune 2S 0.8 nozzle",
-                "Elegoo Neptune 2D 0.4 nozzle",
-                "Elegoo Neptune 2D 0.6 nozzle",
-                "Elegoo Neptune 2D 0.8 nozzle",
-                "Elegoo Neptune X 0.4 nozzle",
-                "Elegoo Neptune X 0.6 nozzle",
-                "Elegoo Neptune X 0.8 nozzle",
-                "Elegoo Neptune 3 0.4 nozzle",
-                "Elegoo Neptune 3 0.6 nozzle",
-                "Elegoo Neptune 3 0.8 nozzle",
-                "Elegoo Neptune 3 Pro 0.4 nozzle",
-                "Elegoo Neptune 3 Pro 0.6 nozzle",
-                "Elegoo Neptune 3 Pro 0.8 nozzle",
-                "Elegoo Neptune 3 Pro 1.0 nozzle",
-                "Elegoo Neptune 3 Plus 0.4 nozzle",
-                "Elegoo Neptune 3 Plus 0.6 nozzle",
-                "Elegoo Neptune 3 Plus 0.8 nozzle",
-                "Elegoo Neptune 3 Plus 1.0 nozzle",
-                "Elegoo Neptune 3 Max 0.4 nozzle",
-                "Elegoo Neptune 3 Max 0.6 nozzle",
-                "Elegoo Neptune 3 Max 0.8 nozzle",
-                "Elegoo Neptune 3 Max 1.0 nozzle",
-                "Elegoo Neptune 4 0.2 nozzle",
-                "Elegoo Neptune 4 0.4 nozzle",
-                "Elegoo Neptune 4 0.6 nozzle",
-                "Elegoo Neptune 4 0.8 nozzle",
-                "Elegoo Neptune 4 1.0 nozzle",
-                "Elegoo Neptune 4 Max 0.2 nozzle",
-                "Elegoo Neptune 4 Pro 0.4 nozzle",
-                "Elegoo Neptune 4 Pro 0.6 nozzle",
-                "Elegoo Neptune 4 Pro 0.8 nozzle",
-                "Elegoo Neptune 4 Pro 1.0 nozzle",
-                "Elegoo Neptune 4 Plus 0.2 nozzle",
-                "Elegoo Neptune 4 Plus 0.4 nozzle",
-                "Elegoo Neptune 4 Plus 0.6 nozzle",
-                "Elegoo Neptune 4 Plus 0.8 nozzle",
-                "Elegoo Neptune 4 Plus 1.0 nozzle",
-                "Elegoo Neptune 4 Pro 0.2 nozzle",
-                "Elegoo Neptune 4 Max 0.4 nozzle",
-                "Elegoo Neptune 4 Max 0.6 nozzle",
-                "Elegoo Neptune 4 Max 0.8 nozzle",
-                "Elegoo Neptune 4 Max 1.0 nozzle"
-            ],
-            "filament_start_gcode": [
-                "; Filament gcode\n"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "nozzle_temperature_range_high": [
-                "280"
-            ],
-            "nozzle_temperature_range_low": [
-                "240"
-            ],
-            "filament_id": "GASAB00",
-            "setting_id": "GFSA04",
-            "bed_type": [
-                "Cool Plate"
-            ]
-        },
-        "generic_id": "GFB98"
-    },
-    {
-        "name": "Generic PETG @Elegoo",
-        "compatible_printers": {
-            "Elegoo Neptune 3": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Generic PETG @Elegoo",
-            "from": "system",
-            "instantiation": "true",
-            "activate_air_filtration": [
-                "0"
-            ],
-            "chamber_temperatures": [
-                "0"
-            ],
-            "close_fan_the_first_x_layers": [
-                "3"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "cool_plate_temp": [
-                "60"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "60"
-            ],
-            "during_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "eng_plate_temp": [
-                "0"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "0"
-            ],
-            "fan_cooling_layer_time": [
-                "30"
-            ],
             "fan_max_speed": [
-                "50"
+                "100"
             ],
             "fan_min_speed": [
-                "20"
+                "100"
             ],
             "filament_cost": [
                 "0"
             ],
             "filament_density": [
-                "1.27"
+                "1.25"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -4593,13 +5023,13 @@
                 "1.75"
             ],
             "filament_flow_ratio": [
-                "0.95"
+                "1"
             ],
             "filament_is_support": [
                 "0"
             ],
             "filament_max_volumetric_speed": [
-                "10"
+                "15"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -4629,7 +5059,7 @@
                 "0"
             ],
             "filament_type": [
-                "PETG"
+                "PLA"
             ],
             "filament_vendor": [
                 "Generic"
@@ -4650,22 +5080,22 @@
                 "0"
             ],
             "hot_plate_temp": [
-                "80"
+                "60"
             ],
             "hot_plate_temp_initial_layer": [
-                "80"
+                "60"
             ],
             "nozzle_temperature": [
-                "240"
+                "215"
             ],
             "nozzle_temperature_initial_layer": [
-                "240"
+                "215"
             ],
             "overhang_fan_speed": [
-                "90"
+                "100"
             ],
             "overhang_fan_threshold": [
-                "25%"
+                "50%"
             ],
             "reduce_fan_stop_start_freq": [
                 "1"
@@ -4677,19 +5107,19 @@
                 "1"
             ],
             "slow_down_layer_time": [
-                "8"
+                "4"
             ],
             "slow_down_min_speed": [
                 "10"
             ],
             "temperature_vitrification": [
-                "70"
+                "60"
             ],
             "textured_plate_temp": [
-                "80"
+                "60"
             ],
             "textured_plate_temp_initial_layer": [
-                "80"
+                "60"
             ],
             "compatible_printers": [
                 "Elegoo Neptune 0.4 nozzle",
@@ -4749,252 +5179,22 @@
             "filament_end_gcode": [
                 "; filament end gcode \n"
             ],
-            "nozzle_temperature_range_high": [
-                "260"
-            ],
             "nozzle_temperature_range_low": [
-                "220"
+                "205"
             ],
-            "filament_id": "GPETGB00",
-            "setting_id": "GFSG99",
+            "nozzle_temperature_range_high": [
+                "215"
+            ],
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "filament_id": "GPLAB00",
+            "setting_id": "GFSL99",
             "bed_type": [
                 "Cool Plate"
             ]
         },
-        "generic_id": "GFG99"
-    },
-    {
-        "name": "Generic PETG PRO @Elegoo",
-        "compatible_printers": {
-            "Elegoo Neptune 3": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Generic PETG PRO @Elegoo",
-            "from": "system",
-            "instantiation": "true",
-            "activate_air_filtration": [
-                "0"
-            ],
-            "chamber_temperatures": [
-                "0"
-            ],
-            "close_fan_the_first_x_layers": [
-                "3"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "cool_plate_temp": [
-                "0"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "0"
-            ],
-            "during_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "eng_plate_temp": [
-                "70"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "70"
-            ],
-            "fan_cooling_layer_time": [
-                "30"
-            ],
-            "fan_max_speed": [
-                "40"
-            ],
-            "fan_min_speed": [
-                "10"
-            ],
-            "filament_cost": [
-                "0"
-            ],
-            "filament_density": [
-                "1.25"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_flow_ratio": [
-                "1"
-            ],
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_max_volumetric_speed": [
-                "8"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_type": [
-                "PETG"
-            ],
-            "filament_vendor": [
-                "Generic"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "70"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "70"
-            ],
-            "nozzle_temperature": [
-                "240"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "240"
-            ],
-            "overhang_fan_speed": [
-                "90"
-            ],
-            "overhang_fan_threshold": [
-                "10%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "3"
-            ],
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "12"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "temperature_vitrification": [
-                "70"
-            ],
-            "textured_plate_temp": [
-                "70"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "70"
-            ],
-            "compatible_printers": [
-                "Elegoo Neptune 0.4 nozzle",
-                "Elegoo Neptune 0.6 nozzle",
-                "Elegoo Neptune 0.8 nozzle",
-                "Elegoo Neptune 2 0.4 nozzle",
-                "Elegoo Neptune 2 0.6 nozzle",
-                "Elegoo Neptune 2 0.8 nozzle",
-                "Elegoo Neptune 2S 0.4 nozzle",
-                "Elegoo Neptune 2S 0.6 nozzle",
-                "Elegoo Neptune 2S 0.8 nozzle",
-                "Elegoo Neptune 2D 0.4 nozzle",
-                "Elegoo Neptune 2D 0.6 nozzle",
-                "Elegoo Neptune 2D 0.8 nozzle",
-                "Elegoo Neptune X 0.4 nozzle",
-                "Elegoo Neptune X 0.6 nozzle",
-                "Elegoo Neptune X 0.8 nozzle",
-                "Elegoo Neptune 3 0.4 nozzle",
-                "Elegoo Neptune 3 0.6 nozzle",
-                "Elegoo Neptune 3 0.8 nozzle",
-                "Elegoo Neptune 3 Pro 0.4 nozzle",
-                "Elegoo Neptune 3 Pro 0.6 nozzle",
-                "Elegoo Neptune 3 Pro 0.8 nozzle",
-                "Elegoo Neptune 3 Pro 1.0 nozzle",
-                "Elegoo Neptune 3 Plus 0.4 nozzle",
-                "Elegoo Neptune 3 Plus 0.6 nozzle",
-                "Elegoo Neptune 3 Plus 0.8 nozzle",
-                "Elegoo Neptune 3 Plus 1.0 nozzle",
-                "Elegoo Neptune 3 Max 0.4 nozzle",
-                "Elegoo Neptune 3 Max 0.6 nozzle",
-                "Elegoo Neptune 3 Max 0.8 nozzle",
-                "Elegoo Neptune 3 Max 1.0 nozzle",
-                "Elegoo Neptune 4 0.2 nozzle",
-                "Elegoo Neptune 4 0.4 nozzle",
-                "Elegoo Neptune 4 0.6 nozzle",
-                "Elegoo Neptune 4 0.8 nozzle",
-                "Elegoo Neptune 4 1.0 nozzle",
-                "Elegoo Neptune 4 Max 0.2 nozzle",
-                "Elegoo Neptune 4 Pro 0.4 nozzle",
-                "Elegoo Neptune 4 Pro 0.6 nozzle",
-                "Elegoo Neptune 4 Pro 0.8 nozzle",
-                "Elegoo Neptune 4 Pro 1.0 nozzle",
-                "Elegoo Neptune 4 Plus 0.2 nozzle",
-                "Elegoo Neptune 4 Plus 0.4 nozzle",
-                "Elegoo Neptune 4 Plus 0.6 nozzle",
-                "Elegoo Neptune 4 Plus 0.8 nozzle",
-                "Elegoo Neptune 4 Plus 1.0 nozzle",
-                "Elegoo Neptune 4 Pro 0.2 nozzle",
-                "Elegoo Neptune 4 Max 0.4 nozzle",
-                "Elegoo Neptune 4 Max 0.6 nozzle",
-                "Elegoo Neptune 4 Max 0.8 nozzle",
-                "Elegoo Neptune 4 Max 1.0 nozzle"
-            ],
-            "filament_start_gcode": [
-                "; Filament start gcode\n"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "nozzle_temperature_range_high": [
-                "270"
-            ],
-            "nozzle_temperature_range_low": [
-                "230"
-            ],
-            "filament_id": "GPETGB00",
-            "setting_id": "GFSG99",
-            "bed_type": [
-                "Cool Plate"
-            ]
-        },
-        "generic_id": "GFG99"
+        "generic_id": "GFL99"
     },
     {
         "name": "Generic PLA @Elegoo",
@@ -5220,242 +5420,6 @@
             ],
             "nozzle_temperature_range_high": [
                 "210"
-            ],
-            "additional_cooling_fan_speed": [
-                "70"
-            ],
-            "filament_id": "GPLAB00",
-            "setting_id": "GFSL99",
-            "bed_type": [
-                "Cool Plate"
-            ]
-        },
-        "generic_id": "GFL99"
-    },
-    {
-        "name": "Generic PLA Matte @Elegoo",
-        "compatible_printers": {
-            "Elegoo Neptune 3": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Generic PLA Matte @Elegoo",
-            "from": "system",
-            "instantiation": "true",
-            "activate_air_filtration": [
-                "0"
-            ],
-            "chamber_temperatures": [
-                "0"
-            ],
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "cool_plate_temp": [
-                "60"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "60"
-            ],
-            "during_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "eng_plate_temp": [
-                "60"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "60"
-            ],
-            "fan_cooling_layer_time": [
-                "100"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "100"
-            ],
-            "filament_cost": [
-                "0"
-            ],
-            "filament_density": [
-                "1.25"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_flow_ratio": [
-                "1"
-            ],
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_max_volumetric_speed": [
-                "15"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_type": [
-                "PLA"
-            ],
-            "filament_vendor": [
-                "Generic"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "60"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "60"
-            ],
-            "nozzle_temperature": [
-                "215"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "215"
-            ],
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "50%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "3"
-            ],
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "4"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "temperature_vitrification": [
-                "60"
-            ],
-            "textured_plate_temp": [
-                "60"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "60"
-            ],
-            "compatible_printers": [
-                "Elegoo Neptune 0.4 nozzle",
-                "Elegoo Neptune 0.6 nozzle",
-                "Elegoo Neptune 0.8 nozzle",
-                "Elegoo Neptune 2 0.4 nozzle",
-                "Elegoo Neptune 2 0.6 nozzle",
-                "Elegoo Neptune 2 0.8 nozzle",
-                "Elegoo Neptune 2S 0.4 nozzle",
-                "Elegoo Neptune 2S 0.6 nozzle",
-                "Elegoo Neptune 2S 0.8 nozzle",
-                "Elegoo Neptune 2D 0.4 nozzle",
-                "Elegoo Neptune 2D 0.6 nozzle",
-                "Elegoo Neptune 2D 0.8 nozzle",
-                "Elegoo Neptune X 0.4 nozzle",
-                "Elegoo Neptune X 0.6 nozzle",
-                "Elegoo Neptune X 0.8 nozzle",
-                "Elegoo Neptune 3 0.4 nozzle",
-                "Elegoo Neptune 3 0.6 nozzle",
-                "Elegoo Neptune 3 0.8 nozzle",
-                "Elegoo Neptune 3 Pro 0.4 nozzle",
-                "Elegoo Neptune 3 Pro 0.6 nozzle",
-                "Elegoo Neptune 3 Pro 0.8 nozzle",
-                "Elegoo Neptune 3 Pro 1.0 nozzle",
-                "Elegoo Neptune 3 Plus 0.4 nozzle",
-                "Elegoo Neptune 3 Plus 0.6 nozzle",
-                "Elegoo Neptune 3 Plus 0.8 nozzle",
-                "Elegoo Neptune 3 Plus 1.0 nozzle",
-                "Elegoo Neptune 3 Max 0.4 nozzle",
-                "Elegoo Neptune 3 Max 0.6 nozzle",
-                "Elegoo Neptune 3 Max 0.8 nozzle",
-                "Elegoo Neptune 3 Max 1.0 nozzle",
-                "Elegoo Neptune 4 0.2 nozzle",
-                "Elegoo Neptune 4 0.4 nozzle",
-                "Elegoo Neptune 4 0.6 nozzle",
-                "Elegoo Neptune 4 0.8 nozzle",
-                "Elegoo Neptune 4 1.0 nozzle",
-                "Elegoo Neptune 4 Max 0.2 nozzle",
-                "Elegoo Neptune 4 Pro 0.4 nozzle",
-                "Elegoo Neptune 4 Pro 0.6 nozzle",
-                "Elegoo Neptune 4 Pro 0.8 nozzle",
-                "Elegoo Neptune 4 Pro 1.0 nozzle",
-                "Elegoo Neptune 4 Plus 0.2 nozzle",
-                "Elegoo Neptune 4 Plus 0.4 nozzle",
-                "Elegoo Neptune 4 Plus 0.6 nozzle",
-                "Elegoo Neptune 4 Plus 0.8 nozzle",
-                "Elegoo Neptune 4 Plus 1.0 nozzle",
-                "Elegoo Neptune 4 Pro 0.2 nozzle",
-                "Elegoo Neptune 4 Max 0.4 nozzle",
-                "Elegoo Neptune 4 Max 0.6 nozzle",
-                "Elegoo Neptune 4 Max 0.8 nozzle",
-                "Elegoo Neptune 4 Max 1.0 nozzle"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "nozzle_temperature_range_low": [
-                "205"
-            ],
-            "nozzle_temperature_range_high": [
-                "215"
             ],
             "additional_cooling_fan_speed": [
                 "70"
