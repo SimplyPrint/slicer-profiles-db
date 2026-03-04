@@ -1,25 +1,6 @@
 [
     {
-        "vendor": "RatRig",
         "machine_model": {
-            "name": "RatRig V-Minion",
-            "version": 2,
-            "inherits": "ratrig_base",
-            "visible": true,
-            "platform": "ratrig_vminion.stl",
-            "has_machine_quality": true,
-            "has_variants": true,
-            "machine_extruder_trains": {
-                "0": "ratrig_base_extruder_0"
-            },
-            "platform_offset": [
-                0,
-                0,
-                0
-            ],
-            "preferred_variant_name": "0.4mm Nozzle",
-            "variants_name": "Nozzle Size",
-            "weight": 8,
             "acceleration_enabled": true,
             "acceleration_layer_0": "acceleration_topbottom",
             "acceleration_topbottom": "acceleration_print / 3",
@@ -34,16 +15,22 @@
             "cool_min_layer_time": 2,
             "fill_outline_gaps": false,
             "gantry_height": 30,
+            "has_machine_quality": true,
+            "has_variants": true,
             "infill_before_walls": false,
             "infill_overlap": 30,
             "infill_pattern": "'lines' if infill_sparse_density > 50 else 'cubic'",
             "infill_wipe_dist": 0,
+            "inherits": "ratrig_base",
             "layer_height": 0.2,
             "layer_height_0": 0.2,
             "machine_acceleration": 3000,
             "machine_depth": 180,
             "machine_end_gcode": "END_PRINT",
             "machine_extruder_count": 1,
+            "machine_extruder_trains": {
+                "0": "ratrig_base_extruder_0"
+            },
             "machine_head_with_fans_polygon": [
                 [
                     -40,
@@ -87,7 +74,15 @@
             "meshfix_maximum_travel_resolution": "meshfix_maximum_resolution",
             "minimum_interface_area": 10,
             "minimum_support_area": 2,
+            "name": "RatRig V-Minion",
             "optimize_wall_printing_order": true,
+            "platform": "ratrig_vminion.stl",
+            "platform_offset": [
+                0,
+                0,
+                0
+            ],
+            "preferred_variant_name": "0.4mm Nozzle",
             "retraction_amount": "machine_nozzle_size * 2",
             "retraction_combing": "'off' if retraction_hop_enabled else 'noskin'",
             "retraction_combing_max_distance": 30,
@@ -127,11 +122,16 @@
             "top_bottom_thickness": "layer_height_0 + layer_height * 3",
             "travel_avoid_supports": true,
             "travel_retract_before_outer_wall": true,
+            "variants_name": "Nozzle Size",
+            "version": 2,
+            "visible": true,
             "wall_0_wipe_dist": 0,
             "wall_thickness": "line_width * 2",
+            "weight": 8,
             "z_seam_corner": "'z_seam_corner_weighted'",
             "z_seam_type": "'back'"
         },
-        "variants": {}
+        "variants": {},
+        "vendor": "RatRig"
     }
 ]

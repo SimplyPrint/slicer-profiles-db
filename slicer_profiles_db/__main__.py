@@ -917,37 +917,12 @@ def run_ofd_map(args: argparse.Namespace) -> int:
                 }
                 for r in report.already_correct
             ],
-            "conflicts": [
-                {
-                    "filament": str(c.filament_path),
-                    "slicer": c.slicer,
-                    "field": c.field,
-                    "existing": c.existing,
-                    "derived": c.derived,
-                }
-                for c in report.conflicts
-            ],
             "skipped": [
                 {"path": str(p), "reason": reason} for p, reason in report.skipped
             ],
         }
         print(json.dumps(output, indent=2))
     else:
-        if report.conflicts:
-            print("CONFLICTS FOUND — no changes written:\n", file=sys.stderr)
-            for c in report.conflicts:
-                print(
-                    f"  {c.filament_path} [{c.slicer}] {c.field}: "
-                    f"existing={c.existing!r} vs derived={c.derived!r}",
-                    file=sys.stderr,
-                )
-            print(
-                f"\n{len(report.conflicts)} conflict(s). Fix these in filament.json "
-                f"before re-running.",
-                file=sys.stderr,
-            )
-            return 1
-
         action = "Would update" if args.dry_run else "Updated"
 
         if report.updated:

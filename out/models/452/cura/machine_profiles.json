@@ -1,14 +1,7 @@
 [
     {
-        "vendor": "WEEDO",
         "machine_model": {
-            "name": "WEEDO TINA2",
-            "version": 2,
-            "inherits": "weedo_base",
-            "visible": true,
             "author": "WEEDO",
-            "manufacturer": "WEEDO",
-            "file_formats": "text/x-gcode",
             "exclude_materials": [
                 "3D-Fuel_PLA_PRO_Black",
                 "3D-Fuel_PLA_SnapSupport",
@@ -167,12 +160,9 @@
                 "zyyx_pro_flex",
                 "zyyx_pro_pla"
             ],
-            "platform_offset": [
-                0,
-                0,
-                0
-            ],
+            "file_formats": "text/x-gcode",
             "infill_pattern": "'lines' if infill_sparse_density > 45 else 'grid'",
+            "inherits": "weedo_base",
             "machine_depth": 120,
             "machine_end_gcode": ";(**** end.gcode for tina2****)\nM203 Z15\nM104 S0\nM107\nG92 E0 (Reset after prime)\nG0 E-1 F300\nG28 Z F300\nG28 X0 Y0\nG1 Y90 F1000",
             "machine_heated_bed": false,
@@ -180,6 +170,13 @@
             "machine_name": "WEEDO TINA2",
             "machine_start_gcode": ";MachineType:{machine_name}\n;FilamentType:{material_type}\n;InfillDensity:{infill_sparse_density}\n;Extruder0Temperature:{material_print_temperature}\n\n;(**** start.gcode for tina2****)\nM203 Z15\nM104 S150\nG28 Z\nG28 X Y; Home extruder\nG1 X55 Y55 F1000\nG29\nM107 ; Turn off fan\nG90 ; Absolute positioning\nM82 ; Extruder in absolute mode\nM109 S{material_print_temperature_layer_0}\nG92 E0 ; Reset extruder position\nG1 X90 Y6 Z0.27 F2000\nG1 X20 Y6 Z0.27 E15 F1000\nG92 E0 ; Reset extruder position\nM203 Z5",
             "machine_width": 100,
+            "manufacturer": "WEEDO",
+            "name": "WEEDO TINA2",
+            "platform_offset": [
+                0,
+                0,
+                0
+            ],
             "raft_base_thickness": 0.35,
             "speed_infill": 40.0,
             "speed_print": 40.0,
@@ -193,8 +190,11 @@
             "speed_travel_layer_0": 60,
             "speed_wall": 25.0,
             "speed_wall_0": 20.0,
-            "speed_wall_x": 25.0
+            "speed_wall_x": 25.0,
+            "version": 2,
+            "visible": true
         },
-        "variants": {}
+        "variants": {},
+        "vendor": "WEEDO"
     }
 ]

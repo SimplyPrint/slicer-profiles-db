@@ -11,6 +11,45 @@ from .repo import OFDRepo, OFDFilament
 
 logger = logging.getLogger(__name__)
 
+# Known material sub-variant keywords.  When the OFD filament_id contains one
+# of these, the slicer profile name must also contain the same keyword (or be
+# a base-type profile) for the link to be valid.
+_SUB_VARIANT_KEYWORDS = [
+    "silk", "matte", "wood", "sparkle", "galaxy", "marble",
+    "translucent", "glow", "metal", "aero", "tough", "lite",
+    "basic", "dynamic",
+]
+
+
+def _extract_sub_variant(text: str) -> str | None:
+    """Extract a sub-variant keyword from text (lowercased), if any."""
+    text_lower = text.lower().replace("_", " ").replace("-", " ")
+    for kw in _SUB_VARIANT_KEYWORDS:
+        if kw in text_lower:
+            return kw
+    return None
+
+
+def _sub_variants_compatible(
+    ofd_filament_id: str,
+    profile_name: str,
+) -> bool:
+    """Check that the sub-variant in the OFD path matches the profile name.
+
+    Rules:
+    - If the OFD filament has a sub-variant (e.g. silk_pla → "silk"),
+      the profile name must also contain that keyword.
+    - If the OFD filament has no sub-variant, it matches anything.
+    - If the profile name has a sub-variant but the OFD filament doesn't,
+      we still allow it (base-type OFD entries are valid fallbacks).
+    """
+    ofd_variant = _extract_sub_variant(ofd_filament_id)
+    if ofd_variant is None:
+        # Base OFD entry — always compatible
+        return True
+    # OFD has a sub-variant: profile name must contain it too
+    return ofd_variant in profile_name.lower()
+
 
 class OFDFilamentIndex:
     """Multi-strategy index over OFD filaments.
@@ -107,7 +146,7 @@ class OFDFilamentIndex:
         # Strategy 1: By slicer profile name (exact match on base name)
         slicer_profiles = self.by_slicer_profile.get(slicer, {})
         fil = slicer_profiles.get(base_name.lower())
-        if fil:
+        if fil and _sub_variants_compatible(fil.filament_id, profile_name):
             return fil.fs_path
 
         # Strategy 2: By slicer ID — only trust if the profile name contains
@@ -116,7 +155,7 @@ class OFDFilamentIndex:
         if filament_id:
             slicer_ids = self.by_slicer_id.get(slicer, {})
             fil = slicer_ids.get(filament_id)
-            if fil:
+            if fil and _sub_variants_compatible(fil.filament_id, profile_name):
                 bn_lower = base_name.lower()
                 brand_lower = fil.brand_name.lower()
                 if (
@@ -142,7 +181,7 @@ class OFDFilamentIndex:
                     candidate_name = " ".join(remaining[1:]).lower()
                     key = (candidate_brand, material_upper, candidate_name)
                     fil = self.by_brand_material_name.get(key)
-                    if fil:
+                    if fil and _sub_variants_compatible(fil.filament_id, profile_name):
                         return fil.fs_path
                 # When name equals material or material is embedded in name
                 if (
@@ -152,7 +191,7 @@ class OFDFilamentIndex:
                 ):
                     key = (candidate_brand, material_upper, material_upper.lower())
                     fil = self.by_brand_material_name.get(key)
-                    if fil:
+                    if fil and _sub_variants_compatible(fil.filament_id, profile_name):
                         return fil.fs_path
 
         return None

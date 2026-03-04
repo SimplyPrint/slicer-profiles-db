@@ -1,38 +1,47 @@
 [
     {
-        "vendor": "Ratrig",
         "machine_model": {
-            "type": "machine_model",
-            "name": "RatRig V-Core 3 400",
-            "model_id": "V-Core_3_400",
-            "nozzle_diameter": "0.4",
-            "machine_tech": "FFF",
-            "family": "RatRig_V-Core",
             "bed_model": "sha256:f001e1bac34c06c7f6cff8fb0331f2ce2ed3750fd16f05cc79b130dc682a9db0",
             "bed_texture": "sha256:3b349eb7f181313cc93d411d58e8d4a8bcbe28db516c984616b254bdeef3fb7c",
+            "default_materials": "RatRig Generic ABS;RatRig Generic PLA;RatRig Generic PLA-CF;RatRig Generic PETG;RatRig Generic TPU;RatRig Generic ASA;RatRig Generic PC;RatRig Generic PVA;RatRig Generic PA;RatRig Generic PA-CF",
+            "family": "RatRig_V-Core",
             "hotend_model": "",
-            "default_materials": "RatRig Generic ABS;RatRig Generic PLA;RatRig Generic PLA-CF;RatRig Generic PETG;RatRig Generic TPU;RatRig Generic ASA;RatRig Generic PC;RatRig Generic PVA;RatRig Generic PA;RatRig Generic PA-CF"
+            "machine_tech": "FFF",
+            "model_id": "V-Core_3_400",
+            "name": "RatRig V-Core 3 400",
+            "nozzle_diameter": "0.4",
+            "type": "machine_model"
         },
         "variants": {
             "0.4": {
-                "name": "RatRig V-Core 3 400 0.4 nozzle",
                 "data": {
-                    "type": "machine",
-                    "name": "RatRig V-Core 3 400 0.4 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "change_filament_gcode": "M600",
+                    "default_filament_profile": [
+                        "RatRig Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @RatRig",
                     "deretraction_speed": [
                         "30"
                     ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_radius": "45",
                     "extruder_colour": [
                         "#FCE94F"
                     ],
                     "extruder_offset": [
                         "0x0"
                     ],
+                    "from": "system",
                     "gcode_flavor": "klipper",
-                    "silent_mode": "0",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "END_PRINT",
                     "machine_max_acceleration_e": [
                         "5000",
                         "5000"
@@ -42,6 +51,10 @@
                         "9000"
                     ],
                     "machine_max_acceleration_retracting": [
+                        "9000",
+                        "9000"
+                    ],
+                    "machine_max_acceleration_travel": [
                         "9000",
                         "9000"
                     ],
@@ -56,22 +69,6 @@
                     "machine_max_acceleration_z": [
                         "100",
                         "100"
-                    ],
-                    "machine_max_speed_e": [
-                        "60",
-                        "60"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
                     ],
                     "machine_max_jerk_e": [
                         "5",
@@ -89,6 +86,22 @@
                         "0.4",
                         "0.4"
                     ],
+                    "machine_max_speed_e": [
+                        "60",
+                        "60"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
                     "machine_min_extruding_rate": [
                         "0",
                         "0"
@@ -97,38 +110,36 @@
                         "0",
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]",
+                    "manual_filament_change": "1",
                     "max_layer_height": [
                         "0.3"
                     ],
                     "min_layer_height": [
                         "0.05"
                     ],
-                    "printable_height": "400",
-                    "extruder_clearance_radius": "45",
-                    "extruder_clearance_height_to_rod": "25",
-                    "extruder_clearance_height_to_lid": "140",
+                    "name": "RatRig V-Core 3 400 0.4 nozzle",
                     "nozzle_diameter": [
                         "0.4"
                     ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.4",
-                    "retraction_minimum_travel": [
-                        "1"
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "0x0",
+                        "400x0",
+                        "400x400",
+                        "0x400"
                     ],
+                    "printable_height": "400",
+                    "printer_model": "RatRig V-Core 3 400",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
                     "retract_before_wipe": [
                         "70%"
                     ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "1.0"
-                    ],
                     "retract_length_toolchange": [
                         "2"
-                    ],
-                    "z_hop": [
-                        "0.4"
                     ],
                     "retract_restart_extra": [
                         "0"
@@ -136,45 +147,34 @@
                     "retract_restart_extra_toolchange": [
                         "0"
                     ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "1.0"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
                     "retraction_speed": [
                         "40"
                     ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM003",
+                    "silent_mode": "0",
                     "single_extruder_multi_material": "1",
-                    "change_filament_gcode": "M600",
+                    "type": "machine",
                     "wipe": [
                         "1"
                     ],
-                    "default_print_profile": "0.20mm Standard @RatRig",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "machine_start_gcode": "START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]",
-                    "machine_end_gcode": "END_PRINT",
-                    "machine_max_acceleration_travel": [
-                        "9000",
-                        "9000"
+                    "z_hop": [
+                        "0.4"
                     ],
-                    "z_hop_types": "Normal Lift",
-                    "manual_filament_change": "1",
-                    "machine_pause_gcode": "PAUSE",
-                    "default_filament_profile": [
-                        "RatRig Generic ABS"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
-                    "setting_id": "GM003",
-                    "printer_model": "RatRig V-Core 3 400",
-                    "printable_area": [
-                        "0x0",
-                        "400x0",
-                        "400x400",
-                        "0x400"
-                    ]
-                }
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "RatRig V-Core 3 400 0.4 nozzle"
             }
-        }
+        },
+        "vendor": "Ratrig"
     }
 ]

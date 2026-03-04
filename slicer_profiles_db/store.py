@@ -125,12 +125,9 @@ class ProfileStore:
                 self._save(stored)
                 added.append(p.name)
             else:
-                prev_last_seen = existing.last_seen
                 changed_keys = self._merge_version(existing, p, version)
                 if changed_keys:
                     changed[p.name] = changed_keys
-                # Only write to disk if something actually changed
-                if changed_keys or prev_last_seen != version:
                     self._save(existing)
 
         # Detect removed profiles
@@ -220,7 +217,6 @@ class ProfileStore:
         Returns list of changed setting keys.
         """
         changed = []
-        stored.last_seen = version
 
         for key, new_value in parsed.settings.items():
             if key in self._META_KEYS:
@@ -229,6 +225,9 @@ class ProfileStore:
             if self._normalize(current) != self._normalize(new_value):
                 stored.settings.setdefault(key, {})[version] = new_value
                 changed.append(key)
+
+        if changed:
+            stored.last_seen = version
 
         return changed
 

@@ -1,24 +1,18 @@
 [
     {
-        "vendor": "Alfawise",
         "machine_model": {
-            "name": "Alfawise U30",
-            "version": 2,
-            "inherits": "fdmprinter",
-            "visible": true,
             "author": "Nicolas Nussbaum",
-            "manufacturer": "Alfawise",
             "file_formats": "text/x-gcode",
-            "machine_extruder_trains": {
-                "0": "alfawise_u30_extruder_0"
-            },
-            "preferred_quality_type": "fast",
             "gantry_height": "25",
+            "inherits": "fdmprinter",
             "layer_height_0": 0.2,
             "machine_acceleration": 300,
             "machine_center_is_zero": false,
             "machine_depth": 220,
             "machine_end_gcode": "; -- END GCODE --\nM104 S0                     ;extruder heater off\nM140 S0                     ;heated bed heater off (if you have it)\nG91                                    ;relative positioning\nG1 E-1 F300                            ;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+0.5 E-5 X-20 Y-20 F80 ;move Z up a bit and retract filament even more\nG28 X0 Y0                              ;move X/Y to min endstops, so the head is out of the way\nM84                         ;steppers off\nG90                         ;absolute positioning\nM107       ;turn the fan off; -- end of END GCODE --",
+            "machine_extruder_trains": {
+                "0": "alfawise_u30_extruder_0"
+            },
             "machine_gcode_flavor": "RepRap (Marlin/Sprinter)",
             "machine_heated_bed": true,
             "machine_height": 250,
@@ -40,7 +34,10 @@
             "machine_steps_per_mm_y": 80,
             "machine_steps_per_mm_z": 400,
             "machine_width": 220,
+            "manufacturer": "Alfawise",
             "material_diameter": 1.75,
+            "name": "Alfawise U30",
+            "preferred_quality_type": "fast",
             "retraction_amount": 5,
             "retraction_enable": true,
             "retraction_speed": 45,
@@ -49,8 +46,11 @@
             "speed_print": 40,
             "speed_z_hop": "machine_max_feedrate_z",
             "support_enable": true,
+            "version": 2,
+            "visible": true,
             "wall_thickness": "1.2"
         },
-        "variants": {}
+        "variants": {},
+        "vendor": "Alfawise"
     }
 ]

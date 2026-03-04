@@ -1,30 +1,36 @@
 [
     {
-        "vendor": "Ratrig",
         "machine_model": {
-            "type": "machine_model",
-            "name": "RatRig V-Core 4 IDEX 400 COPY MODE",
-            "model_id": "V-Core_4_IDEX_400_COPY_MODE",
-            "nozzle_diameter": "0.4;0.5;0.6;0.8",
-            "machine_tech": "FFF",
-            "family": "RatRig_V-Core",
             "bed_model": "sha256:7c08bea06a5a167d721bcc5fe2b848d45b27f7bbf5dbd108c77a7d6e4b22193e",
             "bed_texture": "sha256:3b349eb7f181313cc93d411d58e8d4a8bcbe28db516c984616b254bdeef3fb7c",
+            "default_materials": "RatRig Generic ABS;RatRig Generic PLA;RatRig Generic PLA-CF;RatRig Generic PCTG;RatRig Generic PETG;RatRig Generic TPU;RatRig Generic ASA;RatRig Generic PC;RatRig Generic PVA;RatRig Generic PA;RatRig Generic PA-CF",
+            "family": "RatRig_V-Core",
             "hotend_model": "",
-            "default_materials": "RatRig Generic ABS;RatRig Generic PLA;RatRig Generic PLA-CF;RatRig Generic PCTG;RatRig Generic PETG;RatRig Generic TPU;RatRig Generic ASA;RatRig Generic PC;RatRig Generic PVA;RatRig Generic PA;RatRig Generic PA-CF"
+            "machine_tech": "FFF",
+            "model_id": "V-Core_4_IDEX_400_COPY_MODE",
+            "name": "RatRig V-Core 4 IDEX 400 COPY MODE",
+            "nozzle_diameter": "0.4;0.5;0.6;0.8",
+            "type": "machine_model"
         },
         "variants": {
             "0.4": {
-                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.4 nozzle",
                 "data": {
-                    "type": "machine",
-                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.4 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "RatRig Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @RatRig",
                     "deretraction_speed": [
                         "120"
                     ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_radius": "45",
                     "extruder_colour": [
                         "#FCE94F"
                     ],
@@ -32,8 +38,11 @@
                         "0x0",
                         "0x0"
                     ],
+                    "from": "system",
                     "gcode_flavor": "klipper",
-                    "silent_mode": "0",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "END_PRINT",
                     "machine_max_acceleration_e": [
                         "5000",
                         "5000"
@@ -46,6 +55,10 @@
                         "20000",
                         "20000"
                     ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
                     "machine_max_acceleration_x": [
                         "20000",
                         "20000"
@@ -55,22 +68,6 @@
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "120",
-                        "120"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
                         "200",
                         "200"
                     ],
@@ -90,6 +87,22 @@
                         "0.4",
                         "0.4"
                     ],
+                    "machine_max_speed_e": [
+                        "120",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "200",
+                        "200"
+                    ],
                     "machine_min_extruding_rate": [
                         "0",
                         "0"
@@ -98,38 +111,40 @@
                         "0",
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
                     ],
                     "min_layer_height": [
                         "0.06"
                     ],
-                    "printable_height": "400",
-                    "extruder_clearance_radius": "45",
-                    "extruder_clearance_height_to_rod": "25",
-                    "extruder_clearance_height_to_lid": "140",
+                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.4 nozzle",
                     "nozzle_diameter": [
                         "0.4",
                         "0.4"
                     ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.4",
-                    "retraction_minimum_travel": [
-                        "1"
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "100x0",
+                        "300x0",
+                        "300x400",
+                        "100x400"
                     ],
+                    "printable_height": "400",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
+                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
                     "retract_before_wipe": [
                         "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
                     ],
                     "retract_length_toolchange": [
                         "2"
                     ],
-                    "z_hop": [
+                    "retract_lift_below": [
                         "0.2"
                     ],
                     "retract_restart_extra": [
@@ -138,66 +153,57 @@
                     "retract_restart_extra_toolchange": [
                         "0"
                     ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
                     "retraction_speed": [
                         "120"
                     ],
-                    "single_extruder_multi_material": "0",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @RatRig",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
-                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
-                    "machine_end_gcode": "END_PRINT",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "manual_filament_change": "0",
-                    "machine_pause_gcode": "PAUSE",
-                    "default_filament_profile": [
-                        "RatRig Generic ABS"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
                     "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
                     "setting_id": "GM002",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
-                    "printable_area": [
-                        "100x0",
-                        "300x0",
-                        "300x400",
-                        "100x400"
-                    ],
-                    "retract_lift_below": [
-                        "0.2"
-                    ],
-                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
-                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "0",
                     "thumbnails": [
                         "64x64/PNG",
                         "100x100/PNG",
                         "400x300/PNG"
-                    ]
-                }
+                    ],
+                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.2"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.4 nozzle"
             },
             "0.5": {
-                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.5 nozzle",
                 "data": {
-                    "type": "machine",
-                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.5 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "RatRig Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @RatRig",
                     "deretraction_speed": [
                         "120"
                     ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_radius": "45",
                     "extruder_colour": [
                         "#FCE94F"
                     ],
@@ -205,8 +211,11 @@
                         "0x0",
                         "0x0"
                     ],
+                    "from": "system",
                     "gcode_flavor": "klipper",
-                    "silent_mode": "0",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "END_PRINT",
                     "machine_max_acceleration_e": [
                         "5000",
                         "5000"
@@ -219,6 +228,10 @@
                         "20000",
                         "20000"
                     ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
                     "machine_max_acceleration_x": [
                         "20000",
                         "20000"
@@ -228,22 +241,6 @@
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "120",
-                        "120"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
                         "200",
                         "200"
                     ],
@@ -263,6 +260,22 @@
                         "0.4",
                         "0.4"
                     ],
+                    "machine_max_speed_e": [
+                        "120",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "200",
+                        "200"
+                    ],
                     "machine_min_extruding_rate": [
                         "0",
                         "0"
@@ -271,38 +284,40 @@
                         "0",
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
                     ],
                     "min_layer_height": [
                         "0.06"
                     ],
-                    "printable_height": "400",
-                    "extruder_clearance_radius": "45",
-                    "extruder_clearance_height_to_rod": "25",
-                    "extruder_clearance_height_to_lid": "140",
+                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.5 nozzle",
                     "nozzle_diameter": [
                         "0.5",
                         "0.5"
                     ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.5",
-                    "retraction_minimum_travel": [
-                        "1"
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "100x0",
+                        "300x0",
+                        "300x400",
+                        "100x400"
                     ],
+                    "printable_height": "400",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.5",
+                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
                     "retract_before_wipe": [
                         "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
                     ],
                     "retract_length_toolchange": [
                         "2"
                     ],
-                    "z_hop": [
+                    "retract_lift_below": [
                         "0.2"
                     ],
                     "retract_restart_extra": [
@@ -311,66 +326,57 @@
                     "retract_restart_extra_toolchange": [
                         "0"
                     ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
                     "retraction_speed": [
                         "120"
                     ],
-                    "single_extruder_multi_material": "0",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @RatRig",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
-                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
-                    "machine_end_gcode": "END_PRINT",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "manual_filament_change": "0",
-                    "machine_pause_gcode": "PAUSE",
-                    "default_filament_profile": [
-                        "RatRig Generic ABS"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
                     "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
                     "setting_id": "GM002",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
-                    "printable_area": [
-                        "100x0",
-                        "300x0",
-                        "300x400",
-                        "100x400"
-                    ],
-                    "retract_lift_below": [
-                        "0.2"
-                    ],
-                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
-                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "0",
                     "thumbnails": [
                         "64x64/PNG",
                         "100x100/PNG",
                         "400x300/PNG"
-                    ]
-                }
+                    ],
+                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.2"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.5 nozzle"
             },
             "0.6": {
-                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.6 nozzle",
                 "data": {
-                    "type": "machine",
-                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.6 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "RatRig Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @RatRig",
                     "deretraction_speed": [
                         "120"
                     ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_radius": "45",
                     "extruder_colour": [
                         "#FCE94F"
                     ],
@@ -378,8 +384,11 @@
                         "0x0",
                         "0x0"
                     ],
+                    "from": "system",
                     "gcode_flavor": "klipper",
-                    "silent_mode": "0",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "END_PRINT",
                     "machine_max_acceleration_e": [
                         "5000",
                         "5000"
@@ -392,6 +401,10 @@
                         "20000",
                         "20000"
                     ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
                     "machine_max_acceleration_x": [
                         "20000",
                         "20000"
@@ -401,22 +414,6 @@
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "120",
-                        "120"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
                         "200",
                         "200"
                     ],
@@ -436,6 +433,22 @@
                         "0.4",
                         "0.4"
                     ],
+                    "machine_max_speed_e": [
+                        "120",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "200",
+                        "200"
+                    ],
                     "machine_min_extruding_rate": [
                         "0",
                         "0"
@@ -444,38 +457,40 @@
                         "0",
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
                     ],
                     "min_layer_height": [
                         "0.06"
                     ],
-                    "printable_height": "400",
-                    "extruder_clearance_radius": "45",
-                    "extruder_clearance_height_to_rod": "25",
-                    "extruder_clearance_height_to_lid": "140",
+                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.6 nozzle",
                     "nozzle_diameter": [
                         "0.6",
                         "0.6"
                     ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.6",
-                    "retraction_minimum_travel": [
-                        "1"
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "100x0",
+                        "300x0",
+                        "300x400",
+                        "100x400"
                     ],
+                    "printable_height": "400",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.6",
+                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
                     "retract_before_wipe": [
                         "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
                     ],
                     "retract_length_toolchange": [
                         "2"
                     ],
-                    "z_hop": [
+                    "retract_lift_below": [
                         "0.2"
                     ],
                     "retract_restart_extra": [
@@ -484,66 +499,57 @@
                     "retract_restart_extra_toolchange": [
                         "0"
                     ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
                     "retraction_speed": [
                         "120"
                     ],
-                    "single_extruder_multi_material": "0",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @RatRig",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
-                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
-                    "machine_end_gcode": "END_PRINT",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "manual_filament_change": "0",
-                    "machine_pause_gcode": "PAUSE",
-                    "default_filament_profile": [
-                        "RatRig Generic ABS"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
                     "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
                     "setting_id": "GM002",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
-                    "printable_area": [
-                        "100x0",
-                        "300x0",
-                        "300x400",
-                        "100x400"
-                    ],
-                    "retract_lift_below": [
-                        "0.2"
-                    ],
-                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
-                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "0",
                     "thumbnails": [
                         "64x64/PNG",
                         "100x100/PNG",
                         "400x300/PNG"
-                    ]
-                }
+                    ],
+                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.2"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.6 nozzle"
             },
             "0.8": {
-                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.8 nozzle",
                 "data": {
-                    "type": "machine",
-                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.8 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "RatRig Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @RatRig",
                     "deretraction_speed": [
                         "120"
                     ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_radius": "45",
                     "extruder_colour": [
                         "#FCE94F"
                     ],
@@ -551,8 +557,11 @@
                         "0x0",
                         "0x0"
                     ],
+                    "from": "system",
                     "gcode_flavor": "klipper",
-                    "silent_mode": "0",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "END_PRINT",
                     "machine_max_acceleration_e": [
                         "5000",
                         "5000"
@@ -565,6 +574,10 @@
                         "20000",
                         "20000"
                     ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
                     "machine_max_acceleration_x": [
                         "20000",
                         "20000"
@@ -574,22 +587,6 @@
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "120",
-                        "120"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
                         "200",
                         "200"
                     ],
@@ -609,6 +606,22 @@
                         "0.4",
                         "0.4"
                     ],
+                    "machine_max_speed_e": [
+                        "120",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "200",
+                        "200"
+                    ],
                     "machine_min_extruding_rate": [
                         "0",
                         "0"
@@ -617,38 +630,40 @@
                         "0",
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
                     ],
                     "min_layer_height": [
                         "0.06"
                     ],
-                    "printable_height": "400",
-                    "extruder_clearance_radius": "45",
-                    "extruder_clearance_height_to_rod": "25",
-                    "extruder_clearance_height_to_lid": "140",
+                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.8 nozzle",
                     "nozzle_diameter": [
                         "0.8",
                         "0.8"
                     ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.8",
-                    "retraction_minimum_travel": [
-                        "1"
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "100x0",
+                        "300x0",
+                        "300x400",
+                        "100x400"
                     ],
+                    "printable_height": "400",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.8",
+                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
                     "retract_before_wipe": [
                         "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
                     ],
                     "retract_length_toolchange": [
                         "2"
                     ],
-                    "z_hop": [
+                    "retract_lift_below": [
                         "0.2"
                     ],
                     "retract_restart_extra": [
@@ -657,84 +672,74 @@
                     "retract_restart_extra_toolchange": [
                         "0"
                     ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
                     "retraction_speed": [
                         "120"
                     ],
-                    "single_extruder_multi_material": "0",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @RatRig",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
-                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
-                    "machine_end_gcode": "END_PRINT",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "manual_filament_change": "0",
-                    "machine_pause_gcode": "PAUSE",
-                    "default_filament_profile": [
-                        "RatRig Generic ABS"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
                     "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
                     "setting_id": "GM002",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
-                    "printable_area": [
-                        "100x0",
-                        "300x0",
-                        "300x400",
-                        "100x400"
-                    ],
-                    "retract_lift_below": [
-                        "0.2"
-                    ],
-                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
-                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "0",
                     "thumbnails": [
                         "64x64/PNG",
                         "100x100/PNG",
                         "400x300/PNG"
-                    ]
-                }
+                    ],
+                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.2"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.8 nozzle"
             }
-        }
+        },
+        "vendor": "Ratrig"
     },
     {
-        "vendor": "Ratrig",
         "machine_model": {
-            "type": "machine_model",
-            "name": "RatRig V-Core 4 IDEX 400",
-            "model_id": "V-Core_4_IDEX_400",
-            "nozzle_diameter": "0.4;0.5;0.6;0.8",
-            "machine_tech": "FFF",
-            "family": "RatRig_V-Core",
-            "bed_model": "sha256:f001e1bac34c06c7f6cff8fb0331f2ce2ed3750fd16f05cc79b130dc682a9db0",
+            "bed_model": "sha256:eb0a36271870d371a38a962c32cd5d20e32e6022dea406a9df389b1db0704296",
             "bed_texture": "sha256:3b349eb7f181313cc93d411d58e8d4a8bcbe28db516c984616b254bdeef3fb7c",
+            "default_materials": "RatRig Generic ABS;RatRig Generic PLA;RatRig Generic PLA-CF;RatRig Generic PCTG;RatRig Generic PETG;RatRig Generic TPU;RatRig Generic ASA;RatRig Generic PC;RatRig Generic PVA;RatRig Generic PA;RatRig Generic PA-CF",
+            "family": "RatRig_V-Core",
             "hotend_model": "",
-            "default_materials": "RatRig Generic ABS;RatRig Generic PLA;RatRig Generic PLA-CF;RatRig Generic PCTG;RatRig Generic PETG;RatRig Generic TPU;RatRig Generic ASA;RatRig Generic PC;RatRig Generic PVA;RatRig Generic PA;RatRig Generic PA-CF"
+            "machine_tech": "FFF",
+            "model_id": "V-Core_4_IDEX_400_MIRROR_MODE",
+            "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
+            "nozzle_diameter": "0.4;0.5;0.6;0.8",
+            "type": "machine_model"
         },
         "variants": {
             "0.4": {
-                "name": "RatRig V-Core 4 IDEX 400 0.4 nozzle",
                 "data": {
-                    "type": "machine",
-                    "name": "RatRig V-Core 4 IDEX 400 0.4 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "RatRig Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @RatRig",
                     "deretraction_speed": [
-                        "120",
                         "120"
                     ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_radius": "45",
                     "extruder_colour": [
                         "#FCE94F"
                     ],
@@ -742,8 +747,11 @@
                         "0x0",
                         "0x0"
                     ],
+                    "from": "system",
                     "gcode_flavor": "klipper",
-                    "silent_mode": "0",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "END_PRINT",
                     "machine_max_acceleration_e": [
                         "5000",
                         "5000"
@@ -756,6 +764,10 @@
                         "20000",
                         "20000"
                     ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
                     "machine_max_acceleration_x": [
                         "20000",
                         "20000"
@@ -765,22 +777,6 @@
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "120",
-                        "120"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
                         "200",
                         "200"
                     ],
@@ -800,6 +796,22 @@
                         "0.4",
                         "0.4"
                     ],
+                    "machine_max_speed_e": [
+                        "120",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "200",
+                        "200"
+                    ],
                     "machine_min_extruding_rate": [
                         "0",
                         "0"
@@ -808,38 +820,40 @@
                         "0",
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
                     ],
                     "min_layer_height": [
                         "0.06"
                     ],
-                    "printable_height": "400",
-                    "extruder_clearance_radius": "45",
-                    "extruder_clearance_height_to_rod": "25",
-                    "extruder_clearance_height_to_lid": "140",
+                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.4 nozzle",
                     "nozzle_diameter": [
                         "0.4",
                         "0.4"
                     ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.4",
-                    "retraction_minimum_travel": [
-                        "1"
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "100x0",
+                        "270x0",
+                        "270x400",
+                        "100x400"
                     ],
+                    "printable_height": "400",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
+                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
                     "retract_before_wipe": [
                         "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
                     ],
                     "retract_length_toolchange": [
                         "2"
                     ],
-                    "z_hop": [
+                    "retract_lift_below": [
                         "0.2"
                     ],
                     "retract_restart_extra": [
@@ -848,66 +862,767 @@
                     "retract_restart_extra_toolchange": [
                         "0"
                     ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
                     "retraction_speed": [
                         "120"
                     ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM002",
+                    "silent_mode": "0",
                     "single_extruder_multi_material": "0",
-                    "change_filament_gcode": "",
+                    "thumbnails": [
+                        "64x64/PNG",
+                        "100x100/PNG",
+                        "400x300/PNG"
+                    ],
+                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "type": "machine",
                     "wipe": [
                         "1"
                     ],
-                    "default_print_profile": "0.20mm Standard @RatRig",
+                    "z_hop": [
+                        "0.2"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.4 nozzle"
+            },
+            "0.5": {
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
                     "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
-                    "machine_start_gcode": "START_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "RatRig Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @RatRig",
+                    "deretraction_speed": [
+                        "120"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_radius": "45",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0",
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
                     "machine_end_gcode": "END_PRINT",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "20000",
+                        "20000"
+                    ],
                     "machine_max_acceleration_travel": [
                         "20000",
                         "20000"
                     ],
-                    "z_hop_types": "Normal Lift",
-                    "manual_filament_change": "0",
-                    "machine_pause_gcode": "PAUSE",
-                    "default_filament_profile": [
-                        "RatRig Generic ABS"
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
                     ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "200",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_y": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.4",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "120",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "200",
+                        "200"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "manual_filament_change": "0",
+                    "max_layer_height": [
+                        "0.3"
+                    ],
+                    "min_layer_height": [
+                        "0.06"
+                    ],
+                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.5 nozzle",
+                    "nozzle_diameter": [
+                        "0.5",
+                        "0.5"
+                    ],
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "100x0",
+                        "270x0",
+                        "270x400",
+                        "100x400"
+                    ],
+                    "printable_height": "400",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.5",
+                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "retract_lift_below": [
+                        "0.2"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "120"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM002",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "0",
+                    "thumbnails": [
+                        "64x64/PNG",
+                        "100x100/PNG",
+                        "400x300/PNG"
+                    ],
+                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.2"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.5 nozzle"
+            },
+            "0.6": {
+                "data": {
+                    "auxiliary_fan": "0",
                     "bed_exclude_area": [
                         "0x0"
                     ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "RatRig Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @RatRig",
+                    "deretraction_speed": [
+                        "120"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_radius": "45",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0",
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "klipper",
+                    "instantiation": "true",
                     "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "scan_first_layer": "0",
+                    "machine_end_gcode": "END_PRINT",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "200",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_y": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.4",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "120",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "200",
+                        "200"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "manual_filament_change": "0",
+                    "max_layer_height": [
+                        "0.3"
+                    ],
+                    "min_layer_height": [
+                        "0.06"
+                    ],
+                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.6 nozzle",
+                    "nozzle_diameter": [
+                        "0.6",
+                        "0.6"
+                    ],
                     "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
+                    "printable_area": [
+                        "100x0",
+                        "270x0",
+                        "270x400",
+                        "100x400"
+                    ],
+                    "printable_height": "400",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.6",
+                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "retract_lift_below": [
+                        "0.2"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "120"
+                    ],
+                    "scan_first_layer": "0",
                     "setting_id": "GM002",
-                    "printer_model": "RatRig V-Core 4 IDEX 400",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "0",
+                    "thumbnails": [
+                        "64x64/PNG",
+                        "100x100/PNG",
+                        "400x300/PNG"
+                    ],
+                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.2"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.6 nozzle"
+            },
+            "0.8": {
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "RatRig Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @RatRig",
+                    "deretraction_speed": [
+                        "120"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_radius": "45",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0",
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "END_PRINT",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "200",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_y": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.4",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "120",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "200",
+                        "200"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "manual_filament_change": "0",
+                    "max_layer_height": [
+                        "0.3"
+                    ],
+                    "min_layer_height": [
+                        "0.06"
+                    ],
+                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.8 nozzle",
+                    "nozzle_diameter": [
+                        "0.8",
+                        "0.8"
+                    ],
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "100x0",
+                        "270x0",
+                        "270x400",
+                        "100x400"
+                    ],
+                    "printable_height": "400",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.8",
+                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "retract_lift_below": [
+                        "0.2"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "120"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM002",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "0",
+                    "thumbnails": [
+                        "64x64/PNG",
+                        "100x100/PNG",
+                        "400x300/PNG"
+                    ],
+                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.2"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.8 nozzle"
+            }
+        },
+        "vendor": "Ratrig"
+    },
+    {
+        "machine_model": {
+            "bed_model": "sha256:f001e1bac34c06c7f6cff8fb0331f2ce2ed3750fd16f05cc79b130dc682a9db0",
+            "bed_texture": "sha256:3b349eb7f181313cc93d411d58e8d4a8bcbe28db516c984616b254bdeef3fb7c",
+            "default_materials": "RatRig Generic ABS;RatRig Generic PLA;RatRig Generic PLA-CF;RatRig Generic PCTG;RatRig Generic PETG;RatRig Generic TPU;RatRig Generic ASA;RatRig Generic PC;RatRig Generic PVA;RatRig Generic PA;RatRig Generic PA-CF",
+            "family": "RatRig_V-Core",
+            "hotend_model": "",
+            "machine_tech": "FFF",
+            "model_id": "V-Core_4_IDEX_400",
+            "name": "RatRig V-Core 4 IDEX 400",
+            "nozzle_diameter": "0.4;0.5;0.6;0.8",
+            "type": "machine_model"
+        },
+        "variants": {
+            "0.4": {
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "RatRig Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @RatRig",
+                    "deretraction_speed": [
+                        "120",
+                        "120"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_radius": "45",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0",
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "END_PRINT",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "200",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_y": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.4",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "120",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "200",
+                        "200"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "START_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "manual_filament_change": "0",
+                    "max_layer_height": [
+                        "0.3"
+                    ],
+                    "min_layer_height": [
+                        "0.06"
+                    ],
+                    "name": "RatRig V-Core 4 IDEX 400 0.4 nozzle",
+                    "nozzle_diameter": [
+                        "0.4",
+                        "0.4"
+                    ],
+                    "nozzle_type": "undefine",
                     "printable_area": [
                         "0x0",
                         "400x0",
                         "400x400",
                         "0x400"
                     ],
+                    "printable_height": "400",
+                    "printer_model": "RatRig V-Core 4 IDEX 400",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
+                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
                     "retract_lift_below": [
                         "0.2"
                     ],
-                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
-                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "120"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM002",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "0",
                     "thumbnails": [
                         "64x64/PNG",
                         "100x100/PNG",
                         "400x300/PNG"
-                    ]
-                }
+                    ],
+                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.2"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "RatRig V-Core 4 IDEX 400 0.4 nozzle"
             },
             "0.5": {
-                "name": "RatRig V-Core 4 IDEX 400 0.5 nozzle",
                 "data": {
-                    "type": "machine",
-                    "name": "RatRig V-Core 4 IDEX 400 0.5 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "RatRig Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @RatRig",
                     "deretraction_speed": [
                         "120"
                     ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_radius": "45",
                     "extruder_colour": [
                         "#FCE94F"
                     ],
@@ -915,8 +1630,11 @@
                         "0x0",
                         "0x0"
                     ],
+                    "from": "system",
                     "gcode_flavor": "klipper",
-                    "silent_mode": "0",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "END_PRINT",
                     "machine_max_acceleration_e": [
                         "5000",
                         "5000"
@@ -929,6 +1647,10 @@
                         "20000",
                         "20000"
                     ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
                     "machine_max_acceleration_x": [
                         "20000",
                         "20000"
@@ -938,22 +1660,6 @@
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "120",
-                        "120"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
                         "200",
                         "200"
                     ],
@@ -973,6 +1679,22 @@
                         "0.4",
                         "0.4"
                     ],
+                    "machine_max_speed_e": [
+                        "120",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "200",
+                        "200"
+                    ],
                     "machine_min_extruding_rate": [
                         "0",
                         "0"
@@ -981,39 +1703,41 @@
                         "0",
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "START_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.32"
                     ],
                     "min_layer_height": [
                         "0.07"
                     ],
-                    "printable_height": "400",
-                    "extruder_clearance_radius": "45",
-                    "extruder_clearance_height_to_rod": "25",
-                    "extruder_clearance_height_to_lid": "140",
+                    "name": "RatRig V-Core 4 IDEX 400 0.5 nozzle",
                     "nozzle_diameter": [
                         "0.5",
                         "0.5"
                     ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.5",
-                    "retraction_minimum_travel": [
-                        "1"
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "0x0",
+                        "400x0",
+                        "400x400",
+                        "0x400"
                     ],
+                    "printable_height": "400",
+                    "printer_model": "RatRig V-Core 4 IDEX 400",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.5",
+                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
                     "retract_before_wipe": [
                         "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
                     ],
                     "retract_length_toolchange": [
                         "2"
                     ],
-                    "z_hop": [
-                        "0.2"
+                    "retract_lift_below": [
+                        "0.25"
                     ],
                     "retract_restart_extra": [
                         "0"
@@ -1021,66 +1745,57 @@
                     "retract_restart_extra_toolchange": [
                         "0"
                     ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
                     "retraction_speed": [
                         "120"
                     ],
-                    "single_extruder_multi_material": "0",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @RatRig",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
-                    "machine_start_gcode": "START_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
-                    "machine_end_gcode": "END_PRINT",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "manual_filament_change": "0",
-                    "machine_pause_gcode": "PAUSE",
-                    "default_filament_profile": [
-                        "RatRig Generic ABS"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
                     "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
                     "setting_id": "GM002",
-                    "printer_model": "RatRig V-Core 4 IDEX 400",
-                    "printable_area": [
-                        "0x0",
-                        "400x0",
-                        "400x400",
-                        "0x400"
-                    ],
-                    "retract_lift_below": [
-                        "0.25"
-                    ],
-                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
-                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "0",
                     "thumbnails": [
                         "64x64/PNG",
                         "100x100/PNG",
                         "400x300/PNG"
-                    ]
-                }
+                    ],
+                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.2"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "RatRig V-Core 4 IDEX 400 0.5 nozzle"
             },
             "0.6": {
-                "name": "RatRig V-Core 4 IDEX 400 0.6 nozzle",
                 "data": {
-                    "type": "machine",
-                    "name": "RatRig V-Core 4 IDEX 400 0.6 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "RatRig Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @RatRig",
                     "deretraction_speed": [
                         "120"
                     ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_radius": "45",
                     "extruder_colour": [
                         "#FCE94F"
                     ],
@@ -1088,8 +1803,11 @@
                         "0x0",
                         "0x0"
                     ],
+                    "from": "system",
                     "gcode_flavor": "klipper",
-                    "silent_mode": "0",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "END_PRINT",
                     "machine_max_acceleration_e": [
                         "5000",
                         "5000"
@@ -1102,6 +1820,10 @@
                         "20000",
                         "20000"
                     ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
                     "machine_max_acceleration_x": [
                         "20000",
                         "20000"
@@ -1111,22 +1833,6 @@
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "120",
-                        "120"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
                         "200",
                         "200"
                     ],
@@ -1146,6 +1852,22 @@
                         "0.4",
                         "0.4"
                     ],
+                    "machine_max_speed_e": [
+                        "120",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "200",
+                        "200"
+                    ],
                     "machine_min_extruding_rate": [
                         "0",
                         "0"
@@ -1154,39 +1876,41 @@
                         "0",
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "START_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.4"
                     ],
                     "min_layer_height": [
                         "0.1"
                     ],
-                    "printable_height": "400",
-                    "extruder_clearance_radius": "45",
-                    "extruder_clearance_height_to_rod": "25",
-                    "extruder_clearance_height_to_lid": "140",
+                    "name": "RatRig V-Core 4 IDEX 400 0.6 nozzle",
                     "nozzle_diameter": [
                         "0.6",
                         "0.6"
                     ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.6",
-                    "retraction_minimum_travel": [
-                        "1"
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "0x0",
+                        "400x0",
+                        "400x400",
+                        "0x400"
                     ],
+                    "printable_height": "400",
+                    "printer_model": "RatRig V-Core 4 IDEX 400",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.6",
+                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
                     "retract_before_wipe": [
                         "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
                     ],
                     "retract_length_toolchange": [
                         "2"
                     ],
-                    "z_hop": [
-                        "0.2"
+                    "retract_lift_below": [
+                        "0.3"
                     ],
                     "retract_restart_extra": [
                         "0"
@@ -1194,66 +1918,57 @@
                     "retract_restart_extra_toolchange": [
                         "0"
                     ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
                     "retraction_speed": [
                         "120"
                     ],
-                    "single_extruder_multi_material": "0",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @RatRig",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
-                    "machine_start_gcode": "START_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
-                    "machine_end_gcode": "END_PRINT",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "manual_filament_change": "0",
-                    "machine_pause_gcode": "PAUSE",
-                    "default_filament_profile": [
-                        "RatRig Generic ABS"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
                     "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
                     "setting_id": "GM002",
-                    "printer_model": "RatRig V-Core 4 IDEX 400",
-                    "printable_area": [
-                        "0x0",
-                        "400x0",
-                        "400x400",
-                        "0x400"
-                    ],
-                    "retract_lift_below": [
-                        "0.3"
-                    ],
-                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
-                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "0",
                     "thumbnails": [
                         "64x64/PNG",
                         "100x100/PNG",
                         "400x300/PNG"
-                    ]
-                }
+                    ],
+                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.2"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "RatRig V-Core 4 IDEX 400 0.6 nozzle"
             },
             "0.8": {
-                "name": "RatRig V-Core 4 IDEX 400 0.8 nozzle",
                 "data": {
-                    "type": "machine",
-                    "name": "RatRig V-Core 4 IDEX 400 0.8 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "RatRig Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @RatRig",
                     "deretraction_speed": [
                         "120"
                     ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "25",
+                    "extruder_clearance_radius": "45",
                     "extruder_colour": [
                         "#FCE94F"
                     ],
@@ -1261,8 +1976,11 @@
                         "0x0",
                         "0x0"
                     ],
+                    "from": "system",
                     "gcode_flavor": "klipper",
-                    "silent_mode": "0",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "END_PRINT",
                     "machine_max_acceleration_e": [
                         "5000",
                         "5000"
@@ -1275,6 +1993,10 @@
                         "20000",
                         "20000"
                     ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
                     "machine_max_acceleration_x": [
                         "20000",
                         "20000"
@@ -1284,22 +2006,6 @@
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "120",
-                        "120"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
                         "200",
                         "200"
                     ],
@@ -1319,6 +2025,22 @@
                         "0.4",
                         "0.4"
                     ],
+                    "machine_max_speed_e": [
+                        "120",
+                        "120"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "200",
+                        "200"
+                    ],
                     "machine_min_extruding_rate": [
                         "0",
                         "0"
@@ -1327,748 +2049,41 @@
                         "0",
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "START_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.5"
                     ],
                     "min_layer_height": [
                         "0.12"
                     ],
-                    "printable_height": "400",
-                    "extruder_clearance_radius": "45",
-                    "extruder_clearance_height_to_rod": "25",
-                    "extruder_clearance_height_to_lid": "140",
+                    "name": "RatRig V-Core 4 IDEX 400 0.8 nozzle",
                     "nozzle_diameter": [
                         "0.8",
                         "0.8"
                     ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.8",
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "z_hop": [
-                        "0.2"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retraction_speed": [
-                        "120"
-                    ],
-                    "single_extruder_multi_material": "0",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @RatRig",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
-                    "machine_start_gcode": "START_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
-                    "machine_end_gcode": "END_PRINT",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "manual_filament_change": "0",
-                    "machine_pause_gcode": "PAUSE",
-                    "default_filament_profile": [
-                        "RatRig Generic ABS"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "scan_first_layer": "0",
                     "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
-                    "setting_id": "GM002",
-                    "printer_model": "RatRig V-Core 4 IDEX 400",
                     "printable_area": [
                         "0x0",
                         "400x0",
                         "400x400",
                         "0x400"
                     ],
-                    "retract_lift_below": [
-                        "0.3"
-                    ],
-                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
-                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
-                    "thumbnails": [
-                        "64x64/PNG",
-                        "100x100/PNG",
-                        "400x300/PNG"
-                    ]
-                }
-            }
-        }
-    },
-    {
-        "vendor": "Ratrig",
-        "machine_model": {
-            "type": "machine_model",
-            "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
-            "model_id": "V-Core_4_IDEX_400_MIRROR_MODE",
-            "nozzle_diameter": "0.4;0.5;0.6;0.8",
-            "machine_tech": "FFF",
-            "family": "RatRig_V-Core",
-            "bed_model": "sha256:eb0a36271870d371a38a962c32cd5d20e32e6022dea406a9df389b1db0704296",
-            "bed_texture": "sha256:3b349eb7f181313cc93d411d58e8d4a8bcbe28db516c984616b254bdeef3fb7c",
-            "hotend_model": "",
-            "default_materials": "RatRig Generic ABS;RatRig Generic PLA;RatRig Generic PLA-CF;RatRig Generic PCTG;RatRig Generic PETG;RatRig Generic TPU;RatRig Generic ASA;RatRig Generic PC;RatRig Generic PVA;RatRig Generic PA;RatRig Generic PA-CF"
-        },
-        "variants": {
-            "0.4": {
-                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.4 nozzle",
-                "data": {
-                    "type": "machine",
-                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.4 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
-                    "deretraction_speed": [
-                        "120"
-                    ],
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0",
-                        "0x0"
-                    ],
-                    "gcode_flavor": "klipper",
-                    "silent_mode": "0",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "120",
-                        "120"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_y": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.4",
-                        "0.4"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "max_layer_height": [
-                        "0.3"
-                    ],
-                    "min_layer_height": [
-                        "0.06"
-                    ],
                     "printable_height": "400",
-                    "extruder_clearance_radius": "45",
-                    "extruder_clearance_height_to_rod": "25",
-                    "extruder_clearance_height_to_lid": "140",
-                    "nozzle_diameter": [
-                        "0.4",
-                        "0.4"
-                    ],
+                    "printer_model": "RatRig V-Core 4 IDEX 400",
                     "printer_settings_id": "",
-                    "printer_variant": "0.4",
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "z_hop": [
-                        "0.2"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retraction_speed": [
-                        "120"
-                    ],
-                    "single_extruder_multi_material": "0",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @RatRig",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
-                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
-                    "machine_end_gcode": "END_PRINT",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "manual_filament_change": "0",
-                    "machine_pause_gcode": "PAUSE",
-                    "default_filament_profile": [
-                        "RatRig Generic ABS"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
-                    "setting_id": "GM002",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
-                    "printable_area": [
-                        "100x0",
-                        "270x0",
-                        "270x400",
-                        "100x400"
-                    ],
-                    "retract_lift_below": [
-                        "0.2"
-                    ],
-                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
-                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
-                    "thumbnails": [
-                        "64x64/PNG",
-                        "100x100/PNG",
-                        "400x300/PNG"
-                    ]
-                }
-            },
-            "0.5": {
-                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.5 nozzle",
-                "data": {
-                    "type": "machine",
-                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.5 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
                     "printer_technology": "FFF",
-                    "deretraction_speed": [
-                        "120"
-                    ],
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0",
-                        "0x0"
-                    ],
-                    "gcode_flavor": "klipper",
-                    "silent_mode": "0",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "120",
-                        "120"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_y": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.4",
-                        "0.4"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "max_layer_height": [
-                        "0.3"
-                    ],
-                    "min_layer_height": [
-                        "0.06"
-                    ],
-                    "printable_height": "400",
-                    "extruder_clearance_radius": "45",
-                    "extruder_clearance_height_to_rod": "25",
-                    "extruder_clearance_height_to_lid": "140",
-                    "nozzle_diameter": [
-                        "0.5",
-                        "0.5"
-                    ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.5",
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "z_hop": [
-                        "0.2"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retraction_speed": [
-                        "120"
-                    ],
-                    "single_extruder_multi_material": "0",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @RatRig",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
-                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
-                    "machine_end_gcode": "END_PRINT",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "manual_filament_change": "0",
-                    "machine_pause_gcode": "PAUSE",
-                    "default_filament_profile": [
-                        "RatRig Generic ABS"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
-                    "setting_id": "GM002",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
-                    "printable_area": [
-                        "100x0",
-                        "270x0",
-                        "270x400",
-                        "100x400"
-                    ],
-                    "retract_lift_below": [
-                        "0.2"
-                    ],
-                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
-                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
-                    "thumbnails": [
-                        "64x64/PNG",
-                        "100x100/PNG",
-                        "400x300/PNG"
-                    ]
-                }
-            },
-            "0.6": {
-                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.6 nozzle",
-                "data": {
-                    "type": "machine",
-                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.6 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
-                    "deretraction_speed": [
-                        "120"
-                    ],
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0",
-                        "0x0"
-                    ],
-                    "gcode_flavor": "klipper",
-                    "silent_mode": "0",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "120",
-                        "120"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_y": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.4",
-                        "0.4"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "max_layer_height": [
-                        "0.3"
-                    ],
-                    "min_layer_height": [
-                        "0.06"
-                    ],
-                    "printable_height": "400",
-                    "extruder_clearance_radius": "45",
-                    "extruder_clearance_height_to_rod": "25",
-                    "extruder_clearance_height_to_lid": "140",
-                    "nozzle_diameter": [
-                        "0.6",
-                        "0.6"
-                    ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.6",
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "z_hop": [
-                        "0.2"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retraction_speed": [
-                        "120"
-                    ],
-                    "single_extruder_multi_material": "0",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @RatRig",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
-                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
-                    "machine_end_gcode": "END_PRINT",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "manual_filament_change": "0",
-                    "machine_pause_gcode": "PAUSE",
-                    "default_filament_profile": [
-                        "RatRig Generic ABS"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
-                    "setting_id": "GM002",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
-                    "printable_area": [
-                        "100x0",
-                        "270x0",
-                        "270x400",
-                        "100x400"
-                    ],
-                    "retract_lift_below": [
-                        "0.2"
-                    ],
-                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
-                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
-                    "thumbnails": [
-                        "64x64/PNG",
-                        "100x100/PNG",
-                        "400x300/PNG"
-                    ]
-                }
-            },
-            "0.8": {
-                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.8 nozzle",
-                "data": {
-                    "type": "machine",
-                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.8 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
-                    "deretraction_speed": [
-                        "120"
-                    ],
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0",
-                        "0x0"
-                    ],
-                    "gcode_flavor": "klipper",
-                    "silent_mode": "0",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_speed_e": [
-                        "120",
-                        "120"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
-                        "200",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_y": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.4",
-                        "0.4"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "max_layer_height": [
-                        "0.3"
-                    ],
-                    "min_layer_height": [
-                        "0.06"
-                    ],
-                    "printable_height": "400",
-                    "extruder_clearance_radius": "45",
-                    "extruder_clearance_height_to_rod": "25",
-                    "extruder_clearance_height_to_lid": "140",
-                    "nozzle_diameter": [
-                        "0.8",
-                        "0.8"
-                    ],
-                    "printer_settings_id": "",
                     "printer_variant": "0.8",
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
+                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
                     "retract_before_wipe": [
                         "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
                     ],
                     "retract_length_toolchange": [
                         "2"
                     ],
-                    "z_hop": [
-                        "0.2"
+                    "retract_lift_below": [
+                        "0.3"
                     ],
                     "retract_restart_extra": [
                         "0"
@@ -2076,55 +2091,40 @@
                     "retract_restart_extra_toolchange": [
                         "0"
                     ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
                     "retraction_speed": [
                         "120"
                     ],
-                    "single_extruder_multi_material": "0",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "default_print_profile": "0.20mm Standard @RatRig",
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_ON_LAYER_CHANGE LAYER={layer_num + 1}",
-                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
-                    "machine_end_gcode": "END_PRINT",
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "z_hop_types": "Normal Lift",
-                    "manual_filament_change": "0",
-                    "machine_pause_gcode": "PAUSE",
-                    "default_filament_profile": [
-                        "RatRig Generic ABS"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
                     "scan_first_layer": "0",
-                    "nozzle_type": "undefine",
-                    "auxiliary_fan": "0",
                     "setting_id": "GM002",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
-                    "printable_area": [
-                        "100x0",
-                        "270x0",
-                        "270x400",
-                        "100x400"
-                    ],
-                    "retract_lift_below": [
-                        "0.2"
-                    ],
-                    "printing_by_object_gcode": ";BETWEEN_OBJECTS\nG92 E0",
-                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "0",
                     "thumbnails": [
                         "64x64/PNG",
                         "100x100/PNG",
                         "400x300/PNG"
-                    ]
-                }
+                    ],
+                    "time_lapse_gcode": "TIMELAPSE_TAKE_FRAME",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.2"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "RatRig V-Core 4 IDEX 400 0.8 nozzle"
             }
-        }
+        },
+        "vendor": "Ratrig"
     }
 ]

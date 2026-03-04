@@ -1,6 +1,5 @@
 [
     {
-        "name": "Generic PLA @Creality",
         "compatible_printers": {
             "Creality K1 Max": [
                 "0.4",
@@ -9,162 +8,9 @@
             ]
         },
         "data": {
-            "type": "filament",
-            "name": "Generic PLA @Creality",
-            "from": "system",
-            "instantiation": "true",
             "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "cool_plate_temp": [
-                "60"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "60"
-            ],
-            "eng_plate_temp": [
-                "60"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "60"
-            ],
-            "fan_cooling_layer_time": [
-                "100"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "100"
-            ],
-            "filament_cost": [
-                "20"
-            ],
-            "filament_density": [
-                "1.24"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_flow_ratio": [
-                "0.98"
-            ],
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_max_volumetric_speed": [
-                "12"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_type": [
-                "PLA"
-            ],
-            "filament_vendor": [
-                "Generic"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "60"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "60"
-            ],
-            "nozzle_temperature": [
-                "220"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "220"
-            ],
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "50%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
                 "3"
             ],
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "8"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "temperature_vitrification": [
-                "60"
-            ],
-            "textured_plate_temp": [
-                "60"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "60"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "nozzle_temperature_range_low": [
-                "190"
-            ],
-            "nozzle_temperature_range_high": [
-                "230"
-            ],
-            "additional_cooling_fan_speed": [
-                "70"
-            ],
-            "filament_id": "GFL99",
-            "setting_id": "GFSL99_CREALITY_00",
             "compatible_printers": [
                 "Creality CR-10 V2 0.4 nozzle",
                 "Creality CR-10 Max 0.4 nozzle",
@@ -190,26 +36,6 @@
                 "Creality K1C 0.4 nozzle",
                 "Creality K1C 0.6 nozzle",
                 "Creality K1C 0.8 nozzle"
-            ]
-        },
-        "generic_id": "GFL99"
-    },
-    {
-        "name": "Generic ABS @Creality",
-        "compatible_printers": {
-            "Creality K1 Max": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Generic ABS @Creality",
-            "from": "system",
-            "instantiation": "true",
-            "close_fan_the_first_x_layers": [
-                "3"
             ],
             "cool_plate_temp": [
                 "105"
@@ -244,9 +70,13 @@
             "filament_diameter": [
                 "1.75"
             ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
             "filament_flow_ratio": [
                 "0.926"
             ],
+            "filament_id": "GFB99",
             "filament_is_support": [
                 "0"
             ],
@@ -280,6 +110,9 @@
             "filament_soluble": [
                 "0"
             ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
             "filament_type": [
                 "ABS"
             ],
@@ -298,6 +131,7 @@
             "filament_z_hop_types": [
                 "nil"
             ],
+            "from": "system",
             "full_fan_speed_layer": [
                 "0"
             ],
@@ -307,11 +141,19 @@
             "hot_plate_temp_initial_layer": [
                 "105"
             ],
+            "instantiation": "true",
+            "name": "Generic ABS @Creality",
             "nozzle_temperature": [
                 "260"
             ],
             "nozzle_temperature_initial_layer": [
                 "260"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "240"
             ],
             "overhang_fan_speed": [
                 "80"
@@ -325,6 +167,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
+            "setting_id": "GFSB99_CREALITY_00",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -343,20 +186,23 @@
             "textured_plate_temp_initial_layer": [
                 "105"
             ],
-            "filament_start_gcode": [
-                "; Filament gcode\n"
+            "type": "filament"
+        },
+        "generic_id": "GFB99",
+        "name": "Generic ABS @Creality"
+    },
+    {
+        "compatible_printers": {
+            "Creality K1 Max": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "close_fan_the_first_x_layers": [
+                "3"
             ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "nozzle_temperature_range_low": [
-                "240"
-            ],
-            "nozzle_temperature_range_high": [
-                "270"
-            ],
-            "filament_id": "GFB99",
-            "setting_id": "GFSB99_CREALITY_00",
             "compatible_printers": [
                 "Creality CR-10 V2 0.4 nozzle",
                 "Creality CR-10 Max 0.4 nozzle",
@@ -382,12 +228,162 @@
                 "Creality K1C 0.4 nozzle",
                 "Creality K1C 0.6 nozzle",
                 "Creality K1C 0.8 nozzle"
-            ]
+            ],
+            "cool_plate_temp": [
+                "105"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "105"
+            ],
+            "eng_plate_temp": [
+                "105"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "105"
+            ],
+            "fan_cooling_layer_time": [
+                "35"
+            ],
+            "fan_max_speed": [
+                "80"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.04"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.926"
+            ],
+            "filament_id": "GFB98",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_max_volumetric_speed": [
+                "12"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "ASA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "105"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "105"
+            ],
+            "instantiation": "true",
+            "name": "Generic ASA @Creality",
+            "nozzle_temperature": [
+                "260"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "260"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "240"
+            ],
+            "overhang_fan_speed": [
+                "80"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04_CREALITY_00",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "3"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "temperature_vitrification": [
+                "110"
+            ],
+            "textured_plate_temp": [
+                "60"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "60"
+            ],
+            "type": "filament"
         },
-        "generic_id": "GFB99"
+        "generic_id": "GFB98",
+        "name": "Generic ASA @Creality"
     },
     {
-        "name": "Generic PETG @Creality",
         "compatible_printers": {
             "Creality K1 Max": [
                 "0.4",
@@ -396,12 +392,34 @@
             ]
         },
         "data": {
-            "type": "filament",
-            "name": "Generic PETG @Creality",
-            "from": "system",
-            "instantiation": "true",
             "close_fan_the_first_x_layers": [
                 "3"
+            ],
+            "compatible_printers": [
+                "Creality CR-10 V2 0.4 nozzle",
+                "Creality CR-10 Max 0.4 nozzle",
+                "Creality Ender-3 V2 0.4 nozzle",
+                "Creality Ender-3 S1 0.4 nozzle",
+                "Creality Ender-3 S1 Pro 0.4 nozzle",
+                "Creality Ender-3 V3 0.4 nozzle",
+                "Creality Ender-3 V3 0.6 nozzle",
+                "Creality Ender-3 V3 KE 0.4 nozzle",
+                "Creality Ender-3 V3 Plus 0.4 nozzle",
+                "Creality Ender-3 V3 Plus 0.6 nozzle",
+                "Creality Ender-5 0.4 nozzle",
+                "Creality Ender-5 Plus 0.4 nozzle",
+                "Creality Ender-5S 0.4 nozzle",
+                "Creality Ender-5 S1 0.4 nozzle",
+                "Creality Ender-6 0.4 nozzle",
+                "Creality K1 0.4 nozzle",
+                "Creality K1 0.6 nozzle",
+                "Creality K1 0.8 nozzle",
+                "Creality K1 Max 0.4 nozzle",
+                "Creality K1 Max 0.6 nozzle",
+                "Creality K1 Max 0.8 nozzle",
+                "Creality K1C 0.4 nozzle",
+                "Creality K1C 0.6 nozzle",
+                "Creality K1C 0.8 nozzle"
             ],
             "cool_plate_temp": [
                 "60"
@@ -436,9 +454,13 @@
             "filament_diameter": [
                 "1.75"
             ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
             "filament_flow_ratio": [
                 "0.95"
             ],
+            "filament_id": "GFG99",
             "filament_is_support": [
                 "0"
             ],
@@ -472,6 +494,9 @@
             "filament_soluble": [
                 "0"
             ],
+            "filament_start_gcode": [
+                "; filament start gcode\n"
+            ],
             "filament_type": [
                 "PETG"
             ],
@@ -490,6 +515,7 @@
             "filament_z_hop_types": [
                 "nil"
             ],
+            "from": "system",
             "full_fan_speed_layer": [
                 "0"
             ],
@@ -499,11 +525,19 @@
             "hot_plate_temp_initial_layer": [
                 "80"
             ],
+            "instantiation": "true",
+            "name": "Generic PETG @Creality",
             "nozzle_temperature": [
                 "255"
             ],
             "nozzle_temperature_initial_layer": [
                 "255"
+            ],
+            "nozzle_temperature_range_high": [
+                "260"
+            ],
+            "nozzle_temperature_range_low": [
+                "220"
             ],
             "overhang_fan_speed": [
                 "90"
@@ -517,6 +551,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
+            "setting_id": "GFSG99_CREALITY_00",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -535,20 +570,26 @@
             "textured_plate_temp_initial_layer": [
                 "80"
             ],
-            "filament_start_gcode": [
-                "; filament start gcode\n"
+            "type": "filament"
+        },
+        "generic_id": "GFG99",
+        "name": "Generic PETG @Creality"
+    },
+    {
+        "compatible_printers": {
+            "Creality K1 Max": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "additional_cooling_fan_speed": [
+                "70"
             ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
+            "close_fan_the_first_x_layers": [
+                "1"
             ],
-            "nozzle_temperature_range_low": [
-                "220"
-            ],
-            "nozzle_temperature_range_high": [
-                "260"
-            ],
-            "filament_id": "GFG99",
-            "setting_id": "GFSG99_CREALITY_00",
             "compatible_printers": [
                 "Creality CR-10 V2 0.4 nozzle",
                 "Creality CR-10 Max 0.4 nozzle",
@@ -574,53 +615,33 @@
                 "Creality K1C 0.4 nozzle",
                 "Creality K1C 0.6 nozzle",
                 "Creality K1C 0.8 nozzle"
-            ]
-        },
-        "generic_id": "GFG99"
-    },
-    {
-        "name": "Generic ASA @Creality",
-        "compatible_printers": {
-            "Creality K1 Max": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Generic ASA @Creality",
-            "from": "system",
-            "instantiation": "true",
-            "close_fan_the_first_x_layers": [
-                "3"
             ],
             "cool_plate_temp": [
-                "105"
+                "60"
             ],
             "cool_plate_temp_initial_layer": [
-                "105"
+                "60"
             ],
             "eng_plate_temp": [
-                "105"
+                "60"
             ],
             "eng_plate_temp_initial_layer": [
-                "105"
+                "60"
             ],
             "fan_cooling_layer_time": [
-                "35"
+                "100"
             ],
             "fan_max_speed": [
-                "80"
+                "100"
             ],
             "fan_min_speed": [
-                "10"
+                "100"
             ],
             "filament_cost": [
                 "20"
             ],
             "filament_density": [
-                "1.04"
+                "1.24"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -628,9 +649,13 @@
             "filament_diameter": [
                 "1.75"
             ],
-            "filament_flow_ratio": [
-                "0.926"
+            "filament_end_gcode": [
+                "; filament end gcode \n"
             ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
             "filament_is_support": [
                 "0"
             ],
@@ -664,8 +689,11 @@
             "filament_soluble": [
                 "0"
             ],
+            "filament_start_gcode": [
+                "; filament start gcode\n"
+            ],
             "filament_type": [
-                "ASA"
+                "PLA"
             ],
             "filament_vendor": [
                 "Generic"
@@ -682,26 +710,35 @@
             "filament_z_hop_types": [
                 "nil"
             ],
+            "from": "system",
             "full_fan_speed_layer": [
                 "0"
             ],
             "hot_plate_temp": [
-                "105"
+                "60"
             ],
             "hot_plate_temp_initial_layer": [
-                "105"
+                "60"
             ],
+            "instantiation": "true",
+            "name": "Generic PLA @Creality",
             "nozzle_temperature": [
-                "260"
+                "220"
             ],
             "nozzle_temperature_initial_layer": [
-                "260"
+                "220"
+            ],
+            "nozzle_temperature_range_high": [
+                "230"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
             ],
             "overhang_fan_speed": [
-                "80"
+                "100"
             ],
             "overhang_fan_threshold": [
-                "25%"
+                "50%"
             ],
             "reduce_fan_stop_start_freq": [
                 "1"
@@ -709,17 +746,18 @@
             "required_nozzle_HRC": [
                 "3"
             ],
+            "setting_id": "GFSL99_CREALITY_00",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
             "slow_down_layer_time": [
-                "3"
+                "8"
             ],
             "slow_down_min_speed": [
                 "10"
             ],
             "temperature_vitrification": [
-                "110"
+                "60"
             ],
             "textured_plate_temp": [
                 "60"
@@ -727,20 +765,26 @@
             "textured_plate_temp_initial_layer": [
                 "60"
             ],
-            "filament_start_gcode": [
-                "; Filament gcode\n"
+            "type": "filament"
+        },
+        "generic_id": "GFL99",
+        "name": "Generic PLA @Creality"
+    },
+    {
+        "compatible_printers": {
+            "Creality K1 Max": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "additional_cooling_fan_speed": [
+                "70"
             ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
+            "close_fan_the_first_x_layers": [
+                "1"
             ],
-            "nozzle_temperature_range_low": [
-                "240"
-            ],
-            "nozzle_temperature_range_high": [
-                "270"
-            ],
-            "filament_id": "GFB98",
-            "setting_id": "GFSA04_CREALITY_00",
             "compatible_printers": [
                 "Creality CR-10 V2 0.4 nozzle",
                 "Creality CR-10 Max 0.4 nozzle",
@@ -766,26 +810,6 @@
                 "Creality K1C 0.4 nozzle",
                 "Creality K1C 0.6 nozzle",
                 "Creality K1C 0.8 nozzle"
-            ]
-        },
-        "generic_id": "GFB98"
-    },
-    {
-        "name": "Generic TPU @Creality",
-        "compatible_printers": {
-            "Creality K1 Max": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "type": "filament",
-            "name": "Generic TPU @Creality",
-            "from": "system",
-            "instantiation": "true",
-            "close_fan_the_first_x_layers": [
-                "1"
             ],
             "cool_plate_temp": [
                 "30"
@@ -820,9 +844,13 @@
             "filament_diameter": [
                 "1.75"
             ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
             "filament_flow_ratio": [
                 "1"
             ],
+            "filament_id": "GFU99",
             "filament_is_support": [
                 "0"
             ],
@@ -856,6 +884,9 @@
             "filament_soluble": [
                 "0"
             ],
+            "filament_start_gcode": [
+                "; filament start gcode\n"
+            ],
             "filament_type": [
                 "TPU"
             ],
@@ -874,6 +905,7 @@
             "filament_z_hop_types": [
                 "nil"
             ],
+            "from": "system",
             "full_fan_speed_layer": [
                 "0"
             ],
@@ -883,11 +915,19 @@
             "hot_plate_temp_initial_layer": [
                 "35"
             ],
+            "instantiation": "true",
+            "name": "Generic TPU @Creality",
             "nozzle_temperature": [
                 "240"
             ],
             "nozzle_temperature_initial_layer": [
                 "240"
+            ],
+            "nozzle_temperature_range_high": [
+                "250"
+            ],
+            "nozzle_temperature_range_low": [
+                "200"
             ],
             "overhang_fan_speed": [
                 "100"
@@ -901,6 +941,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
+            "setting_id": "GFU99_CREALITY_00",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -919,50 +960,9 @@
             "textured_plate_temp_initial_layer": [
                 "60"
             ],
-            "filament_start_gcode": [
-                "; filament start gcode\n"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "additional_cooling_fan_speed": [
-                "70"
-            ],
-            "nozzle_temperature_range_low": [
-                "200"
-            ],
-            "nozzle_temperature_range_high": [
-                "250"
-            ],
-            "filament_id": "GFU99",
-            "setting_id": "GFU99_CREALITY_00",
-            "compatible_printers": [
-                "Creality CR-10 V2 0.4 nozzle",
-                "Creality CR-10 Max 0.4 nozzle",
-                "Creality Ender-3 V2 0.4 nozzle",
-                "Creality Ender-3 S1 0.4 nozzle",
-                "Creality Ender-3 S1 Pro 0.4 nozzle",
-                "Creality Ender-3 V3 0.4 nozzle",
-                "Creality Ender-3 V3 0.6 nozzle",
-                "Creality Ender-3 V3 KE 0.4 nozzle",
-                "Creality Ender-3 V3 Plus 0.4 nozzle",
-                "Creality Ender-3 V3 Plus 0.6 nozzle",
-                "Creality Ender-5 0.4 nozzle",
-                "Creality Ender-5 Plus 0.4 nozzle",
-                "Creality Ender-5S 0.4 nozzle",
-                "Creality Ender-5 S1 0.4 nozzle",
-                "Creality Ender-6 0.4 nozzle",
-                "Creality K1 0.4 nozzle",
-                "Creality K1 0.6 nozzle",
-                "Creality K1 0.8 nozzle",
-                "Creality K1 Max 0.4 nozzle",
-                "Creality K1 Max 0.6 nozzle",
-                "Creality K1 Max 0.8 nozzle",
-                "Creality K1C 0.4 nozzle",
-                "Creality K1C 0.6 nozzle",
-                "Creality K1C 0.8 nozzle"
-            ]
+            "type": "filament"
         },
-        "generic_id": "GFU99"
+        "generic_id": "GFU99",
+        "name": "Generic TPU @Creality"
     }
 ]

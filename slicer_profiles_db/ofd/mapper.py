@@ -27,19 +27,9 @@ class MappingResult:
 
 
 @dataclass
-class MappingConflict:
-    filament_path: Path
-    slicer: str
-    field: str  # "profile_name" or "slicer_id"
-    existing: str
-    derived: str
-
-
-@dataclass
 class MappingReport:
     updated: list[MappingResult] = field(default_factory=list)
     already_correct: list[MappingResult] = field(default_factory=list)
-    conflicts: list[MappingConflict] = field(default_factory=list)
     skipped: list[tuple[Path, str]] = field(default_factory=list)
 
 
@@ -158,9 +148,6 @@ class SlicerMapper:
                             report.already_correct.append(result)
                         else:
                             report.updated.append(result)
-
-        if report.conflicts:
-            return report
 
         if not dry_run:
             # Write all results (updated + already_correct) to ensure

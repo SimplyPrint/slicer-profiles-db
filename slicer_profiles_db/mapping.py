@@ -362,6 +362,13 @@ def map_filament_profiles(
                                 filament_id=fp.filament_id,
                             )
 
+                        # Non-generic profiles without OFD linkage are skipped —
+                        # without a known brand they'd be indistinguishable from
+                        # generic profiles in the query layer.
+                        is_generic_name = filament_name.lower().startswith("generic")
+                        if ofd_index and not filament_db_id and not is_generic_name:
+                            continue
+
                         # Add to output, grouping by filament name
                         if filament_name not in compatible_filaments:
                             compatible_filaments[filament_name] = []
@@ -717,6 +724,11 @@ def _export_generic_filaments(
                                 slicer_val,
                                 filament_id=fp.filament_id,
                             )
+                        # Skip non-generic profiles without OFD linkage
+                        is_generic_name = name.lower().startswith("generic")
+                        if ofd_index and not filament_db_id and not is_generic_name:
+                            continue
+
                         entry = {
                             "name": name,
                             "data": fp_data,
@@ -743,7 +755,7 @@ def _write_json(path: Path, data: Any) -> None:
     """Write JSON with consistent formatting."""
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
-        json.dumps(data, indent=4, ensure_ascii=False, default=str),
+        json.dumps(data, indent=4, ensure_ascii=False, sort_keys=True, default=str),
         encoding="utf-8",
     )
 

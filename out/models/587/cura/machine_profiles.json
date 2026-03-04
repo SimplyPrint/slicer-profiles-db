@@ -1,18 +1,11 @@
 [
     {
-        "vendor": "Ultimaker B.V.",
         "machine_model": {
-            "name": "Ultimaker 3 Extended",
-            "version": 2,
-            "inherits": "ultimaker3",
-            "visible": true,
             "author": "Ultimaker",
-            "manufacturer": "Ultimaker B.V.",
-            "file_formats": "application/gzip;text/x-gcode",
-            "platform": "ultimaker3_platform.obj",
             "bom_numbers": [
                 9511
             ],
+            "file_formats": "application/gzip;text/x-gcode",
             "firmware_update_info": {
                 "check_urls": [
                     "https://software.ultimaker.com/releases/firmware/9066/stable/um-update.swu.version"
@@ -26,10 +19,16 @@
             "has_machine_quality": true,
             "has_materials": true,
             "has_variants": true,
+            "inherits": "ultimaker3",
             "machine_extruder_trains": {
                 "0": "ultimaker3_extended_extruder_left",
                 "1": "ultimaker3_extended_extruder_right"
             },
+            "machine_height": 300,
+            "machine_name": "Ultimaker 3 Extended",
+            "manufacturer": "Ultimaker B.V.",
+            "name": "Ultimaker 3 Extended",
+            "platform": "ultimaker3_platform.obj",
             "platform_offset": [
                 0,
                 0,
@@ -42,9 +41,10 @@
                 "DiscoverUM3Action"
             ],
             "variants_name": "Print core",
-            "machine_height": 300,
-            "machine_name": "Ultimaker 3 Extended"
+            "version": 2,
+            "visible": true
         },
-        "variants": {}
+        "variants": {},
+        "vendor": "Ultimaker B.V."
     }
 ]

@@ -1,45 +1,47 @@
 [
     {
-        "vendor": "Creality",
         "machine_model": {
-            "type": "machine_model",
-            "name": "Creality K1",
-            "model_id": "Creality-K1",
-            "nozzle_diameter": "0.4;0.6;0.8",
-            "machine_tech": "FFF",
-            "family": "Creality",
             "bed_model": "sha256:64e867b222d0e3dcee3b485044d3c8d568b65e46f7cf4f91af18b23bfe80e4c7",
             "bed_texture": "sha256:e4b593f203446da14353ce56bcf5e46d8ff9a9098db3d5fee331556c90303f57",
+            "default_materials": "Generic PLA @Creality;Generic PETG @Creality;Generic ABS @Creality",
+            "family": "Creality",
             "hotend_model": "",
-            "default_materials": "Generic PLA @Creality;Generic PETG @Creality;Generic ABS @Creality"
+            "machine_tech": "FFF",
+            "model_id": "Creality-K1",
+            "name": "Creality K1",
+            "nozzle_diameter": "0.4;0.6;0.8",
+            "type": "machine_model"
         },
         "variants": {
             "0.4": {
-                "name": "Creality K1 0.4 nozzle",
                 "data": {
-                    "type": "machine",
-                    "name": "Creality K1 0.4 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "nozzle_diameter": [
-                        "0.4"
+                    "auxiliary_fan": "1",
+                    "bed_exclude_area": [
+                        "0x0"
                     ],
-                    "printer_variant": "0.4",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "Generic PLA @Creality"
+                    ],
+                    "default_print_profile": "0.20mm Standard @Creality K1 0.4 nozzle",
                     "deretraction_speed": [
                         "40"
                     ],
-                    "default_print_profile": "0.20mm Standard @Creality K1 0.4 nozzle",
+                    "extruder_clearance_dist_to_rod": "47",
+                    "extruder_clearance_height_to_lid": "34",
+                    "extruder_clearance_height_to_rod": "34",
+                    "extruder_clearance_max_radius": "65",
                     "extruder_colour": [
                         "#FCE94F"
                     ],
                     "extruder_offset": [
                         "0x0"
                     ],
-                    "extruder_clearance_max_radius": "65",
-                    "extruder_clearance_dist_to_rod": "47",
-                    "extruder_clearance_height_to_rod": "34",
-                    "extruder_clearance_height_to_lid": "34",
+                    "from": "system",
                     "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": "",
+                    "machine_end_gcode": "END_PRINT",
                     "machine_max_acceleration_e": [
                         "5000",
                         "5000"
@@ -52,6 +54,10 @@
                         "5000",
                         "5000"
                     ],
+                    "machine_max_acceleration_travel": [
+                        "9000",
+                        "9000"
+                    ],
                     "machine_max_acceleration_x": [
                         "20000",
                         "20000"
@@ -63,6 +69,22 @@
                     "machine_max_acceleration_z": [
                         "500",
                         "500"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_y": [
+                        "5",
+                        "5"
+                    ],
+                    "machine_max_jerk_z": [
+                        "2",
+                        "2"
                     ],
                     "machine_max_speed_e": [
                         "100",
@@ -80,22 +102,6 @@
                         "30",
                         "30"
                     ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_y": [
-                        "5",
-                        "5"
-                    ],
-                    "machine_max_jerk_z": [
-                        "2",
-                        "2"
-                    ],
                     "machine_min_extruding_rate": [
                         "0",
                         "0"
@@ -104,26 +110,33 @@
                         "0",
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]",
                     "max_layer_height": [
                         "0.3"
                     ],
                     "min_layer_height": [
                         "0.08"
                     ],
-                    "printer_technology": "FFF",
-                    "printable_height": "250",
-                    "printer_settings_id": "Creality",
-                    "retraction_minimum_travel": [
-                        "2"
+                    "name": "Creality K1 0.4 nozzle",
+                    "nozzle_diameter": [
+                        "0.4"
                     ],
+                    "nozzle_type": "stainless_steel",
+                    "printable_area": [
+                        "0x0",
+                        "220x0",
+                        "220x220",
+                        "0x220"
+                    ],
+                    "printable_height": "250",
+                    "printer_model": "Creality K1",
+                    "printer_settings_id": "Creality",
+                    "printer_structure": "corexy",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
                     "retract_before_wipe": [
                         "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.5"
                     ],
                     "retract_length_toolchange": [
                         "1"
@@ -134,78 +147,67 @@
                     "retract_restart_extra_toolchange": [
                         "0"
                     ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.5"
+                    ],
+                    "retraction_minimum_travel": [
+                        "2"
+                    ],
                     "retraction_speed": [
                         "60"
                     ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM_CREALITY_018",
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
+                    "thumbnail_size": [
+                        "96x96",
+                        "300x300"
+                    ],
+                    "type": "machine",
+                    "version": "1.8.0.2",
                     "wipe": [
                         "1"
                     ],
                     "z_hop": [
                         "0.4"
                     ],
-                    "z_hop_types": "Normal Lift",
-                    "machine_start_gcode": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]",
-                    "machine_end_gcode": "END_PRINT",
-                    "change_filament_gcode": "",
-                    "machine_max_acceleration_travel": [
-                        "9000",
-                        "9000"
-                    ],
-                    "default_filament_profile": [
-                        "Generic PLA @Creality"
-                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "Creality K1 0.4 nozzle"
+            },
+            "0.6": {
+                "data": {
+                    "auxiliary_fan": "1",
                     "bed_exclude_area": [
                         "0x0"
                     ],
-                    "scan_first_layer": "0",
-                    "nozzle_type": "stainless_steel",
-                    "auxiliary_fan": "1",
-                    "layer_change_gcode": "",
-                    "machine_pause_gcode": "PAUSE",
-                    "setting_id": "GM_CREALITY_018",
-                    "printer_model": "Creality K1",
-                    "printer_structure": "corexy",
-                    "thumbnail_size": [
-                        "96x96",
-                        "300x300"
+                    "change_filament_gcode": "PAUSE",
+                    "default_filament_profile": [
+                        "Generic PLA @Creality"
                     ],
-                    "version": "1.8.0.2",
-                    "printable_area": [
-                        "0x0",
-                        "220x0",
-                        "220x220",
-                        "0x220"
-                    ]
-                }
-            },
-            "0.6": {
-                "name": "Creality K1 0.6 nozzle",
-                "data": {
-                    "type": "machine",
-                    "name": "Creality K1 0.6 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "nozzle_diameter": [
-                        "0.6"
-                    ],
-                    "printer_variant": "0.6",
+                    "default_print_profile": "0.30mm Standard @Creality K1 0.6 nozzle",
                     "deretraction_speed": [
                         "40"
                     ],
-                    "default_print_profile": "0.30mm Standard @Creality K1 0.6 nozzle",
+                    "extruder_clearance_dist_to_rod": "45",
+                    "extruder_clearance_height_to_lid": "101",
+                    "extruder_clearance_height_to_rod": "45",
+                    "extruder_clearance_max_radius": "65",
                     "extruder_colour": [
                         "#FCE94F"
                     ],
                     "extruder_offset": [
                         "0x0"
                     ],
-                    "extruder_clearance_max_radius": "65",
-                    "extruder_clearance_dist_to_rod": "45",
-                    "extruder_clearance_height_to_rod": "45",
-                    "extruder_clearance_height_to_lid": "101",
+                    "from": "system",
                     "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": "",
+                    "machine_end_gcode": "END_PRINT",
                     "machine_max_acceleration_e": [
                         "5000",
                         "5000"
@@ -218,6 +220,10 @@
                         "5000",
                         "5000"
                     ],
+                    "machine_max_acceleration_travel": [
+                        "9000",
+                        "9000"
+                    ],
                     "machine_max_acceleration_x": [
                         "20000",
                         "20000"
@@ -229,6 +235,22 @@
                     "machine_max_acceleration_z": [
                         "500",
                         "500"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_y": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_z": [
+                        "2",
+                        "2"
                     ],
                     "machine_max_speed_e": [
                         "100",
@@ -246,22 +268,6 @@
                         "20",
                         "20"
                     ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_y": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_z": [
-                        "2",
-                        "2"
-                    ],
                     "machine_min_extruding_rate": [
                         "0",
                         "0"
@@ -270,26 +276,33 @@
                         "0",
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]",
+                    "manual_filament_change": "1",
                     "max_layer_height": [
                         "0.4"
                     ],
                     "min_layer_height": [
                         "0.08"
                     ],
-                    "printer_technology": "FFF",
-                    "printable_height": "250",
-                    "printer_settings_id": "Creality",
-                    "retraction_minimum_travel": [
-                        "2"
+                    "name": "Creality K1 0.6 nozzle",
+                    "nozzle_diameter": [
+                        "0.6"
                     ],
+                    "nozzle_type": "brass",
+                    "printable_area": [
+                        "0x0",
+                        "220x0",
+                        "220x220",
+                        "0x220"
+                    ],
+                    "printable_height": "250",
+                    "printer_model": "Creality K1",
+                    "printer_settings_id": "Creality",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.6",
                     "retract_before_wipe": [
                         "0%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.5"
                     ],
                     "retract_length_toolchange": [
                         "1"
@@ -300,55 +313,42 @@
                     "retract_restart_extra_toolchange": [
                         "0"
                     ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.5"
+                    ],
+                    "retraction_minimum_travel": [
+                        "2"
+                    ],
                     "retraction_speed": [
                         "40"
                     ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM_CREALITY_021",
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
+                    "support_multi_bed_types": "1",
+                    "thumbnails": [
+                        "100x100",
+                        "320x320"
+                    ],
+                    "type": "machine",
                     "wipe": [
                         "1"
+                    ],
+                    "wipe_distance": [
+                        "2"
                     ],
                     "z_hop": [
                         "0.2"
                     ],
-                    "z_hop_types": "Normal Lift",
-                    "machine_start_gcode": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]",
-                    "machine_end_gcode": "END_PRINT",
-                    "change_filament_gcode": "PAUSE",
-                    "machine_max_acceleration_travel": [
-                        "9000",
-                        "9000"
-                    ],
-                    "default_filament_profile": [
-                        "Generic PLA @Creality"
-                    ],
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "scan_first_layer": "0",
-                    "nozzle_type": "brass",
-                    "auxiliary_fan": "1",
-                    "layer_change_gcode": "",
-                    "machine_pause_gcode": "PAUSE",
-                    "setting_id": "GM_CREALITY_021",
-                    "printer_model": "Creality K1",
-                    "printable_area": [
-                        "0x0",
-                        "220x0",
-                        "220x220",
-                        "0x220"
-                    ],
-                    "support_multi_bed_types": "1",
-                    "wipe_distance": [
-                        "2"
-                    ],
-                    "manual_filament_change": "1",
-                    "thumbnails": [
-                        "100x100",
-                        "320x320"
-                    ]
-                }
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "Creality K1 0.6 nozzle"
             }
-        }
+        },
+        "vendor": "Creality"
     }
 ]

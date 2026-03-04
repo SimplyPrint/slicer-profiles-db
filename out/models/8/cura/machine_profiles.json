@@ -1,14 +1,7 @@
 [
     {
-        "vendor": "Ultimaker B.V.",
         "machine_model": {
-            "name": "Ultimaker 2+",
-            "version": 2,
-            "inherits": "ultimaker2",
             "author": "Ultimaker",
-            "manufacturer": "Ultimaker B.V.",
-            "file_formats": "text/x-gcode",
-            "platform": "ultimaker2_platform.obj",
             "exclude_materials": [
                 "generic_bam",
                 "generic_cffcpe",
@@ -28,19 +21,14 @@
                 "ultimaker_pva",
                 "ultimaker_tough_pla"
             ],
+            "file_formats": "text/x-gcode",
             "firmware_file": "MarlinUltimaker2plus.hex",
             "first_start_actions": [],
+            "gantry_height": "52",
             "has_machine_quality": true,
             "has_materials": true,
             "has_variants": true,
-            "machine_extruder_trains": {
-                "0": "ultimaker2_plus_extruder_0"
-            },
-            "platform_texture": "Ultimaker2Plusbackplate.png",
-            "preferred_variant_name": "0.4 mm",
-            "supported_actions": [],
-            "weight": 1,
-            "gantry_height": "52",
+            "inherits": "ultimaker2",
             "layer_height_0": "round(machine_nozzle_size / 1.5, 2)",
             "machine_disallowed_areas": [
                 [
@@ -116,6 +104,9 @@
                     ]
                 ]
             ],
+            "machine_extruder_trains": {
+                "0": "ultimaker2_plus_extruder_0"
+            },
             "machine_head_with_fans_polygon": [
                 [
                     -44,
@@ -139,10 +130,19 @@
             "machine_name": "Ultimaker 2+",
             "machine_nozzle_head_distance": 5,
             "machine_show_variants": true,
+            "manufacturer": "Ultimaker B.V.",
+            "name": "Ultimaker 2+",
+            "platform": "ultimaker2_platform.obj",
+            "platform_texture": "Ultimaker2Plusbackplate.png",
+            "preferred_variant_name": "0.4 mm",
             "speed_infill": "speed_print",
             "speed_support": "speed_wall_0",
-            "speed_wall_x": "speed_wall"
+            "speed_wall_x": "speed_wall",
+            "supported_actions": [],
+            "version": 2,
+            "weight": 1
         },
-        "variants": {}
+        "variants": {},
+        "vendor": "Ultimaker B.V."
     }
 ]

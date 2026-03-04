@@ -1,38 +1,39 @@
 [
     {
-        "vendor": "Sovol",
         "machine_model": {
-            "type": "machine_model",
-            "name": "Sovol SV07",
-            "model_id": "Sovol-SV07",
-            "nozzle_diameter": "0.4",
-            "machine_tech": "FFF",
-            "family": "Sovol",
             "bed_model": "sovol_sv07_buildplate_model.stl",
             "bed_texture": "sha256:419483b36b211254ad82ed25191dc6e20bb6bc8afd696bb2f426ef71fbaa4761",
+            "default_materials": "Sovol SV07 PLA",
+            "family": "Sovol",
             "hotend_model": "",
-            "default_materials": "Sovol SV07 PLA"
+            "machine_tech": "FFF",
+            "model_id": "Sovol-SV07",
+            "name": "Sovol SV07",
+            "nozzle_diameter": "0.4",
+            "type": "machine_model"
         },
         "variants": {
             "0.4": {
-                "name": "Sovol SV07 0.4 nozzle",
                 "data": {
-                    "type": "machine",
-                    "name": "Sovol SV07 0.4 nozzle",
-                    "from": "system",
-                    "instantiation": "true",
-                    "printer_technology": "FFF",
+                    "before_layer_change_gcode": "TIMELAPSE_TAKE_FRAME\nG92 E0",
+                    "change_filament_gcode": "",
+                    "default_print_profile": "0.20mm Standard @Sovol SV07",
                     "deretraction_speed": [
                         "50"
                     ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_radius": "65",
                     "extruder_colour": [
                         "#FCE94F"
                     ],
                     "extruder_offset": [
                         "0x0"
                     ],
+                    "from": "system",
                     "gcode_flavor": "marlin",
-                    "silent_mode": "0",
+                    "instantiation": "true",
+                    "machine_end_gcode": "END_PRINT\n",
                     "machine_max_acceleration_e": [
                         "5000"
                     ],
@@ -51,18 +52,6 @@
                     "machine_max_acceleration_z": [
                         "500"
                     ],
-                    "machine_max_speed_e": [
-                        "50"
-                    ],
-                    "machine_max_speed_x": [
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
-                        "20"
-                    ],
                     "machine_max_jerk_e": [
                         "3"
                     ],
@@ -75,44 +64,55 @@
                     "machine_max_jerk_z": [
                         "0.25"
                     ],
+                    "machine_max_speed_e": [
+                        "50"
+                    ],
+                    "machine_max_speed_x": [
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "20"
+                    ],
                     "machine_min_extruding_rate": [
                         "0"
                     ],
                     "machine_min_travel_rate": [
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "G28\nG90\nG1 X0 F9000\nG1 Y20 F9000\nG1 Z0.300 F600\nG1 Y0 F9000\nG91\nM83\nM140 S[bed_temperature_initial_layer_single] ;set bed temp\nM104 S[nozzle_temperature_initial_layer] ;set extruder temp\nM190 S[bed_temperature_initial_layer_single] ;wait for bed temp\nM109 S[nozzle_temperature_initial_layer];wait for extruder temp\nG1 E25 F480\nG4 P1000\nG1 E-0.200 Z5 F600\nG1 X55.000 Y0.000 F6000\nG1 Z-4.800 F600\nG1 X55.000 E13.2 F3000\nG1 X55.000 E8.8 F3000\nG1 Y1 E0.16 F3000\nG1 X-55.000 E8.8 F3000\nG1 X-55.000 E13.2 F3000\nG1 Y1 E0.24 F3000\nG1 X55.000 E13.2 F3000\nG1 X55.000 E8.8 F3000\nG1 E-0.200 Z1 F600\nM400\n\n",
                     "max_layer_height": [
                         "0.32"
                     ],
                     "min_layer_height": [
                         "0.08"
                     ],
-                    "printable_height": "250",
-                    "extruder_clearance_radius": "65",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_height_to_lid": "140",
+                    "name": "Sovol SV07 0.4 nozzle",
                     "nozzle_diameter": [
                         "0.4"
                     ],
-                    "printer_settings_id": "",
-                    "printer_variant": "0.4",
-                    "retraction_minimum_travel": [
-                        "2"
+                    "printable_area": [
+                        "0x0",
+                        "220x0",
+                        "220x220",
+                        "0x220"
                     ],
+                    "printable_height": "250",
+                    "printer_model": "Sovol SV07",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
                     "retract_before_wipe": [
                         "70%"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
                     ],
                     "retract_length_toolchange": [
                         "1"
                     ],
-                    "z_hop": [
-                        "0.4"
+                    "retract_lift_below": [
+                        "348"
                     ],
                     "retract_restart_extra": [
                         "0"
@@ -120,38 +120,38 @@
                     "retract_restart_extra_toolchange": [
                         "0"
                     ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "2"
+                    ],
                     "retraction_speed": [
                         "50"
                     ],
-                    "retract_lift_below": [
-                        "348"
-                    ],
-                    "single_extruder_multi_material": "1",
-                    "change_filament_gcode": "",
-                    "wipe": [
-                        "1"
-                    ],
-                    "z_lift_type": "NormalLift",
-                    "z_hop_types": "Normal Lift",
-                    "default_print_profile": "0.20mm Standard @Sovol SV07",
-                    "before_layer_change_gcode": "TIMELAPSE_TAKE_FRAME\nG92 E0",
-                    "machine_start_gcode": "G28\nG90\nG1 X0 F9000\nG1 Y20 F9000\nG1 Z0.300 F600\nG1 Y0 F9000\nG91\nM83\nM140 S[bed_temperature_initial_layer_single] ;set bed temp\nM104 S[nozzle_temperature_initial_layer] ;set extruder temp\nM190 S[bed_temperature_initial_layer_single] ;wait for bed temp\nM109 S[nozzle_temperature_initial_layer];wait for extruder temp\nG1 E25 F480\nG4 P1000\nG1 E-0.200 Z5 F600\nG1 X55.000 Y0.000 F6000\nG1 Z-4.800 F600\nG1 X55.000 E13.2 F3000\nG1 X55.000 E8.8 F3000\nG1 Y1 E0.16 F3000\nG1 X-55.000 E8.8 F3000\nG1 X-55.000 E13.2 F3000\nG1 Y1 E0.24 F3000\nG1 X55.000 E13.2 F3000\nG1 X55.000 E8.8 F3000\nG1 E-0.200 Z1 F600\nM400\n\n",
-                    "machine_end_gcode": "END_PRINT\n",
                     "setting_id": "GM001",
-                    "printer_model": "Sovol SV07",
-                    "printable_area": [
-                        "0x0",
-                        "220x0",
-                        "220x220",
-                        "0x220"
-                    ],
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
                     "thumbnails": [
                         "300x300"
                     ],
                     "thumbnails_format": "PNG",
-                    "machine_pause_gcode": "PAUSE"
-                }
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "z_hop_types": "Normal Lift",
+                    "z_lift_type": "NormalLift"
+                },
+                "name": "Sovol SV07 0.4 nozzle"
             }
-        }
+        },
+        "vendor": "Sovol"
     }
 ]
