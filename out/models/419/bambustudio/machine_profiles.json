@@ -7,187 +7,6 @@
             "family": "VoronDesign",
             "hotend_model": "",
             "machine_tech": "FFF",
-            "model_id": "Voron2_Trident_250",
-            "name": "Voron Trident 250",
-            "nozzle_diameter": "0.4",
-            "type": "machine_model"
-        },
-        "variants": {
-            "0.4": {
-                "data": {
-                    "auxiliary_fan": "0",
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "change_filament_gcode": "",
-                    "default_filament_profile": [
-                        "Voron Generic ABS"
-                    ],
-                    "default_print_profile": "0.20mm Standard @Voron",
-                    "deretraction_speed": [
-                        "30"
-                    ],
-                    "extruder_clearance_dist_to_rod": "33",
-                    "extruder_clearance_height_to_lid": "140",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_max_radius": "65",
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "from": "system",
-                    "gcode_flavor": "klipper",
-                    "instantiation": "true",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "machine_end_gcode": "PRINT_END",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_travel": [
-                        "9000",
-                        "9000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_y": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.2",
-                        "0.4"
-                    ],
-                    "machine_max_speed_e": [
-                        "25",
-                        "25"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
-                    "max_layer_height": [
-                        "0.32"
-                    ],
-                    "min_layer_height": [
-                        "0.08"
-                    ],
-                    "name": "Voron Trident 250 0.4 nozzle",
-                    "nozzle_diameter": [
-                        "0.4"
-                    ],
-                    "nozzle_type": "undefine",
-                    "printable_area": [
-                        "0x0",
-                        "250x0",
-                        "250x250",
-                        "0x250"
-                    ],
-                    "printable_height": "250",
-                    "printer_model": "Voron Trident 250",
-                    "printer_settings_id": "",
-                    "printer_technology": "FFF",
-                    "printer_variant": "0.4",
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "retract_lift_below": [
-                        "249"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retraction_speed": [
-                        "30"
-                    ],
-                    "scan_first_layer": "0",
-                    "setting_id": "GM_VORON_005",
-                    "silent_mode": "0",
-                    "single_extruder_multi_material": "1",
-                    "type": "machine",
-                    "wipe": [
-                        "1"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "z_hop_types": "Normal Lift"
-                },
-                "name": "Voron Trident 250 0.4 nozzle"
-            }
-        },
-        "vendor": "Voron"
-    },
-    {
-        "machine_model": {
-            "bed_model": "",
-            "bed_texture": "sha256:dc4d018b39dec5be4e6a8ad37ee26e78fa271208a354b1d88718f1380060edbb",
-            "default_materials": "Generic ABS @Voron;Generic PLA @Voron;Generic PLA-CF @Voron;Generic PETG @Voron;Generic TPU @Voron;Generic ASA @Voron;Generic PC @Voron;Generic PVA @Voron;Generic PA @Voron;Generic PA-CF @Voron",
-            "family": "VoronDesign",
-            "hotend_model": "",
-            "machine_tech": "FFF",
             "model_id": "Voron2_Trident_300",
             "name": "Voron Trident 300",
             "nozzle_diameter": "0.4",
@@ -357,6 +176,187 @@
                     "z_hop_types": "Normal Lift"
                 },
                 "name": "Voron Trident 300 0.4 nozzle"
+            }
+        },
+        "vendor": "Voron"
+    },
+    {
+        "machine_model": {
+            "bed_model": "",
+            "bed_texture": "sha256:dc4d018b39dec5be4e6a8ad37ee26e78fa271208a354b1d88718f1380060edbb",
+            "default_materials": "Generic ABS @Voron;Generic PLA @Voron;Generic PLA-CF @Voron;Generic PETG @Voron;Generic TPU @Voron;Generic ASA @Voron;Generic PC @Voron;Generic PVA @Voron;Generic PA @Voron;Generic PA-CF @Voron",
+            "family": "VoronDesign",
+            "hotend_model": "",
+            "machine_tech": "FFF",
+            "model_id": "Voron2_Trident_250",
+            "name": "Voron Trident 250",
+            "nozzle_diameter": "0.4",
+            "type": "machine_model"
+        },
+        "variants": {
+            "0.4": {
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "Voron Generic ABS"
+                    ],
+                    "default_print_profile": "0.20mm Standard @Voron",
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "extruder_clearance_dist_to_rod": "33",
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_max_radius": "65",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "PRINT_END",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "9000",
+                        "9000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_y": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
+                    "max_layer_height": [
+                        "0.32"
+                    ],
+                    "min_layer_height": [
+                        "0.08"
+                    ],
+                    "name": "Voron Trident 250 0.4 nozzle",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "0x0",
+                        "250x0",
+                        "250x250",
+                        "0x250"
+                    ],
+                    "printable_height": "250",
+                    "printer_model": "Voron Trident 250",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "retract_lift_below": [
+                        "249"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM_VORON_005",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "Voron Trident 250 0.4 nozzle"
             }
         },
         "vendor": "Voron"

@@ -207,38 +207,43 @@
     {
         "data": {
             "activate_air_filtration": [
-                "0"
+                "1"
             ],
-            "additional_cooling_fan_speed": "0",
             "chamber_temperatures": [
                 "0"
             ],
-            "close_fan_the_first_x_layers": "3",
-            "compatible_printers": [
-                "Sovol SV08 MAX 0.4 nozzle",
-                "Sovol SV08 MAX 0.6 nozzle",
-                "Sovol SV08 MAX 0.8 nozzle"
+            "close_fan_the_first_x_layers": [
+                "3"
             ],
-            "complete_print_exhaust_fan_speed": "50",
+            "compatible_printers": [
+                "Sovol SV08 0.2 nozzle",
+                "Sovol SV08 0.4 nozzle",
+                "Sovol SV08 0.6 nozzle",
+                "Sovol SV08 0.8 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "60"
+            ],
             "cool_plate_temp": [
                 "0"
             ],
             "cool_plate_temp_initial_layer": [
                 "0"
             ],
-            "dont_slow_down_outer_wall": "0",
-            "during_print_exhaust_fan_speed": "50",
+            "during_print_exhaust_fan_speed": [
+                "100"
+            ],
             "eng_plate_temp": [
-                "110"
+                "100"
             ],
             "eng_plate_temp_initial_layer": [
-                "110"
+                "105"
             ],
             "fan_cooling_layer_time": [
                 "30"
             ],
             "fan_max_speed": [
-                "40"
+                "30"
             ],
             "fan_min_speed": [
                 "10"
@@ -269,7 +274,7 @@
                 "nil"
             ],
             "filament_max_volumetric_speed": [
-                "18"
+                "21"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -320,7 +325,7 @@
                 "; Filament gcode\n"
             ],
             "filament_type": [
-                "PC"
+                "ABS"
             ],
             "filament_vendor": [
                 "Generic"
@@ -339,30 +344,30 @@
             ],
             "from": "system",
             "full_fan_speed_layer": [
-                "3"
+                "0"
             ],
             "hot_plate_temp": [
-                "100"
+                "95"
             ],
             "hot_plate_temp_initial_layer": [
-                "100"
+                "95"
             ],
             "instantiation": "true",
-            "name": "Generic PC @Sovol SV08 MAX",
+            "name": "Sovol SV08 ABS",
             "nozzle_temperature": [
-                "260"
+                "270"
             ],
             "nozzle_temperature_initial_layer": [
                 "280"
             ],
             "nozzle_temperature_range_high": [
-                "350"
+                "280"
             ],
             "nozzle_temperature_range_low": [
-                "190"
+                "230"
             ],
             "overhang_fan_speed": [
-                "60"
+                "30"
             ],
             "overhang_fan_threshold": [
                 "25%"
@@ -378,7 +383,7 @@
                 "1"
             ],
             "slow_down_layer_time": [
-                "12"
+                "4"
             ],
             "slow_down_min_speed": [
                 "10"
@@ -393,19 +398,22 @@
                 "60"
             ],
             "textured_plate_temp": [
-                "110"
+                "100"
             ],
             "textured_plate_temp_initial_layer": [
-                "110"
+                "105"
             ],
             "type": "filament"
         },
-        "name": "Generic PC @Sovol SV08 MAX"
+        "name": "Sovol SV08 ABS"
     },
     {
         "data": {
             "activate_air_filtration": [
                 "0"
+            ],
+            "additional_cooling_fan_speed": [
+                "70"
             ],
             "chamber_temperatures": [
                 "0"
@@ -414,19 +422,20 @@
                 "1"
             ],
             "compatible_printers": [
-                "Sovol SV08 MAX 0.4 nozzle",
-                "Sovol SV08 MAX 0.6 nozzle",
-                "Sovol SV08 MAX 0.8 nozzle"
+                "Sovol SV07 0.4 nozzle"
             ],
-            "complete_print_exhaust_fan_speed": "50",
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
             "cool_plate_temp": [
-                "60"
+                "35"
             ],
             "cool_plate_temp_initial_layer": [
-                "60"
+                "35"
             ],
-            "during_print_exhaust_fan_speed": "50",
-            "enable_pressure_advance": "1",
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
             "eng_plate_temp": [
                 "0"
             ],
@@ -434,19 +443,19 @@
                 "0"
             ],
             "fan_cooling_layer_time": [
-                "30"
-            ],
-            "fan_max_speed": [
                 "50"
             ],
+            "fan_max_speed": [
+                "100"
+            ],
             "fan_min_speed": [
-                "30"
+                "60"
             ],
             "filament_cost": [
-                "30"
+                "20"
             ],
             "filament_density": [
-                "1.27"
+                "1.24"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -468,7 +477,7 @@
                 "nil"
             ],
             "filament_max_volumetric_speed": [
-                "15"
+                "24"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -495,6 +504,209 @@
                 "nil"
             ],
             "filament_scarf_gap": [
+                "15%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "65"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "65"
+            ],
+            "instantiation": "true",
+            "name": "Sovol SV07 PLA",
+            "nozzle_temperature": [
+                "200"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "235"
+            ],
+            "nozzle_temperature_range_high": [
+                "260"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "6"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "45"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "45"
+            ],
+            "temperature_vitrification": [
+                "45"
+            ],
+            "textured_plate_temp": [
+                "55"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "55"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol SV07 PLA"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol SV06 Plus ACE 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "30"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "30"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "30"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "30"
+            ],
+            "fan_cooling_layer_time": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "100"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "3.6"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.4"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
                 "0%"
             ],
             "filament_scarf_height": [
@@ -519,7 +731,7 @@
                 "; Filament gcode\n"
             ],
             "filament_type": [
-                "PETG"
+                "TPU"
             ],
             "filament_vendor": [
                 "Generic"
@@ -531,7 +743,7 @@
                 "nil"
             ],
             "filament_z_hop": [
-                "0.4"
+                "nil"
             ],
             "filament_z_hop_types": [
                 "nil"
@@ -541,32 +753,31 @@
                 "3"
             ],
             "hot_plate_temp": [
-                "80"
+                "60"
             ],
             "hot_plate_temp_initial_layer": [
-                "80"
+                "60"
             ],
             "instantiation": "true",
-            "name": "Generic PETG @Sovol SV08 MAX",
+            "name": "Sovol SV06 Plus ACE TPU",
             "nozzle_temperature": [
-                "255"
+                "245"
             ],
             "nozzle_temperature_initial_layer": [
-                "265"
+                "250"
             ],
             "nozzle_temperature_range_high": [
-                "280"
+                "300"
             ],
             "nozzle_temperature_range_low": [
-                "230"
+                "190"
             ],
             "overhang_fan_speed": [
                 "100"
             ],
             "overhang_fan_threshold": [
-                "10%"
+                "95%"
             ],
-            "pressure_advance": "0.048",
             "reduce_fan_stop_start_freq": [
                 "1"
             ],
@@ -578,29 +789,232 @@
                 "1"
             ],
             "slow_down_layer_time": [
-                "8"
+                "5"
             ],
             "slow_down_min_speed": [
                 "10"
             ],
             "supertack_plate_temp": [
-                "70"
+                "0"
             ],
             "supertack_plate_temp_initial_layer": [
-                "70"
+                "0"
             ],
             "temperature_vitrification": [
-                "60"
+                "30"
             ],
             "textured_plate_temp": [
-                "80"
+                "35"
             ],
             "textured_plate_temp_initial_layer": [
-                "80"
+                "35"
             ],
             "type": "filament"
         },
-        "name": "Generic PETG @Sovol SV08 MAX"
+        "name": "Sovol SV06 Plus ACE TPU"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol SV06 Plus ACE 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "80"
+            ],
+            "fan_min_speed": [
+                "50"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "21"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "15%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "instantiation": "true",
+            "name": "Sovol SV06 Plus ACE PLA",
+            "nozzle_temperature": [
+                "210"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "235"
+            ],
+            "nozzle_temperature_range_high": [
+                "300"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "6"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "supertack_plate_temp": [
+                "45"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "45"
+            ],
+            "temperature_vitrification": [
+                "45"
+            ],
+            "textured_plate_temp": [
+                "55"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "55"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol SV06 Plus ACE PLA"
     },
     {
         "data": {
@@ -809,6 +1223,1802 @@
             "activate_air_filtration": [
                 "0"
             ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Sovol SV08 0.2 nozzle",
+                "Sovol SV08 0.4 nozzle",
+                "Sovol SV08 0.6 nozzle",
+                "Sovol SV08 0.8 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "70"
+            ],
+            "fan_min_speed": [
+                "30"
+            ],
+            "filament_cost": [
+                "30"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "17"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.5"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.4"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "75"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "75"
+            ],
+            "instantiation": "true",
+            "name": "Sovol SV08 PETG",
+            "nozzle_temperature": [
+                "235"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "255"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "nozzle_temperature_range_low": [
+                "230"
+            ],
+            "overhang_fan_speed": [
+                "70"
+            ],
+            "overhang_fan_threshold": [
+                "10%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "70"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "70"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "80"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol SV08 PETG"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Sovol SV06 ACE 0.2 nozzle",
+                "Sovol SV06 ACE 0.4 nozzle",
+                "Sovol SV06 ACE 0.6 nozzle",
+                "Sovol SV06 ACE 0.8 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "30"
+            ],
+            "fan_min_speed": [
+                "30"
+            ],
+            "filament_cost": [
+                "30"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "85"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "85"
+            ],
+            "instantiation": "true",
+            "name": "Sovol SV06 ACE PETG",
+            "nozzle_temperature": [
+                "245"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "260"
+            ],
+            "nozzle_temperature_range_high": [
+                "300"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "95%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "70"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "70"
+            ],
+            "temperature_vitrification": [
+                "70"
+            ],
+            "textured_plate_temp": [
+                "80"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol SV06 ACE PETG"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol SV08 MAX 0.4 nozzle",
+                "Sovol SV08 MAX 0.6 nozzle",
+                "Sovol SV08 MAX 0.8 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": "50",
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "dont_slow_down_outer_wall": "1",
+            "during_print_exhaust_fan_speed": "50",
+            "enable_pressure_advance": "1",
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "40"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "filament_cost": [
+                "30"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "12"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.5"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.4"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "80"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "80"
+            ],
+            "instantiation": "true",
+            "name": "Polymaker PETG @Sovol SV08 MAX",
+            "nozzle_temperature": [
+                "270"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "275"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "nozzle_temperature_range_low": [
+                "230"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "10%"
+            ],
+            "pressure_advance": "0.08",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "12"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "70"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "70"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "80"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "name": "Polymaker PETG @Sovol SV08 MAX"
+    },
+    {
+        "data": {
+            "activate_air_filtration": "1",
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol Zero 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": "50",
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "during_print_exhaust_fan_speed": "50",
+            "enable_pressure_advance": "1",
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "50"
+            ],
+            "fan_max_speed": [
+                "40"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "filament_cost": [
+                "30"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "1.0348"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.5"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.4"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "85"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "85"
+            ],
+            "instantiation": "true",
+            "name": "Sovol Zero PETG",
+            "nozzle_temperature": [
+                "245"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "265"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "nozzle_temperature_range_low": [
+                "230"
+            ],
+            "overhang_fan_speed": [
+                "70"
+            ],
+            "overhang_fan_threshold": [
+                "10%"
+            ],
+            "pressure_advance": "0.046",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "10"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "70"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "70"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "80"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol Zero PETG"
+    },
+    {
+        "data": {
+            "activate_air_filtration": "1",
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol Zero 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": "50",
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "during_print_exhaust_fan_speed": "50",
+            "enable_pressure_advance": "1",
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "50"
+            ],
+            "fan_max_speed": [
+                "40"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "filament_cost": [
+                "30"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.5"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.4"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "85"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "85"
+            ],
+            "instantiation": "true",
+            "name": "Sovol Zero PETG HS Nozzle",
+            "nozzle_temperature": [
+                "250"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "265"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "nozzle_temperature_range_low": [
+                "230"
+            ],
+            "overhang_fan_speed": [
+                "70"
+            ],
+            "overhang_fan_threshold": [
+                "10%"
+            ],
+            "pressure_advance": "0.048",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "10"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "70"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "70"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "80"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol Zero PETG HS Nozzle"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol SV08 0.4 nozzle",
+                "Sovol SV08 0.6 nozzle",
+                "Sovol SV08 0.8 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "50"
+            ],
+            "fan_max_speed": [
+                "70"
+            ],
+            "fan_min_speed": [
+                "50"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "21"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "15%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "65"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "65"
+            ],
+            "instantiation": "true",
+            "name": "Sovol SV08 PLA",
+            "nozzle_temperature": [
+                "220"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "235"
+            ],
+            "nozzle_temperature_range_high": [
+                "250"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "45"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "45"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "55"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "55"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol SV08 PLA"
+    },
+    {
+        "data": {
+            "activate_air_filtration": "1",
+            "additional_cooling_fan_speed": "75%",
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol Zero 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": "80%",
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "dont_slow_down_outer_wall": "0",
+            "during_print_exhaust_fan_speed": "80%",
+            "enable_pressure_advance": "1",
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "70"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "15%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "65"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "65"
+            ],
+            "instantiation": "true",
+            "name": "Sovol Zero PLA Silk",
+            "nozzle_temperature": [
+                "220"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "245"
+            ],
+            "nozzle_temperature_range_high": [
+                "250"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "pressure_advance": "0.029",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "7"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "45"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "45"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "55"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "55"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol Zero PLA Silk"
+    },
+    {
+        "data": {
+            "activate_air_filtration": "1",
+            "additional_cooling_fan_speed": "75%",
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol Zero 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": "80%",
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "dont_slow_down_outer_wall": "0",
+            "during_print_exhaust_fan_speed": "80%",
+            "enable_pressure_advance": "1",
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "70"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "15%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "65"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "65"
+            ],
+            "instantiation": "true",
+            "name": "Sovol Zero PLA Silk HS Nozzle",
+            "nozzle_temperature": [
+                "230"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "245"
+            ],
+            "nozzle_temperature_range_high": [
+                "250"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "pressure_advance": "0.027",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "45"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "45"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "55"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "55"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol Zero PLA Silk HS Nozzle"
+    },
+    {
+        "data": {
+            "activate_air_filtration": "1",
+            "additional_cooling_fan_speed": "0",
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Sovol Zero 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": "50",
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "dont_slow_down_outer_wall": "0",
+            "during_print_exhaust_fan_speed": "50",
+            "eng_plate_temp": [
+                "110"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "110"
+            ],
+            "fan_cooling_layer_time": [
+                "40"
+            ],
+            "fan_max_speed": [
+                "20"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.04"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "21"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PC"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "110"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "110"
+            ],
+            "instantiation": "true",
+            "name": "Sovol Zero PC",
+            "nozzle_temperature": [
+                "270"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "290"
+            ],
+            "nozzle_temperature_range_high": [
+                "350"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "20"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "0"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "0"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "110"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "110"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol Zero PC"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
             "additional_cooling_fan_speed": "75%",
             "chamber_temperatures": [
                 "0"
@@ -1003,6 +3213,1812 @@
             "type": "filament"
         },
         "name": "Generic PLA Silk @Sovol SV08 MAX"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Sovol SV06 ACE 0.2 nozzle",
+                "Sovol SV06 ACE 0.4 nozzle",
+                "Sovol SV06 ACE 0.6 nozzle",
+                "Sovol SV06 ACE 0.8 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "100"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "105"
+            ],
+            "fan_cooling_layer_time": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "30"
+            ],
+            "fan_min_speed": [
+                "30"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.04"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "ABS"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "95"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "95"
+            ],
+            "instantiation": "true",
+            "name": "Sovol SV06 ACE ABS",
+            "nozzle_temperature": [
+                "270"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "280"
+            ],
+            "nozzle_temperature_range_high": [
+                "300"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "80"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "0"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "0"
+            ],
+            "temperature_vitrification": [
+                "110"
+            ],
+            "textured_plate_temp": [
+                "100"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "105"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol SV06 ACE ABS"
+    },
+    {
+        "data": {
+            "activate_air_filtration": "1",
+            "additional_cooling_fan_speed": "50",
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol Zero 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": "50",
+            "cool_plate_temp": [
+                "30"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "30"
+            ],
+            "during_print_exhaust_fan_speed": "100",
+            "eng_plate_temp": [
+                "30"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "30"
+            ],
+            "fan_cooling_layer_time": [
+                "50"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "80"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "3.2"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.4"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "TPU"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.4"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "85"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "85"
+            ],
+            "instantiation": "true",
+            "name": "Sovol Zero TPU",
+            "nozzle_temperature": [
+                "235"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "250"
+            ],
+            "nozzle_temperature_range_high": [
+                "250"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "0"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "0"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "35"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "35"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol Zero TPU"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol SV08 MAX 0.4 nozzle",
+                "Sovol SV08 MAX 0.6 nozzle",
+                "Sovol SV08 MAX 0.8 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": "50",
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "dont_slow_down_outer_wall": "1",
+            "during_print_exhaust_fan_speed": "50",
+            "enable_pressure_advance": "1",
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "40"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "filament_cost": [
+                "30"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "13"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.5"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.4"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "80"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "80"
+            ],
+            "instantiation": "true",
+            "name": "SUNLU PETG @Sovol SV08 MAX",
+            "nozzle_temperature": [
+                "255"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "265"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "nozzle_temperature_range_low": [
+                "230"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "10%"
+            ],
+            "pressure_advance": "0.052",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "12"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "70"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "70"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "80"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "name": "SUNLU PETG @Sovol SV08 MAX"
+    },
+    {
+        "data": {
+            "activate_air_filtration": "1",
+            "additional_cooling_fan_speed": "75%",
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol Zero 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": "80%",
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "dont_slow_down_outer_wall": "0",
+            "during_print_exhaust_fan_speed": "80%",
+            "enable_pressure_advance": "1",
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "70"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "1.0348"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "21"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "15%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "65"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "65"
+            ],
+            "instantiation": "true",
+            "name": "Sovol Zero PLA Basic HS Nozzle",
+            "nozzle_temperature": [
+                "230"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "245"
+            ],
+            "nozzle_temperature_range_high": [
+                "250"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "pressure_advance": "0.03",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "45"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "45"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "55"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "55"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol Zero PLA Basic HS Nozzle"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Sovol SV06 Plus ACE 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "100"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "105"
+            ],
+            "fan_cooling_layer_time": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "30"
+            ],
+            "fan_min_speed": [
+                "30"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.04"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "ABS"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "95"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "95"
+            ],
+            "instantiation": "true",
+            "name": "Sovol SV06 Plus ACE ABS",
+            "nozzle_temperature": [
+                "270"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "280"
+            ],
+            "nozzle_temperature_range_high": [
+                "300"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "80"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "0"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "0"
+            ],
+            "temperature_vitrification": [
+                "110"
+            ],
+            "textured_plate_temp": [
+                "100"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "105"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol SV06 Plus ACE ABS"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol SV08 MAX 0.4 nozzle",
+                "Sovol SV08 MAX 0.6 nozzle",
+                "Sovol SV08 MAX 0.8 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": "50",
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "during_print_exhaust_fan_speed": "50",
+            "enable_pressure_advance": "1",
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "50"
+            ],
+            "fan_min_speed": [
+                "30"
+            ],
+            "filament_cost": [
+                "30"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.5"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.4"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "80"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "80"
+            ],
+            "instantiation": "true",
+            "name": "Generic PETG @Sovol SV08 MAX",
+            "nozzle_temperature": [
+                "255"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "265"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "nozzle_temperature_range_low": [
+                "230"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "10%"
+            ],
+            "pressure_advance": "0.048",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "8"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "70"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "70"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "80"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "name": "Generic PETG @Sovol SV08 MAX"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Sovol SV08 0.2 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "50"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "100"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "10"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "15%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "65"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "65"
+            ],
+            "instantiation": "true",
+            "name": "Sovol SV08 PLA @SV08 0.2 nozzle",
+            "nozzle_temperature": [
+                "220"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "235"
+            ],
+            "nozzle_temperature_range_high": [
+                "250"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "45"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "45"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "55"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "55"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol SV08 PLA @SV08 0.2 nozzle"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol SV08 0.2 nozzle",
+                "Sovol SV08 0.4 nozzle",
+                "Sovol SV08 0.6 nozzle",
+                "Sovol SV08 0.8 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "30"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "30"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "30"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "30"
+            ],
+            "fan_cooling_layer_time": [
+                "50"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "80"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "3.6"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.4"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "TPU"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.4"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "65"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "65"
+            ],
+            "instantiation": "true",
+            "name": "Sovol SV08 TPU",
+            "nozzle_temperature": [
+                "235"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "240"
+            ],
+            "nozzle_temperature_range_high": [
+                "250"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "0"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "0"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "35"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "35"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol SV08 TPU"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Sovol SV06 Plus ACE 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "30"
+            ],
+            "fan_min_speed": [
+                "30"
+            ],
+            "filament_cost": [
+                "30"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "85"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "85"
+            ],
+            "instantiation": "true",
+            "name": "Sovol SV06 Plus ACE PETG",
+            "nozzle_temperature": [
+                "245"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "260"
+            ],
+            "nozzle_temperature_range_high": [
+                "300"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "95%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "70"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "70"
+            ],
+            "temperature_vitrification": [
+                "70"
+            ],
+            "textured_plate_temp": [
+                "80"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol SV06 Plus ACE PETG"
     },
     {
         "data": {
@@ -1208,6 +5224,9 @@
             "activate_air_filtration": [
                 "0"
             ],
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
             "chamber_temperatures": [
                 "0"
             ],
@@ -1215,20 +5234,23 @@
                 "1"
             ],
             "compatible_printers": [
-                "Sovol SV08 MAX 0.4 nozzle",
-                "Sovol SV08 MAX 0.6 nozzle",
-                "Sovol SV08 MAX 0.8 nozzle"
+                "Sovol SV06 ACE 0.2 nozzle",
+                "Sovol SV06 ACE 0.4 nozzle",
+                "Sovol SV06 ACE 0.6 nozzle",
+                "Sovol SV06 ACE 0.8 nozzle"
             ],
-            "complete_print_exhaust_fan_speed": "50",
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
             "cool_plate_temp": [
-                "60"
+                "35"
             ],
             "cool_plate_temp_initial_layer": [
-                "60"
+                "35"
             ],
-            "dont_slow_down_outer_wall": "1",
-            "during_print_exhaust_fan_speed": "50",
-            "enable_pressure_advance": "1",
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
             "eng_plate_temp": [
                 "0"
             ],
@@ -1236,19 +5258,19 @@
                 "0"
             ],
             "fan_cooling_layer_time": [
-                "30"
+                "80"
             ],
             "fan_max_speed": [
-                "40"
+                "80"
             ],
             "fan_min_speed": [
-                "10"
+                "50"
             ],
             "filament_cost": [
-                "30"
+                "20"
             ],
             "filament_density": [
-                "1.27"
+                "1.24"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -1270,7 +5292,7 @@
                 "nil"
             ],
             "filament_max_volumetric_speed": [
-                "12"
+                "21"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -1288,7 +5310,210 @@
                 "nil"
             ],
             "filament_retraction_length": [
-                "0.5"
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "15%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "instantiation": "true",
+            "name": "Sovol SV06 ACE PLA",
+            "nozzle_temperature": [
+                "210"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "235"
+            ],
+            "nozzle_temperature_range_high": [
+                "300"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "6"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "supertack_plate_temp": [
+                "45"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "45"
+            ],
+            "temperature_vitrification": [
+                "45"
+            ],
+            "textured_plate_temp": [
+                "55"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "55"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol SV06 ACE PLA"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "1"
+            ],
+            "additional_cooling_fan_speed": [
+                "0"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol Zero 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "50"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "50"
+            ],
+            "eng_plate_temp": [
+                "100"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "105"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "30"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.04"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "21"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
             ],
             "filament_retraction_minimum_travel": [
                 "nil"
@@ -1321,7 +5546,7 @@
                 "; Filament gcode\n"
             ],
             "filament_type": [
-                "PETG"
+                "ABS"
             ],
             "filament_vendor": [
                 "Generic"
@@ -1333,7 +5558,7 @@
                 "nil"
             ],
             "filament_z_hop": [
-                "0.4"
+                "nil"
             ],
             "filament_z_hop_types": [
                 "nil"
@@ -1343,32 +5568,31 @@
                 "3"
             ],
             "hot_plate_temp": [
-                "80"
+                "100"
             ],
             "hot_plate_temp_initial_layer": [
-                "80"
+                "100"
             ],
             "instantiation": "true",
-            "name": "Polymaker PETG @Sovol SV08 MAX",
+            "name": "Sovol Zero ABS",
             "nozzle_temperature": [
                 "270"
             ],
             "nozzle_temperature_initial_layer": [
-                "275"
+                "280"
             ],
             "nozzle_temperature_range_high": [
-                "280"
+                "300"
             ],
             "nozzle_temperature_range_low": [
                 "230"
             ],
             "overhang_fan_speed": [
-                "100"
+                "30"
             ],
             "overhang_fan_threshold": [
-                "10%"
+                "50%"
             ],
-            "pressure_advance": "0.08",
             "reduce_fan_stop_start_freq": [
                 "1"
             ],
@@ -1380,44 +5604,238 @@
                 "1"
             ],
             "slow_down_layer_time": [
-                "12"
+                "5"
             ],
             "slow_down_min_speed": [
                 "10"
             ],
             "supertack_plate_temp": [
-                "70"
+                "0"
             ],
             "supertack_plate_temp_initial_layer": [
-                "70"
+                "0"
             ],
             "temperature_vitrification": [
                 "60"
             ],
             "textured_plate_temp": [
-                "80"
+                "100"
             ],
             "textured_plate_temp_initial_layer": [
-                "80"
+                "105"
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "polymaker/PETG/petg"
-        ],
-        "name": "Polymaker PETG @Sovol SV08 MAX"
+        "name": "Sovol Zero ABS"
+    },
+    {
+        "data": {
+            "activate_air_filtration": "1",
+            "additional_cooling_fan_speed": "75%",
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol Zero 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": "80%",
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "dont_slow_down_outer_wall": "0",
+            "during_print_exhaust_fan_speed": "80%",
+            "enable_pressure_advance": "1",
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "70"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "21"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "15%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "65"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "65"
+            ],
+            "instantiation": "true",
+            "name": "Sovol Zero PLA Basic",
+            "nozzle_temperature": [
+                "210"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "230"
+            ],
+            "nozzle_temperature_range_high": [
+                "250"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "pressure_advance": "0.032",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "45"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "45"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "55"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "55"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol Zero PLA Basic"
     },
     {
         "data": {
             "activate_air_filtration": [
                 "0"
             ],
+            "additional_cooling_fan_speed": "0",
             "chamber_temperatures": [
                 "0"
             ],
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
+            "close_fan_the_first_x_layers": "3",
             "compatible_printers": [
                 "Sovol SV08 MAX 0.4 nozzle",
                 "Sovol SV08 MAX 0.6 nozzle",
@@ -1425,19 +5843,18 @@
             ],
             "complete_print_exhaust_fan_speed": "50",
             "cool_plate_temp": [
-                "60"
+                "0"
             ],
             "cool_plate_temp_initial_layer": [
-                "60"
-            ],
-            "dont_slow_down_outer_wall": "1",
-            "during_print_exhaust_fan_speed": "50",
-            "enable_pressure_advance": "1",
-            "eng_plate_temp": [
                 "0"
+            ],
+            "dont_slow_down_outer_wall": "0",
+            "during_print_exhaust_fan_speed": "50",
+            "eng_plate_temp": [
+                "110"
             ],
             "eng_plate_temp_initial_layer": [
-                "0"
+                "110"
             ],
             "fan_cooling_layer_time": [
                 "30"
@@ -1449,10 +5866,10 @@
                 "10"
             ],
             "filament_cost": [
-                "30"
+                "20"
             ],
             "filament_density": [
-                "1.27"
+                "1.04"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -1474,7 +5891,7 @@
                 "nil"
             ],
             "filament_max_volumetric_speed": [
-                "13"
+                "18"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -1492,7 +5909,7 @@
                 "nil"
             ],
             "filament_retraction_length": [
-                "0.5"
+                "nil"
             ],
             "filament_retraction_minimum_travel": [
                 "nil"
@@ -1525,7 +5942,7 @@
                 "; Filament gcode\n"
             ],
             "filament_type": [
-                "PETG"
+                "PC"
             ],
             "filament_vendor": [
                 "Generic"
@@ -1537,7 +5954,7 @@
                 "nil"
             ],
             "filament_z_hop": [
-                "0.4"
+                "nil"
             ],
             "filament_z_hop_types": [
                 "nil"
@@ -1547,32 +5964,31 @@
                 "3"
             ],
             "hot_plate_temp": [
-                "80"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "80"
-            ],
-            "instantiation": "true",
-            "name": "SUNLU PETG @Sovol SV08 MAX",
-            "nozzle_temperature": [
-                "255"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "265"
-            ],
-            "nozzle_temperature_range_high": [
-                "280"
-            ],
-            "nozzle_temperature_range_low": [
-                "230"
-            ],
-            "overhang_fan_speed": [
                 "100"
             ],
-            "overhang_fan_threshold": [
-                "10%"
+            "hot_plate_temp_initial_layer": [
+                "100"
             ],
-            "pressure_advance": "0.052",
+            "instantiation": "true",
+            "name": "Generic PC @Sovol SV08 MAX",
+            "nozzle_temperature": [
+                "260"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "280"
+            ],
+            "nozzle_temperature_range_high": [
+                "350"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "60"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
             "reduce_fan_stop_start_freq": [
                 "1"
             ],
@@ -1590,25 +6006,228 @@
                 "10"
             ],
             "supertack_plate_temp": [
-                "70"
+                "0"
             ],
             "supertack_plate_temp_initial_layer": [
-                "70"
+                "0"
             ],
             "temperature_vitrification": [
                 "60"
             ],
             "textured_plate_temp": [
-                "80"
+                "110"
             ],
             "textured_plate_temp_initial_layer": [
-                "80"
+                "110"
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "sunlu/PETG/petg"
-        ],
-        "name": "SUNLU PETG @Sovol SV08 MAX"
+        "name": "Generic PC @Sovol SV08 MAX"
+    },
+    {
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "chamber_temperatures": [
+                "0"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Sovol SV06 ACE 0.2 nozzle",
+                "Sovol SV06 ACE 0.4 nozzle",
+                "Sovol SV06 ACE 0.6 nozzle",
+                "Sovol SV06 ACE 0.8 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "cool_plate_temp": [
+                "30"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "30"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "70"
+            ],
+            "eng_plate_temp": [
+                "30"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "30"
+            ],
+            "fan_cooling_layer_time": [
+                "80"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "100"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode\n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_long_retractions_when_cut": [
+                "nil"
+            ],
+            "filament_max_volumetric_speed": [
+                "3.6"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_distances_when_cut": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.4"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_scarf_gap": [
+                "0%"
+            ],
+            "filament_scarf_height": [
+                "10%"
+            ],
+            "filament_scarf_length": [
+                "10"
+            ],
+            "filament_scarf_seam_type": [
+                "none"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": [
+                "100%"
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "TPU"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "instantiation": "true",
+            "name": "Sovol SV06 ACE TPU",
+            "nozzle_temperature": [
+                "245"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "250"
+            ],
+            "nozzle_temperature_range_high": [
+                "300"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "95%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "3"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "supertack_plate_temp": [
+                "0"
+            ],
+            "supertack_plate_temp_initial_layer": [
+                "0"
+            ],
+            "temperature_vitrification": [
+                "30"
+            ],
+            "textured_plate_temp": [
+                "35"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "35"
+            ],
+            "type": "filament"
+        },
+        "name": "Sovol SV06 ACE TPU"
     }
 ]

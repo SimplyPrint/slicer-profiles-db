@@ -6,8 +6,11 @@
             ]
         },
         "data": {
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
             "close_fan_the_first_x_layers": [
-                "3"
+                "1"
             ],
             "compatible_printers": [
                 "Geeetech A10 Pro 0.2 nozzle",
@@ -45,37 +48,37 @@
                 "Geeetech Mizar Max 0.6 nozzle",
                 "Geeetech Mizar Max 0.8 nozzle",
                 "Geeetech Mizar M 0.4 nozzle",
-                "Geeetech Thunder 0.2 nozzle",
-                "Geeetech Thunder 0.4 nozzle",
-                "Geeetech Thunder 0.6 nozzle",
-                "Geeetech Thunder 0.8 nozzle"
+                "Geeetech M1 0.2 nozzle",
+                "Geeetech M1 0.4 nozzle",
+                "Geeetech M1 0.6 nozzle",
+                "Geeetech M1 0.8 nozzle"
             ],
             "cool_plate_temp": [
-                "0"
+                "55"
             ],
             "cool_plate_temp_initial_layer": [
-                "0"
+                "55"
             ],
             "eng_plate_temp": [
-                "105"
+                "0"
             ],
             "eng_plate_temp_initial_layer": [
-                "105"
+                "0"
             ],
             "fan_cooling_layer_time": [
-                "30"
+                "100"
             ],
             "fan_max_speed": [
-                "35"
+                "100"
             ],
             "fan_min_speed": [
-                "35"
+                "100"
             ],
             "filament_cost": [
                 "20"
             ],
             "filament_density": [
-                "1.04"
+                "1.24"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -87,11 +90,14 @@
                 "; filament end gcode \n"
             ],
             "filament_flow_ratio": [
-                "0.926"
+                "0.95"
             ],
-            "filament_id": "GFB00",
+            "filament_id": "GFS99",
+            "filament_is_support": [
+                "1"
+            ],
             "filament_max_volumetric_speed": [
-                "12"
+                "10"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "90"
@@ -118,13 +124,13 @@
                 ""
             ],
             "filament_soluble": [
-                "0"
+                "1"
             ],
             "filament_start_gcode": [
-                "; Filament gcode\n"
+                "; filament start gcode\n{if  (bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S255\n{elsif(bed_temperature[current_extruder] >35)||(bed_temperature_initial_layer[current_extruder] >35)}M106 P3 S180\n{endif}"
             ],
             "filament_type": [
-                "ABS"
+                "PVA"
             ],
             "filament_vendor": [
                 "Generic"
@@ -146,57 +152,57 @@
                 "0"
             ],
             "hot_plate_temp": [
-                "105"
+                "55"
             ],
             "hot_plate_temp_initial_layer": [
-                "105"
+                "55"
             ],
             "instantiation": "true",
-            "name": "Generic ABS @Geeetech",
+            "name": "Generic PVA @Geeetech",
             "nozzle_temperature": [
-                "260"
+                "220"
             ],
             "nozzle_temperature_initial_layer": [
-                "260"
+                "220"
             ],
             "nozzle_temperature_range_high": [
-                "270"
-            ],
-            "nozzle_temperature_range_low": [
                 "240"
             ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
             "overhang_fan_speed": [
-                "80"
+                "100"
             ],
             "overhang_fan_threshold": [
-                "25%"
+                "50%"
             ],
             "reduce_fan_stop_start_freq": [
-                "0"
+                "1"
             ],
-            "setting_id": "GFSB00_Geeetech_00",
+            "setting_id": "GFSS99_Geeetech_00",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
             "slow_down_layer_time": [
-                "3"
+                "7"
             ],
             "slow_down_min_speed": [
                 "10"
             ],
             "temperature_vitrification": [
-                "110"
+                "55"
             ],
             "textured_plate_temp": [
-                "105"
+                "65"
             ],
             "textured_plate_temp_initial_layer": [
-                "105"
+                "65"
             ],
             "type": "filament"
         },
-        "generic_id": "GFB99",
-        "name": "Generic ABS @Geeetech"
+        "generic_id": "GFS99",
+        "name": "Generic PVA @Geeetech"
     },
     {
         "compatible_printers": {
@@ -602,8 +608,11 @@
             ]
         },
         "data": {
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
             "close_fan_the_first_x_layers": [
-                "3"
+                "1"
             ],
             "compatible_printers": [
                 "Geeetech A10 Pro 0.2 nozzle",
@@ -640,34 +649,42 @@
                 "Geeetech Mizar Max 0.4 nozzle",
                 "Geeetech Mizar Max 0.6 nozzle",
                 "Geeetech Mizar Max 0.8 nozzle",
-                "Geeetech Mizar M 0.4 nozzle"
+                "Geeetech Mizar M 0.4 nozzle",
+                "Geeetech Thunder 0.2 nozzle",
+                "Geeetech Thunder 0.4 nozzle",
+                "Geeetech Thunder 0.6 nozzle",
+                "Geeetech Thunder 0.8 nozzle",
+                "Geeetech M1 0.2 nozzle",
+                "Geeetech M1 0.4 nozzle",
+                "Geeetech M1 0.6 nozzle",
+                "Geeetech M1 0.8 nozzle"
             ],
             "cool_plate_temp": [
-                "0"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "0"
-            ],
-            "eng_plate_temp": [
-                "120"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "120"
-            ],
-            "fan_cooling_layer_time": [
                 "30"
             ],
+            "cool_plate_temp_initial_layer": [
+                "30"
+            ],
+            "eng_plate_temp": [
+                "30"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "30"
+            ],
+            "fan_cooling_layer_time": [
+                "100"
+            ],
             "fan_max_speed": [
-                "60"
+                "100"
             ],
             "fan_min_speed": [
-                "10"
+                "100"
             ],
             "filament_cost": [
                 "20"
             ],
             "filament_density": [
-                "1.04"
+                "1.24"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -679,11 +696,11 @@
                 "; filament end gcode \n"
             ],
             "filament_flow_ratio": [
-                "0.94"
+                "1"
             ],
-            "filament_id": "GFC99",
+            "filament_id": "GFU99",
             "filament_max_volumetric_speed": [
-                "12"
+                "3.2"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "90"
@@ -698,7 +715,7 @@
                 "nil"
             ],
             "filament_retraction_length": [
-                "nil"
+                "0.4"
             ],
             "filament_retraction_minimum_travel": [
                 "nil"
@@ -713,10 +730,10 @@
                 "0"
             ],
             "filament_start_gcode": [
-                "; Filament gcode\n"
+                "; filament start gcode\n{if  (bed_temperature[current_extruder] >35)||(bed_temperature_initial_layer[current_extruder] >35)}M106 P3 S255\n{elsif(bed_temperature[current_extruder] >30)||(bed_temperature_initial_layer[current_extruder] >30)}M106 P3 S180\n{endif}"
             ],
             "filament_type": [
-                "PC"
+                "TPU"
             ],
             "filament_vendor": [
                 "Generic"
@@ -738,57 +755,57 @@
                 "0"
             ],
             "hot_plate_temp": [
-                "120"
+                "45"
             ],
             "hot_plate_temp_initial_layer": [
-                "120"
+                "45"
             ],
             "instantiation": "true",
-            "name": "Generic PC @Geeetech",
+            "name": "Generic TPU @Geeetech",
             "nozzle_temperature": [
-                "280"
+                "240"
             ],
             "nozzle_temperature_initial_layer": [
-                "270"
+                "240"
             ],
             "nozzle_temperature_range_high": [
-                "290"
+                "250"
             ],
             "nozzle_temperature_range_low": [
-                "260"
+                "200"
             ],
             "overhang_fan_speed": [
-                "60"
+                "100"
             ],
             "overhang_fan_threshold": [
-                "25%"
+                "95%"
             ],
             "reduce_fan_stop_start_freq": [
                 "1"
             ],
-            "setting_id": "GFSC99_Geeetech_00",
+            "setting_id": "GFSU99_Geeetech_00",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
             "slow_down_layer_time": [
-                "2"
+                "8"
             ],
             "slow_down_min_speed": [
                 "10"
             ],
             "temperature_vitrification": [
-                "120"
+                "35"
             ],
             "textured_plate_temp": [
-                "120"
+                "45"
             ],
             "textured_plate_temp_initial_layer": [
-                "120"
+                "45"
             ],
             "type": "filament"
         },
-        "generic_id": "GFC99",
-        "name": "Generic PC @Geeetech"
+        "generic_id": "GFU99",
+        "name": "Generic TPU @Geeetech"
     },
     {
         "compatible_printers": {
@@ -839,240 +856,34 @@
                 "Geeetech Thunder 0.2 nozzle",
                 "Geeetech Thunder 0.4 nozzle",
                 "Geeetech Thunder 0.6 nozzle",
-                "Geeetech Thunder 0.8 nozzle",
-                "Geeetech M1 0.2 nozzle",
-                "Geeetech M1 0.4 nozzle",
-                "Geeetech M1 0.6 nozzle",
-                "Geeetech M1 0.8 nozzle"
+                "Geeetech Thunder 0.8 nozzle"
             ],
             "cool_plate_temp": [
-                "80"
+                "0"
             ],
             "cool_plate_temp_initial_layer": [
-                "80"
+                "0"
             ],
             "eng_plate_temp": [
-                "0"
+                "105"
             ],
             "eng_plate_temp_initial_layer": [
-                "0"
+                "105"
             ],
             "fan_cooling_layer_time": [
                 "30"
             ],
             "fan_max_speed": [
-                "90"
+                "35"
             ],
             "fan_min_speed": [
-                "40"
-            ],
-            "filament_cost": [
-                "30"
-            ],
-            "filament_density": [
-                "1.27"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "0.95"
-            ],
-            "filament_id": "GFG99",
-            "filament_max_volumetric_speed": [
-                "10"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "90"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n"
-            ],
-            "filament_type": [
-                "PETG"
-            ],
-            "filament_vendor": [
-                "Generic"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "80"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "80"
-            ],
-            "instantiation": "true",
-            "name": "Generic PETG @Geeetech",
-            "nozzle_temperature": [
-                "255"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "255"
-            ],
-            "nozzle_temperature_range_high": [
-                "260"
-            ],
-            "nozzle_temperature_range_low": [
-                "220"
-            ],
-            "overhang_fan_speed": [
-                "90"
-            ],
-            "overhang_fan_threshold": [
-                "25%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "setting_id": "GFSG99_Geeetech_00",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "8"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "temperature_vitrification": [
-                "80"
-            ],
-            "textured_plate_temp": [
-                "80"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "80"
-            ],
-            "type": "filament"
-        },
-        "generic_id": "GFG99",
-        "name": "Generic PETG @Geeetech"
-    },
-    {
-        "compatible_printers": {
-            "Geeetech A30 T": [
-                "0.4"
-            ]
-        },
-        "data": {
-            "additional_cooling_fan_speed": [
-                "70"
-            ],
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "compatible_printers": [
-                "Geeetech A10 Pro 0.2 nozzle",
-                "Geeetech A10 Pro 0.4 nozzle",
-                "Geeetech A10 Pro 0.6 nozzle",
-                "Geeetech A10 Pro 0.8 nozzle",
-                "Geeetech A20 0.2 nozzle",
-                "Geeetech A20 0.4 nozzle",
-                "Geeetech A20 0.6 nozzle",
-                "Geeetech A20 0.8 nozzle",
-                "Geeetech A30 Pro 0.2 nozzle",
-                "Geeetech A30 Pro 0.4 nozzle",
-                "Geeetech A30 Pro 0.6 nozzle",
-                "Geeetech A30 Pro 0.8 nozzle",
-                "Geeetech A10 M 0.4 nozzle",
-                "Geeetech A20 M 0.4 nozzle",
-                "Geeetech A30 M 0.4 nozzle",
-                "Geeetech A10 T 0.4 nozzle",
-                "Geeetech A20 T 0.4 nozzle",
-                "Geeetech A30 T 0.4 nozzle",
-                "Geeetech Mizar 0.2 nozzle",
-                "Geeetech Mizar 0.4 nozzle",
-                "Geeetech Mizar 0.6 nozzle",
-                "Geeetech Mizar 0.8 nozzle",
-                "Geeetech Mizar S 0.2 nozzle",
-                "Geeetech Mizar S 0.4 nozzle",
-                "Geeetech Mizar S 0.6 nozzle",
-                "Geeetech Mizar S 0.8 nozzle",
-                "Geeetech Mizar Pro 0.2 nozzle",
-                "Geeetech Mizar Pro 0.4 nozzle",
-                "Geeetech Mizar Pro 0.6 nozzle",
-                "Geeetech Mizar Pro 0.8 nozzle",
-                "Geeetech Mizar Max 0.2 nozzle",
-                "Geeetech Mizar Max 0.4 nozzle",
-                "Geeetech Mizar Max 0.6 nozzle",
-                "Geeetech Mizar Max 0.8 nozzle",
-                "Geeetech Mizar M 0.4 nozzle",
-                "Geeetech M1 0.2 nozzle",
-                "Geeetech M1 0.4 nozzle",
-                "Geeetech M1 0.6 nozzle",
-                "Geeetech M1 0.8 nozzle"
-            ],
-            "cool_plate_temp": [
-                "60"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "60"
-            ],
-            "eng_plate_temp": [
-                "60"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "60"
-            ],
-            "fan_cooling_layer_time": [
-                "100"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "100"
+                "35"
             ],
             "filament_cost": [
                 "20"
             ],
             "filament_density": [
-                "1.24"
+                "1.04"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -1084,9 +895,9 @@
                 "; filament end gcode \n"
             ],
             "filament_flow_ratio": [
-                "0.98"
+                "0.926"
             ],
-            "filament_id": "GFL99",
+            "filament_id": "GFB00",
             "filament_max_volumetric_speed": [
                 "12"
             ],
@@ -1118,10 +929,10 @@
                 "0"
             ],
             "filament_start_gcode": [
-                "; filament start gcode\n"
+                "; Filament gcode\n"
             ],
             "filament_type": [
-                "PLA"
+                "ABS"
             ],
             "filament_vendor": [
                 "Generic"
@@ -1143,57 +954,57 @@
                 "0"
             ],
             "hot_plate_temp": [
-                "60"
+                "105"
             ],
             "hot_plate_temp_initial_layer": [
-                "60"
+                "105"
             ],
             "instantiation": "true",
-            "name": "Generic PLA @Geeetech",
+            "name": "Generic ABS @Geeetech",
             "nozzle_temperature": [
-                "200"
+                "260"
             ],
             "nozzle_temperature_initial_layer": [
-                "205"
+                "260"
             ],
             "nozzle_temperature_range_high": [
-                "230"
+                "270"
             ],
             "nozzle_temperature_range_low": [
-                "190"
+                "240"
             ],
             "overhang_fan_speed": [
-                "100"
+                "80"
             ],
             "overhang_fan_threshold": [
-                "50%"
+                "25%"
             ],
             "reduce_fan_stop_start_freq": [
-                "1"
+                "0"
             ],
-            "setting_id": "GFSL99_Geeetech_00",
+            "setting_id": "GFSB00_Geeetech_00",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
             "slow_down_layer_time": [
-                "8"
+                "3"
             ],
             "slow_down_min_speed": [
                 "10"
             ],
             "temperature_vitrification": [
-                "60"
+                "110"
             ],
             "textured_plate_temp": [
-                "60"
+                "105"
             ],
             "textured_plate_temp_initial_layer": [
-                "60"
+                "105"
             ],
             "type": "filament"
         },
-        "generic_id": "GFL99",
-        "name": "Generic PLA @Geeetech"
+        "generic_id": "GFB99",
+        "name": "Generic ABS @Geeetech"
     },
     {
         "compatible_printers": {
@@ -1456,16 +1267,16 @@
                 "Geeetech M1 0.8 nozzle"
             ],
             "cool_plate_temp": [
-                "55"
+                "60"
             ],
             "cool_plate_temp_initial_layer": [
-                "55"
+                "60"
             ],
             "eng_plate_temp": [
-                "0"
+                "60"
             ],
             "eng_plate_temp_initial_layer": [
-                "0"
+                "60"
             ],
             "fan_cooling_layer_time": [
                 "100"
@@ -1492,14 +1303,11 @@
                 "; filament end gcode \n"
             ],
             "filament_flow_ratio": [
-                "0.95"
+                "0.98"
             ],
-            "filament_id": "GFS99",
-            "filament_is_support": [
-                "1"
-            ],
+            "filament_id": "GFL99",
             "filament_max_volumetric_speed": [
-                "10"
+                "12"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "90"
@@ -1526,13 +1334,13 @@
                 ""
             ],
             "filament_soluble": [
-                "1"
+                "0"
             ],
             "filament_start_gcode": [
-                "; filament start gcode\n{if  (bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S255\n{elsif(bed_temperature[current_extruder] >35)||(bed_temperature_initial_layer[current_extruder] >35)}M106 P3 S180\n{endif}"
+                "; filament start gcode\n"
             ],
             "filament_type": [
-                "PVA"
+                "PLA"
             ],
             "filament_vendor": [
                 "Generic"
@@ -1554,21 +1362,21 @@
                 "0"
             ],
             "hot_plate_temp": [
-                "55"
+                "60"
             ],
             "hot_plate_temp_initial_layer": [
-                "55"
+                "60"
             ],
             "instantiation": "true",
-            "name": "Generic PVA @Geeetech",
+            "name": "Generic PLA @Geeetech",
             "nozzle_temperature": [
-                "220"
+                "200"
             ],
             "nozzle_temperature_initial_layer": [
-                "220"
+                "205"
             ],
             "nozzle_temperature_range_high": [
-                "240"
+                "230"
             ],
             "nozzle_temperature_range_low": [
                 "190"
@@ -1582,29 +1390,29 @@
             "reduce_fan_stop_start_freq": [
                 "1"
             ],
-            "setting_id": "GFSS99_Geeetech_00",
+            "setting_id": "GFSL99_Geeetech_00",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
             "slow_down_layer_time": [
-                "7"
+                "8"
             ],
             "slow_down_min_speed": [
                 "10"
             ],
             "temperature_vitrification": [
-                "55"
+                "60"
             ],
             "textured_plate_temp": [
-                "65"
+                "60"
             ],
             "textured_plate_temp_initial_layer": [
-                "65"
+                "60"
             ],
             "type": "filament"
         },
-        "generic_id": "GFS99",
-        "name": "Generic PVA @Geeetech"
+        "generic_id": "GFL99",
+        "name": "Generic PLA @Geeetech"
     },
     {
         "compatible_printers": {
@@ -1613,11 +1421,8 @@
             ]
         },
         "data": {
-            "additional_cooling_fan_speed": [
-                "70"
-            ],
             "close_fan_the_first_x_layers": [
-                "1"
+                "3"
             ],
             "compatible_printers": [
                 "Geeetech A10 Pro 0.2 nozzle",
@@ -1665,31 +1470,31 @@
                 "Geeetech M1 0.8 nozzle"
             ],
             "cool_plate_temp": [
-                "30"
+                "80"
             ],
             "cool_plate_temp_initial_layer": [
-                "30"
+                "80"
             ],
             "eng_plate_temp": [
-                "30"
+                "0"
             ],
             "eng_plate_temp_initial_layer": [
-                "30"
+                "0"
             ],
             "fan_cooling_layer_time": [
-                "100"
+                "30"
             ],
             "fan_max_speed": [
-                "100"
+                "90"
             ],
             "fan_min_speed": [
-                "100"
+                "40"
             ],
             "filament_cost": [
-                "20"
+                "30"
             ],
             "filament_density": [
-                "1.24"
+                "1.27"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -1701,11 +1506,11 @@
                 "; filament end gcode \n"
             ],
             "filament_flow_ratio": [
-                "1"
+                "0.95"
             ],
-            "filament_id": "GFU99",
+            "filament_id": "GFG99",
             "filament_max_volumetric_speed": [
-                "3.2"
+                "10"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "90"
@@ -1720,7 +1525,7 @@
                 "nil"
             ],
             "filament_retraction_length": [
-                "0.4"
+                "nil"
             ],
             "filament_retraction_minimum_travel": [
                 "nil"
@@ -1735,10 +1540,10 @@
                 "0"
             ],
             "filament_start_gcode": [
-                "; filament start gcode\n{if  (bed_temperature[current_extruder] >35)||(bed_temperature_initial_layer[current_extruder] >35)}M106 P3 S255\n{elsif(bed_temperature[current_extruder] >30)||(bed_temperature_initial_layer[current_extruder] >30)}M106 P3 S180\n{endif}"
+                "; filament start gcode\n"
             ],
             "filament_type": [
-                "TPU"
+                "PETG"
             ],
             "filament_vendor": [
                 "Generic"
@@ -1760,35 +1565,35 @@
                 "0"
             ],
             "hot_plate_temp": [
-                "45"
+                "80"
             ],
             "hot_plate_temp_initial_layer": [
-                "45"
+                "80"
             ],
             "instantiation": "true",
-            "name": "Generic TPU @Geeetech",
+            "name": "Generic PETG @Geeetech",
             "nozzle_temperature": [
-                "240"
+                "255"
             ],
             "nozzle_temperature_initial_layer": [
-                "240"
+                "255"
             ],
             "nozzle_temperature_range_high": [
-                "250"
+                "260"
             ],
             "nozzle_temperature_range_low": [
-                "200"
+                "220"
             ],
             "overhang_fan_speed": [
-                "100"
+                "90"
             ],
             "overhang_fan_threshold": [
-                "95%"
+                "25%"
             ],
             "reduce_fan_stop_start_freq": [
                 "1"
             ],
-            "setting_id": "GFSU99_Geeetech_00",
+            "setting_id": "GFSG99_Geeetech_00",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -1799,17 +1604,212 @@
                 "10"
             ],
             "temperature_vitrification": [
-                "35"
+                "80"
             ],
             "textured_plate_temp": [
-                "45"
+                "80"
             ],
             "textured_plate_temp_initial_layer": [
-                "45"
+                "80"
             ],
             "type": "filament"
         },
-        "generic_id": "GFU99",
-        "name": "Generic TPU @Geeetech"
+        "generic_id": "GFG99",
+        "name": "Generic PETG @Geeetech"
+    },
+    {
+        "compatible_printers": {
+            "Geeetech A30 T": [
+                "0.4"
+            ]
+        },
+        "data": {
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Geeetech A10 Pro 0.2 nozzle",
+                "Geeetech A10 Pro 0.4 nozzle",
+                "Geeetech A10 Pro 0.6 nozzle",
+                "Geeetech A10 Pro 0.8 nozzle",
+                "Geeetech A20 0.2 nozzle",
+                "Geeetech A20 0.4 nozzle",
+                "Geeetech A20 0.6 nozzle",
+                "Geeetech A20 0.8 nozzle",
+                "Geeetech A30 Pro 0.2 nozzle",
+                "Geeetech A30 Pro 0.4 nozzle",
+                "Geeetech A30 Pro 0.6 nozzle",
+                "Geeetech A30 Pro 0.8 nozzle",
+                "Geeetech A10 M 0.4 nozzle",
+                "Geeetech A20 M 0.4 nozzle",
+                "Geeetech A30 M 0.4 nozzle",
+                "Geeetech A10 T 0.4 nozzle",
+                "Geeetech A20 T 0.4 nozzle",
+                "Geeetech A30 T 0.4 nozzle",
+                "Geeetech Mizar 0.2 nozzle",
+                "Geeetech Mizar 0.4 nozzle",
+                "Geeetech Mizar 0.6 nozzle",
+                "Geeetech Mizar 0.8 nozzle",
+                "Geeetech Mizar S 0.2 nozzle",
+                "Geeetech Mizar S 0.4 nozzle",
+                "Geeetech Mizar S 0.6 nozzle",
+                "Geeetech Mizar S 0.8 nozzle",
+                "Geeetech Mizar Pro 0.2 nozzle",
+                "Geeetech Mizar Pro 0.4 nozzle",
+                "Geeetech Mizar Pro 0.6 nozzle",
+                "Geeetech Mizar Pro 0.8 nozzle",
+                "Geeetech Mizar Max 0.2 nozzle",
+                "Geeetech Mizar Max 0.4 nozzle",
+                "Geeetech Mizar Max 0.6 nozzle",
+                "Geeetech Mizar Max 0.8 nozzle",
+                "Geeetech Mizar M 0.4 nozzle"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "eng_plate_temp": [
+                "120"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "120"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "60"
+            ],
+            "fan_min_speed": [
+                "10"
+            ],
+            "filament_cost": [
+                "20"
+            ],
+            "filament_density": [
+                "1.04"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.94"
+            ],
+            "filament_id": "GFC99",
+            "filament_max_volumetric_speed": [
+                "12"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "90"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; Filament gcode\n"
+            ],
+            "filament_type": [
+                "PC"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "120"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "120"
+            ],
+            "instantiation": "true",
+            "name": "Generic PC @Geeetech",
+            "nozzle_temperature": [
+                "280"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "270"
+            ],
+            "nozzle_temperature_range_high": [
+                "290"
+            ],
+            "nozzle_temperature_range_low": [
+                "260"
+            ],
+            "overhang_fan_speed": [
+                "60"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSC99_Geeetech_00",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "2"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "temperature_vitrification": [
+                "120"
+            ],
+            "textured_plate_temp": [
+                "120"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "120"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFC99",
+        "name": "Generic PC @Geeetech"
     }
 ]

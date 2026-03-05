@@ -22,352 +22,6 @@
                 "Prusa CORE One 0.25 nozzle",
                 "Prusa CORE One 0.3 nozzle",
                 "Prusa CORE One 0.4 nozzle",
-                "Prusa CORE One 0.5 nozzle"
-            ],
-            "cool_plate_temp": [
-                "105"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "105"
-            ],
-            "eng_plate_temp": [
-                "105"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "105"
-            ],
-            "fan_cooling_layer_time": [
-                "20"
-            ],
-            "fan_max_speed": [
-                "25"
-            ],
-            "fan_min_speed": [
-                "20"
-            ],
-            "filament_cost": [
-                "35.28"
-            ],
-            "filament_density": [
-                "1.07"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; Filament-specific end gcode"
-            ],
-            "filament_flow_ratio": [
-                "1"
-            ],
-            "filament_id": "Prusament ASA @CORE One",
-            "filament_max_volumetric_speed": [
-                "15"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "35"
-            ],
-            "filament_notes": [
-                ""
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.04{elsif nozzle_diameter[filament_extruder_id]==0.25}0.1{elsif nozzle_diameter[filament_extruder_id]==0.3}0.06{elsif nozzle_diameter[filament_extruder_id]==0.35}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.03{elsif nozzle_diameter[filament_extruder_id]==0.6}0.02{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.02{elsif nozzle_diameter[filament_extruder_id]==0.5}0.018{elsif nozzle_diameter[filament_extruder_id]==0.6}0.012{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{elsif nozzle_diameter[filament_extruder_id]==0.25}0.09{elsif nozzle_diameter[filament_extruder_id]==0.3}0.065{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S40 ; set heatbreak target temp"
-            ],
-            "filament_type": [
-                "ASA"
-            ],
-            "filament_vendor": [
-                "Prusa Polymers"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "110"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "110"
-            ],
-            "idle_temperature": [
-                "130"
-            ],
-            "instantiation": "true",
-            "name": "Prusament ASA @CORE One",
-            "nozzle_temperature": [
-                "260"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "260"
-            ],
-            "nozzle_temperature_range_high": [
-                "270"
-            ],
-            "nozzle_temperature_range_low": [
-                "240"
-            ],
-            "overhang_fan_speed": [
-                "25"
-            ],
-            "overhang_fan_threshold": [
-                "25%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "setting_id": "GFSA04",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "10"
-            ],
-            "slow_down_min_speed": [
-                "15"
-            ],
-            "temperature_vitrification": [
-                "110"
-            ],
-            "type": "filament"
-        },
-        "filament_db_ids": [
-            "prusament/ASA/asa"
-        ],
-        "generic_id": "GFB98",
-        "name": "Prusament ASA @CORE One"
-    },
-    {
-        "compatible_printers": {
-            "Prusa CORE One": [
-                "0.25",
-                "0.3",
-                "0.4",
-                "0.5"
-            ]
-        },
-        "data": {
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperature": [
-                "40"
-            ],
-            "close_fan_the_first_x_layers": [
-                "4"
-            ],
-            "compatible_printers": [
-                "Prusa CORE One 0.25 nozzle",
-                "Prusa CORE One 0.3 nozzle",
-                "Prusa CORE One 0.4 nozzle",
-                "Prusa CORE One 0.5 nozzle"
-            ],
-            "cool_plate_temp": [
-                "0"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "0"
-            ],
-            "eng_plate_temp": [
-                "110"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "110"
-            ],
-            "fan_cooling_layer_time": [
-                "35"
-            ],
-            "fan_max_speed": [
-                "25"
-            ],
-            "fan_min_speed": [
-                "15"
-            ],
-            "filament_cost": [
-                "51.53"
-            ],
-            "filament_density": [
-                "1.22"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; Filament-specific end gcode"
-            ],
-            "filament_flow_ratio": [
-                "1"
-            ],
-            "filament_id": "Prusament PC Blend @CORE One",
-            "filament_max_volumetric_speed": [
-                "12"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "35"
-            ],
-            "filament_notes": [
-                ""
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S45 ; set heatbreak target temp"
-            ],
-            "filament_type": [
-                "PC"
-            ],
-            "filament_vendor": [
-                "Prusa Polymers"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "0.2"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "115"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "110"
-            ],
-            "idle_temperature": [
-                "130"
-            ],
-            "instantiation": "true",
-            "name": "Prusament PC Blend @CORE One",
-            "nozzle_temperature": [
-                "275"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "275"
-            ],
-            "nozzle_temperature_range_high": [
-                "280"
-            ],
-            "nozzle_temperature_range_low": [
-                "260"
-            ],
-            "overhang_fan_speed": [
-                "25"
-            ],
-            "overhang_fan_threshold": [
-                "25%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "0"
-            ],
-            "setting_id": "GFSA04",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "20"
-            ],
-            "slow_down_min_speed": [
-                "15"
-            ],
-            "temperature_vitrification": [
-                "140"
-            ],
-            "type": "filament"
-        },
-        "filament_db_ids": [
-            "prusament/PC/pc_blend"
-        ],
-        "generic_id": "GFC99",
-        "name": "Prusament PC Blend @CORE One"
-    },
-    {
-        "compatible_printers": {
-            "Prusa CORE One": [
-                "0.25",
-                "0.3",
-                "0.4",
-                "0.5"
-            ]
-        },
-        "data": {
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperature": [
-                "40"
-            ],
-            "close_fan_the_first_x_layers": [
-                "4"
-            ],
-            "compatible_printers": [
-                "Prusa CORE One 0.25 nozzle",
-                "Prusa CORE One 0.3 nozzle",
-                "Prusa CORE One 0.4 nozzle",
                 "Prusa CORE One 0.5 nozzle",
                 "Prusa CORE One HF 0.4 nozzle",
                 "Prusa CORE One HF 0.5 nozzle"
@@ -514,11 +168,526 @@
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PC/pc_cf"
-        ],
         "generic_id": "GFC99",
         "name": "Prusament PC-CF @CORE One"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.25",
+                "0.3",
+                "0.4",
+                "0.5"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "40"
+            ],
+            "close_fan_the_first_x_layers": [
+                "4"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.25 nozzle",
+                "Prusa CORE One 0.3 nozzle",
+                "Prusa CORE One 0.4 nozzle",
+                "Prusa CORE One 0.5 nozzle"
+            ],
+            "cool_plate_temp": [
+                "105"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "105"
+            ],
+            "eng_plate_temp": [
+                "105"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "105"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "20"
+            ],
+            "fan_min_speed": [
+                "15"
+            ],
+            "filament_cost": [
+                "27.82"
+            ],
+            "filament_density": [
+                "1.04"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusa Generic ABS @CORE One",
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.04{elsif nozzle_diameter[filament_extruder_id]==0.25}0.1{elsif nozzle_diameter[filament_extruder_id]==0.3}0.06{elsif nozzle_diameter[filament_extruder_id]==0.35}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.03{elsif nozzle_diameter[filament_extruder_id]==0.6}0.02{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.02{elsif nozzle_diameter[filament_extruder_id]==0.5}0.018{elsif nozzle_diameter[filament_extruder_id]==0.6}0.012{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{elsif nozzle_diameter[filament_extruder_id]==0.25}0.09{elsif nozzle_diameter[filament_extruder_id]==0.3}0.065{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S40 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "ABS"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "110"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "110"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic ABS @CORE One",
+            "nozzle_temperature": [
+                "260"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "260"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "240"
+            ],
+            "overhang_fan_speed": [
+                "25"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "0"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "20"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "110"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFB99",
+        "name": "Prusa Generic ABS @CORE One"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.25",
+                "0.3",
+                "0.4",
+                "0.5"
+            ]
+        },
+        "data": {
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "20"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.25 nozzle",
+                "Prusa CORE One 0.3 nozzle",
+                "Prusa CORE One 0.4 nozzle",
+                "Prusa CORE One 0.5 nozzle",
+                "Prusa CORE One HF 0.4 nozzle",
+                "Prusa CORE One HF 0.5 nozzle"
+            ],
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "40"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "85"
+            ],
+            "filament_cost": [
+                "25.4"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusa Generic PLA Silk @CORE One",
+            "filament_max_volumetric_speed": [
+                "7"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[0]==0.4}0.05{elsif nozzle_diameter[0]==0.25}0.14{elsif nozzle_diameter[0]==0.3}0.07{elsif nozzle_diameter[0]==0.35}0.06{elsif nozzle_diameter[0]==0.6}0.03{elsif nozzle_diameter[0]==0.5}0.035{elsif nozzle_diameter[0]==0.8}0.015{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[0]==0.4}0.03{elsif nozzle_diameter[0]==0.5}0.022{elsif nozzle_diameter[0]==0.6}0.018{elsif nozzle_diameter[0]==0.8}0.012{elsif nozzle_diameter[0]==0.25}0.12{elsif nozzle_diameter[0]==0.3}0.075{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.6"
+            ],
+            "filament_z_hop_types": [
+                "Slope Lift"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "idle_temperature": [
+                "150"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic PLA Silk @CORE One",
+            "nozzle_temperature": [
+                "225"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "230"
+            ],
+            "nozzle_temperature_range_high": [
+                "230"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "8"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFL96",
+        "name": "Prusa Generic PLA Silk @CORE One"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.25",
+                "0.3",
+                "0.4",
+                "0.5"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "40"
+            ],
+            "close_fan_the_first_x_layers": [
+                "4"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.25 nozzle",
+                "Prusa CORE One 0.3 nozzle",
+                "Prusa CORE One 0.4 nozzle",
+                "Prusa CORE One 0.5 nozzle"
+            ],
+            "cool_plate_temp": [
+                "105"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "105"
+            ],
+            "eng_plate_temp": [
+                "105"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "105"
+            ],
+            "fan_cooling_layer_time": [
+                "20"
+            ],
+            "fan_max_speed": [
+                "25"
+            ],
+            "fan_min_speed": [
+                "20"
+            ],
+            "filament_cost": [
+                "35.28"
+            ],
+            "filament_density": [
+                "1.07"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusa Generic ASA @CORE One",
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.04{elsif nozzle_diameter[filament_extruder_id]==0.25}0.1{elsif nozzle_diameter[filament_extruder_id]==0.3}0.06{elsif nozzle_diameter[filament_extruder_id]==0.35}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.03{elsif nozzle_diameter[filament_extruder_id]==0.6}0.02{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.02{elsif nozzle_diameter[filament_extruder_id]==0.5}0.018{elsif nozzle_diameter[filament_extruder_id]==0.6}0.012{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{elsif nozzle_diameter[filament_extruder_id]==0.25}0.09{elsif nozzle_diameter[filament_extruder_id]==0.3}0.065{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S40 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "ASA"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "110"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "110"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic ASA @CORE One",
+            "nozzle_temperature": [
+                "260"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "260"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "240"
+            ],
+            "overhang_fan_speed": [
+                "25"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "10"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "110"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFB98",
+        "name": "Prusa Generic ASA @CORE One"
     },
     {
         "compatible_printers": {
@@ -567,7 +736,7 @@
                 "30"
             ],
             "filament_cost": [
-                "29.99"
+                "27.82"
             ],
             "filament_density": [
                 "1.27"
@@ -584,7 +753,7 @@
             "filament_flow_ratio": [
                 "1"
             ],
-            "filament_id": "Prusament PETG @CORE One",
+            "filament_id": "Prusa Generic PETG @CORE One",
             "filament_max_volumetric_speed": [
                 "12"
             ],
@@ -625,7 +794,7 @@
                 "PETG"
             ],
             "filament_vendor": [
-                "Prusa Polymers"
+                "Generic"
             ],
             "filament_wipe": [
                 "1"
@@ -653,12 +822,12 @@
                 "130"
             ],
             "instantiation": "true",
-            "name": "Prusament PETG @CORE One",
+            "name": "Prusa Generic PETG @CORE One",
             "nozzle_temperature": [
-                "250"
+                "240"
             ],
             "nozzle_temperature_initial_layer": [
-                "250"
+                "240"
             ],
             "nozzle_temperature_range_high": [
                 "260"
@@ -690,11 +859,8 @@
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PETG/petg"
-        ],
         "generic_id": "GFG99",
-        "name": "Prusament PETG @CORE One"
+        "name": "Prusa Generic PETG @CORE One"
     },
     {
         "compatible_printers": {
@@ -869,11 +1035,875 @@
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PLA/pla"
-        ],
         "generic_id": "GFL99",
         "name": "Prusament PLA @CORE One"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.25",
+                "0.3",
+                "0.4",
+                "0.5"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "40"
+            ],
+            "close_fan_the_first_x_layers": [
+                "4"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.25 nozzle",
+                "Prusa CORE One 0.3 nozzle",
+                "Prusa CORE One 0.4 nozzle",
+                "Prusa CORE One 0.5 nozzle",
+                "Prusa CORE One HF 0.4 nozzle",
+                "Prusa CORE One HF 0.5 nozzle"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "eng_plate_temp": [
+                "100"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "100"
+            ],
+            "fan_cooling_layer_time": [
+                "15"
+            ],
+            "fan_max_speed": [
+                "20"
+            ],
+            "fan_min_speed": [
+                "15"
+            ],
+            "filament_cost": [
+                "124.99"
+            ],
+            "filament_density": [
+                "1.11"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1.05"
+            ],
+            "filament_id": "Prusament PA-CF @CORE One",
+            "filament_max_volumetric_speed": [
+                "6.5"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S45 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PA"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.2"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "115"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "90"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusament PA-CF @CORE One",
+            "nozzle_temperature": [
+                "285"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "275"
+            ],
+            "nozzle_temperature_range_high": [
+                "300"
+            ],
+            "nozzle_temperature_range_low": [
+                "270"
+            ],
+            "overhang_fan_speed": [
+                "20"
+            ],
+            "overhang_fan_threshold": [
+                "95%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "0"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "20"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "108"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFN99",
+        "name": "Prusament PA-CF @CORE One"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.25",
+                "0.3",
+                "0.4",
+                "0.5"
+            ]
+        },
+        "data": {
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "30"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.25 nozzle",
+                "Prusa CORE One 0.3 nozzle",
+                "Prusa CORE One 0.4 nozzle",
+                "Prusa CORE One 0.5 nozzle",
+                "Prusa CORE One HF 0.4 nozzle",
+                "Prusa CORE One HF 0.5 nozzle"
+            ],
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "eng_plate_temp": [
+                "60"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "60"
+            ],
+            "fan_cooling_layer_time": [
+                "100"
+            ],
+            "fan_max_speed": [
+                "50"
+            ],
+            "fan_min_speed": [
+                "30"
+            ],
+            "filament_cost": [
+                "82"
+            ],
+            "filament_density": [
+                "1.22"
+            ],
+            "filament_deretraction_speed": [
+                "20"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1.08"
+            ],
+            "filament_id": "Prusa Generic TPU @CORE One",
+            "filament_max_volumetric_speed": [
+                "2.5"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "2.5"
+            ],
+            "filament_retraction_minimum_travel": [
+                "2"
+            ],
+            "filament_retraction_speed": [
+                "60"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K0 ; Filament gcode\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "FLEX"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "0"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "50"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "50"
+            ],
+            "idle_temperature": [
+                "150"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic TPU @CORE One",
+            "nozzle_temperature": [
+                "230"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "230"
+            ],
+            "overhang_fan_speed": [
+                "70"
+            ],
+            "overhang_fan_threshold": [
+                "95%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "10"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "100"
+            ],
+            "type": "filament"
+        },
+        "name": "Prusa Generic TPU @CORE One"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.25",
+                "0.3",
+                "0.4",
+                "0.5"
+            ]
+        },
+        "data": {
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "20"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.25 nozzle",
+                "Prusa CORE One 0.3 nozzle",
+                "Prusa CORE One 0.4 nozzle",
+                "Prusa CORE One 0.5 nozzle"
+            ],
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "40"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "85"
+            ],
+            "filament_cost": [
+                "25.4"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusa Generic PLA @CORE One",
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.07{elsif nozzle_diameter[filament_extruder_id]==0.35}0.06{elsif nozzle_diameter[filament_extruder_id]==0.6}0.03{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.8}0.015{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.036{elsif nozzle_diameter[filament_extruder_id]==0.5}0.025{elsif nozzle_diameter[filament_extruder_id]==0.6}0.022{elsif nozzle_diameter[filament_extruder_id]==0.8}0.014{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.08{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.6"
+            ],
+            "filament_z_hop_types": [
+                "Slope Lift"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "idle_temperature": [
+                "150"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic PLA @CORE One",
+            "nozzle_temperature": [
+                "220"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "230"
+            ],
+            "nozzle_temperature_range_high": [
+                "230"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "8"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFL99",
+        "name": "Prusa Generic PLA @CORE One"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.25",
+                "0.3",
+                "0.4",
+                "0.5"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "35"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.25 nozzle",
+                "Prusa CORE One 0.3 nozzle",
+                "Prusa CORE One 0.4 nozzle",
+                "Prusa CORE One 0.5 nozzle"
+            ],
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "25"
+            ],
+            "fan_max_speed": [
+                "60"
+            ],
+            "fan_min_speed": [
+                "30"
+            ],
+            "filament_cost": [
+                "29.99"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusament PETG @CORE One",
+            "filament_max_volumetric_speed": [
+                "12"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "20"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.8"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.053{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.032{elsif nozzle_diameter[filament_extruder_id]==0.8}0.018{elsif nozzle_diameter[filament_extruder_id]==0.25}0.18{elsif nozzle_diameter[filament_extruder_id]==0.3}0.1{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "1"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "1.5"
+            ],
+            "filament_z_hop_types": [
+                "Slope Lift"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "5"
+            ],
+            "hot_plate_temp": [
+                "85"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "85"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusament PETG @CORE One",
+            "nozzle_temperature": [
+                "250"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "250"
+            ],
+            "nozzle_temperature_range_high": [
+                "260"
+            ],
+            "nozzle_temperature_range_low": [
+                "220"
+            ],
+            "overhang_fan_speed": [
+                "60"
+            ],
+            "overhang_fan_threshold": [
+                "95%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "9"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFG99",
+        "name": "Prusament PETG @CORE One"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.25",
+                "0.3",
+                "0.4",
+                "0.5"
+            ]
+        },
+        "data": {
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "20"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.25 nozzle",
+                "Prusa CORE One 0.3 nozzle",
+                "Prusa CORE One 0.4 nozzle",
+                "Prusa CORE One 0.5 nozzle",
+                "Prusa CORE One HF 0.4 nozzle",
+                "Prusa CORE One HF 0.5 nozzle"
+            ],
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "40"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "85"
+            ],
+            "filament_cost": [
+                "37.49"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusament rPLA @CORE One",
+            "filament_max_volumetric_speed": [
+                "10"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.07{elsif nozzle_diameter[filament_extruder_id]==0.35}0.06{elsif nozzle_diameter[filament_extruder_id]==0.6}0.03{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.8}0.015{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.036{elsif nozzle_diameter[filament_extruder_id]==0.5}0.025{elsif nozzle_diameter[filament_extruder_id]==0.6}0.022{elsif nozzle_diameter[filament_extruder_id]==0.8}0.014{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.08{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.6"
+            ],
+            "filament_z_hop_types": [
+                "Slope Lift"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "idle_temperature": [
+                "150"
+            ],
+            "instantiation": "true",
+            "name": "Prusament rPLA @CORE One",
+            "nozzle_temperature": [
+                "205"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "205"
+            ],
+            "nozzle_temperature_range_high": [
+                "230"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "8"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFL99",
+        "name": "Prusament rPLA @CORE One"
     },
     {
         "compatible_printers": {
@@ -1053,9 +2083,6 @@
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PVB/pvb"
-        ],
         "name": "Prusament PVB @CORE One"
     },
     {
@@ -1065,184 +2092,6 @@
                 "0.3",
                 "0.4",
                 "0.5"
-            ]
-        },
-        "data": {
-            "additional_cooling_fan_speed": [
-                "70"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperature": [
-                "20"
-            ],
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "compatible_printers": [
-                "Prusa CORE One 0.25 nozzle",
-                "Prusa CORE One 0.3 nozzle",
-                "Prusa CORE One 0.4 nozzle",
-                "Prusa CORE One 0.5 nozzle",
-                "Prusa CORE One HF 0.4 nozzle",
-                "Prusa CORE One HF 0.5 nozzle"
-            ],
-            "cool_plate_temp": [
-                "35"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "35"
-            ],
-            "eng_plate_temp": [
-                "0"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "0"
-            ],
-            "fan_cooling_layer_time": [
-                "40"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "85"
-            ],
-            "filament_cost": [
-                "37.49"
-            ],
-            "filament_density": [
-                "1.24"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; Filament-specific end gcode"
-            ],
-            "filament_flow_ratio": [
-                "1"
-            ],
-            "filament_id": "Prusament rPLA @CORE One",
-            "filament_max_volumetric_speed": [
-                "10"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_notes": [
-                ""
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.07{elsif nozzle_diameter[filament_extruder_id]==0.35}0.06{elsif nozzle_diameter[filament_extruder_id]==0.6}0.03{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.8}0.015{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.036{elsif nozzle_diameter[filament_extruder_id]==0.5}0.025{elsif nozzle_diameter[filament_extruder_id]==0.6}0.022{elsif nozzle_diameter[filament_extruder_id]==0.8}0.014{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.08{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
-            ],
-            "filament_type": [
-                "PLA"
-            ],
-            "filament_vendor": [
-                "Prusa Polymers"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "0.6"
-            ],
-            "filament_z_hop_types": [
-                "Slope Lift"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "3"
-            ],
-            "hot_plate_temp": [
-                "60"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "60"
-            ],
-            "idle_temperature": [
-                "150"
-            ],
-            "instantiation": "true",
-            "name": "Prusament rPLA @CORE One",
-            "nozzle_temperature": [
-                "205"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "205"
-            ],
-            "nozzle_temperature_range_high": [
-                "230"
-            ],
-            "nozzle_temperature_range_low": [
-                "190"
-            ],
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "50%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "setting_id": "GFSA04",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "8"
-            ],
-            "slow_down_min_speed": [
-                "20"
-            ],
-            "temperature_vitrification": [
-                "60"
-            ],
-            "type": "filament"
-        },
-        "filament_db_ids": [
-            "prusament/PLA/rpla"
-        ],
-        "generic_id": "GFL99",
-        "name": "Prusament rPLA @CORE One"
-    },
-    {
-        "compatible_printers": {
-            "Prusa CORE One": [
-                "0.6"
             ]
         },
         "data": {
@@ -1256,7 +2105,10 @@
                 "4"
             ],
             "compatible_printers": [
-                "Prusa CORE One 0.6 nozzle"
+                "Prusa CORE One 0.25 nozzle",
+                "Prusa CORE One 0.3 nozzle",
+                "Prusa CORE One 0.4 nozzle",
+                "Prusa CORE One 0.5 nozzle"
             ],
             "cool_plate_temp": [
                 "105"
@@ -1297,7 +2149,7 @@
             "filament_flow_ratio": [
                 "1"
             ],
-            "filament_id": "Prusament ASA @CORE One 0.6",
+            "filament_id": "Prusament ASA @CORE One",
             "filament_max_volumetric_speed": [
                 "15"
             ],
@@ -1363,9 +2215,9 @@
                 "130"
             ],
             "instantiation": "true",
-            "name": "Prusament ASA @CORE One 0.6",
+            "name": "Prusament ASA @CORE One",
             "nozzle_temperature": [
-                "255"
+                "260"
             ],
             "nozzle_temperature_initial_layer": [
                 "260"
@@ -1390,7 +2242,7 @@
                 "1"
             ],
             "slow_down_layer_time": [
-                "15"
+                "10"
             ],
             "slow_down_min_speed": [
                 "15"
@@ -1400,16 +2252,16 @@
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/ASA/asa"
-        ],
         "generic_id": "GFB98",
-        "name": "Prusament ASA @CORE One 0.6"
+        "name": "Prusament ASA @CORE One"
     },
     {
         "compatible_printers": {
             "Prusa CORE One": [
-                "0.6"
+                "0.25",
+                "0.3",
+                "0.4",
+                "0.5"
             ]
         },
         "data": {
@@ -1423,7 +2275,10 @@
                 "4"
             ],
             "compatible_printers": [
-                "Prusa CORE One 0.6 nozzle"
+                "Prusa CORE One 0.25 nozzle",
+                "Prusa CORE One 0.3 nozzle",
+                "Prusa CORE One 0.4 nozzle",
+                "Prusa CORE One 0.5 nozzle"
             ],
             "cool_plate_temp": [
                 "0"
@@ -1464,9 +2319,9 @@
             "filament_flow_ratio": [
                 "1"
             ],
-            "filament_id": "Prusament PC Blend @CORE One 0.6",
+            "filament_id": "Prusament PC Blend @CORE One",
             "filament_max_volumetric_speed": [
-                "15"
+                "12"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "35"
@@ -1530,7 +2385,7 @@
                 "130"
             ],
             "instantiation": "true",
-            "name": "Prusament PC Blend @CORE One 0.6",
+            "name": "Prusament PC Blend @CORE One",
             "nozzle_temperature": [
                 "275"
             ],
@@ -1567,11 +2422,8 @@
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PC/pc_blend"
-        ],
         "generic_id": "GFC99",
-        "name": "Prusament PC Blend @CORE One 0.6"
+        "name": "Prusament PC Blend @CORE One"
     },
     {
         "compatible_printers": {
@@ -1600,25 +2452,25 @@
                 "0"
             ],
             "eng_plate_temp": [
-                "110"
+                "100"
             ],
             "eng_plate_temp_initial_layer": [
-                "110"
+                "100"
             ],
             "fan_cooling_layer_time": [
                 "18"
             ],
             "fan_max_speed": [
-                "30"
+                "20"
             ],
             "fan_min_speed": [
                 "15"
             ],
             "filament_cost": [
-                "74.99"
+                "124.99"
             ],
             "filament_density": [
-                "1.22"
+                "1.11"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -1630,11 +2482,11 @@
                 "; Filament-specific end gcode"
             ],
             "filament_flow_ratio": [
-                "1.04"
+                "1.05"
             ],
-            "filament_id": "Prusament PC-CF @CORE One 0.6",
+            "filament_id": "Prusament PA-CF @CORE One 0.6",
             "filament_max_volumetric_speed": [
-                "13"
+                "8"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "35"
@@ -1670,7 +2522,7 @@
                 "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S45 ; set heatbreak target temp"
             ],
             "filament_type": [
-                "PC"
+                "PA"
             ],
             "filament_vendor": [
                 "Prusa Polymers"
@@ -1692,30 +2544,30 @@
                 "115"
             ],
             "hot_plate_temp_initial_layer": [
-                "110"
+                "90"
             ],
             "idle_temperature": [
                 "130"
             ],
             "instantiation": "true",
-            "name": "Prusament PC-CF @CORE One 0.6",
+            "name": "Prusament PA-CF @CORE One 0.6",
             "nozzle_temperature": [
-                "280"
-            ],
-            "nozzle_temperature_initial_layer": [
                 "285"
             ],
+            "nozzle_temperature_initial_layer": [
+                "275"
+            ],
             "nozzle_temperature_range_high": [
-                "280"
+                "300"
             ],
             "nozzle_temperature_range_low": [
-                "260"
+                "270"
             ],
             "overhang_fan_speed": [
-                "25"
+                "20"
             ],
             "overhang_fan_threshold": [
-                "25%"
+                "95%"
             ],
             "reduce_fan_stop_start_freq": [
                 "0"
@@ -1731,15 +2583,12 @@
                 "15"
             ],
             "temperature_vitrification": [
-                "140"
+                "108"
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PC/pc_cf"
-        ],
-        "generic_id": "GFC99",
-        "name": "Prusament PC-CF @CORE One 0.6"
+        "generic_id": "GFN99",
+        "name": "Prusament PA-CF @CORE One 0.6"
     },
     {
         "compatible_printers": {
@@ -1748,17 +2597,21 @@
             ]
         },
         "data": {
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
             "bed_type": [
                 "Cool Plate"
             ],
             "chamber_temperature": [
-                "35"
+                "30"
             ],
             "close_fan_the_first_x_layers": [
                 "3"
             ],
             "compatible_printers": [
-                "Prusa CORE One 0.6 nozzle"
+                "Prusa CORE One 0.6 nozzle",
+                "Prusa CORE One HF 0.6 nozzle"
             ],
             "cool_plate_temp": [
                 "60"
@@ -1767,28 +2620,28 @@
                 "60"
             ],
             "eng_plate_temp": [
-                "0"
+                "60"
             ],
             "eng_plate_temp_initial_layer": [
-                "0"
+                "60"
             ],
             "fan_cooling_layer_time": [
-                "30"
+                "100"
             ],
             "fan_max_speed": [
-                "60"
+                "50"
             ],
             "fan_min_speed": [
                 "30"
             ],
             "filament_cost": [
-                "29.99"
+                "82"
             ],
             "filament_density": [
-                "1.27"
+                "1.22"
             ],
             "filament_deretraction_speed": [
-                "nil"
+                "20"
             ],
             "filament_diameter": [
                 "1.75"
@@ -1797,20 +2650,20 @@
                 "; Filament-specific end gcode"
             ],
             "filament_flow_ratio": [
-                "1"
+                "1.08"
             ],
-            "filament_id": "Prusament PETG @CORE One 0.6",
+            "filament_id": "Prusa Generic TPU @CORE One 0.6",
             "filament_max_volumetric_speed": [
-                "17"
+                "3.5"
             ],
             "filament_minimal_purge_on_wipe_tower": [
-                "35"
+                "15"
             ],
             "filament_notes": [
                 ""
             ],
             "filament_retract_before_wipe": [
-                "20"
+                "nil"
             ],
             "filament_retract_restart_extra": [
                 "nil"
@@ -1819,13 +2672,13 @@
                 "nil"
             ],
             "filament_retraction_length": [
-                "0.8"
+                "2.5"
             ],
             "filament_retraction_minimum_travel": [
-                "nil"
+                "2"
             ],
             "filament_retraction_speed": [
-                "nil"
+                "60"
             ],
             "filament_settings_id": [
                 ""
@@ -1834,55 +2687,46 @@
                 "0"
             ],
             "filament_start_gcode": [
-                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.053{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.032{elsif nozzle_diameter[filament_extruder_id]==0.8}0.018{elsif nozzle_diameter[filament_extruder_id]==0.25}0.18{elsif nozzle_diameter[filament_extruder_id]==0.3}0.1{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+                "M900 K0 ; Filament gcode\n\nM142 S36 ; set heatbreak target temp"
             ],
             "filament_type": [
-                "PETG"
+                "FLEX"
             ],
             "filament_vendor": [
-                "Prusa Polymers"
+                "Generic"
             ],
             "filament_wipe": [
-                "1"
+                "0"
             ],
             "filament_wipe_distance": [
                 "nil"
             ],
             "filament_z_hop": [
-                "1.5"
-            ],
-            "filament_z_hop_types": [
-                "Slope Lift"
+                "0.6"
             ],
             "from": "system",
             "full_fan_speed_layer": [
-                "5"
+                "0"
             ],
             "hot_plate_temp": [
-                "85"
+                "50"
             ],
             "hot_plate_temp_initial_layer": [
-                "85"
+                "50"
             ],
             "idle_temperature": [
-                "130"
+                "150"
             ],
             "instantiation": "true",
-            "name": "Prusament PETG @CORE One 0.6",
+            "name": "Prusa Generic TPU @CORE One 0.6",
             "nozzle_temperature": [
-                "245"
+                "230"
             ],
             "nozzle_temperature_initial_layer": [
-                "250"
-            ],
-            "nozzle_temperature_range_high": [
-                "260"
-            ],
-            "nozzle_temperature_range_low": [
-                "220"
+                "230"
             ],
             "overhang_fan_speed": [
-                "60"
+                "70"
             ],
             "overhang_fan_threshold": [
                 "95%"
@@ -1895,21 +2739,17 @@
                 "1"
             ],
             "slow_down_layer_time": [
-                "15"
+                "10"
             ],
             "slow_down_min_speed": [
                 "15"
             ],
             "temperature_vitrification": [
-                "80"
+                "100"
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PETG/petg"
-        ],
-        "generic_id": "GFG99",
-        "name": "Prusament PETG @CORE One 0.6"
+        "name": "Prusa Generic TPU @CORE One 0.6"
     },
     {
         "compatible_printers": {
@@ -2078,11 +2918,1340 @@
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PLA/pla"
-        ],
         "generic_id": "GFL99",
         "name": "Prusament PLA @CORE One 0.6"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.6"
+            ]
+        },
+        "data": {
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "20"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.6 nozzle"
+            ],
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "40"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "85"
+            ],
+            "filament_cost": [
+                "25.4"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusa Generic PLA @CORE One 0.6",
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.07{elsif nozzle_diameter[filament_extruder_id]==0.35}0.06{elsif nozzle_diameter[filament_extruder_id]==0.6}0.03{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.8}0.015{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.036{elsif nozzle_diameter[filament_extruder_id]==0.5}0.025{elsif nozzle_diameter[filament_extruder_id]==0.6}0.022{elsif nozzle_diameter[filament_extruder_id]==0.8}0.014{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.08{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.6"
+            ],
+            "filament_z_hop_types": [
+                "Slope Lift"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "idle_temperature": [
+                "150"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic PLA @CORE One 0.6",
+            "nozzle_temperature": [
+                "210"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "230"
+            ],
+            "nozzle_temperature_range_high": [
+                "230"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "15"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFL99",
+        "name": "Prusa Generic PLA @CORE One 0.6"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.6"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "35"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.6 nozzle"
+            ],
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "60"
+            ],
+            "fan_min_speed": [
+                "30"
+            ],
+            "filament_cost": [
+                "27.82"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusa Generic PETG @CORE One 0.6",
+            "filament_max_volumetric_speed": [
+                "17"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "20"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.8"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.053{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.032{elsif nozzle_diameter[filament_extruder_id]==0.8}0.018{elsif nozzle_diameter[filament_extruder_id]==0.25}0.18{elsif nozzle_diameter[filament_extruder_id]==0.3}0.1{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "1"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "1.5"
+            ],
+            "filament_z_hop_types": [
+                "Slope Lift"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "5"
+            ],
+            "hot_plate_temp": [
+                "85"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "85"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic PETG @CORE One 0.6",
+            "nozzle_temperature": [
+                "240"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "240"
+            ],
+            "nozzle_temperature_range_high": [
+                "260"
+            ],
+            "nozzle_temperature_range_low": [
+                "220"
+            ],
+            "overhang_fan_speed": [
+                "60"
+            ],
+            "overhang_fan_threshold": [
+                "95%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "15"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFG99",
+        "name": "Prusa Generic PETG @CORE One 0.6"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.6"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "40"
+            ],
+            "close_fan_the_first_x_layers": [
+                "4"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.6 nozzle",
+                "Prusa CORE One HF 0.6 nozzle"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "eng_plate_temp": [
+                "110"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "110"
+            ],
+            "fan_cooling_layer_time": [
+                "18"
+            ],
+            "fan_max_speed": [
+                "30"
+            ],
+            "fan_min_speed": [
+                "15"
+            ],
+            "filament_cost": [
+                "74.99"
+            ],
+            "filament_density": [
+                "1.22"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1.04"
+            ],
+            "filament_id": "Prusament PC-CF @CORE One 0.6",
+            "filament_max_volumetric_speed": [
+                "13"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S45 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PC"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.2"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "115"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "110"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusament PC-CF @CORE One 0.6",
+            "nozzle_temperature": [
+                "280"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "285"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "nozzle_temperature_range_low": [
+                "260"
+            ],
+            "overhang_fan_speed": [
+                "25"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "0"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "20"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "140"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFC99",
+        "name": "Prusament PC-CF @CORE One 0.6"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.6"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "40"
+            ],
+            "close_fan_the_first_x_layers": [
+                "4"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.6 nozzle"
+            ],
+            "cool_plate_temp": [
+                "105"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "105"
+            ],
+            "eng_plate_temp": [
+                "105"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "105"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "20"
+            ],
+            "fan_min_speed": [
+                "15"
+            ],
+            "filament_cost": [
+                "27.82"
+            ],
+            "filament_density": [
+                "1.04"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusa Generic ABS @CORE One 0.6",
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.04{elsif nozzle_diameter[filament_extruder_id]==0.25}0.1{elsif nozzle_diameter[filament_extruder_id]==0.3}0.06{elsif nozzle_diameter[filament_extruder_id]==0.35}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.03{elsif nozzle_diameter[filament_extruder_id]==0.6}0.02{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.02{elsif nozzle_diameter[filament_extruder_id]==0.5}0.018{elsif nozzle_diameter[filament_extruder_id]==0.6}0.012{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{elsif nozzle_diameter[filament_extruder_id]==0.25}0.09{elsif nozzle_diameter[filament_extruder_id]==0.3}0.065{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S40 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "ABS"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "110"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "110"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic ABS @CORE One 0.6",
+            "nozzle_temperature": [
+                "260"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "260"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "240"
+            ],
+            "overhang_fan_speed": [
+                "25"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "0"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "20"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "110"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFB99",
+        "name": "Prusa Generic ABS @CORE One 0.6"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.6"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "40"
+            ],
+            "close_fan_the_first_x_layers": [
+                "4"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.6 nozzle"
+            ],
+            "cool_plate_temp": [
+                "105"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "105"
+            ],
+            "eng_plate_temp": [
+                "105"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "105"
+            ],
+            "fan_cooling_layer_time": [
+                "20"
+            ],
+            "fan_max_speed": [
+                "25"
+            ],
+            "fan_min_speed": [
+                "20"
+            ],
+            "filament_cost": [
+                "35.28"
+            ],
+            "filament_density": [
+                "1.07"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusament ASA @CORE One 0.6",
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.04{elsif nozzle_diameter[filament_extruder_id]==0.25}0.1{elsif nozzle_diameter[filament_extruder_id]==0.3}0.06{elsif nozzle_diameter[filament_extruder_id]==0.35}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.03{elsif nozzle_diameter[filament_extruder_id]==0.6}0.02{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.02{elsif nozzle_diameter[filament_extruder_id]==0.5}0.018{elsif nozzle_diameter[filament_extruder_id]==0.6}0.012{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{elsif nozzle_diameter[filament_extruder_id]==0.25}0.09{elsif nozzle_diameter[filament_extruder_id]==0.3}0.065{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S40 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "ASA"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "110"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "110"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusament ASA @CORE One 0.6",
+            "nozzle_temperature": [
+                "255"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "260"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "240"
+            ],
+            "overhang_fan_speed": [
+                "25"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "15"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "110"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFB98",
+        "name": "Prusament ASA @CORE One 0.6"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.6"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "40"
+            ],
+            "close_fan_the_first_x_layers": [
+                "4"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.6 nozzle"
+            ],
+            "cool_plate_temp": [
+                "105"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "105"
+            ],
+            "eng_plate_temp": [
+                "105"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "105"
+            ],
+            "fan_cooling_layer_time": [
+                "20"
+            ],
+            "fan_max_speed": [
+                "25"
+            ],
+            "fan_min_speed": [
+                "20"
+            ],
+            "filament_cost": [
+                "35.28"
+            ],
+            "filament_density": [
+                "1.07"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusa Generic ASA @CORE One 0.6",
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.04{elsif nozzle_diameter[filament_extruder_id]==0.25}0.1{elsif nozzle_diameter[filament_extruder_id]==0.3}0.06{elsif nozzle_diameter[filament_extruder_id]==0.35}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.03{elsif nozzle_diameter[filament_extruder_id]==0.6}0.02{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.02{elsif nozzle_diameter[filament_extruder_id]==0.5}0.018{elsif nozzle_diameter[filament_extruder_id]==0.6}0.012{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{elsif nozzle_diameter[filament_extruder_id]==0.25}0.09{elsif nozzle_diameter[filament_extruder_id]==0.3}0.065{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S40 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "ASA"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "110"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "110"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic ASA @CORE One 0.6",
+            "nozzle_temperature": [
+                "255"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "260"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "240"
+            ],
+            "overhang_fan_speed": [
+                "25"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "15"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "110"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFB98",
+        "name": "Prusa Generic ASA @CORE One 0.6"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.6"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "35"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.6 nozzle"
+            ],
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "60"
+            ],
+            "fan_min_speed": [
+                "30"
+            ],
+            "filament_cost": [
+                "29.99"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusament PETG @CORE One 0.6",
+            "filament_max_volumetric_speed": [
+                "17"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "20"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.8"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.053{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.032{elsif nozzle_diameter[filament_extruder_id]==0.8}0.018{elsif nozzle_diameter[filament_extruder_id]==0.25}0.18{elsif nozzle_diameter[filament_extruder_id]==0.3}0.1{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "1"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "1.5"
+            ],
+            "filament_z_hop_types": [
+                "Slope Lift"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "5"
+            ],
+            "hot_plate_temp": [
+                "85"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "85"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusament PETG @CORE One 0.6",
+            "nozzle_temperature": [
+                "245"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "250"
+            ],
+            "nozzle_temperature_range_high": [
+                "260"
+            ],
+            "nozzle_temperature_range_low": [
+                "220"
+            ],
+            "overhang_fan_speed": [
+                "60"
+            ],
+            "overhang_fan_threshold": [
+                "95%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "15"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFG99",
+        "name": "Prusament PETG @CORE One 0.6"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.6"
+            ]
+        },
+        "data": {
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "20"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.6 nozzle",
+                "Prusa CORE One HF 0.6 nozzle"
+            ],
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "40"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "85"
+            ],
+            "filament_cost": [
+                "25.4"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusa Generic PLA Silk @CORE One 0.6",
+            "filament_max_volumetric_speed": [
+                "9"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[0]==0.4}0.05{elsif nozzle_diameter[0]==0.25}0.14{elsif nozzle_diameter[0]==0.3}0.07{elsif nozzle_diameter[0]==0.35}0.06{elsif nozzle_diameter[0]==0.6}0.03{elsif nozzle_diameter[0]==0.5}0.035{elsif nozzle_diameter[0]==0.8}0.015{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[0]==0.4}0.03{elsif nozzle_diameter[0]==0.5}0.022{elsif nozzle_diameter[0]==0.6}0.018{elsif nozzle_diameter[0]==0.8}0.012{elsif nozzle_diameter[0]==0.25}0.12{elsif nozzle_diameter[0]==0.3}0.075{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.6"
+            ],
+            "filament_z_hop_types": [
+                "Slope Lift"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "idle_temperature": [
+                "150"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic PLA Silk @CORE One 0.6",
+            "nozzle_temperature": [
+                "215"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "230"
+            ],
+            "nozzle_temperature_range_high": [
+                "230"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "15"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFL96",
+        "name": "Prusa Generic PLA Silk @CORE One 0.6"
     },
     {
         "compatible_printers": {
@@ -2255,10 +4424,171 @@
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PVB/pvb"
-        ],
         "name": "Prusament PVB @CORE One 0.6"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.6"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "40"
+            ],
+            "close_fan_the_first_x_layers": [
+                "4"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.6 nozzle"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "eng_plate_temp": [
+                "110"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "110"
+            ],
+            "fan_cooling_layer_time": [
+                "35"
+            ],
+            "fan_max_speed": [
+                "25"
+            ],
+            "fan_min_speed": [
+                "15"
+            ],
+            "filament_cost": [
+                "51.53"
+            ],
+            "filament_density": [
+                "1.22"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusament PC Blend @CORE One 0.6",
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S45 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PC"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.2"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "115"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "110"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusament PC Blend @CORE One 0.6",
+            "nozzle_temperature": [
+                "275"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "275"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "nozzle_temperature_range_low": [
+                "260"
+            ],
+            "overhang_fan_speed": [
+                "25"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "0"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "20"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "140"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFC99",
+        "name": "Prusament PC Blend @CORE One 0.6"
     },
     {
         "compatible_printers": {
@@ -2428,11 +4758,173 @@
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PLA/rpla"
-        ],
         "generic_id": "GFL99",
         "name": "Prusament rPLA @CORE One 0.6"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.8"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "40"
+            ],
+            "close_fan_the_first_x_layers": [
+                "4"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.8 nozzle",
+                "Prusa CORE One HF 0.8 nozzle"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "eng_plate_temp": [
+                "100"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "100"
+            ],
+            "fan_cooling_layer_time": [
+                "20"
+            ],
+            "fan_max_speed": [
+                "20"
+            ],
+            "fan_min_speed": [
+                "15"
+            ],
+            "filament_cost": [
+                "124.99"
+            ],
+            "filament_density": [
+                "1.11"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1.05"
+            ],
+            "filament_id": "Prusament PA-CF @CORE One 0.8",
+            "filament_max_volumetric_speed": [
+                "10"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S45 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PA"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.2"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "115"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "90"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusament PA-CF @CORE One 0.8",
+            "nozzle_temperature": [
+                "285"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "275"
+            ],
+            "nozzle_temperature_range_high": [
+                "300"
+            ],
+            "nozzle_temperature_range_low": [
+                "270"
+            ],
+            "overhang_fan_speed": [
+                "20"
+            ],
+            "overhang_fan_threshold": [
+                "95%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "0"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "20"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "108"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFN99",
+        "name": "Prusament PA-CF @CORE One 0.8"
     },
     {
         "compatible_printers": {
@@ -2492,7 +4984,7 @@
             "filament_flow_ratio": [
                 "1"
             ],
-            "filament_id": "Prusament ASA @CORE One 0.8",
+            "filament_id": "Prusa Generic ASA @CORE One 0.8",
             "filament_max_volumetric_speed": [
                 "15"
             ],
@@ -2558,7 +5050,7 @@
                 "130"
             ],
             "instantiation": "true",
-            "name": "Prusament ASA @CORE One 0.8",
+            "name": "Prusa Generic ASA @CORE One 0.8",
             "nozzle_temperature": [
                 "260"
             ],
@@ -2595,346 +5087,8 @@
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/ASA/asa"
-        ],
         "generic_id": "GFB98",
-        "name": "Prusament ASA @CORE One 0.8"
-    },
-    {
-        "compatible_printers": {
-            "Prusa CORE One": [
-                "0.8"
-            ]
-        },
-        "data": {
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperature": [
-                "40"
-            ],
-            "close_fan_the_first_x_layers": [
-                "4"
-            ],
-            "compatible_printers": [
-                "Prusa CORE One 0.8 nozzle"
-            ],
-            "cool_plate_temp": [
-                "0"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "0"
-            ],
-            "eng_plate_temp": [
-                "110"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "110"
-            ],
-            "fan_cooling_layer_time": [
-                "35"
-            ],
-            "fan_max_speed": [
-                "30"
-            ],
-            "fan_min_speed": [
-                "15"
-            ],
-            "filament_cost": [
-                "51.53"
-            ],
-            "filament_density": [
-                "1.22"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; Filament-specific end gcode"
-            ],
-            "filament_flow_ratio": [
-                "1"
-            ],
-            "filament_id": "Prusament PC Blend @CORE One 0.8",
-            "filament_max_volumetric_speed": [
-                "18"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "35"
-            ],
-            "filament_notes": [
-                ""
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S45 ; set heatbreak target temp"
-            ],
-            "filament_type": [
-                "PC"
-            ],
-            "filament_vendor": [
-                "Prusa Polymers"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "0.2"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "115"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "110"
-            ],
-            "idle_temperature": [
-                "130"
-            ],
-            "instantiation": "true",
-            "name": "Prusament PC Blend @CORE One 0.8",
-            "nozzle_temperature": [
-                "275"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "275"
-            ],
-            "nozzle_temperature_range_high": [
-                "280"
-            ],
-            "nozzle_temperature_range_low": [
-                "260"
-            ],
-            "overhang_fan_speed": [
-                "30"
-            ],
-            "overhang_fan_threshold": [
-                "25%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "0"
-            ],
-            "setting_id": "GFSA04",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "25"
-            ],
-            "slow_down_min_speed": [
-                "15"
-            ],
-            "temperature_vitrification": [
-                "140"
-            ],
-            "type": "filament"
-        },
-        "filament_db_ids": [
-            "prusament/PC/pc_blend"
-        ],
-        "generic_id": "GFC99",
-        "name": "Prusament PC Blend @CORE One 0.8"
-    },
-    {
-        "compatible_printers": {
-            "Prusa CORE One": [
-                "0.8"
-            ]
-        },
-        "data": {
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperature": [
-                "40"
-            ],
-            "close_fan_the_first_x_layers": [
-                "4"
-            ],
-            "compatible_printers": [
-                "Prusa CORE One 0.8 nozzle",
-                "Prusa CORE One HF 0.8 nozzle"
-            ],
-            "cool_plate_temp": [
-                "0"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "0"
-            ],
-            "eng_plate_temp": [
-                "110"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "110"
-            ],
-            "fan_cooling_layer_time": [
-                "25"
-            ],
-            "fan_max_speed": [
-                "30"
-            ],
-            "fan_min_speed": [
-                "15"
-            ],
-            "filament_cost": [
-                "74.99"
-            ],
-            "filament_density": [
-                "1.22"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; Filament-specific end gcode"
-            ],
-            "filament_flow_ratio": [
-                "1.04"
-            ],
-            "filament_id": "Prusament PC-CF @CORE One 0.8",
-            "filament_max_volumetric_speed": [
-                "18"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "35"
-            ],
-            "filament_notes": [
-                ""
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S45 ; set heatbreak target temp"
-            ],
-            "filament_type": [
-                "PC"
-            ],
-            "filament_vendor": [
-                "Prusa Polymers"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "0.2"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "115"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "110"
-            ],
-            "idle_temperature": [
-                "130"
-            ],
-            "instantiation": "true",
-            "name": "Prusament PC-CF @CORE One 0.8",
-            "nozzle_temperature": [
-                "285"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "285"
-            ],
-            "nozzle_temperature_range_high": [
-                "280"
-            ],
-            "nozzle_temperature_range_low": [
-                "260"
-            ],
-            "overhang_fan_speed": [
-                "30"
-            ],
-            "overhang_fan_threshold": [
-                "25%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "0"
-            ],
-            "setting_id": "GFSA04",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "20"
-            ],
-            "slow_down_min_speed": [
-                "15"
-            ],
-            "temperature_vitrification": [
-                "140"
-            ],
-            "type": "filament"
-        },
-        "filament_db_ids": [
-            "prusament/PC/pc_cf"
-        ],
-        "generic_id": "GFC99",
-        "name": "Prusament PC-CF @CORE One 0.8"
+        "name": "Prusa Generic ASA @CORE One 0.8"
     },
     {
         "compatible_printers": {
@@ -2977,7 +5131,7 @@
                 "30"
             ],
             "filament_cost": [
-                "29.99"
+                "27.82"
             ],
             "filament_density": [
                 "1.27"
@@ -2994,7 +5148,7 @@
             "filament_flow_ratio": [
                 "1"
             ],
-            "filament_id": "Prusament PETG @CORE One 0.8",
+            "filament_id": "Prusa Generic PETG @CORE One 0.8",
             "filament_max_volumetric_speed": [
                 "22"
             ],
@@ -3035,7 +5189,7 @@
                 "PETG"
             ],
             "filament_vendor": [
-                "Prusa Polymers"
+                "Generic"
             ],
             "filament_wipe": [
                 "1"
@@ -3063,12 +5217,12 @@
                 "130"
             ],
             "instantiation": "true",
-            "name": "Prusament PETG @CORE One 0.8",
+            "name": "Prusa Generic PETG @CORE One 0.8",
             "nozzle_temperature": [
-                "250"
+                "245"
             ],
             "nozzle_temperature_initial_layer": [
-                "250"
+                "245"
             ],
             "nozzle_temperature_range_high": [
                 "260"
@@ -3100,11 +5254,8 @@
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PETG/petg"
-        ],
         "generic_id": "GFG99",
-        "name": "Prusament PETG @CORE One 0.8"
+        "name": "Prusa Generic PETG @CORE One 0.8"
     },
     {
         "compatible_printers": {
@@ -3273,11 +5424,1177 @@
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PLA/pla"
-        ],
         "generic_id": "GFL99",
         "name": "Prusament PLA @CORE One 0.8"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.8"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "40"
+            ],
+            "close_fan_the_first_x_layers": [
+                "4"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.8 nozzle",
+                "Prusa CORE One HF 0.8 nozzle"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "eng_plate_temp": [
+                "110"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "110"
+            ],
+            "fan_cooling_layer_time": [
+                "25"
+            ],
+            "fan_max_speed": [
+                "30"
+            ],
+            "fan_min_speed": [
+                "15"
+            ],
+            "filament_cost": [
+                "74.99"
+            ],
+            "filament_density": [
+                "1.22"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1.04"
+            ],
+            "filament_id": "Prusament PC-CF @CORE One 0.8",
+            "filament_max_volumetric_speed": [
+                "18"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S45 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PC"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.2"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "115"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "110"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusament PC-CF @CORE One 0.8",
+            "nozzle_temperature": [
+                "285"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "285"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "nozzle_temperature_range_low": [
+                "260"
+            ],
+            "overhang_fan_speed": [
+                "30"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "0"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "20"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "140"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFC99",
+        "name": "Prusament PC-CF @CORE One 0.8"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.8"
+            ]
+        },
+        "data": {
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "20"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.8 nozzle",
+                "Prusa CORE One HF 0.8 nozzle"
+            ],
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "40"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "85"
+            ],
+            "filament_cost": [
+                "25.4"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusa Generic PLA Silk @CORE One 0.8",
+            "filament_max_volumetric_speed": [
+                "12"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[0]==0.4}0.05{elsif nozzle_diameter[0]==0.25}0.14{elsif nozzle_diameter[0]==0.3}0.07{elsif nozzle_diameter[0]==0.35}0.06{elsif nozzle_diameter[0]==0.6}0.03{elsif nozzle_diameter[0]==0.5}0.035{elsif nozzle_diameter[0]==0.8}0.015{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[0]==0.4}0.03{elsif nozzle_diameter[0]==0.5}0.022{elsif nozzle_diameter[0]==0.6}0.018{elsif nozzle_diameter[0]==0.8}0.012{elsif nozzle_diameter[0]==0.25}0.12{elsif nozzle_diameter[0]==0.3}0.075{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.6"
+            ],
+            "filament_z_hop_types": [
+                "Slope Lift"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "idle_temperature": [
+                "150"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic PLA Silk @CORE One 0.8",
+            "nozzle_temperature": [
+                "225"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "230"
+            ],
+            "nozzle_temperature_range_high": [
+                "230"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "17"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFL96",
+        "name": "Prusa Generic PLA Silk @CORE One 0.8"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.8"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "35"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.8 nozzle"
+            ],
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "35"
+            ],
+            "fan_max_speed": [
+                "65"
+            ],
+            "fan_min_speed": [
+                "30"
+            ],
+            "filament_cost": [
+                "29.99"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusament PETG @CORE One 0.8",
+            "filament_max_volumetric_speed": [
+                "22"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "50"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.8"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.053{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.032{elsif nozzle_diameter[filament_extruder_id]==0.8}0.018{elsif nozzle_diameter[filament_extruder_id]==0.25}0.18{elsif nozzle_diameter[filament_extruder_id]==0.3}0.1{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "1"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.6"
+            ],
+            "filament_z_hop_types": [
+                "Slope Lift"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "5"
+            ],
+            "hot_plate_temp": [
+                "85"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "85"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusament PETG @CORE One 0.8",
+            "nozzle_temperature": [
+                "250"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "250"
+            ],
+            "nozzle_temperature_range_high": [
+                "260"
+            ],
+            "nozzle_temperature_range_low": [
+                "220"
+            ],
+            "overhang_fan_speed": [
+                "65"
+            ],
+            "overhang_fan_threshold": [
+                "95%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "20"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFG99",
+        "name": "Prusament PETG @CORE One 0.8"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.8"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "40"
+            ],
+            "close_fan_the_first_x_layers": [
+                "4"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.8 nozzle"
+            ],
+            "cool_plate_temp": [
+                "0"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "0"
+            ],
+            "eng_plate_temp": [
+                "110"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "110"
+            ],
+            "fan_cooling_layer_time": [
+                "35"
+            ],
+            "fan_max_speed": [
+                "30"
+            ],
+            "fan_min_speed": [
+                "15"
+            ],
+            "filament_cost": [
+                "51.53"
+            ],
+            "filament_density": [
+                "1.22"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusament PC Blend @CORE One 0.8",
+            "filament_max_volumetric_speed": [
+                "18"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S45 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PC"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.2"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "115"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "110"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusament PC Blend @CORE One 0.8",
+            "nozzle_temperature": [
+                "275"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "275"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "nozzle_temperature_range_low": [
+                "260"
+            ],
+            "overhang_fan_speed": [
+                "30"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "0"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "25"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "140"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFC99",
+        "name": "Prusament PC Blend @CORE One 0.8"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.8"
+            ]
+        },
+        "data": {
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "20"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.8 nozzle",
+                "Prusa CORE One HF 0.8 nozzle"
+            ],
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "40"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "85"
+            ],
+            "filament_cost": [
+                "37.49"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusament rPLA @CORE One 0.8",
+            "filament_max_volumetric_speed": [
+                "14"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.07{elsif nozzle_diameter[filament_extruder_id]==0.35}0.06{elsif nozzle_diameter[filament_extruder_id]==0.6}0.03{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.8}0.015{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.036{elsif nozzle_diameter[filament_extruder_id]==0.5}0.025{elsif nozzle_diameter[filament_extruder_id]==0.6}0.022{elsif nozzle_diameter[filament_extruder_id]==0.8}0.014{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.08{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Prusa Polymers"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.6"
+            ],
+            "filament_z_hop_types": [
+                "Slope Lift"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "idle_temperature": [
+                "150"
+            ],
+            "instantiation": "true",
+            "name": "Prusament rPLA @CORE One 0.8",
+            "nozzle_temperature": [
+                "205"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "205"
+            ],
+            "nozzle_temperature_range_high": [
+                "230"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "17"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFL99",
+        "name": "Prusament rPLA @CORE One 0.8"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.8"
+            ]
+        },
+        "data": {
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "30"
+            ],
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.8 nozzle",
+                "Prusa CORE One HF 0.8 nozzle"
+            ],
+            "cool_plate_temp": [
+                "60"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "60"
+            ],
+            "eng_plate_temp": [
+                "60"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "60"
+            ],
+            "fan_cooling_layer_time": [
+                "100"
+            ],
+            "fan_max_speed": [
+                "50"
+            ],
+            "fan_min_speed": [
+                "30"
+            ],
+            "filament_cost": [
+                "82"
+            ],
+            "filament_density": [
+                "1.22"
+            ],
+            "filament_deretraction_speed": [
+                "20"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1.08"
+            ],
+            "filament_id": "Prusa Generic TPU @CORE One 0.8",
+            "filament_max_volumetric_speed": [
+                "7.5"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "2.5"
+            ],
+            "filament_retraction_minimum_travel": [
+                "2"
+            ],
+            "filament_retraction_speed": [
+                "60"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K0 ; Filament gcode\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "FLEX"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "0"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.6"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "50"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "50"
+            ],
+            "idle_temperature": [
+                "150"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic TPU @CORE One 0.8",
+            "nozzle_temperature": [
+                "230"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "230"
+            ],
+            "overhang_fan_speed": [
+                "70"
+            ],
+            "overhang_fan_threshold": [
+                "95%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "10"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "100"
+            ],
+            "type": "filament"
+        },
+        "name": "Prusa Generic TPU @CORE One 0.8"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.8"
+            ]
+        },
+        "data": {
+            "additional_cooling_fan_speed": [
+                "70"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "20"
+            ],
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.8 nozzle"
+            ],
+            "cool_plate_temp": [
+                "35"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "35"
+            ],
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "fan_cooling_layer_time": [
+                "40"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "85"
+            ],
+            "filament_cost": [
+                "25.4"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusa Generic PLA @CORE One 0.8",
+            "filament_max_volumetric_speed": [
+                "19"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.07{elsif nozzle_diameter[filament_extruder_id]==0.35}0.06{elsif nozzle_diameter[filament_extruder_id]==0.6}0.03{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.8}0.015{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.036{elsif nozzle_diameter[filament_extruder_id]==0.5}0.025{elsif nozzle_diameter[filament_extruder_id]==0.6}0.022{elsif nozzle_diameter[filament_extruder_id]==0.8}0.014{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.08{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.6"
+            ],
+            "filament_z_hop_types": [
+                "Slope Lift"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "3"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "idle_temperature": [
+                "150"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic PLA @CORE One 0.8",
+            "nozzle_temperature": [
+                "225"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "230"
+            ],
+            "nozzle_temperature_range_high": [
+                "230"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "17"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFL99",
+        "name": "Prusa Generic PLA @CORE One 0.8"
     },
     {
         "compatible_printers": {
@@ -3450,9 +6767,6 @@
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PVB/pvb"
-        ],
         "name": "Prusament PVB @CORE One 0.8"
     },
     {
@@ -3462,48 +6776,44 @@
             ]
         },
         "data": {
-            "additional_cooling_fan_speed": [
-                "70"
-            ],
             "bed_type": [
                 "Cool Plate"
             ],
             "chamber_temperature": [
-                "20"
+                "40"
             ],
             "close_fan_the_first_x_layers": [
-                "1"
+                "4"
             ],
             "compatible_printers": [
-                "Prusa CORE One 0.8 nozzle",
-                "Prusa CORE One HF 0.8 nozzle"
+                "Prusa CORE One 0.8 nozzle"
             ],
             "cool_plate_temp": [
-                "35"
+                "105"
             ],
             "cool_plate_temp_initial_layer": [
-                "35"
+                "105"
             ],
             "eng_plate_temp": [
-                "0"
+                "105"
             ],
             "eng_plate_temp_initial_layer": [
-                "0"
+                "105"
             ],
             "fan_cooling_layer_time": [
                 "40"
             ],
             "fan_max_speed": [
-                "100"
+                "20"
             ],
             "fan_min_speed": [
-                "85"
+                "15"
             ],
             "filament_cost": [
-                "37.49"
+                "27.82"
             ],
             "filament_density": [
-                "1.24"
+                "1.04"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -3517,12 +6827,12 @@
             "filament_flow_ratio": [
                 "1"
             ],
-            "filament_id": "Prusament rPLA @CORE One 0.8",
+            "filament_id": "Prusa Generic ABS @CORE One 0.8",
             "filament_max_volumetric_speed": [
-                "14"
+                "15"
             ],
             "filament_minimal_purge_on_wipe_tower": [
-                "15"
+                "35"
             ],
             "filament_notes": [
                 ""
@@ -3552,10 +6862,174 @@
                 "0"
             ],
             "filament_start_gcode": [
-                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.07{elsif nozzle_diameter[filament_extruder_id]==0.35}0.06{elsif nozzle_diameter[filament_extruder_id]==0.6}0.03{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.8}0.015{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.036{elsif nozzle_diameter[filament_extruder_id]==0.5}0.025{elsif nozzle_diameter[filament_extruder_id]==0.6}0.022{elsif nozzle_diameter[filament_extruder_id]==0.8}0.014{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.08{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S36 ; set heatbreak target temp"
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.04{elsif nozzle_diameter[filament_extruder_id]==0.25}0.1{elsif nozzle_diameter[filament_extruder_id]==0.3}0.06{elsif nozzle_diameter[filament_extruder_id]==0.35}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.03{elsif nozzle_diameter[filament_extruder_id]==0.6}0.02{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.02{elsif nozzle_diameter[filament_extruder_id]==0.5}0.018{elsif nozzle_diameter[filament_extruder_id]==0.6}0.012{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{elsif nozzle_diameter[filament_extruder_id]==0.25}0.09{elsif nozzle_diameter[filament_extruder_id]==0.3}0.065{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S40 ; set heatbreak target temp"
             ],
             "filament_type": [
-                "PLA"
+                "ABS"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "110"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "110"
+            ],
+            "idle_temperature": [
+                "130"
+            ],
+            "instantiation": "true",
+            "name": "Prusa Generic ABS @CORE One 0.8",
+            "nozzle_temperature": [
+                "260"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "260"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "240"
+            ],
+            "overhang_fan_speed": [
+                "25"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "0"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "20"
+            ],
+            "slow_down_min_speed": [
+                "15"
+            ],
+            "temperature_vitrification": [
+                "110"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFB99",
+        "name": "Prusa Generic ABS @CORE One 0.8"
+    },
+    {
+        "compatible_printers": {
+            "Prusa CORE One": [
+                "0.8"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": [
+                "40"
+            ],
+            "close_fan_the_first_x_layers": [
+                "4"
+            ],
+            "compatible_printers": [
+                "Prusa CORE One 0.8 nozzle"
+            ],
+            "cool_plate_temp": [
+                "105"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "105"
+            ],
+            "eng_plate_temp": [
+                "105"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "105"
+            ],
+            "fan_cooling_layer_time": [
+                "20"
+            ],
+            "fan_max_speed": [
+                "30"
+            ],
+            "fan_min_speed": [
+                "20"
+            ],
+            "filament_cost": [
+                "35.28"
+            ],
+            "filament_density": [
+                "1.07"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; Filament-specific end gcode"
+            ],
+            "filament_flow_ratio": [
+                "1"
+            ],
+            "filament_id": "Prusament ASA @CORE One 0.8",
+            "filament_max_volumetric_speed": [
+                "15"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "35"
+            ],
+            "filament_notes": [
+                ""
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "M900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.04{elsif nozzle_diameter[filament_extruder_id]==0.25}0.1{elsif nozzle_diameter[filament_extruder_id]==0.3}0.06{elsif nozzle_diameter[filament_extruder_id]==0.35}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.03{elsif nozzle_diameter[filament_extruder_id]==0.6}0.02{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{else}0{endif} ; Filament gcode\n\n{if printer_notes=~/.*(MK4IS|XLIS|MK4S|MK3.9S|CORE One).*/}\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.02{elsif nozzle_diameter[filament_extruder_id]==0.5}0.018{elsif nozzle_diameter[filament_extruder_id]==0.6}0.012{elsif nozzle_diameter[filament_extruder_id]==0.8}0.01{elsif nozzle_diameter[filament_extruder_id]==0.25}0.09{elsif nozzle_diameter[filament_extruder_id]==0.3}0.065{else}0{endif} ; Filament gcode\n{endif}\n\nM142 S40 ; set heatbreak target temp"
+            ],
+            "filament_type": [
+                "ASA"
             ],
             "filament_vendor": [
                 "Prusa Polymers"
@@ -3567,43 +7041,40 @@
                 "nil"
             ],
             "filament_z_hop": [
-                "0.6"
-            ],
-            "filament_z_hop_types": [
-                "Slope Lift"
+                "nil"
             ],
             "from": "system",
             "full_fan_speed_layer": [
-                "3"
+                "0"
             ],
             "hot_plate_temp": [
-                "60"
+                "110"
             ],
             "hot_plate_temp_initial_layer": [
-                "60"
+                "110"
             ],
             "idle_temperature": [
-                "150"
+                "130"
             ],
             "instantiation": "true",
-            "name": "Prusament rPLA @CORE One 0.8",
+            "name": "Prusament ASA @CORE One 0.8",
             "nozzle_temperature": [
-                "205"
+                "260"
             ],
             "nozzle_temperature_initial_layer": [
-                "205"
+                "260"
             ],
             "nozzle_temperature_range_high": [
-                "230"
+                "270"
             ],
             "nozzle_temperature_range_low": [
-                "190"
+                "240"
             ],
             "overhang_fan_speed": [
-                "100"
+                "30"
             ],
             "overhang_fan_threshold": [
-                "50%"
+                "25%"
             ],
             "reduce_fan_stop_start_freq": [
                 "1"
@@ -3613,20 +7084,17 @@
                 "1"
             ],
             "slow_down_layer_time": [
-                "17"
-            ],
-            "slow_down_min_speed": [
                 "20"
             ],
+            "slow_down_min_speed": [
+                "15"
+            ],
             "temperature_vitrification": [
-                "60"
+                "110"
             ],
             "type": "filament"
         },
-        "filament_db_ids": [
-            "prusament/PLA/rpla"
-        ],
-        "generic_id": "GFL99",
-        "name": "Prusament rPLA @CORE One 0.8"
+        "generic_id": "GFB98",
+        "name": "Prusament ASA @CORE One 0.8"
     }
 ]
