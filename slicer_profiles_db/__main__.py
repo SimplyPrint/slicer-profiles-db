@@ -373,6 +373,26 @@ Environment variables:
     ofd_map_parser.add_argument("--json", action="store_true", help="Output as JSON")
     ofd_map_parser.set_defaults(func=run_ofd_map)
 
+    # --- deduplicate ---
+    dedup_parser = subparsers.add_parser(
+        "deduplicate",
+        help="Remove consecutive duplicate version entries from stored profiles",
+    )
+    dedup_parser.add_argument(
+        "slicer",
+        nargs="?",
+        choices=[s.value for s in SlicerType],
+        default=None,
+        help="Slicer type (default: all slicers)",
+    )
+    dedup_parser.add_argument(
+        "--store",
+        "-s",
+        default=None,
+        help="Store directory path (default: $SLICER_PROFILES_STORE or 'profiles')",
+    )
+    dedup_parser.set_defaults(func=run_deduplicate)
+
     return parser
 
 
@@ -946,6 +966,27 @@ def run_ofd_map(args: argparse.Namespace) -> int:
 
         total = len(report.updated) + len(report.already_correct)
         print(f"\nTotal matched: {total}")
+
+    return 0
+
+
+def run_deduplicate(args: argparse.Namespace) -> int:
+    """Remove consecutive duplicate version entries from stored profiles."""
+    store_path = project_root / (args.store or _default_store())
+    store = ProfileStore(store_path)
+
+    slicers = [SlicerType(args.slicer)] if args.slicer else list(SlicerType)
+    total_removed = 0
+    for slicer in slicers:
+        removed = store.deduplicate_settings(slicer)
+        if removed:
+            print(f"  {slicer.value}: removed {removed} duplicate entries")
+            total_removed += removed
+
+    if total_removed:
+        print(f"\nTotal: removed {total_removed} duplicate entries")
+    else:
+        print("No duplicate entries found.")
 
     return 0
 

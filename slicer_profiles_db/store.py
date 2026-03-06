@@ -102,6 +102,16 @@ class ProfileStore:
         - Missing profiles: keeps them but doesn't update last_seen
         - Returns IngestionReport with adds, removes, changes
         """
+        # Deduplicate: when multiple parsed profiles share the same key
+        # (e.g. Cura generic_abs.xml and generic_abs_175.xml both produce
+        # "Generic ABS Generic"), keep only the last one to prevent cross-run
+        # oscillation that creates duplicate version entries.
+        deduped: dict[str, ParsedProfile] = {}
+        for p in profiles:
+            key = self._profile_key(slicer, p.profile_type, p.vendor, p.name)
+            deduped[key] = p
+        profiles = list(deduped.values())
+
         added = []
         changed = {}
         seen_keys = set()
@@ -205,6 +215,33 @@ class ProfileStore:
         """Get all ingested versions for a slicer, in order."""
         meta = self._load_meta(slicer)
         return meta.get("versions", [])
+
+    def deduplicate_settings(self, slicer: SlicerType) -> int:
+        """Remove consecutive duplicate values from all profiles for a slicer.
+
+        When the same value appears in adjacent version entries, only the
+        oldest (first) entry is kept.  Returns the total number of entries
+        removed.
+        """
+        removed = 0
+        for profile in self.list_profiles(slicer):
+            changed = False
+            for key, versions in profile.settings.items():
+                entries = list(versions.items())
+                if len(entries) <= 1:
+                    continue
+                cleaned = {entries[0][0]: entries[0][1]}
+                for ver, val in entries[1:]:
+                    prev_val = list(cleaned.values())[-1]
+                    if self._normalize(prev_val) != self._normalize(val):
+                        cleaned[ver] = val
+                if len(cleaned) < len(entries):
+                    profile.settings[key] = cleaned
+                    changed = True
+                    removed += len(entries) - len(cleaned)
+            if changed:
+                self._save(profile)
+        return removed
 
     # --- Internal methods ---
 
