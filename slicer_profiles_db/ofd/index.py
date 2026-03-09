@@ -15,9 +15,20 @@ logger = logging.getLogger(__name__)
 # of these, the slicer profile name must also contain the same keyword (or be
 # a base-type profile) for the link to be valid.
 _SUB_VARIANT_KEYWORDS = [
-    "silk", "matte", "wood", "sparkle", "galaxy", "marble",
-    "translucent", "glow", "metal", "aero", "tough", "lite",
-    "basic", "dynamic",
+    "silk",
+    "matte",
+    "wood",
+    "sparkle",
+    "galaxy",
+    "marble",
+    "translucent",
+    "glow",
+    "metal",
+    "aero",
+    "tough",
+    "lite",
+    "basic",
+    "dynamic",
 ]
 
 
