@@ -144,8 +144,12 @@ class ProfileStore:
         all_keys = self._list_profile_keys(slicer)
         removed = [k for k in all_keys if k not in seen_keys]
 
-        # Update slicer metadata
-        self._update_meta(slicer, version)
+        # Only advance slicer metadata when this ingest changed stored state.
+        # This avoids synthetic branch-based versions (for example daily Cura
+        # ingests) accumulating in _meta.json when the parsed profiles are
+        # identical to what is already stored.
+        if added or changed:
+            self._update_meta(slicer, version)
 
         return IngestionReport(
             slicer=slicer,
