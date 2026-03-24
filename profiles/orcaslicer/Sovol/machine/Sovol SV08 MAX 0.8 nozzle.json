@@ -4,7 +4,7 @@
   "name": "Sovol SV08 MAX 0.8 nozzle",
   "vendor": "Sovol",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.3.2",
   "filament_id": null,
   "setting_id": "GM001",
   "renamed_from": null,
@@ -212,7 +212,8 @@
       "2.3.1": "1"
     },
     "change_filament_gcode": {
-      "2.3.1": ""
+      "2.3.1": "",
+      "2.3.2": "M600\n"
     },
     "wipe": {
       "2.3.1": [
@@ -284,6 +285,9 @@
       "2.3.1": [
         "Generic PLA @Sovol SV08 MAX"
       ]
+    },
+    "machine_pause_gcode": {
+      "2.3.2": "PAUSE\n"
     }
   }
 }

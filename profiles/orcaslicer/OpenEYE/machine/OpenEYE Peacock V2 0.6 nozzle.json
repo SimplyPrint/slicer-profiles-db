@@ -1,0 +1,482 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "OpenEYE Peacock V2 0.6 nozzle",
+  "vendor": "OpenEYE",
+  "first_seen": "2.3.2",
+  "last_seen": "2.3.2",
+  "filament_id": null,
+  "setting_id": "GM003",
+  "renamed_from": null,
+  "settings": {
+    "before_layer_change_gcode": {
+      "2.3.2": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\nTIMELAPSE_TAKE_FRAME"
+    },
+    "best_object_pos": {
+      "2.3.2": "0.5,0.5"
+    },
+    "change_filament_gcode": {
+      "2.3.2": ""
+    },
+    "default_filament_profile": {
+      "2.3.2": [
+        "Generic PLA @System"
+      ]
+    },
+    "default_print_profile": {
+      "2.3.2": "0.30mm Standard @OpenEYE Peacock V2 0.6 nozzle"
+    },
+    "deretraction_speed": {
+      "2.3.2": [
+        "40"
+      ]
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.3.2": "34"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.3.2": "34"
+    },
+    "extruder_clearance_radius": {
+      "2.3.2": "47"
+    },
+    "extruder_colour": {
+      "2.3.2": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "2.3.2": [
+        "0x0"
+      ]
+    },
+    "from": {
+      "2.3.2": "system"
+    },
+    "gcode_flavor": {
+      "2.3.2": "klipper"
+    },
+    "instantiation": {
+      "2.3.2": "true"
+    },
+    "layer_change_gcode": {
+      "2.3.2": "SET_PRINT_STATS_INFO CURRENT_LAYER={layer_num + 1}\n_MMU_UPDATE_HEIGHT"
+    },
+    "machine_end_gcode": {
+      "2.3.2": "MMU_END\nEND_PRINT"
+    },
+    "machine_max_acceleration_e": {
+      "2.3.2": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.3.2": [
+        "20000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.3.2": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.3.2": [
+        "20000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.3.2": [
+        "20000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.3.2": [
+        "500",
+        "500"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.3.2": [
+        "2.5",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.3.2": [
+        "9",
+        "9"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.3.2": [
+        "9",
+        "9"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.3.2": [
+        "3",
+        "3"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.3.2": [
+        "60",
+        "60"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.3.2": [
+        "500",
+        "500"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.3.2": [
+        "500",
+        "500"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.3.2": [
+        "30",
+        "30"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.3.2": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.3.2": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_pause_gcode": {
+      "2.3.2": "PAUSE"
+    },
+    "machine_start_gcode": {
+      "2.3.2": "SET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]\nMMU_START_SETUP INITIAL_TOOL={initial_tool} TOTAL_TOOLCHANGES=!total_toolchanges! REFERENCED_TOOLS=!referenced_tools! TOOL_COLORS=!colors! TOOL_TEMPS=!temperatures! TOOL_MATERIALS=!materials! FILAMENT_NAMES=!filament_names! PURGE_VOLUMES=!purge_volumes!\nMMU_START_CHECK\nSTART_PRINT BED_TEMP=[bed_temperature_initial_layer] EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TYPE=\"{curr_bed_type}\" MESH_MIN={adaptive_bed_mesh_min[0]},{adaptive_bed_mesh_min[1]} MESH_MAX={adaptive_bed_mesh_max[0]},{adaptive_bed_mesh_max[1]} ALGORITHM=[bed_mesh_algo] PROBE_COUNT={bed_mesh_probe_count[0]},{bed_mesh_probe_count[1]} ADAPTIVE_MARGIN={adaptive_bed_mesh_margin}\n; Enter YOUR exist start_print macro call here (minus purging logic because tool may not be loaded yet)\nMMU_START_LOAD_INITIAL_TOOL\n; Optionally add YOUR additional start logic (like purging) here to run just prior to start\nSTART_PRINT_SECONDARY\nSET_PRINT_STATS_INFO TOTAL_LAYER={total_layer_count} ; For pause at layer functionality and better print stats"
+    },
+    "max_layer_height": {
+      "2.3.2": [
+        "0.42"
+      ]
+    },
+    "min_layer_height": {
+      "2.3.2": [
+        "0.12"
+      ]
+    },
+    "name": {
+      "2.3.2": "OpenEYE Peacock V2 0.6 nozzle"
+    },
+    "nozzle_diameter": {
+      "2.3.2": [
+        "0.6"
+      ]
+    },
+    "printable_height": {
+      "2.3.2": "200"
+    },
+    "printer_settings_id": {
+      "2.3.2": ""
+    },
+    "printer_technology": {
+      "2.3.2": "FFF"
+    },
+    "printer_variant": {
+      "2.3.2": "0.6"
+    },
+    "retract_before_wipe": {
+      "2.3.2": [
+        "0%"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.3.2": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "2.3.2": [
+        "1.4"
+      ]
+    },
+    "retraction_minimum_travel": {
+      "2.3.2": [
+        "1"
+      ]
+    },
+    "retraction_speed": {
+      "2.3.2": [
+        "40"
+      ]
+    },
+    "silent_mode": {
+      "2.3.2": "0"
+    },
+    "single_extruder_multi_material": {
+      "2.3.2": "1"
+    },
+    "type": {
+      "2.3.2": "machine"
+    },
+    "wipe": {
+      "2.3.2": [
+        "1"
+      ]
+    },
+    "z_hop": {
+      "2.3.2": [
+        "0.4"
+      ]
+    },
+    "adaptive_bed_mesh_margin": {
+      "2.3.2": "10"
+    },
+    "auxiliary_fan": {
+      "2.3.2": "0"
+    },
+    "bed_exclude_area": {
+      "2.3.2": [
+        "0x0"
+      ]
+    },
+    "bed_mesh_max": {
+      "2.3.2": "211,211"
+    },
+    "bed_mesh_min": {
+      "2.3.2": "1.5,7"
+    },
+    "bed_mesh_probe_distance": {
+      "2.3.2": "50,50"
+    },
+    "bed_temperature_formula": {
+      "2.3.2": "by_highest_temp"
+    },
+    "cooling_tube_length": {
+      "2.3.2": "0"
+    },
+    "cooling_tube_retraction": {
+      "2.3.2": "0"
+    },
+    "default_bed_type": {
+      "2.3.2": "Textured PEI Plate"
+    },
+    "disable_m73": {
+      "2.3.2": "0"
+    },
+    "emit_machine_limits_to_gcode": {
+      "2.3.2": "0"
+    },
+    "enable_filament_ramming": {
+      "2.3.2": "0"
+    },
+    "enable_long_retraction_when_cut": {
+      "2.3.2": "0"
+    },
+    "extra_loading_move": {
+      "2.3.2": "0"
+    },
+    "fan_kickstart": {
+      "2.3.2": "0"
+    },
+    "fan_speedup_overhangs": {
+      "2.3.2": "1"
+    },
+    "fan_speedup_time": {
+      "2.3.2": "0"
+    },
+    "head_wrap_detect_zone": {
+      "2.3.2": []
+    },
+    "high_current_on_filament_swap": {
+      "2.3.2": "0"
+    },
+    "host_type": {
+      "2.3.2": "octoprint"
+    },
+    "printer_agent": {
+      "2.3.2": "moonraker"
+    },
+    "long_retractions_when_cut": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "machine_load_filament_time": {
+      "2.3.2": "30"
+    },
+    "machine_max_acceleration_travel": {
+      "2.3.2": [
+        "9000",
+        "9000"
+      ]
+    },
+    "machine_max_junction_deviation": {
+      "2.3.2": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_tool_change_time": {
+      "2.3.2": "0"
+    },
+    "machine_unload_filament_time": {
+      "2.3.2": "30"
+    },
+    "manual_filament_change": {
+      "2.3.2": "0"
+    },
+    "max_resonance_avoidance_speed": {
+      "2.3.2": "120"
+    },
+    "min_resonance_avoidance_speed": {
+      "2.3.2": "70"
+    },
+    "nozzle_height": {
+      "2.3.2": "2.5"
+    },
+    "nozzle_hrc": {
+      "2.3.2": "0"
+    },
+    "nozzle_type": {
+      "2.3.2": "brass"
+    },
+    "nozzle_volume": {
+      "2.3.2": "0"
+    },
+    "parking_pos_retraction": {
+      "2.3.2": "0"
+    },
+    "pellet_modded_printer": {
+      "2.3.2": "0"
+    },
+    "preferred_orientation": {
+      "2.3.2": "0"
+    },
+    "print_host": {
+      "2.3.2": "openeye3dpi.local"
+    },
+    "printing_by_object_gcode": {
+      "2.3.2": ""
+    },
+    "purge_in_prime_tower": {
+      "2.3.2": "1"
+    },
+    "resonance_avoidance": {
+      "2.3.2": "0"
+    },
+    "retract_lift_above": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "retract_lift_below": {
+      "2.3.2": [
+        "180",
+        "180"
+      ]
+    },
+    "retract_lift_enforce": {
+      "2.3.2": [
+        "All Surfaces"
+      ]
+    },
+    "retraction_distances_when_cut": {
+      "2.3.2": [
+        "18"
+      ]
+    },
+    "scan_first_layer": {
+      "2.3.2": "0"
+    },
+    "support_air_filtration": {
+      "2.3.2": "0"
+    },
+    "support_chamber_temp_control": {
+      "2.3.2": "0"
+    },
+    "support_multi_bed_types": {
+      "2.3.2": "1"
+    },
+    "template_custom_gcode": {
+      "2.3.2": ""
+    },
+    "thumbnails": {
+      "2.3.2": "48x48/PNG, 300x300/PNG"
+    },
+    "thumbnails_format": {
+      "2.3.2": "PNG"
+    },
+    "time_cost": {
+      "2.3.2": "0"
+    },
+    "time_lapse_gcode": {
+      "2.3.2": ""
+    },
+    "travel_slope": {
+      "2.3.2": [
+        "3"
+      ]
+    },
+    "use_firmware_retraction": {
+      "2.3.2": "0"
+    },
+    "use_relative_e_distances": {
+      "2.3.2": "1"
+    },
+    "wipe_distance": {
+      "2.3.2": [
+        "1"
+      ]
+    },
+    "z_hop_types": {
+      "2.3.2": [
+        "Auto Lift"
+      ]
+    },
+    "z_offset": {
+      "2.3.2": "0"
+    },
+    "printable_area": {
+      "2.3.2": [
+        "1.5x7",
+        "235x7",
+        "235x235",
+        "1.5x235"
+      ]
+    },
+    "printer_model": {
+      "2.3.2": "OpenEYE Peacock V2"
+    },
+    "setting_id": {
+      "2.3.2": "GM003"
+    }
+  }
+}

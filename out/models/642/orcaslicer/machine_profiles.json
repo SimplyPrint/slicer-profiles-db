@@ -1,8 +1,8 @@
 [
     {
         "machine_model": {
-            "bed_model": "sha256:612692e5cc0ce8377d1abe60b62167d1228f64f782a55b90b839eff679344b4e",
-            "bed_texture": "sha256:b7efd8def6e4f55823b0ceaeb2c85dc1adcd4253bfb69b0645a260eb8020b916",
+            "bed_model": "sha256:3ab672f930b2758da556da8b1ee6b2ab066ac741ef6b154e9455a5c4eebd761c",
+            "bed_texture": "sha256:c2dc7f9d57c5dde11266b29478ced10a1a6e284e1a2a4233fd5823bd7dd3a415",
             "default_materials": "Generic PLA;Generic PLA Silk;Generic ABS;Generic PETG;Polymaker PETG;SUNLU PETG;Generic TPU;Generic PC",
             "family": "Sovol",
             "hotend_model": "",
@@ -17,7 +17,7 @@
                 "data": {
                     "auxiliary_fan": "0",
                     "before_layer_change_gcode": "TIMELAPSE_TAKE_FRAME\nG92 E0\nSET_PRINT_STATS_INFO CURRENT_LAYER=[layer_num]\n",
-                    "change_filament_gcode": "",
+                    "change_filament_gcode": "M600\n",
                     "default_filament_profile": [
                         "Generic PLA @Sovol SV08 MAX"
                     ],
@@ -89,6 +89,7 @@
                     "machine_min_travel_rate": [
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE\n",
                     "machine_start_gcode": "G28\nM140 S[bed_temperature_initial_layer_single] ;set bed temp\nM190 S[bed_temperature_initial_layer_single] ;wait for bed temp\nSTART_PRINT\nG90\nG1 X0 Y0 F12000\nG1 Z0.300 F600\nM104 S[nozzle_temperature_initial_layer] ;set extruder temp\nM109 S[nozzle_temperature_initial_layer];wait for extruder temp\n{if first_layer_print_min[0] - 3 > print_bed_min[0]}\nG90\nM83\nG1 E-0.100 F600\nG1 X{first_layer_print_min[0] - 3} Y{first_layer_print_min[1]} F12000\nG1 Z0.3 F600 ;Move to start position\nG1 E0.100 F600\nG1 Y{first_layer_print_min[1] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 Y{first_layer_print_min[1] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 E-0.100 F600\nG1 Z1 F600\nG1 X{first_layer_print_min[0] - 2} Y{first_layer_print_min[1]} F12000\nG1 Z0.3 F600 ;Move to start position\nG1 E0.100 F600\nG1 Y{first_layer_print_min[1] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 Y{first_layer_print_min[1] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 E-0.100 F600\n{else}\nG90\nM83\nG1 E-0.100 Z3 F600\nG1 X-1.5 Y{first_layer_print_min[1]} F{outer_wall_volumetric_speed * 5 * 30}\nG1 Z0.3 F600\nG1 E0.100 F600\nG1 Y{first_layer_print_min[1] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 Y{first_layer_print_min[1] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 X-0.5 Y{first_layer_print_min[1]} F{outer_wall_volumetric_speed * 5 * 30}\nG1 Z0.3 F600\nG1 E0.100 F600\nG1 Y{first_layer_print_min[1] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 Y{first_layer_print_min[1] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 E-0.100 Z3 F600\nM400\n{endif}\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]\n\n",
                     "max_layer_height": [
                         "0.32"
@@ -173,7 +174,7 @@
                 "data": {
                     "auxiliary_fan": "0",
                     "before_layer_change_gcode": "TIMELAPSE_TAKE_FRAME\nG92 E0\nSET_PRINT_STATS_INFO CURRENT_LAYER=[layer_num]\n",
-                    "change_filament_gcode": "",
+                    "change_filament_gcode": "M600\n",
                     "default_filament_profile": [
                         "Generic PLA @Sovol SV08 MAX"
                     ],
@@ -245,6 +246,7 @@
                     "machine_min_travel_rate": [
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE\n",
                     "machine_start_gcode": "G28\nM140 S[bed_temperature_initial_layer_single] ;set bed temp\nM190 S[bed_temperature_initial_layer_single] ;wait for bed temp\nSTART_PRINT\nG90\nG1 X0 Y0 F12000\nG1 Z0.300 F600\nM104 S[nozzle_temperature_initial_layer] ;set extruder temp\nM109 S[nozzle_temperature_initial_layer];wait for extruder temp\n{if first_layer_print_min[0] - 3 > print_bed_min[0]}\nG90\nM83\nG1 E-0.100 F600\nG1 X{first_layer_print_min[0] - 3} Y{first_layer_print_min[1]} F12000\nG1 Z0.3 F600 ;Move to start position\nG1 E0.100 F600\nG1 Y{first_layer_print_min[1] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 Y{first_layer_print_min[1] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 E-0.100 F600\nG1 Z1 F600\nG1 X{first_layer_print_min[0] - 2} Y{first_layer_print_min[1]} F12000\nG1 Z0.3 F600 ;Move to start position\nG1 E0.100 F600\nG1 Y{first_layer_print_min[1] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 Y{first_layer_print_min[1] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 E-0.100 F600\n{else}\nG90\nM83\nG1 E-0.100 Z3 F600\nG1 X-1.5 Y{first_layer_print_min[1]} F{outer_wall_volumetric_speed * 5 * 30}\nG1 Z0.3 F600\nG1 E0.100 F600\nG1 Y{first_layer_print_min[1] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 Y{first_layer_print_min[1] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 X-0.5 Y{first_layer_print_min[1]} F{outer_wall_volumetric_speed * 5 * 30}\nG1 Z0.3 F600\nG1 E0.100 F600\nG1 Y{first_layer_print_min[1] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 Y{first_layer_print_min[1] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 E-0.100 Z3 F600\nM400\n{endif}\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]\n\n",
                     "max_layer_height": [
                         "0.42"
@@ -326,7 +328,7 @@
                 "data": {
                     "auxiliary_fan": "0",
                     "before_layer_change_gcode": "TIMELAPSE_TAKE_FRAME\nG92 E0\nSET_PRINT_STATS_INFO CURRENT_LAYER=[layer_num]\n",
-                    "change_filament_gcode": "",
+                    "change_filament_gcode": "M600\n",
                     "default_filament_profile": [
                         "Generic PLA @Sovol SV08 MAX"
                     ],
@@ -398,6 +400,7 @@
                     "machine_min_travel_rate": [
                         "0"
                     ],
+                    "machine_pause_gcode": "PAUSE\n",
                     "machine_start_gcode": "G28\nM140 S[bed_temperature_initial_layer_single] ;set bed temp\nM190 S[bed_temperature_initial_layer_single] ;wait for bed temp\nSTART_PRINT\nG90\nG1 X0 Y0 F12000\nG1 Z0.300 F600\nM104 S[nozzle_temperature_initial_layer] ;set extruder temp\nM109 S[nozzle_temperature_initial_layer];wait for extruder temp\n{if first_layer_print_min[0] - 3 > print_bed_min[0]}\nG90\nM83\nG1 E-0.100 F600\nG1 X{first_layer_print_min[0] - 3} Y{first_layer_print_min[1]} F12000\nG1 Z0.3 F600 ;Move to start position\nG1 E0.100 F600\nG1 Y{first_layer_print_min[1] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 Y{first_layer_print_min[1] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 E-0.100 F600\nG1 Z1 F600\nG1 X{first_layer_print_min[0] - 2} Y{first_layer_print_min[1]} F12000\nG1 Z0.3 F600 ;Move to start position\nG1 E0.100 F600\nG1 Y{first_layer_print_min[1] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 Y{first_layer_print_min[1] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 E-0.100 F600\n{else}\nG90\nM83\nG1 E-0.100 Z3 F600\nG1 X-1.5 Y{first_layer_print_min[1]} F{outer_wall_volumetric_speed * 5 * 30}\nG1 Z0.3 F600\nG1 E0.100 F600\nG1 Y{first_layer_print_min[1] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 Y{first_layer_print_min[1] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 X-0.5 Y{first_layer_print_min[1]} F{outer_wall_volumetric_speed * 5 * 30}\nG1 Z0.3 F600\nG1 E0.100 F600\nG1 Y{first_layer_print_min[1] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 Y{first_layer_print_min[1] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 E-0.100 Z3 F600\nM400\n{endif}\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]\n\n",
                     "max_layer_height": [
                         "0.56"

@@ -4,7 +4,7 @@
   "name": "Anycubic Kobra 2 0.4 nozzle",
   "vendor": "Anycubic",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.3.2",
   "filament_id": null,
   "setting_id": "GM001",
   "renamed_from": null,
@@ -238,7 +238,8 @@
       "2.3.1": "M600"
     },
     "before_layer_change_gcode": {
-      "2.3.1": ";BEFORE_LAYER_CHANGE\n[layer_num] @ [layer_z]mm/nG92 E0"
+      "2.3.1": ";BEFORE_LAYER_CHANGE\n[layer_num] @ [layer_z]mm/nG92 E0",
+      "2.3.2": ";BEFORE_LAYER_CHANGE\n[layer_num] @ [layer_z]mm\nG92 E0"
     },
     "layer_change_gcode": {
       "2.3.1": ";AFTER_LAYER_CHANGE\n[layer_num] @ [layer_z]mm"

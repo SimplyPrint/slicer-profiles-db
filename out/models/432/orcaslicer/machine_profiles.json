@@ -1,8 +1,8 @@
 [
     {
         "machine_model": {
-            "bed_model": "sha256:efa64d41d8767486ce64fc7a3856f235efff63978a4e6726ec555deae77b8d08",
-            "bed_texture": "sha256:1c6e5af0abb2672d6c1d5f70f12df0041f69d87c9860eb6fcb6972ba6bff7713",
+            "bed_model": "sha256:b81022311447245fee0a2ef60f756a103e23ff3badae0b4fd4ab1a5fcd1d811b",
+            "bed_texture": "sha256:2d27e69bbb96484991c61d544712fe7f563bf7ae78fa3c883aaf2d822beb4cc5",
             "default_materials": "Prusa Generic PLA-CF @MK3.5;Prusa Generic PC @MK3.5;Prusa Generic PVA @MK3.5;Prusa Generic PA @MK3.5;Prusa Generic PA-CF @MK3.5;Prusa Generic ABS @MK3.5;Prusa Generic PLA @MK3.5;Prusa Generic PLA @MK3.5 0.6;Prusa Generic PLA @MK3.5 0.8;Prusa Generic PETG @MK3.5;Prusa Generic PETG @MK3.5 0.6;Prusa Generic PETG @MK3.5 0.8;Prusa Generic TPU @MK3.5;Prusa Generic ASA @MK3.5;",
             "family": "Prusa",
             "hotend_model": "",
@@ -91,6 +91,9 @@
                         "2",
                         "2"
                     ],
+                    "machine_max_junction_deviation": [
+                        "0.01"
+                    ],
                     "machine_max_speed_e": [
                         "80",
                         "25"
@@ -116,7 +119,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "M601",
-                    "machine_start_gcode": "M17 ; enable steppers\nM862.1 P[nozzle_diameter] ; nozzle diameter check\nM862.3 P \"MK3.5\" ; printer model check\nM862.5 P2 ; g-code level check\nM862.6 P\"Input shaper\" ; FW feature check\nM115 U6.2.2+8853\n\nM555 X{(min(print_bed_max[0], first_layer_print_min[0] + 32) - 32)} Y{(max(0, first_layer_print_min[1]) - 4)} W{((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) - ((min(print_bed_max[0], first_layer_print_min[0] + 32) - 32))} H{((first_layer_print_max[1])) - ((max(0, first_layer_print_min[1]) - 4))}\n\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\n\nG28 ; home all\n\nM140 S[first_layer_bed_temperature] ; set bed temp\nM104 T0 S170 ; set extruder temp for bed leveling\nM109 T0 R170 ; wait for temp\nM190 S[first_layer_bed_temperature] ; wait for bed temp\n\nG29 P1 ; invalidate mbl & probe print area\nG29 P1 X23 Y5 W80 H20 C ; probe near purge place\nG29 P3.2 ; interpolate mbl probes\nG29 P3.13 ; extrapolate mbl outside probe area\nG29 A ; activate mbl\n\n; prepare for purge\nM104 S{first_layer_temperature[0]}\nG0 X0 Y-4 Z15 F4800 ; move away and ready for the purge\nM109 S{first_layer_temperature[0]}\n\n; Extrude purge line\n\nG92 E0 ; reset extruder position\nG0 E7 X15 Z0.2 F500 ; purge\nG0 X25 E4 F500 ; purge\nG0 X35 E4 F650 ; purge\nG0 X45 E4 F800 ; purge\nG0 X{45 + 3} Z0.05 F8000 ; wipe, move close to the bed\nG0 X{45 + 3 * 2} Z0.2 F8000 ; wipe, move quickly away from the bed\n\nG92 E0\nM221 S100 ; reset flow to 100%\n",
+                    "machine_start_gcode": "M17 ; enable steppers\nM862.1 P[nozzle_diameter] ; nozzle diameter check\nM862.3 P \"MK3.5\" ; printer model check\nM862.5 P2 ; g-code level check\nM862.6 P\"Input shaper\" ; FW feature check\nM115 U6.4.0+11974\n\nM555 X{(min(print_bed_max[0], first_layer_print_min[0] + 32) - 32)} Y{(max(0, first_layer_print_min[1]) - 4)} W{((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) - ((min(print_bed_max[0], first_layer_print_min[0] + 32) - 32))} H{((first_layer_print_max[1])) - ((max(0, first_layer_print_min[1]) - 4))}\n\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\n\nG28 ; home all\n\nM140 S[first_layer_bed_temperature] ; set bed temp\nM104 T0 S170 ; set extruder temp for bed leveling\nM109 T0 R170 ; wait for temp\nM190 S[first_layer_bed_temperature] ; wait for bed temp\n\nG29 P1 ; invalidate mbl & probe print area\nG29 P1 X23 Y5 W80 H20 C ; probe near purge place\nG29 P3.2 ; interpolate mbl probes\nG29 P3.13 ; extrapolate mbl outside probe area\nG29 A ; activate mbl\n\n; prepare for purge\nM104 S{first_layer_temperature[0]}\nG0 X0 Y-4 Z15 F4800 ; move away and ready for the purge\nM109 S{first_layer_temperature[0]}\n\n; Extrude purge line\n\nG92 E0 ; reset extruder position\nG0 E7 X15 Z0.2 F500 ; purge\nG0 X25 E4 F500 ; purge\nG0 X35 E4 F650 ; purge\nG0 X45 E4 F800 ; purge\nG0 X{45 + 3} Z0.05 F8000 ; wipe, move close to the bed\nG0 X{45 + 3 * 2} Z0.2 F8000 ; wipe, move quickly away from the bed\n\nG92 E0\nM221 S100 ; reset flow to 100%\n",
                     "machine_unload_filament_time": "16",
                     "max_layer_height": [
                         "0.15"
@@ -263,6 +266,9 @@
                         "2",
                         "2"
                     ],
+                    "machine_max_junction_deviation": [
+                        "0.01"
+                    ],
                     "machine_max_speed_e": [
                         "80",
                         "25"
@@ -288,7 +294,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "M601",
-                    "machine_start_gcode": "M17 ; enable steppers\nM862.1 P[nozzle_diameter] ; nozzle diameter check\nM862.3 P \"MK3.5\" ; printer model check\nM862.5 P2 ; g-code level check\nM862.6 P\"Input shaper\" ; FW feature check\nM115 U6.2.2+8853\n\nM555 X{(min(print_bed_max[0], first_layer_print_min[0] + 32) - 32)} Y{(max(0, first_layer_print_min[1]) - 4)} W{((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) - ((min(print_bed_max[0], first_layer_print_min[0] + 32) - 32))} H{((first_layer_print_max[1])) - ((max(0, first_layer_print_min[1]) - 4))}\n\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\n\nG28 ; home all\n\nM140 S[first_layer_bed_temperature] ; set bed temp\nM104 T0 S170 ; set extruder temp for bed leveling\nM109 T0 R170 ; wait for temp\nM190 S[first_layer_bed_temperature] ; wait for bed temp\n\nG29 P1 ; invalidate mbl & probe print area\nG29 P1 X23 Y5 W80 H20 C ; probe near purge place\nG29 P3.2 ; interpolate mbl probes\nG29 P3.13 ; extrapolate mbl outside probe area\nG29 A ; activate mbl\n\n; prepare for purge\nM104 S{first_layer_temperature[0]}\nG0 X0 Y-4 Z15 F4800 ; move away and ready for the purge\nM109 S{first_layer_temperature[0]}\n\n; Extrude purge line\n\nG92 E0 ; reset extruder position\nG0 E7 X15 Z0.2 F500 ; purge\nG0 X25 E4 F500 ; purge\nG0 X35 E4 F650 ; purge\nG0 X45 E4 F800 ; purge\nG0 X{45 + 3} Z0.05 F8000 ; wipe, move close to the bed\nG0 X{45 + 3 * 2} Z0.2 F8000 ; wipe, move quickly away from the bed\n\nG92 E0\nM221 S100 ; reset flow to 100%\n",
+                    "machine_start_gcode": "M17 ; enable steppers\nM862.1 P[nozzle_diameter] ; nozzle diameter check\nM862.3 P \"MK3.5\" ; printer model check\nM862.5 P2 ; g-code level check\nM862.6 P\"Input shaper\" ; FW feature check\nM115 U6.4.0+11974\n\nM555 X{(min(print_bed_max[0], first_layer_print_min[0] + 32) - 32)} Y{(max(0, first_layer_print_min[1]) - 4)} W{((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) - ((min(print_bed_max[0], first_layer_print_min[0] + 32) - 32))} H{((first_layer_print_max[1])) - ((max(0, first_layer_print_min[1]) - 4))}\n\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\n\nG28 ; home all\n\nM140 S[first_layer_bed_temperature] ; set bed temp\nM104 T0 S170 ; set extruder temp for bed leveling\nM109 T0 R170 ; wait for temp\nM190 S[first_layer_bed_temperature] ; wait for bed temp\n\nG29 P1 ; invalidate mbl & probe print area\nG29 P1 X23 Y5 W80 H20 C ; probe near purge place\nG29 P3.2 ; interpolate mbl probes\nG29 P3.13 ; extrapolate mbl outside probe area\nG29 A ; activate mbl\n\n; prepare for purge\nM104 S{first_layer_temperature[0]}\nG0 X0 Y-4 Z15 F4800 ; move away and ready for the purge\nM109 S{first_layer_temperature[0]}\n\n; Extrude purge line\n\nG92 E0 ; reset extruder position\nG0 E7 X15 Z0.2 F500 ; purge\nG0 X25 E4 F500 ; purge\nG0 X35 E4 F650 ; purge\nG0 X45 E4 F800 ; purge\nG0 X{45 + 3} Z0.05 F8000 ; wipe, move close to the bed\nG0 X{45 + 3 * 2} Z0.2 F8000 ; wipe, move quickly away from the bed\n\nG92 E0\nM221 S100 ; reset flow to 100%\n",
                     "machine_unload_filament_time": "16",
                     "max_layer_height": [
                         "0.3"
@@ -435,6 +441,9 @@
                         "2",
                         "2"
                     ],
+                    "machine_max_junction_deviation": [
+                        "0.01"
+                    ],
                     "machine_max_speed_e": [
                         "80",
                         "25"
@@ -460,7 +469,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "M601",
-                    "machine_start_gcode": "M17 ; enable steppers\nM862.1 P[nozzle_diameter] ; nozzle diameter check\nM862.3 P \"MK3.5\" ; printer model check\nM862.5 P2 ; g-code level check\nM862.6 P\"Input shaper\" ; FW feature check\nM115 U6.2.2+8853\n\nM555 X{(min(print_bed_max[0], first_layer_print_min[0] + 32) - 32)} Y{(max(0, first_layer_print_min[1]) - 4)} W{((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) - ((min(print_bed_max[0], first_layer_print_min[0] + 32) - 32))} H{((first_layer_print_max[1])) - ((max(0, first_layer_print_min[1]) - 4))}\n\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\n\nG28 ; home all\n\nM140 S[first_layer_bed_temperature] ; set bed temp\nM104 T0 S170 ; set extruder temp for bed leveling\nM109 T0 R170 ; wait for temp\nM190 S[first_layer_bed_temperature] ; wait for bed temp\n\nG29 P1 ; invalidate mbl & probe print area\nG29 P1 X23 Y5 W80 H20 C ; probe near purge place\nG29 P3.2 ; interpolate mbl probes\nG29 P3.13 ; extrapolate mbl outside probe area\nG29 A ; activate mbl\n\n; prepare for purge\nM104 S{first_layer_temperature[0]}\nG0 X0 Y-4 Z15 F4800 ; move away and ready for the purge\nM109 S{first_layer_temperature[0]}\n\n; Extrude purge line\n\nG92 E0 ; reset extruder position\nG0 E7 X15 Z0.2 F500 ; purge\nG0 X25 E4 F500 ; purge\nG0 X35 E4 F650 ; purge\nG0 X45 E4 F800 ; purge\nG0 X{45 + 3} Z0.05 F8000 ; wipe, move close to the bed\nG0 X{45 + 3 * 2} Z0.2 F8000 ; wipe, move quickly away from the bed\n\nG92 E0\nM221 S100 ; reset flow to 100%\n",
+                    "machine_start_gcode": "M17 ; enable steppers\nM862.1 P[nozzle_diameter] ; nozzle diameter check\nM862.3 P \"MK3.5\" ; printer model check\nM862.5 P2 ; g-code level check\nM862.6 P\"Input shaper\" ; FW feature check\nM115 U6.4.0+11974\n\nM555 X{(min(print_bed_max[0], first_layer_print_min[0] + 32) - 32)} Y{(max(0, first_layer_print_min[1]) - 4)} W{((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) - ((min(print_bed_max[0], first_layer_print_min[0] + 32) - 32))} H{((first_layer_print_max[1])) - ((max(0, first_layer_print_min[1]) - 4))}\n\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\n\nG28 ; home all\n\nM140 S[first_layer_bed_temperature] ; set bed temp\nM104 T0 S170 ; set extruder temp for bed leveling\nM109 T0 R170 ; wait for temp\nM190 S[first_layer_bed_temperature] ; wait for bed temp\n\nG29 P1 ; invalidate mbl & probe print area\nG29 P1 X23 Y5 W80 H20 C ; probe near purge place\nG29 P3.2 ; interpolate mbl probes\nG29 P3.13 ; extrapolate mbl outside probe area\nG29 A ; activate mbl\n\n; prepare for purge\nM104 S{first_layer_temperature[0]}\nG0 X0 Y-4 Z15 F4800 ; move away and ready for the purge\nM109 S{first_layer_temperature[0]}\n\n; Extrude purge line\n\nG92 E0 ; reset extruder position\nG0 E7 X15 Z0.2 F500 ; purge\nG0 X25 E4 F500 ; purge\nG0 X35 E4 F650 ; purge\nG0 X45 E4 F800 ; purge\nG0 X{45 + 3} Z0.05 F8000 ; wipe, move close to the bed\nG0 X{45 + 3 * 2} Z0.2 F8000 ; wipe, move quickly away from the bed\n\nG92 E0\nM221 S100 ; reset flow to 100%\n",
                     "machine_unload_filament_time": "16",
                     "max_layer_height": [
                         "0.4"
@@ -607,6 +616,9 @@
                         "2",
                         "2"
                     ],
+                    "machine_max_junction_deviation": [
+                        "0.01"
+                    ],
                     "machine_max_speed_e": [
                         "80",
                         "25"
@@ -632,7 +644,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "M601",
-                    "machine_start_gcode": "M17 ; enable steppers\nM862.1 P[nozzle_diameter] ; nozzle diameter check\nM862.3 P \"MK3.5\" ; printer model check\nM862.5 P2 ; g-code level check\nM862.6 P\"Input shaper\" ; FW feature check\nM115 U6.2.2+8853\n\nM555 X{(min(print_bed_max[0], first_layer_print_min[0] + 32) - 32)} Y{(max(0, first_layer_print_min[1]) - 4)} W{((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) - ((min(print_bed_max[0], first_layer_print_min[0] + 32) - 32))} H{((first_layer_print_max[1])) - ((max(0, first_layer_print_min[1]) - 4))}\n\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\n\nG28 ; home all\n\nM140 S[first_layer_bed_temperature] ; set bed temp\nM104 T0 S170 ; set extruder temp for bed leveling\nM109 T0 R170 ; wait for temp\nM190 S[first_layer_bed_temperature] ; wait for bed temp\n\nG29 P1 ; invalidate mbl & probe print area\nG29 P1 X23 Y5 W80 H20 C ; probe near purge place\nG29 P3.2 ; interpolate mbl probes\nG29 P3.13 ; extrapolate mbl outside probe area\nG29 A ; activate mbl\n\n; prepare for purge\nM104 S{first_layer_temperature[0]}\nG0 X0 Y-4 Z15 F4800 ; move away and ready for the purge\nM109 S{first_layer_temperature[0]}\n\n; Extrude purge line\n\nG92 E0 ; reset extruder position\nG0 E7 X15 Z0.2 F500 ; purge\nG0 X25 E4 F500 ; purge\nG0 X35 E4 F650 ; purge\nG0 X45 E4 F800 ; purge\nG0 X{45 + 3} Z0.05 F8000 ; wipe, move close to the bed\nG0 X{45 + 3 * 2} Z0.2 F8000 ; wipe, move quickly away from the bed\n\nG92 E0\nM221 S100 ; reset flow to 100%\n",
+                    "machine_start_gcode": "M17 ; enable steppers\nM862.1 P[nozzle_diameter] ; nozzle diameter check\nM862.3 P \"MK3.5\" ; printer model check\nM862.5 P2 ; g-code level check\nM862.6 P\"Input shaper\" ; FW feature check\nM115 U6.4.0+11974\n\nM555 X{(min(print_bed_max[0], first_layer_print_min[0] + 32) - 32)} Y{(max(0, first_layer_print_min[1]) - 4)} W{((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) - ((min(print_bed_max[0], first_layer_print_min[0] + 32) - 32))} H{((first_layer_print_max[1])) - ((max(0, first_layer_print_min[1]) - 4))}\n\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\n\nG28 ; home all\n\nM140 S[first_layer_bed_temperature] ; set bed temp\nM104 T0 S170 ; set extruder temp for bed leveling\nM109 T0 R170 ; wait for temp\nM190 S[first_layer_bed_temperature] ; wait for bed temp\n\nG29 P1 ; invalidate mbl & probe print area\nG29 P1 X23 Y5 W80 H20 C ; probe near purge place\nG29 P3.2 ; interpolate mbl probes\nG29 P3.13 ; extrapolate mbl outside probe area\nG29 A ; activate mbl\n\n; prepare for purge\nM104 S{first_layer_temperature[0]}\nG0 X0 Y-4 Z15 F4800 ; move away and ready for the purge\nM109 S{first_layer_temperature[0]}\n\n; Extrude purge line\n\nG92 E0 ; reset extruder position\nG0 E7 X15 Z0.2 F500 ; purge\nG0 X25 E4 F500 ; purge\nG0 X35 E4 F650 ; purge\nG0 X45 E4 F800 ; purge\nG0 X{45 + 3} Z0.05 F8000 ; wipe, move close to the bed\nG0 X{45 + 3 * 2} Z0.2 F8000 ; wipe, move quickly away from the bed\n\nG92 E0\nM221 S100 ; reset flow to 100%\n",
                     "machine_unload_filament_time": "16",
                     "max_layer_height": [
                         "0.55"
@@ -706,8 +718,8 @@
     },
     {
         "machine_model": {
-            "bed_model": "sha256:efa64d41d8767486ce64fc7a3856f235efff63978a4e6726ec555deae77b8d08",
-            "bed_texture": "sha256:6cd7183ad7573f98ebec41133c6a8401b8238a8a46de6155acc981f0c2a742ab",
+            "bed_model": "sha256:b81022311447245fee0a2ef60f756a103e23ff3badae0b4fd4ab1a5fcd1d811b",
+            "bed_texture": "sha256:2a9faedec3e19d1ebc8121cc172f0820581bf6d2bf4afee9a5ba463a498c2526",
             "default_materials": "Prusa Generic ABS;Prusa Generic PLA;Prusa Generic PLA-CF;Prusa Generic PETG;Prusa Generic TPU;Prusa Generic ASA;Prusa Generic PC;Prusa Generic PVA;Prusa Generic PA;Prusa Generic PA-CF",
             "family": "Prusa",
             "hotend_model": "",
@@ -821,14 +833,14 @@
                     "machine_start_gcode": "M862.3 P \"MK3S\" ; printer model check\nM862.1 P[nozzle_diameter] ; nozzle diameter check\nM115 U3.13.0 ; tell printer latest fw version\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\nM104 S[first_layer_temperature] ; set extruder temp\nM140 S[first_layer_bed_temperature] ; set bed temp\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nM109 S[first_layer_temperature] ; wait for extruder temp\nG28 W ; home all without mesh bed level\nG80 ; mesh bed leveling\n{if filament_settings_id[initial_tool]=~/.*Prusament PA11.*/}\nG1 Z0.3 F720\nG1 Y-3 F1000 ; go outside print area\nG92 E0\nG1 X60 E9 F1000 ; intro line\nG1 X100 E9 F1000 ; intro line\n{else}\nG1 Z0.2 F720\nG1 Y-3 F1000 ; go outside print area\nG92 E0\nG1 X60 E9 F1000 ; intro line\nG1 X100 E12.5 F1000 ; intro line\n{endif}\nG92 E0\nM221 S{if layer_height<0.075}100{else}95{endif}",
                     "machine_unload_filament_time": "16",
                     "max_layer_height": [
-                        "0.3"
+                        "0.15"
                     ],
                     "min_layer_height": [
-                        "0.08"
+                        "0.05"
                     ],
                     "name": "Prusa MK3S 0.25 nozzle",
                     "nozzle_diameter": [
-                        "0.2"
+                        "0.25"
                     ],
                     "nozzle_type": "hardened_steel",
                     "printable_area": [
@@ -989,7 +1001,7 @@
                         "0.3"
                     ],
                     "min_layer_height": [
-                        "0.08"
+                        "0.05"
                     ],
                     "name": "Prusa MK3S 0.4 nozzle",
                     "nozzle_diameter": [
@@ -1151,10 +1163,10 @@
                     "machine_start_gcode": "M862.3 P \"MK3S\" ; printer model check\nM862.1 P[nozzle_diameter] ; nozzle diameter check\nM115 U3.13.0 ; tell printer latest fw version\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\nM104 S[first_layer_temperature] ; set extruder temp\nM140 S[first_layer_bed_temperature] ; set bed temp\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nM109 S[first_layer_temperature] ; wait for extruder temp\nG28 W ; home all without mesh bed level\nG80 ; mesh bed leveling\n{if filament_settings_id[initial_tool]=~/.*Prusament PA11.*/}\nG1 Z0.3 F720\nG1 Y-3 F1000 ; go outside print area\nG92 E0\nG1 X60 E9 F1000 ; intro line\nG1 X100 E9 F1000 ; intro line\n{else}\nG1 Z0.2 F720\nG1 Y-3 F1000 ; go outside print area\nG92 E0\nG1 X60 E9 F1000 ; intro line\nG1 X100 E12.5 F1000 ; intro line\n{endif}\nG92 E0\nM221 S{if layer_height<0.075}100{else}95{endif}",
                     "machine_unload_filament_time": "16",
                     "max_layer_height": [
-                        "0.3"
+                        "0.4"
                     ],
                     "min_layer_height": [
-                        "0.08"
+                        "0.15"
                     ],
                     "name": "Prusa MK3S 0.6 nozzle",
                     "nozzle_diameter": [
@@ -1316,10 +1328,10 @@
                     "machine_start_gcode": "M862.3 P \"MK3S\" ; printer model check\nM862.1 P[nozzle_diameter] ; nozzle diameter check\nM115 U3.13.0 ; tell printer latest fw version\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\nM104 S[first_layer_temperature] ; set extruder temp\nM140 S[first_layer_bed_temperature] ; set bed temp\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nM109 S[first_layer_temperature] ; wait for extruder temp\nG28 W ; home all without mesh bed level\nG80 ; mesh bed leveling\n{if filament_settings_id[initial_tool]=~/.*Prusament PA11.*/}\nG1 Z0.3 F720\nG1 Y-3 F1000 ; go outside print area\nG92 E0\nG1 X60 E9 F1000 ; intro line\nG1 X100 E9 F1000 ; intro line\n{else}\nG1 Z0.2 F720\nG1 Y-3 F1000 ; go outside print area\nG92 E0\nG1 X60 E9 F1000 ; intro line\nG1 X100 E12.5 F1000 ; intro line\n{endif}\nG92 E0\nM221 S{if layer_height<0.075}100{else}95{endif}",
                     "machine_unload_filament_time": "16",
                     "max_layer_height": [
-                        "0.3"
+                        "0.6"
                     ],
                     "min_layer_height": [
-                        "0.08"
+                        "0.2"
                     ],
                     "name": "Prusa MK3S 0.8 nozzle",
                     "nozzle_diameter": [

@@ -4,7 +4,7 @@
   "name": "0.40mm Standard @Flashforge AD5M 0.8 Nozzle",
   "vendor": "Flashforge",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.3.2",
   "filament_id": null,
   "setting_id": "GP002",
   "renamed_from": null,
@@ -100,7 +100,8 @@
       "2.3.1": "1"
     },
     "filename_format": {
-      "2.3.1": "{input_filename_base}.gcode"
+      "2.3.1": "{input_filename_base}.gcode",
+      "2.3.2": "{input_filename_base}_{filament_type[initial_tool]}_{print_time}.gcode"
     },
     "wall_loops": {
       "2.3.1": "2"
@@ -202,7 +203,8 @@
       "2.3.1": "500"
     },
     "enable_prime_tower": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.3.2": "1"
     },
     "prime_tower_width": {
       "2.3.1": "60"

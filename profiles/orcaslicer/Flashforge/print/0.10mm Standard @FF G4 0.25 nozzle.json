@@ -4,7 +4,7 @@
   "name": "0.10mm Standard @FF G4 0.25 nozzle",
   "vendor": "Flashforge",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.3.2",
   "filament_id": null,
   "setting_id": "GP011",
   "renamed_from": null,
@@ -100,7 +100,8 @@
       "2.3.1": "1"
     },
     "filename_format": {
-      "2.3.1": "{input_filename_base}.gcode"
+      "2.3.1": "{input_filename_base}.gcode",
+      "2.3.2": "{input_filename_base}_{filament_type[initial_tool]}_{print_time}.gcode"
     },
     "wall_loops": {
       "2.3.1": "3"

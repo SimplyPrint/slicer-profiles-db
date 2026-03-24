@@ -1,0 +1,293 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "filament",
+  "name": "Elegoo PC @ECC2",
+  "vendor": "Elegoo",
+  "first_seen": "2.3.2",
+  "last_seen": "2.3.2",
+  "filament_id": "EPCB00",
+  "setting_id": "EPCECC2",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.3.2": "filament"
+    },
+    "name": {
+      "2.3.2": "Elegoo PC @ECC2"
+    },
+    "from": {
+      "2.3.2": "system"
+    },
+    "instantiation": {
+      "2.3.2": "true"
+    },
+    "cool_plate_temp": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "eng_plate_temp": {
+      "2.3.2": [
+        "110"
+      ]
+    },
+    "hot_plate_temp": {
+      "2.3.2": [
+        "110"
+      ]
+    },
+    "textured_plate_temp": {
+      "2.3.2": [
+        "100"
+      ]
+    },
+    "cool_plate_temp_initial_layer": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "eng_plate_temp_initial_layer": {
+      "2.3.2": [
+        "110"
+      ]
+    },
+    "hot_plate_temp_initial_layer": {
+      "2.3.2": [
+        "110"
+      ]
+    },
+    "textured_plate_temp_initial_layer": {
+      "2.3.2": [
+        "100"
+      ]
+    },
+    "overhang_fan_threshold": {
+      "2.3.2": [
+        "25%"
+      ]
+    },
+    "overhang_fan_speed": {
+      "2.3.2": [
+        "60"
+      ]
+    },
+    "slow_down_for_layer_cooling": {
+      "2.3.2": [
+        "1"
+      ]
+    },
+    "close_fan_the_first_x_layers": {
+      "2.3.2": [
+        "3"
+      ]
+    },
+    "filament_end_gcode": {
+      "2.3.2": [
+        "; filament end gcode \n"
+      ]
+    },
+    "filament_flow_ratio": {
+      "2.3.2": [
+        "0.94"
+      ]
+    },
+    "reduce_fan_stop_start_freq": {
+      "2.3.2": [
+        "1"
+      ]
+    },
+    "fan_cooling_layer_time": {
+      "2.3.2": [
+        "30"
+      ]
+    },
+    "filament_cost": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "filament_density": {
+      "2.3.2": [
+        "1.25"
+      ]
+    },
+    "filament_deretraction_speed": {
+      "2.3.2": [
+        "nil"
+      ]
+    },
+    "filament_diameter": {
+      "2.3.2": [
+        "1.75"
+      ]
+    },
+    "filament_max_volumetric_speed": {
+      "2.3.2": [
+        "16"
+      ]
+    },
+    "filament_minimal_purge_on_wipe_tower": {
+      "2.3.2": [
+        "15"
+      ]
+    },
+    "filament_retraction_minimum_travel": {
+      "2.3.2": [
+        "nil"
+      ]
+    },
+    "filament_retract_before_wipe": {
+      "2.3.2": [
+        "nil"
+      ]
+    },
+    "filament_retract_when_changing_layer": {
+      "2.3.2": [
+        "nil"
+      ]
+    },
+    "filament_retraction_length": {
+      "2.3.2": [
+        "nil"
+      ]
+    },
+    "filament_z_hop": {
+      "2.3.2": [
+        "nil"
+      ]
+    },
+    "filament_z_hop_types": {
+      "2.3.2": [
+        "nil"
+      ]
+    },
+    "filament_retract_restart_extra": {
+      "2.3.2": [
+        "nil"
+      ]
+    },
+    "filament_retraction_speed": {
+      "2.3.2": [
+        "nil"
+      ]
+    },
+    "filament_settings_id": {
+      "2.3.2": [
+        ""
+      ]
+    },
+    "filament_soluble": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "filament_type": {
+      "2.3.2": [
+        "PC"
+      ]
+    },
+    "filament_vendor": {
+      "2.3.2": [
+        "Elegoo"
+      ]
+    },
+    "filament_wipe": {
+      "2.3.2": [
+        "nil"
+      ]
+    },
+    "filament_wipe_distance": {
+      "2.3.2": [
+        "nil"
+      ]
+    },
+    "bed_type": {
+      "2.3.2": [
+        "Cool Plate"
+      ]
+    },
+    "nozzle_temperature_initial_layer": {
+      "2.3.2": [
+        "270"
+      ]
+    },
+    "full_fan_speed_layer": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "fan_max_speed": {
+      "2.3.2": [
+        "35"
+      ]
+    },
+    "fan_min_speed": {
+      "2.3.2": [
+        "10"
+      ]
+    },
+    "slow_down_min_speed": {
+      "2.3.2": [
+        "10"
+      ]
+    },
+    "slow_down_layer_time": {
+      "2.3.2": [
+        "6"
+      ]
+    },
+    "filament_start_gcode": {
+      "2.3.2": [
+        "; filament start gcode\n{if  (bed_temperature[current_extruder] >55)||(bed_temperature_initial_layer[current_extruder] >55)}M106 P3 S200\n{elsif(bed_temperature[current_extruder] >50)||(bed_temperature_initial_layer[current_extruder] >50)}M106 P3 S150\n{elsif(bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S50\n{endif}\n\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
+      ]
+    },
+    "nozzle_temperature": {
+      "2.3.2": [
+        "270"
+      ]
+    },
+    "temperature_vitrification": {
+      "2.3.2": [
+        "120"
+      ]
+    },
+    "filament_id": {
+      "2.3.2": "EPCB00"
+    },
+    "supertack_plate_temp": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "supertack_plate_temp_initial_layer": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "nozzle_temperature_range_high": {
+      "2.3.2": [
+        "270"
+      ]
+    },
+    "nozzle_temperature_range_low": {
+      "2.3.2": [
+        "250"
+      ]
+    },
+    "setting_id": {
+      "2.3.2": "EPCECC2"
+    },
+    "pressure_advance": {
+      "2.3.2": [
+        "0.024"
+      ]
+    },
+    "compatible_printers": {
+      "2.3.2": [
+        "Elegoo Centauri Carbon 2 0.4 nozzle",
+        "Elegoo Centauri Carbon 2 0.6 nozzle",
+        "Elegoo Centauri Carbon 2 0.8 nozzle"
+      ]
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "name": "Qidi Q1 Pro 0.4 nozzle",
   "vendor": "Qidi",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.3.2",
   "filament_id": null,
   "setting_id": "GM001",
   "renamed_from": null,
@@ -238,7 +238,8 @@
       "2.3.1": "1"
     },
     "machine_pause_gcode": {
-      "2.3.1": "M0"
+      "2.3.1": "M0",
+      "2.3.2": "PAUSE"
     },
     "support_chamber_temp_control": {
       "2.3.1": "1"
@@ -296,6 +297,55 @@
     "default_filament_profile": {
       "2.3.1": [
         "Qidi Generic PLA @Qidi Q1 Pro 0.4 nozzle"
+      ]
+    },
+    "wipe_tower_type": {
+      "2.3.2": "type1"
+    },
+    "filament_dev_ams_drying_ams_limitations": {
+      "2.3.2": [
+        "1"
+      ]
+    },
+    "filament_dev_ams_drying_temperature": {
+      "2.3.2": [
+        "40.0",
+        "40.0",
+        "40.0",
+        "40.0"
+      ]
+    },
+    "filament_dev_ams_drying_time": {
+      "2.3.2": [
+        "8.0",
+        "8.0",
+        "8.0",
+        "8.0"
+      ]
+    },
+    "filament_dev_drying_softening_temperature": {
+      "2.3.2": [
+        "40.0"
+      ]
+    },
+    "filament_dev_ams_drying_heat_distortion_temperature": {
+      "2.3.2": [
+        "45.0"
+      ]
+    },
+    "filament_dev_drying_cooling_temperature": {
+      "2.3.2": [
+        "35.0"
+      ]
+    },
+    "filament_dev_chamber_drying_bed_temperature": {
+      "2.3.2": [
+        "90.0"
+      ]
+    },
+    "filament_dev_chamber_drying_time": {
+      "2.3.2": [
+        "12.0"
       ]
     }
   }

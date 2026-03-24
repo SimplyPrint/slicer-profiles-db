@@ -4,7 +4,7 @@
   "name": "0.05mm DETAIL @CORE One 0.25",
   "vendor": "Prusa",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.3.2",
   "filament_id": null,
   "setting_id": null,
   "renamed_from": null,
@@ -49,7 +49,8 @@
       "2.3.1": []
     },
     "compatible_printers_condition": {
-      "2.3.1": "printer_notes=~/.*PRINTER_MODEL_COREONE.*/ and nozzle_diameter[0]==0.25"
+      "2.3.1": "printer_notes=~/.*PRINTER_MODEL_COREONE.*/ and nozzle_diameter[0]==0.25",
+      "2.3.2": "printer_notes=~/.*PRINTER_MODEL_COREONE[^_a-zA-Z0-9].*/ and nozzle_diameter[0]==0.25"
     },
     "print_sequence": {
       "2.3.1": "by layer"
@@ -307,7 +308,8 @@
       "2.3.1": "45"
     },
     "outer_wall_speed": {
-      "2.3.1": "40"
+      "2.3.1": "40",
+      "2.3.2": "45"
     },
     "inner_wall_speed": {
       "2.3.1": "60"
@@ -322,7 +324,8 @@
       "2.3.1": "60"
     },
     "gap_infill_speed": {
-      "2.3.1": "40"
+      "2.3.1": "40",
+      "2.3.2": "45"
     },
     "travel_speed": {
       "2.3.1": "350"
@@ -379,7 +382,8 @@
       "2.3.1": "0.049"
     },
     "small_perimeter_speed": {
-      "2.3.1": "40"
+      "2.3.1": "40",
+      "2.3.2": "45"
     },
     "solid_infill_filament": {
       "2.3.1": "1"

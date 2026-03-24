@@ -4,7 +4,7 @@
   "name": "0.20mm SPEED @CORE One 0.4",
   "vendor": "Prusa",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.3.2",
   "filament_id": null,
   "setting_id": null,
   "renamed_from": null,
@@ -49,7 +49,8 @@
       "2.3.1": []
     },
     "compatible_printers_condition": {
-      "2.3.1": "printer_notes=~/.*PRINTER_MODEL_COREONE.*/ and nozzle_diameter[0]==0.4 and printer_notes!~/.*HF_NOZZLE.*/"
+      "2.3.1": "printer_notes=~/.*PRINTER_MODEL_COREONE.*/ and nozzle_diameter[0]==0.4 and printer_notes!~/.*HF_NOZZLE.*/",
+      "2.3.2": "printer_notes=~/.*PRINTER_MODEL_COREONE[^_a-zA-Z0-9].*/ and nozzle_diameter[0]==0.4 and printer_notes!~/.*HF_NOZZLE.*/"
     },
     "print_sequence": {
       "2.3.1": "by layer"
@@ -136,10 +137,12 @@
       "2.3.1": "80%"
     },
     "overhang_2_4_speed": {
-      "2.3.1": "50"
+      "2.3.1": "50",
+      "2.3.2": "30"
     },
     "overhang_3_4_speed": {
-      "2.3.1": "25"
+      "2.3.1": "25",
+      "2.3.2": "50"
     },
     "overhang_4_4_speed": {
       "2.3.1": "15"
@@ -250,7 +253,8 @@
       "2.3.1": "120"
     },
     "support_threshold_angle": {
-      "2.3.1": "40"
+      "2.3.1": "40",
+      "2.3.2": "35"
     },
     "support_object_xy_distance": {
       "2.3.1": "0.36"

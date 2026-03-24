@@ -4,7 +4,7 @@
   "name": "0.55mm SPEED @CORE One HF 0.8",
   "vendor": "Prusa",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.3.2",
   "filament_id": null,
   "setting_id": null,
   "renamed_from": null,
@@ -49,7 +49,8 @@
       "2.3.1": []
     },
     "compatible_printers_condition": {
-      "2.3.1": "printer_notes=~/.*PRINTER_MODEL_COREONE.*/ and nozzle_diameter[0]==0.8 and printer_notes=~/.*HF_NOZZLE.*/"
+      "2.3.1": "printer_notes=~/.*PRINTER_MODEL_COREONE.*/ and nozzle_diameter[0]==0.8 and printer_notes=~/.*HF_NOZZLE.*/",
+      "2.3.2": "printer_notes=~/.*PRINTER_MODEL_COREONE[^_a-zA-Z0-9].*/ and nozzle_diameter[0]==0.8 and printer_notes=~/.*HF_NOZZLE.*/"
     },
     "print_sequence": {
       "2.3.1": "by layer"
@@ -61,7 +62,8 @@
       "2.3.1": "500"
     },
     "top_surface_acceleration": {
-      "2.3.1": "1500"
+      "2.3.1": "1500",
+      "2.3.2": "2000"
     },
     "travel_acceleration": {
       "2.3.1": "7000"
@@ -136,10 +138,12 @@
       "2.3.1": "80%"
     },
     "overhang_2_4_speed": {
-      "2.3.1": "45"
+      "2.3.1": "45",
+      "2.3.2": "30"
     },
     "overhang_3_4_speed": {
-      "2.3.1": "25"
+      "2.3.1": "25",
+      "2.3.2": "45"
     },
     "overhang_4_4_speed": {
       "2.3.1": "15"
@@ -319,7 +323,8 @@
       "2.3.1": "70"
     },
     "top_surface_speed": {
-      "2.3.1": "2000"
+      "2.3.1": "2000",
+      "2.3.2": "60"
     },
     "gap_infill_speed": {
       "2.3.1": "60"

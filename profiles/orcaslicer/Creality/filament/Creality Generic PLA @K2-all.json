@@ -4,7 +4,7 @@
   "name": "Creality Generic PLA @K2-all",
   "vendor": "Creality",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.3.2",
   "filament_id": "GFL99",
   "setting_id": "GFSL99_00",
   "renamed_from": null,
@@ -239,6 +239,9 @@
     "filament_start_gcode": {
       "2.3.1": [
         "; filament start gcode\n{if (position[2] > first_layer_height) }\nM104 S[nozzle_temperature]\n{else}\nM104 S[first_layer_temperature]\n{endif}\n\n{if(initial_extruder != current_extruder || position[2] > first_layer_height)}\n{if (position[2] +0.4  < printable_height) }\nG2 Z{position[2]  + 0.4} I0.86 J0.86 P1 F10000 ; spiral lift a little from second lift\nG1 X205 Y345 F20000\nG1 Z{position[2] } F1200\n{else}\nG1 X205 Y345 F20000\n{endif}\n{endif}\n"
+      ],
+      "2.3.2": [
+        ";filament start gcode\n{if (position[2] > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}"
       ]
     },
     "nozzle_temperature": {
@@ -278,6 +281,20 @@
         "Creality K2 Plus 0.4 nozzle",
         "Creality K2 Plus 0.6 nozzle",
         "Creality K2 Plus 0.8 nozzle"
+      ],
+      "2.3.2": [
+        "Creality K2 0.2 nozzle",
+        "Creality K2 0.4 nozzle",
+        "Creality K2 0.6 nozzle",
+        "Creality K2 0.8 nozzle",
+        "Creality K2 Plus 0.2 nozzle",
+        "Creality K2 Plus 0.4 nozzle",
+        "Creality K2 Plus 0.6 nozzle",
+        "Creality K2 Plus 0.8 nozzle",
+        "Creality K2 Pro 0.2 nozzle",
+        "Creality K2 Pro 0.4 nozzle",
+        "Creality K2 Pro 0.6 nozzle",
+        "Creality K2 Pro 0.8 nozzle"
       ]
     }
   }

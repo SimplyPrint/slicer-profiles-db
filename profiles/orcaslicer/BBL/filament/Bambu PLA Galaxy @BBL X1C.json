@@ -4,7 +4,7 @@
   "name": "Bambu PLA Galaxy @BBL X1C",
   "vendor": "BBL",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.3.2",
   "filament_id": "GFA15",
   "setting_id": "GFSA15_00",
   "renamed_from": null,
@@ -94,6 +94,10 @@
     "filament_deretraction_speed": {
       "2.3.1": [
         "nil"
+      ],
+      "2.3.2": [
+        "nil",
+        "nil"
       ]
     },
     "filament_diameter": {
@@ -103,6 +107,10 @@
     },
     "filament_flow_ratio": {
       "2.3.1": [
+        "0.98"
+      ],
+      "2.3.2": [
+        "0.98",
         "0.98"
       ]
     },
@@ -114,10 +122,18 @@
     "filament_long_retractions_when_cut": {
       "2.3.1": [
         "1"
+      ],
+      "2.3.2": [
+        "1",
+        "1"
       ]
     },
     "filament_max_volumetric_speed": {
       "2.3.1": [
+        "21"
+      ],
+      "2.3.2": [
+        "21",
         "21"
       ]
     },
@@ -129,35 +145,63 @@
     "filament_retract_before_wipe": {
       "2.3.1": [
         "nil"
+      ],
+      "2.3.2": [
+        "nil",
+        "nil"
       ]
     },
     "filament_retract_restart_extra": {
       "2.3.1": [
+        "nil"
+      ],
+      "2.3.2": [
+        "nil",
         "nil"
       ]
     },
     "filament_retract_when_changing_layer": {
       "2.3.1": [
         "nil"
+      ],
+      "2.3.2": [
+        "nil",
+        "nil"
       ]
     },
     "filament_retraction_distances_when_cut": {
       "2.3.1": [
+        "18"
+      ],
+      "2.3.2": [
+        "18",
         "18"
       ]
     },
     "filament_retraction_length": {
       "2.3.1": [
         "nil"
+      ],
+      "2.3.2": [
+        "nil",
+        "nil"
       ]
     },
     "filament_retraction_minimum_travel": {
       "2.3.1": [
         "nil"
+      ],
+      "2.3.2": [
+        "nil",
+        "nil"
       ]
     },
     "filament_retraction_speed": {
       "2.3.1": [
+        "nil"
+      ],
+      "2.3.2": [
+        "nil",
         "nil"
       ]
     },
@@ -184,20 +228,36 @@
     "filament_wipe": {
       "2.3.1": [
         "nil"
+      ],
+      "2.3.2": [
+        "nil",
+        "nil"
       ]
     },
     "filament_wipe_distance": {
       "2.3.1": [
+        "nil"
+      ],
+      "2.3.2": [
+        "nil",
         "nil"
       ]
     },
     "filament_z_hop": {
       "2.3.1": [
         "nil"
+      ],
+      "2.3.2": [
+        "nil",
+        "nil"
       ]
     },
     "filament_z_hop_types": {
       "2.3.1": [
+        "nil"
+      ],
+      "2.3.2": [
+        "nil",
         "nil"
       ]
     },
@@ -244,10 +304,18 @@
     "nozzle_temperature": {
       "2.3.1": [
         "220"
+      ],
+      "2.3.2": [
+        "220",
+        "220"
       ]
     },
     "nozzle_temperature_initial_layer": {
       "2.3.1": [
+        "220"
+      ],
+      "2.3.2": [
+        "220",
         "220"
       ]
     },
@@ -331,6 +399,9 @@
     "filament_end_gcode": {
       "2.3.1": [
         "; filament end gcode \nM106 P3 S0\n"
+      ],
+      "2.3.2": [
+        "; filament end gcode \n\n"
       ]
     },
     "additional_cooling_fan_speed": {
@@ -353,6 +424,186 @@
     },
     "setting_id": {
       "2.3.1": "GFSA15_00"
+    },
+    "counter_coef_1": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "counter_coef_2": {
+      "2.3.2": [
+        "0.008"
+      ]
+    },
+    "counter_coef_3": {
+      "2.3.2": [
+        "-0.041"
+      ]
+    },
+    "counter_limit_min": {
+      "2.3.2": [
+        "-0.035"
+      ]
+    },
+    "counter_limit_max": {
+      "2.3.2": [
+        "0.033"
+      ]
+    },
+    "circle_compensation_speed": {
+      "2.3.2": [
+        "200"
+      ]
+    },
+    "diameter_limit": {
+      "2.3.2": [
+        "50"
+      ]
+    },
+    "filament_flush_temp": {
+      "2.3.2": [
+        "0",
+        "0"
+      ]
+    },
+    "filament_flush_volumetric_speed": {
+      "2.3.2": [
+        "0",
+        "0"
+      ]
+    },
+    "filament_long_retractions_when_ec": {
+      "2.3.2": [
+        "nil"
+      ]
+    },
+    "filament_ramming_volumetric_speed": {
+      "2.3.2": [
+        "-1",
+        "-1"
+      ]
+    },
+    "filament_tower_interface_pre_extrusion_dist": {
+      "2.3.2": [
+        "10"
+      ]
+    },
+    "filament_tower_interface_pre_extrusion_length": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "filament_tower_ironing_area": {
+      "2.3.2": [
+        "4"
+      ]
+    },
+    "filament_tower_interface_purge_volume": {
+      "2.3.2": [
+        "20"
+      ]
+    },
+    "filament_tower_interface_print_temp": {
+      "2.3.2": [
+        "-1"
+      ]
+    },
+    "filament_printable": {
+      "2.3.2": [
+        "3"
+      ]
+    },
+    "filament_retraction_distances_when_ec": {
+      "2.3.2": [
+        "nil"
+      ]
+    },
+    "filament_prime_volume": {
+      "2.3.2": [
+        "45"
+      ]
+    },
+    "filament_extruder_variant": {
+      "2.3.2": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow"
+      ]
+    },
+    "filament_pre_cooling_temperature": {
+      "2.3.2": [
+        "0",
+        "0"
+      ]
+    },
+    "filament_ramming_travel_time": {
+      "2.3.2": [
+        "0",
+        "0"
+      ]
+    },
+    "hole_coef_1": {
+      "2.3.2": [
+        "0"
+      ]
+    },
+    "hole_coef_2": {
+      "2.3.2": [
+        "-0.008"
+      ]
+    },
+    "hole_coef_3": {
+      "2.3.2": [
+        "0.23415"
+      ]
+    },
+    "hole_limit_min": {
+      "2.3.2": [
+        "0.088"
+      ]
+    },
+    "hole_limit_max": {
+      "2.3.2": [
+        "0.22"
+      ]
+    },
+    "impact_strength_z": {
+      "2.3.2": [
+        "5.8"
+      ]
+    },
+    "long_retractions_when_ec": {
+      "2.3.2": [
+        "0",
+        "0"
+      ]
+    },
+    "retraction_distances_when_ec": {
+      "2.3.2": [
+        "0",
+        "0"
+      ]
+    },
+    "filament_velocity_adaptation_factor": {
+      "2.3.2": [
+        "1"
+      ]
+    },
+    "filament_adaptive_volumetric_speed": {
+      "2.3.2": [
+        "0",
+        "0"
+      ]
+    },
+    "volumetric_speed_coefficients": {
+      "2.3.2": [
+        "0 0 0 0 0 0",
+        "0 0 0 0 0 0"
+      ]
+    },
+    "filament_adhesiveness_category": {
+      "2.3.2": [
+        "100"
+      ]
     }
   }
 }
