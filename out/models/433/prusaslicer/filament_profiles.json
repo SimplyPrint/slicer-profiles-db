@@ -5672,7 +5672,7 @@
             "max_fan_speed": "20",
             "min_fan_speed": "20",
             "min_print_speed": "15",
-            "slowdown_below_layer_time": "20",
+            "slowdown_below_layer_time": "10",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S45 ; set heatbreak target temp\"",
             "temperature": "275"
         },
@@ -12546,7 +12546,7 @@
             "max_fan_speed": "20",
             "min_fan_speed": "20",
             "min_print_speed": "15",
-            "slowdown_below_layer_time": "20",
+            "slowdown_below_layer_time": "15",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S45 ; set heatbreak target temp\"",
             "temperature": "275"
         },
@@ -22238,7 +22238,7 @@
             "max_fan_speed": "20",
             "min_fan_speed": "20",
             "min_print_speed": "15",
-            "slowdown_below_layer_time": "20",
+            "slowdown_below_layer_time": "10",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S45 ; set heatbreak target temp\"",
             "temperature": "275"
         },
@@ -29013,7 +29013,7 @@
             "max_fan_speed": "20",
             "min_fan_speed": "20",
             "min_print_speed": "15",
-            "slowdown_below_layer_time": "20",
+            "slowdown_below_layer_time": "15",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S45 ; set heatbreak target temp\"",
             "temperature": "285"
         },
@@ -34998,7 +34998,7 @@
             "max_fan_speed": "20",
             "min_fan_speed": "20",
             "min_print_speed": "15",
-            "slowdown_below_layer_time": "20",
+            "slowdown_below_layer_time": "15",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S45 ; set heatbreak target temp\"",
             "temperature": "280"
         },
@@ -42800,7 +42800,7 @@
             "max_fan_speed": "20",
             "min_fan_speed": "20",
             "min_print_speed": "15",
-            "slowdown_below_layer_time": "20",
+            "slowdown_below_layer_time": "15",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S45 ; set heatbreak target temp\"",
             "temperature": "285"
         },
@@ -54849,7 +54849,7 @@
             "max_fan_speed": "20",
             "min_fan_speed": "20",
             "min_print_speed": "15",
-            "slowdown_below_layer_time": "20",
+            "slowdown_below_layer_time": "10",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.05{elsif nozzle_diameter[filament_extruder_id]==0.5}0.035{elsif nozzle_diameter[filament_extruder_id]==0.6}0.025{elsif nozzle_diameter[filament_extruder_id]==0.8}0.016{elsif nozzle_diameter[filament_extruder_id]==0.25}0.14{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S45 ; set heatbreak target temp\"",
             "temperature": "275"
         },
