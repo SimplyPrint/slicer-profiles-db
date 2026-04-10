@@ -1,6 +1,1303 @@
 [
     {
         "machine_model": {
+            "bed_model": "sha256:d1b270806c071cf0defd356b91af43772986640980df2ce6ab3f08e87c287d9b",
+            "bed_texture": "sha256:f3839d1d11e2271add0e461fa40061a0bd456c9b14d4b1cf7e493d097f9b429a",
+            "default_materials": "Generic ABS @System;Generic PLA @System;Generic PLA-CF @System;Generic PETG @System;Generic TPU @System;Generic ASA @System;Generic PC @System;Generic PVA @System;Generic PA @System;Generic PA-CF @System",
+            "family": "VoronDesign",
+            "hotend_model": "",
+            "machine_tech": "FFF",
+            "model_id": "Voron2_350",
+            "name": "Voron 2.4 350",
+            "nozzle_diameter": "0.4;0.15;0.2;0.25;0.5;0.6;0.8;1.0",
+            "type": "machine_model"
+        },
+        "variants": {
+            "0.15": {
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "default_print_profile": "0.09mm Standard 0.15 nozzle @Voron",
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_radius": "65",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "PRINT_END",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_y": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
+                    "max_layer_height": [
+                        "0.2"
+                    ],
+                    "min_layer_height": [
+                        "0.04"
+                    ],
+                    "name": "Voron 2.4 350 0.15 nozzle",
+                    "nozzle_diameter": [
+                        "0.15"
+                    ],
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "0x0",
+                        "350x0",
+                        "350x350",
+                        "0x350"
+                    ],
+                    "printable_height": "325",
+                    "printer_model": "Voron 2.4 350",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.15",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM002",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "Voron 2.4 350 0.15 nozzle"
+            },
+            "0.2": {
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "default_print_profile": "0.10mm Standard 0.2 nozzle @Voron",
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_radius": "65",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "PRINT_END",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_y": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
+                    "max_layer_height": [
+                        "0.2"
+                    ],
+                    "min_layer_height": [
+                        "0.06"
+                    ],
+                    "name": "Voron 2.4 350 0.2 nozzle",
+                    "nozzle_diameter": [
+                        "0.2"
+                    ],
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "0x0",
+                        "350x0",
+                        "350x350",
+                        "0x350"
+                    ],
+                    "printable_height": "325",
+                    "printer_model": "Voron 2.4 350",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.2",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM002",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "Voron 2.4 350 0.2 nozzle"
+            },
+            "0.25": {
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "default_print_profile": "0.10mm Standard 0.25 nozzle @Voron",
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_radius": "65",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "PRINT_END",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_y": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
+                    "max_layer_height": [
+                        "0.25"
+                    ],
+                    "min_layer_height": [
+                        "0.06"
+                    ],
+                    "name": "Voron 2.4 350 0.25 nozzle",
+                    "nozzle_diameter": [
+                        "0.25"
+                    ],
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "0x0",
+                        "350x0",
+                        "350x350",
+                        "0x350"
+                    ],
+                    "printable_height": "325",
+                    "printer_model": "Voron 2.4 350",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.25",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM002",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "Voron 2.4 350 0.25 nozzle"
+            },
+            "0.4": {
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "default_print_profile": "0.20mm Standard @Voron",
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_radius": "65",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "PRINT_END",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_y": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
+                    "max_layer_height": [
+                        "0.32"
+                    ],
+                    "min_layer_height": [
+                        "0.10"
+                    ],
+                    "name": "Voron 2.4 350 0.4 nozzle",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "0x0",
+                        "350x0",
+                        "350x350",
+                        "0x350"
+                    ],
+                    "printable_height": "325",
+                    "printer_model": "Voron 2.4 350",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM001",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "Voron 2.4 350 0.4 nozzle"
+            },
+            "0.5": {
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "default_print_profile": "0.25mm Standard 0.5 nozzle @Voron",
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_radius": "65",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "PRINT_END",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_y": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
+                    "max_layer_height": [
+                        "0.4"
+                    ],
+                    "min_layer_height": [
+                        "0.1"
+                    ],
+                    "name": "Voron 2.4 350 0.5 nozzle",
+                    "nozzle_diameter": [
+                        "0.5"
+                    ],
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "0x0",
+                        "350x0",
+                        "350x350",
+                        "0x350"
+                    ],
+                    "printable_height": "325",
+                    "printer_model": "Voron 2.4 350",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.5",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM003",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "Voron 2.4 350 0.5 nozzle"
+            },
+            "0.6": {
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "default_print_profile": "0.30mm Standard 0.6 nozzle @Voron",
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_radius": "65",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "PRINT_END",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_y": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
+                    "max_layer_height": [
+                        "0.45"
+                    ],
+                    "min_layer_height": [
+                        "0.15"
+                    ],
+                    "name": "Voron 2.4 350 0.6 nozzle",
+                    "nozzle_diameter": [
+                        "0.6"
+                    ],
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "0x0",
+                        "350x0",
+                        "350x350",
+                        "0x350"
+                    ],
+                    "printable_height": "325",
+                    "printer_model": "Voron 2.4 350",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.6",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM003",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "Voron 2.4 350 0.6 nozzle"
+            },
+            "0.8": {
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "default_print_profile": "0.40mm Standard 0.8 nozzle @Voron",
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_radius": "65",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "PRINT_END",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_y": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
+                    "max_layer_height": [
+                        "0.6"
+                    ],
+                    "min_layer_height": [
+                        "0.20"
+                    ],
+                    "name": "Voron 2.4 350 0.8 nozzle",
+                    "nozzle_diameter": [
+                        "0.8"
+                    ],
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "0x0",
+                        "350x0",
+                        "350x350",
+                        "0x350"
+                    ],
+                    "printable_height": "325",
+                    "printer_model": "Voron 2.4 350",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.8",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM004",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "Voron 2.4 350 0.8 nozzle"
+            },
+            "1.0": {
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "default_print_profile": "0.50mm Standard 1.0 nozzle @Voron",
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_radius": "65",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "klipper",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "PRINT_END",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_y": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "PAUSE",
+                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
+                    "max_layer_height": [
+                        "0.9"
+                    ],
+                    "min_layer_height": [
+                        "0.25"
+                    ],
+                    "name": "Voron 2.4 350 1.0 nozzle",
+                    "nozzle_diameter": [
+                        "1.0"
+                    ],
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "0x0",
+                        "350x0",
+                        "350x350",
+                        "0x350"
+                    ],
+                    "printable_height": "325",
+                    "printer_model": "Voron 2.4 350",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "1.0",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM004",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "Voron 2.4 350 1.0 nozzle"
+            }
+        },
+        "vendor": "Voron"
+    },
+    {
+        "machine_model": {
             "bed_model": "sha256:35b73260022e595e3812b94c6616bc4ef0a8c2151165ea9e572ef3de0d892729",
             "bed_texture": "sha256:f3839d1d11e2271add0e461fa40061a0bd456c9b14d4b1cf7e493d097f9b429a",
             "default_materials": "Generic ABS @System;Generic PLA @System;Generic PLA-CF @System;Generic PETG @System;Generic TPU @System;Generic ASA @System;Generic PC @System;Generic PVA @System;Generic PA @System;Generic PA-CF @System",
@@ -2589,1303 +3886,6 @@
                     "z_hop_types": "Normal Lift"
                 },
                 "name": "Voron 2.4 300 1.0 nozzle"
-            }
-        },
-        "vendor": "Voron"
-    },
-    {
-        "machine_model": {
-            "bed_model": "sha256:d1b270806c071cf0defd356b91af43772986640980df2ce6ab3f08e87c287d9b",
-            "bed_texture": "sha256:f3839d1d11e2271add0e461fa40061a0bd456c9b14d4b1cf7e493d097f9b429a",
-            "default_materials": "Generic ABS @System;Generic PLA @System;Generic PLA-CF @System;Generic PETG @System;Generic TPU @System;Generic ASA @System;Generic PC @System;Generic PVA @System;Generic PA @System;Generic PA-CF @System",
-            "family": "VoronDesign",
-            "hotend_model": "",
-            "machine_tech": "FFF",
-            "model_id": "Voron2_350",
-            "name": "Voron 2.4 350",
-            "nozzle_diameter": "0.4;0.15;0.2;0.25;0.5;0.6;0.8;1.0",
-            "type": "machine_model"
-        },
-        "variants": {
-            "0.15": {
-                "data": {
-                    "auxiliary_fan": "0",
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "change_filament_gcode": "",
-                    "default_filament_profile": [
-                        "Generic PLA @System"
-                    ],
-                    "default_print_profile": "0.09mm Standard 0.15 nozzle @Voron",
-                    "deretraction_speed": [
-                        "30"
-                    ],
-                    "extruder_clearance_height_to_lid": "140",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_radius": "65",
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "from": "system",
-                    "gcode_flavor": "klipper",
-                    "instantiation": "true",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "machine_end_gcode": "PRINT_END",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_y": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.2",
-                        "0.4"
-                    ],
-                    "machine_max_speed_e": [
-                        "25",
-                        "25"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
-                    "max_layer_height": [
-                        "0.2"
-                    ],
-                    "min_layer_height": [
-                        "0.04"
-                    ],
-                    "name": "Voron 2.4 350 0.15 nozzle",
-                    "nozzle_diameter": [
-                        "0.15"
-                    ],
-                    "nozzle_type": "undefine",
-                    "printable_area": [
-                        "0x0",
-                        "350x0",
-                        "350x350",
-                        "0x350"
-                    ],
-                    "printable_height": "325",
-                    "printer_model": "Voron 2.4 350",
-                    "printer_settings_id": "",
-                    "printer_technology": "FFF",
-                    "printer_variant": "0.15",
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retraction_speed": [
-                        "30"
-                    ],
-                    "scan_first_layer": "0",
-                    "setting_id": "GM002",
-                    "silent_mode": "0",
-                    "single_extruder_multi_material": "1",
-                    "type": "machine",
-                    "wipe": [
-                        "1"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "z_hop_types": "Normal Lift"
-                },
-                "name": "Voron 2.4 350 0.15 nozzle"
-            },
-            "0.2": {
-                "data": {
-                    "auxiliary_fan": "0",
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "change_filament_gcode": "",
-                    "default_filament_profile": [
-                        "Generic PLA @System"
-                    ],
-                    "default_print_profile": "0.10mm Standard 0.2 nozzle @Voron",
-                    "deretraction_speed": [
-                        "30"
-                    ],
-                    "extruder_clearance_height_to_lid": "140",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_radius": "65",
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "from": "system",
-                    "gcode_flavor": "klipper",
-                    "instantiation": "true",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "machine_end_gcode": "PRINT_END",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_y": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.2",
-                        "0.4"
-                    ],
-                    "machine_max_speed_e": [
-                        "25",
-                        "25"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
-                    "max_layer_height": [
-                        "0.2"
-                    ],
-                    "min_layer_height": [
-                        "0.06"
-                    ],
-                    "name": "Voron 2.4 350 0.2 nozzle",
-                    "nozzle_diameter": [
-                        "0.2"
-                    ],
-                    "nozzle_type": "undefine",
-                    "printable_area": [
-                        "0x0",
-                        "350x0",
-                        "350x350",
-                        "0x350"
-                    ],
-                    "printable_height": "325",
-                    "printer_model": "Voron 2.4 350",
-                    "printer_settings_id": "",
-                    "printer_technology": "FFF",
-                    "printer_variant": "0.2",
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retraction_speed": [
-                        "30"
-                    ],
-                    "scan_first_layer": "0",
-                    "setting_id": "GM002",
-                    "silent_mode": "0",
-                    "single_extruder_multi_material": "1",
-                    "type": "machine",
-                    "wipe": [
-                        "1"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "z_hop_types": "Normal Lift"
-                },
-                "name": "Voron 2.4 350 0.2 nozzle"
-            },
-            "0.25": {
-                "data": {
-                    "auxiliary_fan": "0",
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "change_filament_gcode": "",
-                    "default_filament_profile": [
-                        "Generic PLA @System"
-                    ],
-                    "default_print_profile": "0.10mm Standard 0.25 nozzle @Voron",
-                    "deretraction_speed": [
-                        "30"
-                    ],
-                    "extruder_clearance_height_to_lid": "140",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_radius": "65",
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "from": "system",
-                    "gcode_flavor": "klipper",
-                    "instantiation": "true",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "machine_end_gcode": "PRINT_END",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_y": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.2",
-                        "0.4"
-                    ],
-                    "machine_max_speed_e": [
-                        "25",
-                        "25"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
-                    "max_layer_height": [
-                        "0.25"
-                    ],
-                    "min_layer_height": [
-                        "0.06"
-                    ],
-                    "name": "Voron 2.4 350 0.25 nozzle",
-                    "nozzle_diameter": [
-                        "0.25"
-                    ],
-                    "nozzle_type": "undefine",
-                    "printable_area": [
-                        "0x0",
-                        "350x0",
-                        "350x350",
-                        "0x350"
-                    ],
-                    "printable_height": "325",
-                    "printer_model": "Voron 2.4 350",
-                    "printer_settings_id": "",
-                    "printer_technology": "FFF",
-                    "printer_variant": "0.25",
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retraction_speed": [
-                        "30"
-                    ],
-                    "scan_first_layer": "0",
-                    "setting_id": "GM002",
-                    "silent_mode": "0",
-                    "single_extruder_multi_material": "1",
-                    "type": "machine",
-                    "wipe": [
-                        "1"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "z_hop_types": "Normal Lift"
-                },
-                "name": "Voron 2.4 350 0.25 nozzle"
-            },
-            "0.4": {
-                "data": {
-                    "auxiliary_fan": "0",
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "change_filament_gcode": "",
-                    "default_filament_profile": [
-                        "Generic PLA @System"
-                    ],
-                    "default_print_profile": "0.20mm Standard @Voron",
-                    "deretraction_speed": [
-                        "30"
-                    ],
-                    "extruder_clearance_height_to_lid": "140",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_radius": "65",
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "from": "system",
-                    "gcode_flavor": "klipper",
-                    "instantiation": "true",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "machine_end_gcode": "PRINT_END",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_y": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.2",
-                        "0.4"
-                    ],
-                    "machine_max_speed_e": [
-                        "25",
-                        "25"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
-                    "max_layer_height": [
-                        "0.32"
-                    ],
-                    "min_layer_height": [
-                        "0.10"
-                    ],
-                    "name": "Voron 2.4 350 0.4 nozzle",
-                    "nozzle_diameter": [
-                        "0.4"
-                    ],
-                    "nozzle_type": "undefine",
-                    "printable_area": [
-                        "0x0",
-                        "350x0",
-                        "350x350",
-                        "0x350"
-                    ],
-                    "printable_height": "325",
-                    "printer_model": "Voron 2.4 350",
-                    "printer_settings_id": "",
-                    "printer_technology": "FFF",
-                    "printer_variant": "0.4",
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retraction_speed": [
-                        "30"
-                    ],
-                    "scan_first_layer": "0",
-                    "setting_id": "GM001",
-                    "silent_mode": "0",
-                    "single_extruder_multi_material": "1",
-                    "type": "machine",
-                    "wipe": [
-                        "1"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "z_hop_types": "Normal Lift"
-                },
-                "name": "Voron 2.4 350 0.4 nozzle"
-            },
-            "0.5": {
-                "data": {
-                    "auxiliary_fan": "0",
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "change_filament_gcode": "",
-                    "default_filament_profile": [
-                        "Generic PLA @System"
-                    ],
-                    "default_print_profile": "0.25mm Standard 0.5 nozzle @Voron",
-                    "deretraction_speed": [
-                        "30"
-                    ],
-                    "extruder_clearance_height_to_lid": "140",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_radius": "65",
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "from": "system",
-                    "gcode_flavor": "klipper",
-                    "instantiation": "true",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "machine_end_gcode": "PRINT_END",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_y": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.2",
-                        "0.4"
-                    ],
-                    "machine_max_speed_e": [
-                        "25",
-                        "25"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
-                    "max_layer_height": [
-                        "0.4"
-                    ],
-                    "min_layer_height": [
-                        "0.1"
-                    ],
-                    "name": "Voron 2.4 350 0.5 nozzle",
-                    "nozzle_diameter": [
-                        "0.5"
-                    ],
-                    "nozzle_type": "undefine",
-                    "printable_area": [
-                        "0x0",
-                        "350x0",
-                        "350x350",
-                        "0x350"
-                    ],
-                    "printable_height": "325",
-                    "printer_model": "Voron 2.4 350",
-                    "printer_settings_id": "",
-                    "printer_technology": "FFF",
-                    "printer_variant": "0.5",
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retraction_speed": [
-                        "30"
-                    ],
-                    "scan_first_layer": "0",
-                    "setting_id": "GM003",
-                    "silent_mode": "0",
-                    "single_extruder_multi_material": "1",
-                    "type": "machine",
-                    "wipe": [
-                        "1"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "z_hop_types": "Normal Lift"
-                },
-                "name": "Voron 2.4 350 0.5 nozzle"
-            },
-            "0.6": {
-                "data": {
-                    "auxiliary_fan": "0",
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "change_filament_gcode": "",
-                    "default_filament_profile": [
-                        "Generic PLA @System"
-                    ],
-                    "default_print_profile": "0.30mm Standard 0.6 nozzle @Voron",
-                    "deretraction_speed": [
-                        "30"
-                    ],
-                    "extruder_clearance_height_to_lid": "140",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_radius": "65",
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "from": "system",
-                    "gcode_flavor": "klipper",
-                    "instantiation": "true",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "machine_end_gcode": "PRINT_END",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_y": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.2",
-                        "0.4"
-                    ],
-                    "machine_max_speed_e": [
-                        "25",
-                        "25"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
-                    "max_layer_height": [
-                        "0.45"
-                    ],
-                    "min_layer_height": [
-                        "0.15"
-                    ],
-                    "name": "Voron 2.4 350 0.6 nozzle",
-                    "nozzle_diameter": [
-                        "0.6"
-                    ],
-                    "nozzle_type": "undefine",
-                    "printable_area": [
-                        "0x0",
-                        "350x0",
-                        "350x350",
-                        "0x350"
-                    ],
-                    "printable_height": "325",
-                    "printer_model": "Voron 2.4 350",
-                    "printer_settings_id": "",
-                    "printer_technology": "FFF",
-                    "printer_variant": "0.6",
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retraction_speed": [
-                        "30"
-                    ],
-                    "scan_first_layer": "0",
-                    "setting_id": "GM003",
-                    "silent_mode": "0",
-                    "single_extruder_multi_material": "1",
-                    "type": "machine",
-                    "wipe": [
-                        "1"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "z_hop_types": "Normal Lift"
-                },
-                "name": "Voron 2.4 350 0.6 nozzle"
-            },
-            "0.8": {
-                "data": {
-                    "auxiliary_fan": "0",
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "change_filament_gcode": "",
-                    "default_filament_profile": [
-                        "Generic PLA @System"
-                    ],
-                    "default_print_profile": "0.40mm Standard 0.8 nozzle @Voron",
-                    "deretraction_speed": [
-                        "30"
-                    ],
-                    "extruder_clearance_height_to_lid": "140",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_radius": "65",
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "from": "system",
-                    "gcode_flavor": "klipper",
-                    "instantiation": "true",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "machine_end_gcode": "PRINT_END",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_y": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.2",
-                        "0.4"
-                    ],
-                    "machine_max_speed_e": [
-                        "25",
-                        "25"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
-                    "max_layer_height": [
-                        "0.6"
-                    ],
-                    "min_layer_height": [
-                        "0.20"
-                    ],
-                    "name": "Voron 2.4 350 0.8 nozzle",
-                    "nozzle_diameter": [
-                        "0.8"
-                    ],
-                    "nozzle_type": "undefine",
-                    "printable_area": [
-                        "0x0",
-                        "350x0",
-                        "350x350",
-                        "0x350"
-                    ],
-                    "printable_height": "325",
-                    "printer_model": "Voron 2.4 350",
-                    "printer_settings_id": "",
-                    "printer_technology": "FFF",
-                    "printer_variant": "0.8",
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retraction_speed": [
-                        "30"
-                    ],
-                    "scan_first_layer": "0",
-                    "setting_id": "GM004",
-                    "silent_mode": "0",
-                    "single_extruder_multi_material": "1",
-                    "type": "machine",
-                    "wipe": [
-                        "1"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "z_hop_types": "Normal Lift"
-                },
-                "name": "Voron 2.4 350 0.8 nozzle"
-            },
-            "1.0": {
-                "data": {
-                    "auxiliary_fan": "0",
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "change_filament_gcode": "",
-                    "default_filament_profile": [
-                        "Generic PLA @System"
-                    ],
-                    "default_print_profile": "0.50mm Standard 1.0 nozzle @Voron",
-                    "deretraction_speed": [
-                        "30"
-                    ],
-                    "extruder_clearance_height_to_lid": "140",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_radius": "65",
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "from": "system",
-                    "gcode_flavor": "klipper",
-                    "instantiation": "true",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "machine_end_gcode": "PRINT_END",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_y": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.2",
-                        "0.4"
-                    ],
-                    "machine_max_speed_e": [
-                        "25",
-                        "25"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\n; You can use following code instead if your PRINT_START macro support Chamber and print area bedmesh\n; PRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single] Chamber=[chamber_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}",
-                    "max_layer_height": [
-                        "0.9"
-                    ],
-                    "min_layer_height": [
-                        "0.25"
-                    ],
-                    "name": "Voron 2.4 350 1.0 nozzle",
-                    "nozzle_diameter": [
-                        "1.0"
-                    ],
-                    "nozzle_type": "undefine",
-                    "printable_area": [
-                        "0x0",
-                        "350x0",
-                        "350x350",
-                        "0x350"
-                    ],
-                    "printable_height": "325",
-                    "printer_model": "Voron 2.4 350",
-                    "printer_settings_id": "",
-                    "printer_technology": "FFF",
-                    "printer_variant": "1.0",
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retraction_speed": [
-                        "30"
-                    ],
-                    "scan_first_layer": "0",
-                    "setting_id": "GM004",
-                    "silent_mode": "0",
-                    "single_extruder_multi_material": "1",
-                    "type": "machine",
-                    "wipe": [
-                        "1"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "z_hop_types": "Normal Lift"
-                },
-                "name": "Voron 2.4 350 1.0 nozzle"
             }
         },
         "vendor": "Voron"
