@@ -4,7 +4,7 @@
   "name": "0.20mm Strength @Elegoo CC2 0.4 nozzle",
   "vendor": "Elegoo",
   "first_seen": "1.3.0.11",
-  "last_seen": "1.3.0.11",
+  "last_seen": "1.5.0.7",
   "filament_id": null,
   "setting_id": "PECC204020",
   "renamed_from": null,
@@ -25,7 +25,8 @@
       "1.3.0.11": "0"
     },
     "reduce_crossing_wall": {
-      "1.3.0.11": "1"
+      "1.3.0.11": "1",
+      "1.5.0.7": "0"
     },
     "bridge_flow": {
       "1.3.0.11": "1"
@@ -58,7 +59,8 @@
       "1.3.0.11": "0.42"
     },
     "outer_wall_speed": {
-      "1.3.0.11": "120"
+      "1.3.0.11": "120",
+      "1.5.0.7": "200"
     },
     "line_width": {
       "1.3.0.11": "0.42"
@@ -112,7 +114,8 @@
       "1.3.0.11": "ECC2_{nozzle_diameter[0]}_{input_filename_base}_{filament_name}_{layer_height}_{print_time}.gcode"
     },
     "wall_loops": {
-      "1.3.0.11": "6"
+      "1.3.0.11": "6",
+      "1.5.0.7": "5"
     },
     "inner_wall_line_width": {
       "1.3.0.11": "0.45"
@@ -163,7 +166,8 @@
       "1.3.0.11": "0"
     },
     "support_top_z_distance": {
-      "1.3.0.11": "0.08"
+      "1.3.0.11": "0.08",
+      "1.5.0.7": "0.2"
     },
     "support_interface_loop_pattern": {
       "1.3.0.11": "0"
@@ -348,7 +352,8 @@
       "1.3.0.11": "default"
     },
     "support_bottom_z_distance": {
-      "1.3.0.11": "0.1"
+      "1.3.0.11": "0.1",
+      "1.5.0.7": "0.2"
     },
     "support_interface_bottom_layers": {
       "1.3.0.11": "2"
@@ -423,10 +428,12 @@
       "1.3.0.11": "100%"
     },
     "print_flow_ratio": {
-      "1.3.0.11": "0.95"
+      "1.3.0.11": "0.95",
+      "1.5.0.7": "0.97"
     },
     "wall_sequence": {
-      "1.3.0.11": "inner-outer-inner wall"
+      "1.3.0.11": "inner-outer-inner wall",
+      "1.5.0.7": "inner wall/outer wall"
     },
     "wipe_tower_wall_type": {
       "1.3.0.11": "rib"
@@ -439,6 +446,9 @@
     },
     "independent_support_layer_height": {
       "1.3.0.11": "0"
+    },
+    "top_solid_infill_flow_ratio": {
+      "1.5.0.7": "1.09"
     }
   }
 }
