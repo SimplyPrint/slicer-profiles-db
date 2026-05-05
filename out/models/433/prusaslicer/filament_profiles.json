@@ -121,7 +121,7 @@
             "filament_vendor": "Made for Prusa",
             "filament_wipe": "1",
             "first_layer_bed_temperature": "85",
-            "first_layer_temperature": "240",
+            "first_layer_temperature": "250",
             "full_fan_speed_layer": "5",
             "idle_temperature": "70",
             "max_fan_speed": "60",
@@ -129,7 +129,7 @@
             "min_print_speed": "15",
             "slowdown_below_layer_time": "9",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.053{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.032{elsif nozzle_diameter[filament_extruder_id]==0.8}0.018{elsif nozzle_diameter[filament_extruder_id]==0.25}0.18{elsif nozzle_diameter[filament_extruder_id]==0.3}0.1{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S36 ; set heatbreak target temp\"",
-            "temperature": "245"
+            "temperature": "250"
         },
         "name": "Prusa PETG @PGIS"
     },
@@ -468,7 +468,7 @@
             "filament_vendor": "Filament PM",
             "filament_wipe": "1",
             "first_layer_bed_temperature": "85",
-            "first_layer_temperature": "240",
+            "first_layer_temperature": "255",
             "full_fan_speed_layer": "5",
             "idle_temperature": "70",
             "max_fan_speed": "50",
@@ -476,7 +476,7 @@
             "min_print_speed": "15",
             "slowdown_below_layer_time": "9",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.053{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.032{elsif nozzle_diameter[filament_extruder_id]==0.8}0.018{elsif nozzle_diameter[filament_extruder_id]==0.25}0.18{elsif nozzle_diameter[filament_extruder_id]==0.3}0.1{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S36 ; set heatbreak target temp\"",
-            "temperature": "240"
+            "temperature": "255"
         },
         "name": "Filament PM PETG @PG"
     },
@@ -10412,7 +10412,7 @@
             "filament_vendor": "Generic",
             "filament_wipe": "1",
             "first_layer_bed_temperature": "85",
-            "first_layer_temperature": "240",
+            "first_layer_temperature": "250",
             "full_fan_speed_layer": "5",
             "idle_temperature": "70",
             "max_fan_speed": "60",
@@ -10420,7 +10420,7 @@
             "min_print_speed": "15",
             "slowdown_below_layer_time": "14",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.053{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.032{elsif nozzle_diameter[filament_extruder_id]==0.8}0.018{elsif nozzle_diameter[filament_extruder_id]==0.25}0.18{elsif nozzle_diameter[filament_extruder_id]==0.3}0.1{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S36 ; set heatbreak target temp\"",
-            "temperature": "240"
+            "temperature": "250"
         },
         "name": "Prusa PETG @PGIS 0.6"
     },
@@ -13207,7 +13207,7 @@
             "filament_vendor": "Filament PM",
             "filament_wipe": "1",
             "first_layer_bed_temperature": "85",
-            "first_layer_temperature": "240",
+            "first_layer_temperature": "255",
             "full_fan_speed_layer": "5",
             "idle_temperature": "70",
             "max_fan_speed": "50",
@@ -13215,7 +13215,7 @@
             "min_print_speed": "15",
             "slowdown_below_layer_time": "14",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.053{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.032{elsif nozzle_diameter[filament_extruder_id]==0.8}0.018{elsif nozzle_diameter[filament_extruder_id]==0.25}0.18{elsif nozzle_diameter[filament_extruder_id]==0.3}0.1{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S36 ; set heatbreak target temp\"",
-            "temperature": "235"
+            "temperature": "255"
         },
         "name": "Filament PM PETG @PG 0.6"
     },
@@ -17442,7 +17442,7 @@
             "filament_vendor": "Filament PM",
             "filament_wipe": "1",
             "first_layer_bed_temperature": "85",
-            "first_layer_temperature": "240",
+            "first_layer_temperature": "255",
             "full_fan_speed_layer": "5",
             "idle_temperature": "70",
             "max_fan_speed": "50",
@@ -17450,7 +17450,7 @@
             "min_print_speed": "15",
             "slowdown_below_layer_time": "9",
             "start_filament_gcode": "\"M572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.047{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.033{elsif nozzle_diameter[filament_extruder_id]==0.8}0.021{elsif nozzle_diameter[filament_extruder_id]==0.25}0.17{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Filament gcode\\n\\nM142 S36 ; set heatbreak target temp\"",
-            "temperature": "240"
+            "temperature": "255"
         },
         "name": "Filament PM PETG @HF0.4"
     },
@@ -17832,7 +17832,7 @@
             "filament_vendor": "Made for Prusa",
             "filament_wipe": "1",
             "first_layer_bed_temperature": "85",
-            "first_layer_temperature": "240",
+            "first_layer_temperature": "250",
             "full_fan_speed_layer": "5",
             "idle_temperature": "70",
             "max_fan_speed": "50",
@@ -17840,7 +17840,7 @@
             "min_print_speed": "15",
             "slowdown_below_layer_time": "9",
             "start_filament_gcode": "\"M572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.047{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.033{elsif nozzle_diameter[filament_extruder_id]==0.8}0.021{elsif nozzle_diameter[filament_extruder_id]==0.25}0.17{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{else}0{endif} ; Filament gcode\\n\\nM142 S36 ; set heatbreak target temp\"",
-            "temperature": "240"
+            "temperature": "250"
         },
         "name": "Prusa PETG @HF0.4"
     },
@@ -27053,7 +27053,7 @@
             "filament_vendor": "Made for Prusa",
             "filament_wipe": "1",
             "first_layer_bed_temperature": "85",
-            "first_layer_temperature": "240",
+            "first_layer_temperature": "250",
             "full_fan_speed_layer": "5",
             "idle_temperature": "70",
             "max_fan_speed": "50",
@@ -27061,7 +27061,7 @@
             "min_print_speed": "15",
             "slowdown_below_layer_time": "9",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.053{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.032{elsif nozzle_diameter[filament_extruder_id]==0.8}0.018{elsif nozzle_diameter[filament_extruder_id]==0.25}0.18{elsif nozzle_diameter[filament_extruder_id]==0.3}0.1{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S36 ; set heatbreak target temp\"",
-            "temperature": "240"
+            "temperature": "250"
         },
         "name": "Prusa PETG @PG"
     },
@@ -29973,13 +29973,13 @@
         },
         "data": {
             "bed_temperature": "65",
-            "bridge_fan_speed": "40",
+            "bridge_fan_speed": "55",
             "compatible_printers": "",
             "compatible_printers_condition": "printer_model=~/(MK4|MK4IS|MK4ISMMU3|MK3.9|MK3.9MMU3)/ and nozzle_diameter[0]>=0.3 and nozzle_diameter[0]!=0.6 and nozzle_diameter[0]!=0.8 and ! single_extruder_multi_material",
             "cooling": "0",
             "disable_fan_first_layers": "4",
             "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1.08",
+            "extrusion_multiplier": "1.1",
             "fan_always_on": "1",
             "fan_below_layer_time": "100",
             "filament_colour": "#F9F3E5",
@@ -30018,8 +30018,8 @@
             "first_layer_temperature": "230",
             "full_fan_speed_layer": "6",
             "idle_temperature": "70",
-            "max_fan_speed": "40",
-            "min_fan_speed": "40",
+            "max_fan_speed": "55",
+            "min_fan_speed": "55",
             "min_print_speed": "15",
             "slowdown_below_layer_time": "15",
             "start_filament_gcode": "\"M900 K0 ; Filament gcode\\n\\nM142 S36 ; set heatbreak target temp\"",
@@ -32932,13 +32932,13 @@
         },
         "data": {
             "bed_temperature": "65",
-            "bridge_fan_speed": "40",
+            "bridge_fan_speed": "55",
             "compatible_printers": "",
             "compatible_printers_condition": "printer_model=~/(MK4|MK4IS|MK4ISMMU3|MK3.9|MK3.9MMU3)/ and nozzle_diameter[0]==0.6 and ! single_extruder_multi_material",
             "cooling": "0",
             "disable_fan_first_layers": "4",
             "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1.08",
+            "extrusion_multiplier": "1.1",
             "fan_always_on": "1",
             "fan_below_layer_time": "100",
             "filament_colour": "#F9F3E5",
@@ -32977,8 +32977,8 @@
             "first_layer_temperature": "230",
             "full_fan_speed_layer": "6",
             "idle_temperature": "70",
-            "max_fan_speed": "40",
-            "min_fan_speed": "40",
+            "max_fan_speed": "55",
+            "min_fan_speed": "55",
             "min_print_speed": "15",
             "slowdown_below_layer_time": "15",
             "start_filament_gcode": "\"M900 K0 ; Filament gcode\\n\\nM142 S36 ; set heatbreak target temp\"",
@@ -34997,7 +34997,7 @@
             "filament_vendor": "Made for Prusa",
             "filament_wipe": "1",
             "first_layer_bed_temperature": "85",
-            "first_layer_temperature": "240",
+            "first_layer_temperature": "250",
             "full_fan_speed_layer": "5",
             "idle_temperature": "70",
             "max_fan_speed": "60",
@@ -35005,7 +35005,7 @@
             "min_print_speed": "15",
             "slowdown_below_layer_time": "14",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.053{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.032{elsif nozzle_diameter[filament_extruder_id]==0.8}0.018{elsif nozzle_diameter[filament_extruder_id]==0.25}0.18{elsif nozzle_diameter[filament_extruder_id]==0.3}0.1{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S36 ; set heatbreak target temp\"",
-            "temperature": "240"
+            "temperature": "250"
         },
         "name": "Prusa PETG @PG 0.6"
     },
@@ -42980,7 +42980,7 @@
             "filament_vendor": "Filament PM",
             "filament_wipe": "1",
             "first_layer_bed_temperature": "85",
-            "first_layer_temperature": "240",
+            "first_layer_temperature": "255",
             "full_fan_speed_layer": "5",
             "idle_temperature": "70",
             "max_fan_speed": "50",
@@ -42988,7 +42988,7 @@
             "min_print_speed": "15",
             "slowdown_below_layer_time": "18",
             "start_filament_gcode": "\"{if printer_notes!~/.*(MK4IS|XLIS|MK4S|MK3.9S|COREONE).*/}\\nM900 K{if nozzle_diameter[filament_extruder_id]==0.4}0.07{elsif nozzle_diameter[filament_extruder_id]==0.25}0.12{elsif nozzle_diameter[filament_extruder_id]==0.3}0.09{elsif nozzle_diameter[filament_extruder_id]==0.35}0.08{elsif nozzle_diameter[filament_extruder_id]==0.6}0.04{elsif nozzle_diameter[filament_extruder_id]==0.5}0.05{elsif nozzle_diameter[filament_extruder_id]==0.8}0.02{else}0{endif} ; Legacy LA\\n{else}\\nM572 S{if nozzle_diameter[filament_extruder_id]==0.4}0.053{elsif nozzle_diameter[filament_extruder_id]==0.5}0.042{elsif nozzle_diameter[filament_extruder_id]==0.6}0.032{elsif nozzle_diameter[filament_extruder_id]==0.8}0.018{elsif nozzle_diameter[filament_extruder_id]==0.25}0.18{elsif nozzle_diameter[filament_extruder_id]==0.3}0.1{else}0{endif} ; Pressure advance\\n{endif}\\n\\nM142 S36 ; set heatbreak target temp\"",
-            "temperature": "240"
+            "temperature": "255"
         },
         "name": "Filament PM PETG @PG 0.8"
     },
@@ -52723,13 +52723,13 @@
         },
         "data": {
             "bed_temperature": "65",
-            "bridge_fan_speed": "40",
+            "bridge_fan_speed": "55",
             "compatible_printers": "",
             "compatible_printers_condition": "printer_model=~/(MK4|MK4IS|MK4ISMMU3|MK3.9|MK3.9MMU3)/ and nozzle_diameter[0]==0.8 and ! single_extruder_multi_material",
             "cooling": "0",
             "disable_fan_first_layers": "4",
             "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1.08",
+            "extrusion_multiplier": "1.1",
             "fan_always_on": "1",
             "fan_below_layer_time": "100",
             "filament_colour": "#F9F3E5",
@@ -52768,8 +52768,8 @@
             "first_layer_temperature": "230",
             "full_fan_speed_layer": "6",
             "idle_temperature": "70",
-            "max_fan_speed": "40",
-            "min_fan_speed": "40",
+            "max_fan_speed": "55",
+            "min_fan_speed": "55",
             "min_print_speed": "15",
             "slowdown_below_layer_time": "15",
             "start_filament_gcode": "\"M900 K0 ; Filament gcode\\n\\nM142 S36 ; set heatbreak target temp\"",
