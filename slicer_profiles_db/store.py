@@ -259,12 +259,26 @@ class ProfileStore:
         """
         changed = []
 
+        parsed_keys = set()
+
         for key, new_value in parsed.settings.items():
             if key in self._META_KEYS:
                 continue
+            parsed_keys.add(key)
             current = stored.get_latest(key)
             if self._normalize(current) != self._normalize(new_value):
                 stored.settings.setdefault(key, {})[version] = new_value
+                changed.append(key)
+
+        # Record setting removals as a null tombstone.  Without this, a setting
+        # removed by a later slicer release would incorrectly live forever in
+        # evaluated snapshots.
+        for key in list(stored.settings):
+            if key in parsed_keys or key in self._META_KEYS:
+                continue
+            current = stored.get_latest(key)
+            if current is not None:
+                stored.settings.setdefault(key, {})[version] = None
                 changed.append(key)
 
         if changed:
@@ -365,7 +379,13 @@ class ProfileStore:
                     continue
                 profile_type = type_dir.name
                 for json_file in type_dir.rglob("*.json"):
-                    name = json_file.stem
+                    try:
+                        stored = StoredProfile.model_validate_json(
+                            json_file.read_text(encoding="utf-8")
+                        )
+                        name = stored.name
+                    except Exception:
+                        name = json_file.stem
                     keys.add(f"{slicer_val}/{vendor}/{profile_type}/{name}")
 
         return keys

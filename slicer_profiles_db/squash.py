@@ -507,14 +507,16 @@ def squash_all_slic3r_vendors(
 
     all_created: list[Path] = []
 
-    # Squash all vendor directories (except the library) with the library
-    # available for inheritance resolution. The library dir is kept intact
-    # so it can be used as a base for all vendors.
+    # Squash the shared library too; it contains concrete @System filament
+    # profiles that are valid presets, not only inheritance bases.
+    if filament_library_dir and filament_library_dir.exists():
+        all_created.extend(squash_slic3r_profiles(filament_library_dir, profile_type))
+
+    # Squash all vendor directories (except the already-processed library) with
+    # the library available for inheritance resolution.
     for vendor_dir in sorted(slicer_dir.iterdir()):
         if not vendor_dir.is_dir():
             continue
-        # Skip the library directory — it's only used as a base for resolution,
-        # not squashed/exported on its own (matches original behavior)
         if filament_library_name and vendor_dir.name == filament_library_name:
             continue
 

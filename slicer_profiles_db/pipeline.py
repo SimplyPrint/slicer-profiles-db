@@ -109,6 +109,7 @@ class ProfilePipeline:
         version: str = "latest",
         profile_types: list[ProfileType] | None = None,
         fetch_defaults: bool = False,
+        force: bool = False,
     ) -> IngestionReport:
         """
         Full pipeline: download → extract → squash → parse → store.
@@ -136,7 +137,7 @@ class ProfilePipeline:
 
         # Skip immutable versions that are already in the store.
         # Mutable versions (branches, nightly) are always re-processed.
-        if not self._is_version_mutable(version):
+        if not force and not self._is_version_mutable(version):
             normalized = normalize_version(version)
             existing = self.store.get_versions(slicer)
             if normalized in existing:
@@ -206,12 +207,6 @@ class ProfilePipeline:
                 else None,
                 filament_library_name=config.filament_library_name,
             )
-            # Remove the shared library dir after squashing — it was only
-            # needed for inheritance resolution and should not be parsed
-            if config.filament_library_name:
-                lib_dir = extracted / config.filament_library_name
-                if lib_dir.exists():
-                    shutil.rmtree(lib_dir)
 
         # Step 4: Apply overlays (after squash so they bypass inheritance
         # resolution — overlay profiles should be complete/pre-squashed)

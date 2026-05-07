@@ -154,6 +154,11 @@ Environment variables:
         help="Delete existing profiles for this slicer before ingesting (clean run)",
     )
     pipeline_parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Re-process the version even if it already exists in the store",
+    )
+    pipeline_parser.add_argument(
         "--json", action="store_true", help="Output report as JSON"
     )
     pipeline_parser.set_defaults(func=run_ingest)
@@ -551,6 +556,7 @@ def run_ingest(args: argparse.Namespace) -> int:
             version=args.version,
             profile_types=profile_types,
             fetch_defaults=args.fetch_defaults,
+            force=getattr(args, "force", False),
         )
 
         if use_json:

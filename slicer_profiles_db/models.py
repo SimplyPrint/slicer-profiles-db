@@ -132,7 +132,9 @@ class StoredProfile(BaseModel):
                 if _version_key(ver) <= target:
                     value = val
                     found = True
-            if found:
+            # ``None`` is the store's tombstone for settings removed in a
+            # later slicer release.  Omit tombstoned keys from snapshots.
+            if found and value is not None:
                 snapshot[key] = value
         return snapshot
 

@@ -1,9 +1,10 @@
 """
-Content-addressed store for binary resource files (STL/SVG/PNG).
+Content-addressed store for slicer profile assets (STL/SVG/PNG).
 
-Resource files referenced by slicer profiles (bed models, bed textures,
-thumbnails) are stored once under their SHA-256 hash, with a manifest
-mapping hashes back to original filenames.
+Resources are stored once under their SHA-256 hash. Profile settings may refer to
+resources as ``sha256:{hash}``, and /out/resources.json maps those refs to
+repo-relative files under profiles/{slicer}/_resources without duplicating assets
+under /out.
 """
 
 import hashlib
@@ -20,15 +21,25 @@ class ResourceStore:
         self._manifest_path = self.root / "_manifest.json"
         self._manifest: dict[str, dict] = self._load_manifest()
 
-    def store(self, file_path: Path) -> str:
+    def store(self, file_path: Path, relative_to: Path | None = None) -> str:
         """Store a file and return its content hash (sha256 hex)."""
         content = file_path.read_bytes()
         hash_hex = hashlib.sha256(content).hexdigest()
-        dest = self.root / f"{hash_hex}{file_path.suffix.lower()}"
+        suffix = file_path.suffix.lower()
+        dest = self.root / f"{hash_hex}{suffix}"
         if not dest.exists():
             dest.write_bytes(content)
+
+        source_path = file_path.name
+        if relative_to is not None:
+            try:
+                source_path = file_path.relative_to(relative_to).as_posix()
+            except ValueError:
+                source_path = file_path.name
+
         self._manifest[hash_hex] = {
             "filename": file_path.name,
+            "source_path": source_path,
             "size": len(content),
             "type": file_path.suffix.lstrip(".").lower(),
         }
@@ -42,11 +53,11 @@ class ResourceStore:
         )
 
     def get_path(self, hash_hex: str) -> Path | None:
-        """Get path to a stored resource by its hash."""
+        """Get path to a stored resource by hash."""
         entry = self._manifest.get(hash_hex)
         if entry is None:
             return None
-        suffix = f".{entry['type']}"
+        suffix = f".{entry['type']}" if entry.get("type") else ""
         path = self.root / f"{hash_hex}{suffix}"
         return path if path.exists() else None
 
@@ -55,8 +66,33 @@ class ResourceStore:
         entry = self._manifest.get(hash_hex)
         return entry["filename"] if entry else None
 
+    def find_hashes_by_filename(self, filename: str) -> list[str]:
+        """Find resource hashes by original filename, case-insensitively."""
+        filename_lower = filename.lower()
+        matches: list[str] = []
+        for hash_hex, entry in self._manifest.items():
+            if not _is_sha256_hex(hash_hex):
+                continue
+            manifest_filename = entry.get("filename", "")
+            if (
+                manifest_filename == filename
+                or manifest_filename.lower() == filename_lower
+            ):
+                if self.get_path(hash_hex):
+                    matches.append(hash_hex)
+        return sorted(matches)
+
+    def find_by_filename(self, filename: str) -> list[Path]:
+        """Find stored resource paths by original filename, case-insensitively."""
+        paths = []
+        for hash_hex in self.find_hashes_by_filename(filename):
+            path = self.get_path(hash_hex)
+            if path:
+                paths.append(path)
+        return paths
+
     def gc(self, referenced_hashes: set[str]) -> list[str]:
-        """Remove resources not in referenced_hashes. Returns list of removed hashes."""
+        """Remove resources not in referenced_hashes. Returns removed hashes."""
         removed = []
         for hash_hex in list(self._manifest):
             if hash_hex not in referenced_hashes:
@@ -65,6 +101,27 @@ class ResourceStore:
                     path.unlink()
                 del self._manifest[hash_hex]
                 removed.append(hash_hex)
+
+        expected_paths = set()
+        for hash_hex, entry in self._manifest.items():
+            suffix = f".{entry['type']}" if entry.get("type") else ""
+            expected_paths.add((self.root / f"{hash_hex}{suffix}").resolve())
+
+        for path in self.root.rglob("*"):
+            if not path.is_file() or path == self._manifest_path:
+                continue
+            if path.resolve() not in expected_paths:
+                path.unlink()
+
+        for path in sorted(
+            self.root.rglob("*"), key=lambda item: len(item.parts), reverse=True
+        ):
+            if path.is_dir():
+                try:
+                    path.rmdir()
+                except OSError:
+                    pass
+
         if removed:
             self.save_manifest()
         return removed
@@ -75,27 +132,28 @@ class ResourceStore:
         return {}
 
 
-RESOURCE_EXTENSIONS = {"*.stl", "*.svg", "*.png"}
+def _is_sha256_hex(value: str) -> bool:
+    return len(value) == 64 and all(c in "0123456789abcdef" for c in value)
+
+
+RESOURCE_EXTENSIONS = {".stl", ".svg", ".png"}
 RESOURCE_SETTING_KEYS = {"bed_model", "bed_texture", "thumbnail", "hotend_model"}
 
 
 def collect_resources(extracted_dir: Path, store: ResourceStore) -> dict[str, str]:
-    """Walk extracted dir, store all resource files, return {filename: hash} map."""
+    """Walk extracted dir, store all resource files, return {filename: hash}."""
     resource_map: dict[str, str] = {}
-    for pattern in RESOURCE_EXTENSIONS:
-        for f in extracted_dir.rglob(pattern):
-            hash_hex = store.store(f)
-            resource_map[f.name] = hash_hex
+    for f in extracted_dir.rglob("*"):
+        if not f.is_file() or f.suffix.lower() not in RESOURCE_EXTENSIONS:
+            continue
+        hash_hex = store.store(f, relative_to=extracted_dir)
+        resource_map[f.name] = hash_hex
     store.save_manifest()
     return resource_map
 
 
 def rewrite_resource_refs(profiles: list, resource_map: dict[str, str]) -> None:
-    """Rewrite bare filename references in profile settings to sha256:{hash}.
-
-    Mutates profiles in place. Handles both flat string values and
-    versioned dicts (though ParsedProfile.settings should be flat).
-    """
+    """Rewrite bare filename resource references to sha256:{hash}."""
     for profile in profiles:
         for key in RESOURCE_SETTING_KEYS:
             if key not in profile.settings:
@@ -106,11 +164,10 @@ def rewrite_resource_refs(profiles: list, resource_map: dict[str, str]) -> None:
 
 
 def collect_referenced_hashes(store_root: Path, slicer_value: str) -> set[str]:
-    """Scan all stored profiles for a slicer and return the set of sha256 hashes referenced."""
+    """Scan stored profiles for a slicer and return referenced resource hashes."""
     hashes = set()
     slicer_dir = store_root / slicer_value
     for json_file in slicer_dir.rglob("*.json"):
-        # Skip _resources/ and _meta.json
         if any(
             part.startswith("_") for part in json_file.relative_to(slicer_dir).parts
         ):
@@ -121,10 +178,10 @@ def collect_referenced_hashes(store_root: Path, slicer_value: str) -> set[str]:
             for key in RESOURCE_SETTING_KEYS:
                 if key not in settings:
                     continue
-                versions = settings[key]  # {"ver": "sha256:abc..."}
+                versions = settings[key]
                 for value in versions.values():
                     if isinstance(value, str) and value.startswith("sha256:"):
-                        hashes.add(value[7:])  # strip "sha256:" prefix
+                        hashes.add(value[7:])
         except Exception:
             continue
     return hashes

@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import re
 import shutil
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -29,6 +30,7 @@ from .matching import match_printer_model
 from .models import ProfileType, SlicerType, StoredProfile
 from .resources import ResourceStore
 from .store import ProfileStore
+from .versions import version_key
 
 logger = logging.getLogger(__name__)
 
@@ -69,7 +71,7 @@ def _stable_version(profile: StoredProfile) -> str:
     for versions_dict in profile.settings.values():
         for ver in versions_dict:
             if not ver.startswith("nightly"):
-                if best is None or ver > best:
+                if best is None or version_key(ver) > version_key(best):
                     best = ver
     return best or last
 
@@ -219,6 +221,14 @@ def _build_variant_map(
             elif isinstance(nd, str):
                 variant = nd.split(";")[0].strip() if ";" in nd else nd
 
+        name_variant = _parse_variant_from_name(data.get("name", profile.name))
+        if variant is None:
+            variant = name_variant
+        elif name_variant and not _same_variant(str(variant), name_variant):
+            # Some upstream profiles have a stale printer_variant but the
+            # display name/nozzle is correct (for example RatRig V-Minion 0.6).
+            variant = name_variant
+
         if variant is None:
             continue
 
@@ -229,10 +239,20 @@ def _build_variant_map(
         lookup_key = printer_model + variant
         profile_name = data.get("name", profile.name)
 
-        result.variant_map[slicer_val][lookup_key] = {
+        candidate = {
             "name": profile_name,
             "data": data,
         }
+        existing = result.variant_map[slicer_val].get(lookup_key)
+        if existing is None or _variant_candidate_is_better(
+            lookup_key, candidate, existing
+        ):
+            result.variant_map[slicer_val][lookup_key] = candidate
+
+        # Keep an exact display-name index as a collision fallback. Some
+        # upstream variants have wrong printer_model / printer_variant values,
+        # but their display names are still correct.
+        result.variant_map[slicer_val].setdefault(profile_name, candidate)
 
         # Also index by model_id + variant (Orca/BBS use model_id)
         model_id = data.get("model_id")
@@ -245,6 +265,49 @@ def _build_variant_map(
                     "data": data,
                 },
             )
+
+
+def _parse_variant_from_name(name: str) -> str | None:
+    """Extract nozzle-like variant value from a machine profile name."""
+    match = re.search(
+        r"(?<![A-Za-z0-9.])(HF)?(0\.\d+|[12]\.\d+)\s*(?:mm\s*)?nozzle\b",
+        name,
+        re.IGNORECASE,
+    )
+    if match:
+        prefix = "HF" if match.group(1) else ""
+        return prefix + match.group(2)
+
+    # Some upstream machine profiles encode only the nozzle value in the name
+    # without the word "nozzle" (for example Kentstrapper ``0.4 v20``).
+    # Restrict this fallback to 0.x values so model names like MK2.5 are not
+    # misread as nozzle variants.
+    match = re.search(r"(?<![A-Za-z0-9.])(0\.\d+)(?![A-Za-z0-9.])", name)
+    if match:
+        return match.group(1)
+    return None
+
+
+def _variant_candidate_is_better(
+    lookup_key: str, candidate: dict[str, Any], existing: dict[str, Any]
+) -> bool:
+    """Resolve duplicate variant lookup keys.
+
+    Some upstream profiles have a wrong ``printer_model`` value (for example a
+    Creality K1 variant claiming ``Creality K1 Max``). Prefer the candidate
+    whose display name best matches the lookup model part.
+    """
+    candidate_name = str(candidate.get("name", "")).lower()
+    existing_name = str(existing.get("name", "")).lower()
+    model_part = lookup_key
+    variant = candidate.get("data", {}).get("printer_variant")
+    if isinstance(variant, str) and lookup_key.endswith(variant):
+        model_part = lookup_key[: -len(variant)]
+    model_part = model_part.strip().lower()
+
+    candidate_matches = bool(model_part and model_part in candidate_name)
+    existing_matches = bool(model_part and model_part in existing_name)
+    return candidate_matches and not existing_matches
 
 
 def map_filament_profiles(
@@ -268,6 +331,10 @@ def map_filament_profiles(
     _generic_profiles = build_generic_profile_index(
         index, [SlicerType(s) for s in active_slicers]
     )
+    _global_templates = {
+        slicer: _global_filament_templates(index, SlicerType(slicer))
+        for slicer in active_slicers
+    }
 
     for model_id, slicer_profiles in model_map.model_to_profiles.items():
         for slicer_val, profile_keys in slicer_profiles.items():
@@ -301,17 +368,9 @@ def map_filament_profiles(
 
                 # For each variant, find compatible filament profiles
                 for variant in variants:
-                    lookup_key = (mm_data.get("name", name)) + variant
-                    lookup = variant_lookup.get(lookup_key)
-                    if lookup is None and "model_id" in mm_data:
-                        lookup = variant_lookup.get(mm_data["model_id"] + variant)
-                    if lookup is None:
-                        # Try "<name> <variant> nozzle" pattern
-                        nozzle_name = f"{mm_data.get('name', name)} {variant} nozzle"
-                        for item in variant_lookup.values():
-                            if item["name"] == nozzle_name:
-                                lookup = item
-                                break
+                    lookup = _find_variant_lookup(
+                        mm_data, name, variant, variant_lookup
+                    )
                     if lookup is None:
                         continue
 
@@ -339,7 +398,9 @@ def map_filament_profiles(
                             ]
 
                         is_compatible = False
-                        if printer_name in compat:
+                        if _compat_matches_printer(
+                            compat, printer_name, model_name, variant
+                        ):
                             is_compatible = True
                         else:
                             condition = fp_data.get("compatible_printers_condition")
@@ -351,69 +412,41 @@ def map_filament_profiles(
                         if not is_compatible:
                             continue
 
-                        # Build traceability ID — use OFD path when available
-                        filament_db_id = None
-                        if ofd_index:
-                            filament_db_id = ofd_index.resolve_path(
-                                fp.vendor,
-                                filament_type,
-                                filament_name,
-                                slicer_val,
-                                filament_id=fp.filament_id,
-                            )
+                        _add_filament_output(
+                            compatible_filaments=compatible_filaments,
+                            profile=fp,
+                            profile_data=fp_data,
+                            filament_name=filament_name,
+                            filament_type=filament_type,
+                            model_name=model_name,
+                            variant=variant,
+                            slicer_val=slicer_val,
+                            generic_profiles=_generic_profiles,
+                            ofd_index=ofd_index,
+                        )
 
-                        # Non-generic profiles without OFD linkage are skipped —
-                        # without a known brand they'd be indistinguishable from
-                        # generic profiles in the query layer.
-                        is_generic_name = filament_name.lower().startswith("generic")
-                        if ofd_index and not filament_db_id and not is_generic_name:
-                            continue
-
-                        # Add to output, grouping by filament name
-                        if filament_name not in compatible_filaments:
-                            compatible_filaments[filament_name] = []
-
-                        # Find or create entry with matching data
-                        existing_entry = None
-                        for entry in compatible_filaments[filament_name]:
-                            if entry["data"] == fp_data:
-                                existing_entry = entry
-                                break
-
-                        if existing_entry is None:
-                            entry = {
-                                "name": filament_name,
-                                "compatible_printers": {model_name: [variant]},
-                                "data": fp_data,
-                            }
-                            if filament_db_id:
-                                entry["filament_db_ids"] = [filament_db_id]
-                            # Add generic fallback slicer ID — pick the most
-                            # specific generic whose name keywords appear in the
-                            # filament name (e.g. "PLA Silk" matches
-                            # "Generic PLA Silk" before "Generic PLA").
-                            gid = resolve_generic_id(
-                                _generic_profiles.get(slicer_val, []),
-                                filament_type,
-                                filament_name,
-                            )
-                            if gid:
-                                entry["generic_id"] = gid
-                            compatible_filaments[filament_name].append(entry)
-                        else:
-                            cp = existing_entry["compatible_printers"]
-                            if model_name not in cp:
-                                cp[model_name] = []
-                            if variant not in cp[model_name]:
-                                cp[model_name].append(variant)
-                            if (
-                                filament_db_id
-                                and filament_db_id
-                                not in existing_entry.get("filament_db_ids", [])
-                            ):
-                                existing_entry.setdefault("filament_db_ids", []).append(
-                                    filament_db_id
-                                )
+                    # Shared Orca library @System filament presets are material
+                    # presets, not printer-vendor presets. They can be used on
+                    # any compatible printer and the old pipeline exposed them
+                    # cross-vendor through its OFD template fallback.
+                    for fp in _global_templates.get(slicer_val, []):
+                        fp_data = _evaluate_stable(fp)
+                        filament_name = fp_data.get("name", fp.name)
+                        filament_type = fp_data.get("filament_type", "")
+                        if isinstance(filament_type, list):
+                            filament_type = filament_type[0] if filament_type else ""
+                        _add_filament_output(
+                            compatible_filaments=compatible_filaments,
+                            profile=fp,
+                            profile_data=fp_data,
+                            filament_name=filament_name,
+                            filament_type=filament_type,
+                            model_name=model_name,
+                            variant=variant,
+                            slicer_val=slicer_val,
+                            generic_profiles=_generic_profiles,
+                            ofd_index=ofd_index,
+                        )
 
             # Flatten into output
             if compatible_filaments:
@@ -423,6 +456,245 @@ def map_filament_profiles(
                 output.setdefault(model_id, {})[slicer_val] = flat
 
     return output
+
+
+def _variant_display_model_names(model_name: str) -> list[str]:
+    """Return known display-name aliases used by Prusa-family machine profiles."""
+    names = [model_name]
+
+    normalized = model_name.replace("&&", "&")
+    if normalized != model_name:
+        names.append(normalized)
+
+    core_one = model_name.replace(" && CORE One+", "")
+    if core_one != model_name:
+        names.append(core_one)
+
+    size_suffix = re.sub(r" (\d+)mm$", r"-\1", model_name)
+    if size_suffix != model_name:
+        names.append(size_suffix)
+
+    return list(dict.fromkeys(names))
+
+
+def _variant_matches_item(variant: str, item: dict[str, Any]) -> bool:
+    """Check whether a variant lookup item represents the requested nozzle."""
+    name_variant = _parse_variant_from_name(str(item.get("name", "")))
+    if name_variant is not None:
+        return _same_variant(name_variant, variant)
+
+    data = item.get("data", {})
+    item_variant = data.get("printer_variant")
+    if isinstance(item_variant, str) and _same_variant(item_variant, variant):
+        return True
+
+    nozzle = data.get("nozzle_diameter")
+    if isinstance(nozzle, list):
+        nozzle = nozzle[0] if nozzle else None
+    if isinstance(nozzle, str):
+        nozzle = re.split("[;,]", nozzle)[0].strip()
+    if nozzle is not None and _same_variant(str(nozzle), variant):
+        return True
+
+    return False
+
+
+def _same_variant(left: str, right: str) -> bool:
+    if left == right:
+        return True
+    try:
+        return float(left.removeprefix("HF")) == float(right.removeprefix("HF"))
+    except ValueError:
+        return False
+
+
+def _find_variant_lookup(
+    mm_data: dict[str, Any],
+    fallback_name: str,
+    variant: str,
+    variant_lookup: dict[str, dict[str, Any]],
+) -> dict[str, Any] | None:
+    """Find the concrete machine profile for a machine_model variant.
+
+    Prusa machine models list human-facing variants, while concrete machine
+    profiles are keyed by internal ``printer_model`` values such as ``MK30.4``.
+    Orca/Bambu also use ``model_id`` in some places, and some vendors only match
+    by display-name patterns.
+    """
+    model_name = str(mm_data.get("name") or fallback_name)
+
+    lookup_keys = [model_name + variant]
+    for key_name in ("model_id", "printer_model"):
+        value = mm_data.get(key_name)
+        if isinstance(value, str) and value:
+            lookup_keys.append(value + variant)
+
+    for lookup_key in lookup_keys:
+        lookup = variant_lookup.get(lookup_key)
+        if lookup is not None:
+            return lookup
+
+    display_model_names = _variant_display_model_names(model_name)
+    family_name = mm_data.get("family")
+    if isinstance(family_name, str) and family_name:
+        display_model_names.extend(_variant_display_model_names(family_name))
+        display_model_names = list(dict.fromkeys(display_model_names))
+
+    display_names = []
+    for display_model_name in display_model_names:
+        display_names.extend(
+            [
+                f"{display_model_name} {variant} nozzle",
+                f"{display_model_name} {variant} Nozzle",
+                f"{display_model_name} {variant}mm nozzle",
+                f"{display_model_name} {variant}Nozzle",
+                f"{display_model_name} ({variant} mm nozzle)",
+                f"{display_model_name} ({variant}mm nozzle)",
+            ]
+        )
+        display_names.append(display_model_name)
+
+    display_names_lower = {display_name.lower() for display_name in display_names}
+    for item in variant_lookup.values():
+        if item["name"].lower() in display_names_lower and _variant_matches_item(
+            variant, item
+        ):
+            return item
+
+    compact_display_names = {
+        display_name.replace(" ", "").lower() for display_name in display_names
+    }
+    compact_prefix_matches = []
+    for item in variant_lookup.values():
+        compact_item_name = item["name"].replace(" ", "").lower()
+        if compact_item_name in compact_display_names and _variant_matches_item(
+            variant, item
+        ):
+            return item
+        if any(compact_item_name.startswith(name) for name in compact_display_names):
+            if _variant_matches_item(variant, item):
+                compact_prefix_matches.append(item)
+    compact_prefix_matches = list(
+        {item["name"]: item for item in compact_prefix_matches}.values()
+    )
+    if len(compact_prefix_matches) == 1:
+        return compact_prefix_matches[0]
+    preferred_prefix_matches = [
+        item
+        for item in compact_prefix_matches
+        if "+m4hotend" in item["name"].replace(" ", "").lower()
+    ]
+    if len(preferred_prefix_matches) == 1:
+        return preferred_prefix_matches[0]
+
+    # Prusa machine models expose the internal printer family (MK3, MINIIS,
+    # MK4IS, ...), while concrete printer profiles are keyed by that family plus
+    # nozzle variant. Keep this last so MMU/multi-tool display-name matches win
+    # over their single-extruder family fallback.
+    family = mm_data.get("family")
+    if isinstance(family, str) and family:
+        return variant_lookup.get(family + variant)
+
+    return None
+
+
+def _compat_matches_printer(
+    compat: list[str], printer_name: str, model_name: str, variant: str
+) -> bool:
+    """Check direct, model-level, and named-variant compatibility."""
+    if printer_name in compat or model_name in compat:
+        return True
+    variant_prefix = f"{model_name} {variant}".strip()
+    return any(item.startswith(variant_prefix) for item in compat)
+
+
+def _global_filament_templates(
+    index: ProfileIndex, slicer: SlicerType
+) -> list[StoredProfile]:
+    """Return cross-vendor filament library templates for a slicer."""
+    if slicer != SlicerType.ORCASLICER:
+        return []
+
+    templates: list[StoredProfile] = []
+    for profile in index.find_by_type(
+        slicer, ProfileType.FILAMENT, "OrcaFilamentLibrary"
+    ):
+        data = _evaluate_stable(profile)
+        name = data.get("name", profile.name)
+        if not isinstance(name, str) or not name.endswith("@System"):
+            continue
+        compat = data.get("compatible_printers")
+        if compat not in (None, [], ""):
+            continue
+        templates.append(profile)
+    return templates
+
+
+def _add_filament_output(
+    *,
+    compatible_filaments: dict[str, list[dict]],
+    profile: StoredProfile,
+    profile_data: dict[str, Any],
+    filament_name: str,
+    filament_type: str,
+    model_name: str,
+    variant: str,
+    slicer_val: str,
+    generic_profiles: dict[str, list[tuple[str, str, str]]],
+    ofd_index: Any | None,
+) -> None:
+    """Add one filament profile to the mapper output, merging variants."""
+    filament_db_id = None
+    if ofd_index:
+        filament_db_id = ofd_index.resolve_path(
+            profile.vendor,
+            filament_type,
+            filament_name,
+            slicer_val,
+            filament_id=profile.filament_id,
+        )
+
+    is_generic_name = filament_name.lower().startswith("generic")
+    is_system_template = filament_name.endswith("@System")
+    if ofd_index and not filament_db_id and not (is_generic_name or is_system_template):
+        return
+
+    if filament_name not in compatible_filaments:
+        compatible_filaments[filament_name] = []
+
+    existing_entry = None
+    for entry in compatible_filaments[filament_name]:
+        if entry["data"] == profile_data:
+            existing_entry = entry
+            break
+
+    if existing_entry is None:
+        entry = {
+            "name": filament_name,
+            "compatible_printers": {model_name: [variant]},
+            "data": profile_data,
+        }
+        if filament_db_id:
+            entry["filament_db_ids"] = [filament_db_id]
+        gid = resolve_generic_id(
+            generic_profiles.get(slicer_val, []),
+            filament_type,
+            filament_name,
+        )
+        if gid:
+            entry["generic_id"] = gid
+        compatible_filaments[filament_name].append(entry)
+        return
+
+    cp = existing_entry["compatible_printers"]
+    if model_name not in cp:
+        cp[model_name] = []
+    if variant not in cp[model_name]:
+        cp[model_name].append(variant)
+    if filament_db_id and filament_db_id not in existing_entry.get(
+        "filament_db_ids", []
+    ):
+        existing_entry.setdefault("filament_db_ids", []).append(filament_db_id)
 
 
 def map_print_profiles(
@@ -471,16 +743,9 @@ def map_print_profiles(
                 print_profiles = index.find_by_type(slicer, ProfileType.PRINT, vendor)
 
                 for variant in variants:
-                    lookup_key = (mm_data.get("name", name)) + variant
-                    lookup = variant_lookup.get(lookup_key)
-                    if lookup is None and "model_id" in mm_data:
-                        lookup = variant_lookup.get(mm_data["model_id"] + variant)
-                    if lookup is None:
-                        nozzle_name = f"{mm_data.get('name', name)} {variant} nozzle"
-                        for item in variant_lookup.values():
-                            if item["name"] == nozzle_name:
-                                lookup = item
-                                break
+                    lookup = _find_variant_lookup(
+                        mm_data, name, variant, variant_lookup
+                    )
                     if lookup is None:
                         continue
 
@@ -511,7 +776,9 @@ def map_print_profiles(
                             ]
 
                         is_compatible = False
-                        if printer_name in compat:
+                        if _compat_matches_printer(
+                            compat, printer_name, model_name, variant
+                        ):
                             is_compatible = True
                         else:
                             condition = pp_data.get("compatible_printers_condition")
@@ -559,7 +826,7 @@ def export_output(
 
     Structure:
         output_dir/models/{printer_id}/{slicer}/
-            machine_profiles.json  (sha256: refs for resources)
+            machine_profiles.json  (resource filenames; resolved via resources.json)
             filament_profiles.json
             print_profiles.json
         output_dir/brands/{slicer}/{vendor}/
@@ -595,11 +862,11 @@ def export_output(
 
                 sub_data: dict[str, Any] = {"vendor": vendor, "machine_model": mm_data}
 
-                # Resolve resource assets and copy to output
-                _copy_assets(mm_data, store, slicer, slicer_path)
+                # Keep /out small: resource files live under profiles/{slicer}/_resources
+                # and are resolved by the ecosystem importer using resources.json.
+                _canonicalize_resource_refs(mm_data, store, slicer)
 
                 # Build variants
-                model_name_key = mm_data.get("name", name)
                 nozzle_str = mm_data.get("nozzle_diameter", "")
                 if isinstance(nozzle_str, list):
                     nozzle_str = ";".join(str(n) for n in nozzle_str)
@@ -613,16 +880,9 @@ def export_output(
                 sub_data["variants"] = {}
 
                 for variant in variants:
-                    lookup_key = model_name_key + variant
-                    lookup = variant_lookup.get(lookup_key)
-                    if lookup is None and "model_id" in mm_data:
-                        lookup = variant_lookup.get(mm_data["model_id"] + variant)
-                    if lookup is None:
-                        nozzle_name = f"{model_name_key} {variant} nozzle"
-                        for item in variant_lookup.values():
-                            if item["name"] == nozzle_name:
-                                lookup = item
-                                break
+                    lookup = _find_variant_lookup(
+                        mm_data, name, variant, variant_lookup
+                    )
                     if lookup is not None:
                         sub_data["variants"][variant] = lookup
 
@@ -659,27 +919,32 @@ def export_output(
     _write_resource_manifest(store, output_dir)
 
 
-def _copy_assets(
-    mm_data: dict, store: ProfileStore, slicer: SlicerType, dest_dir: Path
+def _canonicalize_resource_refs(
+    data: dict[str, Any], store: ProfileStore, slicer: SlicerType
 ) -> None:
-    """Inject cover/thumbnail sha256 refs for name-pattern resources.
-
-    Resource setting keys (bed_model, bed_texture, etc.) keep their
-    sha256: references — no files are copied to dest_dir.
-    """
+    """Ensure /out resource references are content-addressed sha256 refs."""
     resource_store_dir = store.root / slicer.value / "_resources"
     if not resource_store_dir.exists():
         return
     rs = ResourceStore(resource_store_dir)
 
-    # Cover/thumbnail images discovered by name pattern
-    name = mm_data.get("name", "")
-    for suffix in ("_cover.png", "_thumbnail.png"):
-        ref_name = f"{name}{suffix}"
-        for hash_hex, meta in rs._manifest.items():
-            if meta.get("filename") == ref_name:
-                mm_data[suffix.replace(".", "_").lstrip("_")] = f"sha256:{hash_hex}"
-                break
+    for key in ("bed_model", "bed_texture", "thumbnail", "hotend_model"):
+        value = data.get(key)
+        if not isinstance(value, str) or not value:
+            continue
+        if value.startswith("sha256:"):
+            if rs.get_path(value[7:]):
+                continue
+            data.pop(key, None)
+            continue
+
+        hashes = rs.find_hashes_by_filename(value)
+        if hashes:
+            data[key] = f"sha256:{hashes[0]}"
+        else:
+            # Do not emit resource references the importer cannot resolve from
+            # the cloned profiles repository.
+            data.pop(key, None)
 
 
 def _export_generic_filaments(
@@ -698,8 +963,12 @@ def _export_generic_filaments(
                 vendor = pk.split("/", 1)[0]
                 vendors_per_slicer.setdefault(slicer_val, set()).add(vendor)
 
+    model_counts = _build_machine_profile_counts(index)
+
     for slicer_val, vendors in vendors_per_slicer.items():
         slicer = SlicerType(slicer_val)
+        _export_global_generic_filaments(index, slicer, brands_dir, ofd_index)
+
         for vendor in vendors:
             filament_profiles = index.find_by_type(slicer, ProfileType.FILAMENT, vendor)
             if not filament_profiles:
@@ -708,7 +977,7 @@ def _export_generic_filaments(
             generic_data = []
             for fp in filament_profiles:
                 fp_data = _evaluate_stable(fp)
-                if not is_profile_model_specific(slicer, vendor, fp):
+                if not is_profile_model_specific(slicer, vendor, fp, model_counts):
                     name = fp_data.get("name") or fp_data.get("filament_settings_id")
                     if name:
                         filament_type = fp_data.get("filament_type", "")
@@ -743,6 +1012,73 @@ def _export_generic_filaments(
                 _write_json(out_path / "generic_filament_profiles.json", generic_data)
 
 
+def _build_machine_profile_counts(
+    index: ProfileIndex,
+) -> dict[str, dict[str, int]]:
+    """Count concrete machine/variant profiles per slicer vendor.
+
+    Bambu/Orca-style filament profile compatibility lists concrete printer
+    profiles (usually one per nozzle), so model-specific detection must compare
+    against machine profile counts rather than machine_model counts.
+    """
+    counts: dict[str, dict[str, int]] = {}
+    for slicer in SlicerType:
+        for profile in index.find_by_type(slicer, ProfileType.MACHINE):
+            counts.setdefault(slicer.value, {}).setdefault(profile.vendor, 0)
+            counts[slicer.value][profile.vendor] += 1
+    return counts
+
+
+def _export_global_generic_filaments(
+    index: ProfileIndex,
+    slicer: SlicerType,
+    brands_dir: Path,
+    ofd_index: Any | None = None,
+) -> None:
+    """Export slicer-wide generic filament library profiles.
+
+    This restores the legacy ``out/brands/{slicer}/generic_filament_profiles.json``
+    file consumed by the ecosystem importer.
+    """
+    generic_data: dict[str, dict[str, Any]] = {}
+    for fp in index.find_by_type(slicer, ProfileType.FILAMENT):
+        fp_data = _evaluate_stable(fp)
+        name = fp_data.get("name") or fp_data.get("filament_settings_id") or fp.name
+        if not isinstance(name, str) or not name:
+            continue
+        if not name.lower().startswith("generic") or " @" in name:
+            continue
+
+        filament_vendor = fp_data.get("filament_vendor")
+        if isinstance(filament_vendor, list):
+            filament_vendor = filament_vendor[0] if filament_vendor else ""
+        if filament_vendor != "Generic":
+            continue
+
+        entry = {"name": name, "data": fp_data}
+        if ofd_index:
+            filament_type = fp_data.get("filament_type", "")
+            if isinstance(filament_type, list):
+                filament_type = filament_type[0] if filament_type else ""
+            filament_db_id = ofd_index.resolve_path(
+                fp.vendor,
+                filament_type,
+                name,
+                slicer.value,
+                filament_id=fp.filament_id,
+            )
+            if filament_db_id:
+                entry["filament_db_ids"] = [filament_db_id]
+
+        generic_data[name] = entry
+
+    if generic_data:
+        _write_json(
+            brands_dir / slicer.value / "generic_filament_profiles.json",
+            list(generic_data.values()),
+        )
+
+
 def _all_vendors(index: ProfileIndex, slicer: SlicerType) -> set[str]:
     """Return the set of all vendors that have filament profiles for a slicer."""
     vendors: set[str] = set()
@@ -761,11 +1097,13 @@ def _write_json(path: Path, data: Any) -> None:
 
 
 def _write_resource_manifest(store: ProfileStore, output_dir: Path) -> None:
-    """Write a unified resource manifest mapping sha256 refs to repo-relative paths.
+    """Write a manifest for resolving sha256 resource refs from /out.
 
-    Generates ``out/resources.json`` so downstream consumers (e.g. PHP importer)
-    can resolve ``sha256:{hash}`` refs to the actual file in the profiles repo
-    without requiring resource files to be copied into the output directory.
+    Shape:
+        {"sha256:{hash}": {path, filename, size, type}}
+
+    The path is repo-relative, so the ecosystem importer can resolve assets from
+    the cloned profiles repository without duplicating them under /out.
     """
     manifest: dict[str, dict[str, Any]] = {}
 
@@ -777,18 +1115,18 @@ def _write_resource_manifest(store: ProfileStore, output_dir: Path) -> None:
         for hash_hex, meta in rs._manifest.items():
             ref_key = f"sha256:{hash_hex}"
             if ref_key in manifest:
-                continue  # already recorded from another slicer
+                continue
             suffix = f".{meta['type']}" if meta.get("type") else ""
-            rel_path = f"profiles/{slicer.value}/_resources/{hash_hex}{suffix}"
             manifest[ref_key] = {
-                "path": rel_path,
+                "path": f"profiles/{slicer.value}/_resources/{hash_hex}{suffix}",
                 "filename": meta.get("filename", ""),
+                "source_path": meta.get("source_path", ""),
                 "size": meta.get("size", 0),
                 "type": meta.get("type", ""),
             }
 
     _write_json(output_dir / "resources.json", manifest)
-    logger.info("Wrote resources.json with %d entries", len(manifest))
+    logger.info("Wrote resources.json with %d resources", len(manifest))
 
 
 def run_mapping_pipeline(

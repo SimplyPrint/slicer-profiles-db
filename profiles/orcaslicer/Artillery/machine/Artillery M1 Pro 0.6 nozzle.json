@@ -4,7 +4,7 @@
   "name": "Artillery M1 Pro 0.6 nozzle",
   "vendor": "Artillery",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.3.2",
   "filament_id": null,
   "setting_id": null,
   "renamed_from": null,
@@ -134,7 +134,8 @@
       "2.3.1": "0"
     },
     "host_type": {
-      "2.3.1": "octoprint"
+      "2.3.1": "octoprint",
+      "2.3.2": null
     },
     "layer_change_gcode": {
       "2.3.1": "G92 E0\n{if layer_num==2}\n\n;filter_fan\nM106 P3 S{during_print_exhaust_fan_speed[0]*255/100.0};\n\n;auxiliary_fan\nM106 P2 S{additional_cooling_fan_speed[0]*255/100.0}\n\n{endif}\n\n\n"
