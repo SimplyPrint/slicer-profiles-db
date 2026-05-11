@@ -13,6 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Checkout Open Filament Database
+        uses: actions/checkout@v4
+        with:
+          repository: OpenFilamentCollective/open-filament-database
+          path: open-filament-database
+          persist-credentials: false
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
@@ -27,7 +34,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Map profiles
-        run: uv run slicer-profiles-db map
+        run: uv run slicer-profiles-db map --ofd-path open-filament-database/data
         env:
           SP_API_URL: ${{ secrets.SP_PRINTER_DB_MODELS_URL }}
 
