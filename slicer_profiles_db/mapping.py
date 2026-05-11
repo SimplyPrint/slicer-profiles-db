@@ -425,10 +425,10 @@ def map_filament_profiles(
                             ofd_index=ofd_index,
                         )
 
-                    # Shared Orca library @System filament presets are material
-                    # presets, not printer-vendor presets. They can be used on
-                    # any compatible printer and the old pipeline exposed them
-                    # cross-vendor through its OFD template fallback.
+                    # Shared Orca library generic @System filament presets are
+                    # material presets, not printer-vendor presets. Brand-specific
+                    # @System presets must not be attached globally; otherwise
+                    # every printer gets unrelated filament brands like AliZ/NIT.
                     for fp in _global_templates.get(slicer_val, []):
                         fp_data = _evaluate_stable(fp)
                         filament_name = fp_data.get("name", fp.name)
@@ -611,7 +611,7 @@ def _compat_matches_printer(
 def _global_filament_templates(
     index: ProfileIndex, slicer: SlicerType
 ) -> list[StoredProfile]:
-    """Return cross-vendor filament library templates for a slicer."""
+    """Return cross-vendor generic filament library templates for a slicer."""
     if slicer != SlicerType.ORCASLICER:
         return []
 
@@ -623,6 +623,14 @@ def _global_filament_templates(
         name = data.get("name", profile.name)
         if not isinstance(name, str) or not name.endswith("@System"):
             continue
+
+        filament_vendor = data.get("filament_vendor")
+        if isinstance(filament_vendor, list):
+            filament_vendor = filament_vendor[0] if filament_vendor else ""
+
+        if filament_vendor != "Generic" and not name.lower().startswith("generic"):
+            continue
+
         compat = data.get("compatible_printers")
         if compat not in (None, [], ""):
             continue
@@ -655,8 +663,7 @@ def _add_filament_output(
         )
 
     is_generic_name = filament_name.lower().startswith("generic")
-    is_system_template = filament_name.endswith("@System")
-    if ofd_index and not filament_db_id and not (is_generic_name or is_system_template):
+    if ofd_index and not filament_db_id and not is_generic_name:
         return
 
     if filament_name not in compatible_filaments:
