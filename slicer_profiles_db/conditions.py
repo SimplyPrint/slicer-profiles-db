@@ -14,7 +14,6 @@ def evaluate_printer_condition(
     condition: str,
     printer_data: dict[str, Any],
     slicer: str = "bambustudio",
-    defaults: Optional[dict[str, Any]] = None,
 ) -> bool:
     """
     Evaluate a slicer compatible_printers_condition expression.
@@ -26,19 +25,12 @@ def evaluate_printer_condition(
         condition: The condition expression string.
         printer_data: Printer configuration data to evaluate against.
         slicer: Slicer type string (affects value parsing).
-        defaults: Optional default printer configuration to use as base.
 
     Returns:
         True if the condition is satisfied, False otherwise.
     """
     if not condition or not condition.strip():
         return False
-
-    # Merge defaults with provided printer data
-    merged_data = {}
-    if defaults:
-        merged_data.update(defaults)
-    merged_data.update(printer_data)
 
     var_re = re.compile(r"(?P<key>\w+)(?:\[(?P<index>[0-9]+)])?")
 
@@ -48,8 +40,8 @@ def evaluate_printer_condition(
             return None
 
         groups = match.groupdict()
-        if groups["key"] in merged_data:
-            value = merged_data[groups["key"]]
+        if groups["key"] in printer_data:
+            value = printer_data[groups["key"]]
         elif key == "num_extruders":
             extruders_count = get_value_from_config("extruders_count")
             if extruders_count is not None:

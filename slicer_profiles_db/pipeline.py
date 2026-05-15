@@ -4,7 +4,6 @@ Pipeline orchestrator: download → squash → parse → store.
 High-level interface that chains all the slicer profile processing steps.
 """
 
-import json
 import logging
 import shutil
 import tempfile
@@ -29,7 +28,6 @@ from .squash import (
     iter_ini_bundle_versions,
     split_prusaslicer_bundle,
 )
-from .defaults import fetch_slicer_defaults
 from .resources import (
     ResourceStore,
     collect_resources,
@@ -108,7 +106,6 @@ class ProfilePipeline:
         slicer: SlicerType,
         version: str = "latest",
         profile_types: list[ProfileType] | None = None,
-        fetch_defaults: bool = False,
         force: bool = False,
     ) -> IngestionReport:
         """
@@ -118,7 +115,6 @@ class ProfilePipeline:
             slicer: Which slicer to process.
             version: Version tag string, or "latest" to use the most recent tag.
             profile_types: If set, only process these profile types.
-            fetch_defaults: If True, also fetch and store slicer defaults.
 
         Returns:
             IngestionReport with details of what was added/changed/removed.
@@ -162,7 +158,7 @@ class ProfilePipeline:
 
         try:
             return self._run_pipeline(
-                slicer, config, version, work, profile_types, fetch_defaults, is_nightly
+                slicer, config, version, work, profile_types, is_nightly
             )
         finally:
             if created_temp and work.exists():
@@ -175,7 +171,6 @@ class ProfilePipeline:
         version: str,
         work: Path,
         profile_types: list[ProfileType] | None,
-        fetch_defaults: bool,
         is_nightly: bool,
     ) -> IngestionReport:
         """Execute the pipeline steps (separated for clean temp dir cleanup)."""
@@ -246,16 +241,6 @@ class ProfilePipeline:
         # Step 9: Garbage-collect orphaned resources
         referenced = collect_referenced_hashes(self.store.root, slicer.value)
         resource_store.gc(referenced)
-
-        # Optional: fetch defaults
-        if fetch_defaults:
-            defaults = fetch_slicer_defaults(slicer)
-            if defaults:
-                defaults_dir = self.store.root / slicer.value
-                defaults_dir.mkdir(parents=True, exist_ok=True)
-                (defaults_dir / "defaults.json").write_text(
-                    json.dumps(defaults, indent=4), encoding="utf-8"
-                )
 
         return report
 

@@ -134,11 +134,6 @@ Environment variables:
         help="Overlay directory path (default: $SLICER_PROFILES_OVERLAY or 'overlay')",
     )
     pipeline_parser.add_argument(
-        "--fetch-defaults",
-        action="store_true",
-        help="Also fetch and store slicer defaults",
-    )
-    pipeline_parser.add_argument(
         "--all-versions",
         action="store_true",
         help="Ingest all available tagged versions (respects min_version)",
@@ -189,11 +184,6 @@ Environment variables:
         "--clean",
         action="store_true",
         help="Delete each slicer's profiles just before re-ingesting (clean run)",
-    )
-    pipeline_all_parser.add_argument(
-        "--fetch-defaults",
-        action="store_true",
-        help="Also fetch and store slicer defaults",
     )
     pipeline_all_parser.add_argument(
         "--all-versions",
@@ -555,7 +545,6 @@ def run_ingest(args: argparse.Namespace) -> int:
             slicer,
             version=args.version,
             profile_types=profile_types,
-            fetch_defaults=args.fetch_defaults,
             force=getattr(args, "force", False),
         )
 
@@ -636,7 +625,6 @@ def run_ingest_all(args: argparse.Namespace) -> int:
                 report = pipeline.ingest(
                     slicer,
                     version=args.version,
-                    fetch_defaults=getattr(args, "fetch_defaults", False),
                 )
                 reports.append(report)
         except Exception as e:
