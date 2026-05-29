@@ -7,183 +7,6 @@
             "family": "MyPrinter",
             "hotend_model": "",
             "machine_tech": "FFF",
-            "model_id": "my_rrf_01",
-            "name": "Generic RRF Printer",
-            "nozzle_diameter": "0.4",
-            "type": "machine_model"
-        },
-        "variants": {
-            "0.4": {
-                "data": {
-                    "auxiliary_fan": "0",
-                    "bed_exclude_area": [
-                        "0x0"
-                    ],
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "change_filament_gcode": "",
-                    "default_filament_profile": [
-                        "Generic PLA @System"
-                    ],
-                    "default_print_profile": "0.20mm Standard @MyRRF",
-                    "deretraction_speed": [
-                        "30"
-                    ],
-                    "extruder_clearance_height_to_lid": "140",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_radius": "65",
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "from": "system",
-                    "gcode_flavor": "reprapfirmware",
-                    "instantiation": "true",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "machine_end_gcode": "{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+1, max_print_height)} F720 ; Move print head up{endif}\nG1 X0 Y200 F3600 ; park\n{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+49, max_print_height)} F720 ; Move print head further up{endif}\nM221 S100 ; reset flow\nM900 K0 ; reset LA\nM104 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\nM84 ; disable motors",
-                    "machine_max_acceleration_e": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "5000",
-                        "5000"
-                    ],
-                    "machine_max_acceleration_travel": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "20000",
-                        "20000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "9",
-                        "9"
-                    ],
-                    "machine_max_jerk_y": [
-                        "9",
-                        "9"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.2",
-                        "0.4"
-                    ],
-                    "machine_max_speed_e": [
-                        "25",
-                        "25"
-                    ],
-                    "machine_max_speed_x": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_y": [
-                        "500",
-                        "200"
-                    ],
-                    "machine_max_speed_z": [
-                        "12",
-                        "12"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0",
-                        "0"
-                    ],
-                    "machine_pause_gcode": "M601",
-                    "machine_start_gcode": "; Prime Filament Sensor for Runout\nM581 P1 T2 S-1 R0\nM950 J1 C\"nil\" ; Input 1 e0 Filament Sensor \nM591 D0 P2 C\"e0stop\" S1 ; Filament Runout Sensor\n\nM83  ; extruder relative mode\n\nM140 S[first_layer_bed_temperature] ; set bed temp\nM109 S140 ; Set extruder temp 140C before bed level\nM190 S[first_layer_bed_temperature] ; wait for bed temp\n\n;G28 W\nG32 ; Levels Z Tilt and probes Z=0\nG29 S0 ; mesh bed leveling\nG1 X0 Y0 Z2 F2000\nM109 S[first_layer_temperature] ; wait for extruder temp\n\nG1 X10 Y-7 Z0.3 F1000.0 ; go outside print area\nG92 E0.0\nG1 Z0.2 E8 ; Purge Bubble\nG1 X60.0 E9.0  F1000.0 ; intro line\nG1 X100.0 E12.5  F1000.0 ; intro line\nG92 E0.0",
-                    "max_layer_height": [
-                        "0.32"
-                    ],
-                    "min_layer_height": [
-                        "0.08"
-                    ],
-                    "name": "MyRRF 0.4 nozzle",
-                    "nozzle_diameter": [
-                        "0.4"
-                    ],
-                    "nozzle_type": "undefine",
-                    "printable_area": [
-                        "0x0",
-                        "250x0",
-                        "250x250",
-                        "0x250"
-                    ],
-                    "printable_height": "250",
-                    "printer_model": "Generic RRF Printer",
-                    "printer_settings_id": "",
-                    "printer_technology": "FFF",
-                    "printer_variant": "0.4",
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_length_toolchange": [
-                        "2"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.8"
-                    ],
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retraction_speed": [
-                        "30"
-                    ],
-                    "scan_first_layer": "0",
-                    "setting_id": "GM003",
-                    "silent_mode": "0",
-                    "single_extruder_multi_material": "1",
-                    "type": "machine",
-                    "wipe": [
-                        "1"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ],
-                    "z_hop_types": "Normal Lift"
-                },
-                "name": "MyRRF 0.4 nozzle"
-            }
-        },
-        "vendor": "Custom"
-    },
-    {
-        "machine_model": {
-            "bed_model": "",
-            "bed_texture": "sha256:093d33cee2003307456a7b7b18f4a7522f4b9a68ef80256218dd0997079860fd",
-            "default_materials": "Generic ABS @System;Generic PLA @System;Generic PLA-CF @System;Generic PETG @System;Generic TPU @System;Generic ASA @System;Generic PC @System;Generic PVA @System;Generic PA @System;Generic PA-CF @System",
-            "family": "MyPrinter",
-            "hotend_model": "",
-            "machine_tech": "FFF",
             "model_id": "my_klipper_01",
             "name": "Generic Klipper Printer",
             "nozzle_diameter": "0.4;0.2;0.6;0.8",
@@ -829,6 +652,330 @@
                     "z_hop_types": "Normal Lift"
                 },
                 "name": "MyKlipper 0.8 nozzle"
+            }
+        },
+        "vendor": "Custom"
+    },
+    {
+        "machine_model": {
+            "bed_model": "",
+            "bed_texture": "sha256:093d33cee2003307456a7b7b18f4a7522f4b9a68ef80256218dd0997079860fd",
+            "default_materials": "Generic ABS @System;Generic PLA @System;Generic PLA-CF @System;Generic PETG @System;Generic TPU @System;Generic ASA @System;Generic PC @System;Generic PVA @System;Generic PA @System;Generic PA-CF @System",
+            "family": "MyPrinter",
+            "hotend_model": "",
+            "machine_tech": "FFF",
+            "model_id": "my_rrf_01",
+            "name": "Generic RRF Printer",
+            "nozzle_diameter": "0.4",
+            "type": "machine_model"
+        },
+        "variants": {
+            "0.4": {
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "Generic PLA @System"
+                    ],
+                    "default_print_profile": "0.20mm Standard @MyRRF",
+                    "deretraction_speed": [
+                        "30"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_radius": "65",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "reprapfirmware",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+1, max_print_height)} F720 ; Move print head up{endif}\nG1 X0 Y200 F3600 ; park\n{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+49, max_print_height)} F720 ; Move print head further up{endif}\nM221 S100 ; reset flow\nM900 K0 ; reset LA\nM104 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\nM84 ; disable motors",
+                    "machine_max_acceleration_e": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "20000",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "9",
+                        "9"
+                    ],
+                    "machine_max_jerk_y": [
+                        "9",
+                        "9"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.2",
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "25",
+                        "25"
+                    ],
+                    "machine_max_speed_x": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_y": [
+                        "500",
+                        "200"
+                    ],
+                    "machine_max_speed_z": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "M601",
+                    "machine_start_gcode": "; Prime Filament Sensor for Runout\nM581 P1 T2 S-1 R0\nM950 J1 C\"nil\" ; Input 1 e0 Filament Sensor \nM591 D0 P2 C\"e0stop\" S1 ; Filament Runout Sensor\n\nM83  ; extruder relative mode\n\nM140 S[first_layer_bed_temperature] ; set bed temp\nM109 S140 ; Set extruder temp 140C before bed level\nM190 S[first_layer_bed_temperature] ; wait for bed temp\n\n;G28 W\nG32 ; Levels Z Tilt and probes Z=0\nG29 S0 ; mesh bed leveling\nG1 X0 Y0 Z2 F2000\nM109 S[first_layer_temperature] ; wait for extruder temp\n\nG1 X10 Y-7 Z0.3 F1000.0 ; go outside print area\nG92 E0.0\nG1 Z0.2 E8 ; Purge Bubble\nG1 X60.0 E9.0  F1000.0 ; intro line\nG1 X100.0 E12.5  F1000.0 ; intro line\nG92 E0.0",
+                    "max_layer_height": [
+                        "0.32"
+                    ],
+                    "min_layer_height": [
+                        "0.08"
+                    ],
+                    "name": "MyRRF 0.4 nozzle",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "0x0",
+                        "250x0",
+                        "250x250",
+                        "0x250"
+                    ],
+                    "printable_height": "250",
+                    "printer_model": "Generic RRF Printer",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "2"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.8"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "30"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM003",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "type": "machine",
+                    "wipe": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ],
+                    "z_hop_types": "Normal Lift"
+                },
+                "name": "MyRRF 0.4 nozzle"
+            }
+        },
+        "vendor": "Custom"
+    },
+    {
+        "machine_model": {
+            "bed_model": "",
+            "bed_texture": "sha256:093d33cee2003307456a7b7b18f4a7522f4b9a68ef80256218dd0997079860fd",
+            "default_materials": "Generic ABS @System;Generic PLA @System;Generic PLA-CF @System;Generic PETG @System;Generic TPU @System;Generic ASA @System;Generic PC @System;Generic PVA @System;Generic PA @System;Generic PA-CF @System",
+            "family": "MyPrinter",
+            "hotend_model": "",
+            "machine_tech": "FFF",
+            "model_id": "my_marlin_01",
+            "name": "Generic Marlin Printer",
+            "nozzle_diameter": "0.4",
+            "type": "machine_model"
+        },
+        "variants": {
+            "0.4": {
+                "data": {
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "change_filament_gcode": "",
+                    "default_print_profile": "",
+                    "deretraction_speed": [
+                        "35"
+                    ],
+                    "extruder_clearance_height_to_lid": "140",
+                    "extruder_clearance_height_to_rod": "36",
+                    "extruder_clearance_radius": "65",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "from": "system",
+                    "gcode_flavor": "marlin",
+                    "instantiation": "true",
+                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
+                    "machine_end_gcode": "G1 E-1.0 F2100 ; retract\nG92 E0.0\nG1{if max_layer_z < max_print_height} Z{z_offset+min(max_layer_z+30, max_print_height)}{endif} E-34.0 F720 ; move print head up & retract filament\nG4 ; wait\nM104 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\nG1 X0 Y105 F3000 ; park print head\nM84 ; disable motors",
+                    "machine_max_acceleration_e": [
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "10000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "1000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "10000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "10000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500"
+                    ],
+                    "machine_max_jerk_e": [
+                        "5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "8"
+                    ],
+                    "machine_max_jerk_y": [
+                        "8"
+                    ],
+                    "machine_max_jerk_z": [
+                        "0.4"
+                    ],
+                    "machine_max_speed_e": [
+                        "60"
+                    ],
+                    "machine_max_speed_x": [
+                        "500"
+                    ],
+                    "machine_max_speed_y": [
+                        "500"
+                    ],
+                    "machine_max_speed_z": [
+                        "10"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0"
+                    ],
+                    "machine_pause_gcode": "M601",
+                    "machine_start_gcode": "G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]\nM104 S[first_layer_temperature] ; set extruder temp\nM140 S[first_layer_bed_temperature] ; set bed temp\nG28 ; home all\nG1 Y1.0 Z0.3 F1000 ; move print head up\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nM109 S[first_layer_temperature] ; wait for extruder temp\nG92 E0.0\n; initial load\nG1 X205.0 E19 F1000\nG1 Y1.6\nG1 X5.0 E19 F1000\nG92 E0.0\n; intro line\nG1 Y2.0 Z0.2 F1000\nG1 X65.0 E9.0 F1000\nG1 X105.0 E12.5 F1000\nG92 E0.0",
+                    "max_layer_height": [
+                        "0.32"
+                    ],
+                    "min_layer_height": [
+                        "0.08"
+                    ],
+                    "name": "MyMarlin 0.4 nozzle",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "printable_area": [
+                        "0x0",
+                        "250x0",
+                        "250x250",
+                        "0x250"
+                    ],
+                    "printable_height": "250",
+                    "printer_model": "Generic Marlin Printer",
+                    "printer_settings_id": "",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "1"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "0.9"
+                    ],
+                    "retraction_minimum_travel": [
+                        "1"
+                    ],
+                    "retraction_speed": [
+                        "45"
+                    ],
+                    "setting_id": "GM001",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "type": "machine",
+                    "wipe": [
+                        "0"
+                    ],
+                    "z_hop": [
+                        "0.4"
+                    ]
+                },
+                "name": "MyMarlin 0.4 nozzle"
             }
         },
         "vendor": "Custom"
@@ -1942,153 +2089,6 @@
                     ]
                 },
                 "name": "MyToolChanger 0.8 nozzle"
-            }
-        },
-        "vendor": "Custom"
-    },
-    {
-        "machine_model": {
-            "bed_model": "",
-            "bed_texture": "sha256:093d33cee2003307456a7b7b18f4a7522f4b9a68ef80256218dd0997079860fd",
-            "default_materials": "Generic ABS @System;Generic PLA @System;Generic PLA-CF @System;Generic PETG @System;Generic TPU @System;Generic ASA @System;Generic PC @System;Generic PVA @System;Generic PA @System;Generic PA-CF @System",
-            "family": "MyPrinter",
-            "hotend_model": "",
-            "machine_tech": "FFF",
-            "model_id": "my_marlin_01",
-            "name": "Generic Marlin Printer",
-            "nozzle_diameter": "0.4",
-            "type": "machine_model"
-        },
-        "variants": {
-            "0.4": {
-                "data": {
-                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
-                    "change_filament_gcode": "",
-                    "default_print_profile": "",
-                    "deretraction_speed": [
-                        "35"
-                    ],
-                    "extruder_clearance_height_to_lid": "140",
-                    "extruder_clearance_height_to_rod": "36",
-                    "extruder_clearance_radius": "65",
-                    "extruder_colour": [
-                        "#FCE94F"
-                    ],
-                    "extruder_offset": [
-                        "0x0"
-                    ],
-                    "from": "system",
-                    "gcode_flavor": "marlin",
-                    "instantiation": "true",
-                    "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
-                    "machine_end_gcode": "G1 E-1.0 F2100 ; retract\nG92 E0.0\nG1{if max_layer_z < max_print_height} Z{z_offset+min(max_layer_z+30, max_print_height)}{endif} E-34.0 F720 ; move print head up & retract filament\nG4 ; wait\nM104 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\nG1 X0 Y105 F3000 ; park print head\nM84 ; disable motors",
-                    "machine_max_acceleration_e": [
-                        "5000"
-                    ],
-                    "machine_max_acceleration_extruding": [
-                        "10000"
-                    ],
-                    "machine_max_acceleration_retracting": [
-                        "1000"
-                    ],
-                    "machine_max_acceleration_x": [
-                        "10000"
-                    ],
-                    "machine_max_acceleration_y": [
-                        "10000"
-                    ],
-                    "machine_max_acceleration_z": [
-                        "500"
-                    ],
-                    "machine_max_jerk_e": [
-                        "5"
-                    ],
-                    "machine_max_jerk_x": [
-                        "8"
-                    ],
-                    "machine_max_jerk_y": [
-                        "8"
-                    ],
-                    "machine_max_jerk_z": [
-                        "0.4"
-                    ],
-                    "machine_max_speed_e": [
-                        "60"
-                    ],
-                    "machine_max_speed_x": [
-                        "500"
-                    ],
-                    "machine_max_speed_y": [
-                        "500"
-                    ],
-                    "machine_max_speed_z": [
-                        "10"
-                    ],
-                    "machine_min_extruding_rate": [
-                        "0"
-                    ],
-                    "machine_min_travel_rate": [
-                        "0"
-                    ],
-                    "machine_pause_gcode": "M601",
-                    "machine_start_gcode": "G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]\nM104 S[first_layer_temperature] ; set extruder temp\nM140 S[first_layer_bed_temperature] ; set bed temp\nG28 ; home all\nG1 Y1.0 Z0.3 F1000 ; move print head up\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nM109 S[first_layer_temperature] ; wait for extruder temp\nG92 E0.0\n; initial load\nG1 X205.0 E19 F1000\nG1 Y1.6\nG1 X5.0 E19 F1000\nG92 E0.0\n; intro line\nG1 Y2.0 Z0.2 F1000\nG1 X65.0 E9.0 F1000\nG1 X105.0 E12.5 F1000\nG92 E0.0",
-                    "max_layer_height": [
-                        "0.32"
-                    ],
-                    "min_layer_height": [
-                        "0.08"
-                    ],
-                    "name": "MyMarlin 0.4 nozzle",
-                    "nozzle_diameter": [
-                        "0.4"
-                    ],
-                    "printable_area": [
-                        "0x0",
-                        "250x0",
-                        "250x250",
-                        "0x250"
-                    ],
-                    "printable_height": "250",
-                    "printer_model": "Generic Marlin Printer",
-                    "printer_settings_id": "",
-                    "printer_technology": "FFF",
-                    "printer_variant": "0.4",
-                    "retract_before_wipe": [
-                        "70%"
-                    ],
-                    "retract_length_toolchange": [
-                        "1"
-                    ],
-                    "retract_restart_extra": [
-                        "0"
-                    ],
-                    "retract_restart_extra_toolchange": [
-                        "0"
-                    ],
-                    "retract_when_changing_layer": [
-                        "1"
-                    ],
-                    "retraction_length": [
-                        "0.9"
-                    ],
-                    "retraction_minimum_travel": [
-                        "1"
-                    ],
-                    "retraction_speed": [
-                        "45"
-                    ],
-                    "setting_id": "GM001",
-                    "silent_mode": "0",
-                    "single_extruder_multi_material": "1",
-                    "type": "machine",
-                    "wipe": [
-                        "0"
-                    ],
-                    "z_hop": [
-                        "0.4"
-                    ]
-                },
-                "name": "MyMarlin 0.4 nozzle"
             }
         },
         "vendor": "Custom"
