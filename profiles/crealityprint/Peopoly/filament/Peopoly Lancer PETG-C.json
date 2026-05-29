@@ -1,0 +1,288 @@
+{
+  "slicer": "crealityprint",
+  "profile_type": "filament",
+  "name": "Peopoly Lancer PETG-C",
+  "vendor": "Peopoly",
+  "first_seen": "7.1.0",
+  "last_seen": "7.1.0",
+  "filament_id": "GFL99",
+  "setting_id": "GFSL99",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "7.1.0": "filament"
+    },
+    "name": {
+      "7.1.0": "Peopoly Lancer PETG-C"
+    },
+    "from": {
+      "7.1.0": "system"
+    },
+    "instantiation": {
+      "7.1.0": "true"
+    },
+    "cool_plate_temp": {
+      "7.1.0": [
+        "60"
+      ]
+    },
+    "eng_plate_temp": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "hot_plate_temp": {
+      "7.1.0": [
+        "70"
+      ]
+    },
+    "cool_plate_temp_initial_layer": {
+      "7.1.0": [
+        "60"
+      ]
+    },
+    "eng_plate_temp_initial_layer": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "hot_plate_temp_initial_layer": {
+      "7.1.0": [
+        "70"
+      ]
+    },
+    "overhang_fan_threshold": {
+      "7.1.0": [
+        "95%"
+      ]
+    },
+    "overhang_fan_speed": {
+      "7.1.0": [
+        "100"
+      ]
+    },
+    "slow_down_for_layer_cooling": {
+      "7.1.0": [
+        "1"
+      ]
+    },
+    "close_fan_the_first_x_layers": {
+      "7.1.0": [
+        "3"
+      ]
+    },
+    "filament_end_gcode": {
+      "7.1.0": [
+        "; filament end gcode \n"
+      ]
+    },
+    "filament_flow_ratio": {
+      "7.1.0": [
+        "0.90"
+      ]
+    },
+    "reduce_fan_stop_start_freq": {
+      "7.1.0": [
+        "1"
+      ]
+    },
+    "fan_cooling_layer_time": {
+      "7.1.0": [
+        "20"
+      ]
+    },
+    "filament_cost": {
+      "7.1.0": [
+        "30"
+      ]
+    },
+    "filament_density": {
+      "7.1.0": [
+        "1.27"
+      ]
+    },
+    "filament_deretraction_speed": {
+      "7.1.0": [
+        "nil"
+      ]
+    },
+    "filament_diameter": {
+      "7.1.0": [
+        "1.75"
+      ]
+    },
+    "filament_max_volumetric_speed": {
+      "7.1.0": [
+        "32"
+      ]
+    },
+    "filament_minimal_purge_on_wipe_tower": {
+      "7.1.0": [
+        "15"
+      ]
+    },
+    "filament_retraction_minimum_travel": {
+      "7.1.0": [
+        "nil"
+      ]
+    },
+    "filament_retract_before_wipe": {
+      "7.1.0": [
+        "nil"
+      ]
+    },
+    "filament_retract_when_changing_layer": {
+      "7.1.0": [
+        "nil"
+      ]
+    },
+    "filament_retraction_length": {
+      "7.1.0": [
+        "nil"
+      ]
+    },
+    "filament_z_hop": {
+      "7.1.0": [
+        "nil"
+      ]
+    },
+    "filament_z_hop_types": {
+      "7.1.0": [
+        "nil"
+      ]
+    },
+    "filament_retract_restart_extra": {
+      "7.1.0": [
+        "nil"
+      ]
+    },
+    "filament_retraction_speed": {
+      "7.1.0": [
+        "nil"
+      ]
+    },
+    "filament_settings_id": {
+      "7.1.0": [
+        ""
+      ]
+    },
+    "filament_soluble": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "filament_type": {
+      "7.1.0": [
+        "PETG"
+      ]
+    },
+    "filament_vendor": {
+      "7.1.0": [
+        "Peopoly"
+      ]
+    },
+    "filament_wipe": {
+      "7.1.0": [
+        "nil"
+      ]
+    },
+    "filament_wipe_distance": {
+      "7.1.0": [
+        "nil"
+      ]
+    },
+    "bed_type": {
+      "7.1.0": [
+        "Cool Plate"
+      ]
+    },
+    "nozzle_temperature_initial_layer": {
+      "7.1.0": [
+        "235"
+      ]
+    },
+    "full_fan_speed_layer": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "fan_max_speed": {
+      "7.1.0": [
+        "40"
+      ]
+    },
+    "fan_min_speed": {
+      "7.1.0": [
+        "5"
+      ]
+    },
+    "slow_down_min_speed": {
+      "7.1.0": [
+        "10"
+      ]
+    },
+    "slow_down_layer_time": {
+      "7.1.0": [
+        "8"
+      ]
+    },
+    "filament_start_gcode": {
+      "7.1.0": [
+        "; filament start gcode\n{if (bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S180\n{elsif (bed_temperature[current_extruder] >50)||(bed_temperature_initial_layer[current_extruder] >50)}M106 P3 S255\n{endif};Prevent PLA from jamming\n\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
+      ]
+    },
+    "nozzle_temperature": {
+      "7.1.0": [
+        "225"
+      ]
+    },
+    "temperature_vitrification": {
+      "7.1.0": [
+        "70"
+      ]
+    },
+    "nozzle_temperature_range_high": {
+      "7.1.0": [
+        "280"
+      ]
+    },
+    "nozzle_temperature_range_low": {
+      "7.1.0": [
+        "220"
+      ]
+    },
+    "textured_plate_temp": {
+      "7.1.0": [
+        "80"
+      ]
+    },
+    "textured_plate_temp_initial_layer": {
+      "7.1.0": [
+        "80"
+      ]
+    },
+    "filament_id": {
+      "7.1.0": "GFL99"
+    },
+    "setting_id": {
+      "7.1.0": "GFSL99"
+    },
+    "enable_pressure_advance": {
+      "7.1.0": [
+        "1"
+      ]
+    },
+    "pressure_advance": {
+      "7.1.0": [
+        "0.04"
+      ]
+    },
+    "compatible_printers": {
+      "7.1.0": [
+        "Peopoly Magneto X 0.4 nozzle",
+        "Peopoly Magneto X 0.6 nozzle",
+        "Peopoly Magneto X 0.8 nozzle"
+      ]
+    }
+  }
+}

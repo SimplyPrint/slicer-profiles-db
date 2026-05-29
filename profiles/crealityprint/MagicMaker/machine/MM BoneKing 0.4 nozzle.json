@@ -1,0 +1,313 @@
+{
+  "slicer": "crealityprint",
+  "profile_type": "machine",
+  "name": "MM BoneKing 0.4 nozzle",
+  "vendor": "MagicMaker",
+  "first_seen": "7.1.0",
+  "last_seen": "7.1.0",
+  "filament_id": null,
+  "setting_id": "GM001",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "7.1.0": "machine"
+    },
+    "name": {
+      "7.1.0": "MM BoneKing 0.4 nozzle"
+    },
+    "from": {
+      "7.1.0": "system"
+    },
+    "instantiation": {
+      "7.1.0": "true"
+    },
+    "printer_technology": {
+      "7.1.0": "FFF"
+    },
+    "deretraction_speed": {
+      "7.1.0": [
+        "30"
+      ]
+    },
+    "extruder_colour": {
+      "7.1.0": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "7.1.0": [
+        "0x0"
+      ]
+    },
+    "gcode_flavor": {
+      "7.1.0": "klipper"
+    },
+    "silent_mode": {
+      "7.1.0": "0"
+    },
+    "machine_max_acceleration_e": {
+      "7.1.0": [
+        "10000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "7.1.0": [
+        "10000",
+        "1500"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "7.1.0": [
+        "10000",
+        "1500"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "7.1.0": [
+        "100000",
+        "3000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "7.1.0": [
+        "100000",
+        "3000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "7.1.0": [
+        "500",
+        "500"
+      ]
+    },
+    "machine_max_speed_e": {
+      "7.1.0": [
+        "60",
+        "120"
+      ]
+    },
+    "machine_max_speed_x": {
+      "7.1.0": [
+        "500",
+        "500"
+      ]
+    },
+    "machine_max_speed_y": {
+      "7.1.0": [
+        "500",
+        "500"
+      ]
+    },
+    "machine_max_speed_z": {
+      "7.1.0": [
+        "10",
+        "12"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "7.1.0": [
+        "2.5",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "7.1.0": [
+        "9",
+        "20"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "7.1.0": [
+        "9",
+        "20"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "7.1.0": [
+        "0.5",
+        "0.4"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "7.1.0": [
+        "0.3"
+      ]
+    },
+    "min_layer_height": {
+      "7.1.0": [
+        "0.05"
+      ]
+    },
+    "printable_height": {
+      "7.1.0": "300"
+    },
+    "extruder_clearance_radius": {
+      "7.1.0": "50"
+    },
+    "extruder_clearance_height_to_rod": {
+      "7.1.0": "32"
+    },
+    "extruder_clearance_height_to_lid": {
+      "7.1.0": "100"
+    },
+    "nozzle_diameter": {
+      "7.1.0": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "7.1.0": "MM"
+    },
+    "printer_variant": {
+      "7.1.0": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "7.1.0": [
+        "1"
+      ]
+    },
+    "retract_before_wipe": {
+      "7.1.0": [
+        "70%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "7.1.0": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "7.1.0": [
+        "1"
+      ]
+    },
+    "retract_length_toolchange": {
+      "7.1.0": [
+        "5"
+      ]
+    },
+    "z_hop": {
+      "7.1.0": [
+        "0.2"
+      ]
+    },
+    "retract_restart_extra": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "7.1.0": [
+        "30"
+      ]
+    },
+    "single_extruder_multi_material": {
+      "7.1.0": "1"
+    },
+    "change_filament_gcode": {
+      "7.1.0": ""
+    },
+    "wipe": {
+      "7.1.0": [
+        "1"
+      ]
+    },
+    "z_lift_type": {
+      "7.1.0": "NormalLift"
+    },
+    "default_print_profile": {
+      "7.1.0": "0.10mm Fine @MM BoneKing"
+    },
+    "before_layer_change_gcode": {
+      "7.1.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "machine_start_gcode": {
+      "7.1.0": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nPRINT_START EXTRUDER=[nozzle_temperature_initial_layer] BED=[bed_temperature_initial_layer_single]\nG21 ;metric values\nG90 ;absolute positioning\nM82 ;set extruder to absolute mode\nM107 ;start with the fan off\nG28 ;Home\nG1 Z1 F9000 ;move the platform to 15mm\nG92 E0\nG1 F500 E10\nG0 X0 Y0\nG92 E0 ;zero the extruded length\nG1 F1000 Y100 E20\nG92 E0 ;zero the extruded length again\nG1 F9000\nM117 Printing..."
+    },
+    "machine_end_gcode": {
+      "7.1.0": "M104 S0 ;extruder heater off\nM140 S0 ;heated bed heater off (if you have it)\nG91 ;relative positioning\nG1 E-1 F300  ;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+0.5 X-20 Y-20 F9000 ;move Z up a bit and retract filament even more\nG28 X0 Y0 ;move X/Y to min endstops, so the head is out of the way\nG1 E3 F300\nG1 E-10 F9000\nM84 ;steppers off\nG90 ;absolute positioning\nM107 ; turn off fan\nPRINT_END"
+    },
+    "setting_id": {
+      "7.1.0": "GM001"
+    },
+    "printer_model": {
+      "7.1.0": "MM BoneKing"
+    },
+    "machine_pause_gcode": {
+      "7.1.0": "PAUSE"
+    },
+    "auxiliary_fan": {
+      "7.1.0": "0"
+    },
+    "machine_max_acceleration_travel": {
+      "7.1.0": [
+        "3000",
+        "3000"
+      ]
+    },
+    "wipe_distance": {
+      "7.1.0": [
+        "1"
+      ]
+    },
+    "scan_first_layer": {
+      "7.1.0": "0"
+    },
+    "cooling_tube_length": {
+      "7.1.0": "20"
+    },
+    "cooling_tube_retraction": {
+      "7.1.0": "60"
+    },
+    "nozzle_type": {
+      "7.1.0": "brass"
+    },
+    "parking_pos_retraction": {
+      "7.1.0": "22"
+    },
+    "z_hop_types": {
+      "7.1.0": [
+        "Spiral Lift"
+      ]
+    },
+    "default_filament_profile": {
+      "7.1.0": [
+        "MM Generic PLA"
+      ]
+    },
+    "is_custom_defined": {
+      "7.1.0": "0"
+    },
+    "printable_area": {
+      "7.1.0": [
+        "0x0",
+        "310x0",
+        "310x310",
+        "0x310"
+      ]
+    },
+    "thumbnails": {
+      "7.1.0": [
+        "310x310"
+      ]
+    },
+    "version": {
+      "7.1.0": "2.0.0.0"
+    }
+  }
+}

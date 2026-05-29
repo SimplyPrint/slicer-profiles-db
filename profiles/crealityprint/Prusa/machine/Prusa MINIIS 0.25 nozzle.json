@@ -1,0 +1,311 @@
+{
+  "slicer": "crealityprint",
+  "profile_type": "machine",
+  "name": "Prusa MINIIS 0.25 nozzle",
+  "vendor": "Prusa",
+  "first_seen": "7.1.0",
+  "last_seen": "7.1.0",
+  "filament_id": null,
+  "setting_id": "GM004",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "7.1.0": "machine"
+    },
+    "name": {
+      "7.1.0": "Prusa MINIIS 0.25 nozzle"
+    },
+    "from": {
+      "7.1.0": "system"
+    },
+    "instantiation": {
+      "7.1.0": "true"
+    },
+    "gcode_flavor": {
+      "7.1.0": "marlin2"
+    },
+    "machine_start_gcode": {
+      "7.1.0": "M862.3 P \"MINI\" ; printer model check\nM862.1 P[nozzle_diameter] ; nozzle diameter check\nM862.5 P2 ; g-code level check\nM862.6 P\"Input shaper\" ; FW feature check\nM115 U6.0.1+14848\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\nM104 S170 ; set extruder temp for bed leveling\nM140 S[first_layer_bed_temperature] ; set bed temp\nM109 R170 ; wait for bed leveling temp\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nM569 S1 X Y ; set stealthchop for X Y\nM204 T1250 ; set travel acceleration\nG28 ; home all without mesh bed level\nG29 ; mesh bed leveling \nM104 S[first_layer_temperature] ; set extruder temp\nG92 E0\n\nG1 X0 Y-2 Z3 F2400\n\nM109 S[first_layer_temperature] ; wait for extruder temp\n\n; intro line\nG1 X10 Z0.2 F1000\nG1 X70 E8 F900\nG1 X140 E10 F700\nG92 E0\n\nM569 S0 X Y ; set spreadcycle for X Y\nM204 T[machine_max_acceleration_travel] ; restore travel acceleration\nM572 W0.06 ; set smooth time\nM221 S95 ; set flow"
+    },
+    "machine_end_gcode": {
+      "7.1.0": "{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+2, max_print_height)} F720 ; Move print head up{endif}\nG1 X170 Y170 F4200 ; park print head\n{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+50, max_print_height)} F720 ; Move print head further up{endif}\nG4 ; wait\nM104 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\nM221 S100 ; reset flow\nM572 S0 ; reset PA\nM569 S1 X Y ; reset to stealthchop for X Y\nM84 ; disable motors\n; max_layer_z = [max_layer_z]"
+    },
+    "extruder_colour": {
+      "7.1.0": [
+        "#018001"
+      ]
+    },
+    "extruder_offset": {
+      "7.1.0": [
+        "0x0"
+      ]
+    },
+    "machine_max_acceleration_e": {
+      "7.1.0": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "7.1.0": [
+        "4000",
+        "4000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "7.1.0": [
+        "1250",
+        "1250"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "7.1.0": [
+        "4000",
+        "4000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "7.1.0": [
+        "4000",
+        "4000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "7.1.0": [
+        "4000",
+        "4000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "7.1.0": [
+        "400",
+        "400"
+      ]
+    },
+    "machine_max_speed_e": {
+      "7.1.0": [
+        "80",
+        "25"
+      ]
+    },
+    "machine_max_speed_x": {
+      "7.1.0": [
+        "400",
+        "400"
+      ]
+    },
+    "machine_max_speed_y": {
+      "7.1.0": [
+        "400",
+        "400"
+      ]
+    },
+    "machine_max_speed_z": {
+      "7.1.0": [
+        "12",
+        "12"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "7.1.0": [
+        "10",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "7.1.0": [
+        "8",
+        "8"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "7.1.0": [
+        "8",
+        "8"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "7.1.0": [
+        "2",
+        "2"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "7.1.0": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "7.1.0": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "7.1.0": [
+        "0.15"
+      ]
+    },
+    "min_layer_height": {
+      "7.1.0": [
+        "0.05"
+      ]
+    },
+    "printable_height": {
+      "7.1.0": "180"
+    },
+    "extruder_clearance_radius": {
+      "7.1.0": "65"
+    },
+    "extruder_clearance_height_to_rod": {
+      "7.1.0": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "7.1.0": "140"
+    },
+    "nozzle_diameter": {
+      "7.1.0": [
+        "0.25"
+      ]
+    },
+    "printer_settings_id": {
+      "7.1.0": ""
+    },
+    "printer_technology": {
+      "7.1.0": "FFF"
+    },
+    "printer_variant": {
+      "7.1.0": "0.25"
+    },
+    "retraction_minimum_travel": {
+      "7.1.0": [
+        "1.0"
+      ]
+    },
+    "retract_before_wipe": {
+      "7.1.0": [
+        "70%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "7.1.0": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "7.1.0": [
+        "2.5"
+      ]
+    },
+    "retract_length_toolchange": {
+      "7.1.0": [
+        "2"
+      ]
+    },
+    "z_hop": {
+      "7.1.0": [
+        "0.2"
+      ]
+    },
+    "retract_restart_extra": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "7.1.0": [
+        "70"
+      ]
+    },
+    "deretraction_speed": {
+      "7.1.0": [
+        "40"
+      ]
+    },
+    "silent_mode": {
+      "7.1.0": "0"
+    },
+    "single_extruder_multi_material": {
+      "7.1.0": "1"
+    },
+    "change_filament_gcode": {
+      "7.1.0": "M600\nG1 E0.4 F1500 ; prime after color change"
+    },
+    "before_layer_change_gcode": {
+      "7.1.0": ";BEFORE_LAYER_CHANGE\nG92 E0.0\n;[layer_z]\nM201 X{interpolate_table(extruded_weight_total, (0,4000), (1000,1700), (10000,1700))} Y{interpolate_table(extruded_weight_total, (0,4000), (1000,1700), (10000,1700))}\n{if ! spiral_mode}M74 W[extruded_weight_total]{endif}\n"
+    },
+    "layer_change_gcode": {
+      "7.1.0": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "machine_pause_gcode": {
+      "7.1.0": "M601"
+    },
+    "wipe": {
+      "7.1.0": [
+        "1"
+      ]
+    },
+    "setting_id": {
+      "7.1.0": "GM004"
+    },
+    "printer_model": {
+      "7.1.0": "MINIIS"
+    },
+    "default_filament_profile": {
+      "7.1.0": [
+        "Prusa Generic PLA @MINIIS 0.25"
+      ]
+    },
+    "default_print_profile": {
+      "7.1.0": "0.12mm Standard @MINIIS"
+    },
+    "bed_exclude_area": {
+      "7.1.0": [
+        "0x0"
+      ]
+    },
+    "printable_area": {
+      "7.1.0": [
+        "0x0",
+        "180x0",
+        "180x180",
+        "0x180"
+      ]
+    },
+    "host_type": {
+      "7.1.0": "prusalink"
+    },
+    "printer_notes": {
+      "7.1.0": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\nPRINTER_VENDOR_PRUSA3D\nPRINTER_MODEL_MINIIS\nNO_TEMPLATES"
+    },
+    "scan_first_layer": {
+      "7.1.0": "0"
+    },
+    "machine_load_filament_time": {
+      "7.1.0": "17"
+    },
+    "machine_unload_filament_time": {
+      "7.1.0": "16"
+    },
+    "nozzle_type": {
+      "7.1.0": "brass"
+    },
+    "auxiliary_fan": {
+      "7.1.0": "0"
+    },
+    "thumbnails": {
+      "7.1.0": [
+        "16x16/QOI",
+        "220x124/QOI",
+        "200x240/QOI",
+        "640x480/PNG"
+      ]
+    }
+  }
+}

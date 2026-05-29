@@ -1,0 +1,359 @@
+{
+  "slicer": "crealityprint",
+  "profile_type": "machine",
+  "name": "Creality Ender-3 V2 0.4 nozzle",
+  "vendor": "Creality",
+  "first_seen": "7.1.0",
+  "last_seen": "7.1.0",
+  "filament_id": null,
+  "setting_id": "08037",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "7.1.0": "machine"
+    },
+    "name": {
+      "7.1.0": "Creality Ender-3 V2 0.4 nozzle"
+    },
+    "from": {
+      "7.1.0": "system"
+    },
+    "instantiation": {
+      "7.1.0": "true"
+    },
+    "printer_technology": {
+      "7.1.0": "FFF"
+    },
+    "deretraction_speed": {
+      "7.1.0": "40"
+    },
+    "extruder_colour": {
+      "7.1.0": "#FCE94F"
+    },
+    "extruder_offset": {
+      "7.1.0": "0x0"
+    },
+    "gcode_flavor": {
+      "7.1.0": "marlin"
+    },
+    "silent_mode": {
+      "7.1.0": "0"
+    },
+    "support_chamber_temp_control": {
+      "7.1.0": "0"
+    },
+    "support_air_filtration": {
+      "7.1.0": "0"
+    },
+    "machine_max_acceleration_e": {
+      "7.1.0": "5000,5000"
+    },
+    "machine_max_acceleration_extruding": {
+      "7.1.0": "500,500"
+    },
+    "machine_max_acceleration_retracting": {
+      "7.1.0": "500,1000"
+    },
+    "machine_max_acceleration_x": {
+      "7.1.0": "500,500"
+    },
+    "machine_max_acceleration_y": {
+      "7.1.0": "500,500"
+    },
+    "machine_max_acceleration_z": {
+      "7.1.0": "500,500"
+    },
+    "machine_max_speed_e": {
+      "7.1.0": "50,60"
+    },
+    "machine_max_speed_x": {
+      "7.1.0": "500,500"
+    },
+    "machine_max_speed_y": {
+      "7.1.0": "500,500"
+    },
+    "machine_max_speed_z": {
+      "7.1.0": "10,10"
+    },
+    "machine_max_jerk_e": {
+      "7.1.0": "5,5"
+    },
+    "machine_max_jerk_x": {
+      "7.1.0": "10,8"
+    },
+    "machine_max_jerk_y": {
+      "7.1.0": "10,8"
+    },
+    "machine_max_jerk_z": {
+      "7.1.0": "0.4,0.4"
+    },
+    "machine_min_extruding_rate": {
+      "7.1.0": "0,0"
+    },
+    "machine_min_travel_rate": {
+      "7.1.0": "0,0"
+    },
+    "max_layer_height": {
+      "7.1.0": "0.2"
+    },
+    "min_layer_height": {
+      "7.1.0": "0.08"
+    },
+    "printable_height": {
+      "7.1.0": "250"
+    },
+    "extruder_clearance_radius": {
+      "7.1.0": "60"
+    },
+    "extruder_clearance_height_to_rod": {
+      "7.1.0": "35"
+    },
+    "extruder_clearance_height_to_lid": {
+      "7.1.0": "250"
+    },
+    "nozzle_diameter": {
+      "7.1.0": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "7.1.0": ""
+    },
+    "printer_variant": {
+      "7.1.0": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "7.1.0": "2"
+    },
+    "retract_before_wipe": {
+      "7.1.0": "90%"
+    },
+    "retract_when_changing_layer": {
+      "7.1.0": "1"
+    },
+    "retraction_length": {
+      "7.1.0": "5"
+    },
+    "retract_length_toolchange": {
+      "7.1.0": "0"
+    },
+    "z_hop": {
+      "7.1.0": "0.4"
+    },
+    "retract_restart_extra": {
+      "7.1.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "7.1.0": "0"
+    },
+    "retraction_speed": {
+      "7.1.0": "50"
+    },
+    "single_extruder_multi_material": {
+      "7.1.0": "1"
+    },
+    "change_filament_gcode": {
+      "7.1.0": ""
+    },
+    "wipe": {
+      "7.1.0": "1"
+    },
+    "z_hop_types": {
+      "7.1.0": "Auto Lift"
+    },
+    "before_layer_change_gcode": {
+      "7.1.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "default_print_profile": {
+      "7.1.0": "0.20mm Standard @Creality Ender-3 V2 0.4 nozzle"
+    },
+    "machine_start_gcode": {
+      "7.1.0": "M220 S100 ;Reset Feedrate\nM221 S100 ;Reset Flowrate\n\nM140 S[bed_temperature_initial_layer_single] ;Set final bed temp  \nG28 ;Home\nG92 E0 ;Reset Extruder\nG1 Z2.0 F3000 ;Move Z Axis up\nM104 S[nozzle_temperature_initial_layer] ;Set final nozzle temp  \nG1 X10.1 Y20 Z0.28 F5000.0 ;Move to start position\nM190 S[bed_temperature_initial_layer_single] ;Wait for bed temp to stabilize  \nM109 S[nozzle_temperature_initial_layer] ;Wait for nozzle temp to stabilize  \nG1 X10.1 Y145.0 Z0.28 F1500.0 E15 ;Draw the first line\nG1 X10.4 Y145.0 Z0.28 F5000.0 ;Move to side a little\nG1 X10.4 Y20 Z0.28 F1500.0 E30 ;Draw the second line\nG92 E0  ;Reset Extruder\nG1 E-1.0000 F1800 ;Retract a bit\nG1 Z2.0 F3000 ;Move Z Axis up\nG1 E0.0000 F1800"
+    },
+    "machine_end_gcode": {
+      "7.1.0": "G91 ;Relative positionning\nG1 E-2 F2700 ;Retract a bit \nG1 E-2 Z1 F2400 ;Retract and raise Z \nG1 X5 Y5 F3000 ;Wipe out \nG1 Z10 ;Raise Z more \nG90 ;Absolute positionning  \nG1 X0 Y0 ;Present print \nM106 S0 ;Turn-off fan \nM104 S0 ;Turn-off hotend \nM140 S0 ;Turn-off bed  \nM84 X Y E ;Disable all steppers but Z "
+    },
+    "machine_max_acceleration_travel": {
+      "7.1.0": "500,500"
+    },
+    "machine_pause_gcode": {
+      "7.1.0": "M25 ;pause print"
+    },
+    "default_filament_profile": {
+      "7.1.0": [
+        "CR-PLA @Creality Ender-3 V2 0.4 nozzle"
+      ]
+    },
+    "bed_exclude_area": {
+      "7.1.0": "0x0"
+    },
+    "layer_change_gcode": {
+      "7.1.0": ""
+    },
+    "scan_first_layer": {
+      "7.1.0": "0"
+    },
+    "nozzle_type": {
+      "7.1.0": "brass"
+    },
+    "auxiliary_fan": {
+      "7.1.0": "0"
+    },
+    "printer_model": {
+      "7.1.0": "Creality Ender-3 V2"
+    },
+    "printer_structure": {
+      "7.1.0": "i3"
+    },
+    "adaptive_bed_mesh_margin": {
+      "7.1.0": "0"
+    },
+    "bbl_use_printhost": {
+      "7.1.0": "0"
+    },
+    "bed_mesh_max": {
+      "7.1.0": "99999,99999"
+    },
+    "bed_mesh_min": {
+      "7.1.0": "-99999,-99999"
+    },
+    "bed_mesh_probe_distance": {
+      "7.1.0": "50,50"
+    },
+    "best_object_pos": {
+      "7.1.0": "0.5,0.5"
+    },
+    "cooling_tube_length": {
+      "7.1.0": "5"
+    },
+    "cooling_tube_retraction": {
+      "7.1.0": "91.5"
+    },
+    "disable_m73": {
+      "7.1.0": "0"
+    },
+    "emit_machine_limits_to_gcode": {
+      "7.1.0": "1"
+    },
+    "enable_filament_ramming": {
+      "7.1.0": "0"
+    },
+    "enable_long_retraction_when_cut": {
+      "7.1.0": "0"
+    },
+    "extra_loading_move": {
+      "7.1.0": "-2"
+    },
+    "fan_kickstart": {
+      "7.1.0": "0"
+    },
+    "fan_speedup_overhangs": {
+      "7.1.0": "1"
+    },
+    "fan_speedup_time": {
+      "7.1.0": "0"
+    },
+    "high_current_on_filament_swap": {
+      "7.1.0": "0"
+    },
+    "host_type": {
+      "7.1.0": "octoprint"
+    },
+    "machine_LED_light_exist": {
+      "7.1.0": "0"
+    },
+    "machine_load_filament_time": {
+      "7.1.0": "0"
+    },
+    "machine_platform_motion_enable": {
+      "7.1.0": "0"
+    },
+    "machine_tool_change_time": {
+      "7.1.0": "0"
+    },
+    "machine_unload_filament_time": {
+      "7.1.0": "0"
+    },
+    "manual_filament_change": {
+      "7.1.0": "0"
+    },
+    "nozzle_height": {
+      "7.1.0": "2.5"
+    },
+    "nozzle_hrc": {
+      "7.1.0": "0"
+    },
+    "nozzle_volume": {
+      "7.1.0": "0"
+    },
+    "parking_pos_retraction": {
+      "7.1.0": "92"
+    },
+    "pellet_modded_printer": {
+      "7.1.0": "0"
+    },
+    "preferred_orientation": {
+      "7.1.0": "0"
+    },
+    "prime_tower_position_type": {
+      "7.1.0": "Middle Upper"
+    },
+    "printable_area": {
+      "7.1.0": "0x0,220x0,220x220,0x220"
+    },
+    "printhost_authorization_type": {
+      "7.1.0": "key"
+    },
+    "printhost_ssl_ignore_revoke": {
+      "7.1.0": "0"
+    },
+    "purge_in_prime_tower": {
+      "7.1.0": "0"
+    },
+    "support_multi_bed_types": {
+      "7.1.0": "1"
+    },
+    "thumbnails": {
+      "7.1.0": "48x48/PNG, 300x300/PNG"
+    },
+    "thumbnails_format": {
+      "7.1.0": "PNG"
+    },
+    "time_cost": {
+      "7.1.0": "0"
+    },
+    "use_firmware_retraction": {
+      "7.1.0": "0"
+    },
+    "use_relative_e_distances": {
+      "7.1.0": "1"
+    },
+    "z_offset": {
+      "7.1.0": "0"
+    },
+    "long_retractions_when_cut": {
+      "7.1.0": "0"
+    },
+    "retract_lift_above": {
+      "7.1.0": "0"
+    },
+    "retract_lift_below": {
+      "7.1.0": "0"
+    },
+    "retract_lift_enforce": {
+      "7.1.0": "All Surfaces"
+    },
+    "retraction_distances_when_cut": {
+      "7.1.0": "18"
+    },
+    "travel_slope": {
+      "7.1.0": "3"
+    },
+    "wipe_distance": {
+      "7.1.0": "2"
+    },
+    "setting_id": {
+      "7.1.0": "08037"
+    }
+  }
+}

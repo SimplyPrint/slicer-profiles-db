@@ -1,0 +1,284 @@
+{
+  "slicer": "crealityprint",
+  "profile_type": "machine",
+  "name": "Anker M5 All-Metal 0.6 nozzle",
+  "vendor": "Anker",
+  "first_seen": "7.1.0",
+  "last_seen": "7.1.0",
+  "filament_id": null,
+  "setting_id": "GM011",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "7.1.0": "machine"
+    },
+    "name": {
+      "7.1.0": "Anker M5 All-Metal 0.6 nozzle"
+    },
+    "from": {
+      "7.1.0": "system"
+    },
+    "instantiation": {
+      "7.1.0": "true"
+    },
+    "support_chamber_temp_control": {
+      "7.1.0": "0"
+    },
+    "printer_technology": {
+      "7.1.0": "FFF"
+    },
+    "deretraction_speed": {
+      "7.1.0": [
+        "60"
+      ]
+    },
+    "extruder_colour": {
+      "7.1.0": [
+        "#018001"
+      ]
+    },
+    "extruder_offset": {
+      "7.1.0": [
+        "0x0"
+      ]
+    },
+    "silent_mode": {
+      "7.1.0": "0"
+    },
+    "machine_max_acceleration_e": {
+      "7.1.0": [
+        "4000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "7.1.0": [
+        "6000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "7.1.0": [
+        "1000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "7.1.0": [
+        "6000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "7.1.0": [
+        "6000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "7.1.0": [
+        "300"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "7.1.0": [
+        "6000"
+      ]
+    },
+    "machine_max_speed_e": {
+      "7.1.0": [
+        "50"
+      ]
+    },
+    "machine_max_speed_x": {
+      "7.1.0": [
+        "600"
+      ]
+    },
+    "machine_max_speed_y": {
+      "7.1.0": [
+        "600"
+      ]
+    },
+    "machine_max_speed_z": {
+      "7.1.0": [
+        "30"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "7.1.0": [
+        "3"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "7.1.0": [
+        "8"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "7.1.0": [
+        "8"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "7.1.0": [
+        "0.3"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "7.1.0": [
+        "0.48"
+      ]
+    },
+    "min_layer_height": {
+      "7.1.0": [
+        "0.15"
+      ]
+    },
+    "printer_settings_id": {
+      "7.1.0": ""
+    },
+    "retraction_minimum_travel": {
+      "7.1.0": [
+        "1"
+      ]
+    },
+    "retract_before_wipe": {
+      "7.1.0": [
+        "0%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "7.1.0": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "7.1.0": [
+        "0.5"
+      ]
+    },
+    "retract_length_toolchange": {
+      "7.1.0": [
+        "2"
+      ]
+    },
+    "z_hop": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "retract_restart_extra": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "7.1.0": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "7.1.0": [
+        "60"
+      ]
+    },
+    "single_extruder_multi_material": {
+      "7.1.0": "1"
+    },
+    "manual_filament_change": {
+      "7.1.0": "1"
+    },
+    "support_air_filtration": {
+      "7.1.0": "0"
+    },
+    "wipe": {
+      "7.1.0": [
+        "1"
+      ]
+    },
+    "gcode_flavor": {
+      "7.1.0": "marlin2"
+    },
+    "before_layer_change_gcode": {
+      "7.1.0": ";BEFORE_LAYER_CHANGE\nG92 E0.0\n;[layer_z]\n\n"
+    },
+    "machine_start_gcode": {
+      "7.1.0": "M4899 T3 ; Enable v3 jerk and S-curve acceleration \nM104 S150 ; Set hotend temp to 150 degrees to prevent ooze\nM190 S{first_layer_bed_temperature[0]} ; set and wait for bed temp to stabilize\nM109 S{first_layer_temperature[0]} ; set final nozzle temp to stabilize\nG28 ;Home"
+    },
+    "machine_end_gcode": {
+      "7.1.0": "M104 S0\nM140 S0\n;Retract the filament\nG92 E1\nG1 E-1 F300\nG28 X0 Y0\nM18"
+    },
+    "change_filament_gcode": {
+      "7.1.0": "M600"
+    },
+    "machine_pause_gcode": {
+      "7.1.0": "M601"
+    },
+    "setting_id": {
+      "7.1.0": "GM011"
+    },
+    "nozzle_diameter": {
+      "7.1.0": [
+        "0.6"
+      ]
+    },
+    "printer_model": {
+      "7.1.0": "Anker M5 All-Metal Hot End"
+    },
+    "printer_variant": {
+      "7.1.0": "0.6"
+    },
+    "auxiliary_fan": {
+      "7.1.0": "0"
+    },
+    "bed_exclude_area": {
+      "7.1.0": []
+    },
+    "printer_structure": {
+      "7.1.0": "i3"
+    },
+    "default_filament_profile": {
+      "7.1.0": [
+        "Anker Generic PLA+"
+      ]
+    },
+    "default_print_profile": {
+      "7.1.0": "0.30mm Standard 0.6 nozzle @Anker"
+    },
+    "extruder_clearance_height_to_lid": {
+      "7.1.0": "250"
+    },
+    "extruder_clearance_height_to_rod": {
+      "7.1.0": "30"
+    },
+    "extruder_clearance_max_radius": {
+      "7.1.0": "45"
+    },
+    "extruder_clearance_radius": {
+      "7.1.0": "45"
+    },
+    "nozzle_type": {
+      "7.1.0": "brass"
+    },
+    "printable_height": {
+      "7.1.0": "250"
+    },
+    "printable_area": {
+      "7.1.0": [
+        "0x0",
+        "235x0",
+        "235x235",
+        "0x235"
+      ]
+    },
+    "upward_compatible_machine": {
+      "7.1.0": []
+    }
+  }
+}
