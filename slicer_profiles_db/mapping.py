@@ -51,6 +51,7 @@ _MAPPING_SLICERS = [
     SlicerType.PRUSASLICER,
     SlicerType.ORCASLICER,
     SlicerType.BAMBUSTUDIO,
+    SlicerType.CREALITYPRINT,
     SlicerType.ELEGOOSLICER,
     SlicerType.SUPERSLICER,
     SlicerType.CURA,

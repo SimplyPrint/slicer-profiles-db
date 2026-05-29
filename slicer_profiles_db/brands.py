@@ -38,6 +38,15 @@ _SLICER_OVERRIDES: dict[SlicerType, dict[str, str]] = {
         "folgertech": "folger tech",
         "flyingbear": "flying bear",
     },
+    SlicerType.CREALITYPRINT: {
+        "qidi": "qidi tech",
+        "bbl": "bambu lab",
+        "twotrees": "two trees",
+        "positron3d": "positron 3d",
+        "folgertech": "folger tech",
+        "flyingbear": "flying bear",
+        "custom": "any generic printer",
+    },
     SlicerType.ELEGOOSLICER: {
         "qidi": "qidi tech",
         "bbl": "bambu lab",
