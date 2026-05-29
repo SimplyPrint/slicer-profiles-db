@@ -2,8 +2,7 @@
 Download and extraction for slicer profiles from GitHub repositories.
 
 Handles ZIP download, extraction, and overlay application for all
-supported slicers (BambuStudio, OrcaSlicer, PrusaSlicer, Cura,
-ElegooSlicer, SuperSlicer).
+supported slicers.
 """
 
 import logging
@@ -51,6 +50,20 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
         tag_pattern=r"^v\d+",
         min_version="2.2.0",
         filament_library_name="OrcaFilamentLibrary",
+        profile_type_dirs={
+            ProfileType.FILAMENT: "filament",
+            ProfileType.MACHINE: "machine",
+            ProfileType.MACHINE_MODEL: "machine",
+            ProfileType.PRINT: "process",
+        },
+    ),
+    SlicerType.CREALITYPRINT: SourceConfig(
+        slicer=SlicerType.CREALITYPRINT,
+        github_repo="CrealityOfficial/CrealityPrint",
+        profile_path_in_repo="resources/profiles",
+        tag_pattern=r"^v\d+",
+        min_version="7.1.0",
+        nightly_branch="master",
         profile_type_dirs={
             ProfileType.FILAMENT: "filament",
             ProfileType.MACHINE: "machine",
@@ -283,7 +296,7 @@ def _extract_repo(
                 member = f"{zip_root}/resources/definitions/"
                 pattern = re.compile(r".*\.def\.json$")
         elif profile_type_dirs:
-            # JSON-profile slicers (BambuStudio, OrcaSlicer, ElegooSlicer)
+            # JSON-profile slicers (BambuStudio, OrcaSlicer, CrealityPrint, ElegooSlicer)
             if profile_types:
                 type_dirs = [
                     profile_type_dirs[pt]

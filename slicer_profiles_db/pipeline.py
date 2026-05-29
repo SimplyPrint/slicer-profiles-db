@@ -44,6 +44,7 @@ from .versions import (
 from .parsers import (
     BambuStudioParser,
     OrcaSlicerParser,
+    CrealityPrintParser,
     PrusaSlicerParser,
     CuraParser,
     ElegooSlicerParser,
@@ -95,6 +96,7 @@ class ProfilePipeline:
         self._parsers: dict[SlicerType, BaseParser] = {
             SlicerType.BAMBUSTUDIO: BambuStudioParser(),
             SlicerType.ORCASLICER: OrcaSlicerParser(),
+            SlicerType.CREALITYPRINT: CrealityPrintParser(),
             SlicerType.PRUSASLICER: PrusaSlicerParser(),
             SlicerType.CURA: CuraParser(),
             SlicerType.ELEGOOSLICER: ElegooSlicerParser(),

@@ -57,6 +57,7 @@ class ProfileStore:
         from .parsers import (
             BambuStudioParser,
             OrcaSlicerParser,
+            CrealityPrintParser,
             PrusaSlicerParser,
             CuraParser,
             ElegooSlicerParser,
@@ -66,6 +67,7 @@ class ProfileStore:
         parsers = {
             SlicerType.BAMBUSTUDIO: BambuStudioParser,
             SlicerType.ORCASLICER: OrcaSlicerParser,
+            SlicerType.CREALITYPRINT: CrealityPrintParser,
             SlicerType.PRUSASLICER: PrusaSlicerParser,
             SlicerType.CURA: CuraParser,
             SlicerType.ELEGOOSLICER: ElegooSlicerParser,

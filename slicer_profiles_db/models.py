@@ -10,6 +10,7 @@ from pydantic import BaseModel, Field
 class SlicerType(str, Enum):
     BAMBUSTUDIO = "bambustudio"
     ORCASLICER = "orcaslicer"
+    CREALITYPRINT = "crealityprint"
     PRUSASLICER = "prusaslicer"
     CURA = "cura"
     ELEGOOSLICER = "elegooslicer"
