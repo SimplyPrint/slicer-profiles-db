@@ -84,6 +84,7 @@
                         "0",
                         "0"
                     ],
+                    "machine_bed_mass_Y": "0",
                     "machine_end_gcode": ";===== date: 20240402 =====================\nM400 ; wait for buffer to clear\nG92 E0 ; zero the extruder\nG1 E-0.8 F1800 ; retract\nG1 Z{max_layer_z + 0.5} F900 ; lower z a little\nG1 X65 Y245 F12000 ; move to safe pos \nG1 Y265 F3000\n\nG1 X65 Y245 F12000\nG1 Y265 F3000\nM141 S0 ; turn off chamber \nM140 S0 ; turn off bed\nM106 S0 ; turn off fan\nM106 P2 S0 ; turn off remote part cooling fan\nM106 P3 S0 ; turn off chamber cooling fan\n\nG1 X100 F12000 ; wipe\n; pull back filament to AMS\nM620 S255\nG1 X20 Y50 F12000\nG1 Y-3\nT255\nG1 X65 F12000\nG1 Y265\nG1 X100 F12000 ; wipe\nM621 S255\nM104 S0 ; turn off hotend\n\nM622.1 S1 ; for prev firware, default turned on\nM1002 judge_flag timelapse_record_flag\nM622 J1\n    M400 ; wait all motion done\n    M991 S0 P-1 ;end smooth timelapse at safe pos\n    M400 S3 ;wait for last picture to be taken\nM623; end of \"timelapse_record_flag\"\n\nM400 ; wait all motion done\nM17 S\nM17 Z0.4 ; lower z motor current to reduce impact if there is something in the bottom\n{if (max_layer_z + 100.0) < 250}\n    G1 Z{max_layer_z + 100.0} F600\n    G1 Z{max_layer_z +98.0}\n{else}\n    G1 Z250 F600\n    G1 Z248\n{endif}\nM400 P100\nM17 R ; restore z current\n\nM220 S100  ; Reset feedrate magnitude\nM201.2 K1.0 ; Reset acc magnitude\nM73.2   R1.0 ;Reset left time magnitude\nM1002 set_gcode_claim_speed_level : 0\n\nM17 X0.8 Y0.8 Z0.5 ; lower motor current to 45% power\nM960 S5 P0 ; turn off logo lamp\n\n",
                     "machine_hotend_change_time": "0",
                     "machine_load_filament_time": "29",
@@ -129,6 +130,7 @@
                         "500",
                         "500"
                     ],
+                    "machine_max_force_Y": "0",
                     "machine_max_jerk_e": [
                         "2.5",
                         "2.5",
@@ -153,6 +155,7 @@
                         "3",
                         "3"
                     ],
+                    "machine_max_printed_mass": "0",
                     "machine_max_speed_e": [
                         "30",
                         "30",
@@ -287,6 +290,7 @@
                     "support_air_filtration": "1",
                     "support_chamber_temp_control": "1",
                     "support_cooling_filter": "0",
+                    "support_fast_purge_mode": "0",
                     "support_object_skip_flush": "0",
                     "time_lapse_gcode": ";========Date 20250206========\n; SKIPPABLE_START\n; SKIPTYPE: timelapse\nM622.1 S1 ; for prev firmware, default turned on\nM1002 judge_flag timelapse_record_flag\nM622 J1\n{if timelapse_type == 0} ; timelapse without wipe tower\nM971 S11 C10 O0\nM1004 S5 P1  ; external shutter\n{elsif timelapse_type == 1} ; timelapse with wipe tower\nG92 E0\nG1 X65 Y245 F20000 ; move to safe pos\nG17\nG2 Z{layer_z} I0.86 J0.86 P1 F20000\nG1 Y265 F3000\nM400\nM1004 S5 P1  ; external shutter\nM400 P300\nM971 S11 C10 O0\nG92 E0\nG1 X100 F5000\nG1 Y255 F20000\n{endif}\nM623\n; SKIPPABLE_END",
                     "type": "machine",
@@ -301,7 +305,8 @@
                         "Bambu Lab H2S 0.2 nozzle",
                         "Bambu Lab P2S 0.2 nozzle",
                         "Bambu Lab H2C 0.2 nozzle",
-                        "Bambu Lab X2D 0.2 nozzle"
+                        "Bambu Lab X2D 0.2 nozzle",
+                        "Bambu Lab A2L 0.2 nozzle"
                     ],
                     "wipe": [
                         "1",
@@ -394,6 +399,7 @@
                         "0",
                         "0"
                     ],
+                    "machine_bed_mass_Y": "0",
                     "machine_end_gcode": ";===== date: 20240402 =====================\nM400 ; wait for buffer to clear\nG92 E0 ; zero the extruder\nG1 E-0.8 F1800 ; retract\nG1 Z{max_layer_z + 0.5} F900 ; lower z a little\nG1 X65 Y245 F12000 ; move to safe pos \nG1 Y265 F3000\n\nG1 X65 Y245 F12000\nG1 Y265 F3000\nM141 S0 ; turn off chamber \nM140 S0 ; turn off bed\nM106 S0 ; turn off fan\nM106 P2 S0 ; turn off remote part cooling fan\nM106 P3 S0 ; turn off chamber cooling fan\n\nG1 X100 F12000 ; wipe\n; pull back filament to AMS\nM620 S255\nG1 X20 Y50 F12000\nG1 Y-3\nT255\nG1 X65 F12000\nG1 Y265\nG1 X100 F12000 ; wipe\nM621 S255\nM104 S0 ; turn off hotend\n\nM622.1 S1 ; for prev firware, default turned on\nM1002 judge_flag timelapse_record_flag\nM622 J1\n    M400 ; wait all motion done\n    M991 S0 P-1 ;end smooth timelapse at safe pos\n    M400 S3 ;wait for last picture to be taken\nM623; end of \"timelapse_record_flag\"\n\nM400 ; wait all motion done\nM17 S\nM17 Z0.4 ; lower z motor current to reduce impact if there is something in the bottom\n{if (max_layer_z + 100.0) < 250}\n    G1 Z{max_layer_z + 100.0} F600\n    G1 Z{max_layer_z +98.0}\n{else}\n    G1 Z250 F600\n    G1 Z248\n{endif}\nM400 P100\nM17 R ; restore z current\n\nM220 S100  ; Reset feedrate magnitude\nM201.2 K1.0 ; Reset acc magnitude\nM73.2   R1.0 ;Reset left time magnitude\nM1002 set_gcode_claim_speed_level : 0\n\nM17 X0.8 Y0.8 Z0.5 ; lower motor current to 45% power\nM960 S5 P0 ; turn off logo lamp\n\n",
                     "machine_hotend_change_time": "0",
                     "machine_load_filament_time": "29",
@@ -439,6 +445,7 @@
                         "500",
                         "500"
                     ],
+                    "machine_max_force_Y": "0",
                     "machine_max_jerk_e": [
                         "2.5",
                         "2.5",
@@ -463,6 +470,7 @@
                         "3",
                         "3"
                     ],
+                    "machine_max_printed_mass": "0",
                     "machine_max_speed_e": [
                         "30",
                         "30",
@@ -597,6 +605,7 @@
                     "support_air_filtration": "1",
                     "support_chamber_temp_control": "1",
                     "support_cooling_filter": "0",
+                    "support_fast_purge_mode": "0",
                     "support_object_skip_flush": "0",
                     "time_lapse_gcode": ";========Date 20250206========\n; SKIPPABLE_START\n; SKIPTYPE: timelapse\nM622.1 S1 ; for prev firmware, default turned on\nM1002 judge_flag timelapse_record_flag\nM622 J1\n{if timelapse_type == 0} ; timelapse without wipe tower\nM971 S11 C10 O0\nM1004 S5 P1  ; external shutter\n{elsif timelapse_type == 1} ; timelapse with wipe tower\nG92 E0\nG1 X65 Y245 F20000 ; move to safe pos\nG17\nG2 Z{layer_z} I0.86 J0.86 P1 F20000\nG1 Y265 F3000\nM400\nM1004 S5 P1  ; external shutter\nM400 P300\nM971 S11 C10 O0\nG92 E0\nG1 X100 F5000\nG1 Y255 F20000\n{endif}\nM623\n; SKIPPABLE_END",
                     "type": "machine",
@@ -611,7 +620,8 @@
                         "Bambu Lab H2S 0.4 nozzle",
                         "Bambu Lab P2S 0.4 nozzle",
                         "Bambu Lab H2C 0.4 nozzle",
-                        "Bambu Lab X2D 0.4 nozzle"
+                        "Bambu Lab X2D 0.4 nozzle",
+                        "Bambu Lab A2L 0.4 nozzle"
                     ],
                     "wipe": [
                         "1",
@@ -704,6 +714,7 @@
                         "0",
                         "0"
                     ],
+                    "machine_bed_mass_Y": "0",
                     "machine_end_gcode": ";===== date: 20240402 =====================\nM400 ; wait for buffer to clear\nG92 E0 ; zero the extruder\nG1 E-0.8 F1800 ; retract\nG1 Z{max_layer_z + 0.5} F900 ; lower z a little\nG1 X65 Y245 F12000 ; move to safe pos \nG1 Y265 F3000\n\nG1 X65 Y245 F12000\nG1 Y265 F3000\nM141 S0 ; turn off chamber \nM140 S0 ; turn off bed\nM106 S0 ; turn off fan\nM106 P2 S0 ; turn off remote part cooling fan\nM106 P3 S0 ; turn off chamber cooling fan\n\nG1 X100 F12000 ; wipe\n; pull back filament to AMS\nM620 S255\nG1 X20 Y50 F12000\nG1 Y-3\nT255\nG1 X65 F12000\nG1 Y265\nG1 X100 F12000 ; wipe\nM621 S255\nM104 S0 ; turn off hotend\n\nM622.1 S1 ; for prev firware, default turned on\nM1002 judge_flag timelapse_record_flag\nM622 J1\n    M400 ; wait all motion done\n    M991 S0 P-1 ;end smooth timelapse at safe pos\n    M400 S3 ;wait for last picture to be taken\nM623; end of \"timelapse_record_flag\"\n\nM400 ; wait all motion done\nM17 S\nM17 Z0.4 ; lower z motor current to reduce impact if there is something in the bottom\n{if (max_layer_z + 100.0) < 250}\n    G1 Z{max_layer_z + 100.0} F600\n    G1 Z{max_layer_z +98.0}\n{else}\n    G1 Z250 F600\n    G1 Z248\n{endif}\nM400 P100\nM17 R ; restore z current\n\nM220 S100  ; Reset feedrate magnitude\nM201.2 K1.0 ; Reset acc magnitude\nM73.2   R1.0 ;Reset left time magnitude\nM1002 set_gcode_claim_speed_level : 0\n\nM17 X0.8 Y0.8 Z0.5 ; lower motor current to 45% power\nM960 S5 P0 ; turn off logo lamp\n\n",
                     "machine_hotend_change_time": "0",
                     "machine_load_filament_time": "29",
@@ -749,6 +760,7 @@
                         "500",
                         "500"
                     ],
+                    "machine_max_force_Y": "0",
                     "machine_max_jerk_e": [
                         "2.5",
                         "2.5",
@@ -773,6 +785,7 @@
                         "3",
                         "3"
                     ],
+                    "machine_max_printed_mass": "0",
                     "machine_max_speed_e": [
                         "30",
                         "30",
@@ -907,6 +920,7 @@
                     "support_air_filtration": "1",
                     "support_chamber_temp_control": "1",
                     "support_cooling_filter": "0",
+                    "support_fast_purge_mode": "0",
                     "support_object_skip_flush": "0",
                     "time_lapse_gcode": ";========Date 20250206========\n; SKIPPABLE_START\n; SKIPTYPE: timelapse\nM622.1 S1 ; for prev firmware, default turned on\nM1002 judge_flag timelapse_record_flag\nM622 J1\n{if timelapse_type == 0} ; timelapse without wipe tower\nM971 S11 C10 O0\nM1004 S5 P1  ; external shutter\n{elsif timelapse_type == 1} ; timelapse with wipe tower\nG92 E0\nG1 X65 Y245 F20000 ; move to safe pos\nG17\nG2 Z{layer_z} I0.86 J0.86 P1 F20000\nG1 Y265 F3000\nM400\nM1004 S5 P1  ; external shutter\nM400 P300\nM971 S11 C10 O0\nG92 E0\nG1 X100 F5000\nG1 Y255 F20000\n{endif}\nM623\n; SKIPPABLE_END",
                     "type": "machine",
@@ -921,7 +935,8 @@
                         "Bambu Lab H2S 0.6 nozzle",
                         "Bambu Lab P2S 0.6 nozzle",
                         "Bambu Lab H2C 0.6 nozzle",
-                        "Bambu Lab X2D 0.6 nozzle"
+                        "Bambu Lab X2D 0.6 nozzle",
+                        "Bambu Lab A2L 0.6 nozzle"
                     ],
                     "wipe": [
                         "1",
@@ -1014,6 +1029,7 @@
                         "0",
                         "0"
                     ],
+                    "machine_bed_mass_Y": "0",
                     "machine_end_gcode": ";===== date: 20240402 =====================\nM400 ; wait for buffer to clear\nG92 E0 ; zero the extruder\nG1 E-0.8 F1800 ; retract\nG1 Z{max_layer_z + 0.5} F900 ; lower z a little\nG1 X65 Y245 F12000 ; move to safe pos \nG1 Y265 F3000\n\nG1 X65 Y245 F12000\nG1 Y265 F3000\nM141 S0 ; turn off chamber \nM140 S0 ; turn off bed\nM106 S0 ; turn off fan\nM106 P2 S0 ; turn off remote part cooling fan\nM106 P3 S0 ; turn off chamber cooling fan\n\nG1 X100 F12000 ; wipe\n; pull back filament to AMS\nM620 S255\nG1 X20 Y50 F12000\nG1 Y-3\nT255\nG1 X65 F12000\nG1 Y265\nG1 X100 F12000 ; wipe\nM621 S255\nM104 S0 ; turn off hotend\n\nM622.1 S1 ; for prev firware, default turned on\nM1002 judge_flag timelapse_record_flag\nM622 J1\n    M400 ; wait all motion done\n    M991 S0 P-1 ;end smooth timelapse at safe pos\n    M400 S3 ;wait for last picture to be taken\nM623; end of \"timelapse_record_flag\"\n\nM400 ; wait all motion done\nM17 S\nM17 Z0.4 ; lower z motor current to reduce impact if there is something in the bottom\n{if (max_layer_z + 100.0) < 250}\n    G1 Z{max_layer_z + 100.0} F600\n    G1 Z{max_layer_z +98.0}\n{else}\n    G1 Z250 F600\n    G1 Z248\n{endif}\nM400 P100\nM17 R ; restore z current\n\nM220 S100  ; Reset feedrate magnitude\nM201.2 K1.0 ; Reset acc magnitude\nM73.2   R1.0 ;Reset left time magnitude\nM1002 set_gcode_claim_speed_level : 0\n\nM17 X0.8 Y0.8 Z0.5 ; lower motor current to 45% power\nM960 S5 P0 ; turn off logo lamp\n\n",
                     "machine_hotend_change_time": "0",
                     "machine_load_filament_time": "29",
@@ -1059,6 +1075,7 @@
                         "500",
                         "500"
                     ],
+                    "machine_max_force_Y": "0",
                     "machine_max_jerk_e": [
                         "2.5",
                         "2.5",
@@ -1083,6 +1100,7 @@
                         "3",
                         "3"
                     ],
+                    "machine_max_printed_mass": "0",
                     "machine_max_speed_e": [
                         "30",
                         "30",
@@ -1217,6 +1235,7 @@
                     "support_air_filtration": "1",
                     "support_chamber_temp_control": "1",
                     "support_cooling_filter": "0",
+                    "support_fast_purge_mode": "0",
                     "support_object_skip_flush": "0",
                     "time_lapse_gcode": ";========Date 20250206========\n; SKIPPABLE_START\n; SKIPTYPE: timelapse\nM622.1 S1 ; for prev firmware, default turned on\nM1002 judge_flag timelapse_record_flag\nM622 J1\n{if timelapse_type == 0} ; timelapse without wipe tower\nM971 S11 C10 O0\nM1004 S5 P1  ; external shutter\n{elsif timelapse_type == 1} ; timelapse with wipe tower\nG92 E0\nG1 X65 Y245 F20000 ; move to safe pos\nG17\nG2 Z{layer_z} I0.86 J0.86 P1 F20000\nG1 Y265 F3000\nM400\nM1004 S5 P1  ; external shutter\nM400 P300\nM971 S11 C10 O0\nG92 E0\nG1 X100 F5000\nG1 Y255 F20000\n{endif}\nM623\n; SKIPPABLE_END",
                     "type": "machine",
@@ -1231,7 +1250,8 @@
                         "Bambu Lab H2S 0.8 nozzle",
                         "Bambu Lab P2S 0.8 nozzle",
                         "Bambu Lab H2C 0.8 nozzle",
-                        "Bambu Lab X2D 0.8 nozzle"
+                        "Bambu Lab X2D 0.8 nozzle",
+                        "Bambu Lab A2L 0.8 nozzle"
                     ],
                     "wipe": [
                         "1",
