@@ -5,6 +5,7 @@ ProfileStore: persistent versioned storage with change detection.
 import json
 import logging
 import re
+import hashlib
 from pathlib import Path
 from typing import Optional
 
@@ -48,6 +49,9 @@ class ProfileStore:
         # Compare versions
         changes = profile.changed_settings("v02.04.00", "v02.05.00.66")
     """
+
+    MAX_FILENAME_STEM_BYTES = 240
+    FILENAME_HASH_LENGTH = 12
 
     def __init__(self, store_path: str | Path):
         self.root = Path(store_path)
@@ -473,7 +477,26 @@ class ProfileStore:
         sanitized = re.sub(r'[<>:"/\\|?*]', "_", name)
         # Collapse multiple underscores
         sanitized = re.sub(r"_+", "_", sanitized)
-        return sanitized.strip("_. ")
+        sanitized = sanitized.strip("_. ")
+        if not sanitized:
+            return "profile"
+
+        stem_bytes = sanitized.encode("utf-8")
+        if len(stem_bytes) <= ProfileStore.MAX_FILENAME_STEM_BYTES:
+            return sanitized
+
+        suffix = hashlib.sha256(stem_bytes).hexdigest()[
+            : ProfileStore.FILENAME_HASH_LENGTH
+        ]
+        separator = "_"
+        max_prefix_bytes = (
+            ProfileStore.MAX_FILENAME_STEM_BYTES
+            - len(separator.encode("utf-8"))
+            - len(suffix.encode("utf-8"))
+        )
+        prefix = stem_bytes[:max_prefix_bytes].decode("utf-8", errors="ignore")
+        prefix = prefix.strip("_. ") or "profile"
+        return f"{prefix}{separator}{suffix}"
 
     @staticmethod
     def _normalize(value) -> str:
