@@ -4,7 +4,7 @@
   "name": "0.16mm Optimal @Creality K1Max (0.4 nozzle)",
   "vendor": "Creality",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.2",
+  "last_seen": "2.4.0",
   "filament_id": null,
   "setting_id": "GP004",
   "renamed_from": null,
@@ -45,7 +45,8 @@
       "2.3.1": "by layer"
     },
     "default_acceleration": {
-      "2.3.1": "12000"
+      "2.3.1": "12000",
+      "2.4.0": "10000"
     },
     "bridge_no_support": {
       "2.3.1": "0"
@@ -69,13 +70,15 @@
       "2.3.1": "15%"
     },
     "sparse_infill_pattern": {
-      "2.3.1": "crosshatch"
+      "2.3.1": "crosshatch",
+      "2.4.0": "grid"
     },
     "initial_layer_line_width": {
       "2.3.1": "0.5"
     },
     "initial_layer_print_height": {
-      "2.3.1": "0.16"
+      "2.3.1": "0.16",
+      "2.4.0": "0.2"
     },
     "initial_layer_speed": {
       "2.3.1": "60"
@@ -90,10 +93,12 @@
       "2.3.1": "0.45"
     },
     "infill_wall_overlap": {
-      "2.3.1": "15%"
+      "2.3.1": "15%",
+      "2.4.0": "30"
     },
     "sparse_infill_speed": {
-      "2.3.1": "270"
+      "2.3.1": "270",
+      "2.4.0": "300"
     },
     "interface_shells": {
       "2.3.1": "0"
@@ -108,7 +113,8 @@
       "2.3.1": "{input_filename_base}_{filament_type[initial_tool]}_{print_time}.gcode"
     },
     "wall_loops": {
-      "2.3.1": "3"
+      "2.3.1": "3",
+      "2.4.0": "2"
     },
     "inner_wall_line_width": {
       "2.3.1": "0.45"
@@ -153,7 +159,8 @@
       "2.3.1": "0"
     },
     "support_line_width": {
-      "2.3.1": "0.42"
+      "2.3.1": "0.42",
+      "2.4.0": "0.4"
     },
     "support_interface_filament": {
       "2.3.1": "0"
@@ -177,7 +184,8 @@
       "2.3.1": "80"
     },
     "support_base_pattern": {
-      "2.3.1": "default"
+      "2.3.1": "default",
+      "2.4.0": "rectilinear"
     },
     "support_base_pattern_spacing": {
       "2.3.1": "2.5"
@@ -208,7 +216,8 @@
       "2.3.2": "1"
     },
     "prime_tower_width": {
-      "2.3.1": "60"
+      "2.3.1": "60",
+      "2.4.0": "35"
     },
     "xy_hole_compensation": {
       "2.3.1": "0"
@@ -223,7 +232,8 @@
       "2.3.1": "monotonic"
     },
     "bottom_shell_layers": {
-      "2.3.1": "3"
+      "2.3.1": "3",
+      "2.4.0": "4"
     },
     "bottom_shell_thickness": {
       "2.3.1": "0"
@@ -235,22 +245,26 @@
       "2.3.1": ""
     },
     "top_surface_acceleration": {
-      "2.3.1": "5000"
+      "2.3.1": "5000",
+      "2.4.0": "2000"
     },
     "draft_shield": {
       "2.3.1": "disabled"
     },
     "enable_arc_fitting": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.4.0": "1"
     },
     "wall_infill_order": {
       "2.3.1": "inner wall/outer wall/infill"
     },
     "initial_layer_acceleration": {
-      "2.3.1": "500"
+      "2.3.1": "500",
+      "2.4.0": "1000"
     },
     "travel_acceleration": {
-      "2.3.1": "12000"
+      "2.3.1": "12000",
+      "2.4.0": "10000"
     },
     "inner_wall_acceleration": {
       "2.3.1": "5000"
@@ -271,13 +285,16 @@
       "2.3.1": "0.16"
     },
     "overhang_1_4_speed": {
-      "2.3.1": "60"
+      "2.3.1": "60",
+      "2.4.0": "0"
     },
     "overhang_2_4_speed": {
-      "2.3.1": "30"
+      "2.3.1": "30",
+      "2.4.0": "50"
     },
     "overhang_3_4_speed": {
-      "2.3.1": "10"
+      "2.3.1": "10",
+      "2.4.0": "30"
     },
     "overhang_4_4_speed": {
       "2.3.1": "10"
@@ -301,43 +318,54 @@
       "2.3.1": "45"
     },
     "tree_support_wall_count": {
-      "2.3.1": "1"
+      "2.3.1": "1",
+      "2.4.0": "0"
     },
     "top_surface_pattern": {
       "2.3.1": "monotonicline"
     },
     "top_shell_layers": {
-      "2.3.1": "3"
+      "2.3.1": "3",
+      "2.4.0": "5"
     },
     "top_shell_thickness": {
-      "2.3.1": "0.6"
+      "2.3.1": "0.6",
+      "2.4.0": "0.8"
     },
     "initial_layer_infill_speed": {
-      "2.3.1": "105"
+      "2.3.1": "105",
+      "2.4.0": "60"
     },
     "wipe_tower_no_sparse_layers": {
       "2.3.1": "0"
     },
     "default_jerk": {
-      "2.3.1": "9"
+      "2.3.1": "9",
+      "2.4.0": "20"
     },
     "initial_layer_jerk": {
-      "2.3.1": "9"
+      "2.3.1": "9",
+      "2.4.0": "20"
     },
     "outer_wall_jerk": {
-      "2.3.1": "7"
+      "2.3.1": "7",
+      "2.4.0": "20"
     },
     "infill_jerk": {
-      "2.3.1": "12"
+      "2.3.1": "12",
+      "2.4.0": "20"
     },
     "travel_jerk": {
-      "2.3.1": "12"
+      "2.3.1": "12",
+      "2.4.0": "20"
     },
     "inner_wall_jerk": {
-      "2.3.1": "7"
+      "2.3.1": "7",
+      "2.4.0": "20"
     },
     "top_surface_jerk": {
-      "2.3.1": "7"
+      "2.3.1": "7",
+      "2.4.0": "20"
     },
     "exclude_object": {
       "2.3.1": "1"
@@ -352,19 +380,23 @@
       "2.3.1": "5000"
     },
     "internal_bridge_support_thickness": {
-      "2.3.1": "0.8"
+      "2.3.1": "0.8",
+      "2.4.0": null
     },
     "only_one_wall_top": {
       "2.3.1": "1"
     },
     "seam_slope_conditional": {
-      "2.3.1": "1"
+      "2.3.1": "1",
+      "2.4.0": "0"
     },
     "seam_slope_inner_walls": {
-      "2.3.1": "1"
+      "2.3.1": "1",
+      "2.4.0": "0"
     },
     "seam_slope_entire_loop": {
-      "2.3.1": "1"
+      "2.3.1": "1",
+      "2.4.0": "0"
     },
     "support_bottom_z_distance": {
       "2.3.1": "0.2"
@@ -376,7 +408,449 @@
       "2.3.1": "2"
     },
     "gcode_label_objects": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.4.0": "1"
+    },
+    "accel_to_decel_enable": {
+      "2.4.0": "1"
+    },
+    "accel_to_decel_factor": {
+      "2.4.0": "100%"
+    },
+    "acceleration_limit_mess": {
+      "2.4.0": "[[0.5,1.0,100,6000],[1.0,1.5,80,5500],[1.5,2.0,60,5000]]"
+    },
+    "acceleration_limit_mess_enable": {
+      "2.4.0": "0"
+    },
+    "ai_infill": {
+      "2.4.0": "0"
+    },
+    "alternate_extra_wall": {
+      "2.4.0": "0"
+    },
+    "bottom_solid_infill_flow_ratio": {
+      "2.4.0": "1"
+    },
+    "bridge_acceleration": {
+      "2.4.0": "50%"
+    },
+    "bridge_angle": {
+      "2.4.0": "0"
+    },
+    "bridge_density": {
+      "2.4.0": "100%"
+    },
+    "brim_ears_detection_length": {
+      "2.4.0": "1"
+    },
+    "brim_ears_max_angle": {
+      "2.4.0": "125"
+    },
+    "brim_type": {
+      "2.4.0": "auto_brim"
+    },
+    "counterbore_hole_bridging": {
+      "2.4.0": "none"
+    },
+    "detect_narrow_internal_solid_infill": {
+      "2.4.0": "1"
+    },
+    "dont_filter_internal_bridges": {
+      "2.4.0": "disabled"
+    },
+    "elefant_foot_compensation_layers": {
+      "2.4.0": "1"
+    },
+    "enable_overhang_speed": {
+      "2.4.0": "1"
+    },
+    "enforce_support_layers": {
+      "2.4.0": "0"
+    },
+    "ensure_vertical_shell_thickness": {
+      "2.4.0": "ensure_all"
+    },
+    "extra_perimeters_on_overhangs": {
+      "2.4.0": "0"
+    },
+    "filter_out_gap_fill": {
+      "2.4.0": "0"
+    },
+    "flush_into_infill": {
+      "2.4.0": "0"
+    },
+    "flush_into_objects": {
+      "2.4.0": "0"
+    },
+    "flush_into_support": {
+      "2.4.0": "1"
+    },
+    "fuzzy_skin": {
+      "2.4.0": "none"
+    },
+    "fuzzy_skin_first_layer": {
+      "2.4.0": "0"
+    },
+    "fuzzy_skin_point_distance": {
+      "2.4.0": "0.8"
+    },
+    "fuzzy_skin_thickness": {
+      "2.4.0": "0.3"
+    },
+    "gap_fill_target": {
+      "2.4.0": "everywhere"
+    },
+    "gcode_add_line_number": {
+      "2.4.0": "0"
+    },
+    "gcode_comments": {
+      "2.4.0": "0"
+    },
+    "hole_to_polyhole": {
+      "2.4.0": "0"
+    },
+    "hole_to_polyhole_threshold": {
+      "2.4.0": "0.01"
+    },
+    "hole_to_polyhole_twisted": {
+      "2.4.0": "1"
+    },
+    "independent_support_layer_height": {
+      "2.4.0": "1"
+    },
+    "infill_anchor": {
+      "2.4.0": "400%"
+    },
+    "infill_anchor_max": {
+      "2.4.0": "20"
+    },
+    "initial_layer_min_bead_width": {
+      "2.4.0": "85%"
+    },
+    "initial_layer_travel_speed": {
+      "2.4.0": "100%"
+    },
+    "internal_bridge_flow": {
+      "2.4.0": "1"
+    },
+    "internal_solid_infill_acceleration": {
+      "2.4.0": "100%"
+    },
+    "internal_solid_infill_pattern": {
+      "2.4.0": "monotonic"
+    },
+    "ironing_angle": {
+      "2.4.0": "90"
+    },
+    "ironing_pattern": {
+      "2.4.0": "zig-zag"
+    },
+    "ironing_support_layer": {
+      "2.4.0": "0"
+    },
+    "is_infill_first": {
+      "2.4.0": "0"
+    },
+    "make_overhang_printable": {
+      "2.4.0": "0"
+    },
+    "make_overhang_printable_angle": {
+      "2.4.0": "55"
+    },
+    "make_overhang_printable_hole_size": {
+      "2.4.0": "0"
+    },
+    "material_flow_dependent_temperature": {
+      "2.4.0": "0"
+    },
+    "material_flow_temp_graph": {
+      "2.4.0": "[[3.0,210],[10.0,220],[12.0,230]]"
+    },
+    "max_bridge_length": {
+      "2.4.0": "10"
+    },
+    "max_volumetric_extrusion_rate_slope": {
+      "2.4.0": "0"
+    },
+    "max_volumetric_extrusion_rate_slope_segment_length": {
+      "2.4.0": "3"
+    },
+    "min_bead_width": {
+      "2.4.0": "85%"
+    },
+    "min_feature_size": {
+      "2.4.0": "25%"
+    },
+    "min_length_factor": {
+      "2.4.0": "0.5"
+    },
+    "min_width_top_surface": {
+      "2.4.0": "300%"
+    },
+    "minimum_support_area": {
+      "2.4.0": "5"
+    },
+    "mmu_segmented_region_interlocking_depth": {
+      "2.4.0": "0"
+    },
+    "mmu_segmented_region_max_width": {
+      "2.4.0": "0"
+    },
+    "only_one_wall_first_layer": {
+      "2.4.0": "0"
+    },
+    "ooze_prevention": {
+      "2.4.0": "0"
+    },
+    "overhang_reverse": {
+      "2.4.0": "0"
+    },
+    "overhang_reverse_internal_only": {
+      "2.4.0": "0"
+    },
+    "overhang_reverse_threshold": {
+      "2.4.0": "50%"
+    },
+    "overhang_speed_classic": {
+      "2.4.0": "0"
+    },
+    "overhang_totally_speed": {
+      "2.4.0": "50"
+    },
+    "precise_outer_wall": {
+      "2.4.0": "0"
+    },
+    "prime_tower_brim_width": {
+      "2.4.0": "3"
+    },
+    "prime_tower_enhance_type": {
+      "2.4.0": "chamfer"
+    },
+    "prime_volume": {
+      "2.4.0": "45"
+    },
+    "print_flow_ratio": {
+      "2.4.0": "1"
+    },
+    "print_order": {
+      "2.4.0": "default"
+    },
+    "raft_contact_distance": {
+      "2.4.0": "0.1"
+    },
+    "raft_expansion": {
+      "2.4.0": "1.5"
+    },
+    "raft_first_layer_density": {
+      "2.4.0": "90%"
+    },
+    "raft_first_layer_expansion": {
+      "2.4.0": "2"
+    },
+    "role_based_wipe_speed": {
+      "2.4.0": "1"
+    },
+    "scarf_angle_threshold": {
+      "2.4.0": "155"
+    },
+    "scarf_joint_flow_ratio": {
+      "2.4.0": "1"
+    },
+    "scarf_joint_speed": {
+      "2.4.0": "100%"
+    },
+    "scarf_overhang_threshold": {
+      "2.4.0": "40%"
+    },
+    "seam_gap": {
+      "2.4.0": "10%"
+    },
+    "seam_slope_min_length": {
+      "2.4.0": "20"
+    },
+    "seam_slope_start_height": {
+      "2.4.0": "0"
+    },
+    "seam_slope_steps": {
+      "2.4.0": "10"
+    },
+    "seam_slope_type": {
+      "2.4.0": "none"
+    },
+    "single_extruder_multi_material_priming": {
+      "2.4.0": "0"
+    },
+    "skirt_speed": {
+      "2.4.0": "50"
+    },
+    "slice_closing_radius": {
+      "2.4.0": "0.049"
+    },
+    "slicing_mode": {
+      "2.4.0": "regular"
+    },
+    "slow_down_layers": {
+      "2.4.0": "0"
+    },
+    "slowdown_for_curled_perimeters": {
+      "2.4.0": "0"
+    },
+    "small_area_infill_flow_compensation": {
+      "2.4.0": "0"
+    },
+    "small_area_infill_flow_compensation_model": {
+      "2.4.0": "0,0;\"\\n0.2,0.4444\";\"\\n0.4,0.6145\";\"\\n0.6,0.7059\";\"\\n0.8,0.7619\";\"\\n1.5,0.8571\";\"\\n2,0.8889\";\"\\n3,0.9231\";\"\\n5,0.9520\";\"\\n10,1\""
+    },
+    "small_perimeter_speed": {
+      "2.4.0": "50%"
+    },
+    "small_perimeter_threshold": {
+      "2.4.0": "0"
+    },
+    "solid_infill_filament": {
+      "2.4.0": "1"
+    },
+    "sparse_infill_acceleration": {
+      "2.4.0": "100%"
+    },
+    "sparse_infill_filament": {
+      "2.4.0": "1"
+    },
+    "speed_limit_to_height": {
+      "2.4.0": "[[100,150,100,6000],[150,200,80,5500],[200,250,60,5000]]"
+    },
+    "speed_limit_to_height_enable": {
+      "2.4.0": "0"
+    },
+    "spiral_mode_max_xy_smoothing": {
+      "2.4.0": "200%"
+    },
+    "spiral_mode_smooth": {
+      "2.4.0": "0"
+    },
+    "staggered_inner_seams": {
+      "2.4.0": "1"
+    },
+    "support_angle": {
+      "2.4.0": "0"
+    },
+    "support_bottom_interface_spacing": {
+      "2.4.0": "0.5"
+    },
+    "support_critical_regions_only": {
+      "2.4.0": "0"
+    },
+    "support_interface_not_for_body": {
+      "2.4.0": "1"
+    },
+    "support_interface_pattern": {
+      "2.4.0": "auto"
+    },
+    "support_remove_small_overhang": {
+      "2.4.0": "1"
+    },
+    "support_xy_overrides_z": {
+      "2.4.0": "xy_overrides_z"
+    },
+    "thick_bridges": {
+      "2.4.0": "0"
+    },
+    "thick_internal_bridges": {
+      "2.4.0": "1"
+    },
+    "timelapse_type": {
+      "2.4.0": "0"
+    },
+    "top_solid_infill_flow_ratio": {
+      "2.4.0": "1"
+    },
+    "travel_speed_z": {
+      "2.4.0": "0"
+    },
+    "tree_support_adaptive_layer_height": {
+      "2.4.0": "1"
+    },
+    "tree_support_angle_slow": {
+      "2.4.0": "25"
+    },
+    "tree_support_auto_brim": {
+      "2.4.0": "1"
+    },
+    "tree_support_branch_angle_organic": {
+      "2.4.0": "40"
+    },
+    "tree_support_branch_diameter_angle": {
+      "2.4.0": "5"
+    },
+    "tree_support_branch_diameter_double_wall": {
+      "2.4.0": "3"
+    },
+    "tree_support_branch_diameter_organic": {
+      "2.4.0": "2"
+    },
+    "tree_support_branch_distance": {
+      "2.4.0": "5"
+    },
+    "tree_support_branch_distance_organic": {
+      "2.4.0": "1"
+    },
+    "tree_support_brim_width": {
+      "2.4.0": "3"
+    },
+    "tree_support_tip_diameter": {
+      "2.4.0": "0.8"
+    },
+    "tree_support_top_rate": {
+      "2.4.0": "30%"
+    },
+    "wall_direction": {
+      "2.4.0": "auto"
+    },
+    "wall_distribution_count": {
+      "2.4.0": "1"
+    },
+    "wall_filament": {
+      "2.4.0": "1"
+    },
+    "wall_generator": {
+      "2.4.0": "classic"
+    },
+    "wall_sequence": {
+      "2.4.0": "inner wall/outer wall"
+    },
+    "wall_transition_angle": {
+      "2.4.0": "10"
+    },
+    "wall_transition_filter_deviation": {
+      "2.4.0": "25%"
+    },
+    "wall_transition_length": {
+      "2.4.0": "100%"
+    },
+    "wipe_before_external_loop": {
+      "2.4.0": "0"
+    },
+    "wipe_on_loops": {
+      "2.4.0": "0"
+    },
+    "wipe_speed": {
+      "2.4.0": "80%"
+    },
+    "wipe_tower_bridging": {
+      "2.4.0": "10"
+    },
+    "wipe_tower_cone_angle": {
+      "2.4.0": "0"
+    },
+    "wipe_tower_extra_spacing": {
+      "2.4.0": "100%"
+    },
+    "wipe_tower_rotation_angle": {
+      "2.4.0": "0"
+    },
+    "wiping_volumes_extruders": {
+      "2.4.0": "70,70,70,70,70,70,70,70,70,70"
     }
   }
 }

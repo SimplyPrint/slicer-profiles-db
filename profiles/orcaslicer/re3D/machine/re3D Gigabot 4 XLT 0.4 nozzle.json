@@ -1,0 +1,336 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "re3D Gigabot 4 XLT 0.4 nozzle",
+  "vendor": "re3D",
+  "first_seen": "2.4.0",
+  "last_seen": "2.4.0",
+  "filament_id": null,
+  "setting_id": "re3d_gigabot4_xlt_04",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.4.0": "machine"
+    },
+    "name": {
+      "2.4.0": "re3D Gigabot 4 XLT 0.4 nozzle"
+    },
+    "from": {
+      "2.4.0": "system"
+    },
+    "instantiation": {
+      "2.4.0": "true"
+    },
+    "auxiliary_fan": {
+      "2.4.0": "0"
+    },
+    "bed_exclude_area": {
+      "2.4.0": [
+        "0x0"
+      ]
+    },
+    "family": {
+      "2.4.0": "re3D"
+    },
+    "gcode_flavor": {
+      "2.4.0": "klipper"
+    },
+    "emit_machine_limits_to_gcode": {
+      "2.4.0": "0"
+    },
+    "silent_mode": {
+      "2.4.0": "0"
+    },
+    "scan_first_layer": {
+      "2.4.0": "0"
+    },
+    "deretraction_speed": {
+      "2.4.0": [
+        "30",
+        "30"
+      ]
+    },
+    "enable_filament_ramming": {
+      "2.4.0": "1"
+    },
+    "extruder_offset": {
+      "2.4.0": [
+        "0x0",
+        "0x0"
+      ]
+    },
+    "extruders_count": {
+      "2.4.0": [
+        "2"
+      ]
+    },
+    "machine_end_gcode": {
+      "2.4.0": "G92 E0\nTURN_OFF_HEATERS\nG28 X Y\nM18\nM107"
+    },
+    "machine_start_gcode": {
+      "2.4.0": "M83  ; Use relative extrusion distances\nG28  ; Home all axes\nM140 S{first_layer_bed_temperature[initial_tool]}  ; Start heating bed\nM190 S{first_layer_bed_temperature[initial_tool]}  ; Wait for bed to reach temperature\n\nT{initial_tool}\n\n\n; ---------------------------\n; HEAT THE USED TOOL\n; ---------------------------\n{if is_extruder_used[initial_tool]}\nM104 T{initial_tool} S{first_layer_temperature[initial_tool]}  ; Preheat active extruder to first layer temperature\nM109 T{initial_tool} S{first_layer_temperature[initial_tool]}  ; Wait for active extruder to reach temperature\n{endif}\n\nG1 F18000\nG4 S0\nG92 E0"
+    },
+    "machine_tool_change_time": {
+      "2.4.0": [
+        "90"
+      ]
+    },
+    "printer_technology": {
+      "2.4.0": "FFF"
+    },
+    "retract_before_wipe": {
+      "2.4.0": [
+        "70%",
+        "70%"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.4.0": [
+        "12",
+        "12"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.4.0": [
+        "0",
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.4.0": [
+        "-0.08",
+        "-0.08"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.4.0": [
+        "1",
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "2.4.0": [
+        "1.0",
+        "1.0"
+      ]
+    },
+    "retraction_minimum_travel": {
+      "2.4.0": [
+        "1",
+        "1"
+      ]
+    },
+    "retraction_speed": {
+      "2.4.0": [
+        "30",
+        "30"
+      ]
+    },
+    "single_extruder_multi_material": {
+      "2.4.0": "0"
+    },
+    "wipe": {
+      "2.4.0": [
+        "1",
+        "1"
+      ]
+    },
+    "z_hop": {
+      "2.4.0": [
+        "0",
+        "0"
+      ]
+    },
+    "z_hop_types": {
+      "2.4.0": [
+        "Normal Lift",
+        "Normal Lift"
+      ]
+    },
+    "bed_temperature_formula": {
+      "2.4.0": "by_first_filament"
+    },
+    "before_layer_change_gcode": {
+      "2.4.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "best_object_pos": {
+      "2.4.0": "0.5,0.5"
+    },
+    "cooling_tube_length": {
+      "2.4.0": "0"
+    },
+    "cooling_tube_retraction": {
+      "2.4.0": "0"
+    },
+    "default_nozzle_volume_type": {
+      "2.4.0": [
+        "Standard",
+        "Standard"
+      ]
+    },
+    "disable_m73": {
+      "2.4.0": "0"
+    },
+    "extruder_colour": {
+      "2.4.0": [
+        "#FCE94F",
+        "#FCE94F"
+      ]
+    },
+    "extruder_type": {
+      "2.4.0": [
+        "Direct Drive",
+        "Direct Drive"
+      ]
+    },
+    "extruder_variant_list": {
+      "2.4.0": [
+        "Direct Drive Standard",
+        "Direct Drive Standard"
+      ]
+    },
+    "fan_kickstart": {
+      "2.4.0": "0"
+    },
+    "fan_speedup_overhangs": {
+      "2.4.0": "1"
+    },
+    "fan_speedup_time": {
+      "2.4.0": "0"
+    },
+    "host_type": {
+      "2.4.0": "octoprint"
+    },
+    "layer_change_gcode": {
+      "2.4.0": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "machine_pause_gcode": {
+      "2.4.0": "PAUSE"
+    },
+    "machine_unload_filament_time": {
+      "2.4.0": "0"
+    },
+    "manual_filament_change": {
+      "2.4.0": "0"
+    },
+    "master_extruder_id": {
+      "2.4.0": "1"
+    },
+    "physical_extruder_map": {
+      "2.4.0": [
+        "0"
+      ]
+    },
+    "preferred_orientation": {
+      "2.4.0": "0"
+    },
+    "printer_extruder_id": {
+      "2.4.0": [
+        "1",
+        "2"
+      ]
+    },
+    "printer_extruder_variant": {
+      "2.4.0": [
+        "Direct Drive Standard",
+        "Direct Drive Standard"
+      ]
+    },
+    "support_air_filtration": {
+      "2.4.0": "0"
+    },
+    "support_chamber_temp_control": {
+      "2.4.0": "0"
+    },
+    "thumbnails": {
+      "2.4.0": "48x48/PNG, 300x300/PNG"
+    },
+    "thumbnails_format": {
+      "2.4.0": "PNG"
+    },
+    "travel_slope": {
+      "2.4.0": [
+        "3",
+        "3"
+      ]
+    },
+    "use_firmware_retraction": {
+      "2.4.0": "0"
+    },
+    "use_relative_e_distances": {
+      "2.4.0": "1"
+    },
+    "wipe_distance": {
+      "2.4.0": [
+        "1",
+        "1"
+      ]
+    },
+    "wipe_tower_type": {
+      "2.4.0": "type2"
+    },
+    "z_offset": {
+      "2.4.0": "0"
+    },
+    "machine_tech": {
+      "2.4.0": "FFF"
+    },
+    "model_id": {
+      "2.4.0": "GB4"
+    },
+    "printer_model": {
+      "2.4.0": "re3D Gigabot 4 XLT"
+    },
+    "bed_texture": {
+      "2.4.0": "Gigabot 4 XLT_buildplate_texture.png"
+    },
+    "default_materials": {
+      "2.4.0": "re3D PETG;re3D PLA;re3D PC"
+    },
+    "printable_area": {
+      "2.4.0": [
+        "0x0",
+        "590x0",
+        "590x760",
+        "0x760"
+      ]
+    },
+    "printable_height": {
+      "2.4.0": "900"
+    },
+    "nozzle_diameter": {
+      "2.4.0": [
+        "0.4",
+        "0.4"
+      ]
+    },
+    "printer_variant": {
+      "2.4.0": "0.4"
+    },
+    "max_layer_height": {
+      "2.4.0": [
+        "0.32"
+      ]
+    },
+    "min_layer_height": {
+      "2.4.0": [
+        "0.2"
+      ]
+    },
+    "default_filament_profile": {
+      "2.4.0": [
+        "re3D PLA @0.4 nozzle",
+        "re3D PETG @0.4 nozzle"
+      ]
+    },
+    "default_print_profile": {
+      "2.4.0": "0.26 Standard"
+    },
+    "printer_settings_id": {
+      "2.4.0": "re3d_gigabot4_xlt_04"
+    },
+    "setting_id": {
+      "2.4.0": "re3d_gigabot4_xlt_04"
+    }
+  }
+}

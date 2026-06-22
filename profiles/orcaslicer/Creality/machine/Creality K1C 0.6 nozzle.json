@@ -4,7 +4,7 @@
   "name": "Creality K1C 0.6 nozzle",
   "vendor": "Creality",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.4.0",
   "filament_id": null,
   "setting_id": "GM001",
   "renamed_from": null,
@@ -27,17 +27,22 @@
     "deretraction_speed": {
       "2.3.1": [
         "40"
+      ],
+      "2.4.0": [
+        "30"
       ]
     },
     "extruder_colour": {
       "2.3.1": [
         "#FCE94F"
-      ]
+      ],
+      "2.4.0": "#FCE94F"
     },
     "extruder_offset": {
       "2.3.1": [
         "0x0"
-      ]
+      ],
+      "2.4.0": "0x0"
     },
     "gcode_flavor": {
       "2.3.1": "klipper"
@@ -85,6 +90,10 @@
       "2.3.1": [
         "500",
         "500"
+      ],
+      "2.4.0": [
+        "300",
+        "300"
       ]
     },
     "machine_max_speed_e": {
@@ -97,71 +106,108 @@
       "2.3.1": [
         "1000",
         "1000"
+      ],
+      "2.4.0": [
+        "600",
+        "600"
       ]
     },
     "machine_max_speed_y": {
       "2.3.1": [
         "1000",
         "1000"
+      ],
+      "2.4.0": [
+        "600",
+        "600"
       ]
     },
     "machine_max_speed_z": {
       "2.3.1": [
         "30",
         "30"
+      ],
+      "2.4.0": [
+        "10",
+        "10"
       ]
     },
     "machine_max_jerk_e": {
       "2.3.1": [
         "2.5",
         "2.5"
+      ],
+      "2.4.0": [
+        "10",
+        "10"
       ]
     },
     "machine_max_jerk_x": {
       "2.3.1": [
         "12",
         "12"
+      ],
+      "2.4.0": [
+        "20",
+        "20"
       ]
     },
     "machine_max_jerk_y": {
       "2.3.1": [
         "12",
         "12"
+      ],
+      "2.4.0": [
+        "20",
+        "20"
       ]
     },
     "machine_max_jerk_z": {
       "2.3.1": [
         "2",
         "2"
+      ],
+      "2.4.0": [
+        "5",
+        "5"
       ]
     },
     "machine_min_extruding_rate": {
       "2.3.1": [
         "0",
         "0"
-      ]
+      ],
+      "2.4.0": "0,0"
     },
     "machine_min_travel_rate": {
       "2.3.1": [
         "0",
         "0"
-      ]
+      ],
+      "2.4.0": "0,0"
     },
     "max_layer_height": {
       "2.3.1": [
         "0.4"
+      ],
+      "2.4.0": [
+        "0.42"
       ]
     },
     "min_layer_height": {
       "2.3.1": [
         "0.08"
+      ],
+      "2.4.0": [
+        "0.12"
       ]
     },
     "printable_height": {
       "2.3.1": "250"
     },
     "extruder_clearance_radius": {
-      "2.3.1": "45"
+      "2.3.1": "45",
+      "2.4.0": "65"
     },
     "extruder_clearance_height_to_rod": {
       "2.3.1": "45"
@@ -188,16 +234,23 @@
     "retract_before_wipe": {
       "2.3.1": [
         "0%"
+      ],
+      "2.4.0": [
+        "90%"
       ]
     },
     "retract_when_changing_layer": {
       "2.3.1": [
         "1"
-      ]
+      ],
+      "2.4.0": "1"
     },
     "retraction_length": {
       "2.3.1": [
         "0.5"
+      ],
+      "2.4.0": [
+        "1.5"
       ]
     },
     "retract_length_toolchange": {
@@ -208,36 +261,47 @@
     "z_hop": {
       "2.3.1": [
         "0.2"
+      ],
+      "2.4.0": [
+        "0.4"
       ]
     },
     "retract_restart_extra": {
       "2.3.1": [
         "0"
-      ]
+      ],
+      "2.4.0": "0"
     },
     "retract_restart_extra_toolchange": {
       "2.3.1": [
         "0"
-      ]
+      ],
+      "2.4.0": "0"
     },
     "retraction_speed": {
       "2.3.1": [
         "40"
+      ],
+      "2.4.0": [
+        "30"
       ]
     },
     "single_extruder_multi_material": {
       "2.3.1": "1"
     },
     "change_filament_gcode": {
-      "2.3.1": "PAUSE"
+      "2.3.1": "PAUSE",
+      "2.4.0": "G2 Z{z_after_toolchange + 0.4} I0.86 J0.86 P1 F10000 ; spiral lift a little from second lift\nG1 X42 Y180 F30000\nG1 Z{z_after_toolchange} F600"
     },
     "wipe": {
       "2.3.1": [
         "1"
-      ]
+      ],
+      "2.4.0": "1"
     },
     "z_hop_types": {
-      "2.3.1": "Normal Lift"
+      "2.3.1": "Normal Lift",
+      "2.4.0": "Slope Lift"
     },
     "before_layer_change_gcode": {
       "2.3.1": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
@@ -246,7 +310,8 @@
       "2.3.1": "0.30mm Standard @Creality K1C (0.6 nozzle)"
     },
     "machine_start_gcode": {
-      "2.3.1": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]"
+      "2.3.1": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]",
+      "2.4.0": "START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM204 S2000\nM104 S[nozzle_temperature_initial_layer]\nG1 Z3 F600\nM83\nG92 E0\nG1 Z1 F600"
     },
     "machine_end_gcode": {
       "2.3.1": "END_PRINT"
@@ -255,6 +320,10 @@
       "2.3.1": [
         "9000",
         "9000"
+      ],
+      "2.4.0": [
+        "20000",
+        "20000"
       ]
     },
     "machine_pause_gcode": {
@@ -268,16 +337,19 @@
     "bed_exclude_area": {
       "2.3.1": [
         "0x0"
-      ]
+      ],
+      "2.4.0": "0x0"
     },
     "layer_change_gcode": {
-      "2.3.1": ""
+      "2.3.1": "",
+      "2.4.0": ";AFTER_LAYER_CHANGE\n;[layer_z]"
     },
     "scan_first_layer": {
       "2.3.1": "0"
     },
     "nozzle_type": {
-      "2.3.1": "hardened_steel"
+      "2.3.1": "hardened_steel",
+      "2.4.0": "brass"
     },
     "auxiliary_fan": {
       "2.3.1": "1"
@@ -305,13 +377,159 @@
       ]
     },
     "manual_filament_change": {
-      "2.3.1": "1"
+      "2.3.1": "1",
+      "2.4.0": "0"
     },
     "thumbnails": {
       "2.3.1": [
         "100x100",
         "320x320"
+      ],
+      "2.4.0": [
+        "96x96/PNG",
+        "300x300/PNG"
       ]
+    },
+    "adaptive_bed_mesh_margin": {
+      "2.4.0": "0"
+    },
+    "bbl_use_printhost": {
+      "2.4.0": "0"
+    },
+    "bed_mesh_max": {
+      "2.4.0": "99999,99999"
+    },
+    "bed_mesh_min": {
+      "2.4.0": "-99999,-99999"
+    },
+    "bed_mesh_probe_distance": {
+      "2.4.0": "50,50"
+    },
+    "best_object_pos": {
+      "2.4.0": "0.5,0.5"
+    },
+    "color_bed_exclude_area": {
+      "2.4.0": "0x215,220x215,220x220,0x220"
+    },
+    "cooling_tube_length": {
+      "2.4.0": "0"
+    },
+    "cooling_tube_retraction": {
+      "2.4.0": "0"
+    },
+    "creality_flush_time": {
+      "2.4.0": "119"
+    },
+    "disable_m73": {
+      "2.4.0": "0"
+    },
+    "emit_machine_limits_to_gcode": {
+      "2.4.0": "1"
+    },
+    "enable_filament_ramming": {
+      "2.4.0": "0"
+    },
+    "enable_long_retraction_when_cut": {
+      "2.4.0": "0"
+    },
+    "extra_loading_move": {
+      "2.4.0": "0"
+    },
+    "fan_kickstart": {
+      "2.4.0": "0"
+    },
+    "fan_speedup_overhangs": {
+      "2.4.0": "1"
+    },
+    "fan_speedup_time": {
+      "2.4.0": "0"
+    },
+    "high_current_on_filament_swap": {
+      "2.4.0": "0"
+    },
+    "host_type": {
+      "2.4.0": "octoprint"
+    },
+    "machine_LED_light_exist": {
+      "2.4.0": "1"
+    },
+    "machine_load_filament_time": {
+      "2.4.0": "119"
+    },
+    "machine_platform_motion_enable": {
+      "2.4.0": "1"
+    },
+    "machine_ptc_exist": {
+      "2.4.0": "1"
+    },
+    "machine_tool_change_time": {
+      "2.4.0": "0"
+    },
+    "machine_unload_filament_time": {
+      "2.4.0": "0"
+    },
+    "nozzle_height": {
+      "2.4.0": "4"
+    },
+    "nozzle_hrc": {
+      "2.4.0": "0"
+    },
+    "nozzle_volume": {
+      "2.4.0": "200"
+    },
+    "parking_pos_retraction": {
+      "2.4.0": "0"
+    },
+    "pellet_modded_printer": {
+      "2.4.0": "0"
+    },
+    "preferred_orientation": {
+      "2.4.0": "0"
+    },
+    "prime_tower_position_type": {
+      "2.4.0": "Middle Upper"
+    },
+    "printhost_authorization_type": {
+      "2.4.0": "key"
+    },
+    "printhost_ssl_ignore_revoke": {
+      "2.4.0": "0"
+    },
+    "purge_in_prime_tower": {
+      "2.4.0": "0"
+    },
+    "thumbnails_format": {
+      "2.4.0": "PNG"
+    },
+    "time_cost": {
+      "2.4.0": "0"
+    },
+    "use_firmware_retraction": {
+      "2.4.0": "0"
+    },
+    "use_relative_e_distances": {
+      "2.4.0": "1"
+    },
+    "z_offset": {
+      "2.4.0": "0"
+    },
+    "long_retractions_when_cut": {
+      "2.4.0": "0"
+    },
+    "retract_lift_above": {
+      "2.4.0": "0"
+    },
+    "retract_lift_below": {
+      "2.4.0": "249"
+    },
+    "retract_lift_enforce": {
+      "2.4.0": "All Surfaces"
+    },
+    "retraction_distances_when_cut": {
+      "2.4.0": "18"
+    },
+    "travel_slope": {
+      "2.4.0": "3"
     }
   }
 }

@@ -4,7 +4,7 @@
   "name": "Z-Bolt S1000 0.4 nozzle",
   "vendor": "Z-Bolt",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.4.0",
   "filament_id": null,
   "setting_id": "GM030",
   "renamed_from": null,
@@ -60,18 +60,30 @@
       "2.3.1": [
         "5000",
         "5000"
+      ],
+      "2.4.0": [
+        "1500",
+        "1500"
       ]
     },
     "machine_max_acceleration_extruding": {
       "2.3.1": [
         "20000",
         "20000"
+      ],
+      "2.4.0": [
+        "2500",
+        "2500"
       ]
     },
     "machine_max_acceleration_retracting": {
       "2.3.1": [
         "5000",
         "5000"
+      ],
+      "2.4.0": [
+        "1500",
+        "1500"
       ]
     },
     "machine_max_acceleration_x": {
@@ -90,6 +102,10 @@
       "2.3.1": [
         "500",
         "200"
+      ],
+      "2.4.0": [
+        "12",
+        "12"
       ]
     },
     "machine_max_speed_e": {
@@ -195,6 +211,9 @@
     "retraction_length": {
       "2.3.1": [
         "0.8"
+      ],
+      "2.4.0": [
+        "0.6"
       ]
     },
     "retract_length_toolchange": {
@@ -223,7 +242,8 @@
       ]
     },
     "single_extruder_multi_material": {
-      "2.3.1": "1"
+      "2.3.1": "1",
+      "2.4.0": "0"
     },
     "change_filament_gcode": {
       "2.3.1": ""
@@ -240,7 +260,8 @@
       "2.3.1": "0.20mm Standard @Z-Bolt S1000"
     },
     "before_layer_change_gcode": {
-      "2.3.1": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+      "2.3.1": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+      "2.4.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n_BEFORE_LAYER_CHANGE"
     },
     "machine_start_gcode": {
       "2.3.1": "START_PRINT T_BED=[bed_temperature_initial_layer] T_EXTRUDER=[nozzle_temperature_initial_layer] T_CHAMBER=[chamber_temperature]"
@@ -254,6 +275,9 @@
     "default_filament_profile": {
       "2.3.1": [
         "Z-Bolt Generic PLA"
+      ],
+      "2.4.0": [
+        "Generic PLA @Z-Bolt 0.4 nozzle"
       ]
     },
     "machine_max_acceleration_travel": {
@@ -287,6 +311,18 @@
         "1000x1000",
         "0x1000"
       ]
+    },
+    "layer_change_gcode": {
+      "2.4.0": "_AFTER_LAYER_CHANGE Z={layer_z}"
+    },
+    "manual_filament_change": {
+      "2.4.0": "0"
+    },
+    "thumbnails": {
+      "2.4.0": "144x144/PNG,900x900/PNG"
+    },
+    "thumbnails_format": {
+      "2.4.0": "PNG"
     }
   }
 }

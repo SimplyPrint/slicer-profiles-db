@@ -1,9 +1,9 @@
 [
     {
         "machine_model": {
-            "bed_model": "sha256:4322ea54f52ed24ba8aa00cf38256347005c653ac1f0c833c206863a1194c347",
-            "bed_texture": "sha256:f8b1ed2bbd484ee1d77cba23399a1ca957b4122fc960e0e8bcb04bddce0d49d9",
-            "default_materials": "Elegoo ASA @0.2 nozzle;Elegoo ASA @ECC2;Elegoo PETG @0.2 nozzle;Elegoo PETG @ECC2;Elegoo PETG PRO @0.2 nozzle;Elegoo PETG PRO @ECC2;Elegoo PLA @0.2 nozzle;Elegoo PLA Matte @0.2 nozzle;Elegoo PLA Matte @ECC2;Elegoo PLA PRO @0.2 nozzle;Elegoo PLA PRO @ECC2;Elegoo PLA Silk @0.2 nozzle;Elegoo PLA Silk @ECC2;Elegoo PLA-CF @ECC2;Elegoo PLA @ECC2;Elegoo PLA+ @0.2 nozzle;Elegoo PLA+ @ECC2;Elegoo RAPID PETG @0.2 nozzle;Elegoo RAPID PETG @ECC2;Elegoo RAPID PLA+ @0.2 nozzle;Elegoo RAPID PLA+ @ECC2;Elegoo TPU 95A @ECC2;Elegoo PLA Basic @0.2 nozzle;Elegoo PLA Basic @ECC2;Elegoo PLA Galaxy @ECC2;Elegoo PLA Marble @ECC2; Elegoo PLA Sparkle @ECC2;Elegoo PLA Wood @ECC2;Elegoo RAPID TPU 95A @ECC2;Elegoo ABS @0.2 nozzle;Elegoo ABS @ECC2;Elegoo PAHT-CF @ECC2;Elegoo PC @0.2 nozzle;Elegoo PC @ECC2;Elegoo PC-FR @0.2 nozzle;Elegoo PC-FR @ECC2;Elegoo PETG-CF @ECC2;Elegoo PETG-GF @ECC2;Elegoo PETG Translucent @0.2 nozzle;Elegoo PETG Translucent @ECC2",
+            "bed_model": "sha256:43ceba5f2ce7d0a5b898fd85e0ed4fffd65ae68f533c8c2368b073a730564f68",
+            "bed_texture": "sha256:16b7b44ad366e7013baf721c06ad02957a7ce598c5da8345a6a7ee836080f947",
+            "default_materials": "Elegoo ASA @0.2 nozzle;Elegoo ASA @ECC2;Elegoo PETG @0.2 nozzle;Elegoo PETG @ECC2;Elegoo PETG PRO @0.2 nozzle;Elegoo PETG PRO @ECC2;Elegoo PLA @0.2 nozzle;Elegoo PLA Matte @0.2 nozzle;Elegoo PLA Matte @ECC2;Elegoo PLA PRO @0.2 nozzle;Elegoo PLA PRO @ECC2;Elegoo PLA Silk @0.2 nozzle;Elegoo PLA Silk @ECC2;Elegoo PLA-CF @ECC2;Elegoo PLA @ECC2;Elegoo PLA+ @0.2 nozzle;Elegoo PLA+ @ECC2;Elegoo Rapid PETG @0.2 nozzle;Elegoo Rapid PETG @ECC2;Elegoo Rapid PLA+ @0.2 nozzle;Elegoo Rapid PLA+ @ECC2;Elegoo TPU 95A @ECC2;Elegoo PLA Basic @0.2 nozzle;Elegoo PLA Basic @ECC2;Elegoo PLA Galaxy @ECC2;Elegoo PLA Marble @ECC2;Elegoo PLA Sparkle @ECC2;Elegoo PLA Wood @ECC2;Elegoo Rapid TPU 95A @ECC2;Elegoo ABS @0.2 nozzle;Elegoo ABS @ECC2;Elegoo PAHT-CF @ECC2;Elegoo PC @0.2 nozzle;Elegoo PC @ECC2;Elegoo PC-FR @0.2 nozzle;Elegoo PC-FR @ECC2;Elegoo PETG-CF @ECC2;Elegoo PETG-GF @ECC2;Elegoo PETG Translucent @0.2 nozzle;Elegoo PETG Translucent @ECC2;Elegoo ASA-CF @ECC2;Elegoo PET-CF @ECC2;Elegoo PETG HF @ECC2;Elegoo PLA Glow @ECC2;Elegoo PLA Translucent2 @ECC2",
             "family": "Elegoo",
             "hotend_model": "",
             "machine_tech": "FFF",
@@ -34,7 +34,8 @@
                     ],
                     "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
                     "best_object_pos": "0.5x0.5",
-                    "change_filament_gcode": "\n;==========CC2_CHANGE_FILAMENT_GCODE==========\n;===== date: 2025-10-16-001 =====================\nM106 S0\nM106 P2 S0\nG1 Z{min(max_layer_z+3, printable_height+0.5)} F1200\nM6211 T[next_extruder] L[flush_length] M{old_filament_e_feedrate} N{new_filament_e_feedrate} Q[old_filament_temp] R[nozzle_temperature_range_high] S[new_filament_temp]\nT[next_extruder]\n",
+                    "change_filament_gcode": "\n;==========CC2_CHANGE_FILAMENT_GCODE==========\n;===== date: 2026-01-16-001 =====================\nM106 S0\nM106 P2 S0\nG1 Z{min(max_layer_z+3, printable_height+0.5)} F1200\nM6211 T[next_extruder] L[flush_length] M{old_filament_e_feedrate} N{new_filament_e_feedrate} Q[old_filament_temp] R[nozzle_temperature_range_high] S[new_filament_temp]\nT[next_extruder]\n",
+                    "cooling_tube_retraction": "90",
                     "default_filament_profile": [
                         "Elegoo PLA @0.2 nozzle"
                     ],
@@ -43,6 +44,7 @@
                         "30"
                     ],
                     "disable_m73": "0",
+                    "enable_filament_ramming": "0",
                     "extruder_clearance_height_to_lid": "90",
                     "extruder_clearance_height_to_rod": "36",
                     "extruder_clearance_max_radius": "68",
@@ -58,8 +60,8 @@
                     "gcode_flavor": "klipper",
                     "host_type": "elegoolink",
                     "instantiation": "true",
-                    "layer_change_gcode": "M73 L{layer_num+1}\n;LAYER:{layer_num+1}\n",
-                    "machine_end_gcode": ";===== CC&CC2_END_GCODE ================\n;===== date: 2025-10-16-001 =====================\n\nM104 S0\nM140 S0 ;Turn-off bed\nM83\nG92 E0 ; zero the extruder\nG1 E-1.5 F1800\nG2 I0 J1 Z{max_layer_z+0.5} F3000 ; lower z a little\nM106 S0\nM106 P2 S0\nG90\n{if max_layer_z > 75}G1 Z{min(max_layer_z+5, printable_height+0.5)} F20000{else}G1 Z80 F20000 {endif}; Move print head up \nG180 S9\nM84\n",
+                    "layer_change_gcode": "M73 L{layer_num+1}\n;LAYER:{layer_num+1}\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count] CURRENT_LAYER={layer_num+1}",
+                    "machine_end_gcode": ";===== CC2_END_GCODE ================\n;===== date: 2026-01-16-001 =====================\n\n\nM140 S0 ;Turn-off bed\nM83\nG92 E0 ; zero the extruder\nG1 E-1.5 F1800\nG2 I0 J1 Z{max_layer_z+0.5} F3000 ; lower z a little\nM106 S0\nM106 P2 S0\nG90\n{if max_layer_z > 75}G1 Z{min(max_layer_z+5, printable_height+0.5)} F20000{else}G1 Z80 F20000 {endif}; Move print head up \nG180 S9\nM104 S0\nM84\n",
                     "machine_load_filament_time": "29",
                     "machine_max_acceleration_e": [
                         "5000",
@@ -87,18 +89,18 @@
                     ],
                     "machine_max_acceleration_z": [
                         "500",
-                        "200"
+                        "500"
                     ],
                     "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
+                        "1",
+                        "1"
                     ],
                     "machine_max_jerk_x": [
-                        "20",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_y": [
-                        "20",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_z": [
@@ -130,7 +132,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "M600",
-                    "machine_start_gcode": ";===== CC2_START_GCODE ================\n;===== date: 2025-11-06-001 =====================\n\nG90\nM104 S140\nM140 S[bed_temperature_initial_layer_single]\nM190 S[bed_temperature_initial_layer_single] A\nM106 S0\nBED_MESH_CALIBRATE mesh_min={adaptive_bed_mesh_min[0]},{adaptive_bed_mesh_min[1]} mesh_max={adaptive_bed_mesh_max[0]},{adaptive_bed_mesh_max[1]} ALGORITHM=[bed_mesh_algo] PROBE_COUNT={bed_mesh_probe_count[0]},{bed_mesh_probe_count[1]} ADAPTIVE=0 ADAPTIVE_MARGIN=0 FROM_SLICER=1\nM204 S{min(20000,max(1000,outer_wall_acceleration))} ;Call exterior wall print acceleration\nG28\nM109 S[nozzle_temperature_initial_layer]\nM6211 A1 L200 T[initial_no_support_extruder] Q[nozzle_temperature_initial_layer] R[nozzle_temperature_initial_layer] S[nozzle_temperature_initial_layer]\nT[initial_no_support_extruder]\n\n{if first_layer_print_min[1] > 0.5}\nG180 S7\nG1 X{print_bed_max[0]*0.5-1} Y-1.2 F20000\nG1 Z0.5 F900\nM109 S[nozzle_temperature_initial_layer]\nM83\nG92 E0 ;Reset Extruder\nG1 E6 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nM106 S200\nG1 X{print_bed_max[0]*0.5-41} E20 F{min(12000, max(1200, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nG1 F6000\nG1 X{print_bed_max[0]*0.5-46} E0.8\n{else}\nG1 E30 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))}\n{endif}\nM106 S0\nG180 S8\nG1 F20000\nG92 E0 ;Reset Extruder\n;LAYER_COUNT:[total_layer_count]\n;LAYER:0",
+                    "machine_start_gcode": ";===== CC2_START_GCODE ================\n;===== date: 2026-01-16-001 =====================\n\nG90\nM104 S140\nM140 S[bed_temperature_initial_layer_single]\nM190 S[bed_temperature_initial_layer_single] A\nM106 S0\nBED_MESH_CALIBRATE mesh_min={adaptive_bed_mesh_min[0]},{adaptive_bed_mesh_min[1]} mesh_max={adaptive_bed_mesh_max[0]},{adaptive_bed_mesh_max[1]} ALGORITHM=[bed_mesh_algo] PROBE_COUNT={bed_mesh_probe_count[0]},{bed_mesh_probe_count[1]} ADAPTIVE=0 ADAPTIVE_MARGIN=0 FROM_SLICER=1\nM204 S{min(20000,max(1000,outer_wall_acceleration))} ;Call exterior wall print acceleration\nG28\nM109 S[nozzle_temperature_initial_layer]\nM6211 A1 L200 T[initial_no_support_extruder] Q[nozzle_temperature_initial_layer] R[nozzle_temperature_initial_layer] S[nozzle_temperature_initial_layer]\nT[initial_no_support_extruder]\n\n{if first_layer_print_min[1] > 0.5}\nG180 S7\nG1 X{print_bed_max[0]*0.5-1} Y-1.2 F20000\nG1 Z0.5 F900\nM109 S[nozzle_temperature_initial_layer]\nM83\nG92 E0 ;Reset Extruder\nG1 E6 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nM106 S200\nG1 X{print_bed_max[0]*0.5-41} E20 F{min(12000, max(1200, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nG1 F6000\nG1 X{print_bed_max[0]*0.5-46} E0.8\n{else}\nG1 E30 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))}\n{endif}\nM106 S0\nG180 S8\nG1 F20000\nG92 E0 ;Reset Extruder\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count] CURRENT_LAYER=0\n;LAYER_COUNT:[total_layer_count]\n;LAYER:0",
                     "machine_unload_filament_time": "28",
                     "manual_filament_change": "0",
                     "max_layer_height": [
@@ -145,6 +147,7 @@
                     ],
                     "nozzle_type": "hardened_steel",
                     "nozzle_volume": "107",
+                    "parking_pos_retraction": "90",
                     "printable_area": [
                         "0x0",
                         "256x0",
@@ -153,7 +156,8 @@
                     ],
                     "printable_height": "256",
                     "printer_model": "Elegoo Centauri Carbon 2",
-                    "printer_settings_id": "",
+                    "printer_notes": "",
+                    "printer_settings_id": "Elegoo",
                     "printer_structure": "corexy",
                     "printer_technology": "FFF",
                     "printer_variant": "0.2",
@@ -189,6 +193,8 @@
                     "setting_id": "ECC202",
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
+                    "support_air_filtration": "0",
+                    "support_chamber_temp_control": "0",
                     "support_multi_filament": "1",
                     "support_wan_network": "1",
                     "thumbnails": [
@@ -208,8 +214,7 @@
                     ],
                     "z_hop_types": [
                         "Auto Lift"
-                    ],
-                    "z_lift_type": "NormalLift"
+                    ]
                 },
                 "name": "Elegoo Centauri Carbon 2 0.2 nozzle"
             },
@@ -234,7 +239,8 @@
                     ],
                     "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
                     "best_object_pos": "0.5x0.5",
-                    "change_filament_gcode": "\n;==========CC2_CHANGE_FILAMENT_GCODE==========\n;===== date: 2025-10-16-001 =====================\nM106 S0\nM106 P2 S0\nG1 Z{min(max_layer_z+3, printable_height+0.5)} F1200\nM6211 T[next_extruder] L[flush_length] M{old_filament_e_feedrate} N{new_filament_e_feedrate} Q[old_filament_temp] R[nozzle_temperature_range_high] S[new_filament_temp]\nT[next_extruder]\n",
+                    "change_filament_gcode": "\n;==========CC2_CHANGE_FILAMENT_GCODE==========\n;===== date: 2026-01-16-001 =====================\nM106 S0\nM106 P2 S0\nG1 Z{min(max_layer_z+3, printable_height+0.5)} F1200\nM6211 T[next_extruder] L[flush_length] M{old_filament_e_feedrate} N{new_filament_e_feedrate} Q[old_filament_temp] R[nozzle_temperature_range_high] S[new_filament_temp]\nT[next_extruder]\n",
+                    "cooling_tube_retraction": "90",
                     "default_filament_profile": [
                         "Elegoo PLA @ECC2"
                     ],
@@ -243,6 +249,7 @@
                         "30"
                     ],
                     "disable_m73": "0",
+                    "enable_filament_ramming": "0",
                     "extruder_clearance_height_to_lid": "90",
                     "extruder_clearance_height_to_rod": "36",
                     "extruder_clearance_max_radius": "68",
@@ -258,8 +265,8 @@
                     "gcode_flavor": "klipper",
                     "host_type": "elegoolink",
                     "instantiation": "true",
-                    "layer_change_gcode": "M73 L{layer_num+1}\n;LAYER:{layer_num+1}\n",
-                    "machine_end_gcode": ";===== CC&CC2_END_GCODE ================\n;===== date: 2025-10-16-001 =====================\n\nM104 S0\nM140 S0 ;Turn-off bed\nM83\nG92 E0 ; zero the extruder\nG1 E-1.5 F1800\nG2 I0 J1 Z{max_layer_z+0.5} F3000 ; lower z a little\nM106 S0\nM106 P2 S0\nG90\n{if max_layer_z > 75}G1 Z{min(max_layer_z+5, printable_height+0.5)} F20000{else}G1 Z80 F20000 {endif}; Move print head up \nG180 S9\nM84\n",
+                    "layer_change_gcode": "M73 L{layer_num+1}\n;LAYER:{layer_num+1}\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count] CURRENT_LAYER={layer_num+1}",
+                    "machine_end_gcode": ";===== CC2_END_GCODE ================\n;===== date: 2026-01-16-001 =====================\n\n\nM140 S0 ;Turn-off bed\nM83\nG92 E0 ; zero the extruder\nG1 E-1.5 F1800\nG2 I0 J1 Z{max_layer_z+0.5} F3000 ; lower z a little\nM106 S0\nM106 P2 S0\nG90\n{if max_layer_z > 75}G1 Z{min(max_layer_z+5, printable_height+0.5)} F20000{else}G1 Z80 F20000 {endif}; Move print head up \nG180 S9\nM104 S0\nM84\n",
                     "machine_load_filament_time": "29",
                     "machine_max_acceleration_e": [
                         "5000",
@@ -287,18 +294,18 @@
                     ],
                     "machine_max_acceleration_z": [
                         "500",
-                        "200"
+                        "500"
                     ],
                     "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
+                        "1",
+                        "1"
                     ],
                     "machine_max_jerk_x": [
-                        "20",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_y": [
-                        "20",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_z": [
@@ -330,14 +337,14 @@
                         "0"
                     ],
                     "machine_pause_gcode": "M600",
-                    "machine_start_gcode": ";===== CC2_START_GCODE ================\n;===== date: 2025-11-06-001 =====================\n\nG90\nM104 S140\nM140 S[bed_temperature_initial_layer_single]\nM190 S[bed_temperature_initial_layer_single] A\nM106 S0\nBED_MESH_CALIBRATE mesh_min={adaptive_bed_mesh_min[0]},{adaptive_bed_mesh_min[1]} mesh_max={adaptive_bed_mesh_max[0]},{adaptive_bed_mesh_max[1]} ALGORITHM=[bed_mesh_algo] PROBE_COUNT={bed_mesh_probe_count[0]},{bed_mesh_probe_count[1]} ADAPTIVE=0 ADAPTIVE_MARGIN=0 FROM_SLICER=1\nM204 S{min(20000,max(1000,outer_wall_acceleration))} ;Call exterior wall print acceleration\nG28\nM109 S[nozzle_temperature_initial_layer]\nM6211 A1 L200 T[initial_no_support_extruder] Q[nozzle_temperature_initial_layer] R[nozzle_temperature_initial_layer] S[nozzle_temperature_initial_layer]\nT[initial_no_support_extruder]\n\n{if first_layer_print_min[1] > 0.5}\nG180 S7\nG1 X{print_bed_max[0]*0.5-1} Y-1.2 F20000\nG1 Z0.5 F900\nM109 S[nozzle_temperature_initial_layer]\nM83\nG92 E0 ;Reset Extruder\nG1 E6 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nM106 S200\nG1 X{print_bed_max[0]*0.5-41} E20 F{min(12000, max(1200, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nG1 F6000\nG1 X{print_bed_max[0]*0.5-46} E0.8\n{else}\nG1 E30 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))}\n{endif}\nM106 S0\nG180 S8\nG1 F20000\nG92 E0 ;Reset Extruder\n;LAYER_COUNT:[total_layer_count]\n;LAYER:0",
+                    "machine_start_gcode": ";===== CC2_START_GCODE ================\n;===== date: 2026-01-16-001 =====================\n\nG90\nM104 S140\nM140 S[bed_temperature_initial_layer_single]\nM190 S[bed_temperature_initial_layer_single] A\nM106 S0\nBED_MESH_CALIBRATE mesh_min={adaptive_bed_mesh_min[0]},{adaptive_bed_mesh_min[1]} mesh_max={adaptive_bed_mesh_max[0]},{adaptive_bed_mesh_max[1]} ALGORITHM=[bed_mesh_algo] PROBE_COUNT={bed_mesh_probe_count[0]},{bed_mesh_probe_count[1]} ADAPTIVE=0 ADAPTIVE_MARGIN=0 FROM_SLICER=1\nM204 S{min(20000,max(1000,outer_wall_acceleration))} ;Call exterior wall print acceleration\nG28\nM109 S[nozzle_temperature_initial_layer]\nM6211 A1 L200 T[initial_no_support_extruder] Q[nozzle_temperature_initial_layer] R[nozzle_temperature_initial_layer] S[nozzle_temperature_initial_layer]\nT[initial_no_support_extruder]\n\n{if first_layer_print_min[1] > 0.5}\nG180 S7\nG1 X{print_bed_max[0]*0.5-1} Y-1.2 F20000\nG1 Z0.5 F900\nM109 S[nozzle_temperature_initial_layer]\nM83\nG92 E0 ;Reset Extruder\nG1 E6 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nM106 S200\nG1 X{print_bed_max[0]*0.5-41} E20 F{min(12000, max(1200, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nG1 F6000\nG1 X{print_bed_max[0]*0.5-46} E0.8\n{else}\nG1 E30 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))}\n{endif}\nM106 S0\nG180 S8\nG1 F20000\nG92 E0 ;Reset Extruder\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count] CURRENT_LAYER=0\n;LAYER_COUNT:[total_layer_count]\n;LAYER:0",
                     "machine_unload_filament_time": "28",
                     "manual_filament_change": "0",
                     "max_layer_height": [
-                        "0.3"
+                        "0.28"
                     ],
                     "min_layer_height": [
-                        "0.07"
+                        "0.08"
                     ],
                     "name": "Elegoo Centauri Carbon 2 0.4 nozzle",
                     "nozzle_diameter": [
@@ -345,6 +352,7 @@
                     ],
                     "nozzle_type": "hardened_steel",
                     "nozzle_volume": "107",
+                    "parking_pos_retraction": "90",
                     "printable_area": [
                         "0x0",
                         "256x0",
@@ -353,7 +361,8 @@
                     ],
                     "printable_height": "256",
                     "printer_model": "Elegoo Centauri Carbon 2",
-                    "printer_settings_id": "",
+                    "printer_notes": "",
+                    "printer_settings_id": "Elegoo",
                     "printer_structure": "corexy",
                     "printer_technology": "FFF",
                     "printer_variant": "0.4",
@@ -389,6 +398,8 @@
                     "setting_id": "ECC204",
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
+                    "support_air_filtration": "0",
+                    "support_chamber_temp_control": "0",
                     "support_multi_filament": "1",
                     "support_wan_network": "1",
                     "thumbnails": [
@@ -408,8 +419,7 @@
                     ],
                     "z_hop_types": [
                         "Auto Lift"
-                    ],
-                    "z_lift_type": "NormalLift"
+                    ]
                 },
                 "name": "Elegoo Centauri Carbon 2 0.4 nozzle"
             },
@@ -434,7 +444,8 @@
                     ],
                     "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
                     "best_object_pos": "0.5x0.5",
-                    "change_filament_gcode": "\n;==========CC2_CHANGE_FILAMENT_GCODE==========\n;===== date: 2025-10-16-001 =====================\nM106 S0\nM106 P2 S0\nG1 Z{min(max_layer_z+3, printable_height+0.5)} F1200\nM6211 T[next_extruder] L[flush_length] M{old_filament_e_feedrate} N{new_filament_e_feedrate} Q[old_filament_temp] R[nozzle_temperature_range_high] S[new_filament_temp]\nT[next_extruder]\n",
+                    "change_filament_gcode": "\n;==========CC2_CHANGE_FILAMENT_GCODE==========\n;===== date: 2026-01-16-001 =====================\nM106 S0\nM106 P2 S0\nG1 Z{min(max_layer_z+3, printable_height+0.5)} F1200\nM6211 T[next_extruder] L[flush_length] M{old_filament_e_feedrate} N{new_filament_e_feedrate} Q[old_filament_temp] R[nozzle_temperature_range_high] S[new_filament_temp]\nT[next_extruder]\n",
+                    "cooling_tube_retraction": "90",
                     "default_filament_profile": [
                         "Elegoo PLA @ECC2"
                     ],
@@ -443,6 +454,7 @@
                         "30"
                     ],
                     "disable_m73": "0",
+                    "enable_filament_ramming": "0",
                     "extruder_clearance_height_to_lid": "90",
                     "extruder_clearance_height_to_rod": "36",
                     "extruder_clearance_max_radius": "68",
@@ -458,8 +470,8 @@
                     "gcode_flavor": "klipper",
                     "host_type": "elegoolink",
                     "instantiation": "true",
-                    "layer_change_gcode": "M73 L{layer_num+1}\n;LAYER:{layer_num+1}\n",
-                    "machine_end_gcode": ";===== CC&CC2_END_GCODE ================\n;===== date: 2025-10-16-001 =====================\n\nM104 S0\nM140 S0 ;Turn-off bed\nM83\nG92 E0 ; zero the extruder\nG1 E-1.5 F1800\nG2 I0 J1 Z{max_layer_z+0.5} F3000 ; lower z a little\nM106 S0\nM106 P2 S0\nG90\n{if max_layer_z > 75}G1 Z{min(max_layer_z+5, printable_height+0.5)} F20000{else}G1 Z80 F20000 {endif}; Move print head up \nG180 S9\nM84\n",
+                    "layer_change_gcode": "M73 L{layer_num+1}\n;LAYER:{layer_num+1}\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count] CURRENT_LAYER={layer_num+1}",
+                    "machine_end_gcode": ";===== CC2_END_GCODE ================\n;===== date: 2026-01-16-001 =====================\n\n\nM140 S0 ;Turn-off bed\nM83\nG92 E0 ; zero the extruder\nG1 E-1.5 F1800\nG2 I0 J1 Z{max_layer_z+0.5} F3000 ; lower z a little\nM106 S0\nM106 P2 S0\nG90\n{if max_layer_z > 75}G1 Z{min(max_layer_z+5, printable_height+0.5)} F20000{else}G1 Z80 F20000 {endif}; Move print head up \nG180 S9\nM104 S0\nM84\n",
                     "machine_load_filament_time": "29",
                     "machine_max_acceleration_e": [
                         "5000",
@@ -487,18 +499,18 @@
                     ],
                     "machine_max_acceleration_z": [
                         "500",
-                        "200"
+                        "500"
                     ],
                     "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
+                        "1",
+                        "1"
                     ],
                     "machine_max_jerk_x": [
-                        "20",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_y": [
-                        "20",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_z": [
@@ -530,7 +542,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "M600",
-                    "machine_start_gcode": ";===== CC2_START_GCODE ================\n;===== date: 2025-11-06-001 =====================\n\nG90\nM104 S140\nM140 S[bed_temperature_initial_layer_single]\nM190 S[bed_temperature_initial_layer_single] A\nM106 S0\nBED_MESH_CALIBRATE mesh_min={adaptive_bed_mesh_min[0]},{adaptive_bed_mesh_min[1]} mesh_max={adaptive_bed_mesh_max[0]},{adaptive_bed_mesh_max[1]} ALGORITHM=[bed_mesh_algo] PROBE_COUNT={bed_mesh_probe_count[0]},{bed_mesh_probe_count[1]} ADAPTIVE=0 ADAPTIVE_MARGIN=0 FROM_SLICER=1\nM204 S{min(20000,max(1000,outer_wall_acceleration))} ;Call exterior wall print acceleration\nG28\nM109 S[nozzle_temperature_initial_layer]\nM6211 A1 L200 T[initial_no_support_extruder] Q[nozzle_temperature_initial_layer] R[nozzle_temperature_initial_layer] S[nozzle_temperature_initial_layer]\nT[initial_no_support_extruder]\n\n{if first_layer_print_min[1] > 0.5}\nG180 S7\nG1 X{print_bed_max[0]*0.5-1} Y-1.2 F20000\nG1 Z0.5 F900\nM109 S[nozzle_temperature_initial_layer]\nM83\nG92 E0 ;Reset Extruder\nG1 E6 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nM106 S200\nG1 X{print_bed_max[0]*0.5-41} E20 F{min(12000, max(1200, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nG1 F6000\nG1 X{print_bed_max[0]*0.5-46} E0.8\n{else}\nG1 E30 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))}\n{endif}\nM106 S0\nG180 S8\nG1 F20000\nG92 E0 ;Reset Extruder\n;LAYER_COUNT:[total_layer_count]\n;LAYER:0",
+                    "machine_start_gcode": ";===== CC2_START_GCODE ================\n;===== date: 2026-01-16-001 =====================\n\nG90\nM104 S140\nM140 S[bed_temperature_initial_layer_single]\nM190 S[bed_temperature_initial_layer_single] A\nM106 S0\nBED_MESH_CALIBRATE mesh_min={adaptive_bed_mesh_min[0]},{adaptive_bed_mesh_min[1]} mesh_max={adaptive_bed_mesh_max[0]},{adaptive_bed_mesh_max[1]} ALGORITHM=[bed_mesh_algo] PROBE_COUNT={bed_mesh_probe_count[0]},{bed_mesh_probe_count[1]} ADAPTIVE=0 ADAPTIVE_MARGIN=0 FROM_SLICER=1\nM204 S{min(20000,max(1000,outer_wall_acceleration))} ;Call exterior wall print acceleration\nG28\nM109 S[nozzle_temperature_initial_layer]\nM6211 A1 L200 T[initial_no_support_extruder] Q[nozzle_temperature_initial_layer] R[nozzle_temperature_initial_layer] S[nozzle_temperature_initial_layer]\nT[initial_no_support_extruder]\n\n{if first_layer_print_min[1] > 0.5}\nG180 S7\nG1 X{print_bed_max[0]*0.5-1} Y-1.2 F20000\nG1 Z0.5 F900\nM109 S[nozzle_temperature_initial_layer]\nM83\nG92 E0 ;Reset Extruder\nG1 E6 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nM106 S200\nG1 X{print_bed_max[0]*0.5-41} E20 F{min(12000, max(1200, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nG1 F6000\nG1 X{print_bed_max[0]*0.5-46} E0.8\n{else}\nG1 E30 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))}\n{endif}\nM106 S0\nG180 S8\nG1 F20000\nG92 E0 ;Reset Extruder\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count] CURRENT_LAYER=0\n;LAYER_COUNT:[total_layer_count]\n;LAYER:0",
                     "machine_unload_filament_time": "28",
                     "manual_filament_change": "0",
                     "max_layer_height": [
@@ -545,6 +557,7 @@
                     ],
                     "nozzle_type": "hardened_steel",
                     "nozzle_volume": "107",
+                    "parking_pos_retraction": "90",
                     "printable_area": [
                         "0x0",
                         "256x0",
@@ -553,7 +566,8 @@
                     ],
                     "printable_height": "256",
                     "printer_model": "Elegoo Centauri Carbon 2",
-                    "printer_settings_id": "",
+                    "printer_notes": "",
+                    "printer_settings_id": "Elegoo",
                     "printer_structure": "corexy",
                     "printer_technology": "FFF",
                     "printer_variant": "0.6",
@@ -589,6 +603,8 @@
                     "setting_id": "ECC206",
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
+                    "support_air_filtration": "0",
+                    "support_chamber_temp_control": "0",
                     "support_multi_filament": "1",
                     "support_wan_network": "1",
                     "thumbnails": [
@@ -608,8 +624,7 @@
                     ],
                     "z_hop_types": [
                         "Auto Lift"
-                    ],
-                    "z_lift_type": "NormalLift"
+                    ]
                 },
                 "name": "Elegoo Centauri Carbon 2 0.6 nozzle"
             },
@@ -634,7 +649,8 @@
                     ],
                     "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
                     "best_object_pos": "0.5x0.5",
-                    "change_filament_gcode": "\n;==========CC2_CHANGE_FILAMENT_GCODE==========\n;===== date: 2025-10-16-001 =====================\nM106 S0\nM106 P2 S0\nG1 Z{min(max_layer_z+3, printable_height+0.5)} F1200\nM6211 T[next_extruder] L[flush_length] M{old_filament_e_feedrate} N{new_filament_e_feedrate} Q[old_filament_temp] R[nozzle_temperature_range_high] S[new_filament_temp]\nT[next_extruder]\n",
+                    "change_filament_gcode": "\n;==========CC2_CHANGE_FILAMENT_GCODE==========\n;===== date: 2026-01-16-001 =====================\nM106 S0\nM106 P2 S0\nG1 Z{min(max_layer_z+3, printable_height+0.5)} F1200\nM6211 T[next_extruder] L[flush_length] M{old_filament_e_feedrate} N{new_filament_e_feedrate} Q[old_filament_temp] R[nozzle_temperature_range_high] S[new_filament_temp]\nT[next_extruder]\n",
+                    "cooling_tube_retraction": "90",
                     "default_filament_profile": [
                         "Elegoo PLA @ECC2"
                     ],
@@ -643,6 +659,7 @@
                         "30"
                     ],
                     "disable_m73": "0",
+                    "enable_filament_ramming": "0",
                     "extruder_clearance_height_to_lid": "90",
                     "extruder_clearance_height_to_rod": "36",
                     "extruder_clearance_max_radius": "68",
@@ -658,8 +675,8 @@
                     "gcode_flavor": "klipper",
                     "host_type": "elegoolink",
                     "instantiation": "true",
-                    "layer_change_gcode": "M73 L{layer_num+1}\n;LAYER:{layer_num+1}\n",
-                    "machine_end_gcode": ";===== CC&CC2_END_GCODE ================\n;===== date: 2025-10-16-001 =====================\n\nM104 S0\nM140 S0 ;Turn-off bed\nM83\nG92 E0 ; zero the extruder\nG1 E-1.5 F1800\nG2 I0 J1 Z{max_layer_z+0.5} F3000 ; lower z a little\nM106 S0\nM106 P2 S0\nG90\n{if max_layer_z > 75}G1 Z{min(max_layer_z+5, printable_height+0.5)} F20000{else}G1 Z80 F20000 {endif}; Move print head up \nG180 S9\nM84\n",
+                    "layer_change_gcode": "M73 L{layer_num+1}\n;LAYER:{layer_num+1}\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count] CURRENT_LAYER={layer_num+1}",
+                    "machine_end_gcode": ";===== CC2_END_GCODE ================\n;===== date: 2026-01-16-001 =====================\n\n\nM140 S0 ;Turn-off bed\nM83\nG92 E0 ; zero the extruder\nG1 E-1.5 F1800\nG2 I0 J1 Z{max_layer_z+0.5} F3000 ; lower z a little\nM106 S0\nM106 P2 S0\nG90\n{if max_layer_z > 75}G1 Z{min(max_layer_z+5, printable_height+0.5)} F20000{else}G1 Z80 F20000 {endif}; Move print head up \nG180 S9\nM104 S0\nM84\n",
                     "machine_load_filament_time": "29",
                     "machine_max_acceleration_e": [
                         "5000",
@@ -687,18 +704,18 @@
                     ],
                     "machine_max_acceleration_z": [
                         "500",
-                        "200"
+                        "500"
                     ],
                     "machine_max_jerk_e": [
-                        "2.5",
-                        "2.5"
+                        "1",
+                        "1"
                     ],
                     "machine_max_jerk_x": [
-                        "20",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_y": [
-                        "20",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_z": [
@@ -730,7 +747,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "M600",
-                    "machine_start_gcode": ";===== CC2_START_GCODE ================\n;===== date: 2025-11-06-001 =====================\n\nG90\nM104 S140\nM140 S[bed_temperature_initial_layer_single]\nM190 S[bed_temperature_initial_layer_single] A\nM106 S0\nBED_MESH_CALIBRATE mesh_min={adaptive_bed_mesh_min[0]},{adaptive_bed_mesh_min[1]} mesh_max={adaptive_bed_mesh_max[0]},{adaptive_bed_mesh_max[1]} ALGORITHM=[bed_mesh_algo] PROBE_COUNT={bed_mesh_probe_count[0]},{bed_mesh_probe_count[1]} ADAPTIVE=0 ADAPTIVE_MARGIN=0 FROM_SLICER=1\nM204 S{min(20000,max(1000,outer_wall_acceleration))} ;Call exterior wall print acceleration\nG28\nM109 S[nozzle_temperature_initial_layer]\nM6211 A1 L200 T[initial_no_support_extruder] Q[nozzle_temperature_initial_layer] R[nozzle_temperature_initial_layer] S[nozzle_temperature_initial_layer]\nT[initial_no_support_extruder]\n\n{if first_layer_print_min[1] > 0.5}\nG180 S7\nG1 X{print_bed_max[0]*0.5-1} Y-1.2 F20000\nG1 Z0.5 F900\nM109 S[nozzle_temperature_initial_layer]\nM83\nG92 E0 ;Reset Extruder\nG1 E6 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nM106 S200\nG1 X{print_bed_max[0]*0.5-41} E20 F{min(12000, max(1200, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nG1 F6000\nG1 X{print_bed_max[0]*0.5-46} E0.8\n{else}\nG1 E30 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))}\n{endif}\nM106 S0\nG180 S8\nG1 F20000\nG92 E0 ;Reset Extruder\n;LAYER_COUNT:[total_layer_count]\n;LAYER:0",
+                    "machine_start_gcode": ";===== CC2_START_GCODE ================\n;===== date: 2026-01-16-001 =====================\n\nG90\nM104 S140\nM140 S[bed_temperature_initial_layer_single]\nM190 S[bed_temperature_initial_layer_single] A\nM106 S0\nBED_MESH_CALIBRATE mesh_min={adaptive_bed_mesh_min[0]},{adaptive_bed_mesh_min[1]} mesh_max={adaptive_bed_mesh_max[0]},{adaptive_bed_mesh_max[1]} ALGORITHM=[bed_mesh_algo] PROBE_COUNT={bed_mesh_probe_count[0]},{bed_mesh_probe_count[1]} ADAPTIVE=0 ADAPTIVE_MARGIN=0 FROM_SLICER=1\nM204 S{min(20000,max(1000,outer_wall_acceleration))} ;Call exterior wall print acceleration\nG28\nM109 S[nozzle_temperature_initial_layer]\nM6211 A1 L200 T[initial_no_support_extruder] Q[nozzle_temperature_initial_layer] R[nozzle_temperature_initial_layer] S[nozzle_temperature_initial_layer]\nT[initial_no_support_extruder]\n\n{if first_layer_print_min[1] > 0.5}\nG180 S7\nG1 X{print_bed_max[0]*0.5-1} Y-1.2 F20000\nG1 Z0.5 F900\nM109 S[nozzle_temperature_initial_layer]\nM83\nG92 E0 ;Reset Extruder\nG1 E6 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nM106 S200\nG1 X{print_bed_max[0]*0.5-41} E20 F{min(12000, max(1200, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))} \nG1 F6000\nG1 X{print_bed_max[0]*0.5-46} E0.8\n{else}\nG1 E30 F{min(1200, max(120, filament_max_volumetric_speed[initial_no_support_extruder]*60/2/2.5043))}\n{endif}\nM106 S0\nG180 S8\nG1 F20000\nG92 E0 ;Reset Extruder\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count] CURRENT_LAYER=0\n;LAYER_COUNT:[total_layer_count]\n;LAYER:0",
                     "machine_unload_filament_time": "28",
                     "manual_filament_change": "0",
                     "max_layer_height": [
@@ -745,6 +762,7 @@
                     ],
                     "nozzle_type": "hardened_steel",
                     "nozzle_volume": "107",
+                    "parking_pos_retraction": "90",
                     "printable_area": [
                         "0x0",
                         "256x0",
@@ -753,7 +771,8 @@
                     ],
                     "printable_height": "256",
                     "printer_model": "Elegoo Centauri Carbon 2",
-                    "printer_settings_id": "",
+                    "printer_notes": "",
+                    "printer_settings_id": "Elegoo",
                     "printer_structure": "corexy",
                     "printer_technology": "FFF",
                     "printer_variant": "0.8",
@@ -789,6 +808,8 @@
                     "setting_id": "ECC208",
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
+                    "support_air_filtration": "0",
+                    "support_chamber_temp_control": "0",
                     "support_multi_filament": "1",
                     "support_wan_network": "1",
                     "thumbnails": [
@@ -808,8 +829,7 @@
                     ],
                     "z_hop_types": [
                         "Auto Lift"
-                    ],
-                    "z_lift_type": "NormalLift"
+                    ]
                 },
                 "name": "Elegoo Centauri Carbon 2 0.8 nozzle"
             }

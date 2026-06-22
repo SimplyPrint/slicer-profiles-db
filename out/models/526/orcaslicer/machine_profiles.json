@@ -2,7 +2,7 @@
     {
         "machine_model": {
             "bed_model": "sha256:8374513a45bcb1799f06c16d7dd36857909f7d96ecb567c830897596d4c25986",
-            "bed_texture": "sha256:97bf6e9e582356d3376e013692fdadcc8eaa297c3dedd3f86755a35329ad0bda",
+            "bed_texture": "sha256:659a3ceff65d25047c29189c2147a055a9e31ec42150aed80109a2186c159ed8",
             "family": "Snapmaker",
             "machine_tech": "FFF",
             "model_id": "797581801",
@@ -16,7 +16,7 @@
                 "data": {
                     "auxiliary_fan": "0",
                     "bed_model": "sha256:8374513a45bcb1799f06c16d7dd36857909f7d96ecb567c830897596d4c25986",
-                    "bed_texture": "sha256:97bf6e9e582356d3376e013692fdadcc8eaa297c3dedd3f86755a35329ad0bda",
+                    "bed_texture": "sha256:659a3ceff65d25047c29189c2147a055a9e31ec42150aed80109a2186c159ed8",
                     "before_layer_change_gcode": "; layer_num: [layer_num]\nG92 E0",
                     "change_filament_gcode": ";***** Update: 20240823\n{if current_extruder != next_extruder}\n; Change T[current_extruder] -> T[next_extruder] (layer [layer_num]\n; layer\nT{next_extruder}\n\n{if layer_num == 1 &&\n ((filament_type[current_extruder] == \"PLA\" || filament_type[current_extruder] == \"TPU\")\n  || (filament_type[next_extruder] == \"PLA\" || filament_type[next_extruder] == \"TPU\"))\n}\n  ; set bed temp: {filament_type[current_extruder]}({bed_temperature[current_extruder]}) -> {filament_type[next_extruder]}({bed_temperature[next_extruder]})\n  M140 S{min(bed_temperature[current_extruder], bed_temperature[next_extruder])}\n{endif}\n\nM109 T[next_extruder] S{if layer_num < 1}[nozzle_temperature_initial_layer]{else}[nozzle_temperature]{endif} C3 W1 ;wait T[next_extruder]\n{if layer_num == 1}\n  G1 E{retraction_length[next_extruder]} F200;deretract\n{endif}\n\n{if layer_z > first_layer_height && layer_num >= close_fan_the_first_x_layers[next_extruder]}\n;  M106 P[next_extruder] S{fan_min_speed[next_extruder] * 255.0 / 100.0} ;restore fan speed for T[next_extruder]\n{endif}\n; End Toolchange\n{endif}",
                     "cooling_tube_length": "0",
@@ -167,7 +167,7 @@
                 "data": {
                     "auxiliary_fan": "0",
                     "bed_model": "sha256:8374513a45bcb1799f06c16d7dd36857909f7d96ecb567c830897596d4c25986",
-                    "bed_texture": "sha256:97bf6e9e582356d3376e013692fdadcc8eaa297c3dedd3f86755a35329ad0bda",
+                    "bed_texture": "sha256:659a3ceff65d25047c29189c2147a055a9e31ec42150aed80109a2186c159ed8",
                     "before_layer_change_gcode": "; layer_num: [layer_num]\nG92 E0",
                     "change_filament_gcode": ";***** Update: 20240823\n{if current_extruder != next_extruder}\n; Change T[current_extruder] -> T[next_extruder] (layer [layer_num]\n; layer\nT{next_extruder}\n\n{if layer_num == 1 &&\n ((filament_type[current_extruder] == \"PLA\" || filament_type[current_extruder] == \"TPU\")\n  || (filament_type[next_extruder] == \"PLA\" || filament_type[next_extruder] == \"TPU\"))\n}\n  ; set bed temp: {filament_type[current_extruder]}({bed_temperature[current_extruder]}) -> {filament_type[next_extruder]}({bed_temperature[next_extruder]})\n  M140 S{min(bed_temperature[current_extruder], bed_temperature[next_extruder])}\n{endif}\n\nM109 T[next_extruder] S{if layer_num < 1}[nozzle_temperature_initial_layer]{else}[nozzle_temperature]{endif} C3 W1 ;wait T[next_extruder]\n{if layer_num == 1}\n  G1 E{retraction_length[next_extruder]} F200;deretract\n{endif}\n\n{if layer_z > first_layer_height && layer_num >= close_fan_the_first_x_layers[next_extruder]}\n;  M106 P[next_extruder] S{fan_min_speed[next_extruder] * 255.0 / 100.0} ;restore fan speed for T[next_extruder]\n{endif}\n; End Toolchange\n{endif}",
                     "cooling_tube_length": "0",
@@ -318,7 +318,7 @@
                 "data": {
                     "auxiliary_fan": "0",
                     "bed_model": "sha256:8374513a45bcb1799f06c16d7dd36857909f7d96ecb567c830897596d4c25986",
-                    "bed_texture": "sha256:97bf6e9e582356d3376e013692fdadcc8eaa297c3dedd3f86755a35329ad0bda",
+                    "bed_texture": "sha256:659a3ceff65d25047c29189c2147a055a9e31ec42150aed80109a2186c159ed8",
                     "before_layer_change_gcode": "; layer_num: [layer_num]\nG92 E0",
                     "change_filament_gcode": ";***** Update: 20240823\n{if current_extruder != next_extruder}\n; Change T[current_extruder] -> T[next_extruder] (layer [layer_num]\n; layer\nT{next_extruder}\n\n{if layer_num == 1 &&\n ((filament_type[current_extruder] == \"PLA\" || filament_type[current_extruder] == \"TPU\")\n  || (filament_type[next_extruder] == \"PLA\" || filament_type[next_extruder] == \"TPU\"))\n}\n  ; set bed temp: {filament_type[current_extruder]}({bed_temperature[current_extruder]}) -> {filament_type[next_extruder]}({bed_temperature[next_extruder]})\n  M140 S{min(bed_temperature[current_extruder], bed_temperature[next_extruder])}\n{endif}\n\nM109 T[next_extruder] S{if layer_num < 1}[nozzle_temperature_initial_layer]{else}[nozzle_temperature]{endif} C3 W1 ;wait T[next_extruder]\n{if layer_num == 1}\n  G1 E{retraction_length[next_extruder]} F200;deretract\n{endif}\n\n{if layer_z > first_layer_height && layer_num >= close_fan_the_first_x_layers[next_extruder]}\n;  M106 P[next_extruder] S{fan_min_speed[next_extruder] * 255.0 / 100.0} ;restore fan speed for T[next_extruder]\n{endif}\n; End Toolchange\n{endif}",
                     "cooling_tube_length": "0",
@@ -469,7 +469,7 @@
                 "data": {
                     "auxiliary_fan": "0",
                     "bed_model": "sha256:8374513a45bcb1799f06c16d7dd36857909f7d96ecb567c830897596d4c25986",
-                    "bed_texture": "sha256:97bf6e9e582356d3376e013692fdadcc8eaa297c3dedd3f86755a35329ad0bda",
+                    "bed_texture": "sha256:659a3ceff65d25047c29189c2147a055a9e31ec42150aed80109a2186c159ed8",
                     "before_layer_change_gcode": "; layer_num: [layer_num]\nG92 E0",
                     "change_filament_gcode": ";***** Update: 20240823\n{if current_extruder != next_extruder}\n; Change T[current_extruder] -> T[next_extruder] (layer [layer_num]\n; layer\nT{next_extruder}\n\n{if layer_num == 1 &&\n ((filament_type[current_extruder] == \"PLA\" || filament_type[current_extruder] == \"TPU\")\n  || (filament_type[next_extruder] == \"PLA\" || filament_type[next_extruder] == \"TPU\"))\n}\n  ; set bed temp: {filament_type[current_extruder]}({bed_temperature[current_extruder]}) -> {filament_type[next_extruder]}({bed_temperature[next_extruder]})\n  M140 S{min(bed_temperature[current_extruder], bed_temperature[next_extruder])}\n{endif}\n\nM109 T[next_extruder] S{if layer_num < 1}[nozzle_temperature_initial_layer]{else}[nozzle_temperature]{endif} C3 W1 ;wait T[next_extruder]\n{if layer_num == 1}\n  G1 E{retraction_length[next_extruder]} F200;deretract\n{endif}\n\n{if layer_z > first_layer_height && layer_num >= close_fan_the_first_x_layers[next_extruder]}\n;  M106 P[next_extruder] S{fan_min_speed[next_extruder] * 255.0 / 100.0} ;restore fan speed for T[next_extruder]\n{endif}\n; End Toolchange\n{endif}",
                     "cooling_tube_length": "0",

@@ -1,0 +1,327 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "LH Stinger MMU 0.4 nozzle",
+  "vendor": "LH",
+  "first_seen": "2.4.0",
+  "last_seen": "2.4.0",
+  "filament_id": null,
+  "setting_id": "LHS_m01_mmu_04",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.4.0": "machine"
+    },
+    "name": {
+      "2.4.0": "LH Stinger MMU 0.4 nozzle"
+    },
+    "from": {
+      "2.4.0": "system"
+    },
+    "instantiation": {
+      "2.4.0": "true"
+    },
+    "printer_technology": {
+      "2.4.0": "FFF"
+    },
+    "deretraction_speed": {
+      "2.4.0": [
+        "30"
+      ]
+    },
+    "extruder_colour": {
+      "2.4.0": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "2.4.0": [
+        "0x0"
+      ]
+    },
+    "gcode_flavor": {
+      "2.4.0": "klipper"
+    },
+    "silent_mode": {
+      "2.4.0": "0"
+    },
+    "machine_max_acceleration_e": {
+      "2.4.0": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.4.0": [
+        "200000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.4.0": [
+        "200000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.4.0": [
+        "200000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.4.0": [
+        "200000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.4.0": [
+        "2000",
+        "200"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.4.0": [
+        "200",
+        "25"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.4.0": [
+        "1000",
+        "200"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.4.0": [
+        "1000",
+        "200"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.4.0": [
+        "100",
+        "12"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.4.0": [
+        "15",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.4.0": [
+        "15",
+        "9"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.4.0": [
+        "15",
+        "9"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.4.0": [
+        "15",
+        "0.4"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.4.0": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.4.0": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "2.4.0": [
+        "0.32"
+      ]
+    },
+    "min_layer_height": {
+      "2.4.0": [
+        "0.08"
+      ]
+    },
+    "printable_height": {
+      "2.4.0": "180"
+    },
+    "extruder_clearance_radius": {
+      "2.4.0": "65"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.4.0": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.4.0": "140"
+    },
+    "nozzle_diameter": {
+      "2.4.0": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "2.4.0": ""
+    },
+    "printer_variant": {
+      "2.4.0": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "2.4.0": [
+        "1"
+      ]
+    },
+    "retract_before_wipe": {
+      "2.4.0": [
+        "70%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.4.0": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "2.4.0": [
+        "0.3"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.4.0": [
+        "0"
+      ]
+    },
+    "z_hop": {
+      "2.4.0": [
+        "0.2"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.4.0": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.4.0": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "2.4.0": [
+        "40"
+      ]
+    },
+    "single_extruder_multi_material": {
+      "2.4.0": "1"
+    },
+    "change_filament_gcode": {
+      "2.4.0": " _SP_SET_PURGE PURGE=[first_flush_volume] "
+    },
+    "wipe": {
+      "2.4.0": [
+        "1"
+      ]
+    },
+    "default_print_profile": {
+      "2.4.0": "0.20mm Daily @LH Stinger"
+    },
+    "machine_start_gcode": {
+      "2.4.0": " _SP_PRINT_START LANE=[initial_tool] TEMP=[nozzle_temperature_initial_layer]\n\nPRINT_START_LHS BED=[bed_temperature_initial_layer_single] HOTEND=[nozzle_temperature_initial_layer] AUTOMESH=1 AUTOPURGE=1 QUIETMODE={if print_preset =~ /.*Quiet.*/ }1{else}0{endif}\n\n"
+    },
+    "machine_end_gcode": {
+      "2.4.0": "PRINT_END\n\n_SP_PRINT_END"
+    },
+    "layer_change_gcode": {
+      "2.4.0": ";AFTER_LAYER_CHANGES\n;[layer_z]"
+    },
+    "before_layer_change_gcode": {
+      "2.4.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "machine_pause_gcode": {
+      "2.4.0": "PAUSE"
+    },
+    "machine_max_acceleration_travel": {
+      "2.4.0": [
+        "20000",
+        "20000"
+      ]
+    },
+    "printable_area": {
+      "2.4.0": [
+        "18x38",
+        "218x38",
+        "218x238",
+        "18x238"
+      ]
+    },
+    "retract_lift_enforce": {
+      "2.4.0": [
+        "Top and Bottom"
+      ]
+    },
+    "z_hop_types": {
+      "2.4.0": [
+        "Auto Lift"
+      ]
+    },
+    "manual_filament_change": {
+      "2.4.0": "0"
+    },
+    "default_filament_profile": {
+      "2.4.0": [
+        "LHS PLA"
+      ]
+    },
+    "enable_filament_ramming": {
+      "2.4.0": "0"
+    },
+    "bed_exclude_area": {
+      "2.4.0": [
+        "0x0"
+      ]
+    },
+    "scan_first_layer": {
+      "2.4.0": "0"
+    },
+    "nozzle_type": {
+      "2.4.0": [
+        "brass"
+      ]
+    },
+    "bed_temperature_formula": {
+      "2.4.0": "by_first_filament"
+    },
+    "auxiliary_fan": {
+      "2.4.0": "1"
+    },
+    "cooling_tube_length": {
+      "2.4.0": "0"
+    },
+    "cooling_tube_retraction": {
+      "2.4.0": "0"
+    },
+    "extra_loading_move": {
+      "2.4.0": "0"
+    },
+    "machine_tool_change_time": {
+      "2.4.0": "20"
+    },
+    "parking_pos_retraction": {
+      "2.4.0": "0"
+    },
+    "setting_id": {
+      "2.4.0": "LHS_m01_mmu_04"
+    },
+    "printer_model": {
+      "2.4.0": "LH Stinger MMU"
+    }
+  }
+}

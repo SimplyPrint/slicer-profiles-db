@@ -4,7 +4,7 @@
   "name": "Elegoo Rapid PLA+ @System",
   "vendor": "OrcaFilamentLibrary",
   "first_seen": "2.3.2",
-  "last_seen": "2.3.2",
+  "last_seen": "2.4.0",
   "filament_id": "OGFE05",
   "setting_id": "OGFSE05_00",
   "renamed_from": null,
@@ -69,6 +69,9 @@
     "fan_cooling_layer_time": {
       "2.3.2": [
         "100"
+      ],
+      "2.4.0": [
+        "80"
       ]
     },
     "fan_max_speed": {
@@ -79,16 +82,25 @@
     "fan_min_speed": {
       "2.3.2": [
         "100"
+      ],
+      "2.4.0": [
+        "60"
       ]
     },
     "filament_cost": {
       "2.3.2": [
         "15.99"
+      ],
+      "2.4.0": [
+        "20"
       ]
     },
     "filament_density": {
       "2.3.2": [
         "1.24"
+      ],
+      "2.4.0": [
+        "1.25"
       ]
     },
     "filament_deretraction_speed": {
@@ -119,6 +131,9 @@
     "filament_max_volumetric_speed": {
       "2.3.2": [
         "18"
+      ],
+      "2.4.0": [
+        "21"
       ]
     },
     "filament_minimal_purge_on_wipe_tower": {
@@ -234,21 +249,33 @@
     "hot_plate_temp": {
       "2.3.2": [
         "50"
+      ],
+      "2.4.0": [
+        "60"
       ]
     },
     "hot_plate_temp_initial_layer": {
       "2.3.2": [
         "50"
+      ],
+      "2.4.0": [
+        "60"
       ]
     },
     "nozzle_temperature": {
       "2.3.2": [
         "215"
+      ],
+      "2.4.0": [
+        "220"
       ]
     },
     "nozzle_temperature_initial_layer": {
       "2.3.2": [
         "210"
+      ],
+      "2.4.0": [
+        "220"
       ]
     },
     "overhang_fan_speed": {
@@ -289,11 +316,17 @@
     "slow_down_layer_time": {
       "2.3.2": [
         "6"
+      ],
+      "2.4.0": [
+        "4"
       ]
     },
     "slow_down_min_speed": {
       "2.3.2": [
         "10"
+      ],
+      "2.4.0": [
+        "20"
       ]
     },
     "temperature_vitrification": {
@@ -304,32 +337,48 @@
     "textured_plate_temp": {
       "2.3.2": [
         "55"
+      ],
+      "2.4.0": [
+        "60"
       ]
     },
     "textured_plate_temp_initial_layer": {
       "2.3.2": [
         "55"
+      ],
+      "2.4.0": [
+        "60"
       ]
     },
     "filament_start_gcode": {
       "2.3.2": [
         "; Filament gcode\n"
+      ],
+      "2.4.0": [
+        "; filament start gcode\n{if  (bed_temperature[current_extruder] >55)||(bed_temperature_initial_layer[current_extruder] >55)}M106 P3 S200\n{elsif(bed_temperature[current_extruder] >50)||(bed_temperature_initial_layer[current_extruder] >50)}M106 P3 S150\n{elsif(bed_temperature[current_extruder] >45)||(bed_temperature_initial_layer[current_extruder] >45)}M106 P3 S50\n{endif}\n\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
       ]
     },
     "filament_end_gcode": {
       "2.3.2": [
         "; filament end gcode\n"
+      ],
+      "2.4.0": [
+        "; filament end gcode \n"
       ]
     },
     "compatible_printers": {
       "2.3.2": []
     },
     "filament_id": {
-      "2.3.2": "OGFE05"
+      "2.3.2": "OGFE05",
+      "2.4.0": "OEPLAB00"
     },
     "additional_cooling_fan_speed": {
       "2.3.2": [
         "70"
+      ],
+      "2.4.0": [
+        "0"
       ]
     },
     "nozzle_temperature_range_low": {
@@ -340,10 +389,24 @@
     "nozzle_temperature_range_high": {
       "2.3.2": [
         "230"
+      ],
+      "2.4.0": [
+        "240"
       ]
     },
     "setting_id": {
-      "2.3.2": "OGFSE05_00"
+      "2.3.2": "OGFSE05_00",
+      "2.4.0": "OERPLAPLUSS00"
+    },
+    "pressure_advance": {
+      "2.4.0": [
+        "0.04"
+      ]
+    },
+    "enable_pressure_advance": {
+      "2.4.0": [
+        "1"
+      ]
     }
   }
 }

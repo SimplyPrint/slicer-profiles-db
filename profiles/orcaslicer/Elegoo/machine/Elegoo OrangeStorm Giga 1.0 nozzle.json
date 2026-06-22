@@ -4,7 +4,7 @@
   "name": "Elegoo OrangeStorm Giga 1.0 nozzle",
   "vendor": "Elegoo",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.4.0",
   "filament_id": null,
   "setting_id": "EOSG10",
   "renamed_from": null,
@@ -91,11 +91,19 @@
       "2.3.1": [
         "500",
         "200"
+      ],
+      "2.4.0": [
+        "300",
+        "200"
       ]
     },
     "machine_max_speed_y": {
       "2.3.1": [
         "500",
+        "200"
+      ],
+      "2.4.0": [
+        "300",
         "200"
       ]
     },
@@ -154,7 +162,8 @@
     "printable_height": {
       "2.3.1": [
         "1010"
-      ]
+      ],
+      "2.4.0": "1010"
     },
     "extruder_clearance_radius": {
       "2.3.1": "65"
@@ -171,7 +180,8 @@
       ]
     },
     "printer_settings_id": {
-      "2.3.1": ""
+      "2.3.1": "",
+      "2.4.0": "Elegoo"
     },
     "printer_variant": {
       "2.3.1": "1.0"
@@ -233,16 +243,19 @@
       ]
     },
     "z_lift_type": {
-      "2.3.1": "NormalLift"
+      "2.3.1": "NormalLift",
+      "2.4.0": null
     },
     "default_print_profile": {
       "2.3.1": "0.50mm Standard @Elegoo Giga 1.0 nozzle"
     },
     "before_layer_change_gcode": {
-      "2.3.1": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+      "2.3.1": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+      "2.4.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\n"
     },
     "machine_start_gcode": {
-      "2.3.1": ";;===== date: 20240520 =====================\n;Machine_use_extruders:1\n;TIME:\nM400 ; wait for buffer to clear\n;[printer_model]\n;initial_filament:{filament_type[initial_extruder]}\n;curr_bed_type={curr_bed_type}\nM220 S100 ;Set the feed speed to 100%\nM221 S100 ;Set the flow rate to 100%\nM104 S140\n;Giga zoned hot bed control\n;Case 1\nM140 S0\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM140 T0 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM140 T1 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((first_layer_print_max[1])) > 402.5}\nM140 T3 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405 && ((first_layer_print_max[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 2\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM140 T3 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 3\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM140 T1 S[bed_temperature_initial_layer_single]\n{if ((first_layer_print_max[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 4\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\nG90\nG28 ;home\nG1 Z10 F300\nG1 X{print_bed_max[0]*0.75-50} Y0.5 F6000\n;\n;Giga zoned hot bed control\n;Case 1\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM190 T0 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM190 T1 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((first_layer_print_max[1])) > 402.5}\nM190 T3 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405 && ((first_layer_print_max[1])) > 402.5}\nM190 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 2\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM190 T3 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM190 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 3\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM190 T1 S[bed_temperature_initial_layer_single]\n{if ((first_layer_print_max[1])) > 402.5}\nM190 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 4\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM190 T2 S[bed_temperature_initial_layer_single]\n{endif}\nG1 Z0.4 F300\nM109 S[nozzle_temperature_initial_layer]\nG92 E0 ;Reset Extruder\nG1 X{print_bed_max[0]*0.75+50} E30 F400 ;Draw the first line\nG1 Z0.6 F120.0 ;Move to side a little\nG1 X{print_bed_max[0]*0.75+47} F3000\nG92 E0 ;Reset Extruder\n;LAYER_COUNT:[total_layer_count]\n;LAYER:0"
+      "2.3.1": ";;===== date: 20240520 =====================\n;Machine_use_extruders:1\n;TIME:\nM400 ; wait for buffer to clear\n;[printer_model]\n;initial_filament:{filament_type[initial_extruder]}\n;curr_bed_type={curr_bed_type}\nM220 S100 ;Set the feed speed to 100%\nM221 S100 ;Set the flow rate to 100%\nM104 S140\n;Giga zoned hot bed control\n;Case 1\nM140 S0\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM140 T0 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM140 T1 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((first_layer_print_max[1])) > 402.5}\nM140 T3 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405 && ((first_layer_print_max[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 2\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM140 T3 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 3\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM140 T1 S[bed_temperature_initial_layer_single]\n{if ((first_layer_print_max[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 4\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\nG90\nG28 ;home\nG1 Z10 F300\nG1 X{print_bed_max[0]*0.75-50} Y0.5 F6000\n;\n;Giga zoned hot bed control\n;Case 1\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM190 T0 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM190 T1 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((first_layer_print_max[1])) > 402.5}\nM190 T3 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405 && ((first_layer_print_max[1])) > 402.5}\nM190 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 2\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM190 T3 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM190 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 3\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM190 T1 S[bed_temperature_initial_layer_single]\n{if ((first_layer_print_max[1])) > 402.5}\nM190 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 4\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM190 T2 S[bed_temperature_initial_layer_single]\n{endif}\nG1 Z0.4 F300\nM109 S[nozzle_temperature_initial_layer]\nG92 E0 ;Reset Extruder\nG1 X{print_bed_max[0]*0.75+50} E30 F400 ;Draw the first line\nG1 Z0.6 F120.0 ;Move to side a little\nG1 X{print_bed_max[0]*0.75+47} F3000\nG92 E0 ;Reset Extruder\n;LAYER_COUNT:[total_layer_count]\n;LAYER:0",
+      "2.4.0": ";===== START GCODE BEGIN =====\n;===== date: 20260528 =====================\n;Machine_use_extruders:{parallel_printheads_count}\nM400 ; wait for buffer to clear\n;[printer_model]\n;initial_filament:{filament_type[initial_extruder]}\n;curr_bed_type={curr_bed_type}\nM220 S100 ;Set the feed speed to 100%\nM221 S100 ;Set the flow rate to 100%\nM104 S140\n;Giga zoned hot bed control\nM140 S0\n\n{if parallel_printheads_count == 1}\n;Case 1\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM140 T0 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM140 T1 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((first_layer_print_max[1])) > 402.5}\nM140 T3 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405 && ((first_layer_print_max[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 2\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM140 T3 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 3\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM140 T1 S[bed_temperature_initial_layer_single]\n{if ((first_layer_print_max[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 4\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n{if parallel_printheads_count > 1}\n;Heat all 4 bed zones for multi-printhead\nM140 T0 S[bed_temperature_initial_layer_single]\nM140 T1 S[bed_temperature_initial_layer_single]\nM140 T2 S[bed_temperature_initial_layer_single]\nM140 T3 S[bed_temperature_initial_layer_single]\n{endif}\n\nG90\nG28 ;home\nG1 Z10 F300\n\n{if parallel_printheads_count == 1}\nG1 X{print_bed_max[0]*0.75-50} Y0.5 F6000\n{endif}\n\n{if parallel_printheads_count == 2}\nG1 X{print_bed_max[0]*0.25-50} Y0.5 F6000\n{endif}\n\n{if parallel_printheads_count > 2}\nG1 X{print_bed_max[0]*0.125-50} Y0.5 F6000\n{endif}\n\n;\n;Giga zoned hot bed control\n{if parallel_printheads_count == 1}\n;Case 1\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM190 T0 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM190 T1 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((first_layer_print_max[1])) > 402.5}\nM190 T3 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405 && ((first_layer_print_max[1])) > 402.5}\nM190 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 2\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM190 T3 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM190 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 3\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM190 T1 S[bed_temperature_initial_layer_single]\n{if ((first_layer_print_max[1])) > 402.5}\nM190 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 4\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM190 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n{if parallel_printheads_count > 1}\n;Wait for all 4 bed zones to reach temperature\nM190 T0 S[bed_temperature_initial_layer_single]\nM190 T1 S[bed_temperature_initial_layer_single]\nM190 T2 S[bed_temperature_initial_layer_single]\nM190 T3 S[bed_temperature_initial_layer_single]\n{endif}\nG1 Z0.4 F300\nM109 S[nozzle_temperature_initial_layer]\nG92 E0 ;Reset Extruder\n\n{if parallel_printheads_count == 1}\nG1 X{print_bed_max[0]*0.75+50} E30 F400 ;Draw the first line\nG1 Z0.6 F120.0 ;Move to side a little\nG1 X{print_bed_max[0]*0.75+47} F3000\n{endif}\n\n{if parallel_printheads_count == 2}\nG1 X{print_bed_max[0]*0.25+50} E30 F400 ;Draw the first line\nG1 Z0.6 F120.0 ;Move to side a little\nG1 X{print_bed_max[0]*0.25+47} F3000\n{endif}\n\n{if parallel_printheads_count > 2}\nG1 X{print_bed_max[0]*0.125+50} E30 F400 ;Draw the first line\nG1 Z0.6 F120.0 ;Move to side a little\nG1 X{print_bed_max[0]*0.125+47} F3000\n{endif}\n\nG92 E0 ;Reset Extruder\n;LAYER_COUNT:[total_layer_count]\n;LAYER:0\n"
     },
     "machine_end_gcode": {
       "2.3.1": ";PRINT_END\nG90 ;Absolute positionning\nM83 ; extruder relative mode\nG1 X30 Y30 Z{min(max_layer_z+200, printable_height)} E-5 F{travel_speed*60} ; Move print head up\nM106 S0 ;Turn-off fan\nM104 S0 ;Turn-off hotend\nM140 S0 ;Turn-off bed\nM84 X Y E ;Disable all steppers but Z"
@@ -261,7 +274,8 @@
     "bed_exclude_area": {
       "2.3.1": [
         "0x0"
-      ]
+      ],
+      "2.4.0": []
     },
     "default_filament_profile": {
       "2.3.1": [
@@ -315,10 +329,12 @@
       "2.3.1": "brass"
     },
     "layer_change_gcode": {
-      "2.3.1": ";LAYER:{layer_num+1}\n{if layer_num > 0 and layer_num < 3}\n;Giga zoned hot bed control\n;Case 1\nM140 S0\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM140 T0 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM140 T1 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((first_layer_print_max[1])) > 402.5}\nM140 T3 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405 && ((first_layer_print_max[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 2\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM140 T3 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 3\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM140 T1 S[bed_temperature_initial_layer_single]\n{if ((first_layer_print_max[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 4\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n\n{endif}"
+      "2.3.1": ";LAYER:{layer_num+1}\n{if layer_num > 0 and layer_num < 3}\n;Giga zoned hot bed control\n;Case 1\nM140 S0\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM140 T0 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM140 T1 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((first_layer_print_max[1])) > 402.5}\nM140 T3 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405 && ((first_layer_print_max[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 2\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM140 T3 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 3\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM140 T1 S[bed_temperature_initial_layer_single]\n{if ((first_layer_print_max[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 4\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n\n{endif}",
+      "2.4.0": ";===== LAYER CHANGE GCODE BEGIN =====\n;===== date: 20251230 =====================\n;LAYER:{layer_num+1}\n{if layer_num > 0 and layer_num < 3}\n;Giga zoned hot bed control\nM140 S0\n\n{if parallel_printheads_count == 1}\n;Case 1\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM140 T0 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM140 T1 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((first_layer_print_max[1])) > 402.5}\nM140 T3 S[bed_temperature_initial_layer_single]\n{endif}\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405 && ((first_layer_print_max[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 2\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) < 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM140 T3 S[bed_temperature_initial_layer_single]\n{if ((min(print_bed_max[0], max(first_layer_print_min[0] + 32, first_layer_print_max[0])))) > 405}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 3\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) < 402.5}\nM140 T1 S[bed_temperature_initial_layer_single]\n{if ((first_layer_print_max[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n;Case 4\n{if (min(print_bed_max[0], first_layer_print_min[0] + 32) - 32) > 405 && (max(0, first_layer_print_min[1])) > 402.5}\nM140 T2 S[bed_temperature_initial_layer_single]\n{endif}\n{endif}\n\n{if parallel_printheads_count > 1}\n;Heat all 4 bed zones for multi-printhead\nM140 T0 S[bed_temperature_initial_layer_single]\nM140 T1 S[bed_temperature_initial_layer_single]\nM140 T2 S[bed_temperature_initial_layer_single]\nM140 T3 S[bed_temperature_initial_layer_single]\n{endif}\n\n{endif}"
     },
     "machine_pause_gcode": {
-      "2.3.1": "PAUSE"
+      "2.3.1": "PAUSE",
+      "2.4.0": "M600"
     },
     "setting_id": {
       "2.3.1": "EOSG10"
@@ -343,6 +359,59 @@
     },
     "time_lapse_gcode": {
       "2.3.1": ""
+    },
+    "support_chamber_temp_control": {
+      "2.4.0": "0"
+    },
+    "printer_notes": {
+      "2.4.0": ""
+    },
+    "disable_m73": {
+      "2.4.0": "0"
+    },
+    "cooling_tube_retraction": {
+      "2.4.0": "90"
+    },
+    "parking_pos_retraction": {
+      "2.4.0": "90"
+    },
+    "support_air_filtration": {
+      "2.4.0": "0"
+    },
+    "purge_in_prime_tower": {
+      "2.4.0": "0"
+    },
+    "manual_filament_change": {
+      "2.4.0": "1"
+    },
+    "enable_filament_ramming": {
+      "2.4.0": "0"
+    },
+    "host_type": {
+      "2.4.0": "elegoolink"
+    },
+    "support_parallel_printheads": {
+      "2.4.0": "1"
+    },
+    "parallel_printheads_count": {
+      "2.4.0": "1"
+    },
+    "parallel_printheads_bed_exclude_areas": {
+      "2.4.0": [
+        "",
+        "400x0, 810x0, 810x805, 400x805",
+        "200x0, 810x0, 810x805, 200x805",
+        "200x0, 810x0, 810x805, 200x805"
+      ]
+    },
+    "head_wrap_detect_zone": {
+      "2.4.0": []
+    },
+    "use_relative_e_distances": {
+      "2.4.0": "0"
+    },
+    "upward_compatible_machine": {
+      "2.4.0": []
     }
   }
 }
