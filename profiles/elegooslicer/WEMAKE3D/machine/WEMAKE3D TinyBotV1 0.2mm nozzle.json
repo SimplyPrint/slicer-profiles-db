@@ -1,0 +1,277 @@
+{
+  "slicer": "elegooslicer",
+  "profile_type": "machine",
+  "name": "WEMAKE3D TinyBotV1 0.2mm nozzle",
+  "vendor": "WEMAKE3D",
+  "first_seen": "1.5.2.2",
+  "last_seen": "1.5.2.2",
+  "filament_id": null,
+  "setting_id": "GM001",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "1.5.2.2": "machine"
+    },
+    "name": {
+      "1.5.2.2": "WEMAKE3D TinyBotV1 0.2mm nozzle"
+    },
+    "from": {
+      "1.5.2.2": "system"
+    },
+    "instantiation": {
+      "1.5.2.2": "true"
+    },
+    "gcode_flavor": {
+      "1.5.2.2": "marlin2"
+    },
+    "printer_technology": {
+      "1.5.2.2": "FFF"
+    },
+    "machine_start_gcode": {
+      "1.5.2.2": "G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]\nM104 S[first_layer_temperature] ; set extruder temp\nM140 S[first_layer_bed_temperature] ; set bed temp\nG28 ; home all\nG29; UBL\n\nG1 Y1.0 Z0.3 F1000 ; move print head up\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nM109 S[first_layer_temperature] ; wait for extruder temp\nG92 E0.0\n; initial load\nG1 X205.0 E19 F1000\nG1 Y1.6\nG1 X5.0 E19 F1000\nG92 E0.0\n; intro line\nG1 Y2.0 Z0.2 F1000\nG1 X65.0 E9.0 F1000\nG1 X105.0 E12.5 F1000\nG92 E0.0"
+    },
+    "machine_end_gcode": {
+      "1.5.2.2": ";PRINT_END\nG91 ;Relative positionning\nG1 E-2 F2700 ;Retract a bit\nG1 E-8 X5 Y5 Z3 F3000 ;Retract\nG90 ;Absolute positionning\nG1 X10 Y200 F6000;Finish print\nM106 S0 ;Turn-off fan\nM104 S0 ;Turn-off hotend\nM140 S0 ;Turn-off bed\nM84"
+    },
+    "printer_extruder_variant": {
+      "1.5.2.2": [
+        "Direct Drive Standard"
+      ]
+    },
+    "extruder_colour": {
+      "1.5.2.2": [
+        "#018001"
+      ]
+    },
+    "extruder_offset": {
+      "1.5.2.2": [
+        "0x0"
+      ]
+    },
+    "machine_max_acceleration_e": {
+      "1.5.2.2": [
+        "8000",
+        "8000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "1.5.2.2": [
+        "3000",
+        "3000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "1.5.2.2": [
+        "8000",
+        "8000"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "1.5.2.2": [
+        "3000",
+        "3000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "1.5.2.2": [
+        "3000",
+        "3000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "1.5.2.2": [
+        "2000",
+        "2000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "1.5.2.2": [
+        "250",
+        "250"
+      ]
+    },
+    "machine_max_speed_e": {
+      "1.5.2.2": [
+        "120",
+        "120"
+      ]
+    },
+    "machine_max_speed_x": {
+      "1.5.2.2": [
+        "300",
+        "200"
+      ]
+    },
+    "machine_max_speed_y": {
+      "1.5.2.2": [
+        "300",
+        "200"
+      ]
+    },
+    "machine_max_speed_z": {
+      "1.5.2.2": [
+        "40",
+        "40"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "1.5.2.2": [
+        "2.5",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "1.5.2.2": [
+        "9",
+        "9"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "1.5.2.2": [
+        "9",
+        "9"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "1.5.2.2": [
+        "0.2",
+        "0.4"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "1.5.2.2": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "1.5.2.2": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "1.5.2.2": [
+        "0.16"
+      ]
+    },
+    "min_layer_height": {
+      "1.5.2.2": [
+        "0.04"
+      ]
+    },
+    "printable_height": {
+      "1.5.2.2": "400"
+    },
+    "extruder_clearance_radius": {
+      "1.5.2.2": "65"
+    },
+    "extruder_clearance_height_to_rod": {
+      "1.5.2.2": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "1.5.2.2": "140"
+    },
+    "nozzle_diameter": {
+      "1.5.2.2": [
+        "0.2"
+      ]
+    },
+    "printer_settings_id": {
+      "1.5.2.2": "WEMAKE3D"
+    },
+    "printer_variant": {
+      "1.5.2.2": "0.2"
+    },
+    "retraction_minimum_travel": {
+      "1.5.2.2": [
+        "1"
+      ]
+    },
+    "retract_before_wipe": {
+      "1.5.2.2": [
+        "70%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "1.5.2.2": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "1.5.2.2": [
+        "0.8"
+      ]
+    },
+    "retract_length_toolchange": {
+      "1.5.2.2": [
+        "2"
+      ]
+    },
+    "z_hop": {
+      "1.5.2.2": [
+        "0.4"
+      ]
+    },
+    "retract_restart_extra": {
+      "1.5.2.2": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "1.5.2.2": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "1.5.2.2": [
+        "30"
+      ]
+    },
+    "deretraction_speed": {
+      "1.5.2.2": [
+        "30"
+      ]
+    },
+    "single_extruder_multi_material": {
+      "1.5.2.2": "1"
+    },
+    "change_filament_gcode": {
+      "1.5.2.2": ""
+    },
+    "before_layer_change_gcode": {
+      "1.5.2.2": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "layer_change_gcode": {
+      "1.5.2.2": ""
+    },
+    "machine_pause_gcode": {
+      "1.5.2.2": "M600\n"
+    },
+    "wipe": {
+      "1.5.2.2": [
+        "1"
+      ]
+    },
+    "thumbnails": {
+      "1.5.2.2": ""
+    },
+    "printable_area": {
+      "1.5.2.2": [
+        "0x0",
+        "210x0",
+        "210x210",
+        "0x210"
+      ]
+    },
+    "setting_id": {
+      "1.5.2.2": "GM001"
+    },
+    "printer_model": {
+      "1.5.2.2": "WEMAKE3D TinyBotV1"
+    },
+    "nozzle_type": {
+      "1.5.2.2": "brass"
+    }
+  }
+}

@@ -1,8 +1,8 @@
 [
     {
         "machine_model": {
-            "bed_model": "sha256:d511cda7fe992efb7dab749b7701f0f77ad6a9073c6dbf31e1a7c0a452dd02d7",
-            "bed_texture": "sha256:0126777982b20c74b24b37803b978739538540bb662b0e7d6235ea2066f5823e",
+            "bed_model": "sha256:fb066bc1c57a95c383bd779eee086a3f802e4786f1d45baf9fa7e1e6f6386981",
+            "bed_texture": "sha256:fb50b5cace17c6831a74b0f633ff24283d6ca5891a84e66c0226b48008a076d0",
             "default_materials": "Anycubic PLA @Anycubic Kobra S1 0.4 nozzle;Anycubic PLA SE @Anycubic Kobra S1 0.4 nozzle;Anycubic PLA High Speed @Anycubic Kobra S1 0.4 nozzle;Anycubic PLA Silk @Anycubic Kobra S1 0.4 nozzle;Anycubic PETG @Anycubic Kobra S1 0.4 nozzle;Anycubic PLA+ @Anycubic Kobra S1 0.4 nozzle;Anycubic PLA Matte @Anycubic Kobra S1 0.4 nozzle;Anycubic PLA Glow @Anycubic Kobra S1 0.4 nozzle;Anycubic ASA @Anycubic Kobra S1 0.4 nozzle;Anycubic ABS @Anycubic Kobra S1 0.4 nozzle;Anycubic ASA @Anycubic Kobra S1 0.4 nozzle;Anycubic PA @Anycubic Kobra S1 0.4 nozzle;Anycubic PC @Anycubic Kobra S1 0.4 nozzle;Anycubic PETG @Anycubic Kobra S1 0.4 nozzle;Anycubic PVA @Anycubic Kobra S1 0.4 nozzle;Anycubic TPU @Anycubic Kobra S1 0.4 nozzle;Anycubic PLA+ @Anycubic Kobra S1 0.4 nozzle",
             "family": "Anycubic",
             "hotend_model": "",
@@ -27,7 +27,7 @@
                     "before_layer_change_gcode": "; BEFORE_LAYER_CHANGE [layer_num] @ [layer_z]mm",
                     "best_object_pos": "0.5,0.5",
                     "change_extrusion_role_gcode": "",
-                    "change_filament_gcode": "",
+                    "change_filament_gcode": "; FLUSH_START\n;;; M400 P0\nT[next_extruder] ; change extruder\n; 1\n;;; G90\n;;; G1 Z{toolchange_z+2} F480\n;;; G1 X261 Y25 F12000\n;;; G1 Y1 F600\n;;; M400 P2730\n;;; G1 Y25 F3000\n;;; M400 P76250\n;;; M400 P35780\n; 2.1\n;;; G90\n;;; G1 Z{toolchange_z+2} F480\n;;; G1 X47 Y230 F12000\n;;; M400 P0\n; 2.2\n;;; G1 X47 Y276 F600\n;;; G1 X47 Y230 F12000\n;;; G1 X47 Y276 F600\n;;; G1 X47 Y230 F12000\n; 3.1\n;;; G1 F36000\n;;; G1 Y250\n;;; G1 F8000\n;;; G1 X81\n;;; G1 Y273\n; 3.2\n;;; G1 F8000\n;;; G1 X96\n;;; G1 X81\n;;; G1 F8000\n;;; G1 X96\n;;; G1 X81\n;;; G1 F8000\n;;; G1 X96\n;;; G1 X81\n;;; G1 X96\n;;; G1 X81\n;;; G1 X96\n;;; G1 X81\n;;; G1 X96\n;;; G1 X81\n; 3.3\n;;; G1 X72\n;;; G1 X77\n;;; G1 Z{toolchange_z}\n;;; M400 P0\n; FLUSH_END",
                     "cooling_tube_length": "0",
                     "cooling_tube_retraction": "0",
                     "default_filament_profile": [
