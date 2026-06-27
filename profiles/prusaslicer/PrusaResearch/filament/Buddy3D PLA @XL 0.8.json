@@ -16,7 +16,7 @@
       "3.0.0": ""
     },
     "compatible_printers_condition": {
-      "3.0.0": "printer_notes=~/.*XL.*/ and nozzle_diameter[0]==0.8 and printer_notes!~/.*HF_NOZZLE.*/"
+      "3.0.0": "printer_model=~/(XL|XL2|XL5|XLIS|XL2IS|XL5IS)/ and nozzle_diameter[0]==0.8 and printer_notes!~/.*HF_NOZZLE.*/"
     },
     "end_filament_gcode": {
       "3.0.0": "\"; Filament-specific end gcode\""

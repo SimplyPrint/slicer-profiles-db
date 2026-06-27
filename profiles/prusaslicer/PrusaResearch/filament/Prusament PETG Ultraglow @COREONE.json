@@ -16,7 +16,7 @@
       "3.0.0": ""
     },
     "compatible_printers_condition": {
-      "3.0.0": "nozzle_diameter[0]>=0.4 and nozzle_diameter[0]!=0.6 and nozzle_diameter[0]!=0.8 and printer_model=~/(COREONE|COREONEL)/ and ! single_extruder_multi_material and ! nozzle_high_flow[0]"
+      "3.0.0": "nozzle_diameter[0]>=0.4 and nozzle_diameter[0]!=0.6 and nozzle_diameter[0]!=0.8 and printer_model=~/(COREONE|COREONEL)/ and ! single_extruder_multi_material and ! nozzle_high_flow[0] and printer_notes!~/.*HT400.*/"
     },
     "end_filament_gcode": {
       "3.0.0": "\"; Filament-specific end gcode\""
