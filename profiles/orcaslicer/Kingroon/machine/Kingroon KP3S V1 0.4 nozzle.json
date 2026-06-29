@@ -4,7 +4,7 @@
   "name": "Kingroon KP3S V1 0.4 nozzle",
   "vendor": "Kingroon",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.4.1",
   "filament_id": null,
   "setting_id": "GM003",
   "renamed_from": null,
@@ -342,7 +342,8 @@
       "2.3.1": "M104 S{first_layer_temperature[0]} ; set final nozzle temp\nM190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nM83\nG28 ; h1ome all axes\nG1 Z0.2                                   ; lift nozzle a bit \nG92 E0 \nG1 Y-3 F2400   \nG1 X50 F2400                                  ; zero the extruded length \nG1 X115  E40 F500                       ; Extrude 25mm of filament in a 5cm line. \nG92 E0                                     ; zero the extruded length again \nG1 E-0.2 F3000                                ; Retract a little \nG1 X180 F4000                              ; Quickly wipe away from the filament line\nM117"
     },
     "setting_id": {
-      "2.3.1": "GM003"
+      "2.3.1": "GM003",
+      "2.4.1": "hUDREW1HLsKF84Wi"
     },
     "printer_model": {
       "2.3.1": "Kingroon KP3S V1"

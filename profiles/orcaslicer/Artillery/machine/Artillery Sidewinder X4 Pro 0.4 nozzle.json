@@ -4,7 +4,7 @@
   "name": "Artillery Sidewinder X4 Pro 0.4 nozzle",
   "vendor": "Artillery",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.4.1",
   "filament_id": null,
   "setting_id": "GM007",
   "renamed_from": null,
@@ -25,7 +25,8 @@
       "2.3.1": "klipper"
     },
     "machine_start_gcode": {
-      "2.3.1": "M104 S140\nM190 S[first_layer_bed_temperature]\nM109 S{temperature_vitrification[0]}\nG28;\nG1 X180 Y247 Z10 F5000\nSET_KINEMATIC_POSITION Y=0\nG1 Y11 F4000\nG1 X180 F4000\nG1 Z-1 F600 \nG1 X230 F4000\nG1 Y15 F4000\nG1 X180 F4000\nG92 E0\nG1 Z10 F1200\nG1 Y0 F5000\nG1 E-1 F3000\nM400\nSET_KINEMATIC_POSITION Y=247\nG92 E-1\nM140 S[first_layer_bed_temperature];\nM104 S[first_layer_temperature];\nG1 X0 Y0.8 Z0.8 F18000\nG92 E0\nG1 X0 Y0.8 Z0.3 E8 F600\nG92 E0\nG1 X170 Y0.8 Z0.3 F1800.0 E17.0;draw line\nG92 E0\nG1 X170 Y0 Z0.3 F1800.0 E0.08;draw line\nG92 E0\nG1 X70 Y0 Z0.3 F1800.0 E10.0;draw line\nG92 E0\nG1 X70 Y1.6 Z0.3 F1800.0 E0.16;draw line\nG92 E0\nG1 X150 Y1.6 Z0.3 F1800.0 E8;draw line\nG92 E0\nG1 X150 Y0 Z0.3 F1800.0 E0.16;draw line\nG92 E0\nG1 E-1 Z5 F18000\nG92 E0\n"
+      "2.3.1": "M104 S140\nM190 S[first_layer_bed_temperature]\nM109 S{temperature_vitrification[0]}\nG28;\nG1 X180 Y247 Z10 F5000\nSET_KINEMATIC_POSITION Y=0\nG1 Y11 F4000\nG1 X180 F4000\nG1 Z-1 F600 \nG1 X230 F4000\nG1 Y15 F4000\nG1 X180 F4000\nG92 E0\nG1 Z10 F1200\nG1 Y0 F5000\nG1 E-1 F3000\nM400\nSET_KINEMATIC_POSITION Y=247\nG92 E-1\nM140 S[first_layer_bed_temperature];\nM104 S[first_layer_temperature];\nG1 X0 Y0.8 Z0.8 F18000\nG92 E0\nG1 X0 Y0.8 Z0.3 E8 F600\nG92 E0\nG1 X170 Y0.8 Z0.3 F1800.0 E17.0;draw line\nG92 E0\nG1 X170 Y0 Z0.3 F1800.0 E0.08;draw line\nG92 E0\nG1 X70 Y0 Z0.3 F1800.0 E10.0;draw line\nG92 E0\nG1 X70 Y1.6 Z0.3 F1800.0 E0.16;draw line\nG92 E0\nG1 X150 Y1.6 Z0.3 F1800.0 E8;draw line\nG92 E0\nG1 X150 Y0 Z0.3 F1800.0 E0.16;draw line\nG92 E0\nG1 E-1 Z5 F18000\nG92 E0\n",
+      "2.4.1": "M104 S140\nM190 S[first_layer_bed_temperature]\nM109 S{temperature_vitrification[0]}\nG28;\nG1 X180 Y247 Z10 F5000\nSET_KINEMATIC_POSITION Y=0\nG1 Y11 F4000\nG1 X180 F4000\nG1 Z-1 F600 \nG1 X230 F4000\nG1 Y15 F4000\nG1 X180 F4000\nG92 E0\nG1 Z10 F1200\nG1 Y0 F5000\nG1 E-1 F3000\nM400\nSET_KINEMATIC_POSITION Y=247\nG92 E-1\nM140 S[first_layer_bed_temperature];\nM109 S[first_layer_temperature];\nG1 X0 Y0.8 Z0.8 F18000\nG92 E0\nG1 X0 Y0.8 Z0.3 E8 F600\nG92 E0\nG1 X170 Y0.8 Z0.3 F1800.0 E17.0;draw line\nG92 E0\nG1 X170 Y0 Z0.3 F1800.0 E0.08;draw line\nG92 E0\nG1 X70 Y0 Z0.3 F1800.0 E10.0;draw line\nG92 E0\nG1 X70 Y1.6 Z0.3 F1800.0 E0.16;draw line\nG92 E0\nG1 X150 Y1.6 Z0.3 F1800.0 E8;draw line\nG92 E0\nG1 X150 Y0 Z0.3 F1800.0 E0.16;draw line\nG92 E0\nG1 E-1 Z5 F18000\nG92 E0\n"
     },
     "machine_end_gcode": {
       "2.3.1": "G91 ;Relative positioning\nG1 E-1 F2700 ;Retract a bit\nG1 E-1 Z0.2 F2400 ;Retract and raise Z\nG1 X5 Y5 F3000 ;Wipe out\nG1 Z1 ;Raise Z more\nG90 ;Absolute positionning\nG1 X-5 Y250  F3000 ;Wipe out\nM106 S0 ;Turn-off fan\nM104 S0 ;Turn-off hotend\nM140 S0 ;Turn-off bed\nM84 X Y E ;Disable all steppers but Z"
@@ -257,7 +258,8 @@
       ]
     },
     "setting_id": {
-      "2.3.1": "GM007"
+      "2.3.1": "GM007",
+      "2.4.1": "7cLTEGUDiY31gDxn"
     },
     "printer_model": {
       "2.3.1": "Artillery Sidewinder X4 Pro"

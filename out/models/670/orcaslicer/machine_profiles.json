@@ -3,7 +3,7 @@
         "machine_model": {
             "bed_model": "sha256:43ceba5f2ce7d0a5b898fd85e0ed4fffd65ae68f533c8c2368b073a730564f68",
             "bed_texture": "sha256:16b7b44ad366e7013baf721c06ad02957a7ce598c5da8345a6a7ee836080f947",
-            "default_materials": "Elegoo ASA @0.2 nozzle;Elegoo ASA @ECC2;Elegoo PETG @0.2 nozzle;Elegoo PETG @ECC2;Elegoo PETG PRO @0.2 nozzle;Elegoo PETG PRO @ECC2;Elegoo PLA @0.2 nozzle;Elegoo PLA Matte @0.2 nozzle;Elegoo PLA Matte @ECC2;Elegoo PLA PRO @0.2 nozzle;Elegoo PLA PRO @ECC2;Elegoo PLA Silk @0.2 nozzle;Elegoo PLA Silk @ECC2;Elegoo PLA-CF @ECC2;Elegoo PLA @ECC2;Elegoo PLA+ @0.2 nozzle;Elegoo PLA+ @ECC2;Elegoo Rapid PETG @0.2 nozzle;Elegoo Rapid PETG @ECC2;Elegoo Rapid PLA+ @0.2 nozzle;Elegoo Rapid PLA+ @ECC2;Elegoo TPU 95A @ECC2;Elegoo PLA Basic @0.2 nozzle;Elegoo PLA Basic @ECC2;Elegoo PLA Galaxy @ECC2;Elegoo PLA Marble @ECC2;Elegoo PLA Sparkle @ECC2;Elegoo PLA Wood @ECC2;Elegoo Rapid TPU 95A @ECC2;Elegoo ABS @0.2 nozzle;Elegoo ABS @ECC2;Elegoo PAHT-CF @ECC2;Elegoo PC @0.2 nozzle;Elegoo PC @ECC2;Elegoo PC-FR @0.2 nozzle;Elegoo PC-FR @ECC2;Elegoo PETG-CF @ECC2;Elegoo PETG-GF @ECC2;Elegoo PETG Translucent @0.2 nozzle;Elegoo PETG Translucent @ECC2;Elegoo ASA-CF @ECC2;Elegoo PET-CF @ECC2;Elegoo PETG HF @ECC2;Elegoo PLA Glow @ECC2;Elegoo PLA Translucent2 @ECC2",
+            "default_materials": "Elegoo ASA @ECC2;Elegoo PETG @ECC2;Elegoo PETG PRO @ECC2;Elegoo PLA Matte @ECC2;Elegoo PLA PRO @ECC2;Elegoo PLA Silk @ECC2;Elegoo PLA-CF @ECC2;Elegoo PLA @ECC2;Elegoo PLA+ @ECC2;Elegoo Rapid PETG @ECC2;Elegoo Rapid PLA+ @ECC2;Elegoo TPU 95A @ECC2;Elegoo PLA Basic @ECC2;Elegoo PLA Galaxy @ECC2;Elegoo PLA Marble @ECC2;Elegoo PLA Sparkle @ECC2;Elegoo PLA Wood @ECC2;Elegoo Rapid TPU 95A @ECC2;Elegoo ABS @ECC2;Elegoo PAHT-CF @ECC2;Elegoo PC @ECC2;Elegoo PC-FR @ECC2;Elegoo PETG-CF @ECC2;Elegoo PETG-GF @ECC2;Elegoo PETG Translucent @ECC2;Elegoo ASA-CF @ECC2;Elegoo PET-CF @ECC2;Elegoo PETG HF @ECC2;Elegoo PLA Glow @ECC2;Elegoo PLA Translucent2 @ECC2",
             "family": "Elegoo",
             "hotend_model": "",
             "machine_tech": "FFF",
@@ -37,7 +37,7 @@
                     "change_filament_gcode": "\n;==========CC2_CHANGE_FILAMENT_GCODE==========\n;===== date: 2026-01-16-001 =====================\nM106 S0\nM106 P2 S0\nG1 Z{min(max_layer_z+3, printable_height+0.5)} F1200\nM6211 T[next_extruder] L[flush_length] M{old_filament_e_feedrate} N{new_filament_e_feedrate} Q[old_filament_temp] R[nozzle_temperature_range_high] S[new_filament_temp]\nT[next_extruder]\n",
                     "cooling_tube_retraction": "90",
                     "default_filament_profile": [
-                        "Elegoo PLA @0.2 nozzle"
+                        "Elegoo PLA @ECC2"
                     ],
                     "default_print_profile": "0.10mm Standard @Elegoo CC2 0.2 nozzle",
                     "deretraction_speed": [
@@ -190,7 +190,7 @@
                         "30"
                     ],
                     "scan_first_layer": "1",
-                    "setting_id": "ECC202",
+                    "setting_id": "V2r3qWSf5W6ql5A9",
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
                     "support_air_filtration": "0",
@@ -395,7 +395,7 @@
                         "30"
                     ],
                     "scan_first_layer": "1",
-                    "setting_id": "ECC204",
+                    "setting_id": "hjSig28o75Oxgd7J",
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
                     "support_air_filtration": "0",
@@ -600,7 +600,7 @@
                         "30"
                     ],
                     "scan_first_layer": "1",
-                    "setting_id": "ECC206",
+                    "setting_id": "JshHPoQUPY5rrW4i",
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
                     "support_air_filtration": "0",
@@ -805,7 +805,7 @@
                         "30"
                     ],
                     "scan_first_layer": "1",
-                    "setting_id": "ECC208",
+                    "setting_id": "PFAN6GUXHbdiurYP",
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
                     "support_air_filtration": "0",

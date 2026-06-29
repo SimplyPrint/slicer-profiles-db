@@ -3547,333 +3547,6 @@
     {
         "compatible_printers": {
             "Bambu Lab P1S": [
-                "0.4"
-            ]
-        },
-        "data": {
-            "activate_air_filtration": [
-                "0"
-            ],
-            "additional_cooling_fan_speed": [
-                "0"
-            ],
-            "additional_fan_full_speed_layer": [
-                "0"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperatures": [
-                "0"
-            ],
-            "circle_compensation_speed": [
-                "200"
-            ],
-            "close_additional_fan_first_x_layers": [
-                "3"
-            ],
-            "close_fan_the_first_x_layers": [
-                "3"
-            ],
-            "compatible_printers": [
-                "Bambu Lab X1 0.4 nozzle",
-                "Bambu Lab X1 Carbon 0.4 nozzle",
-                "Bambu Lab P1S 0.4 nozzle",
-                "Bambu Lab X1E 0.4 nozzle"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "cool_plate_temp": [
-                "0"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "0"
-            ],
-            "counter_coef_1": [
-                "0"
-            ],
-            "counter_coef_2": [
-                "0.008"
-            ],
-            "counter_coef_3": [
-                "-0.041"
-            ],
-            "counter_limit_max": [
-                "0.033"
-            ],
-            "counter_limit_min": [
-                "-0.035"
-            ],
-            "diameter_limit": [
-                "50"
-            ],
-            "during_print_exhaust_fan_speed": [
-                "70"
-            ],
-            "eng_plate_temp": [
-                "60"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "60"
-            ],
-            "fan_cooling_layer_time": [
-                "15"
-            ],
-            "fan_max_speed": [
-                "80"
-            ],
-            "fan_min_speed": [
-                "0"
-            ],
-            "filament_adaptive_volumetric_speed": [
-                "0"
-            ],
-            "filament_adhesiveness_category": [
-                "300"
-            ],
-            "filament_cost": [
-                "29.99"
-            ],
-            "filament_density": [
-                "1.24"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n\n"
-            ],
-            "filament_extruder_variant": [
-                "Direct Drive Standard",
-                "Direct Drive High Flow"
-            ],
-            "filament_flow_ratio": [
-                "0.95"
-            ],
-            "filament_flush_temp": [
-                "0"
-            ],
-            "filament_flush_volumetric_speed": [
-                "0"
-            ],
-            "filament_id": "GFL06",
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_long_retractions_when_cut": [
-                "nil"
-            ],
-            "filament_long_retractions_when_ec": [
-                "nil"
-            ],
-            "filament_max_volumetric_speed": [
-                "20"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_pre_cooling_temperature": [
-                "0"
-            ],
-            "filament_prime_volume": [
-                "45"
-            ],
-            "filament_printable": [
-                "3"
-            ],
-            "filament_ramming_travel_time": [
-                "0"
-            ],
-            "filament_ramming_volumetric_speed": [
-                "-1"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_distances_when_cut": [
-                "nil"
-            ],
-            "filament_retraction_distances_when_ec": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_scarf_gap": [
-                "0%"
-            ],
-            "filament_scarf_height": [
-                "10%"
-            ],
-            "filament_scarf_length": [
-                "10"
-            ],
-            "filament_scarf_seam_type": [
-                "none"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_shrink": [
-                "100%"
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n{if (bed_temperature[current_extruder] >80)||(bed_temperature_initial_layer[current_extruder] >80)}M106 P3 S255\n{elsif (bed_temperature[current_extruder] >60)||(bed_temperature_initial_layer[current_extruder] >60)}M106 P3 S180\n{endif}\n\n{if activate_air_filtration[current_extruder] && support_air_filtration}\nM106 P3 S{during_print_exhaust_fan_speed_num[current_extruder]} \n{endif}"
-            ],
-            "filament_tower_interface_pre_extrusion_dist": [
-                "10"
-            ],
-            "filament_tower_interface_pre_extrusion_length": [
-                "0"
-            ],
-            "filament_tower_interface_print_temp": [
-                "-1"
-            ],
-            "filament_tower_interface_purge_volume": [
-                "20"
-            ],
-            "filament_tower_ironing_area": [
-                "4"
-            ],
-            "filament_type": [
-                "PETG"
-            ],
-            "filament_velocity_adaptation_factor": [
-                "1"
-            ],
-            "filament_vendor": [
-                "Polymaker"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hole_coef_1": [
-                "0"
-            ],
-            "hole_coef_2": [
-                "-0.008"
-            ],
-            "hole_coef_3": [
-                "0.23415"
-            ],
-            "hole_limit_max": [
-                "0.22"
-            ],
-            "hole_limit_min": [
-                "0.088"
-            ],
-            "hot_plate_temp": [
-                "60"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "60"
-            ],
-            "impact_strength_z": [
-                "10"
-            ],
-            "instantiation": "true",
-            "long_retractions_when_ec": [
-                "0"
-            ],
-            "name": "Fiberon PETG-ESD @BBL X1",
-            "nozzle_temperature": [
-                "290"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "290"
-            ],
-            "nozzle_temperature_range_high": [
-                "290"
-            ],
-            "nozzle_temperature_range_low": [
-                "250"
-            ],
-            "overhang_fan_speed": [
-                "70"
-            ],
-            "overhang_fan_threshold": [
-                "95%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "3"
-            ],
-            "retraction_distances_when_ec": [
-                "0"
-            ],
-            "setting_id": "GFSL06_01",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "2"
-            ],
-            "slow_down_min_speed": [
-                "20"
-            ],
-            "supertack_plate_temp": [
-                "70"
-            ],
-            "supertack_plate_temp_initial_layer": [
-                "70"
-            ],
-            "temperature_vitrification": [
-                "77"
-            ],
-            "textured_plate_temp": [
-                "60"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "60"
-            ],
-            "type": "filament",
-            "volumetric_speed_coefficients": [
-                "0 0 0 0 0 0"
-            ]
-        },
-        "filament_db_ids": [
-            "fiberon/PETG/petg_esd"
-        ],
-        "generic_id": "GFG99",
-        "name": "Fiberon PETG-ESD @BBL X1"
-    },
-    {
-        "compatible_printers": {
-            "Bambu Lab P1S": [
                 "0.4",
                 "0.6"
             ]
@@ -36726,7 +36399,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSA04",
+            "setting_id": "YiQZfhL6hH0giSHL",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -36937,7 +36610,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSP97_03",
+            "setting_id": "xfVrCZ7ySzkpdzX0",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -37147,7 +36820,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSS98_00",
+            "setting_id": "A7gedcxip65DXKuf",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -37354,7 +37027,7 @@
             "required_nozzle_HRC": [
                 "40"
             ],
-            "setting_id": "OGFSN97_00",
+            "setting_id": "rZpVQIyltFNiQyW3",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -37564,7 +37237,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSA04",
+            "setting_id": "l2LkEql1SVH0iRqY",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -37771,7 +37444,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSA04",
+            "setting_id": "LNjv9LwZnbu7ZASC",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -37973,7 +37646,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSR99_00",
+            "setting_id": "cFGhkhQKiFilQ9gZ",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -38183,7 +37856,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSC99_00",
+            "setting_id": "KlHtaJU2GM0uaRGM",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -38392,7 +38065,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSL99_02",
+            "setting_id": "RFs9eCKYOMUSmvZf",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -38599,7 +38272,7 @@
             "required_nozzle_HRC": [
                 "40"
             ],
-            "setting_id": "OGFSA04",
+            "setting_id": "rchW8WI6gcXuAE0V",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -38806,7 +38479,7 @@
             "required_nozzle_HRC": [
                 "40"
             ],
-            "setting_id": "OGFSA04",
+            "setting_id": "9DoeedUBMRPSCyu2",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -39016,7 +38689,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSA04",
+            "setting_id": "RcBNzytWgwRrwXXz",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -39227,7 +38900,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSP97_00",
+            "setting_id": "yos4oScjK83JuXJV",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -39438,7 +39111,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSR98_00",
+            "setting_id": "kks2z4JbypqY68RW",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -39648,7 +39321,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSA04",
+            "setting_id": "1dlLnJKh1HzQCZVJ",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -39858,7 +39531,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSA04",
+            "setting_id": "D6O8IcmSe8WGqOvb",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -40069,7 +39742,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSP99_00",
+            "setting_id": "8HpfeTNwthJ7L0XE",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -40279,7 +39952,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSS97_00",
+            "setting_id": "oUpbqz3uzQqND5DG",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -40489,7 +40162,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSL99",
+            "setting_id": "fjVWcIfxaOAZHNU1",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -40696,7 +40369,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSA04",
+            "setting_id": "bcsNcj4DzLb4K5zN",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -40903,7 +40576,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSG96_00",
+            "setting_id": "wNH8CohYIh9y6ayx",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -41114,7 +40787,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSP96_00",
+            "setting_id": "TDHYN3fs5wwakgsM",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -41321,7 +40994,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSG97_00",
+            "setting_id": "21dhMVBuVwR2lzIX",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -41532,7 +41205,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSL99_01",
+            "setting_id": "oPkXDCBrTQB3SRm4",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -41742,7 +41415,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSP98_00",
+            "setting_id": "prroSXONXxaahNkq",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -41952,7 +41625,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSL95_00",
+            "setting_id": "L9wOwDxavVR7vrL7",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -42159,7 +41832,7 @@
             "required_nozzle_HRC": [
                 "40"
             ],
-            "setting_id": "OGFSN96_00",
+            "setting_id": "yJCAFLt5wstMgMAY",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -42366,7 +42039,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSG50",
+            "setting_id": "aRVqy4a3X1UTIKem",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -42573,7 +42246,7 @@
             "required_nozzle_HRC": [
                 "3"
             ],
-            "setting_id": "OGFSA04",
+            "setting_id": "W0LP8Ah5MHMzogvV",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
@@ -53088,10 +52761,10 @@
                 "100"
             ],
             "filament_cost": [
-                "19.99"
+                "24.99"
             ],
             "filament_density": [
-                "1.32"
+                "1.31"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -53114,7 +52787,7 @@
             "filament_flush_volumetric_speed": [
                 "0"
             ],
-            "filament_id": "GFPM001",
+            "filament_id": "GFPM004",
             "filament_is_support": [
                 "0"
             ],
@@ -53218,7 +52891,7 @@
                 "Polymaker"
             ],
             "filament_wipe": [
-                "0"
+                "nil"
             ],
             "filament_wipe_distance": [
                 "nil"
@@ -53263,10 +52936,10 @@
             ],
             "name": "Panchroma PLA Silk @BBL X1C 0.2 nozzle",
             "nozzle_temperature": [
-                "220"
+                "230"
             ],
             "nozzle_temperature_initial_layer": [
-                "220"
+                "230"
             ],
             "nozzle_temperature_range_high": [
                 "240"

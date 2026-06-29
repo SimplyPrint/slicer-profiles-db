@@ -4,7 +4,7 @@
   "name": "Kingroon KLP1 0.4 nozzle",
   "vendor": "Kingroon",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.4.1",
   "filament_id": null,
   "setting_id": "GM003",
   "renamed_from": null,
@@ -342,7 +342,8 @@
       "2.3.1": "M190 S[bed_temperature_initial_layer_single]\nM109 S[nozzle_temperature_initial_layer]\nG28 ; h1ome all axes\n M117 ;Purge extruder\n G92 E0 ; reset extruder\n G1 Z1.0 F3000 ; move z up little to prevent scratching of surface\n G1 X2 Y20 Z0.3 F5000.0 ; move to start-line position\n G1 X2 Y175.0 Z0.3 F1500.0 E15 ; draw 1st line\n G1 X2 Y175.0 Z0.4 F5000.0 ; move to side a little\n G1 X2 Y20 Z0.4 F1500.0 E30 ; draw 2nd line\n G92 E0 ; reset extruder\n G1 Z1.0 F3000 ; move z up little to prevent scratching of surface"
     },
     "setting_id": {
-      "2.3.1": "GM003"
+      "2.3.1": "GM003",
+      "2.4.1": "V7Nb0x13KMPKlEKB"
     },
     "printer_model": {
       "2.3.1": "Kingroon KLP1"
