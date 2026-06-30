@@ -98,6 +98,19 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
             ProfileType.PRINT: "process",
         },
     ),
+    SlicerType.ANYCUBICSLICER: SourceConfig(
+        slicer=SlicerType.ANYCUBICSLICER,
+        github_repo="ANYCUBIC-3D/AnycubicSlicerNext",
+        profile_path_in_repo="resources/profiles",
+        tag_pattern=r"^v\d+",
+        min_version="2.3.0",
+        profile_type_dirs={
+            ProfileType.FILAMENT: "filament",
+            ProfileType.MACHINE: "machine",
+            ProfileType.MACHINE_MODEL: "machine",
+            ProfileType.PRINT: "process",
+        },
+    ),
     SlicerType.SUPERSLICER: SourceConfig(
         slicer=SlicerType.SUPERSLICER,
         github_repo="slic3r/slic3r-profiles",

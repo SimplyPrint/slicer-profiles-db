@@ -14,6 +14,7 @@ class SlicerType(str, Enum):
     PRUSASLICER = "prusaslicer"
     CURA = "cura"
     ELEGOOSLICER = "elegooslicer"
+    ANYCUBICSLICER = "anycubicslicer"
     SUPERSLICER = "superslicer"
 
 

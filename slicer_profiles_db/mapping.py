@@ -53,6 +53,7 @@ _MAPPING_SLICERS = [
     SlicerType.BAMBUSTUDIO,
     SlicerType.CREALITYPRINT,
     SlicerType.ELEGOOSLICER,
+    SlicerType.ANYCUBICSLICER,
     SlicerType.SUPERSLICER,
     SlicerType.CURA,
 ]

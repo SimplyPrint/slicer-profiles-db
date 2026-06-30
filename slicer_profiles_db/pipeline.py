@@ -48,6 +48,7 @@ from .parsers import (
     PrusaSlicerParser,
     CuraParser,
     ElegooSlicerParser,
+    AnycubicSlicerParser,
     SuperSlicerParser,
 )
 from .parsers.base import BaseParser
@@ -100,6 +101,7 @@ class ProfilePipeline:
             SlicerType.PRUSASLICER: PrusaSlicerParser(),
             SlicerType.CURA: CuraParser(),
             SlicerType.ELEGOOSLICER: ElegooSlicerParser(),
+            SlicerType.ANYCUBICSLICER: AnycubicSlicerParser(),
             SlicerType.SUPERSLICER: SuperSlicerParser(),
         }
 
