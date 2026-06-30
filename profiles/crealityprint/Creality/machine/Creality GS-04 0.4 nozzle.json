@@ -1,0 +1,365 @@
+{
+  "slicer": "crealityprint",
+  "profile_type": "machine",
+  "name": "Creality GS-04 0.4 nozzle",
+  "vendor": "Creality",
+  "first_seen": "7.2.0",
+  "last_seen": "7.2.0",
+  "filament_id": null,
+  "setting_id": "67378",
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "7.2.0": "machine"
+    },
+    "name": {
+      "7.2.0": "Creality GS-04 0.4 nozzle"
+    },
+    "from": {
+      "7.2.0": "system"
+    },
+    "instantiation": {
+      "7.2.0": "true"
+    },
+    "printer_technology": {
+      "7.2.0": "FFF"
+    },
+    "deretraction_speed": {
+      "7.2.0": "40"
+    },
+    "extruder_colour": {
+      "7.2.0": "#FCE94F"
+    },
+    "extruder_offset": {
+      "7.2.0": "0x0"
+    },
+    "gcode_flavor": {
+      "7.2.0": "klipper"
+    },
+    "silent_mode": {
+      "7.2.0": "0"
+    },
+    "support_chamber_temp_control": {
+      "7.2.0": "0"
+    },
+    "support_air_filtration": {
+      "7.2.0": "1"
+    },
+    "machine_max_acceleration_e": {
+      "7.2.0": "5000"
+    },
+    "machine_max_acceleration_extruding": {
+      "7.2.0": "20000"
+    },
+    "machine_max_acceleration_retracting": {
+      "7.2.0": "5000"
+    },
+    "machine_max_acceleration_x": {
+      "7.2.0": "20000"
+    },
+    "machine_max_acceleration_y": {
+      "7.2.0": "20000"
+    },
+    "machine_max_acceleration_z": {
+      "7.2.0": "300"
+    },
+    "machine_max_speed_e": {
+      "7.2.0": "50"
+    },
+    "machine_max_speed_x": {
+      "7.2.0": "800"
+    },
+    "machine_max_speed_y": {
+      "7.2.0": "800"
+    },
+    "machine_max_speed_z": {
+      "7.2.0": "10"
+    },
+    "machine_max_jerk_e": {
+      "7.2.0": "10"
+    },
+    "machine_max_jerk_x": {
+      "7.2.0": "100"
+    },
+    "machine_max_jerk_y": {
+      "7.2.0": "100"
+    },
+    "machine_max_jerk_z": {
+      "7.2.0": "5"
+    },
+    "machine_min_extruding_rate": {
+      "7.2.0": "0,0"
+    },
+    "machine_min_travel_rate": {
+      "7.2.0": "0,0"
+    },
+    "max_layer_height": {
+      "7.2.0": "0.32"
+    },
+    "min_layer_height": {
+      "7.2.0": "0.08"
+    },
+    "printable_height": {
+      "7.2.0": "300"
+    },
+    "extruder_clearance_radius": {
+      "7.2.0": "64"
+    },
+    "extruder_clearance_height_to_rod": {
+      "7.2.0": "24"
+    },
+    "extruder_clearance_height_to_lid": {
+      "7.2.0": "118"
+    },
+    "nozzle_diameter": {
+      "7.2.0": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "7.2.0": ""
+    },
+    "printer_variant": {
+      "7.2.0": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "7.2.0": "1"
+    },
+    "retract_before_wipe": {
+      "7.2.0": "70%"
+    },
+    "retract_when_changing_layer": {
+      "7.2.0": "1"
+    },
+    "retraction_length": {
+      "7.2.0": "0.8"
+    },
+    "retract_length_toolchange": {
+      "7.2.0": "0"
+    },
+    "z_hop": {
+      "7.2.0": "0.4"
+    },
+    "retract_restart_extra": {
+      "7.2.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "7.2.0": "0"
+    },
+    "retraction_speed": {
+      "7.2.0": "40"
+    },
+    "single_extruder_multi_material": {
+      "7.2.0": "1"
+    },
+    "change_filament_gcode": {
+      "7.2.0": "G2 Z{z_after_toolchange + 0.4} I0.86 J0.86 P1 F10000 ; spiral lift a little from second lift\n{if print_sequence == \"by object\"}\nG0 Z{max_layer_z + 0.8} F900\n{endif}\nG1 X0 Y160 F30000\nG1 Z{z_after_toolchange} F600"
+    },
+    "wipe": {
+      "7.2.0": "1"
+    },
+    "z_hop_types": {
+      "7.2.0": "Auto Lift"
+    },
+    "before_layer_change_gcode": {
+      "7.2.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "default_print_profile": {
+      "7.2.0": "0.20mm Standard @Creality GS-04 0.4 nozzle"
+    },
+    "machine_start_gcode": {
+      "7.2.0": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM104 S[nozzle_temperature_initial_layer]\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y150 F12000\nG1 X0 F12000\nG1 Z0.2 F600\nG1 X0 Y150 F6000\nG1 E0.8 F300\nG1 X0 Y0 E9 F{filament_max_volumetric_speed[initial_extruder]/0.3*60}\nG1 X150 Y0 E9 F{filament_max_volumetric_speed[initial_extruder]/0.3*60}\nG92 E0\nG1 Z1 F600"
+    },
+    "machine_end_gcode": {
+      "7.2.0": "{if print_sequence == \"by object\"}\nG91\nG1 X2 Y2 Z1 F24000\nG90\nG1 Z{max_layer_z+2} F600\n{endif}\nEND_PRINT"
+    },
+    "machine_max_acceleration_travel": {
+      "7.2.0": "20000"
+    },
+    "machine_pause_gcode": {
+      "7.2.0": "PAUSE"
+    },
+    "default_filament_profile": {
+      "7.2.0": [
+        "Hyper PLA @Creality GS-04 0.4 nozzle"
+      ]
+    },
+    "bed_exclude_area": {
+      "7.2.0": "0x0"
+    },
+    "layer_change_gcode": {
+      "7.2.0": ""
+    },
+    "scan_first_layer": {
+      "7.2.0": "0"
+    },
+    "nozzle_type": {
+      "7.2.0": "hardened_steel"
+    },
+    "auxiliary_fan": {
+      "7.2.0": "1"
+    },
+    "printer_model": {
+      "7.2.0": "Creality GS-04"
+    },
+    "printer_structure": {
+      "7.2.0": "undefine"
+    },
+    "adaptive_bed_mesh_margin": {
+      "7.2.0": "0"
+    },
+    "bbl_use_printhost": {
+      "7.2.0": "0"
+    },
+    "bed_mesh_max": {
+      "7.2.0": "99999,99999"
+    },
+    "bed_mesh_min": {
+      "7.2.0": "-99999,-99999"
+    },
+    "bed_mesh_probe_distance": {
+      "7.2.0": "50,50"
+    },
+    "best_object_pos": {
+      "7.2.0": "0.5,0.5"
+    },
+    "cooling_tube_length": {
+      "7.2.0": "0"
+    },
+    "cooling_tube_retraction": {
+      "7.2.0": "0"
+    },
+    "creality_flush_time": {
+      "7.2.0": "86"
+    },
+    "disable_m73": {
+      "7.2.0": "0"
+    },
+    "emit_machine_limits_to_gcode": {
+      "7.2.0": "1"
+    },
+    "enable_filament_ramming": {
+      "7.2.0": "0"
+    },
+    "enable_long_retraction_when_cut": {
+      "7.2.0": "2"
+    },
+    "extra_loading_move": {
+      "7.2.0": "0"
+    },
+    "fan_kickstart": {
+      "7.2.0": "0"
+    },
+    "fan_speedup_overhangs": {
+      "7.2.0": "1"
+    },
+    "fan_speedup_time": {
+      "7.2.0": "0"
+    },
+    "high_current_on_filament_swap": {
+      "7.2.0": "0"
+    },
+    "host_type": {
+      "7.2.0": "octoprint"
+    },
+    "machine_LED_light_exist": {
+      "7.2.0": "1"
+    },
+    "machine_load_filament_time": {
+      "7.2.0": "86"
+    },
+    "machine_platform_motion_enable": {
+      "7.2.0": "1"
+    },
+    "machine_ptc_exist": {
+      "7.2.0": "1"
+    },
+    "machine_tool_change_time": {
+      "7.2.0": "0"
+    },
+    "machine_unload_filament_time": {
+      "7.2.0": "0"
+    },
+    "manual_filament_change": {
+      "7.2.0": "0"
+    },
+    "nozzle_height": {
+      "7.2.0": "4"
+    },
+    "nozzle_hrc": {
+      "7.2.0": "0"
+    },
+    "nozzle_volume": {
+      "7.2.0": "183"
+    },
+    "parking_pos_retraction": {
+      "7.2.0": "0"
+    },
+    "pellet_modded_printer": {
+      "7.2.0": "0"
+    },
+    "preferred_orientation": {
+      "7.2.0": "0"
+    },
+    "prime_tower_position_type": {
+      "7.2.0": "Middle Upper"
+    },
+    "printable_area": {
+      "7.2.0": "0x0,300x0,300x300,0x300"
+    },
+    "printhost_authorization_type": {
+      "7.2.0": "key"
+    },
+    "printhost_ssl_ignore_revoke": {
+      "7.2.0": "0"
+    },
+    "purge_in_prime_tower": {
+      "7.2.0": "0"
+    },
+    "support_multi_bed_types": {
+      "7.2.0": "1"
+    },
+    "thumbnails": {
+      "7.2.0": "96x96/PNG, 300x300/PNG"
+    },
+    "thumbnails_format": {
+      "7.2.0": "PNG"
+    },
+    "time_cost": {
+      "7.2.0": "0"
+    },
+    "use_firmware_retraction": {
+      "7.2.0": "0"
+    },
+    "use_relative_e_distances": {
+      "7.2.0": "1"
+    },
+    "z_offset": {
+      "7.2.0": "0"
+    },
+    "long_retractions_when_cut": {
+      "7.2.0": "0"
+    },
+    "retract_lift_above": {
+      "7.2.0": "0"
+    },
+    "retract_lift_below": {
+      "7.2.0": "299"
+    },
+    "retract_lift_enforce": {
+      "7.2.0": "All Surfaces"
+    },
+    "retraction_distances_when_cut": {
+      "7.2.0": "18"
+    },
+    "travel_slope": {
+      "7.2.0": "3"
+    },
+    "wipe_distance": {
+      "7.2.0": "2"
+    },
+    "setting_id": {
+      "7.2.0": "67378"
+    }
+  }
+}

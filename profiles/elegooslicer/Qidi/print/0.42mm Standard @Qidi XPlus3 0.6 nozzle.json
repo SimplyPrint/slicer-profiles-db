@@ -4,7 +4,7 @@
   "name": "0.42mm Standard @Qidi XPlus3 0.6 nozzle",
   "vendor": "Qidi",
   "first_seen": "1.3.0.11",
-  "last_seen": "1.3.0.11",
+  "last_seen": "1.5.2.2",
   "filament_id": null,
   "setting_id": "GP031",
   "renamed_from": null,
@@ -102,7 +102,8 @@
       "1.3.0.11": "1"
     },
     "reduce_infill_retraction": {
-      "1.3.0.11": "1"
+      "1.3.0.11": "1",
+      "1.5.2.2": "0"
     },
     "filename_format": {
       "1.3.0.11": "{input_filename_base}_{filament_type[0]}_{print_time}.gcode"
@@ -363,13 +364,55 @@
       "1.3.0.11": "4"
     },
     "notes": {
-      "1.3.0.11": "If you want to use Orca's chamber temperature control feature, check that printer.cfg has added the following M191 macro.\nTo add it: go to Fluidd web interface--configuration, copy the following code to the top of the printer.cfg document, SAVE&RESATART  \n\n[gcode_macro M191]\ngcode:\n    {% set s = params.S|float %}\n    {% if s == 0 %}\n        # If target temperature is 0, do nothing\n        M117 Chamber heating cancelled\n    {% else %}\n        SET_HEATER_TEMPERATURE HEATER=chamber_heater TARGET={s}\n        # Orca: uncomment the following line if you want to use heat bed to assist chamber heating\n        M140 S90\n        TEMPERATURE_WAIT SENSOR=\"heater_generic chamber_heater\" MINIMUM={s-1} MAXIMUM={s+1}\n        M117 Chamber at target temperature\n    {% endif %}"
+      "1.3.0.11": "If you want to use Orca's chamber temperature control feature, check that printer.cfg has added the following M191 macro.\nTo add it: go to Fluidd web interface--configuration, copy the following code to the top of the printer.cfg document, SAVE&RESATART  \n\n[gcode_macro M191]\ngcode:\n    {% set s = params.S|float %}\n    {% if s == 0 %}\n        # If target temperature is 0, do nothing\n        M117 Chamber heating cancelled\n    {% else %}\n        SET_HEATER_TEMPERATURE HEATER=chamber_heater TARGET={s}\n        # Orca: uncomment the following line if you want to use heat bed to assist chamber heating\n        M140 S90\n        TEMPERATURE_WAIT SENSOR=\"heater_generic chamber_heater\" MINIMUM={s-1} MAXIMUM={s+1}\n        M117 Chamber at target temperature\n    {% endif %}",
+      "1.5.2.2": null
     },
     "exclude_object": {
       "1.3.0.11": "1"
     },
     "setting_id": {
       "1.3.0.11": "GP031"
+    },
+    "bottom_surface_density": {
+      "1.5.2.2": "100"
+    },
+    "enable_support_ironing": {
+      "1.5.2.2": "0"
+    },
+    "support_ironing_pattern": {
+      "1.5.2.2": "zig-zag"
+    },
+    "support_ironing_speed": {
+      "1.5.2.2": "30"
+    },
+    "support_ironing_flow": {
+      "1.5.2.2": "10%"
+    },
+    "support_ironing_spacing": {
+      "1.5.2.2": "0.15"
+    },
+    "support_ironing_inset": {
+      "1.5.2.2": "0.0"
+    },
+    "support_ironing_direction": {
+      "1.5.2.2": "0"
+    },
+    "sparse_infill_lattice_angle_1": {
+      "1.5.2.2": "-45"
+    },
+    "sparse_infill_lattice_angle_2": {
+      "1.5.2.2": "45"
+    },
+    "top_surface_density": {
+      "1.5.2.2": "100"
+    },
+    "travel_short_distance_acceleration": {
+      "1.5.2.2": [
+        "250"
+      ]
+    },
+    "enable_tower_interface_features": {
+      "1.5.2.2": "0"
     }
   }
 }

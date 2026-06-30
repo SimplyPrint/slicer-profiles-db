@@ -2,10 +2,10 @@
     {
         "machine_model": {
             "bed_model": "sha256:5cf8204af540babc8d8c8debe929e9f3033170bead837c2d79972c62ce5e1f4d",
-            "bed_texture": "sha256:077167c4abb4888b9ff7c0431d60066fb1cbdd827c57cbb13dcc1d68965283e7",
+            "bed_texture": "sha256:21608f942e731fa457a794c177a34afc7312138a343495c83b69437039c6d069",
             "default_materials": "QIDI PLA Rapido @Qidi Q1 Pro 0.4 nozzle;QIDI PLA Rapido @Qidi Q1 Pro 0.2 nozzle;QIDI PLA Rapido @Qidi Q1 Pro 0.6 nozzle;QIDI PLA Rapido @Qidi Q1 Pro 0.8 nozzle;QIDI ABS Rapido @Qidi Q1 Pro 0.4 nozzle;QIDI ABS Rapido @Qidi Q1 Pro 0.2 nozzle;QIDI ABS Rapido @Qidi Q1 Pro 0.6 nozzle;QIDI ABS Rapido @Qidi Q1 Pro 0.8 nozzle;QIDI PETG Tough @Qidi Q1 Pro 0.4 nozzle;QIDI PETG Tough @Qidi Q1 Pro 0.2 nozzle;QIDI PETG Tough @Qidi Q1 Pro 0.6 nozzle;QIDI PETG Tough @Qidi Q1 Pro 0.8 nozzle;QIDI PLA Rapido Matte @Qidi Q1 Pro 0.4 nozzle;QIDI PLA Rapido Matte @Qidi Q1 Pro 0.2 nozzle;QIDI PLA Rapido Matte @Qidi Q1 Pro 0.6 nozzle;QIDI PLA Rapido Matte @Qidi Q1 Pro 0.8 nozzle;QIDI ASA @Qidi Q1 Pro 0.4 nozzle;QIDI ASA @Qidi Q1 Pro 0.2 nozzle;QIDI ASA @Qidi Q1 Pro 0.6 nozzle;QIDI ASA @Qidi Q1 Pro 0.8 nozzle;Qidi Generic PETG @Qidi Q1 Pro 0.4 nozzle;Qidi Generic PETG @Qidi Q1 Pro 0.2 nozzle;Qidi Generic PETG @Qidi Q1 Pro 0.6 nozzle;Qidi Generic PETG @Qidi Q1 Pro 0.8 nozzle;Qidi Generic PLA Silk @Qidi Q1 Pro 0.4 nozzle;Qidi Generic PLA @Qidi Q1 Pro 0.4 nozzle;Qidi Generic PLA @Qidi Q1 Pro 0.2 nozzle;Qidi Generic PLA @Qidi Q1 Pro 0.6 nozzle;Qidi Generic PLA @Qidi Q1 Pro 0.8 nozzle",
             "family": "Qidi",
-            "hotend_model": "sha256:6bb01045b69bf4c4b0dd22aa3ef23db3cb653e8081d47cc3734dbf0350578aa6",
+            "hotend_model": "sha256:64b4a2ed278cd730c9c557a25600a9310f8596f2c6750c57c353e466a2536b73",
             "machine_tech": "FFF",
             "model_id": "Qidi-Q1Pro",
             "name": "Qidi Q1 Pro",
@@ -44,6 +44,36 @@
                     ],
                     "extruder_offset": [
                         "0x0"
+                    ],
+                    "filament_dev_ams_drying_ams_limitations": [
+                        "1"
+                    ],
+                    "filament_dev_ams_drying_heat_distortion_temperature": [
+                        "45.0"
+                    ],
+                    "filament_dev_ams_drying_temperature": [
+                        "40.0",
+                        "40.0",
+                        "40.0",
+                        "40.0"
+                    ],
+                    "filament_dev_ams_drying_time": [
+                        "8.0",
+                        "8.0",
+                        "8.0",
+                        "8.0"
+                    ],
+                    "filament_dev_chamber_drying_bed_temperature": [
+                        "90.0"
+                    ],
+                    "filament_dev_chamber_drying_time": [
+                        "12.0"
+                    ],
+                    "filament_dev_drying_cooling_temperature": [
+                        "35.0"
+                    ],
+                    "filament_dev_drying_softening_temperature": [
+                        "40.0"
                     ],
                     "from": "system",
                     "gcode_flavor": "klipper",
@@ -98,7 +128,7 @@
                     "machine_min_travel_rate": [
                         "0"
                     ],
-                    "machine_pause_gcode": "M0",
+                    "machine_pause_gcode": "PAUSE",
                     "machine_start_gcode": "PRINT_START BED=[hot_plate_temp_initial_layer] HOTEND=[nozzle_temperature_initial_layer] CHAMBER=[chamber_temperature]\nM83\nM140 S[hot_plate_temp_initial_layer]\nM104 S[nozzle_temperature_initial_layer]\nG4 P3000\nG0 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0)} Z5 F6000\nG0 Z[initial_layer_print_height] F600\nG1 E3 F1800\nG1 X{(min(print_bed_max[0], first_layer_print_min[0] + 80))} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0)} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0) + 85} E{83 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0) + 3} E{82 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0) + 3} Z0\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0) + 6}\nG1 Z1 F600\n",
                     "max_layer_height": [
                         "0.14"
@@ -164,6 +194,7 @@
                     "wipe_distance": [
                         "2"
                     ],
+                    "wipe_tower_type": "type1",
                     "z_hop": [
                         "0.4"
                     ],
@@ -204,6 +235,36 @@
                     ],
                     "extruder_offset": [
                         "0x0"
+                    ],
+                    "filament_dev_ams_drying_ams_limitations": [
+                        "1"
+                    ],
+                    "filament_dev_ams_drying_heat_distortion_temperature": [
+                        "45.0"
+                    ],
+                    "filament_dev_ams_drying_temperature": [
+                        "40.0",
+                        "40.0",
+                        "40.0",
+                        "40.0"
+                    ],
+                    "filament_dev_ams_drying_time": [
+                        "8.0",
+                        "8.0",
+                        "8.0",
+                        "8.0"
+                    ],
+                    "filament_dev_chamber_drying_bed_temperature": [
+                        "90.0"
+                    ],
+                    "filament_dev_chamber_drying_time": [
+                        "12.0"
+                    ],
+                    "filament_dev_drying_cooling_temperature": [
+                        "35.0"
+                    ],
+                    "filament_dev_drying_softening_temperature": [
+                        "40.0"
                     ],
                     "from": "system",
                     "gcode_flavor": "klipper",
@@ -258,7 +319,7 @@
                     "machine_min_travel_rate": [
                         "0"
                     ],
-                    "machine_pause_gcode": "M0",
+                    "machine_pause_gcode": "PAUSE",
                     "machine_start_gcode": "PRINT_START BED=[hot_plate_temp_initial_layer] HOTEND=[nozzle_temperature_initial_layer] CHAMBER=[chamber_temperature]\nM83\nM140 S[hot_plate_temp_initial_layer]\nM104 S[nozzle_temperature_initial_layer]\nG4 P3000\nG0 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0)} Z5 F6000\nG0 Z[initial_layer_print_height] F600\nG1 E3 F1800\nG1 X{(min(print_bed_max[0], first_layer_print_min[0] + 80))} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0)} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0) + 85} E{83 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0) + 3} E{82 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0) + 3} Z0\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0) + 6}\nG1 Z1 F600\n",
                     "max_layer_height": [
                         "0.32"
@@ -324,6 +385,7 @@
                     "wipe_distance": [
                         "2"
                     ],
+                    "wipe_tower_type": "type1",
                     "z_hop": [
                         "0.4"
                     ],
@@ -364,6 +426,36 @@
                     ],
                     "extruder_offset": [
                         "0x0"
+                    ],
+                    "filament_dev_ams_drying_ams_limitations": [
+                        "1"
+                    ],
+                    "filament_dev_ams_drying_heat_distortion_temperature": [
+                        "45.0"
+                    ],
+                    "filament_dev_ams_drying_temperature": [
+                        "40.0",
+                        "40.0",
+                        "40.0",
+                        "40.0"
+                    ],
+                    "filament_dev_ams_drying_time": [
+                        "8.0",
+                        "8.0",
+                        "8.0",
+                        "8.0"
+                    ],
+                    "filament_dev_chamber_drying_bed_temperature": [
+                        "90.0"
+                    ],
+                    "filament_dev_chamber_drying_time": [
+                        "12.0"
+                    ],
+                    "filament_dev_drying_cooling_temperature": [
+                        "35.0"
+                    ],
+                    "filament_dev_drying_softening_temperature": [
+                        "40.0"
                     ],
                     "from": "system",
                     "gcode_flavor": "klipper",
@@ -418,7 +510,7 @@
                     "machine_min_travel_rate": [
                         "0"
                     ],
-                    "machine_pause_gcode": "M0",
+                    "machine_pause_gcode": "PAUSE",
                     "machine_start_gcode": "PRINT_START BED=[hot_plate_temp_initial_layer] HOTEND=[nozzle_temperature_initial_layer] CHAMBER=[chamber_temperature]\nM83\nM140 S[hot_plate_temp_initial_layer]\nM104 S[nozzle_temperature_initial_layer]\nG4 P3000\nG0 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0)} Z5 F6000\nG0 Z[initial_layer_print_height] F600\nG1 E3 F1800\nG1 X{(min(print_bed_max[0], first_layer_print_min[0] + 80))} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0)} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0) + 85} E{83 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0) + 3} E{82 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0) + 3} Z0\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0) + 6}\nG1 Z1 F600\n",
                     "max_layer_height": [
                         "0.42"
@@ -484,6 +576,7 @@
                     "wipe_distance": [
                         "2"
                     ],
+                    "wipe_tower_type": "type1",
                     "z_hop": [
                         "0.4"
                     ],
@@ -524,6 +617,36 @@
                     ],
                     "extruder_offset": [
                         "0x0"
+                    ],
+                    "filament_dev_ams_drying_ams_limitations": [
+                        "1"
+                    ],
+                    "filament_dev_ams_drying_heat_distortion_temperature": [
+                        "45.0"
+                    ],
+                    "filament_dev_ams_drying_temperature": [
+                        "40.0",
+                        "40.0",
+                        "40.0",
+                        "40.0"
+                    ],
+                    "filament_dev_ams_drying_time": [
+                        "8.0",
+                        "8.0",
+                        "8.0",
+                        "8.0"
+                    ],
+                    "filament_dev_chamber_drying_bed_temperature": [
+                        "90.0"
+                    ],
+                    "filament_dev_chamber_drying_time": [
+                        "12.0"
+                    ],
+                    "filament_dev_drying_cooling_temperature": [
+                        "35.0"
+                    ],
+                    "filament_dev_drying_softening_temperature": [
+                        "40.0"
                     ],
                     "from": "system",
                     "gcode_flavor": "klipper",
@@ -578,7 +701,7 @@
                     "machine_min_travel_rate": [
                         "0"
                     ],
-                    "machine_pause_gcode": "M0",
+                    "machine_pause_gcode": "PAUSE",
                     "machine_start_gcode": "PRINT_START BED=[hot_plate_temp_initial_layer] HOTEND=[nozzle_temperature_initial_layer] CHAMBER=[chamber_temperature]\nM83\nM140 S[hot_plate_temp_initial_layer]\nM104 S[nozzle_temperature_initial_layer]\nG4 P3000\nG0 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85),0)} Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0)} Z5 F6000\nG0 Z[initial_layer_print_height] F600\nG1 E3 F1800\nG1 X{(min(print_bed_max[0], first_layer_print_min[0] + 80))} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0)} E{85 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0) + 85} E{83 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0) + 2} E{2 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 Y{max((min(print_bed_max[1] - 5, first_layer_print_min[1] + 80) - 85), 0) + 3} E{82 * 0.5 * initial_layer_print_height * nozzle_diameter[0]} F3000\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0) + 3} Z0\nG1 X{max((min(print_bed_max[0], first_layer_print_min[0] + 80) - 85), 0) + 6}\nG1 Z1 F600\n",
                     "max_layer_height": [
                         "0.56"
@@ -644,6 +767,7 @@
                     "wipe_distance": [
                         "2"
                     ],
+                    "wipe_tower_type": "type1",
                     "z_hop": [
                         "0.4"
                     ],

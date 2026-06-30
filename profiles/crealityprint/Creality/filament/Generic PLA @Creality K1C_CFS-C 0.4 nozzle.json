@@ -4,7 +4,7 @@
   "name": "Generic PLA @Creality K1C_CFS-C 0.4 nozzle",
   "vendor": "Creality",
   "first_seen": "7.1.0",
-  "last_seen": "7.1.0",
+  "last_seen": "7.2.0",
   "filament_id": "00001",
   "setting_id": "GFSA04",
   "renamed_from": null,
@@ -46,16 +46,19 @@
       "7.1.0": "50"
     },
     "overhang_fan_threshold": {
-      "7.1.0": "25%"
+      "7.1.0": "25%",
+      "7.2.0": "50%"
     },
     "overhang_fan_speed": {
-      "7.1.0": "80"
+      "7.1.0": "80",
+      "7.2.0": "100"
     },
     "slow_down_for_layer_cooling": {
       "7.1.0": "1"
     },
     "close_fan_the_first_x_layers": {
-      "7.1.0": "3"
+      "7.1.0": "3",
+      "7.2.0": "1"
     },
     "filament_end_gcode": {
       "7.1.0": [
@@ -63,13 +66,15 @@
       ]
     },
     "filament_flow_ratio": {
-      "7.1.0": "0.95"
+      "7.1.0": "0.95",
+      "7.2.0": "0.98"
     },
     "reduce_fan_stop_start_freq": {
       "7.1.0": "1"
     },
     "fan_cooling_layer_time": {
-      "7.1.0": "30"
+      "7.1.0": "30",
+      "7.2.0": "100"
     },
     "filament_cost": {
       "7.1.0": "20"
@@ -78,13 +83,15 @@
       "7.1.0": "1.25"
     },
     "filament_deretraction_speed": {
-      "7.1.0": "0"
+      "7.1.0": "0",
+      "7.2.0": "45"
     },
     "filament_diameter": {
       "7.1.0": "1.75"
     },
     "filament_max_volumetric_speed": {
-      "7.1.0": "18"
+      "7.1.0": "18",
+      "7.2.0": "14"
     },
     "filament_minimal_purge_on_wipe_tower": {
       "7.1.0": "15"
@@ -96,22 +103,28 @@
       "7.1.0": "100%"
     },
     "filament_retract_when_changing_layer": {
-      "7.1.0": "0"
+      "7.1.0": "0",
+      "7.2.0": "1"
     },
     "filament_retraction_length": {
-      "7.1.0": "0.8"
+      "7.1.0": "0.8",
+      "7.2.0": "1"
     },
     "filament_z_hop": {
-      "7.1.0": "0.4"
+      "7.1.0": "0.4",
+      "7.2.0": "nil"
     },
     "filament_z_hop_types": {
-      "7.1.0": "Normal Lift"
+      "7.1.0": "Normal Lift",
+      "7.2.0": "Slope Lift"
     },
     "filament_retract_restart_extra": {
-      "7.1.0": "0"
+      "7.1.0": "0",
+      "7.2.0": "nil"
     },
     "filament_retraction_speed": {
-      "7.1.0": "30"
+      "7.1.0": "30",
+      "7.2.0": "45"
     },
     "filament_settings_id": {
       "7.1.0": [
@@ -132,10 +145,12 @@
       ]
     },
     "filament_wipe": {
-      "7.1.0": "0"
+      "7.1.0": "0",
+      "7.2.0": "1"
     },
     "filament_wipe_distance": {
-      "7.1.0": "1"
+      "7.1.0": "1",
+      "7.2.0": "nil"
     },
     "bed_type": {
       "7.1.0": [
@@ -143,30 +158,38 @@
       ]
     },
     "nozzle_temperature_initial_layer": {
-      "7.1.0": "230"
+      "7.1.0": "230",
+      "7.2.0": "220"
     },
     "full_fan_speed_layer": {
       "7.1.0": "0"
     },
     "fan_max_speed": {
-      "7.1.0": "80"
+      "7.1.0": "80",
+      "7.2.0": "100"
     },
     "fan_min_speed": {
       "7.1.0": "100"
     },
     "slow_down_min_speed": {
-      "7.1.0": "10"
+      "7.1.0": "10",
+      "7.2.0": "20"
     },
     "slow_down_layer_time": {
-      "7.1.0": "3"
+      "7.1.0": "3",
+      "7.2.0": "10"
     },
     "filament_start_gcode": {
       "7.1.0": [
         ";filament start gcode\n{if (position[2] > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n\n"
+      ],
+      "7.2.0": [
+        ";filament start gcode\n{if (position[2] > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}"
       ]
     },
     "nozzle_temperature": {
-      "7.1.0": "230"
+      "7.1.0": "230",
+      "7.2.0": "220"
     },
     "temperature_vitrification": {
       "7.1.0": "110"
@@ -195,10 +218,12 @@
       "7.1.0": "0"
     },
     "activate_chamber_temp_control": {
-      "7.1.0": "1"
+      "7.1.0": "1",
+      "7.2.0": "0"
     },
     "chamber_temperature": {
-      "7.1.0": "35"
+      "7.1.0": "35",
+      "7.2.0": "0"
     },
     "compatible_printers": {
       "7.1.0": [
@@ -266,13 +291,16 @@
       "7.1.0": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\""
     },
     "filament_retract_lift_above": {
-      "7.1.0": "0"
+      "7.1.0": "0",
+      "7.2.0": "nil"
     },
     "filament_retract_lift_below": {
-      "7.1.0": "0"
+      "7.1.0": "0",
+      "7.2.0": "nil"
     },
     "filament_retract_lift_enforce": {
-      "7.1.0": "All Surfaces"
+      "7.1.0": "All Surfaces",
+      "7.2.0": "nil"
     },
     "filament_shrink": {
       "7.1.0": "100%"
@@ -293,10 +321,12 @@
       "7.1.0": "0"
     },
     "material_flow_temp_graph": {
-      "7.1.0": "[[3.0,210],  [10.0,220],  [12.0,230]]"
+      "7.1.0": "[[3.0,210],  [10.0,220],  [12.0,230]]",
+      "7.2.0": "[[1.0,200],[1.3,220]]"
     },
     "pressure_advance": {
-      "7.1.0": "0.02"
+      "7.1.0": "0.02",
+      "7.2.0": "0.04"
     },
     "required_nozzle_HRC": {
       "7.1.0": "0"

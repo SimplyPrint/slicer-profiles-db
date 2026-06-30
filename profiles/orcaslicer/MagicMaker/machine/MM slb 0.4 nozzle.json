@@ -4,7 +4,7 @@
   "name": "MM slb 0.4 nozzle",
   "vendor": "MagicMaker",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.4.1",
   "filament_id": null,
   "setting_id": "GM001",
   "renamed_from": null,
@@ -243,7 +243,8 @@
       "2.3.1": "M104 S0 ;extruder heater off\nM140 S0 ;heated bed heater off (if you have it)\nG91 \nM83\nG1 E-1 F600  ;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z1 F600\nG90 ;absolute positioning\nG1 X0 Y120 F6000\nG1 E-4 F1200\nM107 ; turn off fan\nM84 ;steppers off\nPRINT_END"
     },
     "setting_id": {
-      "2.3.1": "GM001"
+      "2.3.1": "GM001",
+      "2.4.1": "A0I3dDAbwNC059c6"
     },
     "printer_model": {
       "2.3.1": "MM slb"

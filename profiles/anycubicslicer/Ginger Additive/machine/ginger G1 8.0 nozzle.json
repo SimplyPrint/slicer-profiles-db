@@ -1,0 +1,477 @@
+{
+  "slicer": "anycubicslicer",
+  "profile_type": "machine",
+  "name": "ginger G1 8.0 nozzle",
+  "vendor": "Ginger Additive",
+  "first_seen": "2.3.0",
+  "last_seen": "2.3.0",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "settings": {
+    "type": {
+      "2.3.0": "machine"
+    },
+    "instantiation": {
+      "2.3.0": "true"
+    },
+    "adaptive_bed_mesh_margin": {
+      "2.3.0": "0"
+    },
+    "auxiliary_fan": {
+      "2.3.0": "0"
+    },
+    "bed_custom_texture": {
+      "2.3.0": ""
+    },
+    "bed_exclude_area": {
+      "2.3.0": [
+        "0x0"
+      ]
+    },
+    "bed_mesh_max": {
+      "2.3.0": "99999,99999"
+    },
+    "bed_mesh_min": {
+      "2.3.0": "-99999,-99999"
+    },
+    "bed_mesh_probe_distance": {
+      "2.3.0": "50,50"
+    },
+    "before_layer_change_gcode": {
+      "2.3.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "best_object_pos": {
+      "2.3.0": "0.5,0.5"
+    },
+    "change_extrusion_role_gcode": {
+      "2.3.0": ""
+    },
+    "change_filament_gcode": {
+      "2.3.0": ""
+    },
+    "cooling_tube_length": {
+      "2.3.0": "5"
+    },
+    "cooling_tube_retraction": {
+      "2.3.0": "91.5"
+    },
+    "default_filament_profile": {
+      "2.3.0": [
+        "Generic PLA @System"
+      ]
+    },
+    "default_print_profile": {
+      "2.3.0": "0.20mm Standard @MyKlipper"
+    },
+    "deretraction_speed": {
+      "2.3.0": [
+        "300"
+      ]
+    },
+    "disable_m73": {
+      "2.3.0": "0"
+    },
+    "emit_machine_limits_to_gcode": {
+      "2.3.0": "1"
+    },
+    "enable_filament_ramming": {
+      "2.3.0": "1"
+    },
+    "extra_loading_move": {
+      "2.3.0": "-2"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.3.0": "200"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.3.0": "200"
+    },
+    "extruder_clearance_radius": {
+      "2.3.0": "180"
+    },
+    "extruder_colour": {
+      "2.3.0": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "2.3.0": [
+        "0x0"
+      ]
+    },
+    "fan_kickstart": {
+      "2.3.0": "0"
+    },
+    "fan_speedup_overhangs": {
+      "2.3.0": "1"
+    },
+    "fan_speedup_time": {
+      "2.3.0": "0"
+    },
+    "from": {
+      "2.3.0": "system"
+    },
+    "gcode_flavor": {
+      "2.3.0": "klipper"
+    },
+    "head_wrap_detect_zone": {
+      "2.3.0": []
+    },
+    "high_current_on_filament_swap": {
+      "2.3.0": "0"
+    },
+    "host_type": {
+      "2.3.0": "octoprint"
+    },
+    "is_custom_defined": {
+      "2.3.0": "0"
+    },
+    "layer_change_gcode": {
+      "2.3.0": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "machine_end_gcode": {
+      "2.3.0": "END_PRINT"
+    },
+    "machine_load_filament_time": {
+      "2.3.0": "0"
+    },
+    "machine_max_acceleration_e": {
+      "2.3.0": [
+        "1000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.3.0": [
+        "2500",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.3.0": [
+        "2500",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "2.3.0": [
+        "20000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.3.0": [
+        "2500",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.3.0": [
+        "2500",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.3.0": [
+        "500",
+        "200"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.3.0": [
+        "30",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.3.0": [
+        "7",
+        "9"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.3.0": [
+        "7",
+        "9"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.3.0": [
+        "7",
+        "0.4"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.3.0": [
+        "300",
+        "25"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.3.0": [
+        "250",
+        "200"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.3.0": [
+        "250",
+        "200"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.3.0": [
+        "12",
+        "12"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.3.0": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.3.0": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_pause_gcode": {
+      "2.3.0": "PAUSE"
+    },
+    "machine_start_gcode": {
+      "2.3.0": "START_PRINT BED_TEMPERATURE=[bed_temperature_initial_layer] MATERIAL=[filament_type] KAMP_LEVELING=1 PURGE_LAYER_HEIGHT=2 PURGE_PARKING_SPEED=10000 PURGE_LENGHT=300 PURGE_SPEED=500 PURGE_MATERIAL_QUANTITY=3000 EXTRUDER_TEMPERATURE=[nozzle_temperature] EXTRUDER_TEMPERATURE_INITIAL_LAYER=[nozzle_temperature_initial_layer]"
+    },
+    "machine_unload_filament_time": {
+      "2.3.0": "0"
+    },
+    "manual_filament_change": {
+      "2.3.0": "0"
+    },
+    "max_layer_height": {
+      "2.3.0": [
+        "6"
+      ]
+    },
+    "min_layer_height": {
+      "2.3.0": [
+        "0.1"
+      ]
+    },
+    "name": {
+      "2.3.0": "ginger G1 8.0 nozzle"
+    },
+    "nozzle_diameter": {
+      "2.3.0": [
+        "8.0"
+      ]
+    },
+    "nozzle_hrc": {
+      "2.3.0": "0"
+    },
+    "nozzle_type": {
+      "2.3.0": "undefine"
+    },
+    "nozzle_volume": {
+      "2.3.0": "0"
+    },
+    "parking_pos_retraction": {
+      "2.3.0": "92"
+    },
+    "pellet_modded_printer": {
+      "2.3.0": "1"
+    },
+    "preferred_orientation": {
+      "2.3.0": "0"
+    },
+    "print_host": {
+      "2.3.0": "192.168.1.39"
+    },
+    "print_host_webui": {
+      "2.3.0": ""
+    },
+    "printable_area": {
+      "2.3.0": [
+        "0x0",
+        "1000x0",
+        "1000x1000",
+        "0x1000"
+      ]
+    },
+    "printable_height": {
+      "2.3.0": "1000"
+    },
+    "printer_notes": {
+      "2.3.0": ""
+    },
+    "printer_settings_id": {
+      "2.3.0": "ginger G1 8.0 nozzle"
+    },
+    "printer_structure": {
+      "2.3.0": "undefine"
+    },
+    "printer_technology": {
+      "2.3.0": "FFF"
+    },
+    "printer_variant": {
+      "2.3.0": "8.0"
+    },
+    "printhost_apikey": {
+      "2.3.0": ""
+    },
+    "printhost_authorization_type": {
+      "2.3.0": "key"
+    },
+    "printhost_cafile": {
+      "2.3.0": ""
+    },
+    "printhost_password": {
+      "2.3.0": ""
+    },
+    "printhost_port": {
+      "2.3.0": ""
+    },
+    "printhost_ssl_ignore_revoke": {
+      "2.3.0": "0"
+    },
+    "printhost_user": {
+      "2.3.0": ""
+    },
+    "printing_by_object_gcode": {
+      "2.3.0": ""
+    },
+    "purge_in_prime_tower": {
+      "2.3.0": "1"
+    },
+    "retract_before_wipe": {
+      "2.3.0": [
+        "20%"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.3.0": [
+        "4"
+      ]
+    },
+    "retract_lift_above": {
+      "2.3.0": [
+        "0"
+      ]
+    },
+    "retract_lift_below": {
+      "2.3.0": [
+        "0"
+      ]
+    },
+    "retract_lift_enforce": {
+      "2.3.0": [
+        "All Surfaces"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.3.0": [
+        "30"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.3.0": [
+        "0"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.3.0": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "2.3.0": [
+        "40"
+      ]
+    },
+    "retraction_minimum_travel": {
+      "2.3.0": [
+        "10"
+      ]
+    },
+    "retraction_speed": {
+      "2.3.0": [
+        "300"
+      ]
+    },
+    "scan_first_layer": {
+      "2.3.0": "0"
+    },
+    "silent_mode": {
+      "2.3.0": "0"
+    },
+    "single_extruder_multi_material": {
+      "2.3.0": "1"
+    },
+    "support_air_filtration": {
+      "2.3.0": "0"
+    },
+    "support_chamber_temp_control": {
+      "2.3.0": "0"
+    },
+    "support_multi_bed_types": {
+      "2.3.0": "0"
+    },
+    "template_custom_gcode": {
+      "2.3.0": ""
+    },
+    "thumbnails": {
+      "2.3.0": [
+        "50x50"
+      ]
+    },
+    "thumbnails_format": {
+      "2.3.0": "PNG"
+    },
+    "time_cost": {
+      "2.3.0": "0"
+    },
+    "time_lapse_gcode": {
+      "2.3.0": ""
+    },
+    "upward_compatible_machine": {
+      "2.3.0": []
+    },
+    "use_firmware_retraction": {
+      "2.3.0": "0"
+    },
+    "use_relative_e_distances": {
+      "2.3.0": "1"
+    },
+    "version": {
+      "2.3.0": "0.1.0.0"
+    },
+    "wipe": {
+      "2.3.0": [
+        "1"
+      ]
+    },
+    "wipe_distance": {
+      "2.3.0": [
+        "30"
+      ]
+    },
+    "z_hop": {
+      "2.3.0": [
+        "2"
+      ]
+    },
+    "z_hop_types": {
+      "2.3.0": [
+        "Normal Lift"
+      ]
+    },
+    "z_offset": {
+      "2.3.0": "0"
+    },
+    "printer_model": {
+      "2.3.0": "ginger G1"
+    }
+  }
+}

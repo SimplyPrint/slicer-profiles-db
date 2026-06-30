@@ -1,8 +1,8 @@
 [
     {
         "machine_model": {
-            "bed_model": "sha256:8533735aec0236ffb0639a0399585f7739085cfb29f38246ce7458024e2474f7",
-            "bed_texture": "sha256:bbea0321786aa4e32373bdcc2073798e1f79c3ff812f09e0e81a4614a1cecdf9",
+            "bed_model": "sha256:3597e105cd468ff3c5e6544eccde0edb3835be9339624188b27d1118c9b947bc",
+            "bed_texture": "sha256:88c583d2a5c73bd1c904c352f93e97bac9db8e8a3f6fd8afb5db6801dd17a6c9",
             "default_materials": "Creality Generic ABS @K2-all;Creality Generic ASA @K2-all;Creality Generic PETG @K2-all;Creality Generic PLA @K2-all;Creality Generic PLA High Speed @K2-all;Creality Generic PLA Matte @K2-all;Creality Generic PLA Silk @K2-all",
             "family": "Creality",
             "hotend_model": "",
@@ -115,7 +115,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM109 S[nozzle_temperature_initial_layer]\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y150 F12000\nG1 X0 F12000\nG1 Z0.2 F600\nG1 X0 Y150 F6000\nG1 X0 Y0 E15 F6000\nG1 X150 Y0 E15 F6000\nG92 E0\nG1 Z1 F600",
+                    "machine_start_gcode": ";SET PRINT AREA MIN AND MAX COORDINATES TO ENABLE ADAPTIVE PROBING\n; MINX = {first_layer_print_min[0]}\n; MINY = {first_layer_print_min[1]}\n; MAXX = {first_layer_print_max[0]}\n; MAXY = {first_layer_print_max[1]}\nM140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM109 S[nozzle_temperature_initial_layer]\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y150 F12000\nG1 X0 F12000\nG1 Z0.2 F600\nG1 X0 Y150 F6000\nG1 X0 Y0 E15 F6000\nG1 X150 Y0 E15 F6000\nG92 E0\nG1 Z1 F600",
                     "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
@@ -177,7 +177,7 @@
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
                     "support_air_filtration": "1",
-                    "support_chamber_temp_control": "0",
+                    "support_chamber_temp_control": "1",
                     "support_multi_bed_types": "1",
                     "thumbnails": [
                         "300x300",
@@ -300,7 +300,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM109 S[nozzle_temperature_initial_layer]\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y150 F12000\nG1 X0 F12000\nG1 Z0.2 F600\nG1 X0 Y150 F6000\nG1 X0 Y0 E15 F6000\nG1 X150 Y0 E15 F6000\nG92 E0\nG1 Z1 F600",
+                    "machine_start_gcode": ";SET PRINT AREA MIN AND MAX COORDINATES TO ENABLE ADAPTIVE PROBING\n; MINX = {first_layer_print_min[0]}\n; MINY = {first_layer_print_min[1]}\n; MAXX = {first_layer_print_max[0]}\n; MAXY = {first_layer_print_max[1]}\nM140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM109 S[nozzle_temperature_initial_layer]\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y150 F12000\nG1 X0 F12000\nG1 Z0.2 F600\nG1 X0 Y150 F6000\nG1 X0 Y0 E15 F6000\nG1 X150 Y0 E15 F6000\nG92 E0\nG1 Z1 F600",
                     "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
@@ -362,7 +362,7 @@
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
                     "support_air_filtration": "1",
-                    "support_chamber_temp_control": "0",
+                    "support_chamber_temp_control": "1",
                     "support_multi_bed_types": "1",
                     "thumbnails": [
                         "300x300",
@@ -485,7 +485,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM109 S[nozzle_temperature_initial_layer]\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y150 F12000\nG1 X0 F12000\nG1 Z0.2 F600\nG1 X0 Y150 F6000\nG1 X0 Y0 E15 F6000\nG1 X150 Y0 E15 F6000\nG92 E0\nG1 Z1 F600",
+                    "machine_start_gcode": ";SET PRINT AREA MIN AND MAX COORDINATES TO ENABLE ADAPTIVE PROBING\n; MINX = {first_layer_print_min[0]}\n; MINY = {first_layer_print_min[1]}\n; MAXX = {first_layer_print_max[0]}\n; MAXY = {first_layer_print_max[1]}\nM140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM109 S[nozzle_temperature_initial_layer]\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y150 F12000\nG1 X0 F12000\nG1 Z0.2 F600\nG1 X0 Y150 F6000\nG1 X0 Y0 E15 F6000\nG1 X150 Y0 E15 F6000\nG92 E0\nG1 Z1 F600",
                     "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.42"
@@ -547,7 +547,7 @@
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
                     "support_air_filtration": "1",
-                    "support_chamber_temp_control": "0",
+                    "support_chamber_temp_control": "1",
                     "support_multi_bed_types": "1",
                     "thumbnails": [
                         "300x300",
@@ -670,7 +670,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM109 S[nozzle_temperature_initial_layer]\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y150 F12000\nG1 X0 F12000\nG1 Z0.2 F600\nG1 X0 Y150 F6000\nG1 X0 Y0 E15 F6000\nG1 X150 Y0 E15 F6000\nG92 E0\nG1 Z1 F600",
+                    "machine_start_gcode": ";SET PRINT AREA MIN AND MAX COORDINATES TO ENABLE ADAPTIVE PROBING\n; MINX = {first_layer_print_min[0]}\n; MINY = {first_layer_print_min[1]}\n; MAXX = {first_layer_print_max[0]}\n; MAXY = {first_layer_print_max[1]}\nM140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM109 S[nozzle_temperature_initial_layer]\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y150 F12000\nG1 X0 F12000\nG1 Z0.2 F600\nG1 X0 Y150 F6000\nG1 X0 Y0 E15 F6000\nG1 X150 Y0 E15 F6000\nG92 E0\nG1 Z1 F600",
                     "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.56"
@@ -732,7 +732,7 @@
                     "silent_mode": "0",
                     "single_extruder_multi_material": "1",
                     "support_air_filtration": "1",
-                    "support_chamber_temp_control": "0",
+                    "support_chamber_temp_control": "1",
                     "support_multi_bed_types": "1",
                     "thumbnails": [
                         "300x300",

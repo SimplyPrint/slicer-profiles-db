@@ -4,7 +4,7 @@
   "name": "Lulzbot Taz Pro Dual 0.5 nozzle",
   "vendor": "Lulzbot",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.4.1",
   "filament_id": null,
   "setting_id": "LZPD001",
   "renamed_from": null,
@@ -250,7 +250,8 @@
       "2.3.1": "M400; wait for moves to finish\nM140 S0; start cooling bed\nM107; fans off\nG91 ; relative positioning\nG1 E-1 F300 ; retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z25 E-1 X20 Y20 F2000; move Z up a bit and retract filament even more\nM104 S{nozzle_temperature[0]} T0 ; T0 to print temp\nM104 S{nozzle_temperature[1]} T1 ; T1 to print temp\nG90 ; absolute positioning\nG0 X285 Y-30 F3000; move to cooling position\nG91 ; relative positioning\nM117 Purging for next print;progress indicator message\nT0\nM109 S{nozzle_temperature[0]}; wait for temp\nG92 E0; set extruder position to purge amount\nG1 E15 F75; purge\nM400; wait for purge\nM104 S0 ; T0 hotend off\nT1\nM109 S{nozzle_temperature[1]}; wait for temp\nG92 E0; set extruder position to purge amount\nG1 E15 F75; purge\nM400; wait for purge\nM104 S0 ; T1 hotend off\nT0\nM117 Cooling, please wait;progress indicator message\nM190 S0; cool off bed\nG0 Y280 F3000 ; present finished print\nM77; stop GLCD timer\nM18 X Y E; turn off x y and e axis\nG90 ; absolute positioning\nM117 Print complete; progress indicator message"
     },
     "setting_id": {
-      "2.3.1": "LZPD001"
+      "2.3.1": "LZPD001",
+      "2.4.1": "sRWzLKWRYOU1YBQX"
     },
     "printer_model": {
       "2.3.1": "Lulzbot Taz Pro Dual"

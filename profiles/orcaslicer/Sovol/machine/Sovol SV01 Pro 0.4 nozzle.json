@@ -4,7 +4,7 @@
   "name": "Sovol SV01 Pro 0.4 nozzle",
   "vendor": "Sovol",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.1",
+  "last_seen": "2.4.1",
   "filament_id": null,
   "setting_id": "GM001",
   "renamed_from": null,
@@ -251,7 +251,8 @@
       "2.3.1": "{if max_layer_z < printable_height}G1 Z{z_offset+min(max_layer_z+2, printable_height)} F600 ; Move print head up{endif}\nG1 X5 Y{print_bed_max[1]*0.8} F{travel_speed*60} ; present print\n{if max_layer_z < printable_height-10}G1 Z{z_offset+min(max_layer_z+70, printable_height-10)} F600 ; Move print head further up{endif}\n{if max_layer_z < max_print_height*0.6}G1 Z{printable_height*0.6} F600 ; Move print head further up{endif}\nM140 S0 ; turn off heatbed\nM104 S0 ; turn off temperature\nM107 ; turn off fan\nM84 X Y E ; disable motors"
     },
     "setting_id": {
-      "2.3.1": "GM001"
+      "2.3.1": "GM001",
+      "2.4.1": "xJdpEJLw5JmUlPBH"
     },
     "printer_model": {
       "2.3.1": "Sovol SV01 Pro"

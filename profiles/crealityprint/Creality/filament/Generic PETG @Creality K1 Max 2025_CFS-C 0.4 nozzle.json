@@ -4,7 +4,7 @@
   "name": "Generic PETG @Creality K1 Max 2025_CFS-C 0.4 nozzle",
   "vendor": "Creality",
   "first_seen": "7.1.0",
-  "last_seen": "7.1.0",
+  "last_seen": "7.2.0",
   "filament_id": "00003",
   "setting_id": "GFSA04",
   "renamed_from": null,
@@ -51,10 +51,12 @@
       "7.1.0": "70"
     },
     "overhang_fan_threshold": {
-      "7.1.0": "25%"
+      "7.1.0": "25%",
+      "7.2.0": "10%"
     },
     "overhang_fan_speed": {
-      "7.1.0": "90"
+      "7.1.0": "90",
+      "7.2.0": "100"
     },
     "slow_down_for_layer_cooling": {
       "7.1.0": "1"
@@ -74,7 +76,8 @@
       "7.1.0": "1"
     },
     "fan_cooling_layer_time": {
-      "7.1.0": "30"
+      "7.1.0": "30",
+      "7.2.0": "35"
     },
     "filament_cost": {
       "7.1.0": "14"
@@ -83,13 +86,15 @@
       "7.1.0": "1.27"
     },
     "filament_deretraction_speed": {
-      "7.1.0": "0"
+      "7.1.0": "0",
+      "7.2.0": "nil"
     },
     "filament_diameter": {
       "7.1.0": "1.75"
     },
     "filament_max_volumetric_speed": {
-      "7.1.0": "9"
+      "7.1.0": "9",
+      "7.2.0": "12"
     },
     "filament_minimal_purge_on_wipe_tower": {
       "7.1.0": "15"
@@ -101,22 +106,28 @@
       "7.1.0": "100%"
     },
     "filament_retract_when_changing_layer": {
-      "7.1.0": "0"
+      "7.1.0": "0",
+      "7.2.0": "1"
     },
     "filament_retraction_length": {
-      "7.1.0": "0.8"
+      "7.1.0": "0.8",
+      "7.2.0": "1.2"
     },
     "filament_z_hop": {
-      "7.1.0": "0.4"
+      "7.1.0": "0.4",
+      "7.2.0": "nil"
     },
     "filament_z_hop_types": {
-      "7.1.0": "Normal Lift"
+      "7.1.0": "Normal Lift",
+      "7.2.0": "Slope Lift"
     },
     "filament_retract_restart_extra": {
-      "7.1.0": "0"
+      "7.1.0": "0",
+      "7.2.0": "nil"
     },
     "filament_retraction_speed": {
-      "7.1.0": "30"
+      "7.1.0": "30",
+      "7.2.0": "nil"
     },
     "filament_settings_id": {
       "7.1.0": [
@@ -137,10 +148,12 @@
       ]
     },
     "filament_wipe": {
-      "7.1.0": "0"
+      "7.1.0": "0",
+      "7.2.0": "1"
     },
     "filament_wipe_distance": {
-      "7.1.0": "1"
+      "7.1.0": "1",
+      "7.2.0": "nil"
     },
     "bed_type": {
       "7.1.0": [
@@ -157,17 +170,23 @@
       "7.1.0": "90"
     },
     "fan_min_speed": {
-      "7.1.0": "80"
+      "7.1.0": "80",
+      "7.2.0": "40"
     },
     "slow_down_min_speed": {
-      "7.1.0": "10"
+      "7.1.0": "10",
+      "7.2.0": "20"
     },
     "slow_down_layer_time": {
-      "7.1.0": "8"
+      "7.1.0": "8",
+      "7.2.0": "12"
     },
     "filament_start_gcode": {
       "7.1.0": [
         ";filament start gcode\n{if (position[2] > initial_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}"
+      ],
+      "7.2.0": [
+        ";filament start gcode\n{if (position[2] > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}"
       ]
     },
     "nozzle_temperature": {
@@ -186,13 +205,15 @@
       "7.1.0": "0"
     },
     "activate_chamber_temp_control": {
-      "7.1.0": "1"
+      "7.1.0": "1",
+      "7.2.0": "0"
     },
     "additional_cooling_fan_speed": {
       "7.1.0": "0"
     },
     "chamber_temperature": {
-      "7.1.0": "35"
+      "7.1.0": "35",
+      "7.2.0": "0"
     },
     "compatible_printers": {
       "7.1.0": [
@@ -215,10 +236,12 @@
       "7.1.0": "0"
     },
     "epoxy_resin_plate_temp": {
-      "7.1.0": "0"
+      "7.1.0": "0",
+      "7.2.0": "70"
     },
     "epoxy_resin_plate_temp_initial_layer": {
-      "7.1.0": "0"
+      "7.1.0": "0",
+      "7.2.0": "70"
     },
     "filament_cooling_final_speed": {
       "7.1.0": "3.4"
@@ -263,7 +286,8 @@
       "7.1.0": "nil"
     },
     "filament_retract_lift_enforce": {
-      "7.1.0": "All Surfaces"
+      "7.1.0": "All Surfaces",
+      "7.2.0": "nil"
     },
     "filament_shrink": {
       "7.1.0": "100%"
@@ -281,7 +305,8 @@
       "7.1.0": "100"
     },
     "material_flow_temp_graph": {
-      "7.1.0": "[[3.0,210],  [10.0,220],  [12.0,230]]"
+      "7.1.0": "[[3.0,210],  [10.0,220],  [12.0,230]]",
+      "7.2.0": "[[1.0,235], [1.3,250]]"
     },
     "nozzle_temperature_range_high": {
       "7.1.0": "270"
@@ -290,13 +315,17 @@
       "7.1.0": "220"
     },
     "pressure_advance": {
-      "7.1.0": "0.02"
+      "7.1.0": "0.02",
+      "7.2.0": "0.08"
     },
     "required_nozzle_HRC": {
       "7.1.0": "0"
     },
     "support_material_interface_fan_speed": {
       "7.1.0": "-1"
+    },
+    "material_flow_dependent_temperature": {
+      "7.2.0": "0"
     }
   }
 }
