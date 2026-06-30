@@ -55,6 +55,15 @@ _SLICER_OVERRIDES: dict[SlicerType, dict[str, str]] = {
         "folgertech": "folger tech",
         "flyingbear": "flying bear",
     },
+    SlicerType.ANYCUBICSLICER: {
+        "qidi": "qidi tech",
+        "bbl": "bambu lab",
+        "twotrees": "two trees",
+        "positron3d": "positron 3d",
+        "folgertech": "folger tech",
+        "flyingbear": "flying bear",
+        "custom": "any generic printer",
+    },
     SlicerType.CURA: {
         "prusa3d": "prusa",
         "vivedino, formbot": "vivedino",

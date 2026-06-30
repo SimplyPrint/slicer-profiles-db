@@ -65,6 +65,7 @@ class ProfileStore:
             PrusaSlicerParser,
             CuraParser,
             ElegooSlicerParser,
+            AnycubicSlicerParser,
             SuperSlicerParser,
         )
 
@@ -75,6 +76,7 @@ class ProfileStore:
             SlicerType.PRUSASLICER: PrusaSlicerParser,
             SlicerType.CURA: CuraParser,
             SlicerType.ELEGOOSLICER: ElegooSlicerParser,
+            SlicerType.ANYCUBICSLICER: AnycubicSlicerParser,
             SlicerType.SUPERSLICER: SuperSlicerParser,
         }
         return parsers[slicer]()
