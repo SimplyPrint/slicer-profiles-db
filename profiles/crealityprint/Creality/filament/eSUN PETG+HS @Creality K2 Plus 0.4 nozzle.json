@@ -4,7 +4,7 @@
   "name": "eSUN PETG+HS @Creality K2 Plus 0.4 nozzle",
   "vendor": "Creality",
   "first_seen": "7.1.0",
-  "last_seen": "7.1.0",
+  "last_seen": "7.2.0",
   "filament_id": "E2002",
   "setting_id": "GFSA04",
   "renamed_from": null,
@@ -27,7 +27,10 @@
       ]
     },
     "cool_plate_temp": {
-      "7.1.0": "70"
+      "7.1.0": "70",
+      "7.2.0": [
+        "60"
+      ]
     },
     "eng_plate_temp": {
       "7.1.0": [
@@ -35,13 +38,22 @@
       ]
     },
     "hot_plate_temp": {
-      "7.1.0": "70"
+      "7.1.0": "70",
+      "7.2.0": [
+        "60"
+      ]
     },
     "textured_plate_temp": {
-      "7.1.0": "70"
+      "7.1.0": "70",
+      "7.2.0": [
+        "60"
+      ]
     },
     "cool_plate_temp_initial_layer": {
-      "7.1.0": "70"
+      "7.1.0": "70",
+      "7.2.0": [
+        "60"
+      ]
     },
     "eng_plate_temp_initial_layer": {
       "7.1.0": [
@@ -49,16 +61,28 @@
       ]
     },
     "hot_plate_temp_initial_layer": {
-      "7.1.0": "70"
+      "7.1.0": "70",
+      "7.2.0": [
+        "60"
+      ]
     },
     "textured_plate_temp_initial_layer": {
-      "7.1.0": "70"
+      "7.1.0": "70",
+      "7.2.0": [
+        "60"
+      ]
     },
     "overhang_fan_threshold": {
-      "7.1.0": "25%"
+      "7.1.0": "25%",
+      "7.2.0": [
+        "95%"
+      ]
     },
     "overhang_fan_speed": {
-      "7.1.0": "90"
+      "7.1.0": "90",
+      "7.2.0": [
+        "100"
+      ]
     },
     "slow_down_for_layer_cooling": {
       "7.1.0": [
@@ -76,19 +100,34 @@
       ]
     },
     "filament_flow_ratio": {
-      "7.1.0": "1"
+      "7.1.0": "1",
+      "7.2.0": [
+        "1"
+      ]
     },
     "reduce_fan_stop_start_freq": {
-      "7.1.0": "1"
+      "7.1.0": "1",
+      "7.2.0": [
+        "0"
+      ]
     },
     "fan_cooling_layer_time": {
-      "7.1.0": "30"
+      "7.1.0": "30",
+      "7.2.0": [
+        "60"
+      ]
     },
     "filament_cost": {
-      "7.1.0": "22"
+      "7.1.0": "22",
+      "7.2.0": [
+        "0"
+      ]
     },
     "filament_density": {
-      "7.1.0": "1.26"
+      "7.1.0": "1.26",
+      "7.2.0": [
+        "0"
+      ]
     },
     "filament_deretraction_speed": {
       "7.1.0": [
@@ -111,10 +150,14 @@
     "filament_retraction_minimum_travel": {
       "7.1.0": [
         "nil"
-      ]
+      ],
+      "7.2.0": "1"
     },
     "filament_retract_before_wipe": {
-      "7.1.0": "70%"
+      "7.1.0": "70%",
+      "7.2.0": [
+        "nil"
+      ]
     },
     "filament_retract_when_changing_layer": {
       "7.1.0": [
@@ -124,12 +167,14 @@
     "filament_retraction_length": {
       "7.1.0": [
         "nil"
-      ]
+      ],
+      "7.2.0": "0.8"
     },
     "filament_z_hop": {
       "7.1.0": [
         "nil"
-      ]
+      ],
+      "7.2.0": "0.4"
     },
     "filament_z_hop_types": {
       "7.1.0": [
@@ -144,7 +189,8 @@
     "filament_retraction_speed": {
       "7.1.0": [
         "nil"
-      ]
+      ],
+      "7.2.0": "40"
     },
     "filament_settings_id": {
       "7.1.0": [
@@ -174,7 +220,8 @@
     "filament_wipe_distance": {
       "7.1.0": [
         "nil"
-      ]
+      ],
+      "7.2.0": "2"
     },
     "bed_type": {
       "7.1.0": [
@@ -182,7 +229,10 @@
       ]
     },
     "nozzle_temperature_initial_layer": {
-      "7.1.0": "250"
+      "7.1.0": "250",
+      "7.2.0": [
+        "200"
+      ]
     },
     "full_fan_speed_layer": {
       "7.1.0": [
@@ -190,26 +240,42 @@
       ]
     },
     "fan_max_speed": {
-      "7.1.0": "80"
+      "7.1.0": "80",
+      "7.2.0": [
+        "100"
+      ]
     },
     "fan_min_speed": {
-      "7.1.0": "40"
+      "7.1.0": "40",
+      "7.2.0": [
+        "35"
+      ]
     },
     "slow_down_min_speed": {
       "7.1.0": [
         "10"
-      ]
+      ],
+      "7.2.0": "10"
     },
     "slow_down_layer_time": {
-      "7.1.0": "8"
+      "7.1.0": "8",
+      "7.2.0": [
+        "8"
+      ]
     },
     "filament_start_gcode": {
       "7.1.0": [
         ";filament start gcode\n{if !multicolor_method}\n{if (position[2] > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n\n{if(initial_extruder != current_extruder || position[2] > first_layer_height)}\n{if (position[2] +0.4  < printable_height) }\nG2 Z{position[2]  + 0.4} I0.86 J0.86 P1 F10000 ; spiral lift a little from second lift\nG1 X205 Y345 F20000\nG1 Z{position[2] } F1200\n{else}\nG1 X205 Y345 F20000\n{endif}\n{endif}\n{endif}"
+      ],
+      "7.2.0": [
+        "; Filament gcode\n"
       ]
     },
     "nozzle_temperature": {
-      "7.1.0": "250"
+      "7.1.0": "250",
+      "7.2.0": [
+        "200"
+      ]
     },
     "temperature_vitrification": {
       "7.1.0": [
@@ -223,22 +289,28 @@
       "7.1.0": "GFSA04"
     },
     "customized_plate_temp": {
-      "7.1.0": "70"
+      "7.1.0": "70",
+      "7.2.0": null
     },
     "customized_plate_temp_initial_layer": {
-      "7.1.0": "70"
+      "7.1.0": "70",
+      "7.2.0": null
     },
     "epoxy_resin_plate_temp": {
-      "7.1.0": "60"
+      "7.1.0": "60",
+      "7.2.0": null
     },
     "epoxy_resin_plate_temp_initial_layer": {
-      "7.1.0": "60"
+      "7.1.0": "60",
+      "7.2.0": null
     },
     "nozzle_temperature_range_high": {
-      "7.1.0": "270"
+      "7.1.0": "270",
+      "7.2.0": null
     },
     "pressure_advance": {
-      "7.1.0": "0.1"
+      "7.1.0": "0.1",
+      "7.2.0": null
     },
     "compatible_printers": {
       "7.1.0": [
@@ -247,6 +319,9 @@
     },
     "default_filament_colour": {
       "7.1.0": "\"\""
+    },
+    "additional_cooling_fan_speed": {
+      "7.2.0": "0"
     }
   }
 }

@@ -1,14 +1,14 @@
 [
     {
         "machine_model": {
-            "bed_model": "sha256:eb0a36271870d371a38a962c32cd5d20e32e6022dea406a9df389b1db0704296",
+            "bed_model": "sha256:7c08bea06a5a167d721bcc5fe2b848d45b27f7bbf5dbd108c77a7d6e4b22193e",
             "bed_texture": "sha256:3b349eb7f181313cc93d411d58e8d4a8bcbe28db516c984616b254bdeef3fb7c",
             "default_materials": "RatRig Generic ABS;RatRig Generic PLA;RatRig Generic PLA-CF;RatRig Generic PCTG;RatRig Generic PETG;RatRig Generic TPU;RatRig Generic ASA;RatRig Generic PC;RatRig Generic PVA;RatRig Generic PA;RatRig Generic PA-CF",
             "family": "RatRig_V-Core",
             "hotend_model": "",
             "machine_tech": "FFF",
-            "model_id": "V-Core_4_IDEX_400_MIRROR_MODE",
-            "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
+            "model_id": "V-Core_4_IDEX_400_COPY_MODE",
+            "name": "RatRig V-Core 4 IDEX 400 COPY MODE",
             "nozzle_diameter": "0.4;0.5;0.6;0.8",
             "type": "machine_model"
         },
@@ -112,7 +112,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
                     "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
@@ -120,7 +120,7 @@
                     "min_layer_height": [
                         "0.06"
                     ],
-                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.4 nozzle",
+                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.4 nozzle",
                     "nozzle_diameter": [
                         "0.4",
                         "0.4"
@@ -128,12 +128,12 @@
                     "nozzle_type": "undefine",
                     "printable_area": [
                         "100x0",
-                        "270x0",
-                        "270x400",
+                        "300x0",
+                        "300x400",
                         "100x400"
                     ],
                     "printable_height": "400",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
                     "printer_settings_id": "",
                     "printer_technology": "FFF",
                     "printer_variant": "0.4",
@@ -184,7 +184,7 @@
                     ],
                     "z_hop_types": "Normal Lift"
                 },
-                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.4 nozzle"
+                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.4 nozzle"
             },
             "0.5": {
                 "data": {
@@ -285,7 +285,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
                     "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
@@ -293,7 +293,7 @@
                     "min_layer_height": [
                         "0.06"
                     ],
-                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.5 nozzle",
+                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.5 nozzle",
                     "nozzle_diameter": [
                         "0.5",
                         "0.5"
@@ -301,12 +301,12 @@
                     "nozzle_type": "undefine",
                     "printable_area": [
                         "100x0",
-                        "270x0",
-                        "270x400",
+                        "300x0",
+                        "300x400",
                         "100x400"
                     ],
                     "printable_height": "400",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
                     "printer_settings_id": "",
                     "printer_technology": "FFF",
                     "printer_variant": "0.5",
@@ -357,7 +357,7 @@
                     ],
                     "z_hop_types": "Normal Lift"
                 },
-                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.5 nozzle"
+                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.5 nozzle"
             },
             "0.6": {
                 "data": {
@@ -458,7 +458,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
                     "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
@@ -466,7 +466,7 @@
                     "min_layer_height": [
                         "0.06"
                     ],
-                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.6 nozzle",
+                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.6 nozzle",
                     "nozzle_diameter": [
                         "0.6",
                         "0.6"
@@ -474,12 +474,12 @@
                     "nozzle_type": "undefine",
                     "printable_area": [
                         "100x0",
-                        "270x0",
-                        "270x400",
+                        "300x0",
+                        "300x400",
                         "100x400"
                     ],
                     "printable_height": "400",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
                     "printer_settings_id": "",
                     "printer_technology": "FFF",
                     "printer_variant": "0.6",
@@ -530,7 +530,7 @@
                     ],
                     "z_hop_types": "Normal Lift"
                 },
-                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.6 nozzle"
+                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.6 nozzle"
             },
             "0.8": {
                 "data": {
@@ -631,7 +631,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
                     "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
@@ -639,7 +639,7 @@
                     "min_layer_height": [
                         "0.06"
                     ],
-                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.8 nozzle",
+                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.8 nozzle",
                     "nozzle_diameter": [
                         "0.8",
                         "0.8"
@@ -647,12 +647,12 @@
                     "nozzle_type": "undefine",
                     "printable_area": [
                         "100x0",
-                        "270x0",
-                        "270x400",
+                        "300x0",
+                        "300x400",
                         "100x400"
                     ],
                     "printable_height": "400",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
                     "printer_settings_id": "",
                     "printer_technology": "FFF",
                     "printer_variant": "0.8",
@@ -703,7 +703,7 @@
                     ],
                     "z_hop_types": "Normal Lift"
                 },
-                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.8 nozzle"
+                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.8 nozzle"
             }
         },
         "vendor": "Ratrig"
@@ -1420,14 +1420,14 @@
     },
     {
         "machine_model": {
-            "bed_model": "sha256:7c08bea06a5a167d721bcc5fe2b848d45b27f7bbf5dbd108c77a7d6e4b22193e",
+            "bed_model": "sha256:eb0a36271870d371a38a962c32cd5d20e32e6022dea406a9df389b1db0704296",
             "bed_texture": "sha256:3b349eb7f181313cc93d411d58e8d4a8bcbe28db516c984616b254bdeef3fb7c",
             "default_materials": "RatRig Generic ABS;RatRig Generic PLA;RatRig Generic PLA-CF;RatRig Generic PCTG;RatRig Generic PETG;RatRig Generic TPU;RatRig Generic ASA;RatRig Generic PC;RatRig Generic PVA;RatRig Generic PA;RatRig Generic PA-CF",
             "family": "RatRig_V-Core",
             "hotend_model": "",
             "machine_tech": "FFF",
-            "model_id": "V-Core_4_IDEX_400_COPY_MODE",
-            "name": "RatRig V-Core 4 IDEX 400 COPY MODE",
+            "model_id": "V-Core_4_IDEX_400_MIRROR_MODE",
+            "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
             "nozzle_diameter": "0.4;0.5;0.6;0.8",
             "type": "machine_model"
         },
@@ -1531,7 +1531,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
                     "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
@@ -1539,7 +1539,7 @@
                     "min_layer_height": [
                         "0.06"
                     ],
-                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.4 nozzle",
+                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.4 nozzle",
                     "nozzle_diameter": [
                         "0.4",
                         "0.4"
@@ -1547,12 +1547,12 @@
                     "nozzle_type": "undefine",
                     "printable_area": [
                         "100x0",
-                        "300x0",
-                        "300x400",
+                        "270x0",
+                        "270x400",
                         "100x400"
                     ],
                     "printable_height": "400",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
                     "printer_settings_id": "",
                     "printer_technology": "FFF",
                     "printer_variant": "0.4",
@@ -1603,7 +1603,7 @@
                     ],
                     "z_hop_types": "Normal Lift"
                 },
-                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.4 nozzle"
+                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.4 nozzle"
             },
             "0.5": {
                 "data": {
@@ -1704,7 +1704,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
                     "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
@@ -1712,7 +1712,7 @@
                     "min_layer_height": [
                         "0.06"
                     ],
-                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.5 nozzle",
+                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.5 nozzle",
                     "nozzle_diameter": [
                         "0.5",
                         "0.5"
@@ -1720,12 +1720,12 @@
                     "nozzle_type": "undefine",
                     "printable_area": [
                         "100x0",
-                        "300x0",
-                        "300x400",
+                        "270x0",
+                        "270x400",
                         "100x400"
                     ],
                     "printable_height": "400",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
                     "printer_settings_id": "",
                     "printer_technology": "FFF",
                     "printer_variant": "0.5",
@@ -1776,7 +1776,7 @@
                     ],
                     "z_hop_types": "Normal Lift"
                 },
-                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.5 nozzle"
+                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.5 nozzle"
             },
             "0.6": {
                 "data": {
@@ -1877,7 +1877,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
                     "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
@@ -1885,7 +1885,7 @@
                     "min_layer_height": [
                         "0.06"
                     ],
-                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.6 nozzle",
+                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.6 nozzle",
                     "nozzle_diameter": [
                         "0.6",
                         "0.6"
@@ -1893,12 +1893,12 @@
                     "nozzle_type": "undefine",
                     "printable_area": [
                         "100x0",
-                        "300x0",
-                        "300x400",
+                        "270x0",
+                        "270x400",
                         "100x400"
                     ],
                     "printable_height": "400",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
                     "printer_settings_id": "",
                     "printer_technology": "FFF",
                     "printer_variant": "0.6",
@@ -1949,7 +1949,7 @@
                     ],
                     "z_hop_types": "Normal Lift"
                 },
-                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.6 nozzle"
+                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.6 nozzle"
             },
             "0.8": {
                 "data": {
@@ -2050,7 +2050,7 @@
                         "0"
                     ],
                     "machine_pause_gcode": "PAUSE",
-                    "machine_start_gcode": "G28\nIDEX_COPY\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
+                    "machine_start_gcode": "G28\nIDEX_MIRROR\nSTART_PRINT EXTRUDER_TEMP={first_layer_temperature[0]},{first_layer_temperature[1]} EXTRUDER_OTHER_LAYER_TEMP={temperature[0]},{temperature[1]} BED_TEMP=[first_layer_bed_temperature] INITIAL_TOOL={initial_tool} TOTAL_LAYER_COUNT={total_layer_count} X0={first_layer_print_min[0]} Y0={first_layer_print_min[1]} X1={first_layer_print_max[0]} Y1={first_layer_print_max[1]}",
                     "manual_filament_change": "0",
                     "max_layer_height": [
                         "0.3"
@@ -2058,7 +2058,7 @@
                     "min_layer_height": [
                         "0.06"
                     ],
-                    "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.8 nozzle",
+                    "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.8 nozzle",
                     "nozzle_diameter": [
                         "0.8",
                         "0.8"
@@ -2066,12 +2066,12 @@
                     "nozzle_type": "undefine",
                     "printable_area": [
                         "100x0",
-                        "300x0",
-                        "300x400",
+                        "270x0",
+                        "270x400",
                         "100x400"
                     ],
                     "printable_height": "400",
-                    "printer_model": "RatRig V-Core 4 IDEX 400 COPY MODE",
+                    "printer_model": "RatRig V-Core 4 IDEX 400 MIRROR MODE",
                     "printer_settings_id": "",
                     "printer_technology": "FFF",
                     "printer_variant": "0.8",
@@ -2122,7 +2122,7 @@
                     ],
                     "z_hop_types": "Normal Lift"
                 },
-                "name": "RatRig V-Core 4 IDEX 400 COPY MODE 0.8 nozzle"
+                "name": "RatRig V-Core 4 IDEX 400 MIRROR MODE 0.8 nozzle"
             }
         },
         "vendor": "Ratrig"
