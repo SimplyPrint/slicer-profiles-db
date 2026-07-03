@@ -1,7 +1,7 @@
 {
   "slicer": "prusaslicer",
   "profile_type": "filament",
-  "name": "Prusament PLA @COREONEINDX HF0.4",
+  "name": "Prusament PC Blend Carbon Fiber @COREONEINDX HF0.4",
   "vendor": "PrusaResearch",
   "first_seen": "3.0.0",
   "last_seen": "3.0.0",
@@ -22,7 +22,7 @@
       "3.0.0": "\"; Filament-specific end gcode\""
     },
     "extrusion_multiplier": {
-      "3.0.0": "1"
+      "3.0.0": "1.03"
     },
     "filament_loading_speed": {
       "3.0.0": "0"
@@ -55,16 +55,16 @@
       "3.0.0": "3.5"
     },
     "filament_ramming_parameters": {
-      "3.0.0": "\"250 100 39.871 39.871| 0.05 39.9547 0.45 39.9547 0.95 39.9547 1.45 39.9547 1.95 39.9547 2.45 39.9547 2.95 39.9547 3.45 39.9547 3.95 39.9547 4.45 39.9547 4.95 39.9547\""
+      "3.0.0": "\"250 100 42.4194 42.4194| 0.05 42.4387 0.45 42.4387 0.95 42.4387 1.45 42.4387 1.95 42.4387 2.45 42.4387 2.95 42.4387 3.45 42.4387 3.95 42.4387 4.45 42.4387 4.95 42.4387\""
     },
     "filament_minimal_purge_on_wipe_tower": {
       "3.0.0": "12"
     },
     "filament_cost": {
-      "3.0.0": "27.99"
+      "3.0.0": "74.99"
     },
     "filament_density": {
-      "3.0.0": "1.24"
+      "3.0.0": "1.22"
     },
     "filament_diameter": {
       "3.0.0": "1.75"
@@ -73,61 +73,58 @@
       "3.0.0": "\"\""
     },
     "filament_settings_id": {
-      "3.0.0": "Prusament PLA @COREONEINDX HF0.4"
+      "3.0.0": "Prusament PC Blend Carbon Fiber @COREONEINDX HF0.4"
     },
     "filament_soluble": {
       "3.0.0": "0"
     },
     "min_print_speed": {
-      "3.0.0": "25"
+      "3.0.0": "15"
     },
     "slowdown_below_layer_time": {
-      "3.0.0": "9"
+      "3.0.0": "15"
     },
     "start_filament_gcode": {
-      "3.0.0": "\"M572 S0.038 ; Pressure advance\\nM573 R\""
+      "3.0.0": "\"M572 S0.05 ; Pressure advance\\nM573 R\""
     },
     "bed_temperature": {
-      "3.0.0": "60"
+      "3.0.0": "115"
     },
     "bridge_fan_speed": {
-      "3.0.0": "100"
+      "3.0.0": "30"
     },
     "disable_fan_first_layers": {
-      "3.0.0": "1"
-    },
-    "full_fan_speed_layer": {
-      "3.0.0": "3"
+      "3.0.0": "4"
     },
     "fan_always_on": {
-      "3.0.0": "1"
+      "3.0.0": "0"
     },
     "fan_below_layer_time": {
-      "3.0.0": "40"
+      "3.0.0": "15"
     },
     "filament_colour": {
-      "3.0.0": "#FF8000"
+      "3.0.0": "#BBBBBB"
     },
     "filament_max_volumetric_speed": {
-      "3.0.0": "28"
+      "3.0.0": "13"
     },
     "filament_type": {
-      "3.0.0": "PLA"
+      "3.0.0": "PC"
     },
     "first_layer_bed_temperature": {
-      "3.0.0": "60"
+      "3.0.0": "110"
     },
     "first_layer_temperature": {
-      "3.0.0": "230"
+      "3.0.0": "290"
     },
     "max_fan_speed": {
-      "3.0.0": "100"
+      "3.0.0": "30"
     },
     "min_fan_speed": {
-      "3.0.0": "100"
+      "3.0.0": "15"
     },
     "temperature": {
-      "3.0.0": "225"
+      "3.0.0": "290"
     },
     "filament_vendor": {
       "3.0.0": "Prusa Polymers"
@@ -135,23 +132,23 @@
     "filament_spool_weight": {
       "3.0.0": "278"
     },
-    "idle_temperature": {
+    "filament_retract_lift": {
       "3.0.0": "nil"
     },
-    "filament_travel_ramping_lift": {
+    "filament_retract_length": {
+      "3.0.0": "nil"
+    },
+    "filament_abrasive": {
       "3.0.0": "1"
     },
-    "filament_travel_max_lift": {
-      "3.0.0": "0.8"
-    },
-    "filament_travel_slope": {
-      "3.0.0": "1"
+    "idle_temperature": {
+      "3.0.0": "nil"
     },
     "filament_infill_max_speed": {
       "3.0.0": "0"
     },
     "filament_infill_max_crossing_speed": {
-      "3.0.0": "200"
+      "3.0.0": "100"
     },
     "cooling_slowdown_logic": {
       "3.0.0": "consistent_surface"
@@ -159,29 +156,29 @@
     "cooling_perimeter_transition_distance": {
       "3.0.0": "10"
     },
-    "filament_purge_multiplier": {
-      "3.0.0": "100%"
-    },
     "filament_stamping_distance": {
       "3.0.0": "0"
     },
     "filament_stamping_loading_speed": {
       "3.0.0": "0"
     },
+    "chamber_temperature": {
+      "3.0.0": "55"
+    },
+    "chamber_minimal_temperature": {
+      "3.0.0": "40"
+    },
+    "filament_shrinkage_compensation_xy": {
+      "3.0.0": "0%"
+    },
+    "filament_shrinkage_compensation_z": {
+      "3.0.0": "0.18%"
+    },
     "enable_dynamic_fan_speeds": {
       "3.0.0": "1"
     },
     "overhang_fan_speed_0": {
-      "3.0.0": "100"
-    },
-    "overhang_fan_speed_1": {
-      "3.0.0": "100"
-    },
-    "chamber_temperature": {
       "3.0.0": "20"
-    },
-    "chamber_minimal_temperature": {
-      "3.0.0": "0"
     },
     "filament_multitool_ramming": {
       "3.0.0": "1"
@@ -192,14 +189,11 @@
     "filament_multitool_ramming_volume": {
       "3.0.0": "18"
     },
-    "filament_retract_length": {
-      "3.0.0": "0.8"
+    "filament_purge_multiplier": {
+      "3.0.0": "100%"
     },
-    "filament_retract_length_toolchange": {
-      "3.0.0": "nil"
-    },
-    "overhang_fan_speed_2": {
-      "3.0.0": "100"
+    "overhang_fan_speed_1": {
+      "3.0.0": "12"
     }
   }
 }
