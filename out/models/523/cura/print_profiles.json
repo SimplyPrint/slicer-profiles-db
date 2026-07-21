@@ -5,7 +5,7 @@
                 "sovol_sv08"
             ],
             "material_native_ids": [
-                "generic_tpu"
+                "generic_abs"
             ],
             "variant_names": [
                 "0.4mm Nozzle"
@@ -22,7 +22,7 @@
                     "sovol_sv08"
                 ],
                 "material_native_ids": [
-                    "generic_tpu"
+                    "generic_abs"
                 ],
                 "variant_names": [
                     "0.4mm Nozzle"
@@ -31,8 +31,8 @@
             "definition": "sovol_sv08",
             "global_quality_id": "quality:sovol_sv08:sovol/sovol_sv08_global",
             "intent_category": null,
-            "material_id": "generic_tpu",
-            "native_id": "quality:sovol_sv08:sovol/TPU/sovol_sv08_0.4_TPU_standard",
+            "material_id": "generic_abs",
+            "native_id": "quality:sovol_sv08:sovol/ABS/sovol_sv08_0.4_ABS_standard",
             "quality_type": "standard",
             "resource_version": "5.13.0",
             "source_kind": "quality",
@@ -47,127 +47,20 @@
             "acceleration_travel": 40000,
             "acceleration_wall_0": 8000,
             "acceleration_wall_x": 12000,
-            "bridge_fan_speed": 100,
+            "bridge_fan_speed": 30,
             "bridge_settings_enabled": true,
             "cool_fan_enabled": true,
-            "cool_fan_speed": 80,
-            "cool_fan_speed_max": 100,
-            "cool_min_layer_time": 5,
-            "cool_min_layer_time_fan_speed_max": 50,
+            "cool_fan_speed": 10,
+            "cool_fan_speed_max": 30,
+            "cool_min_layer_time": 4,
+            "cool_min_layer_time_fan_speed_max": 30,
             "cool_min_speed": 10,
             "layer_height": 0.2,
-            "material_bed_temperature": 65,
-            "material_flow": 98,
-            "material_max_flowrate": 3.6,
-            "material_print_temperature": 240,
-            "material_print_temperature_layer_0": 235,
-            "skirt_brim_speed": 80,
-            "speed_infill": 200,
-            "speed_ironing": 15,
-            "speed_layer_0": 30,
-            "speed_print": 600,
-            "speed_slowdown_layers": 3,
-            "speed_travel": 600,
-            "speed_wall_0": 200,
-            "speed_wall_x": 300
-        },
-        "name": "Standard Quality · @sovol_sv08 · 0.4mm Nozzle · generic_tpu",
-        "setting_scopes": {
-            "acceleration_enabled": "global",
-            "acceleration_layer_0": "extruder.0",
-            "acceleration_print": "extruder.0",
-            "acceleration_roofing": "extruder.0",
-            "acceleration_topbottom": "extruder.0",
-            "acceleration_travel": "extruder.0",
-            "acceleration_wall_0": "extruder.0",
-            "acceleration_wall_x": "extruder.0",
-            "bridge_fan_speed": "extruder.0",
-            "bridge_settings_enabled": "global",
-            "cool_fan_enabled": "extruder.0",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_min_layer_time": "extruder.0",
-            "cool_min_layer_time_fan_speed_max": "extruder.0",
-            "cool_min_speed": "extruder.0",
-            "layer_height": "global",
-            "material_bed_temperature": "global",
-            "material_flow": "extruder.0",
-            "material_max_flowrate": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "skirt_brim_speed": "extruder.0",
-            "speed_infill": "extruder.0",
-            "speed_ironing": "extruder.0",
-            "speed_layer_0": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_slowdown_layers": "global",
-            "speed_travel": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "speed_wall_x": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "sovol_sv08"
-            ],
-            "material_native_ids": [
-                "generic_pla"
-            ],
-            "variant_names": [
-                "0.4mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Sovol SV08": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "sovol_sv08"
-                ],
-                "material_native_ids": [
-                    "generic_pla"
-                ],
-                "variant_names": [
-                    "0.4mm Nozzle"
-                ]
-            },
-            "definition": "sovol_sv08",
-            "global_quality_id": "quality:sovol_sv08:sovol/sovol_sv08_global",
-            "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:sovol_sv08:sovol/PLA/sovol_sv08_0.4_PLA_standard",
-            "quality_type": "standard",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4mm Nozzle"
-        },
-        "data": {
-            "acceleration_enabled": true,
-            "acceleration_layer_0": 3000,
-            "acceleration_print": 20000,
-            "acceleration_roofing": 8000,
-            "acceleration_topbottom": 2200,
-            "acceleration_travel": 40000,
-            "acceleration_wall_0": 8000,
-            "acceleration_wall_x": 12000,
-            "bridge_fan_speed": 100,
-            "bridge_settings_enabled": true,
-            "cool_fan_enabled": true,
-            "cool_fan_speed": 50,
-            "cool_fan_speed_max": 70,
-            "cool_min_layer_time": 5,
-            "cool_min_layer_time_fan_speed_max": 50,
-            "cool_min_speed": 10,
-            "layer_height": 0.2,
-            "material_bed_temperature": 65,
+            "material_bed_temperature": 95,
             "material_flow": 98,
             "material_max_flowrate": 21,
-            "material_print_temperature": 220,
-            "material_print_temperature_layer_0": 235,
+            "material_print_temperature": 270,
+            "material_print_temperature_layer_0": 280,
             "skirt_brim_speed": 80,
             "speed_infill": 200,
             "speed_ironing": 15,
@@ -178,7 +71,7 @@
             "speed_wall_0": 200,
             "speed_wall_x": 300
         },
-        "name": "Standard Quality · @sovol_sv08 · 0.4mm Nozzle · generic_pla",
+        "name": "Standard Quality · @sovol_sv08 · 0.4mm Nozzle · generic_abs",
         "setting_scopes": {
             "acceleration_enabled": "global",
             "acceleration_layer_0": "extruder.0",
@@ -326,7 +219,7 @@
                 "sovol_sv08"
             ],
             "material_native_ids": [
-                "generic_abs"
+                "generic_pla"
             ],
             "variant_names": [
                 "0.4mm Nozzle"
@@ -343,7 +236,7 @@
                     "sovol_sv08"
                 ],
                 "material_native_ids": [
-                    "generic_abs"
+                    "generic_pla"
                 ],
                 "variant_names": [
                     "0.4mm Nozzle"
@@ -352,8 +245,8 @@
             "definition": "sovol_sv08",
             "global_quality_id": "quality:sovol_sv08:sovol/sovol_sv08_global",
             "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:sovol_sv08:sovol/ABS/sovol_sv08_0.4_ABS_standard",
+            "material_id": "generic_pla",
+            "native_id": "quality:sovol_sv08:sovol/PLA/sovol_sv08_0.4_PLA_standard",
             "quality_type": "standard",
             "resource_version": "5.13.0",
             "source_kind": "quality",
@@ -368,20 +261,20 @@
             "acceleration_travel": 40000,
             "acceleration_wall_0": 8000,
             "acceleration_wall_x": 12000,
-            "bridge_fan_speed": 30,
+            "bridge_fan_speed": 100,
             "bridge_settings_enabled": true,
             "cool_fan_enabled": true,
-            "cool_fan_speed": 10,
-            "cool_fan_speed_max": 30,
-            "cool_min_layer_time": 4,
-            "cool_min_layer_time_fan_speed_max": 30,
+            "cool_fan_speed": 50,
+            "cool_fan_speed_max": 70,
+            "cool_min_layer_time": 5,
+            "cool_min_layer_time_fan_speed_max": 50,
             "cool_min_speed": 10,
             "layer_height": 0.2,
-            "material_bed_temperature": 95,
+            "material_bed_temperature": 65,
             "material_flow": 98,
             "material_max_flowrate": 21,
-            "material_print_temperature": 270,
-            "material_print_temperature_layer_0": 280,
+            "material_print_temperature": 220,
+            "material_print_temperature_layer_0": 235,
             "skirt_brim_speed": 80,
             "speed_infill": 200,
             "speed_ironing": 15,
@@ -392,7 +285,114 @@
             "speed_wall_0": 200,
             "speed_wall_x": 300
         },
-        "name": "Standard Quality · @sovol_sv08 · 0.4mm Nozzle · generic_abs",
+        "name": "Standard Quality · @sovol_sv08 · 0.4mm Nozzle · generic_pla",
+        "setting_scopes": {
+            "acceleration_enabled": "global",
+            "acceleration_layer_0": "extruder.0",
+            "acceleration_print": "extruder.0",
+            "acceleration_roofing": "extruder.0",
+            "acceleration_topbottom": "extruder.0",
+            "acceleration_travel": "extruder.0",
+            "acceleration_wall_0": "extruder.0",
+            "acceleration_wall_x": "extruder.0",
+            "bridge_fan_speed": "extruder.0",
+            "bridge_settings_enabled": "global",
+            "cool_fan_enabled": "extruder.0",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_max": "extruder.0",
+            "cool_min_layer_time": "extruder.0",
+            "cool_min_layer_time_fan_speed_max": "extruder.0",
+            "cool_min_speed": "extruder.0",
+            "layer_height": "global",
+            "material_bed_temperature": "global",
+            "material_flow": "extruder.0",
+            "material_max_flowrate": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "skirt_brim_speed": "extruder.0",
+            "speed_infill": "extruder.0",
+            "speed_ironing": "extruder.0",
+            "speed_layer_0": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_slowdown_layers": "global",
+            "speed_travel": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "speed_wall_x": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "sovol_sv08"
+            ],
+            "material_native_ids": [
+                "generic_tpu"
+            ],
+            "variant_names": [
+                "0.4mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Sovol SV08": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "sovol_sv08"
+                ],
+                "material_native_ids": [
+                    "generic_tpu"
+                ],
+                "variant_names": [
+                    "0.4mm Nozzle"
+                ]
+            },
+            "definition": "sovol_sv08",
+            "global_quality_id": "quality:sovol_sv08:sovol/sovol_sv08_global",
+            "intent_category": null,
+            "material_id": "generic_tpu",
+            "native_id": "quality:sovol_sv08:sovol/TPU/sovol_sv08_0.4_TPU_standard",
+            "quality_type": "standard",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4mm Nozzle"
+        },
+        "data": {
+            "acceleration_enabled": true,
+            "acceleration_layer_0": 3000,
+            "acceleration_print": 20000,
+            "acceleration_roofing": 8000,
+            "acceleration_topbottom": 2200,
+            "acceleration_travel": 40000,
+            "acceleration_wall_0": 8000,
+            "acceleration_wall_x": 12000,
+            "bridge_fan_speed": 100,
+            "bridge_settings_enabled": true,
+            "cool_fan_enabled": true,
+            "cool_fan_speed": 80,
+            "cool_fan_speed_max": 100,
+            "cool_min_layer_time": 5,
+            "cool_min_layer_time_fan_speed_max": 50,
+            "cool_min_speed": 10,
+            "layer_height": 0.2,
+            "material_bed_temperature": 65,
+            "material_flow": 98,
+            "material_max_flowrate": 3.6,
+            "material_print_temperature": 240,
+            "material_print_temperature_layer_0": 235,
+            "skirt_brim_speed": 80,
+            "speed_infill": 200,
+            "speed_ironing": 15,
+            "speed_layer_0": 30,
+            "speed_print": 600,
+            "speed_slowdown_layers": 3,
+            "speed_travel": 600,
+            "speed_wall_0": 200,
+            "speed_wall_x": 300
+        },
+        "name": "Standard Quality · @sovol_sv08 · 0.4mm Nozzle · generic_tpu",
         "setting_scopes": {
             "acceleration_enabled": "global",
             "acceleration_layer_0": "extruder.0",

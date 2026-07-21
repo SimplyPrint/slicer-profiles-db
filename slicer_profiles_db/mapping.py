@@ -10,6 +10,7 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
+import math
 import os
 import re
 import shutil
@@ -29,7 +30,11 @@ from .index import (
 )
 from .matching import match_printer_model
 from .models import ProfileType, SlicerType, StoredProfile
-from .parsers.cura import CURA_MATERIAL_RECOMPUTE_PLAN, resolve_cura_overlay
+from .parsers.cura import (
+    CURA_MATERIAL_RECOMPUTE_PLAN,
+    _expression_dependencies,
+    resolve_cura_overlay,
+)
 from .resources import ResourceStore
 from .store import ProfileStore
 from .versions import version_key
@@ -49,16 +54,7 @@ def _get_sp_api_url() -> str:
 
 
 # Slicers that participate in model mapping.
-_MAPPING_SLICERS = [
-    SlicerType.PRUSASLICER,
-    SlicerType.ORCASLICER,
-    SlicerType.BAMBUSTUDIO,
-    SlicerType.CREALITYPRINT,
-    SlicerType.ELEGOOSLICER,
-    SlicerType.ANYCUBICSLICER,
-    SlicerType.SUPERSLICER,
-    SlicerType.CURA,
-]
+_MAPPING_SLICERS = list(SlicerType)
 
 _IMPORT_ARTIFACT_FILENAMES = {
     "machine_profiles.json",
@@ -210,6 +206,112 @@ def _machine_profile_variant(
     return None
 
 
+def _variant_identity_lookup_key(identity: Mapping[str, Any]) -> str:
+    """Return a stable lookup key for a parser-declared hardware identity."""
+
+    required = {
+        "native_id",
+        "nozzle_diameter",
+        "nozzle_volume_type",
+        "tool_indices",
+        "hotend_id",
+    }
+    missing = sorted(
+        key for key in required if key not in identity or identity[key] is None
+    )
+    if missing:
+        raise ValueError(
+            "incomplete hardware variant identity; missing " + ", ".join(missing)
+        )
+    native_id = identity["native_id"]
+    hotend_id = identity["hotend_id"]
+    if not isinstance(native_id, str) or not native_id.strip():
+        raise ValueError("hardware variant identity has invalid native_id")
+    if not isinstance(hotend_id, str) or not hotend_id.strip():
+        raise ValueError("hardware variant identity has invalid hotend_id")
+
+    nozzle_diameter = identity["nozzle_diameter"]
+    if isinstance(nozzle_diameter, bool):
+        raise ValueError("hardware variant identity has invalid nozzle_diameter")
+    try:
+        nozzle_diameter = float(nozzle_diameter)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(
+            "hardware variant identity has invalid nozzle_diameter"
+        ) from exc
+    if not math.isfinite(nozzle_diameter) or nozzle_diameter <= 0:
+        raise ValueError("hardware variant identity has invalid nozzle_diameter")
+
+    tool_indices = identity["tool_indices"]
+    if not isinstance(tool_indices, list) or not tool_indices or not all(
+        isinstance(index, int) and not isinstance(index, bool) and index >= 0
+        for index in tool_indices
+    ):
+        raise ValueError("hardware variant identity has invalid tool_indices")
+    if len(set(tool_indices)) != len(tool_indices):
+        raise ValueError("hardware variant identity has duplicate tool_indices")
+
+    nozzle_volume_type = identity["nozzle_volume_type"]
+    if nozzle_volume_type not in {"standard", "high_flow"}:
+        raise ValueError("hardware variant identity has invalid nozzle_volume_type")
+    canonical = {
+        "hotend_id": hotend_id,
+        "native_id": native_id,
+        "nozzle_diameter": nozzle_diameter,
+        "nozzle_volume_type": nozzle_volume_type,
+        "tool_indices": sorted(tool_indices),
+    }
+    return "__variant_identity__:" + json.dumps(
+        canonical, sort_keys=True, separators=(",", ":")
+    )
+
+
+def _structured_variant_identity(source: Mapping[str, Any]) -> dict[str, Any] | None:
+    """Read the normalized identity, including the pre-schema-v1 field layout."""
+
+    declared = source.get("variant_identity") or source.get("identity")
+    if isinstance(declared, Mapping):
+        return dict(declared)
+
+    attributes = source.get("attributes")
+    if not isinstance(attributes, Mapping):
+        attributes = {}
+    runtime = source.get("runtime")
+    if not isinstance(runtime, Mapping):
+        runtime = {}
+    identity = {
+        "native_id": source.get("native_id") or source.get("id"),
+        "nozzle_diameter": source.get("nozzle_diameter")
+        or attributes.get("nozzle_diameter"),
+        "nozzle_volume_type": attributes.get("nozzle_volume_type"),
+        "tool_indices": source.get("runtime_compatible_tool_indices")
+        or runtime.get("supported_tool_indices")
+        or runtime.get("compatible_tool_indices"),
+        "hotend_id": attributes.get("hotend_id"),
+    }
+    return identity if all(value is not None for value in identity.values()) else None
+
+
+def _model_variant_identity(
+    machine_model: StoredProfile, variant: str
+) -> Mapping[str, Any] | None:
+    descriptors = machine_model.context.get("variants")
+    if not isinstance(descriptors, list):
+        return None
+    matches = [
+        _structured_variant_identity(item)
+        for item in descriptors
+        if isinstance(item, Mapping)
+        and str(item.get("key")) == variant
+    ]
+    matches = [identity for identity in matches if identity is not None]
+    if len(matches) > 1:
+        raise ValueError(
+            f"ambiguous hardware identity for {machine_model.name!r} variant {variant!r}"
+        )
+    return matches[0] if matches else None
+
+
 def _profile_name_lookup_key(name: Any) -> str:
     return f"__profile_name__:{name}"
 
@@ -229,6 +331,10 @@ def _find_variant_lookup(
     variant_lookup: Mapping[str, dict[str, Any]],
 ) -> dict[str, Any] | None:
     """Find a concrete machine role across native and display-name identities."""
+
+    declared_identity = _model_variant_identity(machine_model, variant)
+    if declared_identity is not None:
+        return variant_lookup.get(_variant_identity_lookup_key(declared_identity))
 
     model_name = _model_display_name(machine_model, machine_data, fallback_name)
     display_model_names = _variant_display_model_names(model_name)
@@ -383,7 +489,17 @@ def _index_variant_payload(
         index[key] = payload
 
 
-def _public_variant_payload(lookup: Mapping[str, Any]) -> dict[str, Any]:
+def _profile_selection_defaults(profile: StoredProfile) -> dict[str, Any] | None:
+    """Return generic profile-selection metadata for a machine model."""
+    declared = profile.context.get("selection_defaults")
+    return dict(declared) if isinstance(declared, Mapping) else None
+
+
+def _public_variant_payload(
+    lookup: Mapping[str, Any],
+    selection_defaults: Mapping[str, Any] | None = None,
+    variant_key: str | None = None,
+) -> dict[str, Any]:
     """Remove mapper-only metadata from a runtime machine role."""
 
     payload = {
@@ -392,12 +508,31 @@ def _public_variant_payload(lookup: Mapping[str, Any]) -> dict[str, Any]:
         if key != "_compatible_printer_identities"
     }
     context = payload.get("context")
+    public_context: dict[str, Any] = {}
     if isinstance(context, Mapping):
-        payload["context"] = {
+        public_context = {
             key: value
             for key, value in context.items()
-            if key not in {CURA_MATERIAL_RECOMPUTE_PLAN, "variant_aliases"}
+            if key
+            not in {
+                CURA_MATERIAL_RECOMPUTE_PLAN,
+                "variant_aliases",
+                "variant_identity_aliases",
+                "scene",
+            }
         }
+    if selection_defaults:
+        public_context.setdefault("selection_defaults", dict(selection_defaults))
+    if variant_key is not None:
+        public_context.setdefault("variant_key", str(variant_key))
+    identity = _structured_variant_identity(public_context)
+    if identity is not None:
+        # Validate and normalize the identity contract before it reaches the
+        # importer. The map key remains the canonical UI/runtime selector.
+        _variant_identity_lookup_key(identity)
+        public_context.setdefault("variant_identity", identity)
+    if public_context:
+        payload["context"] = public_context
     return payload
 
 
@@ -596,6 +731,8 @@ def _resolve_material_overrides(
     variant_context: Mapping[str, Any],
     material_profile: StoredProfile,
     material_data: Mapping[str, Any],
+    overlay_cache: dict[str, tuple[dict[str, Any], dict[str, str]]] | None = None,
+    plan_cache: dict[int, tuple[str, set[str]]] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any] | None, dict[str, str]]:
     """Apply source-native machine and hotend material settings to one role."""
 
@@ -657,11 +794,21 @@ def _resolve_material_overrides(
                 )
                 matched_hotend = str(hotend.get("id") or selected_hotend)
             break
-    resolved, dependent_scopes = resolve_cura_overlay(
-        variant_data,
-        resolved,
-        variant_context.get(CURA_MATERIAL_RECOMPUTE_PLAN),
+    plan = variant_context.get(CURA_MATERIAL_RECOMPUTE_PLAN)
+    cache_key = _overlay_resolution_cache_key(
+        variant_data, resolved, plan, plan_cache
     )
+    cached = overlay_cache.get(cache_key) if overlay_cache is not None else None
+    if cached is None:
+        resolved, dependent_scopes = resolve_cura_overlay(
+            variant_data,
+            resolved,
+            plan,
+        )
+        if overlay_cache is not None:
+            overlay_cache[cache_key] = (resolved, dependent_scopes)
+    else:
+        resolved, dependent_scopes = cached
     if resolved == dict(material_data):
         return resolved, None, dependent_scopes
     return (
@@ -675,46 +822,105 @@ def _resolve_material_overrides(
     )
 
 
+def _overlay_resolution_cache_key(
+    baseline: Mapping[str, Any],
+    overlay: Mapping[str, Any],
+    plan: Any,
+    plan_cache: dict[int, tuple[str, set[str]]] | None,
+) -> str:
+    """Identify the immutable inputs that can affect an overlay result."""
+
+    plan_id = id(plan)
+    cached_plan = plan_cache.get(plan_id) if plan_cache is not None else None
+    if cached_plan is None:
+        canonical_plan = json.dumps(
+            plan if isinstance(plan, Mapping) else {},
+            sort_keys=True,
+            separators=(",", ":"),
+            default=str,
+        )
+        schema_keys = set(baseline) | set(overlay)
+        dependencies: set[str] = set()
+        if isinstance(plan, Mapping):
+            schema_keys.update(str(key) for key in plan)
+            for specification in plan.values():
+                if not isinstance(specification, Mapping):
+                    continue
+                expression = specification.get("expression")
+                if isinstance(expression, str):
+                    dependencies.update(
+                        _expression_dependencies(expression, schema_keys)
+                    )
+        cached_plan = (canonical_plan, dependencies)
+        if plan_cache is not None:
+            plan_cache[plan_id] = cached_plan
+
+    canonical_plan, dependencies = cached_plan
+    inputs = {
+        key: baseline.get(key)
+        for key in dependencies
+        if key not in overlay
+    }
+    digest = hashlib.sha256()
+    for value in (canonical_plan, inputs, overlay):
+        encoded = (
+            value
+            if isinstance(value, str)
+            else json.dumps(
+                value,
+                sort_keys=True,
+                separators=(",", ":"),
+                default=str,
+            )
+        )
+        digest.update(encoded.encode())
+        digest.update(b"\0")
+    return digest.hexdigest()
+
+
 def _variant_material_role(
-    machine_model: StoredProfile,
-    machine_data: Mapping[str, Any],
-    variant_context: Mapping[str, Any],
-    variant: str,
     material_profile: StoredProfile,
     material_name: str,
-    resolution: Mapping[str, Any],
+    resolved_data: Mapping[str, Any],
+    setting_scopes: Mapping[str, Any],
 ) -> tuple[str, dict[str, Any]]:
-    """Create a stable identity for one resolved material hardware role."""
+    """Create a content-addressed identity for a resolved material role.
+
+    Machine-specific provenance is deliberately not part of the identity: two
+    hardware paths that produce identical runtime settings are the same role
+    and can carry a union of their compatible-printer relations.
+    """
 
     source_native_id = (
         material_profile.native_id
         or material_profile.setting_id
         or material_profile.name
     )
-    machine_native_id = (
-        machine_model.context.get("definition")
-        or machine_model.native_id
-        or _model_display_name(machine_model, machine_data, machine_model.name)
-    )
-    variant_native_id = variant_context.get("native_id") or variant
-    selector = {
-        "machine_native_id": str(machine_native_id),
-        "variant_key": str(variant),
-        "variant_native_id": str(variant_native_id),
+    semantic_payload = {
+        "data": resolved_data,
+        "setting_scopes": setting_scopes,
+        "source_native_id": source_native_id,
     }
     digest = hashlib.sha256(
-        json.dumps(selector, sort_keys=True, separators=(",", ":")).encode()
+        json.dumps(
+            semantic_payload,
+            sort_keys=True,
+            separators=(",", ":"),
+            default=str,
+        ).encode()
     ).hexdigest()[:16]
-    context = dict(material_profile.context)
+    context = {
+        key: value
+        for key, value in material_profile.context.items()
+        if key not in {"compatibility", "machine_overrides"}
+    }
     context.update(
         {
             "native_id": f"{source_native_id}#resolved-{digest}",
-            "resolution": {**dict(resolution), **selector},
             "source_native_id": source_native_id,
         }
     )
-    model_name = _model_display_name(machine_model, machine_data, machine_model.name)
-    return f"{material_name} · {model_name} · {variant}", context
+    return material_name, context
 
 
 def _machine_model_export(
@@ -736,6 +942,9 @@ def _machine_model_export(
         value = profile.context.get(key)
         if value is not None:
             exported[key] = value
+    selection_defaults = _profile_selection_defaults(profile)
+    if selection_defaults:
+        exported["selection_defaults"] = selection_defaults
     return exported
 
 
@@ -889,15 +1098,22 @@ def _build_variant_map(
         if not printer_model:
             continue
 
-        # Determine the variant identifier from the concrete hardware stack,
-        # then use an explicit nozzle token in the source name to correct stale
-        # upstream printer_variant values.
+        # Parser-declared identities are authoritative. Legacy profile families
+        # retain their established name-based compatibility path below.
         variant = _machine_profile_variant(profile, data)
-        name_variant = _parse_variant_from_name(data.get("name", profile.name))
-        if variant is None:
-            variant = name_variant
-        elif name_variant and not _same_variant(str(variant), name_variant):
-            variant = name_variant
+        declared_identity = _structured_variant_identity(profile.context)
+        if slicer == SlicerType.CURA:
+            if not isinstance(declared_identity, Mapping):
+                raise ValueError(
+                    f"Cura machine profile {profile.native_id or profile.name!r} "
+                    "has no structured variant identity"
+                )
+        else:
+            name_variant = _parse_variant_from_name(data.get("name", profile.name))
+            if variant is None:
+                variant = name_variant
+            elif name_variant and not _same_variant(str(variant), name_variant):
+                variant = name_variant
         if variant is None:
             continue
 
@@ -924,6 +1140,13 @@ def _build_variant_map(
         _index_variant_payload(
             result.variant_map[slicer_val], lookup_key, payload, replace=replace
         )
+        if isinstance(declared_identity, Mapping):
+            identity_key = _variant_identity_lookup_key(declared_identity)
+            if identity_key in result.variant_map[slicer_val]:
+                raise ValueError(
+                    f"duplicate structured hardware identity for {profile.name!r}"
+                )
+            result.variant_map[slicer_val][identity_key] = payload
         # Preserve every source profile even when multiple profiles share the
         # same native model + nozzle key.  Name-based fallback is part of the
         # established machine-model contract and must not depend on directory
@@ -1009,6 +1232,25 @@ def map_filament_profiles(
     """
     output: dict[int, dict[str, list[dict]]] = {}
 
+    # A profile's ``compatible_printers`` relation already describes every
+    # machine/variant it applies to.  Keep one shared role pool per engine and
+    # write each semantic payload once instead of cloning it into every model
+    # directory.  The importer consumes those relations independently of the
+    # artifact's containing model directory.
+    roles_by_slicer: dict[str, dict[str, dict[str, dict]]] = {}
+    role_owners: dict[int, int] = {}
+    profile_snapshots: dict[int, dict[str, Any]] = {}
+    overlay_cache: dict[str, tuple[dict[str, Any], dict[str, str]]] = {}
+    overlay_plan_cache: dict[int, tuple[str, set[str]]] = {}
+
+    def snapshot(profile: StoredProfile) -> dict[str, Any]:
+        """Evaluate each immutable source profile once for this mapping run."""
+        key = id(profile)
+        cached = profile_snapshots.get(key)
+        if cached is None:
+            cached = profile_snapshots[key] = _evaluate_stable(profile)
+        return cached
+
     # Build generic ID lookup per slicer (for resolve_generic_id).
     active_slicers = set()
     for slicer_profiles in model_map.model_to_profiles.values():
@@ -1026,7 +1268,7 @@ def map_filament_profiles(
             slicer = SlicerType(slicer_val)
 
             # Gather machine_model profile data and build variant lists
-            compatible_filaments: dict[str, list[dict]] = {}
+            compatible_filaments = roles_by_slicer.setdefault(slicer_val, {})
 
             for profile_key in profile_keys:
                 vendor, name = profile_key.split("/", 1)
@@ -1036,7 +1278,7 @@ def map_filament_profiles(
                 if not mm_profile:
                     continue
                 mm = mm_profile[0]
-                mm_data = _evaluate_stable(mm)
+                mm_data = snapshot(mm)
                 model_name = _model_display_name(mm, mm_data, name)
 
                 # Get nozzle variants
@@ -1068,7 +1310,7 @@ def map_filament_profiles(
                         None if uses_resource_constraints else vendor,
                     )
                     for fp in filament_profiles:
-                        fp_data = _evaluate_stable(fp)
+                        fp_data = snapshot(fp)
                         filament_name = fp_data.get("name", fp.name)
                         filament_type = (
                             fp.filament_type
@@ -1124,6 +1366,8 @@ def map_filament_profiles(
                             lookup.get("context", {}),
                             fp,
                             fp_data,
+                            overlay_cache,
+                            overlay_plan_cache,
                         )
                         role_name = filament_name
                         role_payload = _profile_payload(fp, resolved_fp_data)
@@ -1133,17 +1377,14 @@ def map_filament_profiles(
                             )
                         if resolution is not None:
                             role_name, role_context = _variant_material_role(
-                                mm,
-                                mm_data,
-                                lookup.get("context", {}),
-                                variant,
                                 fp,
                                 filament_name,
-                                resolution,
+                                resolved_fp_data,
+                                role_payload.get("setting_scopes", {}),
                             )
                             role_payload["context"] = role_context
 
-                        _add_filament_output(
+                        role = _add_filament_output(
                             compatible_filaments=compatible_filaments,
                             profile=fp,
                             profile_data=resolved_fp_data,
@@ -1157,18 +1398,20 @@ def map_filament_profiles(
                             role_name=role_name,
                             role_payload=role_payload,
                         )
+                        if role is not None:
+                            role_owners.setdefault(id(role), model_id)
 
                     # Shared Orca library generic @System filament presets are
                     # material presets, not printer-vendor presets. Brand-specific
                     # @System presets must not be attached globally; otherwise
                     # every printer gets unrelated filament brands like AliZ/NIT.
                     for fp in _global_templates.get(slicer_val, []):
-                        fp_data = _evaluate_stable(fp)
+                        fp_data = snapshot(fp)
                         filament_name = fp_data.get("name", fp.name)
                         filament_type = fp_data.get("filament_type", "")
                         if isinstance(filament_type, list):
                             filament_type = filament_type[0] if filament_type else ""
-                        _add_filament_output(
+                        role = _add_filament_output(
                             compatible_filaments=compatible_filaments,
                             profile=fp,
                             profile_data=fp_data,
@@ -1180,13 +1423,16 @@ def map_filament_profiles(
                             generic_profiles=_generic_profiles,
                             ofd_index=ofd_index,
                         )
+                        if role is not None:
+                            role_owners.setdefault(id(role), model_id)
 
-            # Flatten into output
-            if compatible_filaments:
-                flat = []
-                for entries in compatible_filaments.values():
-                    flat.extend(entries)
-                output.setdefault(model_id, {})[slicer_val] = flat
+    # Assign every coalesced role to the first compatible model.  Its complete
+    # compatible-printer map retains all model and variant relations.
+    for slicer_val, profiles_by_name in roles_by_slicer.items():
+        for entries_by_payload in profiles_by_name.values():
+            for entry in entries_by_payload.values():
+                owner = role_owners[id(entry)]
+                output.setdefault(owner, {}).setdefault(slicer_val, []).append(entry)
 
     return output
 
@@ -1284,7 +1530,7 @@ def _global_filament_templates(
 
 def _add_filament_output(
     *,
-    compatible_filaments: dict[str, list[dict]],
+    compatible_filaments: dict[str, dict[str, dict]],
     profile: StoredProfile,
     profile_data: dict[str, Any],
     filament_name: str,
@@ -1296,7 +1542,7 @@ def _add_filament_output(
     ofd_index: Any | None,
     role_name: str | None = None,
     role_payload: dict[str, Any] | None = None,
-) -> None:
+) -> dict | None:
     """Add one filament profile to the mapper output, merging variants."""
     output_name = role_name or filament_name
     payload = role_payload or _profile_payload(profile, profile_data)
@@ -1314,16 +1560,11 @@ def _add_filament_output(
     if ofd_index and not filament_db_id and not is_generic_name:
         return
 
-    if output_name not in compatible_filaments:
-        compatible_filaments[output_name] = []
-
-    existing_entry = None
-    for entry in compatible_filaments[output_name]:
-        if entry["data"] == payload["data"] and entry.get(
-            "context"
-        ) == payload.get("context"):
-            existing_entry = entry
-            break
+    entries_by_payload = compatible_filaments.setdefault(output_name, {})
+    payload_key = json.dumps(
+        payload, sort_keys=True, separators=(",", ":"), default=str
+    )
+    existing_entry = entries_by_payload.get(payload_key)
 
     if existing_entry is None:
         entry = {
@@ -1340,8 +1581,8 @@ def _add_filament_output(
         )
         if gid:
             entry["generic_id"] = gid
-        compatible_filaments[output_name].append(entry)
-        return
+        entries_by_payload[payload_key] = entry
+        return entry
 
     cp = existing_entry["compatible_printers"]
     if model_name not in cp:
@@ -1352,6 +1593,7 @@ def _add_filament_output(
         "filament_db_ids", []
     ):
         existing_entry.setdefault("filament_db_ids", []).append(filament_db_id)
+    return existing_entry
 
 
 def map_print_profiles(
@@ -1556,6 +1798,7 @@ def export_output(
                 # ecosystem importer using resources.json.
                 _canonicalize_resource_refs(mm_data, store, slicer)
                 machine_model_export = _machine_model_export(mm, mm_data)
+                selection_defaults = _profile_selection_defaults(mm)
                 # Discovery metadata is required by the legacy ecosystem
                 # importer, but need not be persisted in a runtime variant's
                 # engine settings.  Parsers can provide it as role context.
@@ -1580,7 +1823,11 @@ def export_output(
                         mm, mm_data, model_name_key, variant, variant_lookup
                     )
                     if lookup is not None:
-                        sub_data["variants"][variant] = _public_variant_payload(lookup)
+                        sub_data["variants"][variant] = _public_variant_payload(
+                            lookup,
+                            selection_defaults,
+                            variant,
+                        )
 
                 machine_profiles_data.append(sub_data)
 
@@ -1624,6 +1871,16 @@ def _canonicalize_resource_refs(
     """Ensure /out resource references are content-addressed sha256 refs."""
     resource_store_dir = store.root / slicer.value / "_resources"
     if not resource_store_dir.exists():
+        referenced = [
+            key
+            for key in ("bed_model", "bed_texture", "thumbnail", "hotend_model")
+            if isinstance(data.get(key), str) and data[key]
+        ]
+        if referenced:
+            raise FileNotFoundError(
+                f"{slicer.value} resource store is missing for references: "
+                + ", ".join(referenced)
+            )
         return
     rs = ResourceStore(resource_store_dir)
 

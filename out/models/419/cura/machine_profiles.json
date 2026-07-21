@@ -38,18 +38,18 @@
             "anti_overhang_mesh": false,
             "bed_assets": {
                 "build_volume": {
-                    "depth": 350,
-                    "width": 350
+                    "depth": 250,
+                    "width": 250
                 },
                 "coordinate_space": "machine_build_volume",
                 "model": {
                     "format": "stl",
                     "media_type": "model/stl",
-                    "ref": "sha256:8535af658e4dfe487ef3698822609c46732eaeb882df7f8a4c30c38aaf245cd5"
+                    "ref": "sha256:fe749b9da0ce901dadb9970b67ca1159d041526aed2553bf4590fa92dc1d0cb4"
                 },
                 "origin": "build_volume_center"
             },
-            "bed_model": "sha256:8535af658e4dfe487ef3698822609c46732eaeb882df7f8a4c30c38aaf245cd5",
+            "bed_model": "sha256:fe749b9da0ce901dadb9970b67ca1159d041526aed2553bf4590fa92dc1d0cb4",
             "bottom_layers": 8,
             "bottom_skin_expand_distance": 0.8,
             "bottom_skin_preshrink": 0.8,
@@ -242,7 +242,7 @@
             "machine_always_write_active_tool": false,
             "machine_buildplate_type": "glass",
             "machine_center_is_zero": false,
-            "machine_depth": 350,
+            "machine_depth": 250,
             "machine_disallowed_areas": [],
             "machine_end_gcode": "PRINT_END",
             "machine_endstop_positive_direction_x": true,
@@ -306,7 +306,7 @@
             "machine_max_jerk_z": 0.4,
             "machine_min_cool_heat_time_window": 50.0,
             "machine_minimum_feedrate": 0.0,
-            "machine_name": "VORON Trident 350",
+            "machine_name": "VORON Trident 250",
             "machine_nozzle_cool_down_speed": 2.0,
             "machine_nozzle_expansion_angle": 45,
             "machine_nozzle_head_distance": 3,
@@ -329,7 +329,7 @@
             "machine_steps_per_mm_z": 400,
             "machine_time_estimation_factor": 100,
             "machine_use_extruder_offset_to_offset_coords": true,
-            "machine_width": 350,
+            "machine_width": 250,
             "magic_fuzzy_skin_enabled": false,
             "magic_fuzzy_skin_outside_only": false,
             "magic_fuzzy_skin_point_density": 1.25,
@@ -419,7 +419,7 @@
             "multi_material_paint_depth": 4,
             "multi_material_paint_resolution": 0.1,
             "multiple_mesh_overlap": 0.15,
-            "name": "Voron Trident 350",
+            "name": "Voron Trident 250",
             "nozzle_disallowed_areas": [],
             "ooze_shield_angle": 60,
             "ooze_shield_dist": 2,
@@ -441,8 +441,8 @@
             "prime_tower_min_shell_thickness": 0.4,
             "prime_tower_min_volume": 6,
             "prime_tower_mode": "normal",
-            "prime_tower_position_x": 345.075,
-            "prime_tower_position_y": 325.075,
+            "prime_tower_position_x": 245.075,
+            "prime_tower_position_y": 225.075,
             "prime_tower_raft_base_line_spacing": 1.6,
             "prime_tower_size": 20,
             "prime_tower_wipe_enabled": true,
@@ -792,7 +792,7 @@
             "z_seam_relative": true,
             "z_seam_type": "sharpest_corner",
             "z_seam_x": 0.0,
-            "z_seam_y": 175.0,
+            "z_seam_y": 125.0,
             "zig_zaggify_infill": true,
             "zig_zaggify_support": true
         },
@@ -811,16 +811,16 @@
                         "nozzle_diameter": 0.25,
                         "nozzle_volume_type": "standard"
                     },
-                    "definition": "voron_trident_350",
+                    "definition": "voron_trident_250",
                     "definition_inheritance": [
                         "fdmprinter",
                         "voron2_base",
                         "voron_trident_base"
                     ],
                     "extruder_definition": "voron2_extruder_0",
-                    "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.25",
+                    "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.25",
                     "nozzle_diameter": 0.25,
-                    "printer_model": "voron_trident_350",
+                    "printer_model": "voron_trident_250",
                     "printer_variant": "0.25",
                     "resource_version": "5.13.0",
                     "runtime": {
@@ -833,65 +833,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -903,6 +844,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.25",
+                        "nozzle_diameter": 0.25,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.25",
                     "variant_name": "V6 0.25mm"
                 },
                 "data": {
@@ -1133,7 +1084,7 @@
                     "machine_always_write_active_tool": false,
                     "machine_buildplate_type": "glass",
                     "machine_center_is_zero": false,
-                    "machine_depth": 350,
+                    "machine_depth": 250,
                     "machine_disallowed_areas": [],
                     "machine_end_gcode": "PRINT_END",
                     "machine_endstop_positive_direction_x": true,
@@ -1194,7 +1145,7 @@
                     "machine_max_jerk_z": 0.4,
                     "machine_min_cool_heat_time_window": 50.0,
                     "machine_minimum_feedrate": 0.0,
-                    "machine_name": "VORON Trident 350",
+                    "machine_name": "VORON Trident 250",
                     "machine_nozzle_cool_down_speed": 2.0,
                     "machine_nozzle_expansion_angle": 45,
                     "machine_nozzle_head_distance": 3,
@@ -1217,7 +1168,7 @@
                     "machine_steps_per_mm_z": 400,
                     "machine_time_estimation_factor": 100,
                     "machine_use_extruder_offset_to_offset_coords": true,
-                    "machine_width": 350,
+                    "machine_width": 250,
                     "magic_fuzzy_skin_enabled": false,
                     "magic_fuzzy_skin_outside_only": false,
                     "magic_fuzzy_skin_point_density": 1.25,
@@ -1326,8 +1277,8 @@
                     "prime_tower_min_shell_thickness": 0.25,
                     "prime_tower_min_volume": 6,
                     "prime_tower_mode": "normal",
-                    "prime_tower_position_x": 345.4125,
-                    "prime_tower_position_y": 325.4125,
+                    "prime_tower_position_x": 245.4125,
+                    "prime_tower_position_y": 225.4125,
                     "prime_tower_raft_base_line_spacing": 1.0,
                     "prime_tower_size": 20,
                     "prime_tower_wipe_enabled": true,
@@ -1660,11 +1611,11 @@
                     "z_seam_relative": true,
                     "z_seam_type": "sharpest_corner",
                     "z_seam_x": 0.0,
-                    "z_seam_y": 175.0,
+                    "z_seam_y": 125.0,
                     "zig_zaggify_infill": true,
                     "zig_zaggify_support": true
                 },
-                "name": "Voron Trident 350 V6 0.25mm",
+                "name": "Voron Trident 250 V6 0.25mm",
                 "setting_scopes": {
                     "acceleration_enabled": "global",
                     "acceleration_flooring": "extruder.0",
@@ -2418,16 +2369,16 @@
                         "nozzle_diameter": 0.4,
                         "nozzle_volume_type": "standard"
                     },
-                    "definition": "voron_trident_350",
+                    "definition": "voron_trident_250",
                     "definition_inheritance": [
                         "fdmprinter",
                         "voron2_base",
                         "voron_trident_base"
                     ],
                     "extruder_definition": "voron2_extruder_0",
-                    "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.40",
+                    "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.40",
                     "nozzle_diameter": 0.4,
-                    "printer_model": "voron_trident_350",
+                    "printer_model": "voron_trident_250",
                     "printer_variant": "0.4",
                     "resource_version": "5.13.0",
                     "runtime": {
@@ -2440,65 +2391,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -2510,6 +2402,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.40",
+                        "nozzle_diameter": 0.4,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.4",
                     "variant_name": "V6 0.40mm"
                 },
                 "data": {
@@ -2740,7 +2642,7 @@
                     "machine_always_write_active_tool": false,
                     "machine_buildplate_type": "glass",
                     "machine_center_is_zero": false,
-                    "machine_depth": 350,
+                    "machine_depth": 250,
                     "machine_disallowed_areas": [],
                     "machine_end_gcode": "PRINT_END",
                     "machine_endstop_positive_direction_x": true,
@@ -2801,7 +2703,7 @@
                     "machine_max_jerk_z": 0.4,
                     "machine_min_cool_heat_time_window": 50.0,
                     "machine_minimum_feedrate": 0.0,
-                    "machine_name": "VORON Trident 350",
+                    "machine_name": "VORON Trident 250",
                     "machine_nozzle_cool_down_speed": 2.0,
                     "machine_nozzle_expansion_angle": 45,
                     "machine_nozzle_head_distance": 3,
@@ -2824,7 +2726,7 @@
                     "machine_steps_per_mm_z": 400,
                     "machine_time_estimation_factor": 100,
                     "machine_use_extruder_offset_to_offset_coords": true,
-                    "machine_width": 350,
+                    "machine_width": 250,
                     "magic_fuzzy_skin_enabled": false,
                     "magic_fuzzy_skin_outside_only": false,
                     "magic_fuzzy_skin_point_density": 1.25,
@@ -2933,8 +2835,8 @@
                     "prime_tower_min_shell_thickness": 0.4,
                     "prime_tower_min_volume": 6,
                     "prime_tower_mode": "normal",
-                    "prime_tower_position_x": 345.075,
-                    "prime_tower_position_y": 325.075,
+                    "prime_tower_position_x": 245.075,
+                    "prime_tower_position_y": 225.075,
                     "prime_tower_raft_base_line_spacing": 1.6,
                     "prime_tower_size": 20,
                     "prime_tower_wipe_enabled": true,
@@ -3267,11 +3169,11 @@
                     "z_seam_relative": true,
                     "z_seam_type": "sharpest_corner",
                     "z_seam_x": 0.0,
-                    "z_seam_y": 175.0,
+                    "z_seam_y": 125.0,
                     "zig_zaggify_infill": true,
                     "zig_zaggify_support": true
                 },
-                "name": "Voron Trident 350 V6 0.40mm",
+                "name": "Voron Trident 250 V6 0.40mm",
                 "setting_scopes": {
                     "acceleration_enabled": "global",
                     "acceleration_flooring": "extruder.0",
@@ -4025,16 +3927,16 @@
                         "nozzle_diameter": 0.5,
                         "nozzle_volume_type": "standard"
                     },
-                    "definition": "voron_trident_350",
+                    "definition": "voron_trident_250",
                     "definition_inheritance": [
                         "fdmprinter",
                         "voron2_base",
                         "voron_trident_base"
                     ],
                     "extruder_definition": "voron2_extruder_0",
-                    "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.50",
+                    "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.50",
                     "nozzle_diameter": 0.5,
-                    "printer_model": "voron_trident_350",
+                    "printer_model": "voron_trident_250",
                     "printer_variant": "0.5",
                     "resource_version": "5.13.0",
                     "runtime": {
@@ -4047,65 +3949,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -4117,6 +3960,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.50",
+                        "nozzle_diameter": 0.5,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.5",
                     "variant_name": "V6 0.50mm"
                 },
                 "data": {
@@ -4347,7 +4200,7 @@
                     "machine_always_write_active_tool": false,
                     "machine_buildplate_type": "glass",
                     "machine_center_is_zero": false,
-                    "machine_depth": 350,
+                    "machine_depth": 250,
                     "machine_disallowed_areas": [],
                     "machine_end_gcode": "PRINT_END",
                     "machine_endstop_positive_direction_x": true,
@@ -4408,7 +4261,7 @@
                     "machine_max_jerk_z": 0.4,
                     "machine_min_cool_heat_time_window": 50.0,
                     "machine_minimum_feedrate": 0.0,
-                    "machine_name": "VORON Trident 350",
+                    "machine_name": "VORON Trident 250",
                     "machine_nozzle_cool_down_speed": 2.0,
                     "machine_nozzle_expansion_angle": 45,
                     "machine_nozzle_head_distance": 3,
@@ -4431,7 +4284,7 @@
                     "machine_steps_per_mm_z": 400,
                     "machine_time_estimation_factor": 100,
                     "machine_use_extruder_offset_to_offset_coords": true,
-                    "machine_width": 350,
+                    "machine_width": 250,
                     "magic_fuzzy_skin_enabled": false,
                     "magic_fuzzy_skin_outside_only": false,
                     "magic_fuzzy_skin_point_density": 1.25,
@@ -4540,8 +4393,8 @@
                     "prime_tower_min_shell_thickness": 0.5,
                     "prime_tower_min_volume": 6,
                     "prime_tower_mode": "normal",
-                    "prime_tower_position_x": 344.85,
-                    "prime_tower_position_y": 324.85,
+                    "prime_tower_position_x": 244.85,
+                    "prime_tower_position_y": 224.85,
                     "prime_tower_raft_base_line_spacing": 2.0,
                     "prime_tower_size": 20,
                     "prime_tower_wipe_enabled": true,
@@ -4874,11 +4727,11 @@
                     "z_seam_relative": true,
                     "z_seam_type": "sharpest_corner",
                     "z_seam_x": 0.0,
-                    "z_seam_y": 175.0,
+                    "z_seam_y": 125.0,
                     "zig_zaggify_infill": true,
                     "zig_zaggify_support": true
                 },
-                "name": "Voron Trident 350 V6 0.50mm",
+                "name": "Voron Trident 250 V6 0.50mm",
                 "setting_scopes": {
                     "acceleration_enabled": "global",
                     "acceleration_flooring": "extruder.0",
@@ -5632,16 +5485,16 @@
                         "nozzle_diameter": 0.6,
                         "nozzle_volume_type": "standard"
                     },
-                    "definition": "voron_trident_350",
+                    "definition": "voron_trident_250",
                     "definition_inheritance": [
                         "fdmprinter",
                         "voron2_base",
                         "voron_trident_base"
                     ],
                     "extruder_definition": "voron2_extruder_0",
-                    "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.60",
+                    "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.60",
                     "nozzle_diameter": 0.6,
-                    "printer_model": "voron_trident_350",
+                    "printer_model": "voron_trident_250",
                     "printer_variant": "0.6",
                     "resource_version": "5.13.0",
                     "runtime": {
@@ -5654,65 +5507,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -5724,6 +5518,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.60",
+                        "nozzle_diameter": 0.6,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.6",
                     "variant_name": "V6 0.60mm"
                 },
                 "data": {
@@ -5954,7 +5758,7 @@
                     "machine_always_write_active_tool": false,
                     "machine_buildplate_type": "glass",
                     "machine_center_is_zero": false,
-                    "machine_depth": 350,
+                    "machine_depth": 250,
                     "machine_disallowed_areas": [],
                     "machine_end_gcode": "PRINT_END",
                     "machine_endstop_positive_direction_x": true,
@@ -6015,7 +5819,7 @@
                     "machine_max_jerk_z": 0.4,
                     "machine_min_cool_heat_time_window": 50.0,
                     "machine_minimum_feedrate": 0.0,
-                    "machine_name": "VORON Trident 350",
+                    "machine_name": "VORON Trident 250",
                     "machine_nozzle_cool_down_speed": 2.0,
                     "machine_nozzle_expansion_angle": 45,
                     "machine_nozzle_head_distance": 3,
@@ -6038,7 +5842,7 @@
                     "machine_steps_per_mm_z": 400,
                     "machine_time_estimation_factor": 100,
                     "machine_use_extruder_offset_to_offset_coords": true,
-                    "machine_width": 350,
+                    "machine_width": 250,
                     "magic_fuzzy_skin_enabled": false,
                     "magic_fuzzy_skin_outside_only": false,
                     "magic_fuzzy_skin_point_density": 1.25,
@@ -6147,8 +5951,8 @@
                     "prime_tower_min_shell_thickness": 0.6,
                     "prime_tower_min_volume": 6,
                     "prime_tower_mode": "normal",
-                    "prime_tower_position_x": 344.625,
-                    "prime_tower_position_y": 324.625,
+                    "prime_tower_position_x": 244.625,
+                    "prime_tower_position_y": 224.625,
                     "prime_tower_raft_base_line_spacing": 2.4,
                     "prime_tower_size": 20,
                     "prime_tower_wipe_enabled": true,
@@ -6481,11 +6285,11 @@
                     "z_seam_relative": true,
                     "z_seam_type": "sharpest_corner",
                     "z_seam_x": 0.0,
-                    "z_seam_y": 175.0,
+                    "z_seam_y": 125.0,
                     "zig_zaggify_infill": true,
                     "zig_zaggify_support": true
                 },
-                "name": "Voron Trident 350 V6 0.60mm",
+                "name": "Voron Trident 250 V6 0.60mm",
                 "setting_scopes": {
                     "acceleration_enabled": "global",
                     "acceleration_flooring": "extruder.0",
@@ -7239,16 +7043,16 @@
                         "nozzle_diameter": 0.8,
                         "nozzle_volume_type": "standard"
                     },
-                    "definition": "voron_trident_350",
+                    "definition": "voron_trident_250",
                     "definition_inheritance": [
                         "fdmprinter",
                         "voron2_base",
                         "voron_trident_base"
                     ],
                     "extruder_definition": "voron2_extruder_0",
-                    "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.80",
+                    "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.80",
                     "nozzle_diameter": 0.8,
-                    "printer_model": "voron_trident_350",
+                    "printer_model": "voron_trident_250",
                     "printer_variant": "0.8",
                     "resource_version": "5.13.0",
                     "runtime": {
@@ -7261,65 +7065,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -7331,6 +7076,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.80",
+                        "nozzle_diameter": 0.8,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.8",
                     "variant_name": "V6 0.80mm"
                 },
                 "data": {
@@ -7561,7 +7316,7 @@
                     "machine_always_write_active_tool": false,
                     "machine_buildplate_type": "glass",
                     "machine_center_is_zero": false,
-                    "machine_depth": 350,
+                    "machine_depth": 250,
                     "machine_disallowed_areas": [],
                     "machine_end_gcode": "PRINT_END",
                     "machine_endstop_positive_direction_x": true,
@@ -7622,7 +7377,7 @@
                     "machine_max_jerk_z": 0.4,
                     "machine_min_cool_heat_time_window": 50.0,
                     "machine_minimum_feedrate": 0.0,
-                    "machine_name": "VORON Trident 350",
+                    "machine_name": "VORON Trident 250",
                     "machine_nozzle_cool_down_speed": 2.0,
                     "machine_nozzle_expansion_angle": 45,
                     "machine_nozzle_head_distance": 3,
@@ -7645,7 +7400,7 @@
                     "machine_steps_per_mm_z": 400,
                     "machine_time_estimation_factor": 100,
                     "machine_use_extruder_offset_to_offset_coords": true,
-                    "machine_width": 350,
+                    "machine_width": 250,
                     "magic_fuzzy_skin_enabled": false,
                     "magic_fuzzy_skin_outside_only": false,
                     "magic_fuzzy_skin_point_density": 1.25,
@@ -7754,8 +7509,8 @@
                     "prime_tower_min_shell_thickness": 0.8,
                     "prime_tower_min_volume": 6,
                     "prime_tower_mode": "normal",
-                    "prime_tower_position_x": 344.175,
-                    "prime_tower_position_y": 324.175,
+                    "prime_tower_position_x": 244.175,
+                    "prime_tower_position_y": 224.175,
                     "prime_tower_raft_base_line_spacing": 3.2,
                     "prime_tower_size": 20,
                     "prime_tower_wipe_enabled": true,
@@ -8088,11 +7843,11 @@
                     "z_seam_relative": true,
                     "z_seam_type": "sharpest_corner",
                     "z_seam_x": 0.0,
-                    "z_seam_y": 175.0,
+                    "z_seam_y": 125.0,
                     "zig_zaggify_infill": true,
                     "zig_zaggify_support": true
                 },
-                "name": "Voron Trident 350 V6 0.80mm",
+                "name": "Voron Trident 250 V6 0.80mm",
                 "setting_scopes": {
                     "acceleration_enabled": "global",
                     "acceleration_flooring": "extruder.0",
@@ -9669,65 +9424,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -9739,6 +9435,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_300:voron/voron_trident_300_0.25",
+                        "nozzle_diameter": 0.25,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.25",
                     "variant_name": "V6 0.25mm"
                 },
                 "data": {
@@ -11276,65 +10982,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -11346,6 +10993,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_300:voron/voron_trident_300_0.40",
+                        "nozzle_diameter": 0.4,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.4",
                     "variant_name": "V6 0.40mm"
                 },
                 "data": {
@@ -12883,65 +12540,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -12953,6 +12551,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_300:voron/voron_trident_300_0.50",
+                        "nozzle_diameter": 0.5,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.5",
                     "variant_name": "V6 0.50mm"
                 },
                 "data": {
@@ -14490,65 +14098,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -14560,6 +14109,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_300:voron/voron_trident_300_0.60",
+                        "nozzle_diameter": 0.6,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.6",
                     "variant_name": "V6 0.60mm"
                 },
                 "data": {
@@ -16097,65 +15656,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -16167,6 +15667,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_300:voron/voron_trident_300_0.80",
+                        "nozzle_diameter": 0.8,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.8",
                     "variant_name": "V6 0.80mm"
                 },
                 "data": {
@@ -17710,18 +17220,18 @@
             "anti_overhang_mesh": false,
             "bed_assets": {
                 "build_volume": {
-                    "depth": 250,
-                    "width": 250
+                    "depth": 350,
+                    "width": 350
                 },
                 "coordinate_space": "machine_build_volume",
                 "model": {
                     "format": "stl",
                     "media_type": "model/stl",
-                    "ref": "sha256:fe749b9da0ce901dadb9970b67ca1159d041526aed2553bf4590fa92dc1d0cb4"
+                    "ref": "sha256:8535af658e4dfe487ef3698822609c46732eaeb882df7f8a4c30c38aaf245cd5"
                 },
                 "origin": "build_volume_center"
             },
-            "bed_model": "sha256:fe749b9da0ce901dadb9970b67ca1159d041526aed2553bf4590fa92dc1d0cb4",
+            "bed_model": "sha256:8535af658e4dfe487ef3698822609c46732eaeb882df7f8a4c30c38aaf245cd5",
             "bottom_layers": 8,
             "bottom_skin_expand_distance": 0.8,
             "bottom_skin_preshrink": 0.8,
@@ -17914,7 +17424,7 @@
             "machine_always_write_active_tool": false,
             "machine_buildplate_type": "glass",
             "machine_center_is_zero": false,
-            "machine_depth": 250,
+            "machine_depth": 350,
             "machine_disallowed_areas": [],
             "machine_end_gcode": "PRINT_END",
             "machine_endstop_positive_direction_x": true,
@@ -17978,7 +17488,7 @@
             "machine_max_jerk_z": 0.4,
             "machine_min_cool_heat_time_window": 50.0,
             "machine_minimum_feedrate": 0.0,
-            "machine_name": "VORON Trident 250",
+            "machine_name": "VORON Trident 350",
             "machine_nozzle_cool_down_speed": 2.0,
             "machine_nozzle_expansion_angle": 45,
             "machine_nozzle_head_distance": 3,
@@ -18001,7 +17511,7 @@
             "machine_steps_per_mm_z": 400,
             "machine_time_estimation_factor": 100,
             "machine_use_extruder_offset_to_offset_coords": true,
-            "machine_width": 250,
+            "machine_width": 350,
             "magic_fuzzy_skin_enabled": false,
             "magic_fuzzy_skin_outside_only": false,
             "magic_fuzzy_skin_point_density": 1.25,
@@ -18091,7 +17601,7 @@
             "multi_material_paint_depth": 4,
             "multi_material_paint_resolution": 0.1,
             "multiple_mesh_overlap": 0.15,
-            "name": "Voron Trident 250",
+            "name": "Voron Trident 350",
             "nozzle_disallowed_areas": [],
             "ooze_shield_angle": 60,
             "ooze_shield_dist": 2,
@@ -18113,8 +17623,8 @@
             "prime_tower_min_shell_thickness": 0.4,
             "prime_tower_min_volume": 6,
             "prime_tower_mode": "normal",
-            "prime_tower_position_x": 245.075,
-            "prime_tower_position_y": 225.075,
+            "prime_tower_position_x": 345.075,
+            "prime_tower_position_y": 325.075,
             "prime_tower_raft_base_line_spacing": 1.6,
             "prime_tower_size": 20,
             "prime_tower_wipe_enabled": true,
@@ -18464,7 +17974,7 @@
             "z_seam_relative": true,
             "z_seam_type": "sharpest_corner",
             "z_seam_x": 0.0,
-            "z_seam_y": 125.0,
+            "z_seam_y": 175.0,
             "zig_zaggify_infill": true,
             "zig_zaggify_support": true
         },
@@ -18483,16 +17993,16 @@
                         "nozzle_diameter": 0.25,
                         "nozzle_volume_type": "standard"
                     },
-                    "definition": "voron_trident_250",
+                    "definition": "voron_trident_350",
                     "definition_inheritance": [
                         "fdmprinter",
                         "voron2_base",
                         "voron_trident_base"
                     ],
                     "extruder_definition": "voron2_extruder_0",
-                    "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.25",
+                    "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.25",
                     "nozzle_diameter": 0.25,
-                    "printer_model": "voron_trident_250",
+                    "printer_model": "voron_trident_350",
                     "printer_variant": "0.25",
                     "resource_version": "5.13.0",
                     "runtime": {
@@ -18505,65 +18015,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -18575,6 +18026,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.25",
+                        "nozzle_diameter": 0.25,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.25",
                     "variant_name": "V6 0.25mm"
                 },
                 "data": {
@@ -18805,7 +18266,7 @@
                     "machine_always_write_active_tool": false,
                     "machine_buildplate_type": "glass",
                     "machine_center_is_zero": false,
-                    "machine_depth": 250,
+                    "machine_depth": 350,
                     "machine_disallowed_areas": [],
                     "machine_end_gcode": "PRINT_END",
                     "machine_endstop_positive_direction_x": true,
@@ -18866,7 +18327,7 @@
                     "machine_max_jerk_z": 0.4,
                     "machine_min_cool_heat_time_window": 50.0,
                     "machine_minimum_feedrate": 0.0,
-                    "machine_name": "VORON Trident 250",
+                    "machine_name": "VORON Trident 350",
                     "machine_nozzle_cool_down_speed": 2.0,
                     "machine_nozzle_expansion_angle": 45,
                     "machine_nozzle_head_distance": 3,
@@ -18889,7 +18350,7 @@
                     "machine_steps_per_mm_z": 400,
                     "machine_time_estimation_factor": 100,
                     "machine_use_extruder_offset_to_offset_coords": true,
-                    "machine_width": 250,
+                    "machine_width": 350,
                     "magic_fuzzy_skin_enabled": false,
                     "magic_fuzzy_skin_outside_only": false,
                     "magic_fuzzy_skin_point_density": 1.25,
@@ -18998,8 +18459,8 @@
                     "prime_tower_min_shell_thickness": 0.25,
                     "prime_tower_min_volume": 6,
                     "prime_tower_mode": "normal",
-                    "prime_tower_position_x": 245.4125,
-                    "prime_tower_position_y": 225.4125,
+                    "prime_tower_position_x": 345.4125,
+                    "prime_tower_position_y": 325.4125,
                     "prime_tower_raft_base_line_spacing": 1.0,
                     "prime_tower_size": 20,
                     "prime_tower_wipe_enabled": true,
@@ -19332,11 +18793,11 @@
                     "z_seam_relative": true,
                     "z_seam_type": "sharpest_corner",
                     "z_seam_x": 0.0,
-                    "z_seam_y": 125.0,
+                    "z_seam_y": 175.0,
                     "zig_zaggify_infill": true,
                     "zig_zaggify_support": true
                 },
-                "name": "Voron Trident 250 V6 0.25mm",
+                "name": "Voron Trident 350 V6 0.25mm",
                 "setting_scopes": {
                     "acceleration_enabled": "global",
                     "acceleration_flooring": "extruder.0",
@@ -20090,16 +19551,16 @@
                         "nozzle_diameter": 0.4,
                         "nozzle_volume_type": "standard"
                     },
-                    "definition": "voron_trident_250",
+                    "definition": "voron_trident_350",
                     "definition_inheritance": [
                         "fdmprinter",
                         "voron2_base",
                         "voron_trident_base"
                     ],
                     "extruder_definition": "voron2_extruder_0",
-                    "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.40",
+                    "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.40",
                     "nozzle_diameter": 0.4,
-                    "printer_model": "voron_trident_250",
+                    "printer_model": "voron_trident_350",
                     "printer_variant": "0.4",
                     "resource_version": "5.13.0",
                     "runtime": {
@@ -20112,65 +19573,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -20182,6 +19584,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.40",
+                        "nozzle_diameter": 0.4,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.4",
                     "variant_name": "V6 0.40mm"
                 },
                 "data": {
@@ -20412,7 +19824,7 @@
                     "machine_always_write_active_tool": false,
                     "machine_buildplate_type": "glass",
                     "machine_center_is_zero": false,
-                    "machine_depth": 250,
+                    "machine_depth": 350,
                     "machine_disallowed_areas": [],
                     "machine_end_gcode": "PRINT_END",
                     "machine_endstop_positive_direction_x": true,
@@ -20473,7 +19885,7 @@
                     "machine_max_jerk_z": 0.4,
                     "machine_min_cool_heat_time_window": 50.0,
                     "machine_minimum_feedrate": 0.0,
-                    "machine_name": "VORON Trident 250",
+                    "machine_name": "VORON Trident 350",
                     "machine_nozzle_cool_down_speed": 2.0,
                     "machine_nozzle_expansion_angle": 45,
                     "machine_nozzle_head_distance": 3,
@@ -20496,7 +19908,7 @@
                     "machine_steps_per_mm_z": 400,
                     "machine_time_estimation_factor": 100,
                     "machine_use_extruder_offset_to_offset_coords": true,
-                    "machine_width": 250,
+                    "machine_width": 350,
                     "magic_fuzzy_skin_enabled": false,
                     "magic_fuzzy_skin_outside_only": false,
                     "magic_fuzzy_skin_point_density": 1.25,
@@ -20605,8 +20017,8 @@
                     "prime_tower_min_shell_thickness": 0.4,
                     "prime_tower_min_volume": 6,
                     "prime_tower_mode": "normal",
-                    "prime_tower_position_x": 245.075,
-                    "prime_tower_position_y": 225.075,
+                    "prime_tower_position_x": 345.075,
+                    "prime_tower_position_y": 325.075,
                     "prime_tower_raft_base_line_spacing": 1.6,
                     "prime_tower_size": 20,
                     "prime_tower_wipe_enabled": true,
@@ -20939,11 +20351,11 @@
                     "z_seam_relative": true,
                     "z_seam_type": "sharpest_corner",
                     "z_seam_x": 0.0,
-                    "z_seam_y": 125.0,
+                    "z_seam_y": 175.0,
                     "zig_zaggify_infill": true,
                     "zig_zaggify_support": true
                 },
-                "name": "Voron Trident 250 V6 0.40mm",
+                "name": "Voron Trident 350 V6 0.40mm",
                 "setting_scopes": {
                     "acceleration_enabled": "global",
                     "acceleration_flooring": "extruder.0",
@@ -21697,16 +21109,16 @@
                         "nozzle_diameter": 0.5,
                         "nozzle_volume_type": "standard"
                     },
-                    "definition": "voron_trident_250",
+                    "definition": "voron_trident_350",
                     "definition_inheritance": [
                         "fdmprinter",
                         "voron2_base",
                         "voron_trident_base"
                     ],
                     "extruder_definition": "voron2_extruder_0",
-                    "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.50",
+                    "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.50",
                     "nozzle_diameter": 0.5,
-                    "printer_model": "voron_trident_250",
+                    "printer_model": "voron_trident_350",
                     "printer_variant": "0.5",
                     "resource_version": "5.13.0",
                     "runtime": {
@@ -21719,65 +21131,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -21789,6 +21142,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.50",
+                        "nozzle_diameter": 0.5,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.5",
                     "variant_name": "V6 0.50mm"
                 },
                 "data": {
@@ -22019,7 +21382,7 @@
                     "machine_always_write_active_tool": false,
                     "machine_buildplate_type": "glass",
                     "machine_center_is_zero": false,
-                    "machine_depth": 250,
+                    "machine_depth": 350,
                     "machine_disallowed_areas": [],
                     "machine_end_gcode": "PRINT_END",
                     "machine_endstop_positive_direction_x": true,
@@ -22080,7 +21443,7 @@
                     "machine_max_jerk_z": 0.4,
                     "machine_min_cool_heat_time_window": 50.0,
                     "machine_minimum_feedrate": 0.0,
-                    "machine_name": "VORON Trident 250",
+                    "machine_name": "VORON Trident 350",
                     "machine_nozzle_cool_down_speed": 2.0,
                     "machine_nozzle_expansion_angle": 45,
                     "machine_nozzle_head_distance": 3,
@@ -22103,7 +21466,7 @@
                     "machine_steps_per_mm_z": 400,
                     "machine_time_estimation_factor": 100,
                     "machine_use_extruder_offset_to_offset_coords": true,
-                    "machine_width": 250,
+                    "machine_width": 350,
                     "magic_fuzzy_skin_enabled": false,
                     "magic_fuzzy_skin_outside_only": false,
                     "magic_fuzzy_skin_point_density": 1.25,
@@ -22212,8 +21575,8 @@
                     "prime_tower_min_shell_thickness": 0.5,
                     "prime_tower_min_volume": 6,
                     "prime_tower_mode": "normal",
-                    "prime_tower_position_x": 244.85,
-                    "prime_tower_position_y": 224.85,
+                    "prime_tower_position_x": 344.85,
+                    "prime_tower_position_y": 324.85,
                     "prime_tower_raft_base_line_spacing": 2.0,
                     "prime_tower_size": 20,
                     "prime_tower_wipe_enabled": true,
@@ -22546,11 +21909,11 @@
                     "z_seam_relative": true,
                     "z_seam_type": "sharpest_corner",
                     "z_seam_x": 0.0,
-                    "z_seam_y": 125.0,
+                    "z_seam_y": 175.0,
                     "zig_zaggify_infill": true,
                     "zig_zaggify_support": true
                 },
-                "name": "Voron Trident 250 V6 0.50mm",
+                "name": "Voron Trident 350 V6 0.50mm",
                 "setting_scopes": {
                     "acceleration_enabled": "global",
                     "acceleration_flooring": "extruder.0",
@@ -23304,16 +22667,16 @@
                         "nozzle_diameter": 0.6,
                         "nozzle_volume_type": "standard"
                     },
-                    "definition": "voron_trident_250",
+                    "definition": "voron_trident_350",
                     "definition_inheritance": [
                         "fdmprinter",
                         "voron2_base",
                         "voron_trident_base"
                     ],
                     "extruder_definition": "voron2_extruder_0",
-                    "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.60",
+                    "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.60",
                     "nozzle_diameter": 0.6,
-                    "printer_model": "voron_trident_250",
+                    "printer_model": "voron_trident_350",
                     "printer_variant": "0.6",
                     "resource_version": "5.13.0",
                     "runtime": {
@@ -23326,65 +22689,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -23396,6 +22700,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.60",
+                        "nozzle_diameter": 0.6,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.6",
                     "variant_name": "V6 0.60mm"
                 },
                 "data": {
@@ -23626,7 +22940,7 @@
                     "machine_always_write_active_tool": false,
                     "machine_buildplate_type": "glass",
                     "machine_center_is_zero": false,
-                    "machine_depth": 250,
+                    "machine_depth": 350,
                     "machine_disallowed_areas": [],
                     "machine_end_gcode": "PRINT_END",
                     "machine_endstop_positive_direction_x": true,
@@ -23687,7 +23001,7 @@
                     "machine_max_jerk_z": 0.4,
                     "machine_min_cool_heat_time_window": 50.0,
                     "machine_minimum_feedrate": 0.0,
-                    "machine_name": "VORON Trident 250",
+                    "machine_name": "VORON Trident 350",
                     "machine_nozzle_cool_down_speed": 2.0,
                     "machine_nozzle_expansion_angle": 45,
                     "machine_nozzle_head_distance": 3,
@@ -23710,7 +23024,7 @@
                     "machine_steps_per_mm_z": 400,
                     "machine_time_estimation_factor": 100,
                     "machine_use_extruder_offset_to_offset_coords": true,
-                    "machine_width": 250,
+                    "machine_width": 350,
                     "magic_fuzzy_skin_enabled": false,
                     "magic_fuzzy_skin_outside_only": false,
                     "magic_fuzzy_skin_point_density": 1.25,
@@ -23819,8 +23133,8 @@
                     "prime_tower_min_shell_thickness": 0.6,
                     "prime_tower_min_volume": 6,
                     "prime_tower_mode": "normal",
-                    "prime_tower_position_x": 244.625,
-                    "prime_tower_position_y": 224.625,
+                    "prime_tower_position_x": 344.625,
+                    "prime_tower_position_y": 324.625,
                     "prime_tower_raft_base_line_spacing": 2.4,
                     "prime_tower_size": 20,
                     "prime_tower_wipe_enabled": true,
@@ -24153,11 +23467,11 @@
                     "z_seam_relative": true,
                     "z_seam_type": "sharpest_corner",
                     "z_seam_x": 0.0,
-                    "z_seam_y": 125.0,
+                    "z_seam_y": 175.0,
                     "zig_zaggify_infill": true,
                     "zig_zaggify_support": true
                 },
-                "name": "Voron Trident 250 V6 0.60mm",
+                "name": "Voron Trident 350 V6 0.60mm",
                 "setting_scopes": {
                     "acceleration_enabled": "global",
                     "acceleration_flooring": "extruder.0",
@@ -24911,16 +24225,16 @@
                         "nozzle_diameter": 0.8,
                         "nozzle_volume_type": "standard"
                     },
-                    "definition": "voron_trident_250",
+                    "definition": "voron_trident_350",
                     "definition_inheritance": [
                         "fdmprinter",
                         "voron2_base",
                         "voron_trident_base"
                     ],
                     "extruder_definition": "voron2_extruder_0",
-                    "native_id": "variant:voron_trident_250:voron/voron_trident_250_0.80",
+                    "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.80",
                     "nozzle_diameter": 0.8,
-                    "printer_model": "voron_trident_250",
+                    "printer_model": "voron_trident_350",
                     "printer_variant": "0.8",
                     "resource_version": "5.13.0",
                     "runtime": {
@@ -24933,65 +24247,6 @@
                             0
                         ]
                     },
-                    "scene": {
-                        "coordinate_space": "machine_build_volume",
-                        "model_transform": {
-                            "translation": {
-                                "unit": "mm",
-                                "x": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_x"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_width",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "y": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_y"
-                                        },
-                                        {
-                                            "scale": -0.5,
-                                            "setting": "machine_depth",
-                                            "when": {
-                                                "equals": false,
-                                                "setting": "machine_center_is_zero"
-                                            }
-                                        }
-                                    ]
-                                },
-                                "z": {
-                                    "constant": 0.0,
-                                    "terms": [
-                                        {
-                                            "scale": 1.0,
-                                            "setting": "mesh_position_z"
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "origin": {
-                            "setting": "machine_center_is_zero",
-                            "values": {
-                                "false": "build_volume_minimum_xy",
-                                "true": "build_volume_center"
-                            }
-                        },
-                        "schema": "scene-transform.v1"
-                    },
                     "source_kind": "variant",
                     "tool_topology": {
                         "tool_count": 1,
@@ -25003,6 +24258,16 @@
                             }
                         ]
                     },
+                    "variant_identity": {
+                        "hotend_id": "unknown",
+                        "native_id": "variant:voron_trident_350:voron/voron_trident_350_0.80",
+                        "nozzle_diameter": 0.8,
+                        "nozzle_volume_type": "standard",
+                        "tool_indices": [
+                            0
+                        ]
+                    },
+                    "variant_key": "0.8",
                     "variant_name": "V6 0.80mm"
                 },
                 "data": {
@@ -25233,7 +24498,7 @@
                     "machine_always_write_active_tool": false,
                     "machine_buildplate_type": "glass",
                     "machine_center_is_zero": false,
-                    "machine_depth": 250,
+                    "machine_depth": 350,
                     "machine_disallowed_areas": [],
                     "machine_end_gcode": "PRINT_END",
                     "machine_endstop_positive_direction_x": true,
@@ -25294,7 +24559,7 @@
                     "machine_max_jerk_z": 0.4,
                     "machine_min_cool_heat_time_window": 50.0,
                     "machine_minimum_feedrate": 0.0,
-                    "machine_name": "VORON Trident 250",
+                    "machine_name": "VORON Trident 350",
                     "machine_nozzle_cool_down_speed": 2.0,
                     "machine_nozzle_expansion_angle": 45,
                     "machine_nozzle_head_distance": 3,
@@ -25317,7 +24582,7 @@
                     "machine_steps_per_mm_z": 400,
                     "machine_time_estimation_factor": 100,
                     "machine_use_extruder_offset_to_offset_coords": true,
-                    "machine_width": 250,
+                    "machine_width": 350,
                     "magic_fuzzy_skin_enabled": false,
                     "magic_fuzzy_skin_outside_only": false,
                     "magic_fuzzy_skin_point_density": 1.25,
@@ -25426,8 +24691,8 @@
                     "prime_tower_min_shell_thickness": 0.8,
                     "prime_tower_min_volume": 6,
                     "prime_tower_mode": "normal",
-                    "prime_tower_position_x": 244.175,
-                    "prime_tower_position_y": 224.175,
+                    "prime_tower_position_x": 344.175,
+                    "prime_tower_position_y": 324.175,
                     "prime_tower_raft_base_line_spacing": 3.2,
                     "prime_tower_size": 20,
                     "prime_tower_wipe_enabled": true,
@@ -25760,11 +25025,11 @@
                     "z_seam_relative": true,
                     "z_seam_type": "sharpest_corner",
                     "z_seam_x": 0.0,
-                    "z_seam_y": 125.0,
+                    "z_seam_y": 175.0,
                     "zig_zaggify_infill": true,
                     "zig_zaggify_support": true
                 },
-                "name": "Voron Trident 250 V6 0.80mm",
+                "name": "Voron Trident 350 V6 0.80mm",
                 "setting_scopes": {
                     "acceleration_enabled": "global",
                     "acceleration_flooring": "extruder.0",

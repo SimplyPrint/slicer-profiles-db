@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import ast
 import configparser
+import functools
 import copy
 import json
 import logging
@@ -40,6 +41,28 @@ logger = logging.getLogger(__name__)
 def _resource_context(resource_version: str | None) -> dict[str, str]:
     """Attach source provenance only when the caller knows the snapshot."""
     return {"resource_version": resource_version} if resource_version else {}
+
+
+def _process_profile_selection_defaults(
+    metadata: Mapping[str, Any],
+) -> dict[str, Any] | None:
+    """Translate Cura's preferred quality into the shared profile selector."""
+    quality_type = metadata.get("preferred_quality_type")
+    if not isinstance(quality_type, str) or not quality_type.strip():
+        return None
+
+    return {
+        "process_profile": {
+            "match": {
+                "profile_context": {
+                    "quality_type": quality_type.strip(),
+                    # A machine's preferred quality refers to Cura's regular
+                    # quality stack, rather than an intent-specific override.
+                    "intent_category": None,
+                }
+            }
+        }
+    }
 
 
 # Names used by Cura's XmlMaterialProfile plug-in.  Keep this aligned with
@@ -83,10 +106,6 @@ _MATH_FUNCTIONS = {
 }
 
 CURA_MATERIAL_RECOMPUTE_PLAN = "_cura_material_recompute_plan"
-_HIGH_FLOW_VARIANT_RE = re.compile(
-    r"(?:^|[^a-z0-9])(?:super[\s_-]*volcano|volcano|cht|high[\s_-]*flow|hf)(?=$|[^a-z0-9]|\d)",
-    re.IGNORECASE,
-)
 
 
 class _UnresolvedExpression(ValueError):
@@ -97,12 +116,26 @@ class _UnsafeExpression(ValueError):
     """An expression uses syntax outside Cura's supported safe subset."""
 
 
+@functools.lru_cache(maxsize=None)
+def _parse_expression(expression: str) -> ast.AST:
+    """Parse and validate each immutable Cura expression once per process."""
+
+    try:
+        tree = ast.parse(expression, mode="eval")
+    except (SyntaxError, ValueError) as exc:
+        raise _UnresolvedExpression(expression) from exc
+    if sum(1 for _ in ast.walk(tree)) > 512:
+        raise _UnsafeExpression("expression is too large")
+    return tree.body
+
+
 class _SafeExpressionEvaluator:
     """Evaluate Cura setting expressions without using ``eval``.
 
     Cura's shipped definitions primarily use arithmetic, comparisons and a
-    small group of aggregate helpers.  Multi-extruder helpers intentionally
-    collapse to extruder zero for the currently supported golden path.
+    small group of aggregate helpers.  Callers may provide the per-tool value
+    vectors used by Cura's aggregate helpers; a scalar stack remains a valid
+    one-tool input.
     """
 
     _BINARY_OPERATORS = {
@@ -132,17 +165,18 @@ class _SafeExpressionEvaluator:
         ast.IsNot: operator.is_not,
     }
 
-    def __init__(self, values: Mapping[str, Any]):
+    def __init__(
+        self,
+        values: Mapping[str, Any],
+        extruder_values: Mapping[str, Sequence[Any]] | None = None,
+        default_extruder_position: int = 0,
+    ):
         self.values = values
+        self.extruder_values = extruder_values or {}
+        self.default_extruder_position = default_extruder_position
 
     def evaluate(self, expression: str) -> Any:
-        try:
-            tree = ast.parse(expression, mode="eval")
-        except (SyntaxError, ValueError) as exc:
-            raise _UnresolvedExpression(expression) from exc
-        if sum(1 for _ in ast.walk(tree)) > 512:
-            raise _UnsafeExpression("expression is too large")
-        return self._visit(tree.body)
+        return self._visit(_parse_expression(expression))
 
     def _visit(self, node: ast.AST) -> Any:
         if isinstance(node, ast.Constant):
@@ -152,6 +186,7 @@ class _SafeExpressionEvaluator:
                 return self.values[node.id]
             functions = {
                 "abs": abs,
+                "all": all,
                 "any": any,
                 "bool": bool,
                 "float": float,
@@ -241,9 +276,32 @@ class _SafeExpressionEvaluator:
             if node.attr == "index" and isinstance(value, (list, tuple, str)):
                 return value.index
             raise _UnsafeExpression(node.attr)
+        if isinstance(node, (ast.GeneratorExp, ast.ListComp)):
+            return self._comprehension(node)
         if isinstance(node, ast.Call):
             return self._call(node)
         raise _UnsafeExpression(type(node).__name__)
+
+    def _comprehension(self, node: ast.GeneratorExp | ast.ListComp) -> list[Any]:
+        if len(node.generators) != 1:
+            raise _UnsafeExpression("nested comprehension")
+        generator = node.generators[0]
+        if generator.is_async or not isinstance(generator.target, ast.Name):
+            raise _UnsafeExpression("unsupported comprehension target")
+        items = self._visit(generator.iter)
+        if not isinstance(items, (list, tuple, set)) or len(items) > 256:
+            raise _UnsafeExpression("unsupported comprehension iterable")
+
+        result: list[Any] = []
+        for item in items:
+            evaluator = _SafeExpressionEvaluator(
+                {**self.values, generator.target.id: item},
+                self.extruder_values,
+                self.default_extruder_position,
+            )
+            if all(evaluator._visit(condition) for condition in generator.ifs):
+                result.append(evaluator._visit(node.elt))
+        return result
 
     def _call(self, node: ast.Call) -> Any:
         if isinstance(node.func, ast.Name):
@@ -262,6 +320,7 @@ class _SafeExpressionEvaluator:
         function = self._visit(node.func)
         if function not in {
             abs,
+            all,
             any,
             bool,
             float,
@@ -290,7 +349,7 @@ class _SafeExpressionEvaluator:
 
     def _cura_helper(self, name: str, args: list[Any]) -> Any:
         if name == "defaultExtruderPosition":
-            return 0
+            return self.default_extruder_position
         if not args:
             raise _UnresolvedExpression(name)
         if name in {"resolveOrValue", "extruderValues"}:
@@ -299,11 +358,34 @@ class _SafeExpressionEvaluator:
             key = args[1]
         else:
             raise _UnresolvedExpression(name)
-        if not isinstance(key, str) or key not in self.values:
+        if not isinstance(key, str):
             raise _UnresolvedExpression(str(key))
-        value = self.values[key]
+
         if name == "extruderValues":
-            return [value]
+            tool_values = self.extruder_values.get(key)
+            if tool_values is not None:
+                return list(tool_values)
+            if key in self.values:
+                return [self.values[key]]
+            raise _UnresolvedExpression(key)
+
+        if name in {"extruderValue", "extruderValueFromContainer"}:
+            try:
+                tool_index = int(args[0])
+            except (TypeError, ValueError) as exc:
+                raise _UnresolvedExpression(str(args[0])) from exc
+            tool_values = self.extruder_values.get(key)
+            if tool_values is not None:
+                try:
+                    return tool_values[tool_index]
+                except IndexError as exc:
+                    raise _UnresolvedExpression(f"{key}[{tool_index}]") from exc
+            if tool_index != self.default_extruder_position:
+                raise _UnresolvedExpression(f"{key}[{tool_index}]")
+
+        if key not in self.values:
+            raise _UnresolvedExpression(key)
+        value = self.values[key]
         if name == "anyExtruderWithMaterial":
             return bool(value)
         return value
@@ -373,84 +455,17 @@ def _bed_assets(
             }
         assets["model"] = model
     if texture is not None:
+        # Cura's platform_texture is the texture paired with the platform
+        # model, not a second build-surface plane.  Preserve that upstream
+        # association explicitly so generic consumers can select UV mapping
+        # without deriving behavior from an engine or asset filename.
+        if model is not None:
+            texture["target"] = "model"
+            texture["mapping"] = "uv"
+            # Uranium mirrors file-backed textures before uploading them.
+            texture["flip_y"] = True
         assets["texture"] = texture
     return assets
-
-
-def _finite_number(value: Any) -> float | None:
-    if isinstance(value, bool) or not isinstance(value, (int, float)):
-        return None
-    number = float(value)
-    return number if math.isfinite(number) else None
-
-
-def _scene_context(machine_values: Mapping[str, Any]) -> dict[str, Any] | None:
-    """Describe the machine-space scene transform without engine-side guesses.
-
-    SimplyPrint exports STL vertices in the selected machine's native build
-    volume coordinates. Cura's mesh loader consumes XY coordinates about the
-    build-volume centre, while native machine coordinates may start at the
-    lower-left. The affine terms keep user-editable mesh positions and build
-    dimensions live instead of freezing their imported values into an offset.
-    """
-
-    center_is_zero = machine_values.get("machine_center_is_zero")
-    centered = center_is_zero in (True, 1, "1", "true", "True")
-    width = _finite_number(machine_values.get("machine_width"))
-    depth = _finite_number(machine_values.get("machine_depth"))
-    if width is None or width <= 0 or depth is None or depth <= 0:
-        return None
-
-    origin_setting = (
-        "machine_center_is_zero" if "machine_center_is_zero" in machine_values else None
-    )
-
-    def axis_terms(
-        position_key: str, dimension_key: str | None = None
-    ) -> dict[str, Any]:
-        terms: list[dict[str, Any]] = []
-        if _finite_number(machine_values.get(position_key)) is not None:
-            terms.append({"setting": position_key, "scale": 1.0})
-        if dimension_key is not None:
-            correction: dict[str, Any] = {
-                "setting": dimension_key,
-                "scale": -0.5,
-            }
-            if origin_setting is not None:
-                correction["when"] = {
-                    "setting": origin_setting,
-                    "equals": False,
-                }
-                terms.append(correction)
-            elif not centered:
-                terms.append(correction)
-        return {"constant": 0.0, "terms": terms}
-
-    origin: str | dict[str, Any]
-    if origin_setting is not None:
-        origin = {
-            "setting": origin_setting,
-            "values": {
-                "true": "build_volume_center",
-                "false": "build_volume_minimum_xy",
-            },
-        }
-    else:
-        origin = "build_volume_center" if centered else "build_volume_minimum_xy"
-
-    return {
-        "schema": "scene-transform.v1",
-        "coordinate_space": "machine_build_volume",
-        "origin": origin,
-        "model_transform": {
-            "translation": {
-                "unit": "mm",
-                "x": axis_terms("mesh_position_x", "machine_width"),
-                "y": axis_terms("mesh_position_y", "machine_depth"),
-                "z": axis_terms("mesh_position_z"),
-            }
-        },
-    }
 
 
 def _parse_compatible_value(value: Any, default: bool = True) -> bool:
@@ -833,7 +848,14 @@ def _resolve_schema(
             break
 
     scopes = {key: _scope_for(schema.get(key, {})) for key in values}
-    return values, scopes, unresolved & explicit_keys
+    # An unresolved expression is fatal only when it leaves no concrete value,
+    # or when it was an explicit role override that failed to replace its
+    # inherited value.  Derived expressions with a concrete default remain a
+    # safe, auditable fallback.
+    unresolved_required = {
+        key for key in unresolved if key not in values or key in explicit_keys
+    }
+    return values, scopes, unresolved_required
 
 
 def _resolve_instance_values(
@@ -1174,18 +1196,25 @@ class CuraParser(BaseParser):
         if extruder_id and extruder_id in graph:
             schema = _merge_schemas(schema, graph.resolve(extruder_id).schema)
 
-        base_data, base_scopes, _ = _resolve_schema(schema)
+        base_data, base_scopes, unresolved_defaults = _resolve_schema(schema)
+        if unresolved_defaults:
+            raise ValueError(
+                f"Cura definition {definition.native_id!r} has no concrete value "
+                "for required settings: "
+                + ", ".join(sorted(unresolved_defaults))
+            )
         material_recompute_plan = _build_overlay_recompute_plan(
             schema, material_trigger_keys
         )
         vendor = str(metadata.get("manufacturer") or "Unknown")
         machine_variants = list(variants_by_definition.get(definition.native_id, []))
         tool_topology, extruder_trains = self._tool_topology(metadata, base_data)
+        runtime_tool_indices = [0]
         bed_assets = _bed_assets(metadata, base_data)
         runtime_context: dict[str, Any] = {
             "material_mode": "single",
             "active_tool_index": 0,
-            "supported_tool_indices": [0],
+            "supported_tool_indices": runtime_tool_indices,
         }
         preferred_material_id = metadata.get("preferred_material")
         compatible_hotends = self._preferred_material_hotends(
@@ -1200,15 +1229,22 @@ class CuraParser(BaseParser):
         candidates: list[_InstanceResource | None] = machine_variants or [None]
         candidate_records: list[dict[str, Any]] = []
         for position, variant in enumerate(candidates):
+            variant_name = variant.name if variant else "Default"
+            variant_source_id = variant.native_id if variant else variant_name
             raw_values = variant.values if variant else {}
             data, scopes, unresolved = _resolve_schema(schema, raw_values)
-            variant_name = variant.name if variant else "Default"
+            if unresolved:
+                raise ValueError(
+                    f"Cura variant {variant_source_id!r} "
+                    "has unresolved explicit settings: "
+                    + ", ".join(sorted(unresolved))
+                )
             nozzle = data.get("machine_nozzle_size")
             if nozzle is None:
                 nozzle = base_data.get("machine_nozzle_size", 0.4)
                 data["machine_nozzle_size"] = nozzle
                 scopes["machine_nozzle_size"] = "extruder.0"
-            volume_type = self._variant_volume_type(variant, data)
+            volume_type = self._variant_volume_type(variant)
             variant_key = (
                 "HF" if volume_type == "high_flow" else ""
             ) + self._format_variant(nozzle)
@@ -1220,9 +1256,16 @@ class CuraParser(BaseParser):
             attributes = self._variant_attributes(
                 variant.metadata if variant else {},
                 data,
-                variant_name if variant else None,
+                variant_native_id,
                 volume_type,
             )
+            variant_identity = {
+                "native_id": variant_native_id,
+                "nozzle_diameter": nozzle,
+                "nozzle_volume_type": volume_type,
+                "tool_indices": runtime_tool_indices,
+                "hotend_id": attributes["hotend_id"],
+            }
             candidate_records.append(
                 {
                     "position": position,
@@ -1236,6 +1279,7 @@ class CuraParser(BaseParser):
                     "key": variant_key,
                     "native_id": variant_native_id,
                     "attributes": attributes,
+                    "identity": variant_identity,
                 }
             )
 
@@ -1269,8 +1313,6 @@ class CuraParser(BaseParser):
                         and name.casefold() == preferred_variant_name.casefold()
                     ),
                     not compatible_preferred_hotend,
-                    "default" not in name.casefold(),
-                    name.casefold(),
                     str(record.get("native_id") or "").casefold(),
                 )
 
@@ -1286,6 +1328,9 @@ class CuraParser(BaseParser):
             )
             if aliases:
                 selected["aliases"] = aliases
+                selected["identity_aliases"] = [
+                    record["identity"] for record in records if record is not selected
+                ]
                 logger.info(
                     "Selected Cura variant %s for %s/%s; collapsed aliases: %s",
                     selected["name"],
@@ -1305,7 +1350,6 @@ class CuraParser(BaseParser):
             variant_key = str(record["key"])
             variant_native_id = str(record["native_id"])
             attributes = record["attributes"]
-            scene = _scene_context(data)
             context = {
                 "native_id": variant_native_id,
                 "source_kind": "variant" if variant else "definition_default",
@@ -1318,18 +1362,18 @@ class CuraParser(BaseParser):
                 "variant_name": variant_name,
                 "nozzle_diameter": nozzle,
                 "attributes": attributes,
+                "variant_identity": record["identity"],
                 "tool_topology": tool_topology,
                 "runtime": {
                     **runtime_context,
-                    "compatible_tool_indices": [0],
+                    "compatible_tool_indices": runtime_tool_indices,
                 },
             }
             if record.get("aliases"):
                 context["variant_aliases"] = record["aliases"]
+                context["variant_identity_aliases"] = record["identity_aliases"]
             if material_recompute_plan:
                 context[CURA_MATERIAL_RECOMPUTE_PLAN] = material_recompute_plan
-            if scene is not None:
-                context["scene"] = scene
             if unresolved:
                 context["unresolved_settings"] = sorted(unresolved)
             machine_profiles.append(
@@ -1357,7 +1401,8 @@ class CuraParser(BaseParser):
                     "name": variant_name,
                     "nozzle_diameter": nozzle,
                     "attributes": attributes,
-                    "runtime_compatible_tool_indices": [0],
+                    "identity": record["identity"],
+                    "runtime_compatible_tool_indices": runtime_tool_indices,
                 }
             )
 
@@ -1427,13 +1472,13 @@ class CuraParser(BaseParser):
             ),
             "preferred_material": metadata.get("preferred_material"),
             "preferred_quality_type": metadata.get("preferred_quality_type"),
+            "selection_defaults": _process_profile_selection_defaults(metadata),
             "preferred_variant_name": preferred_variant_name,
             "preferred_variant_key": preferred_variant_key,
             "machine_extruder_trains": extruder_trains,
             "tool_topology": tool_topology,
             "runtime": runtime_context,
             "bed_assets": bed_assets or None,
-            "scene": _scene_context(base_data),
             "bed_model": metadata.get("platform"),
             "bed_texture": metadata.get("platform_texture"),
             "include_materials": metadata.get("include_materials", []),
@@ -1914,9 +1959,9 @@ class CuraParser(BaseParser):
 
     @staticmethod
     def _variant_volume_type(
-        variant: _InstanceResource | None, values: Mapping[str, Any]
+        variant: _InstanceResource | None,
     ) -> str:
-        """Classify the generic nozzle-volume capability of a Cura variant."""
+        """Read generic nozzle-volume capability without guessing from names."""
 
         if variant is None:
             return "standard"
@@ -1961,30 +2006,22 @@ class CuraParser(BaseParser):
                 }:
                     return "standard"
 
-        identity = " ".join(
-            str(item)
-            for item in (
-                variant.name,
-                variant.native_id,
-                variant.path.stem,
-                values.get("machine_nozzle_id"),
-            )
-            if item not in (None, "")
-        )
-        return "high_flow" if _HIGH_FLOW_VARIANT_RE.search(identity) else "standard"
+        # Cura has no implicit high-flow semantic for a variant name.  In the
+        # absence of a declared capability, use the ordinary nozzle contract.
+        return "standard"
 
     @staticmethod
     def _variant_attributes(
         metadata: Mapping[str, Any],
         values: Mapping[str, Any],
-        variant_name: str | None,
+        variant_native_id: str,
         volume_type: str,
     ) -> dict[str, Any]:
         attributes = {
             "hardware_type": metadata.get("hardware_type"),
             "nozzle_diameter": values.get("machine_nozzle_size"),
             "nozzle_volume_type": volume_type,
-            "hotend_id": values.get("machine_nozzle_id") or variant_name,
+            "hotend_id": values.get("machine_nozzle_id") or variant_native_id,
         }
         return {key: value for key, value in attributes.items() if value is not None}
 
