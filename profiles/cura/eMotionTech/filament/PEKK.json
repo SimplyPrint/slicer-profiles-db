@@ -3,56 +3,199 @@
   "profile_type": "filament",
   "name": "PEKK",
   "vendor": "eMotionTech",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "39a9c48e-8ea7-4936-8c5a-4a1834feaa9f",
-  "setting_id": null,
+  "setting_id": "emotiontech_pekk",
   "renamed_from": null,
+  "filament_type": "PEKK",
+  "native_id": "emotiontech_pekk",
+  "context": {
+    "native_id": "emotiontech_pekk",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "39a9c48e-8ea7-4936-8c5a-4a1834feaa9f",
+    "brand": "eMotionTech",
+    "material_type": "PEKK",
+    "color": "Generic",
+    "color_code": "#ffaf33",
+    "description": null,
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "eMotionTech",
+        "product": "DUAL600",
+        "identifiers": [
+          {
+            "manufacturer": "eMotionTech",
+            "product": "DUAL600"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "Standard 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "Standard 0.6",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "Standard 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "Standard 1.0 Experimental",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "Standard 1.2 Experimental",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "High temp 0.4",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 360,
+              "retraction_amount": 1.5
+            }
+          }
+        ]
+      },
+      {
+        "manufacturer": "eMotionTech",
+        "product": "IDEX420",
+        "identifiers": [
+          {
+            "manufacturer": "eMotionTech",
+            "product": "IDEX420"
+          },
+          {
+            "manufacturer": "eMotionTech",
+            "product": "IDEX420 Duplicate"
+          },
+          {
+            "manufacturer": "eMotionTech",
+            "product": "IDEX420 Mirror"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "IDEX420 Laiton 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "IDEX420 Laiton 0.6",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "IDEX420 Laiton 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "IDEX420 Acier Durci 0.4",
+            "compatible": false,
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "eMotionTech",
+              "product": "DUAL600"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "Standard 0.4": false,
+            "Standard 0.6": false,
+            "Standard 0.8": false,
+            "Standard 1.0 Experimental": false,
+            "Standard 1.2 Experimental": false,
+            "High temp 0.4": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "eMotionTech",
+              "product": "IDEX420"
+            },
+            {
+              "manufacturer": "eMotionTech",
+              "product": "IDEX420 Duplicate"
+            },
+            {
+              "manufacturer": "eMotionTech",
+              "product": "IDEX420 Mirror"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "IDEX420 Laiton 0.4": false,
+            "IDEX420 Laiton 0.6": false,
+            "IDEX420 Laiton 0.8": false,
+            "IDEX420 Acier Durci 0.4": false
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "retraction_amount": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "build_volume_temperature": "global",
+    "material_brand": "extruder.0",
+    "default_material_bed_temperature": "global"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "eMotionTech"
+    "material_guid": {
+      "5.13.0": "39a9c48e-8ea7-4936-8c5a-4a1834feaa9f"
     },
-    "material": {
-      "2026-02-25": "PEKK"
+    "default_material_print_temperature": {
+      "5.13.0": 360
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "material_type": {
+      "5.13.0": "PEKK"
     },
-    "label": {
-      "2026-02-25": "PEKK"
+    "retraction_amount": {
+      "5.13.0": 1.4
     },
-    "GUID": {
-      "2026-02-25": "39a9c48e-8ea7-4936-8c5a-4a1834feaa9f"
+    "material_standby_temperature": {
+      "5.13.0": 290
     },
-    "color_code": {
-      "2026-02-25": "#ffaf33"
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "description": {
-      "2026-02-25": ""
+    "build_volume_temperature": {
+      "5.13.0": 60
     },
-    "diameter": {
-      "2026-02-25": "1.75"
+    "material_brand": {
+      "5.13.0": "eMotionTech"
     },
-    "density": {
-      "2026-02-25": "1.29"
-    },
-    "weight": {
-      "2026-02-25": "500"
-    },
-    "print temperature": {
-      "2026-02-25": "360"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "140"
-    },
-    "standby temperature": {
-      "2026-02-25": "290"
-    },
-    "retraction amount": {
-      "2026-02-25": "1.4"
-    },
-    "build volume temperature": {
-      "2026-02-25": "60"
+    "default_material_bed_temperature": {
+      "5.13.0": 140
     }
   }
 }

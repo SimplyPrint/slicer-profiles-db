@@ -3,59 +3,100 @@
   "profile_type": "filament",
   "name": "PLA Matte",
   "vendor": "Eryone",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "03e828a2-7e43-4e83-8de0-2cd7ed9f2f7c",
-  "setting_id": null,
+  "setting_id": "eryone_pla_matte",
   "renamed_from": null,
+  "filament_type": "PLA",
+  "native_id": "eryone_pla_matte",
+  "context": {
+    "native_id": "eryone_pla_matte",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "03e828a2-7e43-4e83-8de0-2cd7ed9f2f7c",
+    "brand": "Eryone",
+    "material_type": "PLA",
+    "color": "Generic",
+    "color_code": "#bfbfa7",
+    "description": "Eryone Matte PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "Eryone",
+        "product": "eryone_thinker_direct",
+        "identifiers": [
+          {
+            "manufacturer": "Eryone",
+            "product": "eryone_thinker_direct"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "retraction_amount": 0.2,
+          "retraction_speed": 35.0
+        },
+        "hotends": []
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Eryone",
+              "product": "eryone_thinker_direct"
+            }
+          ],
+          "compatible": true,
+          "hotends": {}
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "retraction_amount": "extruder.0",
+    "retraction_speed": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "material_brand": "extruder.0",
+    "cool_fan_speed": "extruder.0",
+    "default_material_bed_temperature": "global"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "Eryone"
+    "material_guid": {
+      "5.13.0": "03e828a2-7e43-4e83-8de0-2cd7ed9f2f7c"
     },
-    "material": {
-      "2026-02-25": "PLA"
+    "default_material_print_temperature": {
+      "5.13.0": 205.0
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "material_type": {
+      "5.13.0": "PLA"
     },
-    "label": {
-      "2026-02-25": "PLA Matte"
+    "retraction_amount": {
+      "5.13.0": 3.5
     },
-    "GUID": {
-      "2026-02-25": "03e828a2-7e43-4e83-8de0-2cd7ed9f2f7c"
+    "retraction_speed": {
+      "5.13.0": 45.0
     },
-    "color_code": {
-      "2026-02-25": "#bfbfa7"
+    "material_standby_temperature": {
+      "5.13.0": 175.0
     },
-    "description": {
-      "2026-02-25": "Eryone Matte PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality."
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "diameter": {
-      "2026-02-25": "1.75"
+    "material_brand": {
+      "5.13.0": "Eryone"
     },
-    "density": {
-      "2026-02-25": "1.45"
+    "cool_fan_speed": {
+      "5.13.0": 100.0
     },
-    "weight": {
-      "2026-02-25": "1000"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "60.0"
-    },
-    "print cooling": {
-      "2026-02-25": "100.0"
-    },
-    "print temperature": {
-      "2026-02-25": "205.0"
-    },
-    "retraction amount": {
-      "2026-02-25": "0.2"
-    },
-    "retraction speed": {
-      "2026-02-25": "35.0"
-    },
-    "standby temperature": {
-      "2026-02-25": "175.0"
+    "default_material_bed_temperature": {
+      "5.13.0": 60.0
     }
   }
 }

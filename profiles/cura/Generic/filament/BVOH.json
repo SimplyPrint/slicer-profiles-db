@@ -3,113 +3,259 @@
   "profile_type": "filament",
   "name": "BVOH",
   "vendor": "Generic",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "9d9527bf-7087-4f67-9fac-c79bb5816795",
-  "setting_id": null,
+  "setting_id": "generic_bvoh",
   "renamed_from": null,
+  "filament_type": "BVOH",
+  "native_id": "generic_bvoh",
+  "context": {
+    "native_id": "generic_bvoh",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "9d9527bf-7087-4f67-9fac-c79bb5816795",
+    "brand": "Generic",
+    "material_type": "BVOH",
+    "color": "Generic",
+    "color_code": "#F1ECE1",
+    "description": "This is the baseline profile for the Water soluble support material BVOH. BVOH is a matching support material for PLA, ABS, ASA, PET-G, Nylon, TPU.",
+    "diameter": 2.85,
+    "machine_overrides": [
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "Ultimaker 3",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker 3"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker 3 Extended"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S3"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S5"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S7"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S6"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S8"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "BB 0.4",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.8",
+            "compatible": true,
+            "settings": {}
+          }
+        ]
+      },
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "Ultimaker Factor 4",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker Factor 4"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker Factor 4+"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "retraction_amount": 2.5
+        },
+        "hotends": [
+          {
+            "id": "BB 0.4",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.8",
+            "compatible": true,
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker 3"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker 3 Extended"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S3"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S5"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S7"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S6"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S8"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "BB 0.4": true,
+            "BB 0.8": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker Factor 4"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker Factor 4+"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "BB 0.4": true,
+            "BB 0.8": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_break_speed": "extruder.0",
+    "material_is_support_material": "extruder.0",
+    "raft_airgap": "extruder.0",
+    "material_maximum_park_duration": "extruder.0",
+    "build_volume_temperature": "global",
+    "default_material_bed_temperature": "global",
+    "material_break_retracted_position": "extruder.0",
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_anti_ooze_retraction_speed": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_break_temperature": "extruder.0",
+    "material_break_preparation_retracted_position": "extruder.0",
+    "material_crystallinity": "extruder.0",
+    "cool_fan_speed": "extruder.0",
+    "material_brand": "extruder.0",
+    "material_anti_ooze_retracted_position": "extruder.0",
+    "material_break_preparation_temperature": "extruder.0",
+    "material_flush_purge_length": "extruder.0",
+    "material_break_preparation_speed": "extruder.0",
+    "material_no_load_move_factor": "extruder.0",
+    "material_diameter": "extruder.0",
+    "retraction_amount": "extruder.0"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "Generic"
+    "material_break_speed": {
+      "5.13.0": 50
     },
-    "material": {
-      "2026-02-25": "BVOH"
+    "material_is_support_material": {
+      "5.13.0": true
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "raft_airgap": {
+      "5.13.0": 0
     },
-    "label": {
-      "2026-02-25": "BVOH"
+    "material_maximum_park_duration": {
+      "5.13.0": 216000
     },
-    "GUID": {
-      "2026-02-25": "9d9527bf-7087-4f67-9fac-c79bb5816795"
+    "build_volume_temperature": {
+      "5.13.0": 40
     },
-    "color_code": {
-      "2026-02-25": "#F1ECE1"
+    "default_material_bed_temperature": {
+      "5.13.0": 60
     },
-    "description": {
-      "2026-02-25": "This is the baseline profile for the Water soluble support material BVOH. BVOH is a matching support material for PLA, ABS, ASA, PET-G, Nylon, TPU."
+    "material_break_retracted_position": {
+      "5.13.0": -50
     },
-    "diameter": {
-      "2026-02-25": "2.85"
+    "material_guid": {
+      "5.13.0": "9d9527bf-7087-4f67-9fac-c79bb5816795"
     },
-    "density": {
-      "2026-02-25": "1.14"
+    "default_material_print_temperature": {
+      "5.13.0": 210
     },
-    "weight": {
-      "2026-02-25": ""
+    "material_type": {
+      "5.13.0": "BVOH"
     },
-    "anti ooze retract position": {
-      "2026-02-25": "-2"
+    "material_anti_ooze_retraction_speed": {
+      "5.13.0": 20
     },
-    "anti ooze retract speed": {
-      "2026-02-25": "20"
+    "material_standby_temperature": {
+      "5.13.0": 150
     },
-    "break preparation position": {
-      "2026-02-25": "-2"
+    "material_break_temperature": {
+      "5.13.0": 170
     },
-    "break preparation speed": {
-      "2026-02-25": "20"
+    "material_break_preparation_retracted_position": {
+      "5.13.0": -2
     },
-    "break preparation temperature": {
-      "2026-02-25": "210"
+    "material_crystallinity": {
+      "5.13.0": true
     },
-    "break position": {
-      "2026-02-25": "-50"
+    "cool_fan_speed": {
+      "5.13.0": 88
     },
-    "break speed": {
-      "2026-02-25": "50"
+    "material_brand": {
+      "5.13.0": "Generic"
     },
-    "break temperature": {
-      "2026-02-25": "170"
+    "material_anti_ooze_retracted_position": {
+      "5.13.0": -2
     },
-    "pressure release dwell time": {
-      "2026-02-25": "25"
+    "material_break_preparation_temperature": {
+      "5.13.0": 210
     },
-    "dwell time before break preparation move": {
-      "2026-02-25": "0"
+    "material_flush_purge_length": {
+      "5.13.0": 60
     },
-    "end of print purge volume": {
-      "2026-02-25": "0"
+    "material_break_preparation_speed": {
+      "5.13.0": 20
     },
-    "end of filament purge volume": {
-      "2026-02-25": "0"
+    "material_no_load_move_factor": {
+      "5.13.0": 0.91
     },
-    "flush purge length": {
-      "2026-02-25": "60"
-    },
-    "maximum park duration": {
-      "2026-02-25": "216000"
-    },
-    "no load move factor": {
-      "2026-02-25": "0.91"
-    },
-    "print temperature": {
-      "2026-02-25": "210"
-    },
-    "tainted print core max temperature": {
-      "2026-02-25": "250"
-    },
-    "standby temperature": {
-      "2026-02-25": "150"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "60"
-    },
-    "print cooling": {
-      "2026-02-25": "88"
-    },
-    "build volume temperature": {
-      "2026-02-25": "40"
-    },
-    "relative extrusion": {
-      "2026-02-25": "1.0"
-    },
-    "retract compensation": {
-      "2026-02-25": "0"
-    },
-    "retraction amount": {
-      "2026-02-25": "2.5"
+    "material_diameter": {
+      "5.13.0": 2.85
     }
   }
 }

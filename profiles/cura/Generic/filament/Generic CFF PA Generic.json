@@ -3,113 +3,429 @@
   "profile_type": "filament",
   "name": "Generic CFF PA Generic",
   "vendor": "Generic",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "bd66b243-9d50-4e12-bfc3-51c874fca16a",
-  "setting_id": null,
+  "setting_id": "generic_cffpa",
   "renamed_from": null,
+  "filament_type": "CFF PA",
+  "native_id": "generic_cffpa",
+  "context": {
+    "native_id": "generic_cffpa",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "bd66b243-9d50-4e12-bfc3-51c874fca16a",
+    "brand": "Generic",
+    "material_type": "CFF PA",
+    "color": "Generic",
+    "color_code": "#212F3D",
+    "description": "This is the baseline profile for Carbon Fiber Filled Polyamides for the Print Profile Assistant.",
+    "diameter": 2.85,
+    "machine_overrides": [
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "Ultimaker S3",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S3"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "AA 0.25",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "CC 0.4",
+            "compatible": true,
+            "settings": {
+              "cool_fan_speed": 50,
+              "retraction_amount": 6.5
+            }
+          },
+          {
+            "id": "CC 0.6",
+            "compatible": true,
+            "settings": {
+              "cool_fan_speed": 50,
+              "retraction_amount": 6.5
+            }
+          }
+        ]
+      },
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "Ultimaker S5",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S5"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S6"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S7"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S8"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "AA 0.25",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA+ 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "CC 0.4",
+            "compatible": true,
+            "settings": {
+              "cool_fan_speed": 1,
+              "retraction_amount": 6.5
+            }
+          },
+          {
+            "id": "CC 0.6",
+            "compatible": true,
+            "settings": {
+              "cool_fan_speed": 1,
+              "retraction_amount": 6.5
+            }
+          },
+          {
+            "id": "CC+ 0.4",
+            "compatible": true,
+            "settings": {
+              "cool_fan_speed": 1,
+              "retraction_amount": 6.5
+            }
+          },
+          {
+            "id": "CC+ 0.6",
+            "compatible": true,
+            "settings": {
+              "cool_fan_speed": 1,
+              "retraction_amount": 6.5
+            }
+          }
+        ]
+      },
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "Ultimaker Factor 4",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker Factor 4"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker Factor 4+"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "build_volume_temperature": 40,
+          "cool_fan_speed": 1,
+          "material_anti_ooze_retracted_position": -6,
+          "material_no_load_move_factor": 1,
+          "retraction_amount": 1.5
+        },
+        "hotends": [
+          {
+            "id": "AA 0.25",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "CC 0.4",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "CC 0.6",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "AA+ 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "CC+ 0.6",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "HT 0.6",
+            "compatible": true,
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S3"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "AA 0.25": false,
+            "AA 0.4": false,
+            "AA 0.8": false,
+            "BB 0.4": false,
+            "BB 0.8": false,
+            "CC 0.4": true,
+            "CC 0.6": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S5"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S6"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S7"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S8"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "AA 0.25": false,
+            "AA 0.4": false,
+            "AA 0.8": false,
+            "BB 0.4": false,
+            "BB 0.8": false,
+            "AA+ 0.4": false,
+            "CC 0.4": true,
+            "CC 0.6": true,
+            "CC+ 0.4": true,
+            "CC+ 0.6": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker Factor 4"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker Factor 4+"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "AA 0.25": false,
+            "AA 0.4": false,
+            "AA 0.8": false,
+            "BB 0.4": false,
+            "BB 0.8": false,
+            "CC 0.4": true,
+            "CC 0.6": true,
+            "AA+ 0.4": false,
+            "CC+ 0.6": true,
+            "HT 0.6": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_break_speed": "extruder.0",
+    "material_maximum_park_duration": "extruder.0",
+    "build_volume_temperature": "global",
+    "material_end_of_filament_purge_speed": "extruder.0",
+    "default_material_bed_temperature": "global",
+    "material_break_retracted_position": "extruder.0",
+    "material_adhesion_tendency": "extruder.0",
+    "material_end_of_filament_purge_length": "extruder.0",
+    "material_guid": "extruder.0",
+    "material_flush_purge_speed": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_anti_ooze_retraction_speed": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_break_temperature": "extruder.0",
+    "material_break_preparation_retracted_position": "extruder.0",
+    "material_crystallinity": "extruder.0",
+    "material_brand": "extruder.0",
+    "material_anti_ooze_retracted_position": "extruder.0",
+    "material_surface_energy": "extruder.0",
+    "material_break_preparation_temperature": "extruder.0",
+    "material_flush_purge_length": "extruder.0",
+    "material_break_preparation_speed": "extruder.0",
+    "material_no_load_move_factor": "extruder.0",
+    "material_diameter": "extruder.0",
+    "retraction_amount": "extruder.0",
+    "cool_fan_speed": "extruder.0"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "Generic"
+    "material_break_speed": {
+      "5.13.0": 25
     },
-    "material": {
-      "2026-02-25": "CFF PA"
+    "material_maximum_park_duration": {
+      "5.13.0": 7200
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "build_volume_temperature": {
+      "5.13.0": 35
     },
-    "label": {
-      "2026-02-25": ""
+    "material_end_of_filament_purge_speed": {
+      "5.13.0": 0.5
     },
-    "GUID": {
-      "2026-02-25": "bd66b243-9d50-4e12-bfc3-51c874fca16a"
+    "default_material_bed_temperature": {
+      "5.13.0": 70
     },
-    "color_code": {
-      "2026-02-25": "#212F3D"
+    "material_break_retracted_position": {
+      "5.13.0": -50
     },
-    "description": {
-      "2026-02-25": "This is the baseline profile for Carbon Fiber Filled Polyamides for the Print Profile Assistant."
+    "material_adhesion_tendency": {
+      "5.13.0": 2
     },
-    "diameter": {
-      "2026-02-25": "2.85"
+    "material_end_of_filament_purge_length": {
+      "5.13.0": 20
     },
-    "density": {
-      "2026-02-25": "1.35"
+    "material_guid": {
+      "5.13.0": "bd66b243-9d50-4e12-bfc3-51c874fca16a"
     },
-    "weight": {
-      "2026-02-25": ""
+    "material_flush_purge_speed": {
+      "5.13.0": 0.5
     },
-    "anti ooze retract position": {
-      "2026-02-25": "-6"
+    "default_material_print_temperature": {
+      "5.13.0": 265
     },
-    "anti ooze retract speed": {
-      "2026-02-25": "25"
+    "material_type": {
+      "5.13.0": "CFF PA"
     },
-    "break preparation position": {
-      "2026-02-25": "0"
+    "material_anti_ooze_retraction_speed": {
+      "5.13.0": 25
     },
-    "break preparation speed": {
-      "2026-02-25": "2"
+    "material_standby_temperature": {
+      "5.13.0": 165
     },
-    "break preparation temperature": {
-      "2026-02-25": "250"
+    "material_break_temperature": {
+      "5.13.0": 145
     },
-    "break position": {
-      "2026-02-25": "-50"
+    "material_break_preparation_retracted_position": {
+      "5.13.0": 0
     },
-    "break speed": {
-      "2026-02-25": "25"
+    "material_crystallinity": {
+      "5.13.0": true
     },
-    "break temperature": {
-      "2026-02-25": "145"
+    "material_brand": {
+      "5.13.0": "Generic"
     },
-    "maximum park duration": {
-      "2026-02-25": "7200"
+    "material_anti_ooze_retracted_position": {
+      "5.13.0": -8
     },
-    "no load move factor": {
-      "2026-02-25": "1"
+    "material_surface_energy": {
+      "5.13.0": 100
     },
-    "flush purge speed": {
-      "2026-02-25": "0.5"
+    "material_break_preparation_temperature": {
+      "5.13.0": 250
     },
-    "end of filament purge speed": {
-      "2026-02-25": "0.5"
+    "material_flush_purge_length": {
+      "5.13.0": 60
     },
-    "flush purge length": {
-      "2026-02-25": "60"
+    "material_break_preparation_speed": {
+      "5.13.0": 2
     },
-    "end of filament purge length": {
-      "2026-02-25": "20"
+    "material_no_load_move_factor": {
+      "5.13.0": 0.935
     },
-    "print temperature": {
-      "2026-02-25": "265"
-    },
-    "standby temperature": {
-      "2026-02-25": "165"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "70"
-    },
-    "build volume temperature": {
-      "2026-02-25": "40"
-    },
-    "adhesion tendency": {
-      "2026-02-25": "2"
-    },
-    "surface energy": {
-      "2026-02-25": "100"
-    },
-    "relative extrusion": {
-      "2026-02-25": "1.0"
-    },
-    "retract compensation": {
-      "2026-02-25": "0"
-    },
-    "print cooling": {
-      "2026-02-25": "1"
-    },
-    "retraction amount": {
-      "2026-02-25": "1.5"
+    "material_diameter": {
+      "5.13.0": 2.85
     }
   }
 }

@@ -3,59 +3,100 @@
   "profile_type": "filament",
   "name": "PLA Wood",
   "vendor": "Eryone",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "5fa210e0-4edd-4cfb-b2fa-897981444fe4",
-  "setting_id": null,
+  "setting_id": "eryone_pla_wood",
   "renamed_from": null,
+  "filament_type": "PLA",
+  "native_id": "eryone_pla_wood",
+  "context": {
+    "native_id": "eryone_pla_wood",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "5fa210e0-4edd-4cfb-b2fa-897981444fe4",
+    "brand": "Eryone",
+    "material_type": "PLA",
+    "color": "Generic",
+    "color_code": "#be8e5e",
+    "description": "Eryone Wood PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "Eryone",
+        "product": "eryone_thinker_direct",
+        "identifiers": [
+          {
+            "manufacturer": "Eryone",
+            "product": "eryone_thinker_direct"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "retraction_amount": 0.3,
+          "retraction_speed": 35.0
+        },
+        "hotends": []
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Eryone",
+              "product": "eryone_thinker_direct"
+            }
+          ],
+          "compatible": true,
+          "hotends": {}
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "retraction_amount": "extruder.0",
+    "retraction_speed": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "material_brand": "extruder.0",
+    "cool_fan_speed": "extruder.0",
+    "default_material_bed_temperature": "global"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "Eryone"
+    "material_guid": {
+      "5.13.0": "5fa210e0-4edd-4cfb-b2fa-897981444fe4"
     },
-    "material": {
-      "2026-02-25": "PLA"
+    "default_material_print_temperature": {
+      "5.13.0": 215.0
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "material_type": {
+      "5.13.0": "PLA"
     },
-    "label": {
-      "2026-02-25": "PLA Wood"
+    "retraction_amount": {
+      "5.13.0": 4.5
     },
-    "GUID": {
-      "2026-02-25": "5fa210e0-4edd-4cfb-b2fa-897981444fe4"
+    "retraction_speed": {
+      "5.13.0": 45.0
     },
-    "color_code": {
-      "2026-02-25": "#be8e5e"
+    "material_standby_temperature": {
+      "5.13.0": 175.0
     },
-    "description": {
-      "2026-02-25": "Eryone Wood PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality."
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "diameter": {
-      "2026-02-25": "1.75"
+    "material_brand": {
+      "5.13.0": "Eryone"
     },
-    "density": {
-      "2026-02-25": "1.24"
+    "cool_fan_speed": {
+      "5.13.0": 100.0
     },
-    "weight": {
-      "2026-02-25": "1000"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "60.0"
-    },
-    "print cooling": {
-      "2026-02-25": "100.0"
-    },
-    "print temperature": {
-      "2026-02-25": "215.0"
-    },
-    "retraction amount": {
-      "2026-02-25": "0.3"
-    },
-    "retraction speed": {
-      "2026-02-25": "35.0"
-    },
-    "standby temperature": {
-      "2026-02-25": "175.0"
+    "default_material_bed_temperature": {
+      "5.13.0": 60.0
     }
   }
 }

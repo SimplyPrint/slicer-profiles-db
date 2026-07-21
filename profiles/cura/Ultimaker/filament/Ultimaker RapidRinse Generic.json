@@ -3,56 +3,151 @@
   "profile_type": "filament",
   "name": "Ultimaker RapidRinse Generic",
   "vendor": "Ultimaker",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "a140ef8f-4f26-4e73-abe0-cfc29d6d1024",
-  "setting_id": null,
+  "setting_id": "ultimaker_rapidrinse_175",
   "renamed_from": null,
+  "filament_type": "RapidRinse",
+  "native_id": "ultimaker_rapidrinse_175",
+  "context": {
+    "native_id": "ultimaker_rapidrinse_175",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "a140ef8f-4f26-4e73-abe0-cfc29d6d1024",
+    "brand": "Ultimaker",
+    "material_type": "RapidRinse",
+    "color": "Generic",
+    "color_code": "#f5f2d1",
+    "description": "Water soluble support material for ABS-R.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "UltiMaker Method X",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Method X"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Method XL"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "1A",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "1XA",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "2A",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "2XA",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "1C",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "LABS",
+            "compatible": false,
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Method X"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Method XL"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "1A": false,
+            "1XA": false,
+            "2A": false,
+            "2XA": true,
+            "1C": false,
+            "LABS": false
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "material_is_support_material": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "material_brand": "extruder.0",
+    "build_volume_temperature": "global",
+    "prime_tower_enable": "global",
+    "support_conical_enabled": "extruder.0",
+    "cool_fan_speed": "extruder.0",
+    "default_material_bed_temperature": "global"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "Ultimaker"
+    "material_guid": {
+      "5.13.0": "a140ef8f-4f26-4e73-abe0-cfc29d6d1024"
     },
-    "material": {
-      "2026-02-25": "RapidRinse"
+    "material_is_support_material": {
+      "5.13.0": true
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "default_material_print_temperature": {
+      "5.13.0": 260
     },
-    "label": {
-      "2026-02-25": ""
+    "material_type": {
+      "5.13.0": "RapidRinse"
     },
-    "GUID": {
-      "2026-02-25": "a140ef8f-4f26-4e73-abe0-cfc29d6d1024"
+    "material_standby_temperature": {
+      "5.13.0": 180
     },
-    "color_code": {
-      "2026-02-25": "#f5f2d1"
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "description": {
-      "2026-02-25": "Water soluble support material for ABS-R."
+    "material_brand": {
+      "5.13.0": "Ultimaker"
     },
-    "diameter": {
-      "2026-02-25": "1.75"
+    "build_volume_temperature": {
+      "5.13.0": 107
     },
-    "density": {
-      "2026-02-25": "1.23"
+    "prime_tower_enable": {
+      "5.13.0": true
     },
-    "weight": {
-      "2026-02-25": "750"
+    "support_conical_enabled": {
+      "5.13.0": true
     },
-    "print temperature": {
-      "2026-02-25": "260"
+    "cool_fan_speed": {
+      "5.13.0": 0
     },
-    "standby temperature": {
-      "2026-02-25": "180"
-    },
-    "build volume temperature": {
-      "2026-02-25": "107"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "95"
-    },
-    "print cooling": {
-      "2026-02-25": "0"
+    "default_material_bed_temperature": {
+      "5.13.0": 95
     }
   }
 }

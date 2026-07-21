@@ -3,59 +3,100 @@
   "profile_type": "filament",
   "name": "TPU DD",
   "vendor": "Eryone",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "ff52b30e-5740-4f70-a7b5-8c436fc9954f",
-  "setting_id": null,
+  "setting_id": "eryone_tpu",
   "renamed_from": null,
+  "filament_type": "TPU",
+  "native_id": "eryone_tpu",
+  "context": {
+    "native_id": "eryone_tpu",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "ff52b30e-5740-4f70-a7b5-8c436fc9954f",
+    "brand": "Eryone",
+    "material_type": "TPU",
+    "color": "Generic",
+    "color_code": "#0055ff",
+    "description": "Wear and tear resistant. Eryone TPU features a Shore hardness of 95A. Suitable for applications that require slight flexibility, wear and tear, and chemical resistance.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "Eryone",
+        "product": "eryone_thinker_direct",
+        "identifiers": [
+          {
+            "manufacturer": "Eryone",
+            "product": "eryone_thinker_direct"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "retraction_amount": 0.35,
+          "retraction_speed": 35.0
+        },
+        "hotends": []
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Eryone",
+              "product": "eryone_thinker_direct"
+            }
+          ],
+          "compatible": true,
+          "hotends": {}
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "retraction_amount": "extruder.0",
+    "retraction_speed": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "material_brand": "extruder.0",
+    "cool_fan_speed": "extruder.0",
+    "default_material_bed_temperature": "global"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "Eryone"
+    "material_guid": {
+      "5.13.0": "ff52b30e-5740-4f70-a7b5-8c436fc9954f"
     },
-    "material": {
-      "2026-02-25": "TPU"
+    "default_material_print_temperature": {
+      "5.13.0": 235
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "material_type": {
+      "5.13.0": "TPU"
     },
-    "label": {
-      "2026-02-25": "TPU DD"
+    "retraction_amount": {
+      "5.13.0": 6.0
     },
-    "GUID": {
-      "2026-02-25": "ff52b30e-5740-4f70-a7b5-8c436fc9954f"
+    "retraction_speed": {
+      "5.13.0": 40.0
     },
-    "color_code": {
-      "2026-02-25": "#0055ff"
+    "material_standby_temperature": {
+      "5.13.0": 175.0
     },
-    "description": {
-      "2026-02-25": "Wear and tear resistant. Eryone TPU features a Shore hardness of 95A. Suitable for applications that require slight flexibility, wear and tear, and chemical resistance."
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "diameter": {
-      "2026-02-25": "1.75"
+    "material_brand": {
+      "5.13.0": "Eryone"
     },
-    "density": {
-      "2026-02-25": "1.22"
+    "cool_fan_speed": {
+      "5.13.0": 100.0
     },
-    "weight": {
-      "2026-02-25": "500"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "50.0"
-    },
-    "print cooling": {
-      "2026-02-25": "100.0"
-    },
-    "print temperature": {
-      "2026-02-25": "235"
-    },
-    "retraction amount": {
-      "2026-02-25": "0.35"
-    },
-    "retraction speed": {
-      "2026-02-25": "35.0"
-    },
-    "standby temperature": {
-      "2026-02-25": "175.0"
+    "default_material_bed_temperature": {
+      "5.13.0": 50.0
     }
   }
 }

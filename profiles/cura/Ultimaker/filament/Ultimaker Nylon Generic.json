@@ -3,68 +3,171 @@
   "profile_type": "filament",
   "name": "Ultimaker Nylon Generic",
   "vendor": "Ultimaker",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "9475b03d-fd19-48a2-b7b5-be1fb46abb02",
-  "setting_id": null,
+  "setting_id": "ultimaker_nylon_175",
   "renamed_from": null,
+  "filament_type": "Nylon",
+  "native_id": "ultimaker_nylon_175",
+  "context": {
+    "native_id": "ultimaker_nylon_175",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "9475b03d-fd19-48a2-b7b5-be1fb46abb02",
+    "brand": "Ultimaker",
+    "material_type": "Nylon",
+    "color": "Generic",
+    "color_code": "#2a292a",
+    "description": "Nylon is strong, abrasion-resistant, durable and engineered for low moisture sensitivity.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "UltiMaker Method",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Method"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Method X"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Method XL"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "default_material_print_temperature": 250,
+          "material_standby_temperature": 160,
+          "build_volume_temperature": 0,
+          "default_material_bed_temperature": 55,
+          "cool_fan_speed": 75,
+          "retraction_amount": 0.5
+        },
+        "hotends": [
+          {
+            "id": "1A",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "1XA",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "2A",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "2XA",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "1C",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "LABS",
+            "compatible": true,
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Method"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Method X"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Method XL"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "1A": true,
+            "1XA": false,
+            "2A": false,
+            "2XA": false,
+            "1C": true,
+            "LABS": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "material_adhesion_tendency": "extruder.0",
+    "material_surface_energy": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "retraction_amount": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "retraction_speed": "extruder.0",
+    "material_diameter": "extruder.0",
+    "build_volume_temperature": "global",
+    "material_crystallinity": "extruder.0",
+    "material_brand": "extruder.0",
+    "default_material_bed_temperature": "global",
+    "cool_fan_speed": "extruder.0"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "Ultimaker"
+    "material_guid": {
+      "5.13.0": "9475b03d-fd19-48a2-b7b5-be1fb46abb02"
     },
-    "material": {
-      "2026-02-25": "Nylon"
+    "material_adhesion_tendency": {
+      "5.13.0": 2
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "material_surface_energy": {
+      "5.13.0": 100
     },
-    "label": {
-      "2026-02-25": ""
+    "default_material_print_temperature": {
+      "5.13.0": 245
     },
-    "GUID": {
-      "2026-02-25": "9475b03d-fd19-48a2-b7b5-be1fb46abb02"
+    "material_type": {
+      "5.13.0": "Nylon"
     },
-    "color_code": {
-      "2026-02-25": "#2a292a"
+    "retraction_amount": {
+      "5.13.0": 8
     },
-    "description": {
-      "2026-02-25": "Nylon is strong, abrasion-resistant, durable and engineered for low moisture sensitivity."
+    "material_standby_temperature": {
+      "5.13.0": 175
     },
-    "diameter": {
-      "2026-02-25": "1.75"
+    "retraction_speed": {
+      "5.13.0": 25
     },
-    "density": {
-      "2026-02-25": "1.14"
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "weight": {
-      "2026-02-25": "750"
+    "build_volume_temperature": {
+      "5.13.0": 35
     },
-    "print temperature": {
-      "2026-02-25": "250"
+    "material_crystallinity": {
+      "5.13.0": true
     },
-    "standby temperature": {
-      "2026-02-25": "160"
+    "material_brand": {
+      "5.13.0": "Ultimaker"
     },
-    "heated bed temperature": {
-      "2026-02-25": "55"
-    },
-    "build volume temperature": {
-      "2026-02-25": "0"
-    },
-    "retraction amount": {
-      "2026-02-25": "0.5"
-    },
-    "retraction speed": {
-      "2026-02-25": "25"
-    },
-    "adhesion tendency": {
-      "2026-02-25": "2"
-    },
-    "surface energy": {
-      "2026-02-25": "100"
-    },
-    "print cooling": {
-      "2026-02-25": "75"
+    "default_material_bed_temperature": {
+      "5.13.0": 60
     }
   }
 }

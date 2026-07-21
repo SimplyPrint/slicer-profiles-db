@@ -3,56 +3,120 @@
   "profile_type": "filament",
   "name": "Novamid1070",
   "vendor": "DSM",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "edcde954-ee11-4a23-9f11-56d2aa03284b",
-  "setting_id": null,
+  "setting_id": "dsm_novamid1070_175",
   "renamed_from": null,
+  "filament_type": "PA copolymer",
+  "native_id": "dsm_novamid1070_175",
+  "context": {
+    "native_id": "dsm_novamid1070_175",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "edcde954-ee11-4a23-9f11-56d2aa03284b",
+    "brand": "DSM",
+    "material_type": "PA copolymer",
+    "color": "Generic",
+    "color_code": "#f395f9",
+    "description": null,
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "Cartesio bv",
+        "product": "cartesio",
+        "identifiers": [
+          {
+            "manufacturer": "Cartesio bv",
+            "product": "cartesio"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "cool_fan_speed": 0.0,
+          "material_standby_temperature": 220,
+          "retraction_speed": 20,
+          "default_material_bed_temperature": 75,
+          "default_material_print_temperature": 255
+        },
+        "hotends": [
+          {
+            "id": "0.25mm thermoplastic extruder",
+            "compatible": true,
+            "settings": {
+              "retraction_amount": 1.0
+            }
+          },
+          {
+            "id": "0.4mm thermoplastic extruder",
+            "compatible": true,
+            "settings": {
+              "retraction_amount": 1.0
+            }
+          },
+          {
+            "id": "0.8mm thermoplastic extruder",
+            "compatible": true,
+            "settings": {
+              "retraction_amount": 1.5
+            }
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Cartesio bv",
+              "product": "cartesio"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "0.25mm thermoplastic extruder": true,
+            "0.4mm thermoplastic extruder": true,
+            "0.8mm thermoplastic extruder": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "material_brand": "extruder.0",
+    "default_material_bed_temperature": "global",
+    "retraction_amount": "extruder.0",
+    "retraction_speed": "extruder.0",
+    "cool_fan_speed": "extruder.0"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "DSM"
+    "material_guid": {
+      "5.13.0": "edcde954-ee11-4a23-9f11-56d2aa03284b"
     },
-    "material": {
-      "2026-02-25": "PA copolymer"
+    "default_material_print_temperature": {
+      "5.13.0": 255
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "material_type": {
+      "5.13.0": "PA copolymer"
     },
-    "label": {
-      "2026-02-25": "Novamid1070"
+    "material_standby_temperature": {
+      "5.13.0": 220
     },
-    "GUID": {
-      "2026-02-25": "edcde954-ee11-4a23-9f11-56d2aa03284b"
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "color_code": {
-      "2026-02-25": "#f395f9"
+    "material_brand": {
+      "5.13.0": "DSM"
     },
-    "description": {
-      "2026-02-25": ""
-    },
-    "diameter": {
-      "2026-02-25": "1.75"
-    },
-    "density": {
-      "2026-02-25": "1.10"
-    },
-    "weight": {
-      "2026-02-25": ""
-    },
-    "print temperature": {
-      "2026-02-25": "255"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "75"
-    },
-    "standby temperature": {
-      "2026-02-25": "220"
-    },
-    "print cooling": {
-      "2026-02-25": "0.0"
-    },
-    "retraction speed": {
-      "2026-02-25": "20"
+    "default_material_bed_temperature": {
+      "5.13.0": 75
     }
   }
 }

@@ -3,53 +3,199 @@
   "profile_type": "filament",
   "name": "COPA",
   "vendor": "eMotionTech",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "4e16865d-d7a4-4958-95b8-a31533c0785d",
-  "setting_id": null,
+  "setting_id": "emotiontech_copa",
   "renamed_from": null,
+  "filament_type": "Nylon",
+  "native_id": "emotiontech_copa",
+  "context": {
+    "native_id": "emotiontech_copa",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "4e16865d-d7a4-4958-95b8-a31533c0785d",
+    "brand": "eMotionTech",
+    "material_type": "Nylon",
+    "color": "Generic",
+    "color_code": "#69E2D5",
+    "description": null,
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "eMotionTech",
+        "product": "DUAL600",
+        "identifiers": [
+          {
+            "manufacturer": "eMotionTech",
+            "product": "DUAL600"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "Standard 0.4",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 265,
+              "retraction_amount": 2
+            }
+          },
+          {
+            "id": "Standard 0.6",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 265,
+              "retraction_amount": 3
+            }
+          },
+          {
+            "id": "Standard 0.8",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 265,
+              "retraction_amount": 3
+            }
+          },
+          {
+            "id": "High temp 0.4",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 265,
+              "retraction_amount": 2
+            }
+          }
+        ]
+      },
+      {
+        "manufacturer": "eMotionTech",
+        "product": "IDEX420",
+        "identifiers": [
+          {
+            "manufacturer": "eMotionTech",
+            "product": "IDEX420"
+          },
+          {
+            "manufacturer": "eMotionTech",
+            "product": "IDEX420 Duplicate"
+          },
+          {
+            "manufacturer": "eMotionTech",
+            "product": "IDEX420 Mirror"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "IDEX420 Laiton 0.4",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 265
+            }
+          },
+          {
+            "id": "IDEX420 Laiton 0.6",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 265
+            }
+          },
+          {
+            "id": "IDEX420 Laiton 0.8",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 265
+            }
+          },
+          {
+            "id": "IDEX420 Acier Durci 0.4",
+            "compatible": false,
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "eMotionTech",
+              "product": "DUAL600"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "Standard 0.4": true,
+            "Standard 0.6": true,
+            "Standard 0.8": true,
+            "High temp 0.4": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "eMotionTech",
+              "product": "IDEX420"
+            },
+            {
+              "manufacturer": "eMotionTech",
+              "product": "IDEX420 Duplicate"
+            },
+            {
+              "manufacturer": "eMotionTech",
+              "product": "IDEX420 Mirror"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "IDEX420 Laiton 0.4": true,
+            "IDEX420 Laiton 0.6": true,
+            "IDEX420 Laiton 0.8": true,
+            "IDEX420 Acier Durci 0.4": false
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "build_volume_temperature": "global",
+    "material_brand": "extruder.0",
+    "default_material_bed_temperature": "global",
+    "retraction_amount": "extruder.0"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "eMotionTech"
+    "material_guid": {
+      "5.13.0": "4e16865d-d7a4-4958-95b8-a31533c0785d"
     },
-    "material": {
-      "2026-02-25": "Nylon"
+    "default_material_print_temperature": {
+      "5.13.0": 265
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "material_type": {
+      "5.13.0": "Nylon"
     },
-    "label": {
-      "2026-02-25": "COPA"
+    "material_standby_temperature": {
+      "5.13.0": 150
     },
-    "GUID": {
-      "2026-02-25": "4e16865d-d7a4-4958-95b8-a31533c0785d"
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "color_code": {
-      "2026-02-25": "#69E2D5"
+    "build_volume_temperature": {
+      "5.13.0": 45
     },
-    "description": {
-      "2026-02-25": ""
+    "material_brand": {
+      "5.13.0": "eMotionTech"
     },
-    "diameter": {
-      "2026-02-25": "1.75"
-    },
-    "density": {
-      "2026-02-25": "1.12"
-    },
-    "weight": {
-      "2026-02-25": "2300"
-    },
-    "print temperature": {
-      "2026-02-25": "265"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "45"
-    },
-    "standby temperature": {
-      "2026-02-25": "150"
-    },
-    "build volume temperature": {
-      "2026-02-25": "45"
+    "default_material_bed_temperature": {
+      "5.13.0": 45
     }
   }
 }

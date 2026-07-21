@@ -3,50 +3,212 @@
   "profile_type": "filament",
   "name": "BVOH",
   "vendor": "eMotionTech",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "ea8a4d2d-dc52-454a-a1f3-60f50cd37df7",
-  "setting_id": null,
+  "setting_id": "emotiontech_bvoh",
   "renamed_from": null,
+  "filament_type": "Soluble",
+  "native_id": "emotiontech_bvoh",
+  "context": {
+    "native_id": "emotiontech_bvoh",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "ea8a4d2d-dc52-454a-a1f3-60f50cd37df7",
+    "brand": "eMotionTech",
+    "material_type": "Soluble",
+    "color": "Generic",
+    "color_code": "#D5D8DC",
+    "description": "Water Soluble; Good bonding to PLA, PET-G, ABS, ASA, etc.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "eMotionTech",
+        "product": "DUAL600",
+        "identifiers": [
+          {
+            "manufacturer": "eMotionTech",
+            "product": "DUAL600"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "Standard 0.4",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 195,
+              "retraction_amount": 1.3
+            }
+          },
+          {
+            "id": "Standard 0.6",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 200,
+              "retraction_amount": 1.3
+            }
+          },
+          {
+            "id": "Standard 0.8",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 205,
+              "retraction_amount": 1.3
+            }
+          },
+          {
+            "id": "Standard 1.0 Experimental",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 210,
+              "retraction_amount": 1.4
+            }
+          },
+          {
+            "id": "Standard 1.2 Experimental",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 213,
+              "retraction_amount": 1.5
+            }
+          },
+          {
+            "id": "High temp 0.4",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 195,
+              "retraction_amount": 1.3
+            }
+          }
+        ]
+      },
+      {
+        "manufacturer": "eMotionTech",
+        "product": "IDEX420",
+        "identifiers": [
+          {
+            "manufacturer": "eMotionTech",
+            "product": "IDEX420"
+          },
+          {
+            "manufacturer": "eMotionTech",
+            "product": "IDEX420 Duplicate"
+          },
+          {
+            "manufacturer": "eMotionTech",
+            "product": "IDEX420 Mirror"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "IDEX420 Laiton 0.4",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 210
+            }
+          },
+          {
+            "id": "IDEX420 Laiton 0.6",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 210
+            }
+          },
+          {
+            "id": "IDEX420 Laiton 0.8",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 210
+            }
+          },
+          {
+            "id": "IDEX420 Acier Durci 0.4",
+            "compatible": false,
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "eMotionTech",
+              "product": "DUAL600"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "Standard 0.4": true,
+            "Standard 0.6": true,
+            "Standard 0.8": true,
+            "Standard 1.0 Experimental": true,
+            "Standard 1.2 Experimental": true,
+            "High temp 0.4": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "eMotionTech",
+              "product": "IDEX420"
+            },
+            {
+              "manufacturer": "eMotionTech",
+              "product": "IDEX420 Duplicate"
+            },
+            {
+              "manufacturer": "eMotionTech",
+              "product": "IDEX420 Mirror"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "IDEX420 Laiton 0.4": true,
+            "IDEX420 Laiton 0.6": true,
+            "IDEX420 Laiton 0.8": true,
+            "IDEX420 Acier Durci 0.4": false
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "retraction_amount": "extruder.0",
+    "material_type": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_brand": "extruder.0",
+    "material_diameter": "extruder.0"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "eMotionTech"
+    "material_guid": {
+      "5.13.0": "ea8a4d2d-dc52-454a-a1f3-60f50cd37df7"
     },
-    "material": {
-      "2026-02-25": "Soluble"
+    "retraction_amount": {
+      "5.13.0": 1.3
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "material_type": {
+      "5.13.0": "Soluble"
     },
-    "label": {
-      "2026-02-25": "BVOH"
+    "default_material_print_temperature": {
+      "5.13.0": 210
     },
-    "GUID": {
-      "2026-02-25": "ea8a4d2d-dc52-454a-a1f3-60f50cd37df7"
+    "material_standby_temperature": {
+      "5.13.0": 75
     },
-    "color_code": {
-      "2026-02-25": "#D5D8DC"
+    "material_brand": {
+      "5.13.0": "eMotionTech"
     },
-    "description": {
-      "2026-02-25": "Water Soluble; Good bonding to PLA, PET-G, ABS, ASA, etc."
-    },
-    "diameter": {
-      "2026-02-25": "1.75"
-    },
-    "density": {
-      "2026-02-25": "1.23"
-    },
-    "weight": {
-      "2026-02-25": "750"
-    },
-    "print temperature": {
-      "2026-02-25": "210"
-    },
-    "standby temperature": {
-      "2026-02-25": "75"
-    },
-    "retraction amount": {
-      "2026-02-25": "1.3"
+    "material_diameter": {
+      "5.13.0": 1.75
     }
   }
 }

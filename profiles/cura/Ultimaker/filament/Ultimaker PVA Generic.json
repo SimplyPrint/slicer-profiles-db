@@ -3,56 +3,216 @@
   "profile_type": "filament",
   "name": "Ultimaker PVA Generic",
   "vendor": "Ultimaker",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "add51ef2-86eb-4c39-afd5-5586564f0715",
-  "setting_id": null,
+  "setting_id": "ultimaker_pva_175",
   "renamed_from": null,
+  "filament_type": "PVA",
+  "native_id": "ultimaker_pva_175",
+  "context": {
+    "native_id": "ultimaker_pva_175",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "add51ef2-86eb-4c39-afd5-5586564f0715",
+    "brand": "Ultimaker",
+    "material_type": "PVA",
+    "color": "Generic",
+    "color_code": "#f5f2d1",
+    "description": "Water soluble support material. PVA is a matching support material for PLA and Nylon 12 CF.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "UltiMaker Method",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Method"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Method X"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "default_material_print_temperature": 210,
+          "material_standby_temperature": 160,
+          "build_volume_temperature": 60,
+          "cool_fan_speed": 0,
+          "prime_tower_enable": "=extruder_nr==support_extruder_nr or extruder_nr==raft_base_extruder_nr or extruder_nr==raft_interface_extruder_nr or extruder_nr==raft_surface_extruder_nr",
+          "support_conical_enabled": false
+        },
+        "hotends": [
+          {
+            "id": "1A",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "1XA",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "2A",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "2XA",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "1C",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "LABS",
+            "compatible": false,
+            "settings": {}
+          }
+        ]
+      },
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "UltiMaker Method XL",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Method XL"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "default_material_print_temperature": 210,
+          "material_standby_temperature": 160,
+          "build_volume_temperature": 60,
+          "default_material_bed_temperature": 60,
+          "cool_fan_speed": 0,
+          "prime_tower_enable": "=extruder_nr==support_extruder_nr or extruder_nr==raft_base_extruder_nr or extruder_nr==raft_interface_extruder_nr or extruder_nr==raft_surface_extruder_nr",
+          "support_conical_enabled": false
+        },
+        "hotends": [
+          {
+            "id": "1A",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "1XA",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "2A",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "2XA",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "1C",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "LABS",
+            "compatible": false,
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Method"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Method X"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "1A": false,
+            "1XA": false,
+            "2A": true,
+            "2XA": false,
+            "1C": false,
+            "LABS": false
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Method XL"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "1A": false,
+            "1XA": false,
+            "2A": true,
+            "2XA": false,
+            "1C": false,
+            "LABS": false
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "material_is_support_material": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_crystallinity": "extruder.0",
+    "material_brand": "extruder.0",
+    "material_diameter": "extruder.0",
+    "build_volume_temperature": "global",
+    "prime_tower_enable": "global",
+    "support_conical_enabled": "extruder.0",
+    "cool_fan_speed": "extruder.0",
+    "default_material_bed_temperature": "global"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "Ultimaker"
+    "material_guid": {
+      "5.13.0": "add51ef2-86eb-4c39-afd5-5586564f0715"
     },
-    "material": {
-      "2026-02-25": "PVA"
+    "material_is_support_material": {
+      "5.13.0": true
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "default_material_print_temperature": {
+      "5.13.0": 215
     },
-    "label": {
-      "2026-02-25": ""
+    "material_type": {
+      "5.13.0": "PVA"
     },
-    "GUID": {
-      "2026-02-25": "add51ef2-86eb-4c39-afd5-5586564f0715"
+    "material_standby_temperature": {
+      "5.13.0": 175
     },
-    "color_code": {
-      "2026-02-25": "#f5f2d1"
+    "material_crystallinity": {
+      "5.13.0": true
     },
-    "description": {
-      "2026-02-25": "Water soluble support material. PVA is a matching support material for PLA and Nylon 12 CF."
+    "material_brand": {
+      "5.13.0": "Ultimaker"
     },
-    "diameter": {
-      "2026-02-25": "1.75"
-    },
-    "density": {
-      "2026-02-25": "1.23"
-    },
-    "weight": {
-      "2026-02-25": "750"
-    },
-    "print temperature": {
-      "2026-02-25": "210"
-    },
-    "standby temperature": {
-      "2026-02-25": "160"
-    },
-    "build volume temperature": {
-      "2026-02-25": "60"
-    },
-    "print cooling": {
-      "2026-02-25": "0"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "60"
+    "material_diameter": {
+      "5.13.0": 1.75
     }
   }
 }

@@ -3,62 +3,219 @@
   "profile_type": "filament",
   "name": "BASF Ultrafuse 316L Generic",
   "vendor": "BASF",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "87cfe9c8-ea64-49c9-bf08-e4923c85fe7c",
-  "setting_id": null,
+  "setting_id": "basf_ultrafuse_316l_175",
   "renamed_from": null,
+  "filament_type": "Ultrafuse 316L",
+  "native_id": "basf_ultrafuse_316l_175",
+  "context": {
+    "native_id": "basf_ultrafuse_316l_175",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "87cfe9c8-ea64-49c9-bf08-e4923c85fe7c",
+    "brand": "BASF",
+    "material_type": "Ultrafuse 316L",
+    "color": "Generic",
+    "color_code": "#78858B",
+    "description": "Filament filled with metal powder. Debind and sointer to get final part.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "UltiMaker Method",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Method"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Method X"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "build_volume_temperature": 67
+        },
+        "hotends": [
+          {
+            "id": "1A",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "1XA",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "2A",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "2XA",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "1C",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "LABS",
+            "compatible": true,
+            "settings": {}
+          }
+        ]
+      },
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "UltiMaker Method XL",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Method XL"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "build_volume_temperature": 60,
+          "default_material_bed_temperature": 60
+        },
+        "hotends": [
+          {
+            "id": "1A",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "1XA",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "2A",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "2XA",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "1C",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "LABS",
+            "compatible": true,
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Method"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Method X"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "1A": false,
+            "1XA": false,
+            "2A": false,
+            "2XA": false,
+            "1C": false,
+            "LABS": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Method XL"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "1A": false,
+            "1XA": false,
+            "2A": false,
+            "2XA": false,
+            "1C": false,
+            "LABS": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_shrinkage_percentage_xy": "global",
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "retraction_amount": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "retraction_speed": "extruder.0",
+    "material_alternate_walls": "extruder.0",
+    "material_brand": "extruder.0",
+    "material_shrinkage_percentage_z": "global",
+    "cool_fan_speed": "extruder.0",
+    "material_diameter": "extruder.0",
+    "build_volume_temperature": "global",
+    "default_material_bed_temperature": "global"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "BASF"
+    "material_shrinkage_percentage_xy": {
+      "5.13.0": 120
     },
-    "material": {
-      "2026-02-25": "Ultrafuse 316L"
+    "material_guid": {
+      "5.13.0": "87cfe9c8-ea64-49c9-bf08-e4923c85fe7c"
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "default_material_print_temperature": {
+      "5.13.0": 245
     },
-    "label": {
-      "2026-02-25": ""
+    "material_type": {
+      "5.13.0": "Ultrafuse 316L"
     },
-    "GUID": {
-      "2026-02-25": "87cfe9c8-ea64-49c9-bf08-e4923c85fe7c"
+    "retraction_amount": {
+      "5.13.0": 0.75
     },
-    "color_code": {
-      "2026-02-25": "#78858B"
+    "material_standby_temperature": {
+      "5.13.0": 180
     },
-    "description": {
-      "2026-02-25": "Filament filled with metal powder. Debind and sointer to get final part."
+    "retraction_speed": {
+      "5.13.0": 5
     },
-    "diameter": {
-      "2026-02-25": "1.75"
+    "material_alternate_walls": {
+      "5.13.0": true
     },
-    "density": {
-      "2026-02-25": "4"
+    "material_brand": {
+      "5.13.0": "BASF"
     },
-    "weight": {
-      "2026-02-25": ""
+    "material_shrinkage_percentage_z": {
+      "5.13.0": 126
     },
-    "print temperature": {
-      "2026-02-25": "245"
+    "cool_fan_speed": {
+      "5.13.0": 0
     },
-    "standby temperature": {
-      "2026-02-25": "180"
-    },
-    "retraction amount": {
-      "2026-02-25": "0.75"
-    },
-    "print cooling": {
-      "2026-02-25": "0"
-    },
-    "retraction speed": {
-      "2026-02-25": "5"
-    },
-    "build volume temperature": {
-      "2026-02-25": "60"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "60"
+    "material_diameter": {
+      "5.13.0": 1.75
     }
   }
 }

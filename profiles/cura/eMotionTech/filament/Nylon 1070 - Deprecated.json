@@ -3,56 +3,140 @@
   "profile_type": "filament",
   "name": "Nylon 1070 - Deprecated",
   "vendor": "eMotionTech",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "e8ec7612-b626-4861-af93-56549c209bad",
-  "setting_id": null,
+  "setting_id": "emotiontech_nylon_1070",
   "renamed_from": null,
+  "filament_type": "Nylon",
+  "native_id": "emotiontech_nylon_1070",
+  "context": {
+    "native_id": "emotiontech_nylon_1070",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "e8ec7612-b626-4861-af93-56549c209bad",
+    "brand": "eMotionTech",
+    "material_type": "Nylon",
+    "color": "Generic",
+    "color_code": "#27292b",
+    "description": null,
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "eMotionTech",
+        "product": "Strateo3D",
+        "identifiers": [
+          {
+            "manufacturer": "eMotionTech",
+            "product": "Strateo3D"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "Standard 0.4",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 250,
+              "retraction_amount": 2.1
+            }
+          },
+          {
+            "id": "Standard 0.6",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 255,
+              "retraction_amount": 2.3
+            }
+          },
+          {
+            "id": "Standard 0.8",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 260,
+              "retraction_amount": 2.3
+            }
+          },
+          {
+            "id": "Standard 1.0 Experimental",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 265,
+              "retraction_amount": 2.7
+            }
+          },
+          {
+            "id": "Standard 1.2 Experimental",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 270,
+              "retraction_amount": 2.7
+            }
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "eMotionTech",
+              "product": "Strateo3D"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "Standard 0.4": true,
+            "Standard 0.6": true,
+            "Standard 0.8": true,
+            "Standard 1.0 Experimental": true,
+            "Standard 1.2 Experimental": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "retraction_amount": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "build_volume_temperature": "global",
+    "material_brand": "extruder.0",
+    "default_material_bed_temperature": "global"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "eMotionTech"
+    "material_guid": {
+      "5.13.0": "e8ec7612-b626-4861-af93-56549c209bad"
     },
-    "material": {
-      "2026-02-25": "Nylon"
+    "default_material_print_temperature": {
+      "5.13.0": 260
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "material_type": {
+      "5.13.0": "Nylon"
     },
-    "label": {
-      "2026-02-25": "Nylon 1070 - Deprecated"
+    "retraction_amount": {
+      "5.13.0": 2
     },
-    "GUID": {
-      "2026-02-25": "e8ec7612-b626-4861-af93-56549c209bad"
+    "material_standby_temperature": {
+      "5.13.0": 150
     },
-    "color_code": {
-      "2026-02-25": "#27292b"
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "description": {
-      "2026-02-25": ""
+    "build_volume_temperature": {
+      "5.13.0": 35
     },
-    "diameter": {
-      "2026-02-25": "1.75"
+    "material_brand": {
+      "5.13.0": "eMotionTech"
     },
-    "density": {
-      "2026-02-25": "1.12"
-    },
-    "weight": {
-      "2026-02-25": "1000"
-    },
-    "print temperature": {
-      "2026-02-25": "260"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "100"
-    },
-    "standby temperature": {
-      "2026-02-25": "150"
-    },
-    "retraction amount": {
-      "2026-02-25": "2"
-    },
-    "build volume temperature": {
-      "2026-02-25": "35"
+    "default_material_bed_temperature": {
+      "5.13.0": 100
     }
   }
 }

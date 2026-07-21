@@ -3,56 +3,120 @@
   "profile_type": "filament",
   "name": "Arnitel2045",
   "vendor": "DSM",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "fc67dfa2-7f71-4ca8-8ba5-dfe802fda22c",
-  "setting_id": null,
+  "setting_id": "dsm_arnitel2045_175",
   "renamed_from": null,
+  "filament_type": "TPC",
+  "native_id": "dsm_arnitel2045_175",
+  "context": {
+    "native_id": "dsm_arnitel2045_175",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "fc67dfa2-7f71-4ca8-8ba5-dfe802fda22c",
+    "brand": "DSM",
+    "material_type": "TPC",
+    "color": "Generic",
+    "color_code": "#ee51f8",
+    "description": null,
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "Cartesio bv",
+        "product": "cartesio",
+        "identifiers": [
+          {
+            "manufacturer": "Cartesio bv",
+            "product": "cartesio"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "cool_fan_speed": 40.0,
+          "material_standby_temperature": 160,
+          "retraction_speed": 20,
+          "default_material_bed_temperature": 50,
+          "default_material_print_temperature": 215
+        },
+        "hotends": [
+          {
+            "id": "0.25mm thermoplastic extruder",
+            "compatible": true,
+            "settings": {
+              "retraction_amount": 1.0
+            }
+          },
+          {
+            "id": "0.4mm thermoplastic extruder",
+            "compatible": true,
+            "settings": {
+              "retraction_amount": 1.0
+            }
+          },
+          {
+            "id": "0.8mm thermoplastic extruder",
+            "compatible": true,
+            "settings": {
+              "retraction_amount": 1.5
+            }
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Cartesio bv",
+              "product": "cartesio"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "0.25mm thermoplastic extruder": true,
+            "0.4mm thermoplastic extruder": true,
+            "0.8mm thermoplastic extruder": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "material_brand": "extruder.0",
+    "default_material_bed_temperature": "global",
+    "retraction_amount": "extruder.0",
+    "retraction_speed": "extruder.0",
+    "cool_fan_speed": "extruder.0"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "DSM"
+    "material_guid": {
+      "5.13.0": "fc67dfa2-7f71-4ca8-8ba5-dfe802fda22c"
     },
-    "material": {
-      "2026-02-25": "TPC"
+    "default_material_print_temperature": {
+      "5.13.0": 215
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "material_type": {
+      "5.13.0": "TPC"
     },
-    "label": {
-      "2026-02-25": "Arnitel2045"
+    "material_standby_temperature": {
+      "5.13.0": 160
     },
-    "GUID": {
-      "2026-02-25": "fc67dfa2-7f71-4ca8-8ba5-dfe802fda22c"
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "color_code": {
-      "2026-02-25": "#ee51f8"
+    "material_brand": {
+      "5.13.0": "DSM"
     },
-    "description": {
-      "2026-02-25": ""
-    },
-    "diameter": {
-      "2026-02-25": "1.75"
-    },
-    "density": {
-      "2026-02-25": "1.10"
-    },
-    "weight": {
-      "2026-02-25": ""
-    },
-    "print temperature": {
-      "2026-02-25": "215"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "50"
-    },
-    "standby temperature": {
-      "2026-02-25": "160"
-    },
-    "print cooling": {
-      "2026-02-25": "40.0"
-    },
-    "retraction speed": {
-      "2026-02-25": "20"
+    "default_material_bed_temperature": {
+      "5.13.0": 50
     }
   }
 }

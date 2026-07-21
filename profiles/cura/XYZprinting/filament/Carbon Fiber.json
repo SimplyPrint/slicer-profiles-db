@@ -3,56 +3,100 @@
   "profile_type": "filament",
   "name": "Carbon Fiber",
   "vendor": "XYZprinting",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "20d9036a-4bea-46a3-bfc2-9e147de5a543",
-  "setting_id": null,
+  "setting_id": "xyzprinting_carbon_fiber",
   "renamed_from": null,
+  "filament_type": "Carbon Fiber",
+  "native_id": "xyzprinting_carbon_fiber",
+  "context": {
+    "native_id": "xyzprinting_carbon_fiber",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "20d9036a-4bea-46a3-bfc2-9e147de5a543",
+    "brand": "XYZprinting",
+    "material_type": "Carbon Fiber",
+    "color": "Black",
+    "color_code": "#000000",
+    "description": "Made from a mixture of PLA (polylactic acid) and carbon fiber, our XYZ Carbon Fiber filament lets you print 3D models with better impact resistance and an exotic finish.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "XYZprinting",
+        "product": "xyzprinting_da_vinci_jr_w_pro",
+        "identifiers": [
+          {
+            "manufacturer": "XYZprinting",
+            "product": "xyzprinting_da_vinci_jr_w_pro"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "Stainless Steel 0.4mm Nozzle",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 205,
+              "default_material_bed_temperature": 45
+            }
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "XYZprinting",
+              "product": "xyzprinting_da_vinci_jr_w_pro"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "Stainless Steel 0.4mm Nozzle": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "material_brand": "extruder.0",
+    "cool_fan_speed": "extruder.0",
+    "default_material_bed_temperature": "global"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "XYZprinting"
+    "material_guid": {
+      "5.13.0": "20d9036a-4bea-46a3-bfc2-9e147de5a543"
     },
-    "material": {
-      "2026-02-25": "Carbon Fiber"
+    "default_material_print_temperature": {
+      "5.13.0": 215.0
     },
-    "color": {
-      "2026-02-25": "Black"
+    "material_type": {
+      "5.13.0": "Carbon Fiber"
     },
-    "label": {
-      "2026-02-25": "Carbon Fiber"
+    "material_standby_temperature": {
+      "5.13.0": 215
     },
-    "GUID": {
-      "2026-02-25": "20d9036a-4bea-46a3-bfc2-9e147de5a543"
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "color_code": {
-      "2026-02-25": "#000000"
+    "material_brand": {
+      "5.13.0": "XYZprinting"
     },
-    "description": {
-      "2026-02-25": "Made from a mixture of PLA (polylactic acid) and carbon fiber, our XYZ Carbon Fiber filament lets you print 3D models with better impact resistance and an exotic finish."
+    "cool_fan_speed": {
+      "5.13.0": 100.0
     },
-    "diameter": {
-      "2026-02-25": "1.75"
-    },
-    "density": {
-      "2026-02-25": "1.20"
-    },
-    "weight": {
-      "2026-02-25": "600"
-    },
-    "print cooling": {
-      "2026-02-25": "100.0"
-    },
-    "print temperature": {
-      "2026-02-25": "215.0"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "45"
-    },
-    "standby temperature": {
-      "2026-02-25": "215"
-    },
-    "hardware compatible": {
-      "2026-02-25": "yes"
+    "default_material_bed_temperature": {
+      "5.13.0": 45
     }
   }
 }

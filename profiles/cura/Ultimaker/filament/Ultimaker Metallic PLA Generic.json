@@ -3,59 +3,155 @@
   "profile_type": "filament",
   "name": "Ultimaker Metallic PLA Generic",
   "vendor": "Ultimaker",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "3fac1543-dd0c-462d-9cbc-d94137d43999",
-  "setting_id": null,
+  "setting_id": "ultimaker_metallic_pla_175",
   "renamed_from": null,
+  "filament_type": "Metallic PLA",
+  "native_id": "ultimaker_metallic_pla_175",
+  "context": {
+    "native_id": "ultimaker_metallic_pla_175",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "3fac1543-dd0c-462d-9cbc-d94137d43999",
+    "brand": "Ultimaker",
+    "material_type": "Metallic PLA",
+    "color": "Generic",
+    "color_code": "#80643f",
+    "description": "Fast, safe and reliable printing. Metallic PLA is ideal for the fast and reliable printing of parts and prototypes with a shiny surface quality.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "UltiMaker Sketch",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Sketch"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Sketch Large"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "default_material_print_temperature": 230,
+          "cool_fan_speed": 100
+        },
+        "hotends": [
+          {
+            "id": "0.4mm",
+            "compatible": true,
+            "settings": {}
+          }
+        ]
+      },
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "UltiMaker Sketch Sprint",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "UltiMaker Sketch Sprint"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "default_material_print_temperature": 230,
+          "material_standby_temperature": 180,
+          "cool_fan_speed": 100,
+          "default_material_bed_temperature": 55,
+          "material_bed_temperature_layer_0": 60,
+          "cool_min_temperature": 220,
+          "material_print_temperature_layer_0": 235
+        },
+        "hotends": [
+          {
+            "id": "0.4mm",
+            "compatible": true,
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Sketch"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Sketch Large"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "0.4mm": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "UltiMaker Sketch Sprint"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "0.4mm": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "material_adhesion_tendency": "extruder.0",
+    "material_surface_energy": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_diameter": "extruder.0",
+    "material_brand": "extruder.0",
+    "cool_fan_speed": "extruder.0",
+    "default_material_bed_temperature": "global",
+    "material_bed_temperature_layer_0": "global",
+    "material_print_temperature_layer_0": "extruder.0",
+    "cool_min_temperature": "extruder.0",
+    "material_standby_temperature": "extruder.0"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "Ultimaker"
+    "material_guid": {
+      "5.13.0": "3fac1543-dd0c-462d-9cbc-d94137d43999"
     },
-    "material": {
-      "2026-02-25": "Metallic PLA"
+    "material_adhesion_tendency": {
+      "5.13.0": 0
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "material_surface_energy": {
+      "5.13.0": 100
     },
-    "label": {
-      "2026-02-25": ""
+    "default_material_print_temperature": {
+      "5.13.0": 230
     },
-    "GUID": {
-      "2026-02-25": "3fac1543-dd0c-462d-9cbc-d94137d43999"
+    "material_type": {
+      "5.13.0": "Metallic PLA"
     },
-    "color_code": {
-      "2026-02-25": "#80643f"
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "description": {
-      "2026-02-25": "Fast, safe and reliable printing. Metallic PLA is ideal for the fast and reliable printing of parts and prototypes with a shiny surface quality."
+    "material_brand": {
+      "5.13.0": "Ultimaker"
     },
-    "diameter": {
-      "2026-02-25": "1.75"
+    "cool_fan_speed": {
+      "5.13.0": 100
     },
-    "density": {
-      "2026-02-25": "1.24"
-    },
-    "weight": {
-      "2026-02-25": "750"
-    },
-    "print temperature": {
-      "2026-02-25": "230"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "55"
-    },
-    "print cooling": {
-      "2026-02-25": "100"
-    },
-    "adhesion tendency": {
-      "2026-02-25": "0"
-    },
-    "surface energy": {
-      "2026-02-25": "100"
-    },
-    "standby temperature": {
-      "2026-02-25": "180"
+    "default_material_bed_temperature": {
+      "5.13.0": 55
     }
   }
 }

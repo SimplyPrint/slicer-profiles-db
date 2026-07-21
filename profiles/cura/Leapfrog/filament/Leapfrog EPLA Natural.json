@@ -3,53 +3,103 @@
   "profile_type": "filament",
   "name": "Leapfrog EPLA Natural",
   "vendor": "Leapfrog",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "98d4d76c-3b31-46be-979b-72166fce5938",
-  "setting_id": null,
+  "setting_id": "leapfrog_epla_natural",
   "renamed_from": null,
+  "filament_type": "EPLA",
+  "native_id": "leapfrog_epla_natural",
+  "context": {
+    "native_id": "leapfrog_epla_natural",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "98d4d76c-3b31-46be-979b-72166fce5938",
+    "brand": "Leapfrog",
+    "material_type": "EPLA",
+    "color": "Natural",
+    "color_code": "#E9E6E6",
+    "description": "Fast, safe and reliable printing. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "Leapfrog B.V.",
+        "product": "Leapfrog Bolt Pro",
+        "identifiers": [
+          {
+            "manufacturer": "Leapfrog B.V.",
+            "product": "Leapfrog Bolt Pro"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "Brass 0.4",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "NozzleX 0.4",
+            "compatible": true,
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Leapfrog B.V.",
+              "product": "Leapfrog Bolt Pro"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "Brass 0.4": true,
+            "NozzleX 0.4": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "material_surface_energy": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "material_brand": "extruder.0",
+    "default_material_bed_temperature": "global"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "Leapfrog"
+    "material_guid": {
+      "5.13.0": "98d4d76c-3b31-46be-979b-72166fce5938"
     },
-    "material": {
-      "2026-02-25": "EPLA"
+    "material_surface_energy": {
+      "5.13.0": 100
     },
-    "color": {
-      "2026-02-25": "Natural"
+    "default_material_print_temperature": {
+      "5.13.0": 210
     },
-    "label": {
-      "2026-02-25": ""
+    "material_type": {
+      "5.13.0": "EPLA"
     },
-    "GUID": {
-      "2026-02-25": "98d4d76c-3b31-46be-979b-72166fce5938"
+    "material_standby_temperature": {
+      "5.13.0": 210
     },
-    "color_code": {
-      "2026-02-25": "#E9E6E6"
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "description": {
-      "2026-02-25": "Fast, safe and reliable printing. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality."
+    "material_brand": {
+      "5.13.0": "Leapfrog"
     },
-    "diameter": {
-      "2026-02-25": "1.75"
-    },
-    "density": {
-      "2026-02-25": "1.24"
-    },
-    "weight": {
-      "2026-02-25": ""
-    },
-    "heated bed temperature": {
-      "2026-02-25": "40.0"
-    },
-    "print temperature": {
-      "2026-02-25": "210"
-    },
-    "standby temperature": {
-      "2026-02-25": "210"
-    },
-    "surface energy": {
-      "2026-02-25": "100"
+    "default_material_bed_temperature": {
+      "5.13.0": 40.0
     }
   }
 }

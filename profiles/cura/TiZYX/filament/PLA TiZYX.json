@@ -3,59 +3,160 @@
   "profile_type": "filament",
   "name": "PLA TiZYX",
   "vendor": "TiZYX",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "2b61d300-bf30-4780-a9ae-40c86d865f87",
-  "setting_id": null,
+  "setting_id": "tizyx_pla",
   "renamed_from": null,
+  "filament_type": "PLA",
+  "native_id": "tizyx_pla",
+  "context": {
+    "native_id": "tizyx_pla",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "2b61d300-bf30-4780-a9ae-40c86d865f87",
+    "brand": "TiZYX",
+    "material_type": "PLA",
+    "color": "toutes couleurs",
+    "color_code": "#20FFFF",
+    "description": "Fast, safe and reliable printing. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "Cartesio bv",
+        "product": "cartesio",
+        "identifiers": [
+          {
+            "manufacturer": "Cartesio bv",
+            "product": "cartesio"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "default_material_bed_temperature": 50,
+          "default_material_print_temperature": 185,
+          "material_standby_temperature": 160,
+          "cool_fan_speed": 40.0,
+          "retraction_speed": 40,
+          "retraction_amount": 1.0
+        },
+        "hotends": [
+          {
+            "id": "0.4mm thermoplastic extruder",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "0.25mm thermoplastic extruder",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "0.8mm thermoplastic extruder",
+            "compatible": true,
+            "settings": {
+              "retraction_amount": 1.5
+            }
+          }
+        ]
+      },
+      {
+        "manufacturer": "IMADE3D",
+        "product": "IMADE3D JellyBOX",
+        "identifiers": [
+          {
+            "manufacturer": "IMADE3D",
+            "product": "IMADE3D JellyBOX"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "default_material_bed_temperature": 55,
+          "default_material_print_temperature": 210,
+          "material_standby_temperature": 175,
+          "retraction_speed": 10.0,
+          "retraction_amount": 1.0
+        },
+        "hotends": [
+          {
+            "id": "0.4 mm",
+            "compatible": true,
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Cartesio bv",
+              "product": "cartesio"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "0.4mm thermoplastic extruder": true,
+            "0.25mm thermoplastic extruder": true,
+            "0.8mm thermoplastic extruder": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "IMADE3D",
+              "product": "IMADE3D JellyBOX"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "0.4 mm": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "retraction_amount": "extruder.0",
+    "retraction_speed": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "material_brand": "extruder.0",
+    "default_material_bed_temperature": "global",
+    "cool_fan_speed": "extruder.0"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "TiZYX"
+    "material_guid": {
+      "5.13.0": "2b61d300-bf30-4780-a9ae-40c86d865f87"
     },
-    "material": {
-      "2026-02-25": "PLA"
+    "default_material_print_temperature": {
+      "5.13.0": 200
     },
-    "color": {
-      "2026-02-25": "toutes couleurs"
+    "material_type": {
+      "5.13.0": "PLA"
     },
-    "label": {
-      "2026-02-25": "PLA TiZYX"
+    "retraction_amount": {
+      "5.13.0": 5
     },
-    "GUID": {
-      "2026-02-25": "2b61d300-bf30-4780-a9ae-40c86d865f87"
+    "retraction_speed": {
+      "5.13.0": 50
     },
-    "color_code": {
-      "2026-02-25": "#20FFFF"
+    "material_standby_temperature": {
+      "5.13.0": 200.0
     },
-    "description": {
-      "2026-02-25": "Fast, safe and reliable printing. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality."
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "diameter": {
-      "2026-02-25": "1.75"
+    "material_brand": {
+      "5.13.0": "TiZYX"
     },
-    "density": {
-      "2026-02-25": "1.24"
-    },
-    "weight": {
-      "2026-02-25": ""
-    },
-    "retraction speed": {
-      "2026-02-25": "10.0"
-    },
-    "print temperature": {
-      "2026-02-25": "210"
-    },
-    "standby temperature": {
-      "2026-02-25": "175"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "55"
-    },
-    "retraction amount": {
-      "2026-02-25": "1.0"
-    },
-    "print cooling": {
-      "2026-02-25": "40.0"
+    "default_material_bed_temperature": {
+      "5.13.0": 60
     }
   }
 }

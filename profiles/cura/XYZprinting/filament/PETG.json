@@ -3,56 +3,134 @@
   "profile_type": "filament",
   "name": "PETG",
   "vendor": "XYZprinting",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "17668dfb-eb1c-46a5-a513-bdb7c06959p3",
-  "setting_id": null,
+  "setting_id": "xyzprinting_petg",
   "renamed_from": null,
+  "filament_type": "PETG",
+  "native_id": "xyzprinting_petg",
+  "context": {
+    "native_id": "xyzprinting_petg",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "17668dfb-eb1c-46a5-a513-bdb7c06959p3",
+    "brand": "XYZprinting",
+    "material_type": "PETG",
+    "color": "Nature White",
+    "color_code": "#FFFFFF",
+    "description": "XYZprinting's PETG filament is a versatile material with high transparency and high impact resistance. It's easy to print with, tough, warp resistant, and recyclable.\n\n* PETG cannot be used with 0.3 mm nozzles on Jr. Series printers.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "XYZprinting",
+        "product": "xyzprinting_da_vinci_jr_pro_xplus",
+        "identifiers": [
+          {
+            "manufacturer": "XYZprinting",
+            "product": "xyzprinting_da_vinci_jr_pro_xplus"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "Copper 0.4mm Nozzle",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 220.0,
+              "default_material_bed_temperature": 60
+            }
+          }
+        ]
+      },
+      {
+        "manufacturer": "XYZprinting",
+        "product": "xyzprinting_da_vinci_1p0_pro",
+        "identifiers": [
+          {
+            "manufacturer": "XYZprinting",
+            "product": "xyzprinting_da_vinci_1p0_pro"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "Copper 0.4mm Nozzle",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 235,
+              "default_material_bed_temperature": 45
+            }
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "XYZprinting",
+              "product": "xyzprinting_da_vinci_jr_pro_xplus"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "Copper 0.4mm Nozzle": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "XYZprinting",
+              "product": "xyzprinting_da_vinci_1p0_pro"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "Copper 0.4mm Nozzle": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "material_brand": "extruder.0",
+    "cool_fan_speed": "extruder.0",
+    "default_material_bed_temperature": "global"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "XYZprinting"
+    "material_guid": {
+      "5.13.0": "17668dfb-eb1c-46a5-a513-bdb7c06959p3"
     },
-    "material": {
-      "2026-02-25": "PETG"
+    "default_material_print_temperature": {
+      "5.13.0": 220.0
     },
-    "color": {
-      "2026-02-25": "Nature White"
+    "material_type": {
+      "5.13.0": "PETG"
     },
-    "label": {
-      "2026-02-25": "PETG"
+    "material_standby_temperature": {
+      "5.13.0": 220
     },
-    "GUID": {
-      "2026-02-25": "17668dfb-eb1c-46a5-a513-bdb7c06959p3"
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "color_code": {
-      "2026-02-25": "#FFFFFF"
+    "material_brand": {
+      "5.13.0": "XYZprinting"
     },
-    "description": {
-      "2026-02-25": "XYZprinting's PETG filament is a versatile material with high transparency and high impact resistance. It's easy to print with, tough, warp resistant, and recyclable.\n\n* PETG cannot be used with 0.3 mm nozzles on Jr. Series printers."
+    "cool_fan_speed": {
+      "5.13.0": 100.0
     },
-    "diameter": {
-      "2026-02-25": "1.75"
-    },
-    "density": {
-      "2026-02-25": "1.28"
-    },
-    "weight": {
-      "2026-02-25": "600"
-    },
-    "print cooling": {
-      "2026-02-25": "100.0"
-    },
-    "print temperature": {
-      "2026-02-25": "220.0"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "45"
-    },
-    "standby temperature": {
-      "2026-02-25": "220"
-    },
-    "hardware compatible": {
-      "2026-02-25": "yes"
+    "default_material_bed_temperature": {
+      "5.13.0": 45
     }
   }
 }

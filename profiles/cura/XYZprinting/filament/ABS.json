@@ -3,56 +3,134 @@
   "profile_type": "filament",
   "name": "ABS",
   "vendor": "XYZprinting",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "f1912a12-0129-46e0-b55f-f168950ce08e",
-  "setting_id": null,
+  "setting_id": "xyzprinting_abs",
   "renamed_from": null,
+  "filament_type": "ABS",
+  "native_id": "xyzprinting_abs",
+  "context": {
+    "native_id": "xyzprinting_abs",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "f1912a12-0129-46e0-b55f-f168950ce08e",
+    "brand": "XYZprinting",
+    "material_type": "ABS",
+    "color": "White",
+    "color_code": "#ffffff",
+    "description": "XYZprinting produces high quality, long lasting, ABS filaments that offer better impact resistance making it suitable for external components or model parts. Additionally, you can easily use common modeling tools to decorate, assemble or connect different parts to create your next big project.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "XYZprinting",
+        "product": "xyzprinting_da_vinci_jr_pro_xplus",
+        "identifiers": [
+          {
+            "manufacturer": "XYZprinting",
+            "product": "xyzprinting_da_vinci_jr_pro_xplus"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "Copper 0.4mm Nozzle",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 240,
+              "default_material_bed_temperature": 70
+            }
+          }
+        ]
+      },
+      {
+        "manufacturer": "XYZprinting",
+        "product": "xyzprinting_da_vinci_1p0_pro",
+        "identifiers": [
+          {
+            "manufacturer": "XYZprinting",
+            "product": "xyzprinting_da_vinci_1p0_pro"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "Copper 0.4mm Nozzle",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 210,
+              "default_material_bed_temperature": 90
+            }
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "XYZprinting",
+              "product": "xyzprinting_da_vinci_jr_pro_xplus"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "Copper 0.4mm Nozzle": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "XYZprinting",
+              "product": "xyzprinting_da_vinci_1p0_pro"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "Copper 0.4mm Nozzle": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_diameter": "extruder.0",
+    "material_brand": "extruder.0",
+    "cool_fan_speed": "extruder.0",
+    "default_material_bed_temperature": "global"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "XYZprinting"
+    "material_guid": {
+      "5.13.0": "f1912a12-0129-46e0-b55f-f168950ce08e"
     },
-    "material": {
-      "2026-02-25": "ABS"
+    "default_material_print_temperature": {
+      "5.13.0": 240
     },
-    "color": {
-      "2026-02-25": "White"
+    "material_type": {
+      "5.13.0": "ABS"
     },
-    "label": {
-      "2026-02-25": "ABS"
+    "material_standby_temperature": {
+      "5.13.0": 240
     },
-    "GUID": {
-      "2026-02-25": "f1912a12-0129-46e0-b55f-f168950ce08e"
+    "material_diameter": {
+      "5.13.0": 1.75
     },
-    "color_code": {
-      "2026-02-25": "#ffffff"
+    "material_brand": {
+      "5.13.0": "XYZprinting"
     },
-    "description": {
-      "2026-02-25": "XYZprinting produces high quality, long lasting, ABS filaments that offer better impact resistance making it suitable for external components or model parts. Additionally, you can easily use common modeling tools to decorate, assemble or connect different parts to create your next big project."
+    "cool_fan_speed": {
+      "5.13.0": 100
     },
-    "diameter": {
-      "2026-02-25": "1.75"
-    },
-    "density": {
-      "2026-02-25": "1.02"
-    },
-    "weight": {
-      "2026-02-25": "600"
-    },
-    "print cooling": {
-      "2026-02-25": "100"
-    },
-    "print temperature": {
-      "2026-02-25": "240"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "90"
-    },
-    "standby temperature": {
-      "2026-02-25": "240"
-    },
-    "hardware compatible": {
-      "2026-02-25": "yes"
+    "default_material_bed_temperature": {
+      "5.13.0": 90
     }
   }
 }

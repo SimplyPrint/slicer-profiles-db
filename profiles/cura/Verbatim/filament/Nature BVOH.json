@@ -3,56 +3,86 @@
   "profile_type": "filament",
   "name": "Nature BVOH",
   "vendor": "Verbatim",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "c860a504-f47c-4c57-a251-1e2ecd79600a",
-  "setting_id": null,
+  "setting_id": "verbatim_bvoh_175",
   "renamed_from": null,
+  "filament_type": "BVOH",
+  "native_id": "verbatim_bvoh_175",
+  "context": {
+    "native_id": "verbatim_bvoh_175",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "c860a504-f47c-4c57-a251-1e2ecd79600a",
+    "brand": "Verbatim",
+    "material_type": "BVOH",
+    "color": "Generic",
+    "color_code": "#a32bcc",
+    "description": "Water soluble support material. BVOH is a matching support material for PLA, CPE and PET.",
+    "diameter": 1.75,
+    "machine_overrides": [
+      {
+        "manufacturer": "WEEDO",
+        "product": "Weedo X40",
+        "identifiers": [
+          {
+            "manufacturer": "WEEDO",
+            "product": "Weedo X40"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "material_standby_temperature": 175,
+          "default_material_bed_temperature": 60,
+          "retraction_speed": 45,
+          "retraction_amount": 5
+        },
+        "hotends": []
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "WEEDO",
+              "product": "Weedo X40"
+            }
+          ],
+          "compatible": true,
+          "hotends": {}
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_brand": "extruder.0",
+    "material_diameter": "extruder.0",
+    "retraction_amount": "extruder.0",
+    "default_material_bed_temperature": "global",
+    "retraction_speed": "extruder.0",
+    "material_standby_temperature": "extruder.0"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "Verbatim"
+    "material_guid": {
+      "5.13.0": "c860a504-f47c-4c57-a251-1e2ecd79600a"
     },
-    "material": {
-      "2026-02-25": "BVOH"
+    "default_material_print_temperature": {
+      "5.13.0": 210
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "material_type": {
+      "5.13.0": "BVOH"
     },
-    "label": {
-      "2026-02-25": "Nature BVOH"
+    "material_brand": {
+      "5.13.0": "Verbatim"
     },
-    "GUID": {
-      "2026-02-25": "c860a504-f47c-4c57-a251-1e2ecd79600a"
-    },
-    "color_code": {
-      "2026-02-25": "#a32bcc"
-    },
-    "description": {
-      "2026-02-25": "Water soluble support material. BVOH is a matching support material for PLA, CPE and PET."
-    },
-    "diameter": {
-      "2026-02-25": "1.75"
-    },
-    "density": {
-      "2026-02-25": "1.14"
-    },
-    "weight": {
-      "2026-02-25": "500"
-    },
-    "print temperature": {
-      "2026-02-25": "210"
-    },
-    "standby temperature": {
-      "2026-02-25": "175"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "60"
-    },
-    "retraction speed": {
-      "2026-02-25": "45"
-    },
-    "retraction amount": {
-      "2026-02-25": "5"
+    "material_diameter": {
+      "5.13.0": 1.75
     }
   }
 }

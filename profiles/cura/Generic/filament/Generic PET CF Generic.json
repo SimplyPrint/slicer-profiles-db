@@ -3,125 +3,546 @@
   "profile_type": "filament",
   "name": "Generic PET CF Generic",
   "vendor": "Generic",
-  "first_seen": "2026-02-25",
-  "last_seen": "2026-03-04",
+  "first_seen": "5.13.0",
+  "last_seen": "5.13.0",
   "filament_id": "64d44410-be10-428c-8891-f0ae47ea1734",
-  "setting_id": null,
+  "setting_id": "generic_petcf",
   "renamed_from": null,
+  "filament_type": "PET CF",
+  "native_id": "generic_petcf",
+  "context": {
+    "native_id": "generic_petcf",
+    "source_kind": "material",
+    "resource_version": "5.13.0",
+    "guid": "64d44410-be10-428c-8891-f0ae47ea1734",
+    "brand": "Generic",
+    "material_type": "PET CF",
+    "color": "Generic",
+    "color_code": "#888888",
+    "description": "Generic PET CF profile. The data in this file may not be correct for your specific machine.",
+    "diameter": 2.85,
+    "machine_overrides": [
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "Ultimaker S3",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S3"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "AA 0.25",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "DD 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "CC 0.4",
+            "compatible": true,
+            "settings": {
+              "cool_min_layer_time": 3
+            }
+          },
+          {
+            "id": "CC 0.6",
+            "compatible": true,
+            "settings": {}
+          }
+        ]
+      },
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "Ultimaker S5",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S5"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S6"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S7"
+          },
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker S8"
+          }
+        ],
+        "compatible": true,
+        "settings": {},
+        "hotends": [
+          {
+            "id": "AA 0.25",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "DD 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA+ 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "CC 0.4",
+            "compatible": true,
+            "settings": {
+              "cool_min_layer_time": 3
+            }
+          },
+          {
+            "id": "CC 0.6",
+            "compatible": true,
+            "settings": {}
+          },
+          {
+            "id": "CC+ 0.4",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 280,
+              "material_standby_temperature": 255,
+              "material_no_load_move_factor": 1.0,
+              "cool_fan_speed": 25,
+              "material_adhesion_tendency": 4,
+              "material_shrinkage_percentage": 100.15,
+              "retraction_amount": 8
+            }
+          },
+          {
+            "id": "CC+ 0.6",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 280,
+              "material_standby_temperature": 255,
+              "material_no_load_move_factor": 1.0,
+              "cool_fan_speed": 25,
+              "material_adhesion_tendency": 4,
+              "material_shrinkage_percentage": 100.15,
+              "retraction_amount": 8
+            }
+          }
+        ]
+      },
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "Ultimaker Factor 4",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker Factor 4"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "build_volume_temperature": 50,
+          "cool_fan_speed": 20,
+          "material_anti_ooze_retracted_position": -14,
+          "material_break_preparation_retracted_position": -14,
+          "material_break_preparation_temperature": 280,
+          "material_no_load_move_factor": 1,
+          "material_flow": 100,
+          "retraction_amount": 4
+        },
+        "hotends": [
+          {
+            "id": "AA 0.25",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "DD 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "CC 0.4",
+            "compatible": true,
+            "settings": {
+              "cool_min_layer_time": 3,
+              "default_material_print_temperature": 280
+            }
+          },
+          {
+            "id": "CC 0.6",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 280
+            }
+          },
+          {
+            "id": "HT 0.6",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 280
+            }
+          }
+        ]
+      },
+      {
+        "manufacturer": "Ultimaker B.V.",
+        "product": "Ultimaker Factor 4+",
+        "identifiers": [
+          {
+            "manufacturer": "Ultimaker B.V.",
+            "product": "Ultimaker Factor 4+"
+          }
+        ],
+        "compatible": true,
+        "settings": {
+          "build_volume_temperature": 50,
+          "cool_fan_speed": 20,
+          "material_anti_ooze_retracted_position": -14,
+          "material_break_preparation_retracted_position": -14,
+          "material_break_preparation_temperature": 280,
+          "material_no_load_move_factor": 1,
+          "retraction_amount": 4,
+          "material_pressure_advance_factor": 0.15
+        },
+        "hotends": [
+          {
+            "id": "AA 0.25",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "AA 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "BB 0.8",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "DD 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "CC 0.4",
+            "compatible": true,
+            "settings": {
+              "cool_min_layer_time": 3,
+              "default_material_print_temperature": 280
+            }
+          },
+          {
+            "id": "CC 0.6",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 290
+            }
+          },
+          {
+            "id": "HT 0.6",
+            "compatible": true,
+            "settings": {
+              "default_material_print_temperature": 290
+            }
+          },
+          {
+            "id": "AA+ 0.4",
+            "compatible": false,
+            "settings": {}
+          },
+          {
+            "id": "CC+ 0.6",
+            "compatible": true,
+            "settings": {
+              "retraction_amount": 3,
+              "default_material_print_temperature": 290
+            }
+          }
+        ]
+      }
+    ],
+    "compatibility": {
+      "default": true,
+      "machines": [
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S3"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "AA 0.25": false,
+            "AA 0.4": false,
+            "AA 0.8": false,
+            "BB 0.4": false,
+            "BB 0.8": false,
+            "DD 0.4": false,
+            "CC 0.4": true,
+            "CC 0.6": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S5"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S6"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S7"
+            },
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker S8"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "AA 0.25": false,
+            "AA 0.4": false,
+            "AA 0.8": false,
+            "BB 0.4": false,
+            "BB 0.8": false,
+            "DD 0.4": false,
+            "AA+ 0.4": false,
+            "CC 0.4": true,
+            "CC 0.6": true,
+            "CC+ 0.4": true,
+            "CC+ 0.6": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker Factor 4"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "AA 0.25": false,
+            "AA 0.4": false,
+            "AA 0.8": false,
+            "BB 0.4": false,
+            "BB 0.8": false,
+            "DD 0.4": false,
+            "CC 0.4": true,
+            "CC 0.6": true,
+            "HT 0.6": true
+          }
+        },
+        {
+          "identifiers": [
+            {
+              "manufacturer": "Ultimaker B.V.",
+              "product": "Ultimaker Factor 4+"
+            }
+          ],
+          "compatible": true,
+          "hotends": {
+            "AA 0.25": false,
+            "AA 0.4": false,
+            "AA 0.8": false,
+            "BB 0.4": false,
+            "BB 0.8": false,
+            "DD 0.4": false,
+            "CC 0.4": true,
+            "CC 0.6": true,
+            "HT 0.6": true,
+            "AA+ 0.4": false,
+            "CC+ 0.6": true
+          }
+        }
+      ]
+    }
+  },
+  "setting_scopes": {
+    "material_break_speed": "extruder.0",
+    "retraction_amount": "extruder.0",
+    "material_maximum_park_duration": "extruder.0",
+    "build_volume_temperature": "global",
+    "default_material_bed_temperature": "global",
+    "material_break_retracted_position": "extruder.0",
+    "material_adhesion_tendency": "extruder.0",
+    "material_guid": "extruder.0",
+    "default_material_print_temperature": "extruder.0",
+    "material_type": "extruder.0",
+    "material_anti_ooze_retraction_speed": "extruder.0",
+    "material_flow": "extruder.0",
+    "material_standby_temperature": "extruder.0",
+    "material_break_temperature": "extruder.0",
+    "material_break_preparation_retracted_position": "extruder.0",
+    "cool_fan_speed": "extruder.0",
+    "material_brand": "extruder.0",
+    "material_anti_ooze_retracted_position": "extruder.0",
+    "material_surface_energy": "extruder.0",
+    "material_break_preparation_temperature": "extruder.0",
+    "material_flush_purge_length": "extruder.0",
+    "material_break_preparation_speed": "extruder.0",
+    "material_no_load_move_factor": "extruder.0",
+    "material_diameter": "extruder.0",
+    "cool_min_layer_time": "extruder.0",
+    "material_shrinkage_percentage": "global",
+    "material_pressure_advance_factor": "extruder.0"
+  },
   "settings": {
-    "brand": {
-      "2026-02-25": "Generic"
+    "material_break_speed": {
+      "5.13.0": 50
     },
-    "material": {
-      "2026-02-25": "PET CF"
+    "retraction_amount": {
+      "5.13.0": 10
     },
-    "color": {
-      "2026-02-25": "Generic"
+    "material_maximum_park_duration": {
+      "5.13.0": 7200
     },
-    "label": {
-      "2026-02-25": ""
+    "build_volume_temperature": {
+      "5.13.0": 37
     },
-    "GUID": {
-      "2026-02-25": "64d44410-be10-428c-8891-f0ae47ea1734"
+    "default_material_bed_temperature": {
+      "5.13.0": 80
     },
-    "color_code": {
-      "2026-02-25": "#888888"
+    "material_break_retracted_position": {
+      "5.13.0": -50
     },
-    "description": {
-      "2026-02-25": "Generic PET CF profile. The data in this file may not be correct for your specific machine."
+    "material_adhesion_tendency": {
+      "5.13.0": 1
     },
-    "diameter": {
-      "2026-02-25": "2.85"
+    "material_guid": {
+      "5.13.0": "64d44410-be10-428c-8891-f0ae47ea1734"
     },
-    "density": {
-      "2026-02-25": "1.39"
+    "default_material_print_temperature": {
+      "5.13.0": 270
     },
-    "weight": {
-      "2026-02-25": ""
+    "material_type": {
+      "5.13.0": "PET CF"
     },
-    "anti ooze retract position": {
-      "2026-02-25": "-14"
+    "material_anti_ooze_retraction_speed": {
+      "5.13.0": 50
     },
-    "anti ooze retract speed": {
-      "2026-02-25": "50"
+    "material_flow": {
+      "5.13.0": 95
     },
-    "break preparation position": {
-      "2026-02-25": "-14"
+    "material_standby_temperature": {
+      "5.13.0": 165
     },
-    "break preparation speed": {
-      "2026-02-25": "50"
+    "material_break_temperature": {
+      "5.13.0": 265
     },
-    "break preparation temperature": {
-      "2026-02-25": "280"
+    "material_break_preparation_retracted_position": {
+      "5.13.0": -16
     },
-    "break position": {
-      "2026-02-25": "-50"
+    "cool_fan_speed": {
+      "5.13.0": 10
     },
-    "break speed": {
-      "2026-02-25": "50"
+    "material_brand": {
+      "5.13.0": "Generic"
     },
-    "break temperature": {
-      "2026-02-25": "265"
+    "material_anti_ooze_retracted_position": {
+      "5.13.0": -16
     },
-    "pressure release dwell time": {
-      "2026-02-25": "50"
+    "material_surface_energy": {
+      "5.13.0": 100
     },
-    "dwell time before break preparation move": {
-      "2026-02-25": "0"
+    "material_break_preparation_temperature": {
+      "5.13.0": 265
     },
-    "end of print purge volume": {
-      "2026-02-25": "0"
+    "material_flush_purge_length": {
+      "5.13.0": 60
     },
-    "end of filament purge volume": {
-      "2026-02-25": "0"
+    "material_break_preparation_speed": {
+      "5.13.0": 50
     },
-    "flush purge length": {
-      "2026-02-25": "60"
+    "material_no_load_move_factor": {
+      "5.13.0": 0.94
     },
-    "maximum park duration": {
-      "2026-02-25": "7200"
-    },
-    "no load move factor": {
-      "2026-02-25": "1"
-    },
-    "print temperature": {
-      "2026-02-25": "270"
-    },
-    "standby temperature": {
-      "2026-02-25": "165"
-    },
-    "heated bed temperature": {
-      "2026-02-25": "80"
-    },
-    "build volume temperature": {
-      "2026-02-25": "50"
-    },
-    "print cooling": {
-      "2026-02-25": "20"
-    },
-    "retraction amount": {
-      "2026-02-25": "4"
-    },
-    "adhesion tendency": {
-      "2026-02-25": "1"
-    },
-    "surface energy": {
-      "2026-02-25": "100"
-    },
-    "relative extrusion": {
-      "2026-02-25": "1.0"
-    },
-    "retract compensation": {
-      "2026-02-25": "0"
-    },
-    "different material purge volume": {
-      "2026-02-25": "204.16"
-    },
-    "same material purge volume": {
-      "2026-02-25": "51.04"
-    },
-    "purge speed coefficient": {
-      "2026-02-25": "40"
+    "material_diameter": {
+      "5.13.0": 2.85
     }
   }
 }
