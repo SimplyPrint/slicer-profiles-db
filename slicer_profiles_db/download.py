@@ -82,7 +82,10 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
     SlicerType.CURA: SourceConfig(
         slicer=SlicerType.CURA,
         github_repo="Ultimaker/fdm_materials",
-        branch="master",
+        # Keep resources in lock-step with the packaged CuraEngine.  Cura
+        # definition setting versions are not forward-compatible by contract.
+        tag_pattern=r"^5\.13\.0$",
+        min_version="5.13.0",
         additional_repos=["Ultimaker/cura"],
     ),
     SlicerType.ELEGOOSLICER: SourceConfig(
@@ -213,7 +216,7 @@ def download_and_extract(
         _extract_repo(
             extra_repo,
             tag_version,
-            branch or "main",
+            branch,
             config.profile_path_in_repo,
             config.profile_type_dirs,
             slicer_output,
@@ -300,14 +303,25 @@ def _extract_repo(
         # Build file patterns based on config properties
         if config.ini_bundle:
             # INI-bundle slicers (PrusaSlicer, SuperSlicer)
-            pattern = re.compile(r".*\.(ini|idx|stl|svg|png|json)$")
+            pattern = re.compile(
+                r".*\.(ini|idx|stl|obj|3mf|svg|png|jpe?g|json)$",
+                re.IGNORECASE,
+            )
         elif config.slicer == SlicerType.CURA:
             if "fdm_materials" in repo:
                 pattern = re.compile(r".*\.fdm_material$")
             else:
-                # Cura main repo — extract definitions
-                member = f"{zip_root}/resources/definitions/"
-                pattern = re.compile(r".*\.def\.json$")
+                # Cura profiles are a graph, not standalone machine files.
+                # Keep the resource directory in the extracted path so the
+                # parser can distinguish definitions, hardware variants and
+                # quality/intent instances with otherwise colliding names.
+                member = f"{zip_root}/resources/"
+                pattern = re.compile(
+                    r".*/(?:(?:definitions|extruders|variants|quality|"
+                    r"quality_changes|intent)/.*(?:\.def\.json|\.inst\.cfg)"
+                    r"|(?:meshes|images)/.*\.(?:stl|obj|3mf|svg|png|jpe?g))$",
+                    re.IGNORECASE,
+                )
         elif profile_type_dirs:
             # JSON-profile slicers (BambuStudio, OrcaSlicer, CrealityPrint, ElegooSlicer)
             if profile_types:
@@ -318,11 +332,15 @@ def _extract_repo(
                 ]
                 dir_pattern = "|".join(re.escape(d) for d in type_dirs)
                 pattern = re.compile(
-                    rf".*/(?:.*\.(?:stl|svg|png)|(?:{dir_pattern})/.*)"
+                    rf".*/(?:.*\.(?:stl|obj|3mf|svg|png|jpe?g)|(?:{dir_pattern})/.*)",
+                    re.IGNORECASE,
                 )
             else:
                 dirs = "|".join(re.escape(d) for d in profile_type_dirs.values())
-                pattern = re.compile(rf".*/(?:.*\.(?:stl|svg|png)|(?:{dirs})/.*)")
+                pattern = re.compile(
+                    rf".*/(?:.*\.(?:stl|obj|3mf|svg|png|jpe?g)|(?:{dirs})/.*)",
+                    re.IGNORECASE,
+                )
         else:
             # Fallback: extract everything
             pattern = re.compile(r".*")
@@ -344,6 +362,8 @@ def _extract_repo(
                     continue
 
                 rel_path = Path(file).relative_to(member)
+                if config.slicer == SlicerType.CURA and "fdm_materials" in repo:
+                    rel_path = Path("materials") / rel_path
                 dest_path = slicer_output / rel_path
                 dest_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -354,6 +374,19 @@ def _extract_repo(
                 for pt, dir_name in profile_type_dirs.items():
                     if dir_name in rel_path.parts:
                         types_found.add(pt)
+
+                if config.slicer == SlicerType.CURA:
+                    if "materials" in rel_path.parts:
+                        types_found.add(ProfileType.FILAMENT)
+                    if "definitions" in rel_path.parts:
+                        types_found.update(
+                            {ProfileType.MACHINE_MODEL, ProfileType.MACHINE}
+                        )
+                    if any(
+                        part in {"quality", "quality_changes", "intent"}
+                        for part in rel_path.parts
+                    ):
+                        types_found.add(ProfileType.PRINT)
     finally:
         zip_file_path.unlink(missing_ok=True)
 

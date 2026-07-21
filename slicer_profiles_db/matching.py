@@ -1,11 +1,13 @@
-"""
-Printer model fuzzy matching algorithms.
+"""Printer model fuzzy matching algorithms.
 
-13 algorithms that try progressively looser transformations to match
-slicer printer names against SimplyPrint model names.
+Canonical model names and their slicer aliases are treated as names owned by
+the model's brand.  Every name follows the same normalisation and matching
+pipeline so an alias can benefit from the same fuzzy matching as a canonical
+name without leaking into another brand.
 """
 
 import re
+import unicodedata
 from typing import Callable
 
 from .brands import strip_brand_from_name
@@ -14,10 +16,38 @@ from .brands import strip_brand_from_name
 _MMU_RE = re.compile(r"mmu[0-9]s?")
 _BED_SIZE_RE = re.compile(r"[0-9]+mm3?")
 _VORON_VERSION_RE = re.compile(r"v([0-9])")
+_WHITESPACE_RE = re.compile(r"\s+")
+
+
+def _normalise_name(value: str) -> str:
+    """Return a stable form while retaining separators used by fuzzy rules."""
+    value = unicodedata.normalize("NFKC", value).casefold().replace("_", " ")
+    return _WHITESPACE_RE.sub(" ", value).strip()
+
+
+def _comparison_key(value: str) -> str:
+    """Collapse separators while preserving identity-bearing symbols.
+
+    Unicode assigns mathematical, currency, modifier, and other symbols to
+    the ``S*`` categories.  Keeping those categories means names such as
+    ``Model`` and ``Model+`` cannot collapse to the same key, while ordinary
+    punctuation, whitespace, and underscores remain interchangeable.
+    """
+    return "".join(
+        character
+        for character in value
+        if character.isalnum() or unicodedata.category(character).startswith(("M", "S"))
+    )
 
 
 def direct_comparison(sp_name: str, slicer_name: str, brand: str) -> bool:
     return sp_name == slicer_name
+
+
+def normalised_comparison(sp_name: str, slicer_name: str, brand: str) -> bool:
+    """Compare names without case or separator-only differences."""
+    sp_key = _comparison_key(sp_name)
+    return bool(sp_key) and sp_key == _comparison_key(slicer_name)
 
 
 def remove_dashes(sp_name: str, slicer_name: str, brand: str) -> bool:
@@ -115,6 +145,7 @@ def alternate_remove_bed_size(sp_name: str, slicer_name: str, brand: str) -> boo
 # Ordered list of all matching algorithms, tried in sequence.
 CHECK_MODEL_ALGOS: list[Callable[[str, str, str], bool]] = [
     direct_comparison,
+    normalised_comparison,
     remove_dashes,
     remove_spaces,
     remove_parentheses,
@@ -143,8 +174,8 @@ def match_printer_model(
 
     Args:
         sp_models: SimplyPrint model list (each with 'id', 'brand', 'name').
-        sp_brands: Lowercased list of SimplyPrint brand names.
-        sp_slicer_names: {model_id: [lowered slicer profile names]} from SP data.
+        sp_brands: List of SimplyPrint brand names.
+        sp_slicer_names: ``{model_id: [slicer profile names]}`` from SP data.
         brand: Slicer vendor/brand name (original, not yet normalized).
         printer_name: Printer model name from the slicer profile.
         brand_map: Per-slicer brand mapping dict (from BRAND_MAPS).
@@ -152,16 +183,20 @@ def match_printer_model(
     Returns:
         Set of matched SimplyPrint model IDs (may be empty).
     """
-    printer_name = printer_name.strip().lower()
-    brand = brand.lower()
+    printer_name = _normalise_name(printer_name)
+    brand = _normalise_name(brand)
     old_brand: str | None = None
 
     # Map slicer brand → SimplyPrint brand
-    if brand in brand_map:
+    normalised_brand_map = {
+        _normalise_name(source): _normalise_name(target)
+        for source, target in brand_map.items()
+    }
+    if brand in normalised_brand_map:
         old_brand = brand
-        brand = brand_map[brand]
+        brand = normalised_brand_map[brand]
 
-    if brand not in sp_brands:
+    if brand not in {_normalise_name(item) for item in sp_brands}:
         return set()
 
     # Strip brand prefix from printer name
@@ -169,32 +204,25 @@ def match_printer_model(
 
     ids: set[int] = set()
 
-    # Try all 13 algorithms against each SP model of the same brand
+    # Canonical names and aliases are both brand-owned candidates.  Keeping
+    # them inside this loop prevents an alias belonging to another brand from
+    # being returned merely because its text happens to match.
     for model in sp_models:
-        if model["brand"] != brand:
+        if _normalise_name(str(model.get("brand", ""))) != brand:
             continue
-        model_name = model["name"]
-        # Strip brand from SP model name too
-        if brand in model_name or (old_brand and old_brand in model_name):
-            pattern = re.escape(brand)
-            if old_brand:
-                pattern += "|" + re.escape(old_brand)
-            model_name = re.sub(pattern, "", model_name).strip()
-        for algo in CHECK_MODEL_ALGOS:
-            if algo(model_name, printer_name, brand):
-                ids.add(model["id"])
-                break
 
-    # Fallback: check SimplyPrint's slicerProfileNames field
-    for model_id, name_list in sp_slicer_names.items():
-        for spn in name_list:
-            cleaned = spn
-            if brand in spn or (old_brand and old_brand in spn):
-                pattern = re.escape(brand)
-                if old_brand:
-                    pattern += "|" + re.escape(old_brand)
-                cleaned = re.sub(pattern, "", spn).strip()
-            if printer_name == cleaned:
+        model_id = model["id"]
+        candidates = [model.get("name", ""), *sp_slicer_names.get(model_id, [])]
+        for candidate in candidates:
+            if not isinstance(candidate, str):
+                continue
+            candidate_name = strip_brand_from_name(
+                _normalise_name(candidate), brand, old_brand
+            )
+            if any(
+                algo(candidate_name, printer_name, brand) for algo in CHECK_MODEL_ALGOS
+            ):
                 ids.add(model_id)
+                break
 
     return ids

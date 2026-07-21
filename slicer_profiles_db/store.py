@@ -91,9 +91,22 @@ class ProfileStore:
         Ingest all profiles from a slicer directory for a given version.
         Delegates to parser + ingest_profiles().
         """
+        from .resources import (
+            ResourceStore,
+            collect_referenced_hashes,
+            collect_resources,
+            rewrite_resource_refs,
+        )
+
+        resource_store = ResourceStore(self.root / slicer.value / "_resources")
+        resource_map = collect_resources(profiles_dir, resource_store)
         parser = self._get_parser(slicer)
-        parsed = list(parser.parse_directory(profiles_dir))
-        return self.ingest_profiles(slicer, version, parsed)
+        parsed = list(parser.parse_directory(profiles_dir, resource_version=version))
+        if resource_map:
+            rewrite_resource_refs(parsed, resource_map)
+        report = self.ingest_profiles(slicer, version, parsed)
+        resource_store.gc(collect_referenced_hashes(self.root, slicer.value))
+        return report
 
     def ingest_profiles(
         self,
@@ -289,8 +302,25 @@ class ProfileStore:
                 stored.settings.setdefault(key, {})[version] = None
                 changed.append(key)
 
-        if changed:
+        metadata_changed = False
+        for field_name in ("filament_id", "setting_id", "filament_type", "native_id"):
+            new_value = getattr(parsed, field_name)
+            if new_value is not None and getattr(stored, field_name) != new_value:
+                setattr(stored, field_name, new_value)
+                metadata_changed = True
+
+        if stored.context != parsed.context:
+            stored.context = parsed.context
+            metadata_changed = True
+        if stored.setting_scopes != parsed.setting_scopes:
+            stored.setting_scopes = parsed.setting_scopes
+            metadata_changed = True
+
+        if changed or metadata_changed:
             stored.last_seen = version
+
+        if metadata_changed:
+            changed.append("__profile_metadata__")
 
         return changed
 
@@ -314,6 +344,10 @@ class ProfileStore:
             last_seen=version,
             filament_id=parsed.filament_id,
             setting_id=parsed.setting_id,
+            filament_type=parsed.filament_type,
+            native_id=parsed.native_id,
+            context=parsed.context,
+            setting_scopes=parsed.setting_scopes,
             settings=settings,
         )
 
@@ -369,15 +403,16 @@ class ProfileStore:
     def _list_profile_keys(self, slicer: SlicerType) -> set[str]:
         """List all existing profile keys for a slicer from disk.
 
-        Derives keys directly from file paths instead of parsing JSON,
-        since the path structure is {slicer}/{vendor}/{type}/{name}.json.
+        Profile filenames are sanitized for portability, so the path stem is
+        not necessarily the profile's identity (for example names containing
+        ``/`` or ``:``).  Read the stored coordinates to avoid reporting such
+        profiles as removed immediately after writing them.
         """
         keys = set()
         slicer_dir = self.root / slicer.value
         if not slicer_dir.exists():
             return keys
 
-        slicer_val = slicer.value
         for vendor_dir in slicer_dir.iterdir():
             if not vendor_dir.is_dir() or vendor_dir.name.startswith("_"):
                 continue
@@ -391,10 +426,25 @@ class ProfileStore:
                         stored = StoredProfile.model_validate_json(
                             json_file.read_text(encoding="utf-8")
                         )
-                        name = stored.name
-                    except Exception:
-                        name = json_file.stem
-                    keys.add(f"{slicer_val}/{vendor}/{profile_type}/{name}")
+                    except (OSError, ValueError):
+                        logger.warning(
+                            "Using filename identity for invalid stored profile: %s",
+                            json_file,
+                        )
+                        keys.add(
+                            self._profile_key(
+                                slicer, profile_type, vendor, json_file.stem
+                            )
+                        )
+                        continue
+                    keys.add(
+                        self._profile_key(
+                            slicer,
+                            stored.profile_type or profile_type,
+                            stored.vendor or vendor,
+                            stored.name,
+                        )
+                    )
 
         return keys
 

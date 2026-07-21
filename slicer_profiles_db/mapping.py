@@ -7,6 +7,7 @@ and print profile compatibility, and exports the results.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import logging
 import os
@@ -14,7 +15,7 @@ import re
 import shutil
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any
+from typing import Any, Mapping
 
 import requests
 
@@ -28,6 +29,7 @@ from .index import (
 )
 from .matching import match_printer_model
 from .models import ProfileType, SlicerType, StoredProfile
+from .parsers.cura import CURA_MATERIAL_RECOMPUTE_PLAN, resolve_cura_overlay
 from .resources import ResourceStore
 from .store import ProfileStore
 from .versions import version_key
@@ -83,6 +85,653 @@ def _evaluate_stable(profile: StoredProfile) -> dict[str, Any]:
     return profile.evaluate(_stable_version(profile))
 
 
+def _profile_payload(
+    profile: StoredProfile, data: dict[str, Any] | None = None
+) -> dict[str, Any]:
+    """Build the public role wrapper while preserving legacy slicer output."""
+
+    snapshot = data if data is not None else _evaluate_stable(profile)
+    payload: dict[str, Any] = {"data": snapshot}
+    if profile.context:
+        payload["context"] = profile.context
+    if profile.setting_scopes:
+        payload["setting_scopes"] = {
+            key: scope
+            for key, scope in profile.setting_scopes.items()
+            if key in snapshot
+        }
+    for metadata_key in ("attributes", "compatibility"):
+        metadata = profile.context.get(metadata_key)
+        if isinstance(metadata, Mapping):
+            payload[metadata_key] = dict(metadata)
+    return payload
+
+
+def _model_variants(profile: StoredProfile, data: Mapping[str, Any]) -> list[str]:
+    variants = profile.context.get("variants")
+    if isinstance(variants, list):
+        runtime = profile.context.get("runtime")
+        active_tool_index = (
+            runtime.get("active_tool_index") if isinstance(runtime, Mapping) else None
+        )
+        return [
+            str(item["key"])
+            for item in variants
+            if isinstance(item, dict)
+            and item.get("key") is not None
+            and (
+                active_tool_index is None
+                or not isinstance(item.get("runtime_compatible_tool_indices"), list)
+                or active_tool_index in item["runtime_compatible_tool_indices"]
+            )
+        ]
+
+    nozzle_str = data.get("nozzle_diameter", "")
+    if isinstance(nozzle_str, list):
+        nozzle_str = ";".join(str(nozzle) for nozzle in nozzle_str)
+    variants_raw = data.get("variants", nozzle_str)
+    if isinstance(variants_raw, str):
+        return [value.strip() for value in variants_raw.split(";") if value.strip()]
+    return [str(value) for value in variants_raw] if variants_raw else []
+
+
+def _format_variant_scalar(value: Any) -> str:
+    """Format a numeric hardware variant without changing opaque identifiers."""
+    try:
+        return f"{float(value):g}"
+    except (TypeError, ValueError):
+        return str(value)
+
+
+def _machine_profile_variant(
+    profile: StoredProfile, data: Mapping[str, Any]
+) -> str | None:
+    """Resolve one machine profile's variant from its concrete hardware data.
+
+    In inherited sources either ``printer_variant`` or ``nozzle_diameter`` may
+    be stale.  When they disagree, the source profile's final numeric token
+    before ``nozzle`` disambiguates them.  Opaque parser-defined identifiers
+    remain authoritative.
+    """
+
+    declared = profile.context.get("printer_variant") or data.get("printer_variant")
+    raw_nozzles = data.get("nozzle_diameter")
+    if raw_nozzles is None:
+        raw_nozzles = data.get("machine_nozzle_size")
+    if isinstance(raw_nozzles, str):
+        raw_nozzles = [
+            item.strip()
+            for item in raw_nozzles.replace(";", ",").split(",")
+            if item.strip()
+        ]
+    elif not isinstance(raw_nozzles, list):
+        raw_nozzles = [raw_nozzles] if raw_nozzles not in (None, "") else []
+    nozzles = {
+        _format_variant_scalar(nozzle)
+        for nozzle in raw_nozzles
+        if nozzle not in (None, "")
+    }
+
+    if len(nozzles) == 1:
+        nozzle_variant = next(iter(nozzles))
+        if declared is None:
+            return nozzle_variant
+        try:
+            declared_variant = _format_variant_scalar(float(declared))
+        except (TypeError, ValueError):
+            return str(declared)
+        if declared_variant != nozzle_variant:
+            for source_name in (data.get("name"), profile.name):
+                if (
+                    not isinstance(source_name, str)
+                    or "nozzle" not in source_name.casefold()
+                ):
+                    continue
+                before_nozzle = source_name.casefold().rsplit("nozzle", 1)[0]
+                numeric_tokens = re.findall(
+                    r"(?<![a-z0-9])(\d+(?:\.\d+)?)(?:\s*mm)?(?=$|[^a-z0-9])",
+                    before_nozzle,
+                )
+                if numeric_tokens:
+                    named_variant = _format_variant_scalar(numeric_tokens[-1])
+                    if named_variant in {declared_variant, nozzle_variant}:
+                        return named_variant
+            return declared_variant
+
+    if declared is not None:
+        return str(declared)
+    return None
+
+
+def _profile_name_lookup_key(name: Any) -> str:
+    return f"__profile_name__:{name}"
+
+
+def _variant_lookup_key(
+    profile: StoredProfile, data: Mapping[str, Any], fallback_name: str, variant: str
+) -> str:
+    model_key = profile.context.get("definition") or data.get("name", fallback_name)
+    return str(model_key) + variant
+
+
+def _find_variant_lookup(
+    machine_model: StoredProfile,
+    machine_data: Mapping[str, Any],
+    fallback_name: str,
+    variant: str,
+    variant_lookup: Mapping[str, dict[str, Any]],
+) -> dict[str, Any] | None:
+    """Find a concrete machine role across native and display-name identities."""
+
+    model_name = _model_display_name(machine_model, machine_data, fallback_name)
+    display_model_names = _variant_display_model_names(model_name)
+    family_name = machine_data.get("family")
+    if isinstance(family_name, str) and family_name:
+        display_model_names.extend(_variant_display_model_names(family_name))
+    display_model_names = list(dict.fromkeys(display_model_names))
+
+    display_names: list[str] = []
+    for display_model_name in display_model_names:
+        display_names.extend(
+            [
+                f"{display_model_name} {variant} nozzle",
+                f"{display_model_name} {variant} Nozzle",
+                f"{display_model_name} {variant}mm nozzle",
+                f"{display_model_name} {variant}Nozzle",
+                f"{display_model_name} ({variant} mm nozzle)",
+                f"{display_model_name} ({variant}mm nozzle)",
+                display_model_name,
+            ]
+        )
+
+    for display_name in display_names:
+        lookup = variant_lookup.get(_profile_name_lookup_key(display_name))
+        if lookup is None:
+            lookup = variant_lookup.get(display_name)
+        if lookup is not None and _variant_matches_item(variant, lookup):
+            return lookup
+
+    lookup_keys = [
+        _variant_lookup_key(machine_model, machine_data, fallback_name, variant)
+    ]
+    for candidate in (
+        machine_model.context.get("model_id"),
+        machine_data.get("model_id"),
+        machine_data.get("printer_model"),
+        family_name,
+    ):
+        if candidate not in (None, ""):
+            lookup_keys.append(str(candidate) + variant)
+    for lookup_key in dict.fromkeys(lookup_keys):
+        lookup = variant_lookup.get(lookup_key)
+        if lookup is not None:
+            return lookup
+
+    unique_items: list[dict[str, Any]] = []
+    seen: set[int] = set()
+    for item in variant_lookup.values():
+        identity = id(item)
+        if identity in seen:
+            continue
+        seen.add(identity)
+        unique_items.append(item)
+
+    display_names_lower = {name.casefold() for name in display_names}
+    for item in unique_items:
+        item_name = str(item.get("name", ""))
+        if item_name.casefold() in display_names_lower and _variant_matches_item(
+            variant, item
+        ):
+            return item
+
+    compact_display_names = {
+        name.replace(" ", "").casefold() for name in display_names
+    }
+    compact_prefix_matches: list[dict[str, Any]] = []
+    for item in unique_items:
+        item_name = str(item.get("name", ""))
+        compact_name = item_name.replace(" ", "").casefold()
+        if compact_name in compact_display_names and _variant_matches_item(
+            variant, item
+        ):
+            return item
+        if any(compact_name.startswith(name) for name in compact_display_names) and (
+            _variant_matches_item(variant, item)
+        ):
+            compact_prefix_matches.append(item)
+    compact_prefix_matches = list(
+        {str(item.get("name", "")): item for item in compact_prefix_matches}.values()
+    )
+    if len(compact_prefix_matches) == 1:
+        return compact_prefix_matches[0]
+    preferred_prefix_matches = [
+        item
+        for item in compact_prefix_matches
+        if "+m4hotend" in str(item.get("name", "")).replace(" ", "").casefold()
+    ]
+    if len(preferred_prefix_matches) == 1:
+        return preferred_prefix_matches[0]
+
+    candidates: list[dict[str, Any]] = []
+    for item in unique_items:
+        if _named_machine_variant_matches(item, model_name, variant):
+            candidates.append(item)
+    if candidates:
+        normalized_model = _normalise_native_identity(model_name)
+        return min(
+            candidates,
+            key=lambda item: (
+                _normalise_native_identity(item.get("name")) != normalized_model,
+                _normalise_native_identity(item.get("name")),
+            ),
+        )
+
+    return None
+
+
+def _variant_printer_identities(lookup: Mapping[str, Any]) -> set[str]:
+    """Return every exact upstream printer identity carried by a machine role."""
+
+    data = lookup.get("data")
+    if not isinstance(data, Mapping):
+        data = {}
+    candidates = (
+        lookup.get("name"),
+        data.get("name"),
+        data.get("printer_settings_id"),
+    )
+    identities = {
+        str(candidate) for candidate in candidates if candidate not in (None, "")
+    }
+    aliases = lookup.get("_compatible_printer_identities")
+    if isinstance(aliases, list):
+        identities.update(str(alias) for alias in aliases if alias not in (None, ""))
+    return identities
+
+
+def _index_variant_payload(
+    index: dict[str, dict[str, Any]],
+    key: str,
+    payload: dict[str, Any],
+    *,
+    replace: bool,
+) -> None:
+    """Index a machine role and preserve aliases from hardware-key collisions.
+
+    Upstream slicers can publish several named machine presets for one physical
+    model/nozzle combination.  SimplyPrint exposes one runtime variant for that
+    hardware slot, but material and print compatibility may reference any of
+    the upstream preset names.  The aliases are internal mapping metadata and
+    are removed before export.
+    """
+
+    existing = index.get(key)
+    if existing is not None and existing is not payload:
+        identities = _variant_printer_identities(existing)
+        identities.update(_variant_printer_identities(payload))
+        aliases = sorted(identities)
+        existing["_compatible_printer_identities"] = aliases
+        payload["_compatible_printer_identities"] = aliases
+    if replace or existing is None:
+        index[key] = payload
+
+
+def _public_variant_payload(lookup: Mapping[str, Any]) -> dict[str, Any]:
+    """Remove mapper-only metadata from a runtime machine role."""
+
+    payload = {
+        key: value
+        for key, value in lookup.items()
+        if key != "_compatible_printer_identities"
+    }
+    context = payload.get("context")
+    if isinstance(context, Mapping):
+        payload["context"] = {
+            key: value
+            for key, value in context.items()
+            if key not in {CURA_MATERIAL_RECOMPUTE_PLAN, "variant_aliases"}
+        }
+    return payload
+
+
+def _model_display_name(
+    profile: StoredProfile, data: Mapping[str, Any], fallback: str
+) -> str:
+    return str(profile.context.get("display_name") or data.get("name", fallback))
+
+
+def _uses_material_resource_constraints(profile: StoredProfile) -> bool:
+    """Whether material compatibility is described by native resource IDs."""
+    return any(
+        key in profile.context for key in ("include_materials", "exclude_materials")
+    )
+
+
+def _uses_definition_quality_constraints(profile: StoredProfile) -> bool:
+    """Whether print compatibility is described by native definition metadata."""
+    return "quality_definition" in profile.context
+
+
+def _diameters_match(machine: Any, material: Any) -> bool:
+    if machine is None or material is None:
+        return True
+    try:
+        return abs(float(machine) - float(material)) < 0.01
+    except (TypeError, ValueError):
+        return False
+
+
+def _normalise_native_identity(value: Any) -> str:
+    """Normalise source identifiers for exact, punctuation-insensitive matching."""
+    return "".join(
+        character for character in str(value).casefold() if character.isalnum()
+    )
+
+
+def _named_machine_variant_matches(
+    lookup: Mapping[str, Any], model_name: str, variant: str
+) -> bool:
+    """Match equivalent source-native spellings of a hardware variant name."""
+
+    data = lookup.get("data")
+    if not isinstance(data, Mapping):
+        return False
+
+    declared_values: list[Any] = [data.get("printer_variant")]
+    raw_nozzles = data.get("nozzle_diameter")
+    if isinstance(raw_nozzles, str):
+        declared_values.extend(
+            item.strip()
+            for item in raw_nozzles.replace(";", ",").split(",")
+            if item.strip()
+        )
+    elif isinstance(raw_nozzles, list):
+        declared_values.extend(raw_nozzles)
+    elif raw_nozzles is not None:
+        declared_values.append(raw_nozzles)
+    if str(variant) not in {
+        _format_variant_scalar(value)
+        for value in declared_values
+        if value not in (None, "")
+    }:
+        return False
+
+    normalized_model = _normalise_native_identity(model_name)
+    normalized_name = _normalise_native_identity(lookup.get("name"))
+    if normalized_name == normalized_model:
+        return True
+    if not normalized_name.startswith(normalized_model):
+        return False
+
+    suffix = normalized_name[len(normalized_model) :]
+    if suffix.endswith("nozzle"):
+        suffix = suffix[: -len("nozzle")]
+    if suffix.endswith("mm"):
+        suffix = suffix[: -len("mm")]
+    return suffix == _normalise_native_identity(variant)
+
+
+def _material_matches_machine_identifier(
+    machine_model: StoredProfile,
+    machine_data: Mapping[str, Any],
+    identifier: Mapping[str, Any],
+) -> bool:
+    product = identifier.get("product")
+    if not product:
+        return False
+
+    product_candidates: set[str] = set()
+    for candidate in (
+        machine_model.name,
+        machine_model.context.get("display_name"),
+        machine_model.context.get("definition"),
+        machine_data.get("name"),
+    ):
+        if candidate:
+            product_candidates.add(_normalise_native_identity(candidate))
+    for candidate in machine_model.context.get("definition_inheritance") or []:
+        product_candidates.add(_normalise_native_identity(candidate))
+    if _normalise_native_identity(product) not in product_candidates:
+        return False
+
+    manufacturer = identifier.get("manufacturer")
+    if not manufacturer:
+        return True
+    manufacturer_candidates = {
+        _normalise_native_identity(machine_model.vendor),
+        _normalise_native_identity(machine_model.context.get("manufacturer") or ""),
+    }
+    return _normalise_native_identity(manufacturer) in manufacturer_candidates
+
+
+def _material_is_compatible(
+    machine_model: StoredProfile,
+    machine_data: Mapping[str, Any],
+    variant_data: Mapping[str, Any],
+    variant_context: Mapping[str, Any],
+    material_profile: StoredProfile,
+    material_data: Mapping[str, Any],
+) -> bool:
+    """Evaluate normalized native material constraints for one machine variant."""
+    material_id = material_profile.native_id or ""
+    include = set(machine_model.context.get("include_materials") or [])
+    exclude = set(machine_model.context.get("exclude_materials") or [])
+    if material_id in exclude or (include and material_id not in include):
+        return False
+    if not _diameters_match(
+        variant_data.get("material_diameter"), material_data.get("material_diameter")
+    ):
+        return False
+
+    compatibility = material_profile.context.get("compatibility")
+    if not isinstance(compatibility, Mapping):
+        return True
+    default_compatible = bool(compatibility.get("default", True))
+    constraints = compatibility.get("machines")
+    if not isinstance(constraints, list):
+        return default_compatible
+
+    matching_constraints: list[Mapping[str, Any]] = []
+    for constraint in constraints:
+        if not isinstance(constraint, Mapping):
+            continue
+        identifiers = constraint.get("identifiers")
+        if not isinstance(identifiers, list):
+            continue
+        if any(
+            isinstance(identifier, Mapping)
+            and _material_matches_machine_identifier(
+                machine_model, machine_data, identifier
+            )
+            for identifier in identifiers
+        ):
+            matching_constraints.append(constraint)
+    if not matching_constraints:
+        return default_compatible
+
+    hotend_id = _selected_hotend_id(variant_data, variant_context)
+    normalized_hotend = _normalise_native_identity(hotend_id) if hotend_id else ""
+
+    results: list[bool] = []
+    for constraint in matching_constraints:
+        machine_compatible = bool(constraint.get("compatible", default_compatible))
+        hotends = constraint.get("hotends")
+        if not normalized_hotend or not isinstance(hotends, Mapping) or not hotends:
+            results.append(machine_compatible)
+            continue
+        matching_hotend = next(
+            (
+                compatible
+                for native_id, compatible in hotends.items()
+                if _normalise_native_identity(native_id) == normalized_hotend
+            ),
+            None,
+        )
+        # A machine-specific hotend list is a finite source-native constraint.
+        # An absent selected hotend is therefore not compatible.
+        results.append(bool(matching_hotend) if matching_hotend is not None else False)
+    return any(results)
+
+
+def _selected_hotend_id(
+    variant_data: Mapping[str, Any], variant_context: Mapping[str, Any]
+) -> Any:
+    attributes = variant_context.get("attributes")
+    return (
+        attributes.get("hotend_id") if isinstance(attributes, Mapping) else None
+    ) or variant_data.get("machine_nozzle_id")
+
+
+def _resolve_material_overrides(
+    machine_model: StoredProfile,
+    machine_data: Mapping[str, Any],
+    variant_data: Mapping[str, Any],
+    variant_context: Mapping[str, Any],
+    material_profile: StoredProfile,
+    material_data: Mapping[str, Any],
+) -> tuple[dict[str, Any], dict[str, Any] | None, dict[str, str]]:
+    """Apply source-native machine and hotend material settings to one role."""
+
+    overrides = material_profile.context.get("machine_overrides")
+    selected_hotend = _selected_hotend_id(variant_data, variant_context)
+    normalized_hotend = (
+        _normalise_native_identity(selected_hotend) if selected_hotend else ""
+    )
+    resolved = dict(material_data)
+    matched_products: set[str] = set()
+    matched_hotend: str | None = None
+    for override in overrides if isinstance(overrides, list) else []:
+        if not isinstance(override, Mapping):
+            continue
+        identifiers = override.get("identifiers")
+        if not isinstance(identifiers, list) or not any(
+            isinstance(identifier, Mapping)
+            and _material_matches_machine_identifier(
+                machine_model, machine_data, identifier
+            )
+            for identifier in identifiers
+        ):
+            continue
+
+        matched_products.update(
+            str(identifier["product"])
+            for identifier in identifiers
+            if isinstance(identifier, Mapping) and identifier.get("product")
+        )
+        settings = override.get("settings")
+        if isinstance(settings, Mapping):
+            resolved.update(
+                {
+                    key: value
+                    for key, value in settings.items()
+                    if not (isinstance(value, str) and value.lstrip().startswith("="))
+                }
+            )
+        if not normalized_hotend:
+            continue
+        hotends = override.get("hotends")
+        if not isinstance(hotends, list):
+            continue
+        for hotend in hotends:
+            if not isinstance(hotend, Mapping) or (
+                _normalise_native_identity(hotend.get("id")) != normalized_hotend
+            ):
+                continue
+            hotend_settings = hotend.get("settings")
+            if isinstance(hotend_settings, Mapping):
+                resolved.update(
+                    {
+                        key: value
+                        for key, value in hotend_settings.items()
+                        if not (
+                            isinstance(value, str) and value.lstrip().startswith("=")
+                        )
+                    }
+                )
+                matched_hotend = str(hotend.get("id") or selected_hotend)
+            break
+    resolved, dependent_scopes = resolve_cura_overlay(
+        variant_data,
+        resolved,
+        variant_context.get(CURA_MATERIAL_RECOMPUTE_PLAN),
+    )
+    if resolved == dict(material_data):
+        return resolved, None, dependent_scopes
+    return (
+        resolved,
+        {
+            "hotend_id": matched_hotend or selected_hotend,
+            "machine_products": sorted(matched_products),
+            "dependent_settings": sorted(dependent_scopes),
+        },
+        dependent_scopes,
+    )
+
+
+def _variant_material_role(
+    machine_model: StoredProfile,
+    machine_data: Mapping[str, Any],
+    variant_context: Mapping[str, Any],
+    variant: str,
+    material_profile: StoredProfile,
+    material_name: str,
+    resolution: Mapping[str, Any],
+) -> tuple[str, dict[str, Any]]:
+    """Create a stable identity for one resolved material hardware role."""
+
+    source_native_id = (
+        material_profile.native_id
+        or material_profile.setting_id
+        or material_profile.name
+    )
+    machine_native_id = (
+        machine_model.context.get("definition")
+        or machine_model.native_id
+        or _model_display_name(machine_model, machine_data, machine_model.name)
+    )
+    variant_native_id = variant_context.get("native_id") or variant
+    selector = {
+        "machine_native_id": str(machine_native_id),
+        "variant_key": str(variant),
+        "variant_native_id": str(variant_native_id),
+    }
+    digest = hashlib.sha256(
+        json.dumps(selector, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()[:16]
+    context = dict(material_profile.context)
+    context.update(
+        {
+            "native_id": f"{source_native_id}#resolved-{digest}",
+            "resolution": {**dict(resolution), **selector},
+            "source_native_id": source_native_id,
+        }
+    )
+    model_name = _model_display_name(machine_model, machine_data, machine_model.name)
+    return f"{material_name} · {model_name} · {variant}", context
+
+
+def _machine_model_export(
+    profile: StoredProfile, data: Mapping[str, Any]
+) -> dict[str, Any]:
+    """Project normalized discovery metadata without polluting engine settings."""
+    exported = dict(data)
+    exported.setdefault("name", _model_display_name(profile, data, profile.name))
+    for key in (
+        "bed_assets",
+        "bed_model",
+        "bed_texture",
+        "machine_extruder_trains",
+        "preferred_variant_key",
+        "preferred_variant_name",
+        "runtime",
+        "tool_topology",
+    ):
+        value = profile.context.get(key)
+        if value is not None:
+            exported[key] = value
+    return exported
+
+
 @dataclass
 class ModelMap:
     """Result of mapping slicer machine_model profiles to SimplyPrint model IDs."""
@@ -113,16 +762,29 @@ def _prepare_sp_data(
 
     Returns (sp_brands, sp_models, sp_slicer_names).
     """
-    sp_brands = [b.lower() for b in raw["brands"]]
-    sp_models = raw["models"]
+    sp_brands = [b.casefold() for b in raw["brands"]]
+    sp_models: list[dict] = []
     sp_slicer_names: dict[int, list[str]] = {}
 
-    for model in sp_models:
-        model["brand"] = model["brand"].lower()
-        model["name"] = model["name"].lower()
-        if model.get("slicerProfileNames"):
+    for source_model in raw["models"]:
+        model = dict(source_model)
+        model["brand"] = model["brand"].casefold()
+        model["name"] = model["name"].casefold()
+        sp_models.append(model)
+
+        # ``slicerProfileNames`` is the canonical API field.  Accept the
+        # snake_case spelling as a compatibility input, but prefer the
+        # canonical field whenever both are present.
+        alias_names = (
+            model.get("slicerProfileNames")
+            if "slicerProfileNames" in model
+            else model.get("slicer_profile_names")
+        )
+        if isinstance(alias_names, str):
+            alias_names = [alias_names]
+        if alias_names:
             sp_slicer_names[model["id"]] = [
-                n.lower() for n in model["slicerProfileNames"]
+                name for name in alias_names if isinstance(name, str)
             ]
 
     return sp_brands, sp_models, sp_slicer_names
@@ -160,7 +822,11 @@ def map_printer_models(
             continue
 
         for profile in machine_models:
-            name = profile.get_latest("name") or profile.name
+            name = (
+                profile.context.get("display_name")
+                or profile.get_latest("name")
+                or profile.name
+            )
             vendor = profile.vendor
 
             ids = match_printer_model(
@@ -210,27 +876,21 @@ def _build_variant_map(
     for profile in machine_profiles:
         data = _evaluate_stable(profile)
 
-        printer_model = data.get("printer_model")
+        printer_model = profile.context.get("printer_model") or data.get(
+            "printer_model"
+        )
         if not printer_model:
             continue
 
-        # Determine the variant identifier
-        variant = data.get("printer_variant")
-        if variant is None:
-            nd = data.get("nozzle_diameter")
-            if isinstance(nd, list) and nd:
-                variant = str(nd[0])
-            elif isinstance(nd, str):
-                variant = nd.split(";")[0].strip() if ";" in nd else nd
-
+        # Determine the variant identifier from the concrete hardware stack,
+        # then use an explicit nozzle token in the source name to correct stale
+        # upstream printer_variant values.
+        variant = _machine_profile_variant(profile, data)
         name_variant = _parse_variant_from_name(data.get("name", profile.name))
         if variant is None:
             variant = name_variant
         elif name_variant and not _same_variant(str(variant), name_variant):
-            # Some upstream profiles have a stale printer_variant but the
-            # display name/nozzle is correct (for example RatRig V-Minion 0.6).
             variant = name_variant
-
         if variant is None:
             continue
 
@@ -241,31 +901,45 @@ def _build_variant_map(
         lookup_key = printer_model + variant
         profile_name = data.get("name", profile.name)
 
-        candidate = {
+        payload = {
             "name": profile_name,
-            "data": data,
+            **_profile_payload(profile, data),
         }
+        variant_aliases = profile.context.get("variant_aliases")
+        if isinstance(variant_aliases, list):
+            payload["_compatible_printer_identities"] = [
+                str(alias) for alias in variant_aliases if alias not in (None, "")
+            ]
         existing = result.variant_map[slicer_val].get(lookup_key)
-        if existing is None or _variant_candidate_is_better(
-            lookup_key, candidate, existing
-        ):
-            result.variant_map[slicer_val][lookup_key] = candidate
-
-        # Keep an exact display-name index as a collision fallback. Some
-        # upstream variants have wrong printer_model / printer_variant values,
-        # but their display names are still correct.
-        result.variant_map[slicer_val].setdefault(profile_name, candidate)
+        replace = existing is None or _variant_candidate_is_better(
+            lookup_key, payload, existing
+        )
+        _index_variant_payload(
+            result.variant_map[slicer_val], lookup_key, payload, replace=replace
+        )
+        # Preserve every source profile even when multiple profiles share the
+        # same native model + nozzle key.  Name-based fallback is part of the
+        # established machine-model contract and must not depend on directory
+        # iteration order.
+        _index_variant_payload(
+            result.variant_map[slicer_val],
+            _profile_name_lookup_key(profile_name),
+            payload,
+            replace=True,
+        )
+        # Retain the established raw display-name fallback for non-Cura
+        # profile families while the collision-safe key above preserves every
+        # named source profile.
+        _index_variant_payload(
+            result.variant_map[slicer_val], str(profile_name), payload, replace=False
+        )
 
         # Also index by model_id + variant (Orca/BBS use model_id)
-        model_id = data.get("model_id")
+        model_id = profile.context.get("model_id") or data.get("model_id")
         if model_id and model_id != printer_model:
             alt_key = model_id + variant
-            result.variant_map[slicer_val].setdefault(
-                alt_key,
-                {
-                    "name": profile_name,
-                    "data": data,
-                },
+            _index_variant_payload(
+                result.variant_map[slicer_val], alt_key, payload, replace=False
             )
 
 
@@ -302,9 +976,11 @@ def _variant_candidate_is_better(
     candidate_name = str(candidate.get("name", "")).lower()
     existing_name = str(existing.get("name", "")).lower()
     model_part = lookup_key
-    variant = candidate.get("data", {}).get("printer_variant")
-    if isinstance(variant, str) and lookup_key.endswith(variant):
-        model_part = lookup_key[: -len(variant)]
+    variant = candidate.get("data", {}).get("printer_variant") or candidate.get(
+        "context", {}
+    ).get("printer_variant")
+    if variant is not None and lookup_key.endswith(str(variant)):
+        model_part = lookup_key[: -len(str(variant))]
     model_part = model_part.strip().lower()
 
     candidate_matches = bool(model_part and model_part in candidate_name)
@@ -354,39 +1030,44 @@ def map_filament_profiles(
                     continue
                 mm = mm_profile[0]
                 mm_data = _evaluate_stable(mm)
-                model_name = mm_data.get("name", name)
+                model_name = _model_display_name(mm, mm_data, name)
 
                 # Get nozzle variants
-                nozzle_str = mm_data.get("nozzle_diameter", "")
-                if isinstance(nozzle_str, list):
-                    nozzle_str = ";".join(str(n) for n in nozzle_str)
-                variants_raw = mm_data.get("variants", nozzle_str)
-                if isinstance(variants_raw, str):
-                    variants = [v.strip() for v in variants_raw.split(";") if v.strip()]
-                else:
-                    variants = [str(v) for v in variants_raw] if variants_raw else []
+                variants = _model_variants(mm, mm_data)
 
                 variant_lookup = model_map.variant_map.get(slicer_val, {})
+                uses_resource_constraints = _uses_material_resource_constraints(mm)
 
                 # For each variant, find compatible filament profiles
                 for variant in variants:
                     lookup = _find_variant_lookup(
-                        mm_data, name, variant, variant_lookup
+                        mm, mm_data, name, variant, variant_lookup
                     )
                     if lookup is None:
                         continue
 
                     variant_data = lookup["data"]
+                    printer_identities = _variant_printer_identities(lookup)
                     printer_name = variant_data.get("name", lookup["name"])
+                    if slicer == SlicerType.PRUSASLICER:
+                        printer_name = variant_data.get(
+                            "printer_settings_id", printer_name
+                        )
 
                     # Find all filament profiles for this vendor
                     filament_profiles = index.find_by_type(
-                        slicer, ProfileType.FILAMENT, vendor
+                        slicer,
+                        ProfileType.FILAMENT,
+                        None if uses_resource_constraints else vendor,
                     )
                     for fp in filament_profiles:
                         fp_data = _evaluate_stable(fp)
                         filament_name = fp_data.get("name", fp.name)
-                        filament_type = fp_data.get("filament_type", "")
+                        filament_type = (
+                            fp.filament_type
+                            or fp.context.get("material_type")
+                            or fp_data.get("filament_type", "")
+                        )
                         if isinstance(filament_type, list):
                             filament_type = filament_type[0] if filament_type else ""
 
@@ -400,7 +1081,18 @@ def map_filament_profiles(
                             ]
 
                         is_compatible = False
-                        if _compat_matches_printer(
+                        if uses_resource_constraints:
+                            is_compatible = _material_is_compatible(
+                                mm,
+                                mm_data,
+                                variant_data,
+                                lookup.get("context", {}),
+                                fp,
+                                fp_data,
+                            )
+                        elif printer_identities.intersection(
+                            compat
+                        ) or _compat_matches_printer(
                             compat, printer_name, model_name, variant
                         ):
                             is_compatible = True
@@ -414,10 +1106,40 @@ def map_filament_profiles(
                         if not is_compatible:
                             continue
 
+                        (
+                            resolved_fp_data,
+                            resolution,
+                            dependent_scopes,
+                        ) = _resolve_material_overrides(
+                            mm,
+                            mm_data,
+                            variant_data,
+                            lookup.get("context", {}),
+                            fp,
+                            fp_data,
+                        )
+                        role_name = filament_name
+                        role_payload = _profile_payload(fp, resolved_fp_data)
+                        if dependent_scopes:
+                            role_payload.setdefault("setting_scopes", {}).update(
+                                dependent_scopes
+                            )
+                        if resolution is not None:
+                            role_name, role_context = _variant_material_role(
+                                mm,
+                                mm_data,
+                                lookup.get("context", {}),
+                                variant,
+                                fp,
+                                filament_name,
+                                resolution,
+                            )
+                            role_payload["context"] = role_context
+
                         _add_filament_output(
                             compatible_filaments=compatible_filaments,
                             profile=fp,
-                            profile_data=fp_data,
+                            profile_data=resolved_fp_data,
                             filament_name=filament_name,
                             filament_type=filament_type,
                             model_name=model_name,
@@ -425,6 +1147,8 @@ def map_filament_profiles(
                             slicer_val=slicer_val,
                             generic_profiles=_generic_profiles,
                             ofd_index=ofd_index,
+                            role_name=role_name,
+                            role_payload=role_payload,
                         )
 
                     # Shared Orca library generic @System filament presets are
@@ -486,11 +1210,12 @@ def _variant_matches_item(variant: str, item: dict[str, Any]) -> bool:
         return _same_variant(name_variant, variant)
 
     data = item.get("data", {})
-    item_variant = data.get("printer_variant")
-    if isinstance(item_variant, str) and _same_variant(item_variant, variant):
+    context = item.get("context", {})
+    item_variant = data.get("printer_variant") or context.get("printer_variant")
+    if item_variant is not None and _same_variant(str(item_variant), variant):
         return True
 
-    nozzle = data.get("nozzle_diameter")
+    nozzle = data.get("nozzle_diameter") or data.get("machine_nozzle_size")
     if isinstance(nozzle, list):
         nozzle = nozzle[0] if nozzle else None
     if isinstance(nozzle, str):
@@ -508,96 +1233,6 @@ def _same_variant(left: str, right: str) -> bool:
         return float(left.removeprefix("HF")) == float(right.removeprefix("HF"))
     except ValueError:
         return False
-
-
-def _find_variant_lookup(
-    mm_data: dict[str, Any],
-    fallback_name: str,
-    variant: str,
-    variant_lookup: dict[str, dict[str, Any]],
-) -> dict[str, Any] | None:
-    """Find the concrete machine profile for a machine_model variant.
-
-    Prusa machine models list human-facing variants, while concrete machine
-    profiles are keyed by internal ``printer_model`` values such as ``MK30.4``.
-    Orca/Bambu also use ``model_id`` in some places, and some vendors only match
-    by display-name patterns.
-    """
-    model_name = str(mm_data.get("name") or fallback_name)
-
-    lookup_keys = [model_name + variant]
-    for key_name in ("model_id", "printer_model"):
-        value = mm_data.get(key_name)
-        if isinstance(value, str) and value:
-            lookup_keys.append(value + variant)
-
-    for lookup_key in lookup_keys:
-        lookup = variant_lookup.get(lookup_key)
-        if lookup is not None:
-            return lookup
-
-    display_model_names = _variant_display_model_names(model_name)
-    family_name = mm_data.get("family")
-    if isinstance(family_name, str) and family_name:
-        display_model_names.extend(_variant_display_model_names(family_name))
-        display_model_names = list(dict.fromkeys(display_model_names))
-
-    display_names = []
-    for display_model_name in display_model_names:
-        display_names.extend(
-            [
-                f"{display_model_name} {variant} nozzle",
-                f"{display_model_name} {variant} Nozzle",
-                f"{display_model_name} {variant}mm nozzle",
-                f"{display_model_name} {variant}Nozzle",
-                f"{display_model_name} ({variant} mm nozzle)",
-                f"{display_model_name} ({variant}mm nozzle)",
-            ]
-        )
-        display_names.append(display_model_name)
-
-    display_names_lower = {display_name.lower() for display_name in display_names}
-    for item in variant_lookup.values():
-        if item["name"].lower() in display_names_lower and _variant_matches_item(
-            variant, item
-        ):
-            return item
-
-    compact_display_names = {
-        display_name.replace(" ", "").lower() for display_name in display_names
-    }
-    compact_prefix_matches = []
-    for item in variant_lookup.values():
-        compact_item_name = item["name"].replace(" ", "").lower()
-        if compact_item_name in compact_display_names and _variant_matches_item(
-            variant, item
-        ):
-            return item
-        if any(compact_item_name.startswith(name) for name in compact_display_names):
-            if _variant_matches_item(variant, item):
-                compact_prefix_matches.append(item)
-    compact_prefix_matches = list(
-        {item["name"]: item for item in compact_prefix_matches}.values()
-    )
-    if len(compact_prefix_matches) == 1:
-        return compact_prefix_matches[0]
-    preferred_prefix_matches = [
-        item
-        for item in compact_prefix_matches
-        if "+m4hotend" in item["name"].replace(" ", "").lower()
-    ]
-    if len(preferred_prefix_matches) == 1:
-        return preferred_prefix_matches[0]
-
-    # Prusa machine models expose the internal printer family (MK3, MINIIS,
-    # MK4IS, ...), while concrete printer profiles are keyed by that family plus
-    # nozzle variant. Keep this last so MMU/multi-tool display-name matches win
-    # over their single-extruder family fallback.
-    family = mm_data.get("family")
-    if isinstance(family, str) and family:
-        return variant_lookup.get(family + variant)
-
-    return None
 
 
 def _compat_matches_printer(
@@ -652,8 +1287,12 @@ def _add_filament_output(
     slicer_val: str,
     generic_profiles: dict[str, list[tuple[str, str, str]]],
     ofd_index: Any | None,
+    role_name: str | None = None,
+    role_payload: dict[str, Any] | None = None,
 ) -> None:
     """Add one filament profile to the mapper output, merging variants."""
+    output_name = role_name or filament_name
+    payload = role_payload or _profile_payload(profile, profile_data)
     filament_db_id = None
     if ofd_index:
         filament_db_id = ofd_index.resolve_path(
@@ -668,20 +1307,22 @@ def _add_filament_output(
     if ofd_index and not filament_db_id and not is_generic_name:
         return
 
-    if filament_name not in compatible_filaments:
-        compatible_filaments[filament_name] = []
+    if output_name not in compatible_filaments:
+        compatible_filaments[output_name] = []
 
     existing_entry = None
-    for entry in compatible_filaments[filament_name]:
-        if entry["data"] == profile_data:
+    for entry in compatible_filaments[output_name]:
+        if entry["data"] == payload["data"] and entry.get(
+            "context"
+        ) == payload.get("context"):
             existing_entry = entry
             break
 
     if existing_entry is None:
         entry = {
-            "name": filament_name,
+            "name": output_name,
             "compatible_printers": {model_name: [variant]},
-            "data": profile_data,
+            **payload,
         }
         if filament_db_id:
             entry["filament_db_ids"] = [filament_db_id]
@@ -692,7 +1333,7 @@ def _add_filament_output(
         )
         if gid:
             entry["generic_id"] = gid
-        compatible_filaments[filament_name].append(entry)
+        compatible_filaments[output_name].append(entry)
         return
 
     cp = existing_entry["compatible_printers"]
@@ -734,38 +1375,35 @@ def map_print_profiles(
                     continue
                 mm = mm_profile[0]
                 mm_data = _evaluate_stable(mm)
-                model_name = mm_data.get("name", name)
+                model_name = _model_display_name(mm, mm_data, name)
 
                 # Get variants
-                nozzle_str = mm_data.get("nozzle_diameter", "")
-                if isinstance(nozzle_str, list):
-                    nozzle_str = ";".join(str(n) for n in nozzle_str)
-                variants_raw = mm_data.get("variants", nozzle_str)
-                if isinstance(variants_raw, str):
-                    variants = [v.strip() for v in variants_raw.split(";") if v.strip()]
-                else:
-                    variants = [str(v) for v in variants_raw] if variants_raw else []
+                variants = _model_variants(mm, mm_data)
 
                 variant_lookup = model_map.variant_map.get(slicer_val, {})
+                uses_definition_constraints = _uses_definition_quality_constraints(mm)
 
                 # Get all print profiles for this vendor
-                print_profiles = index.find_by_type(slicer, ProfileType.PRINT, vendor)
+                print_profiles = index.find_by_type(
+                    slicer,
+                    ProfileType.PRINT,
+                    None if uses_definition_constraints else vendor,
+                )
 
                 for variant in variants:
                     lookup = _find_variant_lookup(
-                        mm_data, name, variant, variant_lookup
+                        mm, mm_data, name, variant, variant_lookup
                     )
                     if lookup is None:
                         continue
 
                     variant_data = lookup["data"]
+                    printer_identities = _variant_printer_identities(lookup)
                     printer_name = variant_data.get("name", lookup["name"])
-
-                    # PrusaSlicer uses printer_settings_id
                     if slicer == SlicerType.PRUSASLICER:
-                        ps_id = variant_data.get("printer_settings_id")
-                        if ps_id:
-                            printer_name = ps_id
+                        printer_name = variant_data.get(
+                            "printer_settings_id", printer_name
+                        )
 
                     for pp in print_profiles:
                         pp_data = _evaluate_stable(pp)
@@ -785,7 +1423,44 @@ def map_print_profiles(
                             ]
 
                         is_compatible = False
-                        if _compat_matches_printer(
+                        if uses_definition_constraints:
+                            quality_definition = str(
+                                mm.context.get("quality_definition")
+                                or mm.context.get("definition")
+                                or ""
+                            )
+                            profile_definition = str(pp.context.get("definition") or "")
+                            compatibility = pp.context.get("compatibility")
+                            compatible_definitions = (
+                                compatibility.get("machine_definition_ids")
+                                if isinstance(compatibility, Mapping)
+                                else None
+                            )
+                            compatible_variants = (
+                                compatibility.get("variant_names")
+                                if isinstance(compatibility, Mapping)
+                                else None
+                            )
+                            if not isinstance(compatible_definitions, list):
+                                compatible_definitions = [profile_definition]
+                            if not isinstance(compatible_variants, list):
+                                required_variant = pp.context.get("variant_name")
+                                compatible_variants = (
+                                    [required_variant] if required_variant else []
+                                )
+                            selected_variant = lookup.get("context", {}).get(
+                                "variant_name"
+                            )
+                            is_compatible = (
+                                quality_definition in compatible_definitions
+                                and (
+                                    not compatible_variants
+                                    or selected_variant in compatible_variants
+                                )
+                            )
+                        elif printer_identities.intersection(
+                            compat
+                        ) or _compat_matches_printer(
                             compat, printer_name, model_name, variant
                         ):
                             is_compatible = True
@@ -805,7 +1480,7 @@ def map_print_profiles(
                             out = compatible_prints[print_name] = {
                                 "name": print_name,
                                 "compatible_printers": {},
-                                "data": pp_data,
+                                **_profile_payload(pp, pp_data),
                             }
 
                         if model_name not in out["compatible_printers"]:
@@ -868,32 +1543,36 @@ def export_output(
                     continue
                 mm = mm_profiles[0]
                 mm_data = _evaluate_stable(mm)
-
-                sub_data: dict[str, Any] = {"vendor": vendor, "machine_model": mm_data}
-
-                # Keep /out small: resource files live under profiles/{slicer}/_resources
-                # and are resolved by the ecosystem importer using resources.json.
+                # Keep /out small: resource files live under
+                # profiles/{slicer}/_resources and are resolved by the
+                # ecosystem importer using resources.json.
                 _canonicalize_resource_refs(mm_data, store, slicer)
+                machine_model_export = _machine_model_export(mm, mm_data)
+                # Discovery metadata is required by the legacy ecosystem
+                # importer, but need not be persisted in a runtime variant's
+                # engine settings.  Parsers can provide it as role context.
+                sub_data: dict[str, Any] = {
+                    "vendor": vendor,
+                    # The ecosystem importer stores this discovery record
+                    # directly and expects its established flat shape.  The
+                    # selected machine variant below is the runtime role and
+                    # carries Cura's data/context/setting_scopes wrapper.
+                    "machine_model": machine_model_export,
+                }
 
                 # Build variants
-                nozzle_str = mm_data.get("nozzle_diameter", "")
-                if isinstance(nozzle_str, list):
-                    nozzle_str = ";".join(str(n) for n in nozzle_str)
-                variants_raw = mm_data.get("variants", nozzle_str)
-                if isinstance(variants_raw, str):
-                    variants = [v.strip() for v in variants_raw.split(";") if v.strip()]
-                else:
-                    variants = [str(v) for v in variants_raw] if variants_raw else []
+                model_name_key = _model_display_name(mm, mm_data, name)
+                variants = _model_variants(mm, mm_data)
 
                 variant_lookup = model_map.variant_map.get(slicer_val, {})
                 sub_data["variants"] = {}
 
                 for variant in variants:
                     lookup = _find_variant_lookup(
-                        mm_data, name, variant, variant_lookup
+                        mm, mm_data, model_name_key, variant, variant_lookup
                     )
                     if lookup is not None:
-                        sub_data["variants"][variant] = lookup
+                        sub_data["variants"][variant] = _public_variant_payload(lookup)
 
                 machine_profiles_data.append(sub_data)
 
@@ -1009,7 +1688,7 @@ def _export_generic_filaments(
 
                         entry = {
                             "name": name,
-                            "data": fp_data,
+                            **_profile_payload(fp, fp_data),
                         }
                         if filament_db_id:
                             entry["filament_db_ids"] = [filament_db_id]

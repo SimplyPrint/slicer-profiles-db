@@ -17,12 +17,15 @@ class BaseParser(ABC):
         self,
         directory: Path,
         profile_type_filter: list[ProfileType] | None = None,
+        resource_version: str | None = None,
     ) -> Iterator[ParsedProfile]:
         """Parse all profile files from a slicer's profile directory.
 
         Args:
             directory: Root directory containing vendor subdirectories.
             profile_type_filter: If set, only yield profiles matching these types.
+            resource_version: Version of the source snapshot being parsed. Parsers
+                that expose native composition metadata can retain this value.
         """
         for vendor_dir in sorted(directory.iterdir()):
             if not vendor_dir.is_dir():

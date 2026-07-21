@@ -63,6 +63,17 @@ class ParsedProfile(BaseModel):
     setting_id: str | None = None
     filament_type: str | None = None
     filament_settings_id: str | None = None
+    # Stable identifier from the upstream slicer resource.  Display names are
+    # not identifiers in Cura (multiple quality/material resources commonly
+    # share one), so parsers should populate this whenever the source has one.
+    native_id: str | None = None
+    # Non-engine metadata used to compose and trace a profile.  Keeping this
+    # separate prevents identifiers and compatibility hints from leaking into
+    # the settings sent to a slicer process.
+    context: dict[str, Any] = Field(default_factory=dict)
+    # Flat setting-key -> runtime-scope map.  Tool scopes use the generic
+    # ``extruder.N`` form; a slicer adapter may support only a subset at run time.
+    setting_scopes: dict[str, str] = Field(default_factory=dict)
 
 
 class StoredProfile(BaseModel):
@@ -80,6 +91,10 @@ class StoredProfile(BaseModel):
     filament_id: str | None = None
     setting_id: str | None = None
     renamed_from: str | None = None
+    filament_type: str | None = None
+    native_id: str | None = None
+    context: dict[str, Any] = Field(default_factory=dict)
+    setting_scopes: dict[str, str] = Field(default_factory=dict)
     settings: dict[str, dict[str, Any]] = Field(default_factory=dict)
 
     def get_latest(self, key: str) -> Any:

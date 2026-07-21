@@ -1,5 +1,5 @@
 """
-Content-addressed store for slicer profile assets (STL/SVG/PNG).
+Content-addressed store for slicer profile binary resource files.
 
 Resources are stored once under their SHA-256 hash. Profile settings may refer to
 resources as ``sha256:{hash}``, and /out/resources.json maps those refs to
@@ -136,31 +136,79 @@ def _is_sha256_hex(value: str) -> bool:
     return len(value) == 64 and all(c in "0123456789abcdef" for c in value)
 
 
-RESOURCE_EXTENSIONS = {".stl", ".svg", ".png"}
+RESOURCE_SUFFIXES = frozenset(
+    {
+        ".3mf",
+        ".jpeg",
+        ".jpg",
+        ".obj",
+        ".png",
+        ".stl",
+        ".svg",
+    }
+)
 RESOURCE_SETTING_KEYS = {"bed_model", "bed_texture", "thumbnail", "hotend_model"}
 
 
 def collect_resources(extracted_dir: Path, store: ResourceStore) -> dict[str, str]:
-    """Walk extracted dir, store all resource files, return {filename: hash}."""
+    """Walk extracted dir and content-address supported resource files.
+
+    Both the basename and the extraction-relative path are indexed.  Current
+    slicer metadata generally uses basenames, while accepting relative paths
+    keeps the resource layer independent from a particular slicer's layout.
+    """
     resource_map: dict[str, str] = {}
-    for f in extracted_dir.rglob("*"):
-        if not f.is_file() or f.suffix.lower() not in RESOURCE_EXTENSIONS:
+    for file_path in sorted(extracted_dir.rglob("*")):
+        if not file_path.is_file() or file_path.suffix.lower() not in RESOURCE_SUFFIXES:
             continue
-        hash_hex = store.store(f, relative_to=extracted_dir)
-        resource_map[f.name] = hash_hex
+        hash_hex = store.store(file_path, relative_to=extracted_dir)
+        resource_map[file_path.name] = hash_hex
+        resource_map[file_path.relative_to(extracted_dir).as_posix()] = hash_hex
     store.save_manifest()
     return resource_map
 
 
+def _rewrite_resource_value(value, resource_map: dict[str, str]):
+    """Rewrite resource references recursively without interpreting schemas."""
+    if isinstance(value, str):
+        hash_hex = resource_map.get(value)
+        return f"sha256:{hash_hex}" if hash_hex else value
+    if isinstance(value, dict):
+        return {
+            key: _rewrite_resource_value(item, resource_map)
+            for key, item in value.items()
+        }
+    if isinstance(value, list):
+        return [_rewrite_resource_value(item, resource_map) for item in value]
+    if isinstance(value, tuple):
+        return tuple(_rewrite_resource_value(item, resource_map) for item in value)
+    return value
+
+
 def rewrite_resource_refs(profiles: list, resource_map: dict[str, str]) -> None:
-    """Rewrite bare filename resource references to sha256:{hash}."""
+    """Rewrite resource references in profile data to ``sha256:{hash}``.
+
+    Mutates profiles in place.  Context is included because typed assets and
+    other non-engine metadata intentionally live outside runtime settings.
+    """
     for profile in profiles:
-        for key in RESOURCE_SETTING_KEYS:
-            if key not in profile.settings:
-                continue
-            value = profile.settings[key]
-            if isinstance(value, str) and value and value in resource_map:
-                profile.settings[key] = f"sha256:{resource_map[value]}"
+        profile.settings = _rewrite_resource_value(profile.settings, resource_map)
+        profile.context = _rewrite_resource_value(profile.context, resource_map)
+
+
+def _collect_hash_refs(value, hashes: set[str]) -> None:
+    """Collect content-addressed references recursively from JSON data."""
+    if isinstance(value, str):
+        if value.startswith("sha256:"):
+            hashes.add(value[7:])
+        return
+    if isinstance(value, dict):
+        for item in value.values():
+            _collect_hash_refs(item, hashes)
+        return
+    if isinstance(value, list):
+        for item in value:
+            _collect_hash_refs(item, hashes)
 
 
 def collect_referenced_hashes(store_root: Path, slicer_value: str) -> set[str]:
@@ -174,14 +222,7 @@ def collect_referenced_hashes(store_root: Path, slicer_value: str) -> set[str]:
             continue
         try:
             data = json.loads(json_file.read_text(encoding="utf-8"))
-            settings = data.get("settings", {})
-            for key in RESOURCE_SETTING_KEYS:
-                if key not in settings:
-                    continue
-                versions = settings[key]
-                for value in versions.values():
-                    if isinstance(value, str) and value.startswith("sha256:"):
-                        hashes.add(value[7:])
+            _collect_hash_refs(data, hashes)
         except Exception:
             continue
     return hashes

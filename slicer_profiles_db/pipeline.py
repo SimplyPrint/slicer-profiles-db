@@ -212,21 +212,8 @@ class ProfilePipeline:
         if self.overlay_dir:
             apply_overlays(extracted, self.overlay_dir, slicer)
 
-        # Step 5: Parse
-        self.reporter.update_status(f"Parsing {slicer.value} profiles...")
-        parser = self._parsers[slicer]
-        parsed = list(
-            parser.parse_directory(extracted, profile_type_filter=profile_types)
-        )
-
-        # Step 6: Rewrite resource references in parsed profiles
-        if resource_map:
-            rewrite_resource_refs(parsed, resource_map)
-
-        # Step 7: Determine storage version
-        # For INI-bundle slicers, use the version detected from bundle filenames/content
-        # instead of the branch name (e.g. "2.4.9" instead of "main").
-        # For other branch-based slicers without version detection, use a date stamp.
+        # Step 5: Determine storage/source version.  Pass the exact same value
+        # to parsers that retain resource provenance in role context.
         normalized_version = normalize_version(version)
         if normalized_version in ("main", "master"):
             if detected_version:
@@ -235,6 +222,21 @@ class ProfilePipeline:
                 normalized_version = date.today().isoformat()
         if is_nightly:
             normalized_version = f"nightly-{normalized_version}"
+
+        # Step 6: Parse
+        self.reporter.update_status(f"Parsing {slicer.value} profiles...")
+        parser = self._parsers[slicer]
+        parsed = list(
+            parser.parse_directory(
+                extracted,
+                profile_type_filter=profile_types,
+                resource_version=normalized_version,
+            )
+        )
+
+        # Step 7: Rewrite resource references in parsed profiles
+        if resource_map:
+            rewrite_resource_refs(parsed, resource_map)
 
         # Step 8: Store
         self.reporter.update_status(
@@ -334,7 +336,9 @@ class ProfilePipeline:
                     # Parse the split directory
                     parsed = list(
                         parser.parse_directory(
-                            split_dir, profile_type_filter=profile_types
+                            split_dir,
+                            profile_type_filter=profile_types,
+                            resource_version=ver,
                         )
                     )
 
