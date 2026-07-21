@@ -60,6 +60,13 @@ _MAPPING_SLICERS = [
     SlicerType.CURA,
 ]
 
+_IMPORT_ARTIFACT_FILENAMES = {
+    "machine_profiles.json",
+    "print_profiles.json",
+    "filament_profiles.json",
+    "generic_filament_profiles.json",
+}
+
 
 def _stable_version(profile: StoredProfile) -> str:
     """Return the latest non-nightly version for a profile.
@@ -1517,6 +1524,7 @@ def export_output(
             generic_filament_profiles.json
         output_dir/resources.json  (sha256 → repo-relative path manifest)
         output_dir/profile_map_out.json
+        output_dir/import_manifest.json  (authoritative profile artifacts + hashes)
     """
     models_dir = output_dir / "models"
     brands_dir = output_dir / "brands"
@@ -1605,6 +1613,9 @@ def export_output(
 
     # --- Resource manifest for SHA-256 resolution ---
     _write_resource_manifest(store, output_dir)
+
+    # --- Authoritative importer artifact manifest ---
+    _write_import_manifest(output_dir)
 
 
 def _canonicalize_resource_refs(
@@ -1781,6 +1792,65 @@ def _write_json(path: Path, data: Any) -> None:
     path.write_text(
         json.dumps(data, indent=4, ensure_ascii=False, sort_keys=True, default=str),
         encoding="utf-8",
+    )
+
+
+def _import_artifact_engine(relative_path: Path) -> str | None:
+    """Resolve an import artifact's engine from the generic output layout."""
+    parts = relative_path.parts
+    if relative_path.name not in _IMPORT_ARTIFACT_FILENAMES:
+        return None
+    if parts[0:1] == ("models",) and len(parts) == 4:
+        return parts[2]
+    if (
+        parts[0:1] == ("brands",)
+        and len(parts) >= 3
+        and relative_path.name == "generic_filament_profiles.json"
+    ):
+        return parts[1]
+    return None
+
+
+def _sha256_file(path: Path) -> str:
+    """Return a file's lowercase SHA-256 digest without loading it all at once."""
+    digest = hashlib.sha256()
+    with path.open("rb") as artifact:
+        for chunk in iter(lambda: artifact.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _write_import_manifest(output_dir: Path) -> None:
+    """Describe every generated profile artifact consumed by the importer.
+
+    The completed output tree is the source of truth.  This keeps the contract
+    independent of slicer families and ensures any otherwise-stale profile
+    artifact remains declared until it is removed from the authoritative output.
+    """
+    artifacts_by_engine: dict[str, dict[str, str]] = {}
+    for path in sorted(output_dir.rglob("*.json")):
+        if not path.is_file():
+            continue
+        relative_path = path.relative_to(output_dir)
+        engine = _import_artifact_engine(relative_path)
+        if engine is None:
+            continue
+        artifacts_by_engine.setdefault(engine, {})[
+            relative_path.as_posix()
+        ] = _sha256_file(path)
+
+    manifest = {
+        "schema_version": 1,
+        "engines": {
+            engine: {"artifacts": dict(sorted(artifacts.items()))}
+            for engine, artifacts in sorted(artifacts_by_engine.items())
+        },
+    }
+    _write_json(output_dir / "import_manifest.json", manifest)
+    logger.info(
+        "Wrote import_manifest.json with %d artifacts across %d engines",
+        sum(len(artifacts) for artifacts in artifacts_by_engine.values()),
+        len(artifacts_by_engine),
     )
 
 
