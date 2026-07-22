@@ -43,6 +43,38 @@ def _resource_context(resource_version: str | None) -> dict[str, str]:
     return {"resource_version": resource_version} if resource_version else {}
 
 
+def _material_compatibility_aliases(
+    profiles: Sequence[ParsedProfile],
+) -> dict[str, tuple[str, ...]]:
+    """Group equivalent Cura material resources across filament diameters."""
+    identities: dict[tuple[str, str, str, str], set[str]] = {}
+    for profile in profiles:
+        native_id = profile.native_id
+        context = profile.context
+        identity = (
+            str(context.get("brand") or profile.vendor).strip().casefold(),
+            str(context.get("material_type") or profile.filament_type)
+            .strip()
+            .casefold(),
+            str(context.get("color") or "").strip().casefold(),
+            profile.name.strip().casefold(),
+        )
+        if not native_id or not all(identity):
+            continue
+        identities.setdefault(identity, set()).add(native_id)
+
+    aliases: dict[str, tuple[str, ...]] = {}
+    for native_ids in identities.values():
+        if len(native_ids) < 2:
+            continue
+        for native_id in native_ids:
+            aliases[native_id] = (
+                native_id,
+                *sorted(native_ids - {native_id}),
+            )
+    return aliases
+
+
 def _process_profile_selection_defaults(
     metadata: Mapping[str, Any],
 ) -> dict[str, Any] | None:
@@ -447,12 +479,29 @@ def _bed_assets(
         assets["build_volume"] = {"width": width, "depth": depth}
 
     if model is not None:
+        transform: dict[str, Any] = {}
         offset = metadata.get("platform_offset")
         if isinstance(offset, (list, tuple)) and len(offset) >= 3:
-            model["transform"] = {
-                "translation": list(offset[:3]),
+            transform.update({
+                # Cura stores platform offsets in its Y-up scene. Normalise
+                # them into the exported Z-up machine coordinate space.
+                "translation": [offset[0], -offset[2], offset[1]],
                 "unit": "mm",
+            })
+        if model["format"] == "3mf":
+            # Cura platform 3MF resources use a Y-up X/Z build plane. Declare
+            # that consumers must use the authored mesh coordinates rather
+            # than the package's build-item assembly transform, matching how
+            # Cura consumes platform resources. The conversion below then
+            # maps that raw Y-up geometry into the exported Z-up scene.
+            model["geometry_space"] = "raw_mesh"
+            transform["rotation"] = {
+                "euler": [90, 0, 0],
+                "unit": "deg",
+                "order": "XYZ",
             }
+        if transform:
+            model["transform"] = transform
         assets["model"] = model
     if texture is not None:
         # Cura's platform_texture is the texture paired with the platform
@@ -466,6 +515,77 @@ def _bed_assets(
             texture["flip_y"] = True
         assets["texture"] = texture
     return assets
+
+
+def _finite_number(value: Any) -> float | None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return None
+    number = float(value)
+    return number if math.isfinite(number) else None
+
+
+def build_cura_scene_context(
+    machine_values: Mapping[str, Any],
+) -> dict[str, Any] | None:
+    """Describe the affine transform from UI machine space to slicer mesh space."""
+
+    width = _finite_number(machine_values.get("machine_width"))
+    depth = _finite_number(machine_values.get("machine_depth"))
+    if width is None or width <= 0 or depth is None or depth <= 0:
+        return None
+
+    origin_setting = (
+        "machine_center_is_zero" if "machine_center_is_zero" in machine_values else None
+    )
+    centered = machine_values.get("machine_center_is_zero") in (
+        True,
+        1,
+        "1",
+        "true",
+        "True",
+    )
+
+    def axis_terms(dimension_key: str) -> dict[str, Any]:
+        terms: list[dict[str, Any]] = []
+        correction: dict[str, Any] = {
+            "setting": dimension_key,
+            "scale": -0.5,
+        }
+        if origin_setting is not None:
+            correction["when"] = {
+                "setting": origin_setting,
+                "equals": False,
+            }
+            terms.append(correction)
+        elif not centered:
+            terms.append(correction)
+        return {"constant": 0.0, "terms": terms}
+
+    origin: str | dict[str, Any]
+    if origin_setting is not None:
+        origin = {
+            "setting": origin_setting,
+            "values": {
+                "true": "build_volume_center",
+                "false": "build_volume_minimum_xy",
+            },
+        }
+    else:
+        origin = "build_volume_center" if centered else "build_volume_minimum_xy"
+
+    return {
+        "schema": "scene-transform.v1",
+        "coordinate_space": "machine_build_volume",
+        "origin": origin,
+        "model_transform": {
+            "translation": {
+                "unit": "mm",
+                "x": axis_terms("machine_width"),
+                "y": axis_terms("machine_depth"),
+                "z": {"constant": 0.0, "terms": []},
+            }
+        },
+    }
 
 
 def _parse_compatible_value(value: Any, default: bool = True) -> bool:
@@ -1095,6 +1215,7 @@ class CuraParser(BaseParser):
             for profile in material_profiles
             if profile.native_id
         }
+        material_aliases = _material_compatibility_aliases(material_profiles)
         materials_by_native_id = {
             profile.native_id: profile
             for profile in material_profiles
@@ -1164,6 +1285,7 @@ class CuraParser(BaseParser):
                     graph,
                     single_extruder_schema,
                     material_settings,
+                    material_aliases,
                     resource_version,
                 )
             )
@@ -1374,6 +1496,9 @@ class CuraParser(BaseParser):
                 context["variant_identity_aliases"] = record["identity_aliases"]
             if material_recompute_plan:
                 context[CURA_MATERIAL_RECOMPUTE_PLAN] = material_recompute_plan
+            scene = build_cura_scene_context(data)
+            if scene is not None:
+                context["scene"] = scene
             if unresolved:
                 context["unresolved_settings"] = sorted(unresolved)
             machine_profiles.append(
@@ -1479,6 +1604,7 @@ class CuraParser(BaseParser):
             "tool_topology": tool_topology,
             "runtime": runtime_context,
             "bed_assets": bed_assets or None,
+            "scene": build_cura_scene_context(base_data),
             "bed_model": metadata.get("platform"),
             "bed_texture": metadata.get("platform_texture"),
             "include_materials": metadata.get("include_materials", []),
@@ -1505,6 +1631,7 @@ class CuraParser(BaseParser):
         graph: _DefinitionGraph,
         base_schema: Mapping[str, Mapping[str, Any]],
         material_settings: Mapping[str, Mapping[str, Any]],
+        material_aliases: Mapping[str, Sequence[str]],
         resource_version: str | None,
     ) -> list[ParsedProfile]:
         global_instances: dict[tuple[str, str, str, str, str], _InstanceResource] = {}
@@ -1555,6 +1682,7 @@ class CuraParser(BaseParser):
                     definition_seed_cache,
                     variant_seed_cache,
                     material_settings,
+                    material_aliases,
                     resource_version,
                 )
             )
@@ -1574,6 +1702,7 @@ class CuraParser(BaseParser):
                         definition_seed_cache,
                         variant_seed_cache,
                         material_settings,
+                        material_aliases,
                         resource_version,
                     )
                 )
@@ -1590,6 +1719,7 @@ class CuraParser(BaseParser):
         definition_seed_cache: dict[str, tuple[dict[str, Any], dict[str, Any]]],
         variant_seed_cache: dict[tuple[str, str], dict[str, Any]],
         material_settings: Mapping[str, Mapping[str, Any]],
+        material_aliases: Mapping[str, Sequence[str]],
         resource_version: str | None,
     ) -> ParsedProfile:
         cached_seed = definition_seed_cache.get(instance.definition)
@@ -1626,6 +1756,7 @@ class CuraParser(BaseParser):
             ),
             None,
         )
+        variant_attributes: dict[str, Any] | None = None
         if variant is not None:
             cache_key = (instance.definition, variant.native_id)
             variant_seed = variant_seed_cache.get(cache_key)
@@ -1636,10 +1767,23 @@ class CuraParser(BaseParser):
                 variant_seed = {**seed, **variant_values}
                 variant_seed_cache[cache_key] = variant_seed
             seed = variant_seed
+            variant_attributes = self._variant_attributes(
+                variant.metadata,
+                seed,
+                variant.native_id,
+                self._variant_volume_type(variant),
+            )
 
         material_id = str(instance.metadata.get("material") or "")
         if material_id in material_settings:
             seed = {**seed, **material_settings[material_id]}
+        compatible_material_ids = material_aliases.get(material_id, (material_id,))
+        material_type = (
+            str(instance.metadata.get("material_type") or "").strip()
+            or str(
+                material_settings.get(material_id, {}).get("material_type") or ""
+            ).strip()
+        )
 
         # A print role contains only settings introduced by the selected
         # quality/intent resources.  Expressions may read from the seeded
@@ -1669,10 +1813,16 @@ class CuraParser(BaseParser):
             "variant_name": variant_name or None,
             "material_id": material_id or None,
             "global_quality_id": global_instance.native_id if global_instance else None,
+            **({"attributes": variant_attributes} if variant_attributes else {}),
             "compatibility": {
                 "machine_definition_ids": [instance.definition],
                 **({"variant_names": [variant_name]} if variant_name else {}),
-                **({"material_native_ids": [material_id]} if material_id else {}),
+                **(
+                    {"material_native_ids": list(compatible_material_ids)}
+                    if material_id
+                    else {}
+                ),
+                **({"material_types": [material_type]} if material_type else {}),
             },
         }
         if unresolved:

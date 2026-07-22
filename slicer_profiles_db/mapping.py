@@ -33,13 +33,18 @@ from .models import ProfileType, SlicerType, StoredProfile
 from .parsers.cura import (
     CURA_MATERIAL_RECOMPUTE_PLAN,
     _expression_dependencies,
+    build_cura_scene_context,
     resolve_cura_overlay,
 )
 from .resources import ResourceStore
 from .store import ProfileStore
-from .versions import version_key
+from .versions import normalize_version, version_key
 
 logger = logging.getLogger(__name__)
+
+_DEFAULT_SP_SLICER_VERSIONS_API_URL = (
+    "https://slicing-test.simplyprint.io/api/v1/slicers/versions"
+)
 
 
 def _get_sp_api_url() -> str:
@@ -51,6 +56,13 @@ def _get_sp_api_url() -> str:
             "Set it to the full SimplyPrint printer model endpoint URL."
         )
     return url
+
+
+def _get_sp_slicer_versions_url() -> str:
+    """Return the SimplyPrint endpoint that declares supported slicer versions."""
+    return os.environ.get(
+        "SP_SLICER_VERSIONS_API_URL", _DEFAULT_SP_SLICER_VERSIONS_API_URL
+    )
 
 
 # Slicers that participate in model mapping.
@@ -83,9 +95,20 @@ def _stable_version(profile: StoredProfile) -> str:
     return best or last
 
 
-def _evaluate_stable(profile: StoredProfile) -> dict[str, Any]:
-    """Evaluate a profile at its latest stable (non-nightly) version."""
-    return profile.evaluate(_stable_version(profile))
+def _evaluate_stable(
+    profile: StoredProfile,
+    version_guards: Mapping[SlicerType, str] | None = None,
+) -> dict[str, Any]:
+    """Evaluate a profile at its latest SimplyPrint-supported stable version."""
+    version = _stable_version(profile)
+    if version_guards:
+        try:
+            guard = version_guards.get(SlicerType(profile.slicer))
+        except ValueError:
+            guard = None
+        if guard and version_key(guard) < version_key(version):
+            version = guard
+    return profile.evaluate(version)
 
 
 def _profile_payload(
@@ -516,9 +539,9 @@ def _public_variant_payload(
             if key
             not in {
                 CURA_MATERIAL_RECOMPUTE_PLAN,
+                "scene",
                 "variant_aliases",
                 "variant_identity_aliases",
-                "scene",
             }
         }
     if selection_defaults:
@@ -937,11 +960,18 @@ def _machine_model_export(
         "preferred_variant_key",
         "preferred_variant_name",
         "runtime",
+        "scene",
         "tool_topology",
     ):
         value = profile.context.get(key)
         if value is not None:
             exported[key] = value
+    if profile.slicer == SlicerType.CURA.value:
+        scene = build_cura_scene_context(data)
+        if scene is None:
+            exported.pop("scene", None)
+        else:
+            exported["scene"] = scene
     selection_defaults = _profile_selection_defaults(profile)
     if selection_defaults:
         exported["selection_defaults"] = selection_defaults
@@ -969,6 +999,26 @@ def fetch_sp_model_data() -> dict[str, Any]:
     resp = requests.get(url, timeout=30)
     resp.raise_for_status()
     return resp.json()
+
+
+def fetch_sp_slicer_versions() -> dict[SlicerType, str]:
+    """Fetch the newest stable slicer version supported by SimplyPrint."""
+    resp = requests.get(_get_sp_slicer_versions_url(), timeout=30)
+    resp.raise_for_status()
+    data = resp.json()
+    guards: dict[SlicerType, str] = {}
+    for slicer_data in data.get("slicers", []):
+        if not isinstance(slicer_data, Mapping):
+            continue
+        name = slicer_data.get("name")
+        latest = slicer_data.get("latest")
+        if not isinstance(name, str) or not isinstance(latest, str) or not latest:
+            continue
+        try:
+            guards[SlicerType(name.casefold())] = normalize_version(latest)
+        except ValueError:
+            logger.warning("Ignoring unsupported SimplyPrint slicer %r", name)
+    return guards
 
 
 def _prepare_sp_data(
@@ -1011,6 +1061,7 @@ def map_printer_models(
     index: ProfileIndex,
     sp_data: dict[str, Any],
     slicers: list[SlicerType] | None = None,
+    version_guards: Mapping[SlicerType, str] | None = None,
 ) -> ModelMap:
     """
     Match slicer machine_model profiles to SimplyPrint printer model IDs
@@ -1038,9 +1089,12 @@ def map_printer_models(
             continue
 
         for profile in machine_models:
+            data = _evaluate_stable(profile, version_guards)
+            if not data:
+                continue
             name = (
                 profile.context.get("display_name")
-                or profile.get_latest("name")
+                or data.get("name")
                 or profile.name
             )
             vendor = profile.vendor
@@ -1068,7 +1122,7 @@ def map_printer_models(
                     result.failed_models.add(f"{vendor}/{name}")
 
         # Build variant lookup map for this slicer
-        _build_variant_map(store, index, slicer, result)
+        _build_variant_map(store, index, slicer, result, version_guards)
 
     return result
 
@@ -1078,6 +1132,7 @@ def _build_variant_map(
     index: ProfileIndex,
     slicer: SlicerType,
     result: ModelMap,
+    version_guards: Mapping[SlicerType, str] | None = None,
 ) -> None:
     """Build the variant lookup map for a slicer.
 
@@ -1090,7 +1145,9 @@ def _build_variant_map(
 
     machine_profiles = index.find_by_type(slicer, ProfileType.MACHINE)
     for profile in machine_profiles:
-        data = _evaluate_stable(profile)
+        data = _evaluate_stable(profile, version_guards)
+        if not data:
+            continue
 
         printer_model = profile.context.get("printer_model") or data.get(
             "printer_model"
@@ -1223,6 +1280,7 @@ def map_filament_profiles(
     index: ProfileIndex,
     model_map: ModelMap,
     ofd_index: Any | None = None,
+    version_guards: Mapping[SlicerType, str] | None = None,
 ) -> dict[int, dict[str, list[dict]]]:
     """
     For each mapped printer model, find compatible filament profiles.
@@ -1248,7 +1306,7 @@ def map_filament_profiles(
         key = id(profile)
         cached = profile_snapshots.get(key)
         if cached is None:
-            cached = profile_snapshots[key] = _evaluate_stable(profile)
+            cached = profile_snapshots[key] = _evaluate_stable(profile, version_guards)
         return cached
 
     # Build generic ID lookup per slicer (for resolve_generic_id).
@@ -1259,7 +1317,9 @@ def map_filament_profiles(
         index, [SlicerType(s) for s in active_slicers]
     )
     _global_templates = {
-        slicer: _global_filament_templates(index, SlicerType(slicer))
+        slicer: _global_filament_templates(
+            index, SlicerType(slicer), version_guards
+        )
         for slicer in active_slicers
     }
 
@@ -1279,6 +1339,8 @@ def map_filament_profiles(
                     continue
                 mm = mm_profile[0]
                 mm_data = snapshot(mm)
+                if not mm_data:
+                    continue
                 model_name = _model_display_name(mm, mm_data, name)
 
                 # Get nozzle variants
@@ -1311,6 +1373,8 @@ def map_filament_profiles(
                     )
                     for fp in filament_profiles:
                         fp_data = snapshot(fp)
+                        if not fp_data:
+                            continue
                         filament_name = fp_data.get("name", fp.name)
                         filament_type = (
                             fp.filament_type
@@ -1407,6 +1471,8 @@ def map_filament_profiles(
                     # every printer gets unrelated filament brands like AliZ/NIT.
                     for fp in _global_templates.get(slicer_val, []):
                         fp_data = snapshot(fp)
+                        if not fp_data:
+                            continue
                         filament_name = fp_data.get("name", fp.name)
                         filament_type = fp_data.get("filament_type", "")
                         if isinstance(filament_type, list):
@@ -1499,7 +1565,9 @@ def _compat_matches_printer(
 
 
 def _global_filament_templates(
-    index: ProfileIndex, slicer: SlicerType
+    index: ProfileIndex,
+    slicer: SlicerType,
+    version_guards: Mapping[SlicerType, str] | None = None,
 ) -> list[StoredProfile]:
     """Return cross-vendor generic filament library templates for a slicer."""
     if slicer != SlicerType.ORCASLICER:
@@ -1509,7 +1577,7 @@ def _global_filament_templates(
     for profile in index.find_by_type(
         slicer, ProfileType.FILAMENT, "OrcaFilamentLibrary"
     ):
-        data = _evaluate_stable(profile)
+        data = _evaluate_stable(profile, version_guards)
         name = data.get("name", profile.name)
         if not isinstance(name, str) or not name.endswith("@System"):
             continue
@@ -1600,6 +1668,7 @@ def map_print_profiles(
     store: ProfileStore,
     index: ProfileIndex,
     model_map: ModelMap,
+    version_guards: Mapping[SlicerType, str] | None = None,
 ) -> dict[int, dict[str, list[dict]]]:
     """
     For each mapped printer model, find compatible print profiles.
@@ -1623,7 +1692,9 @@ def map_print_profiles(
                 if not mm_profile:
                     continue
                 mm = mm_profile[0]
-                mm_data = _evaluate_stable(mm)
+                mm_data = _evaluate_stable(mm, version_guards)
+                if not mm_data:
+                    continue
                 model_name = _model_display_name(mm, mm_data, name)
 
                 # Get variants
@@ -1655,7 +1726,9 @@ def map_print_profiles(
                         )
 
                     for pp in print_profiles:
-                        pp_data = _evaluate_stable(pp)
+                        pp_data = _evaluate_stable(pp, version_guards)
+                        if not pp_data:
+                            continue
                         print_name = (
                             pp_data.get("name")
                             or pp_data.get("print_settings_id")
@@ -1753,6 +1826,7 @@ def export_output(
     index: ProfileIndex,
     output_dir: Path,
     ofd_index: Any | None = None,
+    version_guards: Mapping[SlicerType, str] | None = None,
 ) -> None:
     """
     Write the mapped profile data to the output directory.
@@ -1792,7 +1866,9 @@ def export_output(
                 if not mm_profiles:
                     continue
                 mm = mm_profiles[0]
-                mm_data = _evaluate_stable(mm)
+                mm_data = _evaluate_stable(mm, version_guards)
+                if not mm_data:
+                    continue
                 # Keep /out small: resource files live under
                 # profiles/{slicer}/_resources and are resolved by the
                 # ecosystem importer using resources.json.
@@ -1844,7 +1920,9 @@ def export_output(
                 _write_json(slicer_path / "print_profiles.json", prt_data)
 
     # --- Generic filament profiles per brand ---
-    _export_generic_filaments(store, index, model_map, brands_dir, ofd_index)
+    _export_generic_filaments(
+        store, index, model_map, brands_dir, ofd_index, version_guards
+    )
 
     # --- Top-level profile map ---
     sorted_map = dict(sorted(model_map.model_to_profiles.items()))
@@ -1909,6 +1987,7 @@ def _export_generic_filaments(
     model_map: ModelMap,
     brands_dir: Path,
     ofd_index: Any | None = None,
+    version_guards: Mapping[SlicerType, str] | None = None,
 ) -> None:
     """Export non-model-specific filament profiles per vendor."""
     # Collect vendors seen per slicer
@@ -1919,11 +1998,13 @@ def _export_generic_filaments(
                 vendor = pk.split("/", 1)[0]
                 vendors_per_slicer.setdefault(slicer_val, set()).add(vendor)
 
-    model_counts = _build_machine_profile_counts(index)
+    model_counts = _build_machine_profile_counts(index, version_guards)
 
     for slicer_val, vendors in vendors_per_slicer.items():
         slicer = SlicerType(slicer_val)
-        _export_global_generic_filaments(index, slicer, brands_dir, ofd_index)
+        _export_global_generic_filaments(
+            index, slicer, brands_dir, ofd_index, version_guards
+        )
 
         for vendor in vendors:
             filament_profiles = index.find_by_type(slicer, ProfileType.FILAMENT, vendor)
@@ -1932,7 +2013,9 @@ def _export_generic_filaments(
 
             generic_data = []
             for fp in filament_profiles:
-                fp_data = _evaluate_stable(fp)
+                fp_data = _evaluate_stable(fp, version_guards)
+                if not fp_data:
+                    continue
                 if not is_profile_model_specific(slicer, vendor, fp, model_counts):
                     name = fp_data.get("name") or fp_data.get("filament_settings_id")
                     if name:
@@ -1970,6 +2053,7 @@ def _export_generic_filaments(
 
 def _build_machine_profile_counts(
     index: ProfileIndex,
+    version_guards: Mapping[SlicerType, str] | None = None,
 ) -> dict[str, dict[str, int]]:
     """Count concrete machine/variant profiles per slicer vendor.
 
@@ -1980,6 +2064,8 @@ def _build_machine_profile_counts(
     counts: dict[str, dict[str, int]] = {}
     for slicer in SlicerType:
         for profile in index.find_by_type(slicer, ProfileType.MACHINE):
+            if not _evaluate_stable(profile, version_guards):
+                continue
             counts.setdefault(slicer.value, {}).setdefault(profile.vendor, 0)
             counts[slicer.value][profile.vendor] += 1
     return counts
@@ -1990,6 +2076,7 @@ def _export_global_generic_filaments(
     slicer: SlicerType,
     brands_dir: Path,
     ofd_index: Any | None = None,
+    version_guards: Mapping[SlicerType, str] | None = None,
 ) -> None:
     """Export slicer-wide generic filament library profiles.
 
@@ -1998,7 +2085,9 @@ def _export_global_generic_filaments(
     """
     generic_data: dict[str, dict[str, Any]] = {}
     for fp in index.find_by_type(slicer, ProfileType.FILAMENT):
-        fp_data = _evaluate_stable(fp)
+        fp_data = _evaluate_stable(fp, version_guards)
+        if not fp_data:
+            continue
         name = fp_data.get("name") or fp_data.get("filament_settings_id") or fp.name
         if not isinstance(name, str) or not name:
             continue
@@ -2183,10 +2272,21 @@ def run_mapping_pipeline(
     # Fetch SimplyPrint model data
     logger.info("Fetching SimplyPrint model data...")
     sp_data = fetch_sp_model_data()
+    logger.info("Fetching SimplyPrint slicer versions...")
+    version_guards = fetch_sp_slicer_versions()
+    logger.info(
+        "Using SimplyPrint newest-version guards: %s",
+        ", ".join(
+            f"{slicer.value}={version}"
+            for slicer, version in sorted(version_guards.items(), key=lambda item: item[0].value)
+        ),
+    )
 
     # Step 1: Map printer models
     logger.info("Mapping printer models...")
-    model_map = map_printer_models(store, index, sp_data, target_slicers)
+    model_map = map_printer_models(
+        store, index, sp_data, target_slicers, version_guards
+    )
     logger.info(
         "Mapped %d SimplyPrint models. Failed brands: %d, Failed models: %d",
         len(model_map.model_to_profiles),
@@ -2196,16 +2296,25 @@ def run_mapping_pipeline(
 
     # Step 2: Map filament profiles
     logger.info("Mapping filament profiles...")
-    filament_map = map_filament_profiles(store, index, model_map, ofd_index)
+    filament_map = map_filament_profiles(
+        store, index, model_map, ofd_index, version_guards
+    )
 
     # Step 3: Map print profiles
     logger.info("Mapping print profiles...")
-    print_map = map_print_profiles(store, index, model_map)
+    print_map = map_print_profiles(store, index, model_map, version_guards)
 
     # Step 4: Export
     logger.info("Exporting to %s ...", output_dir)
     export_output(
-        model_map, filament_map, print_map, store, index, output_dir, ofd_index
+        model_map,
+        filament_map,
+        print_map,
+        store,
+        index,
+        output_dir,
+        ofd_index,
+        version_guards,
     )
 
     return model_map

@@ -50,6 +50,7 @@ Examples:
 Environment variables:
   GITHUB_TOKEN              GitHub API token (increases rate limit)
   SP_API_URL                SimplyPrint printer model endpoint URL
+  SP_SLICER_VERSIONS_API_URL  Optional slicer-version URL (defaults to slicing-test)
   SLICER_PROFILES_STORE     Default store directory (instead of "profiles")
   SLICER_PROFILES_OVERLAY   Default overlay directory (instead of "overlay")
         """,
