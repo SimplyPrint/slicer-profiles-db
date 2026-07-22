@@ -983,6 +983,11 @@ def _machine_model_export(
         if value is not None:
             exported[key] = value
     if profile.slicer == SlicerType.CURA.value:
+        # Cura's upstream platform models and textures do not share a stable
+        # render-space contract.  Never expose them to SimplyPrint clients;
+        # Cura machines must use the generic build surface.
+        for key in ("bed_assets", "bed_model", "bed_texture"):
+            exported.pop(key, None)
         scene = build_cura_scene_context(data)
         if scene is None:
             exported.pop("scene", None)

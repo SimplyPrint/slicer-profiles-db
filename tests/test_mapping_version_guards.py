@@ -6,6 +6,7 @@ from unittest.mock import Mock, patch
 
 from slicer_profiles_db.mapping import (
     _evaluate_stable,
+    _machine_model_export,
     _write_import_manifest,
     fetch_sp_slicer_versions,
 )
@@ -85,6 +86,37 @@ class MappingVersionGuardTests(unittest.TestCase):
                     output_dir,
                     [SlicerType.BAMBUSTUDIO, SlicerType.PRUSASLICER],
                 )
+
+    def test_cura_machine_export_strips_custom_bed_resources(self) -> None:
+        profile = StoredProfile(
+            slicer=SlicerType.CURA.value,
+            profile_type="machine_model",
+            name="Cura printer",
+            vendor="Example",
+            first_seen="5.13.0",
+            last_seen="5.13.0",
+            context={
+                "bed_assets": {"model": {"url": "sha256:model"}},
+                "bed_model": "sha256:model",
+                "bed_texture": "sha256:texture",
+            },
+            settings={},
+        )
+
+        exported = _machine_model_export(
+            profile,
+            {
+                "machine_width": 220,
+                "machine_depth": 220,
+                "bed_assets": {"texture": {"url": "sha256:texture"}},
+                "bed_model": "legacy-model.stl",
+                "bed_texture": "legacy-texture.png",
+            },
+        )
+
+        self.assertNotIn("bed_assets", exported)
+        self.assertNotIn("bed_model", exported)
+        self.assertNotIn("bed_texture", exported)
 
     @patch.dict(
         os.environ,
