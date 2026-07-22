@@ -5,7 +5,7 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_abs"
+                "generic_petg"
             ],
             "variant_names": [
                 "0.2mm Nozzle"
@@ -22,35 +22,37 @@
                     "tronxy_x"
                 ],
                 "material_native_ids": [
-                    "generic_abs"
+                    "generic_petg"
                 ],
                 "variant_names": [
                     "0.2mm Nozzle"
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_super",
             "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.2_ABS_extra",
-            "quality_type": "extra",
+            "material_id": "generic_petg",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.2_PETG_super",
+            "quality_type": "super",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.2mm Nozzle"
         },
         "data": {
-            "cool_fan_enabled": false,
-            "layer_height": 0.12,
-            "layer_height_0": 0.12,
+            "layer_height": 0.08,
+            "layer_height_0": 0.14,
+            "retraction_extra_prime_amount": 0.25,
+            "speed_layer_0": 15,
             "support_interface_height": 0.96,
-            "top_bottom_thickness": 0.84,
-            "wall_thickness": 3.2
+            "top_bottom_thickness": 0.9400000000000001,
+            "wall_thickness": 1.6
         },
-        "name": "Extra Fine Quality · @tronxy_x · 0.2mm Nozzle · generic_abs",
+        "name": "Super Fine Quality · @tronxy_x · 0.2mm Nozzle · generic_petg",
         "setting_scopes": {
-            "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
+            "retraction_extra_prime_amount": "extruder.0",
+            "speed_layer_0": "extruder.0",
             "support_interface_height": "extruder.0",
             "top_bottom_thickness": "extruder.0",
             "wall_thickness": "extruder.0"
@@ -121,7 +123,7 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_pla"
+                "generic_abs"
             ],
             "variant_names": [
                 "0.2mm Nozzle"
@@ -138,7 +140,7 @@
                     "tronxy_x"
                 ],
                 "material_native_ids": [
-                    "generic_pla"
+                    "generic_abs"
                 ],
                 "variant_names": [
                     "0.2mm Nozzle"
@@ -147,22 +149,81 @@
             "definition": "tronxy_x",
             "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
             "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.2_PLA_extra",
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.2_ABS_extra",
             "quality_type": "extra",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.2mm Nozzle"
         },
         "data": {
+            "cool_fan_enabled": false,
             "layer_height": 0.12,
             "layer_height_0": 0.12,
             "support_interface_height": 0.96,
             "top_bottom_thickness": 0.84,
-            "wall_thickness": 1.2000000000000002
+            "wall_thickness": 3.2
         },
-        "name": "Extra Fine Quality · @tronxy_x · 0.2mm Nozzle · generic_pla",
+        "name": "Extra Fine Quality · @tronxy_x · 0.2mm Nozzle · generic_abs",
         "setting_scopes": {
+            "cool_fan_enabled": "extruder.0",
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_abs"
+            ],
+            "variant_names": [
+                "0.2mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.2"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_abs"
+                ],
+                "variant_names": [
+                    "0.2mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_super",
+            "intent_category": null,
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.2_ABS_super",
+            "quality_type": "super",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.2mm Nozzle"
+        },
+        "data": {
+            "cool_fan_enabled": false,
+            "layer_height": 0.08,
+            "layer_height_0": 0.12,
+            "support_interface_height": 0.96,
+            "top_bottom_thickness": 0.92,
+            "wall_thickness": 3.2
+        },
+        "name": "Super Fine Quality · @tronxy_x · 0.2mm Nozzle · generic_abs",
+        "setting_scopes": {
+            "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",
@@ -222,6 +283,173 @@
         "setting_scopes": {
             "adaptive_layer_height_enabled": "global",
             "cool_fan_enabled": "extruder.0",
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_pla"
+            ],
+            "variant_names": [
+                "0.2mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.2"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_pla"
+                ],
+                "variant_names": [
+                    "0.2mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
+            "intent_category": null,
+            "material_id": "generic_pla",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.2_PLA_extra",
+            "quality_type": "extra",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.2mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.12,
+            "layer_height_0": 0.12,
+            "support_interface_height": 0.96,
+            "top_bottom_thickness": 0.84,
+            "wall_thickness": 1.2000000000000002
+        },
+        "name": "Extra Fine Quality · @tronxy_x · 0.2mm Nozzle · generic_pla",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_pla"
+            ],
+            "variant_names": [
+                "0.2mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.2"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_pla"
+                ],
+                "variant_names": [
+                    "0.2mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_super",
+            "intent_category": null,
+            "material_id": "generic_pla",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.2_PLA_super",
+            "quality_type": "super",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.2mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.08,
+            "layer_height_0": 0.12,
+            "support_interface_height": 0.96,
+            "top_bottom_thickness": 0.92,
+            "wall_thickness": 1.2000000000000002
+        },
+        "name": "Super Fine Quality · @tronxy_x · 0.2mm Nozzle · generic_pla",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_pla"
+            ],
+            "variant_names": [
+                "0.2mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.2"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_pla"
+                ],
+                "variant_names": [
+                    "0.2mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
+            "intent_category": null,
+            "material_id": "generic_pla",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.2_PLA_fine",
+            "quality_type": "fine",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.2mm Nozzle"
+        },
+        "data": {
+            "adaptive_layer_height_enabled": true,
+            "layer_height": 0.15,
+            "layer_height_0": 0.2,
+            "support_interface_height": 0.8999999999999999,
+            "top_bottom_thickness": 0.8,
+            "wall_thickness": 1.2000000000000002
+        },
+        "name": "Fine Quality · @tronxy_x · 0.2mm Nozzle · generic_pla",
+        "setting_scopes": {
+            "adaptive_layer_height_enabled": "global",
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",
@@ -299,12 +527,12 @@
                 "generic_pla"
             ],
             "variant_names": [
-                "0.2mm Nozzle"
+                "0.3mm Nozzle"
             ]
         },
         "compatible_printers": {
             "Tronxy XY-3/Pro": [
-                "0.2"
+                "0.3"
             ]
         },
         "context": {
@@ -316,87 +544,28 @@
                     "generic_pla"
                 ],
                 "variant_names": [
-                    "0.2mm Nozzle"
+                    "0.3mm Nozzle"
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
             "intent_category": null,
             "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.2_PLA_fine",
-            "quality_type": "fine",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_PLA_normal",
+            "quality_type": "normal",
             "resource_version": "5.13.0",
             "source_kind": "quality",
-            "variant_name": "0.2mm Nozzle"
+            "variant_name": "0.3mm Nozzle"
         },
         "data": {
-            "adaptive_layer_height_enabled": true,
-            "layer_height": 0.15,
+            "layer_height": 0.2,
             "layer_height_0": 0.2,
-            "support_interface_height": 0.8999999999999999,
+            "support_interface_height": 0.8,
             "top_bottom_thickness": 0.8,
-            "wall_thickness": 1.2000000000000002
+            "wall_thickness": 0.8
         },
-        "name": "Fine Quality · @tronxy_x · 0.2mm Nozzle · generic_pla",
+        "name": "Normal Quality · @tronxy_x · 0.3mm Nozzle · generic_pla",
         "setting_scopes": {
-            "adaptive_layer_height_enabled": "global",
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_abs"
-            ],
-            "variant_names": [
-                "0.2mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.2"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_abs"
-                ],
-                "variant_names": [
-                    "0.2mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_super",
-            "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.2_ABS_super",
-            "quality_type": "super",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.2mm Nozzle"
-        },
-        "data": {
-            "cool_fan_enabled": false,
-            "layer_height": 0.08,
-            "layer_height_0": 0.12,
-            "support_interface_height": 0.96,
-            "top_bottom_thickness": 0.92,
-            "wall_thickness": 3.2
-        },
-        "name": "Super Fine Quality · @tronxy_x · 0.2mm Nozzle · generic_abs",
-        "setting_scopes": {
-            "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",
@@ -413,120 +582,6 @@
                 "generic_petg"
             ],
             "variant_names": [
-                "0.2mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.2"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_petg"
-                ],
-                "variant_names": [
-                    "0.2mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_super",
-            "intent_category": null,
-            "material_id": "generic_petg",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.2_PETG_super",
-            "quality_type": "super",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.2mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.08,
-            "layer_height_0": 0.14,
-            "retraction_extra_prime_amount": 0.25,
-            "speed_layer_0": 15,
-            "support_interface_height": 0.96,
-            "top_bottom_thickness": 0.9400000000000001,
-            "wall_thickness": 1.6
-        },
-        "name": "Super Fine Quality · @tronxy_x · 0.2mm Nozzle · generic_petg",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "retraction_extra_prime_amount": "extruder.0",
-            "speed_layer_0": "extruder.0",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_pla"
-            ],
-            "variant_names": [
-                "0.2mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.2"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_pla"
-                ],
-                "variant_names": [
-                    "0.2mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_super",
-            "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.2_PLA_super",
-            "quality_type": "super",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.2mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.08,
-            "layer_height_0": 0.12,
-            "support_interface_height": 0.96,
-            "top_bottom_thickness": 0.92,
-            "wall_thickness": 1.2000000000000002
-        },
-        "name": "Super Fine Quality · @tronxy_x · 0.2mm Nozzle · generic_pla",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_abs"
-            ],
-            "variant_names": [
                 "0.3mm Nozzle"
             ]
         },
@@ -541,35 +596,37 @@
                     "tronxy_x"
                 ],
                 "material_native_ids": [
-                    "generic_abs"
+                    "generic_petg"
                 ],
                 "variant_names": [
                     "0.3mm Nozzle"
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
             "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_ABS_extra",
-            "quality_type": "extra",
+            "material_id": "generic_petg",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_PETG_low",
+            "quality_type": "low",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.3mm Nozzle"
         },
         "data": {
-            "cool_fan_enabled": false,
-            "layer_height": 0.12,
-            "layer_height_0": 0.12,
-            "support_interface_height": 0.96,
-            "top_bottom_thickness": 0.84,
+            "layer_height": 0.25,
+            "layer_height_0": 0.18,
+            "retraction_extra_prime_amount": 0.25,
+            "speed_layer_0": 15,
+            "support_interface_height": 1.0,
+            "top_bottom_thickness": 0.9299999999999999,
             "wall_thickness": 1.6
         },
-        "name": "Extra Fine Quality · @tronxy_x · 0.3mm Nozzle · generic_abs",
+        "name": "Low Quality · @tronxy_x · 0.3mm Nozzle · generic_petg",
         "setting_scopes": {
-            "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
+            "retraction_extra_prime_amount": "extruder.0",
+            "speed_layer_0": "extruder.0",
             "support_interface_height": "extruder.0",
             "top_bottom_thickness": "extruder.0",
             "wall_thickness": "extruder.0"
@@ -640,61 +697,6 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_pla"
-            ],
-            "variant_names": [
-                "0.3mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.3"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_pla"
-                ],
-                "variant_names": [
-                    "0.3mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
-            "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_PLA_extra",
-            "quality_type": "extra",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.3mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.12,
-            "layer_height_0": 0.12,
-            "support_interface_height": 0.96,
-            "top_bottom_thickness": 0.84,
-            "wall_thickness": 1.2000000000000002
-        },
-        "name": "Extra Fine Quality · @tronxy_x · 0.3mm Nozzle · generic_pla",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
                 "generic_tpu"
             ],
             "variant_names": [
@@ -719,65 +721,10 @@
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
-            "intent_category": null,
-            "material_id": "generic_tpu",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_TPU_extra",
-            "quality_type": "extra",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.3mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.12,
-            "layer_height_0": 0.12,
-            "support_interface_height": 0.96,
-            "top_bottom_thickness": 0.84,
-            "wall_thickness": 1.2000000000000002
-        },
-        "name": "Extra Fine Quality · @tronxy_x · 0.3mm Nozzle · generic_tpu",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_abs"
-            ],
-            "variant_names": [
-                "0.3mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.3"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_abs"
-                ],
-                "variant_names": [
-                    "0.3mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
             "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
             "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_ABS_fine",
+            "material_id": "generic_tpu",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_TPU_fine",
             "quality_type": "fine",
             "resource_version": "5.13.0",
             "source_kind": "quality",
@@ -785,17 +732,15 @@
         },
         "data": {
             "adaptive_layer_height_enabled": true,
-            "cool_fan_enabled": false,
             "layer_height": 0.15,
             "layer_height_0": 0.2,
             "support_interface_height": 0.8999999999999999,
             "top_bottom_thickness": 0.8,
-            "wall_thickness": 1.6
+            "wall_thickness": 1.2000000000000002
         },
-        "name": "Fine Quality · @tronxy_x · 0.3mm Nozzle · generic_abs",
+        "name": "Fine Quality · @tronxy_x · 0.3mm Nozzle · generic_tpu",
         "setting_scopes": {
             "adaptive_layer_height_enabled": "global",
-            "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",
@@ -894,6 +839,232 @@
                 ]
             },
             "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
+            "intent_category": null,
+            "material_id": "generic_pla",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_PLA_extra",
+            "quality_type": "extra",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.3mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.12,
+            "layer_height_0": 0.12,
+            "support_interface_height": 0.96,
+            "top_bottom_thickness": 0.84,
+            "wall_thickness": 1.2000000000000002
+        },
+        "name": "Extra Fine Quality · @tronxy_x · 0.3mm Nozzle · generic_pla",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_abs"
+            ],
+            "variant_names": [
+                "0.3mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.3"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_abs"
+                ],
+                "variant_names": [
+                    "0.3mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
+            "intent_category": null,
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_ABS_extra",
+            "quality_type": "extra",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.3mm Nozzle"
+        },
+        "data": {
+            "cool_fan_enabled": false,
+            "layer_height": 0.12,
+            "layer_height_0": 0.12,
+            "support_interface_height": 0.96,
+            "top_bottom_thickness": 0.84,
+            "wall_thickness": 1.6
+        },
+        "name": "Extra Fine Quality · @tronxy_x · 0.3mm Nozzle · generic_abs",
+        "setting_scopes": {
+            "cool_fan_enabled": "extruder.0",
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_petg"
+            ],
+            "variant_names": [
+                "0.3mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.3"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_petg"
+                ],
+                "variant_names": [
+                    "0.3mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
+            "intent_category": null,
+            "material_id": "generic_petg",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_PETG_normal",
+            "quality_type": "normal",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.3mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.2,
+            "layer_height_0": 0.18,
+            "retraction_extra_prime_amount": 0.25,
+            "speed_layer_0": 15,
+            "support_interface_height": 0.8,
+            "top_bottom_thickness": 0.78,
+            "wall_thickness": 1.6
+        },
+        "name": "Normal Quality · @tronxy_x · 0.3mm Nozzle · generic_petg",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "retraction_extra_prime_amount": "extruder.0",
+            "speed_layer_0": "extruder.0",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_tpu"
+            ],
+            "variant_names": [
+                "0.3mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.3"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_tpu"
+                ],
+                "variant_names": [
+                    "0.3mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
+            "intent_category": null,
+            "material_id": "generic_tpu",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_TPU_extra",
+            "quality_type": "extra",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.3mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.12,
+            "layer_height_0": 0.12,
+            "support_interface_height": 0.96,
+            "top_bottom_thickness": 0.84,
+            "wall_thickness": 1.2000000000000002
+        },
+        "name": "Extra Fine Quality · @tronxy_x · 0.3mm Nozzle · generic_tpu",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_pla"
+            ],
+            "variant_names": [
+                "0.3mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.3"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_pla"
+                ],
+                "variant_names": [
+                    "0.3mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
             "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
             "intent_category": null,
             "material_id": "generic_pla",
@@ -951,26 +1122,24 @@
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
             "intent_category": null,
             "material_id": "generic_tpu",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_TPU_fine",
-            "quality_type": "fine",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_TPU_normal",
+            "quality_type": "normal",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.3mm Nozzle"
         },
         "data": {
-            "adaptive_layer_height_enabled": true,
-            "layer_height": 0.15,
+            "layer_height": 0.2,
             "layer_height_0": 0.2,
-            "support_interface_height": 0.8999999999999999,
+            "support_interface_height": 0.8,
             "top_bottom_thickness": 0.8,
-            "wall_thickness": 1.2000000000000002
+            "wall_thickness": 0.8
         },
-        "name": "Fine Quality · @tronxy_x · 0.3mm Nozzle · generic_tpu",
+        "name": "Normal Quality · @tronxy_x · 0.3mm Nozzle · generic_tpu",
         "setting_scopes": {
-            "adaptive_layer_height_enabled": "global",
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",
@@ -1030,65 +1199,6 @@
             "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_petg"
-            ],
-            "variant_names": [
-                "0.3mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.3"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_petg"
-                ],
-                "variant_names": [
-                    "0.3mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
-            "intent_category": null,
-            "material_id": "generic_petg",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_PETG_low",
-            "quality_type": "low",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.3mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.25,
-            "layer_height_0": 0.18,
-            "retraction_extra_prime_amount": 0.25,
-            "speed_layer_0": 15,
-            "support_interface_height": 1.0,
-            "top_bottom_thickness": 0.9299999999999999,
-            "wall_thickness": 1.6
-        },
-        "name": "Low Quality · @tronxy_x · 0.3mm Nozzle · generic_petg",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "retraction_extra_prime_amount": "extruder.0",
-            "speed_layer_0": "extruder.0",
             "support_interface_height": "extruder.0",
             "top_bottom_thickness": "extruder.0",
             "wall_thickness": "extruder.0"
@@ -1179,6 +1289,65 @@
                 ]
             },
             "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
+            "intent_category": null,
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_ABS_fine",
+            "quality_type": "fine",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.3mm Nozzle"
+        },
+        "data": {
+            "adaptive_layer_height_enabled": true,
+            "cool_fan_enabled": false,
+            "layer_height": 0.15,
+            "layer_height_0": 0.2,
+            "support_interface_height": 0.8999999999999999,
+            "top_bottom_thickness": 0.8,
+            "wall_thickness": 1.6
+        },
+        "name": "Fine Quality · @tronxy_x · 0.3mm Nozzle · generic_abs",
+        "setting_scopes": {
+            "adaptive_layer_height_enabled": "global",
+            "cool_fan_enabled": "extruder.0",
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_abs"
+            ],
+            "variant_names": [
+                "0.3mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.3"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_abs"
+                ],
+                "variant_names": [
+                    "0.3mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
             "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
             "intent_category": null,
             "material_id": "generic_abs",
@@ -1212,15 +1381,243 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_petg"
+                "generic_tpu"
             ],
             "variant_names": [
-                "0.3mm Nozzle"
+                "0.4mm Nozzle"
             ]
         },
         "compatible_printers": {
             "Tronxy XY-3/Pro": [
-                "0.3"
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_tpu"
+                ],
+                "variant_names": [
+                    "0.4mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
+            "intent_category": null,
+            "material_id": "generic_tpu",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_TPU_normal",
+            "quality_type": "normal",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.2,
+            "layer_height_0": 0.2,
+            "support_interface_height": 0.8,
+            "top_bottom_thickness": 0.8,
+            "wall_thickness": 0.8
+        },
+        "name": "Normal Quality · @tronxy_x · 0.4mm Nozzle · generic_tpu",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_tpu"
+            ],
+            "variant_names": [
+                "0.4mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_tpu"
+                ],
+                "variant_names": [
+                    "0.4mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
+            "intent_category": null,
+            "material_id": "generic_tpu",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_TPU_fine",
+            "quality_type": "fine",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4mm Nozzle"
+        },
+        "data": {
+            "adaptive_layer_height_enabled": true,
+            "layer_height": 0.15,
+            "layer_height_0": 0.2,
+            "support_interface_height": 0.8999999999999999,
+            "top_bottom_thickness": 0.8,
+            "wall_thickness": 1.2000000000000002
+        },
+        "name": "Fine Quality · @tronxy_x · 0.4mm Nozzle · generic_tpu",
+        "setting_scopes": {
+            "adaptive_layer_height_enabled": "global",
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_abs"
+            ],
+            "variant_names": [
+                "0.4mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_abs"
+                ],
+                "variant_names": [
+                    "0.4mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
+            "intent_category": null,
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_ABS_fine",
+            "quality_type": "fine",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4mm Nozzle"
+        },
+        "data": {
+            "adaptive_layer_height_enabled": true,
+            "cool_fan_enabled": false,
+            "layer_height": 0.15,
+            "layer_height_0": 0.2,
+            "support_interface_height": 0.8999999999999999,
+            "top_bottom_thickness": 0.8,
+            "wall_thickness": 1.6
+        },
+        "name": "Fine Quality · @tronxy_x · 0.4mm Nozzle · generic_abs",
+        "setting_scopes": {
+            "adaptive_layer_height_enabled": "global",
+            "cool_fan_enabled": "extruder.0",
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_abs"
+            ],
+            "variant_names": [
+                "0.4mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_abs"
+                ],
+                "variant_names": [
+                    "0.4mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
+            "intent_category": null,
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_ABS_low",
+            "quality_type": "low",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4mm Nozzle"
+        },
+        "data": {
+            "cool_fan_enabled": false,
+            "layer_height": 0.25,
+            "layer_height_0": 0.25,
+            "support_interface_height": 1.0,
+            "top_bottom_thickness": 1.0,
+            "wall_thickness": 1.6
+        },
+        "name": "Low Quality · @tronxy_x · 0.4mm Nozzle · generic_abs",
+        "setting_scopes": {
+            "cool_fan_enabled": "extruder.0",
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_petg"
+            ],
+            "variant_names": [
+                "0.4mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.4"
             ]
         },
         "context": {
@@ -1232,29 +1629,88 @@
                     "generic_petg"
                 ],
                 "variant_names": [
-                    "0.3mm Nozzle"
+                    "0.4mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
+            "intent_category": null,
+            "material_id": "generic_petg",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PETG_extra",
+            "quality_type": "extra",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.12,
+            "layer_height_0": 0.25,
+            "retraction_extra_prime_amount": 0.25,
+            "speed_layer_0": 15,
+            "support_interface_height": 0.96,
+            "top_bottom_thickness": 0.97,
+            "wall_thickness": 1.6
+        },
+        "name": "Extra Fine Quality · @tronxy_x · 0.4mm Nozzle · generic_petg",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "retraction_extra_prime_amount": "extruder.0",
+            "speed_layer_0": "extruder.0",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_petg"
+            ],
+            "variant_names": [
+                "0.4mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_petg"
+                ],
+                "variant_names": [
+                    "0.4mm Nozzle"
                 ]
             },
             "definition": "tronxy_x",
             "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
             "intent_category": null,
             "material_id": "generic_petg",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_PETG_normal",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PETG_normal",
             "quality_type": "normal",
             "resource_version": "5.13.0",
             "source_kind": "quality",
-            "variant_name": "0.3mm Nozzle"
+            "variant_name": "0.4mm Nozzle"
         },
         "data": {
             "layer_height": 0.2,
-            "layer_height_0": 0.18,
+            "layer_height_0": 0.25,
             "retraction_extra_prime_amount": 0.25,
             "speed_layer_0": 15,
             "support_interface_height": 0.8,
-            "top_bottom_thickness": 0.78,
+            "top_bottom_thickness": 0.8500000000000001,
             "wall_thickness": 1.6
         },
-        "name": "Normal Quality · @tronxy_x · 0.3mm Nozzle · generic_petg",
+        "name": "Normal Quality · @tronxy_x · 0.4mm Nozzle · generic_petg",
         "setting_scopes": {
             "layer_height": "global",
             "layer_height_0": "global",
@@ -1274,12 +1730,12 @@
                 "generic_pla"
             ],
             "variant_names": [
-                "0.3mm Nozzle"
+                "0.4mm Nozzle"
             ]
         },
         "compatible_printers": {
             "Tronxy XY-3/Pro": [
-                "0.3"
+                "0.4"
             ]
         },
         "context": {
@@ -1291,82 +1747,27 @@
                     "generic_pla"
                 ],
                 "variant_names": [
-                    "0.3mm Nozzle"
+                    "0.4mm Nozzle"
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
             "intent_category": null,
             "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_PLA_normal",
-            "quality_type": "normal",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PLA_rough",
+            "quality_type": "rough",
             "resource_version": "5.13.0",
             "source_kind": "quality",
-            "variant_name": "0.3mm Nozzle"
+            "variant_name": "0.4mm Nozzle"
         },
         "data": {
-            "layer_height": 0.2,
-            "layer_height_0": 0.2,
-            "support_interface_height": 0.8,
-            "top_bottom_thickness": 0.8,
+            "layer_height": 0.3,
+            "layer_height_0": 0.3,
+            "support_interface_height": 1.2,
+            "top_bottom_thickness": 1.2,
             "wall_thickness": 0.8
         },
-        "name": "Normal Quality · @tronxy_x · 0.3mm Nozzle · generic_pla",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_tpu"
-            ],
-            "variant_names": [
-                "0.3mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.3"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_tpu"
-                ],
-                "variant_names": [
-                    "0.3mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
-            "intent_category": null,
-            "material_id": "generic_tpu",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.3_TPU_normal",
-            "quality_type": "normal",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.3mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.2,
-            "layer_height_0": 0.2,
-            "support_interface_height": 0.8,
-            "top_bottom_thickness": 0.8,
-            "wall_thickness": 0.8
-        },
-        "name": "Normal Quality · @tronxy_x · 0.3mm Nozzle · generic_tpu",
+        "name": "Rough Quality · @tronxy_x · 0.4mm Nozzle · generic_pla",
         "setting_scopes": {
             "layer_height": "global",
             "layer_height_0": "global",
@@ -1462,234 +1863,6 @@
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
-            "intent_category": null,
-            "material_id": "generic_petg",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PETG_extra",
-            "quality_type": "extra",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.12,
-            "layer_height_0": 0.25,
-            "retraction_extra_prime_amount": 0.25,
-            "speed_layer_0": 15,
-            "support_interface_height": 0.96,
-            "top_bottom_thickness": 0.97,
-            "wall_thickness": 1.6
-        },
-        "name": "Extra Fine Quality · @tronxy_x · 0.4mm Nozzle · generic_petg",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "retraction_extra_prime_amount": "extruder.0",
-            "speed_layer_0": "extruder.0",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_pla"
-            ],
-            "variant_names": [
-                "0.4mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_pla"
-                ],
-                "variant_names": [
-                    "0.4mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
-            "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PLA_extra",
-            "quality_type": "extra",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.12,
-            "layer_height_0": 0.12,
-            "support_interface_height": 0.96,
-            "top_bottom_thickness": 0.84,
-            "wall_thickness": 1.2000000000000002
-        },
-        "name": "Extra Fine Quality · @tronxy_x · 0.4mm Nozzle · generic_pla",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_tpu"
-            ],
-            "variant_names": [
-                "0.4mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_tpu"
-                ],
-                "variant_names": [
-                    "0.4mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
-            "intent_category": null,
-            "material_id": "generic_tpu",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_TPU_extra",
-            "quality_type": "extra",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.12,
-            "layer_height_0": 0.12,
-            "support_interface_height": 0.96,
-            "top_bottom_thickness": 0.84,
-            "wall_thickness": 1.2000000000000002
-        },
-        "name": "Extra Fine Quality · @tronxy_x · 0.4mm Nozzle · generic_tpu",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_abs"
-            ],
-            "variant_names": [
-                "0.4mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_abs"
-                ],
-                "variant_names": [
-                    "0.4mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
-            "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_ABS_fine",
-            "quality_type": "fine",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4mm Nozzle"
-        },
-        "data": {
-            "adaptive_layer_height_enabled": true,
-            "cool_fan_enabled": false,
-            "layer_height": 0.15,
-            "layer_height_0": 0.2,
-            "support_interface_height": 0.8999999999999999,
-            "top_bottom_thickness": 0.8,
-            "wall_thickness": 1.6
-        },
-        "name": "Fine Quality · @tronxy_x · 0.4mm Nozzle · generic_abs",
-        "setting_scopes": {
-            "adaptive_layer_height_enabled": "global",
-            "cool_fan_enabled": "extruder.0",
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_petg"
-            ],
-            "variant_names": [
-                "0.4mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_petg"
-                ],
-                "variant_names": [
-                    "0.4mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
             "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
             "intent_category": null,
             "material_id": "generic_petg",
@@ -1727,120 +1900,6 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_pla"
-            ],
-            "variant_names": [
-                "0.4mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_pla"
-                ],
-                "variant_names": [
-                    "0.4mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
-            "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PLA_fine",
-            "quality_type": "fine",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4mm Nozzle"
-        },
-        "data": {
-            "adaptive_layer_height_enabled": true,
-            "layer_height": 0.15,
-            "layer_height_0": 0.2,
-            "support_interface_height": 0.8999999999999999,
-            "top_bottom_thickness": 0.8,
-            "wall_thickness": 1.2000000000000002
-        },
-        "name": "Fine Quality · @tronxy_x · 0.4mm Nozzle · generic_pla",
-        "setting_scopes": {
-            "adaptive_layer_height_enabled": "global",
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_tpu"
-            ],
-            "variant_names": [
-                "0.4mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_tpu"
-                ],
-                "variant_names": [
-                    "0.4mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
-            "intent_category": null,
-            "material_id": "generic_tpu",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_TPU_fine",
-            "quality_type": "fine",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4mm Nozzle"
-        },
-        "data": {
-            "adaptive_layer_height_enabled": true,
-            "layer_height": 0.15,
-            "layer_height_0": 0.2,
-            "support_interface_height": 0.8999999999999999,
-            "top_bottom_thickness": 0.8,
-            "wall_thickness": 1.2000000000000002
-        },
-        "name": "Fine Quality · @tronxy_x · 0.4mm Nozzle · generic_tpu",
-        "setting_scopes": {
-            "adaptive_layer_height_enabled": "global",
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
                 "generic_abs"
             ],
             "variant_names": [
@@ -1865,26 +1924,85 @@
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
             "intent_category": null,
             "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_ABS_low",
-            "quality_type": "low",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_ABS_normal",
+            "quality_type": "normal",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.4mm Nozzle"
         },
         "data": {
             "cool_fan_enabled": false,
-            "layer_height": 0.25,
-            "layer_height_0": 0.25,
-            "support_interface_height": 1.0,
-            "top_bottom_thickness": 1.0,
+            "cool_fan_speed": 0.0,
+            "cool_fan_speed_min": 0.0,
+            "layer_height": 0.2,
+            "layer_height_0": 0.2,
+            "support_interface_height": 0.8,
+            "top_bottom_thickness": 0.8,
             "wall_thickness": 1.6
         },
-        "name": "Low Quality · @tronxy_x · 0.4mm Nozzle · generic_abs",
+        "name": "Normal Quality · @tronxy_x · 0.4mm Nozzle · generic_abs",
         "setting_scopes": {
             "cool_fan_enabled": "extruder.0",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_pla"
+            ],
+            "variant_names": [
+                "0.4mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_pla"
+                ],
+                "variant_names": [
+                    "0.4mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
+            "intent_category": null,
+            "material_id": "generic_pla",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PLA_normal",
+            "quality_type": "normal",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.2,
+            "layer_height_0": 0.2,
+            "support_interface_height": 0.8,
+            "top_bottom_thickness": 0.8,
+            "wall_thickness": 0.8
+        },
+        "name": "Normal Quality · @tronxy_x · 0.4mm Nozzle · generic_pla",
+        "setting_scopes": {
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",
@@ -1981,311 +2099,26 @@
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
             "intent_category": null,
             "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PLA_low",
-            "quality_type": "low",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PLA_fine",
+            "quality_type": "fine",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.4mm Nozzle"
         },
         "data": {
-            "layer_height": 0.25,
-            "layer_height_0": 0.25,
-            "support_interface_height": 1.0,
-            "top_bottom_thickness": 1.0,
-            "wall_thickness": 0.8
-        },
-        "name": "Low Quality · @tronxy_x · 0.4mm Nozzle · generic_pla",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_abs"
-            ],
-            "variant_names": [
-                "0.4mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_abs"
-                ],
-                "variant_names": [
-                    "0.4mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
-            "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_ABS_normal",
-            "quality_type": "normal",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4mm Nozzle"
-        },
-        "data": {
-            "cool_fan_enabled": false,
-            "cool_fan_speed": 0.0,
-            "cool_fan_speed_min": 0.0,
-            "layer_height": 0.2,
+            "adaptive_layer_height_enabled": true,
+            "layer_height": 0.15,
             "layer_height_0": 0.2,
-            "support_interface_height": 0.8,
+            "support_interface_height": 0.8999999999999999,
             "top_bottom_thickness": 0.8,
-            "wall_thickness": 1.6
+            "wall_thickness": 1.2000000000000002
         },
-        "name": "Normal Quality · @tronxy_x · 0.4mm Nozzle · generic_abs",
+        "name": "Fine Quality · @tronxy_x · 0.4mm Nozzle · generic_pla",
         "setting_scopes": {
-            "cool_fan_enabled": "extruder.0",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_petg"
-            ],
-            "variant_names": [
-                "0.4mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_petg"
-                ],
-                "variant_names": [
-                    "0.4mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
-            "intent_category": null,
-            "material_id": "generic_petg",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PETG_normal",
-            "quality_type": "normal",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.2,
-            "layer_height_0": 0.25,
-            "retraction_extra_prime_amount": 0.25,
-            "speed_layer_0": 15,
-            "support_interface_height": 0.8,
-            "top_bottom_thickness": 0.8500000000000001,
-            "wall_thickness": 1.6
-        },
-        "name": "Normal Quality · @tronxy_x · 0.4mm Nozzle · generic_petg",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "retraction_extra_prime_amount": "extruder.0",
-            "speed_layer_0": "extruder.0",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_pla"
-            ],
-            "variant_names": [
-                "0.4mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_pla"
-                ],
-                "variant_names": [
-                    "0.4mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
-            "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PLA_normal",
-            "quality_type": "normal",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.2,
-            "layer_height_0": 0.2,
-            "support_interface_height": 0.8,
-            "top_bottom_thickness": 0.8,
-            "wall_thickness": 0.8
-        },
-        "name": "Normal Quality · @tronxy_x · 0.4mm Nozzle · generic_pla",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_tpu"
-            ],
-            "variant_names": [
-                "0.4mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_tpu"
-                ],
-                "variant_names": [
-                    "0.4mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
-            "intent_category": null,
-            "material_id": "generic_tpu",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_TPU_normal",
-            "quality_type": "normal",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.2,
-            "layer_height_0": 0.2,
-            "support_interface_height": 0.8,
-            "top_bottom_thickness": 0.8,
-            "wall_thickness": 0.8
-        },
-        "name": "Normal Quality · @tronxy_x · 0.4mm Nozzle · generic_tpu",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_abs"
-            ],
-            "variant_names": [
-                "0.4mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_abs"
-                ],
-                "variant_names": [
-                    "0.4mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
-            "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_ABS_rough",
-            "quality_type": "rough",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4mm Nozzle"
-        },
-        "data": {
-            "cool_fan_enabled": false,
-            "layer_height": 0.3,
-            "layer_height_0": 0.3,
-            "support_interface_height": 1.2,
-            "top_bottom_thickness": 1.2,
-            "wall_thickness": 1.6
-        },
-        "name": "Rough Quality · @tronxy_x · 0.4mm Nozzle · generic_abs",
-        "setting_scopes": {
-            "cool_fan_enabled": "extruder.0",
+            "adaptive_layer_height_enabled": "global",
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",
@@ -2382,24 +2215,305 @@
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
             "intent_category": null,
             "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PLA_rough",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PLA_extra",
+            "quality_type": "extra",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.12,
+            "layer_height_0": 0.12,
+            "support_interface_height": 0.96,
+            "top_bottom_thickness": 0.84,
+            "wall_thickness": 1.2000000000000002
+        },
+        "name": "Extra Fine Quality · @tronxy_x · 0.4mm Nozzle · generic_pla",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_abs"
+            ],
+            "variant_names": [
+                "0.4mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_abs"
+                ],
+                "variant_names": [
+                    "0.4mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
+            "intent_category": null,
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_ABS_rough",
             "quality_type": "rough",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.4mm Nozzle"
         },
         "data": {
+            "cool_fan_enabled": false,
             "layer_height": 0.3,
             "layer_height_0": 0.3,
             "support_interface_height": 1.2,
             "top_bottom_thickness": 1.2,
+            "wall_thickness": 1.6
+        },
+        "name": "Rough Quality · @tronxy_x · 0.4mm Nozzle · generic_abs",
+        "setting_scopes": {
+            "cool_fan_enabled": "extruder.0",
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_pla"
+            ],
+            "variant_names": [
+                "0.4mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_pla"
+                ],
+                "variant_names": [
+                    "0.4mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
+            "intent_category": null,
+            "material_id": "generic_pla",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_PLA_low",
+            "quality_type": "low",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.25,
+            "layer_height_0": 0.25,
+            "support_interface_height": 1.0,
+            "top_bottom_thickness": 1.0,
             "wall_thickness": 0.8
         },
-        "name": "Rough Quality · @tronxy_x · 0.4mm Nozzle · generic_pla",
+        "name": "Low Quality · @tronxy_x · 0.4mm Nozzle · generic_pla",
         "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_tpu"
+            ],
+            "variant_names": [
+                "0.4mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_tpu"
+                ],
+                "variant_names": [
+                    "0.4mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_extra",
+            "intent_category": null,
+            "material_id": "generic_tpu",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.4_TPU_extra",
+            "quality_type": "extra",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.12,
+            "layer_height_0": 0.12,
+            "support_interface_height": 0.96,
+            "top_bottom_thickness": 0.84,
+            "wall_thickness": 1.2000000000000002
+        },
+        "name": "Extra Fine Quality · @tronxy_x · 0.4mm Nozzle · generic_tpu",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_abs"
+            ],
+            "variant_names": [
+                "0.5mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.5"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_abs"
+                ],
+                "variant_names": [
+                    "0.5mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
+            "intent_category": null,
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_ABS_rough",
+            "quality_type": "rough",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.5mm Nozzle"
+        },
+        "data": {
+            "cool_fan_enabled": false,
+            "layer_height": 0.3,
+            "layer_height_0": 0.3,
+            "support_interface_height": 1.2,
+            "top_bottom_thickness": 1.2,
+            "wall_thickness": 1.6
+        },
+        "name": "Rough Quality · @tronxy_x · 0.5mm Nozzle · generic_abs",
+        "setting_scopes": {
+            "cool_fan_enabled": "extruder.0",
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_abs"
+            ],
+            "variant_names": [
+                "0.5mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.5"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_abs"
+                ],
+                "variant_names": [
+                    "0.5mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
+            "intent_category": null,
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_ABS_low",
+            "quality_type": "low",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.5mm Nozzle"
+        },
+        "data": {
+            "cool_fan_enabled": false,
+            "layer_height": 0.25,
+            "layer_height_0": 0.25,
+            "support_interface_height": 1.0,
+            "top_bottom_thickness": 1.0,
+            "wall_thickness": 1.6
+        },
+        "name": "Low Quality · @tronxy_x · 0.5mm Nozzle · generic_abs",
+        "setting_scopes": {
+            "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",
@@ -2461,6 +2575,407 @@
             "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_petg"
+            ],
+            "variant_names": [
+                "0.5mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.5"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_petg"
+                ],
+                "variant_names": [
+                    "0.5mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
+            "intent_category": null,
+            "material_id": "generic_petg",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_PETG_low",
+            "quality_type": "low",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.5mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.25,
+            "layer_height_0": 0.3,
+            "retraction_extra_prime_amount": 0.25,
+            "speed_layer_0": 15,
+            "support_interface_height": 1.0,
+            "top_bottom_thickness": 1.05,
+            "wall_thickness": 1.6
+        },
+        "name": "Low Quality · @tronxy_x · 0.5mm Nozzle · generic_petg",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "retraction_extra_prime_amount": "extruder.0",
+            "speed_layer_0": "extruder.0",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_tpu"
+            ],
+            "variant_names": [
+                "0.5mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.5"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_tpu"
+                ],
+                "variant_names": [
+                    "0.5mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
+            "intent_category": null,
+            "material_id": "generic_tpu",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_TPU_rapid",
+            "quality_type": "rapid",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.5mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.375,
+            "layer_height_0": 0.3,
+            "support_interface_height": 1.5,
+            "top_bottom_thickness": 1.425,
+            "wall_thickness": 0.8
+        },
+        "name": "Rough/Fast Quality · @tronxy_x · 0.5mm Nozzle · generic_tpu",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_pla"
+            ],
+            "variant_names": [
+                "0.5mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.5"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_pla"
+                ],
+                "variant_names": [
+                    "0.5mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
+            "intent_category": null,
+            "material_id": "generic_pla",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_PLA_normal",
+            "quality_type": "normal",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.5mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.2,
+            "layer_height_0": 0.2,
+            "support_interface_height": 0.8,
+            "top_bottom_thickness": 0.8,
+            "wall_thickness": 0.8
+        },
+        "name": "Normal Quality · @tronxy_x · 0.5mm Nozzle · generic_pla",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_petg"
+            ],
+            "variant_names": [
+                "0.5mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.5"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_petg"
+                ],
+                "variant_names": [
+                    "0.5mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
+            "intent_category": null,
+            "material_id": "generic_petg",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_PETG_rough",
+            "quality_type": "rough",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.5mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.3,
+            "layer_height_0": 0.25,
+            "retraction_extra_prime_amount": 0.25,
+            "speed_layer_0": 15,
+            "support_interface_height": 1.2,
+            "top_bottom_thickness": 1.15,
+            "wall_thickness": 1.6
+        },
+        "name": "Rough Quality · @tronxy_x · 0.5mm Nozzle · generic_petg",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "retraction_extra_prime_amount": "extruder.0",
+            "speed_layer_0": "extruder.0",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_abs"
+            ],
+            "variant_names": [
+                "0.5mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.5"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_abs"
+                ],
+                "variant_names": [
+                    "0.5mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
+            "intent_category": null,
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_ABS_normal",
+            "quality_type": "normal",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.5mm Nozzle"
+        },
+        "data": {
+            "cool_fan_enabled": false,
+            "layer_height": 0.2,
+            "layer_height_0": 0.2,
+            "support_interface_height": 0.8,
+            "top_bottom_thickness": 0.8,
+            "wall_thickness": 1.6
+        },
+        "name": "Normal Quality · @tronxy_x · 0.5mm Nozzle · generic_abs",
+        "setting_scopes": {
+            "cool_fan_enabled": "extruder.0",
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_tpu"
+            ],
+            "variant_names": [
+                "0.5mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.5"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_tpu"
+                ],
+                "variant_names": [
+                    "0.5mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
+            "intent_category": null,
+            "material_id": "generic_tpu",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_TPU_fine",
+            "quality_type": "fine",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.5mm Nozzle"
+        },
+        "data": {
+            "adaptive_layer_height_enabled": true,
+            "layer_height": 0.15,
+            "layer_height_0": 0.2,
+            "support_interface_height": 0.8999999999999999,
+            "top_bottom_thickness": 0.8,
+            "wall_thickness": 1.2000000000000002
+        },
+        "name": "Fine Quality · @tronxy_x · 0.5mm Nozzle · generic_tpu",
+        "setting_scopes": {
+            "adaptive_layer_height_enabled": "global",
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_petg"
+            ],
+            "variant_names": [
+                "0.5mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.5"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_petg"
+                ],
+                "variant_names": [
+                    "0.5mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
+            "intent_category": null,
+            "material_id": "generic_petg",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_PETG_normal",
+            "quality_type": "normal",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.5mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.2,
+            "layer_height_0": 0.3,
+            "retraction_extra_prime_amount": 0.25,
+            "speed_layer_0": 15,
+            "support_interface_height": 0.8,
+            "top_bottom_thickness": 0.9000000000000001,
+            "wall_thickness": 1.6
+        },
+        "name": "Normal Quality · @tronxy_x · 0.5mm Nozzle · generic_petg",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "retraction_extra_prime_amount": "extruder.0",
+            "speed_layer_0": "extruder.0",
             "support_interface_height": "extruder.0",
             "top_bottom_thickness": "extruder.0",
             "wall_thickness": "extruder.0"
@@ -2614,405 +3129,6 @@
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_fine",
-            "intent_category": null,
-            "material_id": "generic_tpu",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_TPU_fine",
-            "quality_type": "fine",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.5mm Nozzle"
-        },
-        "data": {
-            "adaptive_layer_height_enabled": true,
-            "layer_height": 0.15,
-            "layer_height_0": 0.2,
-            "support_interface_height": 0.8999999999999999,
-            "top_bottom_thickness": 0.8,
-            "wall_thickness": 1.2000000000000002
-        },
-        "name": "Fine Quality · @tronxy_x · 0.5mm Nozzle · generic_tpu",
-        "setting_scopes": {
-            "adaptive_layer_height_enabled": "global",
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_abs"
-            ],
-            "variant_names": [
-                "0.5mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.5"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_abs"
-                ],
-                "variant_names": [
-                    "0.5mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
-            "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_ABS_low",
-            "quality_type": "low",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.5mm Nozzle"
-        },
-        "data": {
-            "cool_fan_enabled": false,
-            "layer_height": 0.25,
-            "layer_height_0": 0.25,
-            "support_interface_height": 1.0,
-            "top_bottom_thickness": 1.0,
-            "wall_thickness": 1.6
-        },
-        "name": "Low Quality · @tronxy_x · 0.5mm Nozzle · generic_abs",
-        "setting_scopes": {
-            "cool_fan_enabled": "extruder.0",
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_petg"
-            ],
-            "variant_names": [
-                "0.5mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.5"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_petg"
-                ],
-                "variant_names": [
-                    "0.5mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
-            "intent_category": null,
-            "material_id": "generic_petg",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_PETG_low",
-            "quality_type": "low",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.5mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.25,
-            "layer_height_0": 0.3,
-            "retraction_extra_prime_amount": 0.25,
-            "speed_layer_0": 15,
-            "support_interface_height": 1.0,
-            "top_bottom_thickness": 1.05,
-            "wall_thickness": 1.6
-        },
-        "name": "Low Quality · @tronxy_x · 0.5mm Nozzle · generic_petg",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "retraction_extra_prime_amount": "extruder.0",
-            "speed_layer_0": "extruder.0",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_pla"
-            ],
-            "variant_names": [
-                "0.5mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.5"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_pla"
-                ],
-                "variant_names": [
-                    "0.5mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
-            "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_PLA_low",
-            "quality_type": "low",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.5mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.25,
-            "layer_height_0": 0.25,
-            "support_interface_height": 1.0,
-            "top_bottom_thickness": 1.0,
-            "wall_thickness": 0.8
-        },
-        "name": "Low Quality · @tronxy_x · 0.5mm Nozzle · generic_pla",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_abs"
-            ],
-            "variant_names": [
-                "0.5mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.5"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_abs"
-                ],
-                "variant_names": [
-                    "0.5mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
-            "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_ABS_normal",
-            "quality_type": "normal",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.5mm Nozzle"
-        },
-        "data": {
-            "cool_fan_enabled": false,
-            "layer_height": 0.2,
-            "layer_height_0": 0.2,
-            "support_interface_height": 0.8,
-            "top_bottom_thickness": 0.8,
-            "wall_thickness": 1.6
-        },
-        "name": "Normal Quality · @tronxy_x · 0.5mm Nozzle · generic_abs",
-        "setting_scopes": {
-            "cool_fan_enabled": "extruder.0",
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_petg"
-            ],
-            "variant_names": [
-                "0.5mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.5"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_petg"
-                ],
-                "variant_names": [
-                    "0.5mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
-            "intent_category": null,
-            "material_id": "generic_petg",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_PETG_normal",
-            "quality_type": "normal",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.5mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.2,
-            "layer_height_0": 0.3,
-            "retraction_extra_prime_amount": 0.25,
-            "speed_layer_0": 15,
-            "support_interface_height": 0.8,
-            "top_bottom_thickness": 0.9000000000000001,
-            "wall_thickness": 1.6
-        },
-        "name": "Normal Quality · @tronxy_x · 0.5mm Nozzle · generic_petg",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "retraction_extra_prime_amount": "extruder.0",
-            "speed_layer_0": "extruder.0",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_pla"
-            ],
-            "variant_names": [
-                "0.5mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.5"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_pla"
-                ],
-                "variant_names": [
-                    "0.5mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
-            "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_PLA_normal",
-            "quality_type": "normal",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.5mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.2,
-            "layer_height_0": 0.2,
-            "support_interface_height": 0.8,
-            "top_bottom_thickness": 0.8,
-            "wall_thickness": 0.8
-        },
-        "name": "Normal Quality · @tronxy_x · 0.5mm Nozzle · generic_pla",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_tpu"
-            ],
-            "variant_names": [
-                "0.5mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.5"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_tpu"
-                ],
-                "variant_names": [
-                    "0.5mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
             "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
             "intent_category": null,
             "material_id": "generic_tpu",
@@ -3044,7 +3160,7 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_abs"
+                "generic_pla"
             ],
             "variant_names": [
                 "0.5mm Nozzle"
@@ -3061,94 +3177,33 @@
                     "tronxy_x"
                 ],
                 "material_native_ids": [
-                    "generic_abs"
+                    "generic_pla"
                 ],
                 "variant_names": [
                     "0.5mm Nozzle"
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
             "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_ABS_rough",
-            "quality_type": "rough",
+            "material_id": "generic_pla",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_PLA_rapid",
+            "quality_type": "rapid",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.5mm Nozzle"
         },
         "data": {
-            "cool_fan_enabled": false,
-            "layer_height": 0.3,
+            "layer_height": 0.375,
             "layer_height_0": 0.3,
-            "support_interface_height": 1.2,
-            "top_bottom_thickness": 1.2,
-            "wall_thickness": 1.6
+            "support_interface_height": 1.5,
+            "top_bottom_thickness": 1.425,
+            "wall_thickness": 0.8
         },
-        "name": "Rough Quality · @tronxy_x · 0.5mm Nozzle · generic_abs",
-        "setting_scopes": {
-            "cool_fan_enabled": "extruder.0",
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_petg"
-            ],
-            "variant_names": [
-                "0.5mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.5"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_petg"
-                ],
-                "variant_names": [
-                    "0.5mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
-            "intent_category": null,
-            "material_id": "generic_petg",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_PETG_rough",
-            "quality_type": "rough",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.5mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.3,
-            "layer_height_0": 0.25,
-            "retraction_extra_prime_amount": 0.25,
-            "speed_layer_0": 15,
-            "support_interface_height": 1.2,
-            "top_bottom_thickness": 1.15,
-            "wall_thickness": 1.6
-        },
-        "name": "Rough Quality · @tronxy_x · 0.5mm Nozzle · generic_petg",
+        "name": "Rough/Fast Quality · @tronxy_x · 0.5mm Nozzle · generic_pla",
         "setting_scopes": {
             "layer_height": "global",
             "layer_height_0": "global",
-            "retraction_extra_prime_amount": "extruder.0",
-            "speed_layer_0": "extruder.0",
             "support_interface_height": "extruder.0",
             "top_bottom_thickness": "extruder.0",
             "wall_thickness": "extruder.0"
@@ -3201,6 +3256,61 @@
             "wall_thickness": 0.8
         },
         "name": "Rough Quality · @tronxy_x · 0.5mm Nozzle · generic_pla",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_pla"
+            ],
+            "variant_names": [
+                "0.5mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.5"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_pla"
+                ],
+                "variant_names": [
+                    "0.5mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
+            "intent_category": null,
+            "material_id": "generic_pla",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_PLA_low",
+            "quality_type": "low",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.5mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.25,
+            "layer_height_0": 0.25,
+            "support_interface_height": 1.0,
+            "top_bottom_thickness": 1.0,
+            "wall_thickness": 0.8
+        },
+        "name": "Low Quality · @tronxy_x · 0.5mm Nozzle · generic_pla",
         "setting_scopes": {
             "layer_height": "global",
             "layer_height_0": "global",
@@ -3331,15 +3441,15 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_pla"
+                "generic_petg"
             ],
             "variant_names": [
-                "0.5mm Nozzle"
+                "0.6mm Nozzle"
             ]
         },
         "compatible_printers": {
             "Tronxy XY-3/Pro": [
-                "0.5"
+                "0.6"
             ]
         },
         "context": {
@@ -3348,31 +3458,92 @@
                     "tronxy_x"
                 ],
                 "material_native_ids": [
-                    "generic_pla"
+                    "generic_petg"
                 ],
                 "variant_names": [
-                    "0.5mm Nozzle"
+                    "0.6mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
+            "intent_category": null,
+            "material_id": "generic_petg",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_PETG_rough",
+            "quality_type": "rough",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.6mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.3,
+            "layer_height_0": 0.25,
+            "retraction_extra_prime_amount": 0.25,
+            "speed_layer_0": 15,
+            "support_interface_height": 1.2,
+            "top_bottom_thickness": 1.15,
+            "wall_thickness": 1.6
+        },
+        "name": "Rough Quality · @tronxy_x · 0.6mm Nozzle · generic_petg",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "retraction_extra_prime_amount": "extruder.0",
+            "speed_layer_0": "extruder.0",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_abs"
+            ],
+            "variant_names": [
+                "0.6mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.6"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_abs"
+                ],
+                "variant_names": [
+                    "0.6mm Nozzle"
                 ]
             },
             "definition": "tronxy_x",
             "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
             "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_PLA_rapid",
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_ABS_rapid",
             "quality_type": "rapid",
             "resource_version": "5.13.0",
             "source_kind": "quality",
-            "variant_name": "0.5mm Nozzle"
+            "variant_name": "0.6mm Nozzle"
         },
         "data": {
+            "cool_fan_enabled": false,
             "layer_height": 0.375,
             "layer_height_0": 0.3,
             "support_interface_height": 1.5,
             "top_bottom_thickness": 1.425,
-            "wall_thickness": 0.8
+            "wall_thickness": 1.6
         },
-        "name": "Rough/Fast Quality · @tronxy_x · 0.5mm Nozzle · generic_pla",
+        "name": "Rough/Fast Quality · @tronxy_x · 0.6mm Nozzle · generic_abs",
         "setting_scopes": {
+            "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",
@@ -3386,15 +3557,15 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_tpu"
+                "generic_abs"
             ],
             "variant_names": [
-                "0.5mm Nozzle"
+                "0.6mm Nozzle"
             ]
         },
         "compatible_printers": {
             "Tronxy XY-3/Pro": [
-                "0.5"
+                "0.6"
             ]
         },
         "context": {
@@ -3403,31 +3574,33 @@
                     "tronxy_x"
                 ],
                 "material_native_ids": [
-                    "generic_tpu"
+                    "generic_abs"
                 ],
                 "variant_names": [
-                    "0.5mm Nozzle"
+                    "0.6mm Nozzle"
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
             "intent_category": null,
-            "material_id": "generic_tpu",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_TPU_rapid",
-            "quality_type": "rapid",
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_ABS_normal",
+            "quality_type": "normal",
             "resource_version": "5.13.0",
             "source_kind": "quality",
-            "variant_name": "0.5mm Nozzle"
+            "variant_name": "0.6mm Nozzle"
         },
         "data": {
-            "layer_height": 0.375,
-            "layer_height_0": 0.3,
-            "support_interface_height": 1.5,
-            "top_bottom_thickness": 1.425,
-            "wall_thickness": 0.8
+            "cool_fan_enabled": false,
+            "layer_height": 0.2,
+            "layer_height_0": 0.2,
+            "support_interface_height": 0.8,
+            "top_bottom_thickness": 0.8,
+            "wall_thickness": 1.2000000000000002
         },
-        "name": "Rough/Fast Quality · @tronxy_x · 0.5mm Nozzle · generic_tpu",
+        "name": "Normal Quality · @tronxy_x · 0.6mm Nozzle · generic_abs",
         "setting_scopes": {
+            "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",
@@ -3496,7 +3669,7 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_abs"
+                "generic_petg"
             ],
             "variant_names": [
                 "0.6mm Nozzle"
@@ -3513,7 +3686,66 @@
                     "tronxy_x"
                 ],
                 "material_native_ids": [
-                    "generic_abs"
+                    "generic_petg"
+                ],
+                "variant_names": [
+                    "0.6mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
+            "intent_category": null,
+            "material_id": "generic_petg",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_PETG_rapid",
+            "quality_type": "rapid",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.6mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.375,
+            "layer_height_0": 0.3,
+            "retraction_extra_prime_amount": 0.25,
+            "speed_layer_0": 15,
+            "support_interface_height": 1.5,
+            "top_bottom_thickness": 1.425,
+            "wall_thickness": 1.6
+        },
+        "name": "Rough/Fast Quality · @tronxy_x · 0.6mm Nozzle · generic_petg",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "retraction_extra_prime_amount": "extruder.0",
+            "speed_layer_0": "extruder.0",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_tpu"
+            ],
+            "variant_names": [
+                "0.6mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.6"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_tpu"
                 ],
                 "variant_names": [
                     "0.6mm Nozzle"
@@ -3522,24 +3754,77 @@
             "definition": "tronxy_x",
             "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
             "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_ABS_normal",
+            "material_id": "generic_tpu",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_TPU_normal",
             "quality_type": "normal",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.6mm Nozzle"
         },
         "data": {
-            "cool_fan_enabled": false,
             "layer_height": 0.2,
             "layer_height_0": 0.2,
             "support_interface_height": 0.8,
             "top_bottom_thickness": 0.8,
-            "wall_thickness": 1.2000000000000002
+            "wall_thickness": 0.8
         },
-        "name": "Normal Quality · @tronxy_x · 0.6mm Nozzle · generic_abs",
+        "name": "Normal Quality · @tronxy_x · 0.6mm Nozzle · generic_tpu",
         "setting_scopes": {
-            "cool_fan_enabled": "extruder.0",
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_tpu"
+            ],
+            "variant_names": [
+                "0.6mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.6"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_tpu"
+                ],
+                "variant_names": [
+                    "0.6mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
+            "intent_category": null,
+            "material_id": "generic_tpu",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_TPU_rapid",
+            "quality_type": "rapid",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.6mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.375,
+            "layer_height_0": 0.3,
+            "support_interface_height": 1.5,
+            "top_bottom_thickness": 1.425,
+            "wall_thickness": 0.8
+        },
+        "name": "Rough/Fast Quality · @tronxy_x · 0.6mm Nozzle · generic_tpu",
+        "setting_scopes": {
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",
@@ -3636,6 +3921,61 @@
                 ]
             },
             "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
+            "intent_category": null,
+            "material_id": "generic_pla",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_PLA_rapid",
+            "quality_type": "rapid",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.6mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.375,
+            "layer_height_0": 0.3,
+            "support_interface_height": 1.5,
+            "top_bottom_thickness": 1.425,
+            "wall_thickness": 0.8
+        },
+        "name": "Rough/Fast Quality · @tronxy_x · 0.6mm Nozzle · generic_pla",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_pla"
+            ],
+            "variant_names": [
+                "0.6mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.6"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_pla"
+                ],
+                "variant_names": [
+                    "0.6mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
             "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
             "intent_category": null,
             "material_id": "generic_pla",
@@ -3653,61 +3993,6 @@
             "wall_thickness": 0.8
         },
         "name": "Normal Quality · @tronxy_x · 0.6mm Nozzle · generic_pla",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_tpu"
-            ],
-            "variant_names": [
-                "0.6mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_tpu"
-                ],
-                "variant_names": [
-                    "0.6mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
-            "intent_category": null,
-            "material_id": "generic_tpu",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_TPU_normal",
-            "quality_type": "normal",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.6mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.2,
-            "layer_height_0": 0.2,
-            "support_interface_height": 0.8,
-            "top_bottom_thickness": 0.8,
-            "wall_thickness": 0.8
-        },
-        "name": "Normal Quality · @tronxy_x · 0.6mm Nozzle · generic_tpu",
         "setting_scopes": {
             "layer_height": "global",
             "layer_height_0": "global",
@@ -3779,65 +4064,6 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_petg"
-            ],
-            "variant_names": [
-                "0.6mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_petg"
-                ],
-                "variant_names": [
-                    "0.6mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
-            "intent_category": null,
-            "material_id": "generic_petg",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_PETG_rough",
-            "quality_type": "rough",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.6mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.3,
-            "layer_height_0": 0.25,
-            "retraction_extra_prime_amount": 0.25,
-            "speed_layer_0": 15,
-            "support_interface_height": 1.2,
-            "top_bottom_thickness": 1.15,
-            "wall_thickness": 1.6
-        },
-        "name": "Rough Quality · @tronxy_x · 0.6mm Nozzle · generic_petg",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "retraction_extra_prime_amount": "extruder.0",
-            "speed_layer_0": "extruder.0",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
                 "generic_pla"
             ],
             "variant_names": [
@@ -3893,233 +4119,7 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_abs"
-            ],
-            "variant_names": [
-                "0.6mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_abs"
-                ],
-                "variant_names": [
-                    "0.6mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
-            "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_ABS_rapid",
-            "quality_type": "rapid",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.6mm Nozzle"
-        },
-        "data": {
-            "cool_fan_enabled": false,
-            "layer_height": 0.375,
-            "layer_height_0": 0.3,
-            "support_interface_height": 1.5,
-            "top_bottom_thickness": 1.425,
-            "wall_thickness": 1.6
-        },
-        "name": "Rough/Fast Quality · @tronxy_x · 0.6mm Nozzle · generic_abs",
-        "setting_scopes": {
-            "cool_fan_enabled": "extruder.0",
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_petg"
-            ],
-            "variant_names": [
-                "0.6mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_petg"
-                ],
-                "variant_names": [
-                    "0.6mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
-            "intent_category": null,
-            "material_id": "generic_petg",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_PETG_rapid",
-            "quality_type": "rapid",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.6mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.375,
-            "layer_height_0": 0.3,
-            "retraction_extra_prime_amount": 0.25,
-            "speed_layer_0": 15,
-            "support_interface_height": 1.5,
-            "top_bottom_thickness": 1.425,
-            "wall_thickness": 1.6
-        },
-        "name": "Rough/Fast Quality · @tronxy_x · 0.6mm Nozzle · generic_petg",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "retraction_extra_prime_amount": "extruder.0",
-            "speed_layer_0": "extruder.0",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
                 "generic_pla"
-            ],
-            "variant_names": [
-                "0.6mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_pla"
-                ],
-                "variant_names": [
-                    "0.6mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
-            "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_PLA_rapid",
-            "quality_type": "rapid",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.6mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.375,
-            "layer_height_0": 0.3,
-            "support_interface_height": 1.5,
-            "top_bottom_thickness": 1.425,
-            "wall_thickness": 0.8
-        },
-        "name": "Rough/Fast Quality · @tronxy_x · 0.6mm Nozzle · generic_pla",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_tpu"
-            ],
-            "variant_names": [
-                "0.6mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_tpu"
-                ],
-                "variant_names": [
-                    "0.6mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
-            "intent_category": null,
-            "material_id": "generic_tpu",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_TPU_rapid",
-            "quality_type": "rapid",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.6mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.375,
-            "layer_height_0": 0.3,
-            "support_interface_height": 1.5,
-            "top_bottom_thickness": 1.425,
-            "wall_thickness": 0.8
-        },
-        "name": "Rough/Fast Quality · @tronxy_x · 0.6mm Nozzle · generic_tpu",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_abs"
             ],
             "variant_names": [
                 "0.8mm Nozzle"
@@ -4136,35 +4136,92 @@
                     "tronxy_x"
                 ],
                 "material_native_ids": [
-                    "generic_abs"
+                    "generic_pla"
                 ],
                 "variant_names": [
                     "0.8mm Nozzle"
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
             "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_ABS_low",
-            "quality_type": "low",
+            "material_id": "generic_pla",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_PLA_rough",
+            "quality_type": "rough",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.8mm Nozzle"
         },
         "data": {
-            "cool_fan_enabled": false,
-            "layer_height": 0.25,
-            "layer_height_0": 0.25,
-            "support_interface_height": 1.0,
-            "top_bottom_thickness": 1.0,
-            "wall_thickness": 1.2000000000000002
+            "layer_height": 0.3,
+            "layer_height_0": 0.3,
+            "support_interface_height": 1.2,
+            "top_bottom_thickness": 1.2,
+            "wall_thickness": 0.8
         },
-        "name": "Low · @tronxy_x · 0.8mm Nozzle · generic_abs",
+        "name": "Rough Quality · @tronxy_x · 0.8mm Nozzle · generic_pla",
         "setting_scopes": {
-            "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_petg"
+            ],
+            "variant_names": [
+                "0.8mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.8"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_petg"
+                ],
+                "variant_names": [
+                    "0.8mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
+            "intent_category": null,
+            "material_id": "generic_petg",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_PETG_rough",
+            "quality_type": "rough",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.8mm Nozzle"
+        },
+        "data": {
+            "layer_height": 0.3,
+            "layer_height_0": 0.5,
+            "retraction_extra_prime_amount": 0.25,
+            "speed_layer_0": 15,
+            "support_interface_height": 1.2,
+            "top_bottom_thickness": 1.4,
+            "wall_thickness": 1.2000000000000002
+        },
+        "name": "Rough Quality · @tronxy_x · 0.8mm Nozzle · generic_petg",
+        "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "retraction_extra_prime_amount": "extruder.0",
+            "speed_layer_0": "extruder.0",
             "support_interface_height": "extruder.0",
             "top_bottom_thickness": "extruder.0",
             "wall_thickness": "extruder.0"
@@ -4235,7 +4292,7 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_pla"
+                "generic_tpu"
             ],
             "variant_names": [
                 "0.8mm Nozzle"
@@ -4252,31 +4309,88 @@
                     "tronxy_x"
                 ],
                 "material_native_ids": [
-                    "generic_pla"
+                    "generic_tpu"
                 ],
                 "variant_names": [
                     "0.8mm Nozzle"
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
             "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_PLA_low",
-            "quality_type": "low",
+            "material_id": "generic_tpu",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_TPU_rough",
+            "quality_type": "rough",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.8mm Nozzle"
         },
         "data": {
-            "layer_height": 0.25,
-            "layer_height_0": 0.25,
-            "support_interface_height": 1.0,
-            "top_bottom_thickness": 1.0,
+            "layer_height": 0.3,
+            "layer_height_0": 0.3,
+            "support_interface_height": 1.2,
+            "top_bottom_thickness": 1.2,
             "wall_thickness": 0.8
         },
-        "name": "Low · @tronxy_x · 0.8mm Nozzle · generic_pla",
+        "name": "Rough Quality · @tronxy_x · 0.8mm Nozzle · generic_tpu",
         "setting_scopes": {
+            "layer_height": "global",
+            "layer_height_0": "global",
+            "support_interface_height": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "wall_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "tronxy_x"
+            ],
+            "material_native_ids": [
+                "generic_abs"
+            ],
+            "variant_names": [
+                "0.8mm Nozzle"
+            ]
+        },
+        "compatible_printers": {
+            "Tronxy XY-3/Pro": [
+                "0.8"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "tronxy_x"
+                ],
+                "material_native_ids": [
+                    "generic_abs"
+                ],
+                "variant_names": [
+                    "0.8mm Nozzle"
+                ]
+            },
+            "definition": "tronxy_x",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
+            "intent_category": null,
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_ABS_rough",
+            "quality_type": "rough",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.8mm Nozzle"
+        },
+        "data": {
+            "cool_fan_enabled": false,
+            "layer_height": 0.3,
+            "layer_height_0": 0.3,
+            "support_interface_height": 1.2,
+            "top_bottom_thickness": 1.2,
+            "wall_thickness": 1.2000000000000002
+        },
+        "name": "Rough Quality · @tronxy_x · 0.8mm Nozzle · generic_abs",
+        "setting_scopes": {
+            "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",
@@ -4369,87 +4483,28 @@
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
             "intent_category": null,
             "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_ABS_rough",
-            "quality_type": "rough",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_ABS_rapid",
+            "quality_type": "rapid",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.8mm Nozzle"
         },
         "data": {
             "cool_fan_enabled": false,
-            "layer_height": 0.3,
+            "layer_height": 0.375,
             "layer_height_0": 0.3,
-            "support_interface_height": 1.2,
-            "top_bottom_thickness": 1.2,
+            "support_interface_height": 1.5,
+            "top_bottom_thickness": 1.425,
             "wall_thickness": 1.2000000000000002
         },
-        "name": "Rough Quality · @tronxy_x · 0.8mm Nozzle · generic_abs",
+        "name": "Rough/Fast Quality · @tronxy_x · 0.8mm Nozzle · generic_abs",
         "setting_scopes": {
             "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_petg"
-            ],
-            "variant_names": [
-                "0.8mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.8"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_petg"
-                ],
-                "variant_names": [
-                    "0.8mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
-            "intent_category": null,
-            "material_id": "generic_petg",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_PETG_rough",
-            "quality_type": "rough",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.8mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.3,
-            "layer_height_0": 0.5,
-            "retraction_extra_prime_amount": 0.25,
-            "speed_layer_0": 15,
-            "support_interface_height": 1.2,
-            "top_bottom_thickness": 1.4,
-            "wall_thickness": 1.2000000000000002
-        },
-        "name": "Rough Quality · @tronxy_x · 0.8mm Nozzle · generic_petg",
-        "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "retraction_extra_prime_amount": "extruder.0",
-            "speed_layer_0": "extruder.0",
             "support_interface_height": "extruder.0",
             "top_bottom_thickness": "extruder.0",
             "wall_thickness": "extruder.0"
@@ -4485,23 +4540,23 @@
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
             "intent_category": null,
             "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_PLA_rough",
-            "quality_type": "rough",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_PLA_low",
+            "quality_type": "low",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.8mm Nozzle"
         },
         "data": {
-            "layer_height": 0.3,
-            "layer_height_0": 0.3,
-            "support_interface_height": 1.2,
-            "top_bottom_thickness": 1.2,
+            "layer_height": 0.25,
+            "layer_height_0": 0.25,
+            "support_interface_height": 1.0,
+            "top_bottom_thickness": 1.0,
             "wall_thickness": 0.8
         },
-        "name": "Rough Quality · @tronxy_x · 0.8mm Nozzle · generic_pla",
+        "name": "Low · @tronxy_x · 0.8mm Nozzle · generic_pla",
         "setting_scopes": {
             "layer_height": "global",
             "layer_height_0": "global",
@@ -4540,23 +4595,23 @@
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
             "intent_category": null,
             "material_id": "generic_tpu",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_TPU_rough",
-            "quality_type": "rough",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_TPU_rapid",
+            "quality_type": "rapid",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.8mm Nozzle"
         },
         "data": {
-            "layer_height": 0.3,
+            "layer_height": 0.375,
             "layer_height_0": 0.3,
-            "support_interface_height": 1.2,
-            "top_bottom_thickness": 1.2,
+            "support_interface_height": 1.5,
+            "top_bottom_thickness": 1.425,
             "wall_thickness": 0.8
         },
-        "name": "Rough Quality · @tronxy_x · 0.8mm Nozzle · generic_tpu",
+        "name": "Rough/Fast Quality · @tronxy_x · 0.8mm Nozzle · generic_tpu",
         "setting_scopes": {
             "layer_height": "global",
             "layer_height_0": "global",
@@ -4571,7 +4626,7 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_abs"
+                "generic_pla"
             ],
             "variant_names": [
                 "0.8mm Nozzle"
@@ -4588,7 +4643,7 @@
                     "tronxy_x"
                 ],
                 "material_native_ids": [
-                    "generic_abs"
+                    "generic_pla"
                 ],
                 "variant_names": [
                     "0.8mm Nozzle"
@@ -4597,24 +4652,22 @@
             "definition": "tronxy_x",
             "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
             "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_ABS_rapid",
+            "material_id": "generic_pla",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_PLA_rapid",
             "quality_type": "rapid",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.8mm Nozzle"
         },
         "data": {
-            "cool_fan_enabled": false,
             "layer_height": 0.375,
             "layer_height_0": 0.3,
             "support_interface_height": 1.5,
             "top_bottom_thickness": 1.425,
-            "wall_thickness": 1.2000000000000002
+            "wall_thickness": 0.8
         },
-        "name": "Rough/Fast Quality · @tronxy_x · 0.8mm Nozzle · generic_abs",
+        "name": "Rough/Fast Quality · @tronxy_x · 0.8mm Nozzle · generic_pla",
         "setting_scopes": {
-            "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",
@@ -4687,7 +4740,7 @@
                 "tronxy_x"
             ],
             "material_native_ids": [
-                "generic_pla"
+                "generic_abs"
             ],
             "variant_names": [
                 "0.8mm Nozzle"
@@ -4704,86 +4757,33 @@
                     "tronxy_x"
                 ],
                 "material_native_ids": [
-                    "generic_pla"
+                    "generic_abs"
                 ],
                 "variant_names": [
                     "0.8mm Nozzle"
                 ]
             },
             "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
+            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_low",
             "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_PLA_rapid",
-            "quality_type": "rapid",
+            "material_id": "generic_abs",
+            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_ABS_low",
+            "quality_type": "low",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.8mm Nozzle"
         },
         "data": {
-            "layer_height": 0.375,
-            "layer_height_0": 0.3,
-            "support_interface_height": 1.5,
-            "top_bottom_thickness": 1.425,
-            "wall_thickness": 0.8
+            "cool_fan_enabled": false,
+            "layer_height": 0.25,
+            "layer_height_0": 0.25,
+            "support_interface_height": 1.0,
+            "top_bottom_thickness": 1.0,
+            "wall_thickness": 1.2000000000000002
         },
-        "name": "Rough/Fast Quality · @tronxy_x · 0.8mm Nozzle · generic_pla",
+        "name": "Low · @tronxy_x · 0.8mm Nozzle · generic_abs",
         "setting_scopes": {
-            "layer_height": "global",
-            "layer_height_0": "global",
-            "support_interface_height": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "wall_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "tronxy_x"
-            ],
-            "material_native_ids": [
-                "generic_tpu"
-            ],
-            "variant_names": [
-                "0.8mm Nozzle"
-            ]
-        },
-        "compatible_printers": {
-            "Tronxy XY-3/Pro": [
-                "0.8"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "tronxy_x"
-                ],
-                "material_native_ids": [
-                    "generic_tpu"
-                ],
-                "variant_names": [
-                    "0.8mm Nozzle"
-                ]
-            },
-            "definition": "tronxy_x",
-            "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rapid",
-            "intent_category": null,
-            "material_id": "generic_tpu",
-            "native_id": "quality:tronxy_x:tronxy/tronxy_0.8_TPU_rapid",
-            "quality_type": "rapid",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.8mm Nozzle"
-        },
-        "data": {
-            "layer_height": 0.375,
-            "layer_height_0": 0.3,
-            "support_interface_height": 1.5,
-            "top_bottom_thickness": 1.425,
-            "wall_thickness": 0.8
-        },
-        "name": "Rough/Fast Quality · @tronxy_x · 0.8mm Nozzle · generic_tpu",
-        "setting_scopes": {
+            "cool_fan_enabled": "extruder.0",
             "layer_height": "global",
             "layer_height_0": "global",
             "support_interface_height": "extruder.0",

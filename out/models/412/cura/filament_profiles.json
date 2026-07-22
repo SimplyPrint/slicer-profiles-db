@@ -264,6 +264,396 @@
                 {
                     "compatible": true,
                     "hotends": {
+                        "AA 0.25": false,
+                        "AA 0.4": false,
+                        "AA 0.8": false,
+                        "AA+ 0.4": false,
+                        "BB 0.4": false,
+                        "BB 0.8": false,
+                        "CC 0.4": true,
+                        "CC 0.6": true,
+                        "CC+ 0.4": true,
+                        "CC+ 0.6": true,
+                        "DD 0.4": false
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker S3"
+                        },
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker S5"
+                        },
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker S6"
+                        },
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker S7"
+                        },
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker S8"
+                        }
+                    ]
+                },
+                {
+                    "compatible": true,
+                    "hotends": {
+                        "AA 0.25": false,
+                        "AA 0.4": false,
+                        "AA 0.8": false,
+                        "BB 0.4": false,
+                        "BB 0.8": false,
+                        "CC 0.4": true,
+                        "CC 0.6": true,
+                        "DD 0.4": false,
+                        "HT 0.6": true
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker Factor 4"
+                        }
+                    ]
+                },
+                {
+                    "compatible": true,
+                    "hotends": {
+                        "AA 0.25": false,
+                        "AA 0.4": false,
+                        "AA 0.8": false,
+                        "AA+ 0.4": false,
+                        "BB 0.4": false,
+                        "BB 0.8": false,
+                        "CC 0.4": true,
+                        "CC 0.6": true,
+                        "CC+ 0.6": true,
+                        "DD 0.4": false,
+                        "HT 0.6": true
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker Factor 4+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+ Connect": [
+                "0.25",
+                "0.4",
+                "0.6"
+            ]
+        },
+        "context": {
+            "brand": "Generic",
+            "color": "Generic",
+            "color_code": "#1e1e1e",
+            "description": "A POM like material with a very good wear resistance and very low friction coefficient.",
+            "diameter": 2.85,
+            "guid": "000d008b-2f42-4952-ac17-397c354022df",
+            "material_type": "Nylon CF Slide",
+            "native_id": "generic_nylon-cf-slide#resolved-637ac327946f136e",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "generic_nylon-cf-slide"
+        },
+        "data": {
+            "bridge_fan_speed_2": 0,
+            "bridge_fan_speed_3": 0,
+            "build_volume_temperature": 35,
+            "cool_fan_speed": 0,
+            "cool_fan_speed_min": 0,
+            "cool_min_temperature": 280,
+            "default_material_bed_temperature": 70,
+            "default_material_print_temperature": 280,
+            "material_adhesion_tendency": 2,
+            "material_anti_ooze_retracted_position": -16,
+            "material_anti_ooze_retraction_speed": 50,
+            "material_bed_temperature": 70,
+            "material_bed_temperature_layer_0": 70,
+            "material_brand": "Generic",
+            "material_break_preparation_retracted_position": -16,
+            "material_break_preparation_speed": 20,
+            "material_break_preparation_temperature": 280,
+            "material_break_retracted_position": -50,
+            "material_break_speed": 50,
+            "material_break_temperature": 275,
+            "material_crystallinity": true,
+            "material_diameter": 2.85,
+            "material_final_print_temperature": 265,
+            "material_flush_purge_length": 60,
+            "material_guid": "000d008b-2f42-4952-ac17-397c354022df",
+            "material_initial_print_temperature": 280,
+            "material_maximum_park_duration": 7200,
+            "material_no_load_move_factor": 0.935,
+            "material_print_temperature": 280,
+            "material_print_temperature_layer_0": 280,
+            "material_standby_temperature": 165,
+            "material_surface_energy": 100,
+            "material_type": "Nylon CF Slide",
+            "prime_tower_mode": "interleaved",
+            "raft_interface_fan_speed": 0.0,
+            "raft_surface_fan_speed": 0,
+            "retraction_amount": 8,
+            "retraction_combing": "no_outer_surfaces",
+            "retraction_retract_speed": 25,
+            "retraction_speed": 25,
+            "wipe_retraction_amount": 8,
+            "wipe_retraction_prime_speed": 25,
+            "wipe_retraction_retract_speed": 25,
+            "wipe_retraction_speed": 25
+        },
+        "name": "Generic Nylon CF Slide Generic",
+        "setting_scopes": {
+            "bridge_fan_speed_2": "extruder.0",
+            "bridge_fan_speed_3": "extruder.0",
+            "build_volume_temperature": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_adhesion_tendency": "extruder.0",
+            "material_anti_ooze_retracted_position": "extruder.0",
+            "material_anti_ooze_retraction_speed": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_retracted_position": "extruder.0",
+            "material_break_preparation_speed": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_break_retracted_position": "extruder.0",
+            "material_break_speed": "extruder.0",
+            "material_break_temperature": "extruder.0",
+            "material_crystallinity": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_flush_purge_length": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_maximum_park_duration": "extruder.0",
+            "material_no_load_move_factor": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_surface_energy": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_mode": "global",
+            "raft_interface_fan_speed": "extruder.0",
+            "raft_surface_fan_speed": "extruder.0",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global",
+            "retraction_retract_speed": "extruder.0",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_amount": "extruder.0",
+            "wipe_retraction_prime_speed": "extruder.0",
+            "wipe_retraction_retract_speed": "extruder.0",
+            "wipe_retraction_speed": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "default": true,
+            "machines": [
+                {
+                    "compatible": true,
+                    "hotends": {
+                        "AA 0.25": false,
+                        "AA 0.4": false,
+                        "AA 0.8": false,
+                        "AA+ 0.4": false,
+                        "BB 0.4": false,
+                        "BB 0.8": false,
+                        "CC 0.4": true,
+                        "CC 0.6": true,
+                        "CC+ 0.4": true,
+                        "CC+ 0.6": true,
+                        "DD 0.4": false
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker S3"
+                        },
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker S5"
+                        },
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker S6"
+                        },
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker S7"
+                        },
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker S8"
+                        }
+                    ]
+                },
+                {
+                    "compatible": true,
+                    "hotends": {
+                        "AA 0.25": false,
+                        "AA 0.4": false,
+                        "AA 0.8": false,
+                        "BB 0.4": false,
+                        "BB 0.8": false,
+                        "CC 0.4": true,
+                        "CC 0.6": true,
+                        "DD 0.4": false,
+                        "HT 0.6": true
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker Factor 4"
+                        }
+                    ]
+                },
+                {
+                    "compatible": true,
+                    "hotends": {
+                        "AA 0.25": false,
+                        "AA 0.4": false,
+                        "AA 0.8": false,
+                        "AA+ 0.4": false,
+                        "BB 0.4": false,
+                        "BB 0.8": false,
+                        "CC 0.4": true,
+                        "CC 0.6": true,
+                        "CC+ 0.6": true,
+                        "DD 0.4": false,
+                        "HT 0.6": true
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "Ultimaker Factor 4+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+ Connect": [
+                "0.8"
+            ]
+        },
+        "context": {
+            "brand": "Generic",
+            "color": "Generic",
+            "color_code": "#1e1e1e",
+            "description": "A POM like material with a very good wear resistance and very low friction coefficient.",
+            "diameter": 2.85,
+            "guid": "000d008b-2f42-4952-ac17-397c354022df",
+            "material_type": "Nylon CF Slide",
+            "native_id": "generic_nylon-cf-slide#resolved-53e01c7c33cdfd7c",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "generic_nylon-cf-slide"
+        },
+        "data": {
+            "bridge_fan_speed_2": 0,
+            "bridge_fan_speed_3": 0,
+            "build_volume_temperature": 35,
+            "cool_fan_speed": 0,
+            "cool_fan_speed_min": 0,
+            "cool_min_temperature": 280,
+            "default_material_bed_temperature": 70,
+            "default_material_print_temperature": 280,
+            "material_adhesion_tendency": 2,
+            "material_anti_ooze_retracted_position": -16,
+            "material_anti_ooze_retraction_speed": 50,
+            "material_bed_temperature": 70,
+            "material_bed_temperature_layer_0": 70,
+            "material_brand": "Generic",
+            "material_break_preparation_retracted_position": -16,
+            "material_break_preparation_speed": 20,
+            "material_break_preparation_temperature": 280,
+            "material_break_retracted_position": -50,
+            "material_break_speed": 50,
+            "material_break_temperature": 275,
+            "material_crystallinity": true,
+            "material_diameter": 2.85,
+            "material_final_print_temperature": 265,
+            "material_flush_purge_length": 60,
+            "material_guid": "000d008b-2f42-4952-ac17-397c354022df",
+            "material_initial_print_temperature": 280,
+            "material_maximum_park_duration": 7200,
+            "material_no_load_move_factor": 0.935,
+            "material_print_temperature": 280,
+            "material_print_temperature_layer_0": 280,
+            "material_standby_temperature": 165,
+            "material_surface_energy": 100,
+            "material_type": "Nylon CF Slide",
+            "prime_tower_mode": "interleaved",
+            "raft_interface_fan_speed": 0.0,
+            "raft_surface_fan_speed": 0,
+            "retraction_amount": 8,
+            "retraction_combing": "no_outer_surfaces",
+            "retraction_speed": 25,
+            "wipe_retraction_amount": 8
+        },
+        "name": "Generic Nylon CF Slide Generic",
+        "setting_scopes": {
+            "bridge_fan_speed_2": "extruder.0",
+            "bridge_fan_speed_3": "extruder.0",
+            "build_volume_temperature": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_adhesion_tendency": "extruder.0",
+            "material_anti_ooze_retracted_position": "extruder.0",
+            "material_anti_ooze_retraction_speed": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_retracted_position": "extruder.0",
+            "material_break_preparation_speed": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_break_retracted_position": "extruder.0",
+            "material_break_speed": "extruder.0",
+            "material_break_temperature": "extruder.0",
+            "material_crystallinity": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_flush_purge_length": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_maximum_park_duration": "extruder.0",
+            "material_no_load_move_factor": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_surface_energy": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_mode": "global",
+            "raft_interface_fan_speed": "extruder.0",
+            "raft_surface_fan_speed": "extruder.0",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_amount": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "default": true,
+            "machines": [
+                {
+                    "compatible": true,
+                    "hotends": {
                         "0.25 mm": true,
                         "0.4 mm": true,
                         "0.6 mm": true,
@@ -761,396 +1151,6 @@
             "wipe_retraction_prime_speed": "extruder.0",
             "wipe_retraction_retract_speed": "extruder.0",
             "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "AA 0.25": false,
-                        "AA 0.4": false,
-                        "AA 0.8": false,
-                        "AA+ 0.4": false,
-                        "BB 0.4": false,
-                        "BB 0.8": false,
-                        "CC 0.4": true,
-                        "CC 0.6": true,
-                        "CC+ 0.4": true,
-                        "CC+ 0.6": true,
-                        "DD 0.4": false
-                    },
-                    "identifiers": [
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker S3"
-                        },
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker S5"
-                        },
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker S6"
-                        },
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker S7"
-                        },
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker S8"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "AA 0.25": false,
-                        "AA 0.4": false,
-                        "AA 0.8": false,
-                        "BB 0.4": false,
-                        "BB 0.8": false,
-                        "CC 0.4": true,
-                        "CC 0.6": true,
-                        "DD 0.4": false,
-                        "HT 0.6": true
-                    },
-                    "identifiers": [
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker Factor 4"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "AA 0.25": false,
-                        "AA 0.4": false,
-                        "AA 0.8": false,
-                        "AA+ 0.4": false,
-                        "BB 0.4": false,
-                        "BB 0.8": false,
-                        "CC 0.4": true,
-                        "CC 0.6": true,
-                        "CC+ 0.6": true,
-                        "DD 0.4": false,
-                        "HT 0.6": true
-                    },
-                    "identifiers": [
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker Factor 4+"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+ Connect": [
-                "0.25",
-                "0.4",
-                "0.6"
-            ]
-        },
-        "context": {
-            "brand": "Generic",
-            "color": "Generic",
-            "color_code": "#1e1e1e",
-            "description": "A POM like material with a very good wear resistance and very low friction coefficient.",
-            "diameter": 2.85,
-            "guid": "000d008b-2f42-4952-ac17-397c354022df",
-            "material_type": "Nylon CF Slide",
-            "native_id": "generic_nylon-cf-slide#resolved-637ac327946f136e",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "generic_nylon-cf-slide"
-        },
-        "data": {
-            "bridge_fan_speed_2": 0,
-            "bridge_fan_speed_3": 0,
-            "build_volume_temperature": 35,
-            "cool_fan_speed": 0,
-            "cool_fan_speed_min": 0,
-            "cool_min_temperature": 280,
-            "default_material_bed_temperature": 70,
-            "default_material_print_temperature": 280,
-            "material_adhesion_tendency": 2,
-            "material_anti_ooze_retracted_position": -16,
-            "material_anti_ooze_retraction_speed": 50,
-            "material_bed_temperature": 70,
-            "material_bed_temperature_layer_0": 70,
-            "material_brand": "Generic",
-            "material_break_preparation_retracted_position": -16,
-            "material_break_preparation_speed": 20,
-            "material_break_preparation_temperature": 280,
-            "material_break_retracted_position": -50,
-            "material_break_speed": 50,
-            "material_break_temperature": 275,
-            "material_crystallinity": true,
-            "material_diameter": 2.85,
-            "material_final_print_temperature": 265,
-            "material_flush_purge_length": 60,
-            "material_guid": "000d008b-2f42-4952-ac17-397c354022df",
-            "material_initial_print_temperature": 280,
-            "material_maximum_park_duration": 7200,
-            "material_no_load_move_factor": 0.935,
-            "material_print_temperature": 280,
-            "material_print_temperature_layer_0": 280,
-            "material_standby_temperature": 165,
-            "material_surface_energy": 100,
-            "material_type": "Nylon CF Slide",
-            "prime_tower_mode": "interleaved",
-            "raft_interface_fan_speed": 0.0,
-            "raft_surface_fan_speed": 0,
-            "retraction_amount": 8,
-            "retraction_combing": "no_outer_surfaces",
-            "retraction_retract_speed": 25,
-            "retraction_speed": 25,
-            "wipe_retraction_amount": 8,
-            "wipe_retraction_prime_speed": 25,
-            "wipe_retraction_retract_speed": 25,
-            "wipe_retraction_speed": 25
-        },
-        "name": "Generic Nylon CF Slide Generic",
-        "setting_scopes": {
-            "bridge_fan_speed_2": "extruder.0",
-            "bridge_fan_speed_3": "extruder.0",
-            "build_volume_temperature": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_adhesion_tendency": "extruder.0",
-            "material_anti_ooze_retracted_position": "extruder.0",
-            "material_anti_ooze_retraction_speed": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_retracted_position": "extruder.0",
-            "material_break_preparation_speed": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_break_retracted_position": "extruder.0",
-            "material_break_speed": "extruder.0",
-            "material_break_temperature": "extruder.0",
-            "material_crystallinity": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_flush_purge_length": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_maximum_park_duration": "extruder.0",
-            "material_no_load_move_factor": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_surface_energy": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_mode": "global",
-            "raft_interface_fan_speed": "extruder.0",
-            "raft_surface_fan_speed": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "AA 0.25": false,
-                        "AA 0.4": false,
-                        "AA 0.8": false,
-                        "AA+ 0.4": false,
-                        "BB 0.4": false,
-                        "BB 0.8": false,
-                        "CC 0.4": true,
-                        "CC 0.6": true,
-                        "CC+ 0.4": true,
-                        "CC+ 0.6": true,
-                        "DD 0.4": false
-                    },
-                    "identifiers": [
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker S3"
-                        },
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker S5"
-                        },
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker S6"
-                        },
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker S7"
-                        },
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker S8"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "AA 0.25": false,
-                        "AA 0.4": false,
-                        "AA 0.8": false,
-                        "BB 0.4": false,
-                        "BB 0.8": false,
-                        "CC 0.4": true,
-                        "CC 0.6": true,
-                        "DD 0.4": false,
-                        "HT 0.6": true
-                    },
-                    "identifiers": [
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker Factor 4"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "AA 0.25": false,
-                        "AA 0.4": false,
-                        "AA 0.8": false,
-                        "AA+ 0.4": false,
-                        "BB 0.4": false,
-                        "BB 0.8": false,
-                        "CC 0.4": true,
-                        "CC 0.6": true,
-                        "CC+ 0.6": true,
-                        "DD 0.4": false,
-                        "HT 0.6": true
-                    },
-                    "identifiers": [
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "Ultimaker Factor 4+"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+ Connect": [
-                "0.8"
-            ]
-        },
-        "context": {
-            "brand": "Generic",
-            "color": "Generic",
-            "color_code": "#1e1e1e",
-            "description": "A POM like material with a very good wear resistance and very low friction coefficient.",
-            "diameter": 2.85,
-            "guid": "000d008b-2f42-4952-ac17-397c354022df",
-            "material_type": "Nylon CF Slide",
-            "native_id": "generic_nylon-cf-slide#resolved-53e01c7c33cdfd7c",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "generic_nylon-cf-slide"
-        },
-        "data": {
-            "bridge_fan_speed_2": 0,
-            "bridge_fan_speed_3": 0,
-            "build_volume_temperature": 35,
-            "cool_fan_speed": 0,
-            "cool_fan_speed_min": 0,
-            "cool_min_temperature": 280,
-            "default_material_bed_temperature": 70,
-            "default_material_print_temperature": 280,
-            "material_adhesion_tendency": 2,
-            "material_anti_ooze_retracted_position": -16,
-            "material_anti_ooze_retraction_speed": 50,
-            "material_bed_temperature": 70,
-            "material_bed_temperature_layer_0": 70,
-            "material_brand": "Generic",
-            "material_break_preparation_retracted_position": -16,
-            "material_break_preparation_speed": 20,
-            "material_break_preparation_temperature": 280,
-            "material_break_retracted_position": -50,
-            "material_break_speed": 50,
-            "material_break_temperature": 275,
-            "material_crystallinity": true,
-            "material_diameter": 2.85,
-            "material_final_print_temperature": 265,
-            "material_flush_purge_length": 60,
-            "material_guid": "000d008b-2f42-4952-ac17-397c354022df",
-            "material_initial_print_temperature": 280,
-            "material_maximum_park_duration": 7200,
-            "material_no_load_move_factor": 0.935,
-            "material_print_temperature": 280,
-            "material_print_temperature_layer_0": 280,
-            "material_standby_temperature": 165,
-            "material_surface_energy": 100,
-            "material_type": "Nylon CF Slide",
-            "prime_tower_mode": "interleaved",
-            "raft_interface_fan_speed": 0.0,
-            "raft_surface_fan_speed": 0,
-            "retraction_amount": 8,
-            "retraction_combing": "no_outer_surfaces",
-            "retraction_speed": 25,
-            "wipe_retraction_amount": 8
-        },
-        "name": "Generic Nylon CF Slide Generic",
-        "setting_scopes": {
-            "bridge_fan_speed_2": "extruder.0",
-            "bridge_fan_speed_3": "extruder.0",
-            "build_volume_temperature": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_adhesion_tendency": "extruder.0",
-            "material_anti_ooze_retracted_position": "extruder.0",
-            "material_anti_ooze_retraction_speed": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_retracted_position": "extruder.0",
-            "material_break_preparation_speed": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_break_retracted_position": "extruder.0",
-            "material_break_speed": "extruder.0",
-            "material_break_temperature": "extruder.0",
-            "material_crystallinity": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_flush_purge_length": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_maximum_park_duration": "extruder.0",
-            "material_no_load_move_factor": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_surface_energy": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_mode": "global",
-            "raft_interface_fan_speed": "extruder.0",
-            "raft_surface_fan_speed": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0"
         }
     },
     {

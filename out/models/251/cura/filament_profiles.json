@@ -2,6 +2,87 @@
     {
         "compatibility": {
             "default": true,
+            "machines": [
+                {
+                    "compatible": true,
+                    "hotends": {
+                        "0.25mm thermoplastic extruder": true,
+                        "0.4mm thermoplastic extruder": true,
+                        "0.8mm thermoplastic extruder": true
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "Cartesio bv",
+                            "product": "cartesio"
+                        }
+                    ]
+                }
+            ]
+        },
+        "compatible_printers": {
+            "Renkforce RF100 V2": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "brand": "Generic",
+            "color": "Generic",
+            "color_code": "#F29030",
+            "description": "Strong, tough and temperature resistant. PC offers a great print quality, heat resistance up to 110ºC, mechanical strength and toughness.",
+            "diameter": 1.75,
+            "display_name": "Generic PC Generic",
+            "guid": "62414577-94d1-490d-b1e4-7ef3ec40db02",
+            "material_type": "PC",
+            "native_id": "generic_pc_175#resolved-21a6c9d2c1c76a9e",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "generic_pc_175"
+        },
+        "data": {
+            "build_volume_temperature": 41,
+            "cool_fan_speed": 0,
+            "cool_min_temperature": 270,
+            "default_material_bed_temperature": 107,
+            "default_material_print_temperature": 270,
+            "material_bed_temperature": 107,
+            "material_bed_temperature_layer_0": 107,
+            "material_brand": "Generic",
+            "material_break_preparation_temperature": 270,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": 255,
+            "material_guid": "62414577-94d1-490d-b1e4-7ef3ec40db02",
+            "material_initial_print_temperature": 260,
+            "material_print_temperature": 270,
+            "material_print_temperature_layer_0": 270,
+            "material_standby_temperature": 175,
+            "material_type": "PC",
+            "prime_tower_mode": "interleaved"
+        },
+        "name": "Generic PC Generic · generic_pc_175",
+        "setting_scopes": {
+            "build_volume_temperature": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_mode": "global"
+        }
+    },
+    {
+        "compatibility": {
+            "default": true,
             "machines": []
         },
         "compatible_printers": {
@@ -119,87 +200,6 @@
             "material_guid": "extruder.0",
             "material_initial_print_temperature": "extruder.0",
             "material_is_support_material": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_mode": "global"
-        }
-    },
-    {
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "0.25mm thermoplastic extruder": true,
-                        "0.4mm thermoplastic extruder": true,
-                        "0.8mm thermoplastic extruder": true
-                    },
-                    "identifiers": [
-                        {
-                            "manufacturer": "Cartesio bv",
-                            "product": "cartesio"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Renkforce RF100 V2": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Generic",
-            "color": "Generic",
-            "color_code": "#F29030",
-            "description": "Strong, tough and temperature resistant. PC offers a great print quality, heat resistance up to 110ºC, mechanical strength and toughness.",
-            "diameter": 1.75,
-            "display_name": "Generic PC Generic",
-            "guid": "62414577-94d1-490d-b1e4-7ef3ec40db02",
-            "material_type": "PC",
-            "native_id": "generic_pc_175#resolved-21a6c9d2c1c76a9e",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "generic_pc_175"
-        },
-        "data": {
-            "build_volume_temperature": 41,
-            "cool_fan_speed": 0,
-            "cool_min_temperature": 270,
-            "default_material_bed_temperature": 107,
-            "default_material_print_temperature": 270,
-            "material_bed_temperature": 107,
-            "material_bed_temperature_layer_0": 107,
-            "material_brand": "Generic",
-            "material_break_preparation_temperature": 270,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 255,
-            "material_guid": "62414577-94d1-490d-b1e4-7ef3ec40db02",
-            "material_initial_print_temperature": 260,
-            "material_print_temperature": 270,
-            "material_print_temperature_layer_0": 270,
-            "material_standby_temperature": 175,
-            "material_type": "PC",
-            "prime_tower_mode": "interleaved"
-        },
-        "name": "Generic PC Generic · generic_pc_175",
-        "setting_scopes": {
-            "build_volume_temperature": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
             "material_print_temperature": "extruder.0",
             "material_print_temperature_layer_0": "extruder.0",
             "material_standby_temperature": "extruder.0",

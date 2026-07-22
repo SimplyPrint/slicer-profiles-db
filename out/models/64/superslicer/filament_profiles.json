@@ -1,6 +1,26 @@
 [
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.25",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -62,68 +82,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "25.4",
-            "filament_density": "1.27",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Hatchbox PLA",
-            "filament_soluble": "0",
-            "filament_spool_weight": "245",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Hatchbox",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "210"
-        },
-        "filament_db_ids": [
-            "hatchbox/PLA/pla"
-        ],
-        "name": "Hatchbox PLA"
-    },
-    {
-        "compatible_printers": {
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -185,6 +163,26 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.25",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -242,191 +240,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "0.97",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "32.35",
-            "filament_density": "1.22",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Fiberlogy FiberSilk",
-            "filament_soluble": "0",
-            "filament_spool_weight": "330",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Fiberlogy",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "230",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "230"
-        },
-        "filament_db_ids": [
-            "fiberlogy/PLA/fibersilk"
-        ],
-        "name": "Fiberlogy FiberSilk"
-    },
-    {
-        "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            ],
+            "Original Prusa i3 MK3": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK3 MMU2": [
                 "0.25",
-                "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "42.99",
-            "filament_density": "1.24",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Verbatim PLA",
-            "filament_soluble": "0",
-            "filament_spool_weight": "235",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Verbatim",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "210"
-        },
-        "filament_db_ids": [
-            "verbatim/PLA/pla"
-        ],
-        "name": "Verbatim PLA"
-    },
-    {
-        "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
-                "0.4",
-                "0.25",
-                "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
-                "0.25",
-                "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "100",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "2",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#DEE0E6",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "72",
-            "filament_density": "0.89",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "5",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Verbatim PP",
-            "filament_soluble": "0",
-            "filament_spool_weight": "235",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PP",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Verbatim",
-            "first_layer_bed_temperature": "100",
-            "first_layer_temperature": "220",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K0 ; Filament gcode\"",
-            "temperature": "220"
-        },
-        "filament_db_ids": [
-            "verbatim/PP/pp"
-        ],
-        "name": "Verbatim PP"
-    },
-    {
-        "compatible_printers": {
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -488,68 +321,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "27.82",
-            "filament_density": "1.24",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Filament PM PLA",
-            "filament_soluble": "0",
-            "filament_spool_weight": "230",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Filament PM",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "210"
-        },
-        "filament_db_ids": [
-            "filamentpm/PLA/pla"
-        ],
-        "name": "Filament PM PLA"
-    },
-    {
-        "compatible_printers": {
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -611,67 +402,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "25.4",
-            "filament_density": "1.24",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "EUMAKERS PLA",
-            "filament_soluble": "0",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "EUMAKERS",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "210"
-        },
-        "filament_db_ids": [
-            "eumakers/PLA/pla"
-        ],
-        "name": "EUMAKERS PLA"
-    },
-    {
-        "compatible_printers": {
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -736,130 +486,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "22",
-            "filament_density": "1.24",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Overture PLA",
-            "filament_soluble": "0",
-            "filament_spool_weight": "235",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Overture",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "210"
-        },
-        "filament_db_ids": [
-            "overture/PLA/pla"
-        ],
-        "name": "Overture PLA"
-    },
-    {
-        "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            ],
+            "Original Prusa i3 MK3": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK3 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "75",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "nozzle_diameter[0]!=0.8 and ! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FFFF6F",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "60.48",
-            "filament_density": "1.09",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "8",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Prusament PVB",
-            "filament_soluble": "1",
-            "filament_spool_weight": "201",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PVB",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Prusa Polymers",
-            "first_layer_bed_temperature": "75",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "20",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.02{elsif nozzle_diameter[0]==0.6}0.05{else}0.08{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K24{elsif nozzle_diameter[0]==0.8};{else}M900 K45{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "215"
-        },
-        "filament_db_ids": [
-            "prusament/PVB/pvb"
-        ],
-        "name": "Prusament PVB"
-    },
-    {
-        "compatible_printers": {
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -920,68 +566,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "38.66",
-            "filament_density": "1.23",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "8",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Fiberlogy FiberWood",
-            "filament_soluble": "0",
-            "filament_spool_weight": "330",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Fiberlogy",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "185",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "185"
-        },
-        "filament_db_ids": [
-            "fiberlogy/PLA/fiberwood"
-        ],
-        "name": "Fiberlogy FiberWood"
-    },
-    {
-        "compatible_printers": {
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -1046,6 +650,26 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.25",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -1110,253 +734,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "0.98",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "37.64",
-            "filament_density": "1.38",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "10",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Fiberlogy PLA Mineral",
-            "filament_soluble": "0",
-            "filament_spool_weight": "330",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Fiberlogy",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "195",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "190"
-        },
-        "filament_db_ids": [
-            "fiberlogy/PLA/pla_mineral"
-        ],
-        "name": "Fiberlogy PLA Mineral"
-    },
-    {
-        "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            ],
+            "Original Prusa i3 MK3": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK3 MMU2": [
                 "0.25",
-                "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "30.59",
-            "filament_density": "1.24",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Fiberlogy HD PLA",
-            "filament_soluble": "0",
-            "filament_spool_weight": "330",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Fiberlogy",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "230",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "230"
-        },
-        "filament_db_ids": [
-            "fiberlogy/PLA/hd_pla"
-        ],
-        "name": "Fiberlogy HD PLA"
-    },
-    {
-        "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
-                "0.4",
-                "0.25",
-                "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
-                "0.25",
-                "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "0",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "0",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FFFFD7",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "122.1",
-            "filament_density": "1.23",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "3.8",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 8.3871 8.6129 8.93548 9.22581 9.48387 9.70968 9.87097 10.0323 10.2258 10.4194 10.6452 10.8065| 0.05 8.34193 0.45 8.73548 0.95 9.34836 1.45 9.78385 1.95 10.0871 2.45 10.5161 2.95 10.8903 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "PrimaSelect PVA+",
-            "filament_soluble": "1",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PVA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "PrimaSelect",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "195",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.02{else}0.04{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K12{elsif nozzle_diameter[0]==0.8};{else}M900 K20{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "195"
-        },
-        "filament_db_ids": [
-            "primaselect/PVA/pva+"
-        ],
-        "name": "PrimaSelect PVA+"
-    },
-    {
-        "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
-                "0.4",
-                "0.25",
-                "0.6",
-                "0.8"
-            ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
-                "0.25",
-                "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1.03",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "32.35",
-            "filament_density": "1.2",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Fiberlogy FiberSatin",
-            "filament_soluble": "0",
-            "filament_spool_weight": "330",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Fiberlogy",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "215"
-        },
-        "filament_db_ids": [
-            "fiberlogy/PLA/fibersatin"
-        ],
-        "name": "Fiberlogy FiberSatin"
-    },
-    {
-        "compatible_printers": {
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -1421,6 +818,26 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.25",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -1481,6 +898,26 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.25",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -1542,190 +979,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "90",
-            "bridge_fan_speed": "25",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "3",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "20",
-            "filament_colour": "#FFF2EC",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "34.64",
-            "filament_density": "1.05",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "10",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"https://www.extrudr.com/en/products/catalogue/?material=120\"",
-            "filament_ramming_parameters": "\"120 100 5.70968 6.03226 7 8.25806 9 9.19355 9.3871 9.77419 10.129 10.3226 10.4516 10.5161| 0.05 5.69677 0.45 6.15484 0.95 8.76774 1.45 9.20323 1.95 9.95806 2.45 10.3871 2.95 10.5677 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Extrudr DuraPro ASA",
-            "filament_soluble": "0",
-            "filament_spool_weight": "230",
-            "filament_toolchange_delay": "0",
-            "filament_type": "ASA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Extrudr",
-            "first_layer_bed_temperature": "90",
-            "first_layer_temperature": "220",
-            "max_fan_speed": "20",
-            "min_fan_speed": "20",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.02{else}0.04{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K12{elsif nozzle_diameter[0]==0.8};{else}M900 K20{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "220"
-        },
-        "filament_db_ids": [
-            "extrudr/ASA/durapro_asa"
-        ],
-        "name": "Extrudr DuraPro ASA"
-    },
-    {
-        "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            ],
+            "Original Prusa i3 MK3": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK3 MMU2": [
                 "0.25",
-                "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "27.65",
-            "filament_density": "1.22",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Fiberlogy Impact PLA",
-            "filament_soluble": "0",
-            "filament_spool_weight": "330",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Fiberlogy",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "230",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "230"
-        },
-        "filament_db_ids": [
-            "fiberlogy/PLA/impact_pla"
-        ],
-        "name": "Fiberlogy Impact PLA"
-    },
-    {
-        "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
-                "0.4",
-                "0.25",
-                "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
-                "0.25",
-                "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "25.4",
-            "filament_density": "1.24",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Das Filament PLA",
-            "filament_soluble": "0",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Das Filament",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "210"
-        },
-        "filament_db_ids": [
-            "das_filament/PLA/pla"
-        ],
-        "name": "Das Filament PLA"
-    },
-    {
-        "compatible_printers": {
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -1788,129 +1061,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "20",
-            "filament_density": "1.24",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Fiberlogy Easy PLA",
-            "filament_soluble": "0",
-            "filament_spool_weight": "330",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Fiberlogy",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "220",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "220"
-        },
-        "filament_db_ids": [
-            "fiberlogy/PLA/easy_pla"
-        ],
-        "name": "Fiberlogy Easy PLA"
-    },
-    {
-        "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            ],
+            "Original Prusa i3 MK3": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK3 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "21.50",
-            "filament_density": "1.24",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Spectrum PLA",
-            "filament_soluble": "0",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Spectrum",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "210"
-        },
-        "filament_db_ids": [
-            "spectrum/PLA/pla"
-        ],
-        "name": "Spectrum PLA"
-    },
-    {
-        "compatible_printers": {
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -1971,6 +1141,26 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.25",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -2035,68 +1225,16 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK3": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK3 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "55",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "24.9",
-            "filament_density": "1.24",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Filamentworld PLA",
-            "filament_soluble": "0",
-            "filament_spool_weight": "0",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Filamentworld",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "3",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "20",
-            "slowdown_below_layer_time": "10",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "205"
-        },
-        "filament_db_ids": [
-            "filamentworld/PLA/pla"
-        ],
-        "name": "Filamentworld PLA"
-    },
-    {
-        "compatible_printers": {
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -2159,68 +1297,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "nozzle_diameter[0]!=0.8 and ! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "36.29",
-            "filament_density": "1.24",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"Affordable filament for everyday printing in premium quality manufactured in-house by Josef Prusa\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Prusament PLA",
-            "filament_soluble": "0",
-            "filament_spool_weight": "201",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Prusa Polymers",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "215"
-        },
-        "filament_db_ids": [
-            "prusament/PLA/pla"
-        ],
-        "name": "Prusament PLA"
-    },
-    {
-        "compatible_printers": {
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -2278,67 +1374,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "",
-            "filament_density": "1.25",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Filatech PLA",
-            "filament_soluble": "0",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Filatech",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "210"
-        },
-        "filament_db_ids": [
-            "filatech/PLA/pla"
-        ],
-        "name": "Filatech PLA"
-    },
-    {
-        "compatible_printers": {
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -2403,6 +1458,26 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.25",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -2464,6 +1539,26 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.25",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -2525,64 +1620,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "nozzle_diameter[0]!=0.8 and ! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "25.4",
-            "filament_density": "1.24",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Generic PLA",
-            "filament_soluble": "0",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Generic",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "210"
-        },
-        "name": "Generic PLA"
-    },
-    {
-        "compatible_printers": {
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -2647,6 +1704,26 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.25",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -2711,68 +1788,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "1",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF8000",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "20.99",
-            "filament_density": "1.24",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "15",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Devil Design PLA",
-            "filament_soluble": "0",
-            "filament_spool_weight": "250",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PLA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Devil Design",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "full_fan_speed_layer": "4",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.04{else}0.05{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K18{elsif nozzle_diameter[0]==0.8};{else}M900 K30{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "210"
-        },
-        "filament_db_ids": [
-            "devil_design/PLA/pla"
-        ],
-        "name": "Devil Design PLA"
-    },
-    {
-        "compatible_printers": {
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -2837,67 +1872,26 @@
     },
     {
         "compatible_printers": {
-            "Original Prusa i3 MK3S && MK3S+": [
+            "Original Prusa i3 MK2.5": [
                 "0.4",
                 "0.25",
                 "0.6",
                 "0.8"
             ],
-            "Original Prusa i3 MK3S && MK3S+ MMU2S": [
+            "Original Prusa i3 MK2.5 MMU2": [
                 "0.25",
                 "0.8"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "bridge_fan_speed": "100",
-            "compatible_printers": "",
-            "compatible_printers_condition": "! (printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK(2.5|3).*/ and single_extruder_multi_material)",
-            "cooling": "0",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1",
-            "fan_always_on": "0",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FFFFD7",
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": "193.58",
-            "filament_density": "1.14",
-            "filament_diameter": "1.75",
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": "4",
-            "filament_minimal_purge_on_wipe_tower": "15",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Verbatim BVOH",
-            "filament_soluble": "1",
-            "filament_spool_weight": "235",
-            "filament_toolchange_delay": "0",
-            "filament_type": "PVA",
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": "Verbatim",
-            "first_layer_bed_temperature": "60",
-            "first_layer_temperature": "215",
-            "max_fan_speed": "100",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "15",
-            "start_filament_gcode": "\"M900 K{if printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.6}0.12{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/ and nozzle_diameter[0]==0.8}0.06{elsif printer_notes=~/.*PRINTER_MODEL_MINI.*/}0.2{elsif nozzle_diameter[0]==0.8}0.01{elsif nozzle_diameter[0]==0.6}0.02{else}0.04{endif} ; Filament gcode LA 1.5\\n{if printer_notes=~/.*PRINTER_MODEL_MINI.*/};{elsif printer_notes=~/.*PRINTER_HAS_BOWDEN.*/}M900 K200{elsif nozzle_diameter[0]==0.6}M900 K12{elsif nozzle_diameter[0]==0.8};{else}M900 K20{endif} ; Filament gcode LA 1.0\"",
-            "temperature": "210"
-        },
-        "filament_db_ids": [
-            "verbatim/BVOH/bvoh"
-        ],
-        "name": "Verbatim BVOH"
-    },
-    {
-        "compatible_printers": {
+            ],
+            "Original Prusa i3 MK3": [
+                "0.4",
+                "0.25",
+                "0.6",
+                "0.8"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.25",
+                "0.8"
+            ],
             "Original Prusa i3 MK3S && MK3S+": [
                 "0.4",
                 "0.25",
@@ -2962,6 +1956,14 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.4",
+                "0.6"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.4",
+                "0.6"
+            ],
             "Original Prusa i3 MK3S && MK3S+ MMU2S": [
                 "0.4",
                 "0.6"
@@ -3016,6 +2018,14 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.4",
+                "0.6"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.4",
+                "0.6"
+            ],
             "Original Prusa i3 MK3S && MK3S+ MMU2S": [
                 "0.4",
                 "0.6"
@@ -3074,6 +2084,14 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.4",
+                "0.6"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.4",
+                "0.6"
+            ],
             "Original Prusa i3 MK3S && MK3S+ MMU2S": [
                 "0.4",
                 "0.6"
@@ -3127,6 +2145,14 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.4",
+                "0.6"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.4",
+                "0.6"
+            ],
             "Original Prusa i3 MK3S && MK3S+ MMU2S": [
                 "0.4",
                 "0.6"
@@ -3183,6 +2209,14 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.4",
+                "0.6"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.4",
+                "0.6"
+            ],
             "Original Prusa i3 MK3S && MK3S+ MMU2S": [
                 "0.4",
                 "0.6"
@@ -3241,6 +2275,14 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.4",
+                "0.6"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.4",
+                "0.6"
+            ],
             "Original Prusa i3 MK3S && MK3S+ MMU2S": [
                 "0.4",
                 "0.6"
@@ -3297,6 +2339,14 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.4",
+                "0.6"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.4",
+                "0.6"
+            ],
             "Original Prusa i3 MK3S && MK3S+ MMU2S": [
                 "0.4",
                 "0.6"
@@ -3352,6 +2402,14 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.4",
+                "0.6"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.4",
+                "0.6"
+            ],
             "Original Prusa i3 MK3S && MK3S+ MMU2S": [
                 "0.4",
                 "0.6"
@@ -3408,6 +2466,14 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.4",
+                "0.6"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.4",
+                "0.6"
+            ],
             "Original Prusa i3 MK3S && MK3S+ MMU2S": [
                 "0.4",
                 "0.6"
@@ -3460,6 +2526,14 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.4",
+                "0.6"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.4",
+                "0.6"
+            ],
             "Original Prusa i3 MK3S && MK3S+ MMU2S": [
                 "0.4",
                 "0.6"
@@ -3512,6 +2586,14 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.4",
+                "0.6"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.4",
+                "0.6"
+            ],
             "Original Prusa i3 MK3S && MK3S+ MMU2S": [
                 "0.4",
                 "0.6"
@@ -3567,6 +2649,14 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.4",
+                "0.6"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.4",
+                "0.6"
+            ],
             "Original Prusa i3 MK3S && MK3S+ MMU2S": [
                 "0.4",
                 "0.6"
@@ -3622,6 +2712,14 @@
     },
     {
         "compatible_printers": {
+            "Original Prusa i3 MK2.5 MMU2": [
+                "0.4",
+                "0.6"
+            ],
+            "Original Prusa i3 MK3 MMU2": [
+                "0.4",
+                "0.6"
+            ],
             "Original Prusa i3 MK3S && MK3S+ MMU2S": [
                 "0.4",
                 "0.6"

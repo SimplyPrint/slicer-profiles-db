@@ -14,6 +14,9 @@
         },
         "variants": {
             "0.25": {
+                "context": {
+                    "variant_key": "0.25"
+                },
                 "data": {
                     "before_layer_change_gcode": [
                         ";BEFORE_LAYER_CHANGE\nG92 E0.0\n;[layer_z]\n{if layer_z > 150}\nM201 X{interpolate_table(layer_z, (0,7000), (150,7000), (200,4000), (270,2000))} Y{interpolate_table(layer_z, (0,7000), (150,7000), (200,4000), (270,2000))}\n{endif}\n"
@@ -168,6 +171,9 @@
                 "name": "Prusa CORE One 0.25 nozzle"
             },
             "0.3": {
+                "context": {
+                    "variant_key": "0.3"
+                },
                 "data": {
                     "before_layer_change_gcode": [
                         ";BEFORE_LAYER_CHANGE\nG92 E0.0\n;[layer_z]\n{if layer_z > 150}\nM201 X{interpolate_table(layer_z, (0,7000), (150,7000), (200,4000), (270,2000))} Y{interpolate_table(layer_z, (0,7000), (150,7000), (200,4000), (270,2000))}\n{endif}\n"
@@ -322,6 +328,9 @@
                 "name": "Prusa CORE One 0.3 nozzle"
             },
             "0.4": {
+                "context": {
+                    "variant_key": "0.4"
+                },
                 "data": {
                     "before_layer_change_gcode": [
                         ";BEFORE_LAYER_CHANGE\nG92 E0.0\n;[layer_z]\n{if layer_z > 150}\nM201 X{interpolate_table(layer_z, (0,7000), (150,7000), (200,4000), (270,2000))} Y{interpolate_table(layer_z, (0,7000), (150,7000), (200,4000), (270,2000))}\n{endif}\n"
@@ -476,6 +485,9 @@
                 "name": "Prusa CORE One 0.4 nozzle"
             },
             "0.5": {
+                "context": {
+                    "variant_key": "0.5"
+                },
                 "data": {
                     "before_layer_change_gcode": [
                         ";BEFORE_LAYER_CHANGE\nG92 E0.0\n;[layer_z]\n{if layer_z > 150}\nM201 X{interpolate_table(layer_z, (0,7000), (150,7000), (200,4000), (270,2000))} Y{interpolate_table(layer_z, (0,7000), (150,7000), (200,4000), (270,2000))}\n{endif}\n"
@@ -630,6 +642,9 @@
                 "name": "Prusa CORE One 0.5 nozzle"
             },
             "0.6": {
+                "context": {
+                    "variant_key": "0.6"
+                },
                 "data": {
                     "before_layer_change_gcode": [
                         ";BEFORE_LAYER_CHANGE\nG92 E0.0\n;[layer_z]\n{if layer_z > 150}\nM201 X{interpolate_table(layer_z, (0,7000), (150,7000), (200,4000), (270,2000))} Y{interpolate_table(layer_z, (0,7000), (150,7000), (200,4000), (270,2000))}\n{endif}\n"
@@ -784,6 +799,9 @@
                 "name": "Prusa CORE One 0.6 nozzle"
             },
             "0.8": {
+                "context": {
+                    "variant_key": "0.8"
+                },
                 "data": {
                     "before_layer_change_gcode": [
                         ";BEFORE_LAYER_CHANGE\nG92 E0.0\n;[layer_z]\n{if layer_z > 150}\nM201 X{interpolate_table(layer_z, (0,7000), (150,7000), (200,4000), (270,2000))} Y{interpolate_table(layer_z, (0,7000), (150,7000), (200,4000), (270,2000))}\n{endif}\n"

@@ -11,6 +11,9 @@
         },
         "variants": {
             "0.3": {
+                "context": {
+                    "variant_key": "0.3"
+                },
                 "data": {
                     "bed_shape": "5x5,295x5,295x295,5x295",
                     "before_layer_gcode": ";BEFORE_LAYER_CHANGE\\n;{layer_z}\\n\\n",
@@ -76,11 +79,14 @@
                 "name": "Creality CR-10 SMART 0.3mm"
             },
             "0.4": {
+                "context": {
+                    "variant_key": "0.4"
+                },
                 "data": {
-                    "bed_shape": "5x5,295x5,295x295,5x295",
+                    "bed_shape": "5x5,305x5,305x305,5x305",
                     "before_layer_gcode": ";BEFORE_LAYER_CHANGE\\n;{layer_z}\\n\\n",
                     "between_objects_gcode": "",
-                    "default_filament_profile": "Generic PLA @CREALITY",
+                    "default_filament_profile": "Creality PLA @CREALITY",
                     "default_print_profile": "0.20mm NORMAL @CREALITY",
                     "deretract_speed": "40",
                     "end_gcode": "{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+2, max_print_height)} F600 ; Move print head up{endif}\\nG1 X5 Y{print_bed_max[1]*0.8} F{travel_speed*60} ; present print\\n{if max_layer_z < max_print_height-10}G1 Z{z_offset+min(max_layer_z+70, max_print_height-10)} F600 ; Move print head further up{endif}\\n{if max_layer_z < max_print_height*0.6}G1 Z{max_print_height*0.6} F600 ; Move print head further up{endif}\\nM140 S0 ; turn off heatbed\\nM104 S0 ; turn off temperature\\nM107 ; turn off fan\\nM84 X Y E ; disable motors",
@@ -109,9 +115,9 @@
                     "min_layer_height": "0.04",
                     "nozzle_diameter": "0.4",
                     "pause_print_gcode": "",
-                    "printer_model": "CR10SMART",
-                    "printer_notes": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_CREALITY\\nPRINTER_MODEL_CR10SMART\\nPRINTER_HAS_BOWDEN",
-                    "printer_settings_id": "Creality CR-10 SMART 0.4mm",
+                    "printer_model": "CR10",
+                    "printer_notes": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_CREALITY\\nPRINTER_MODEL_CR10\\nPRINTER_HAS_BOWDEN",
+                    "printer_settings_id": "Creality CR-10 0.4mm",
                     "printer_technology": "FFF",
                     "printer_variant": "0.4",
                     "remaining_times": "0",
@@ -128,7 +134,7 @@
                     "retract_speed": "60",
                     "silent_mode": "0",
                     "single_extruder_multi_material": "0",
-                    "start_gcode": "G90 ; use absolute coordinates\\nM83 ; extruder relative mode\\nM140 S{first_layer_bed_temperature[initial_extruder]} ; set final bed temp\\nM109 S{first_layer_temperature[initial_extruder]-50} ; set temporary nozzle temp to prevent oozing during homing\\nM190 S{first_layer_bed_temperature[initial_extruder]} ; wait for bed temp to stabilize\\nG28 ; home all axis\\nG1 Z50 F240\\nG1 X2 Y10 F3000\\nM104 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; set final nozzle temp\\nM109 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; wait for nozzle temp to stabilize\\nG1 Z0.28 F240\\nG92 E0\\nG1 Y140 E10 F1500 ; prime the nozzle\\nG1 X2.3 F5000\\nG92 E0\\nG1 Y10 E10 F1200 ; prime the nozzle\\nG92 E0",
+                    "start_gcode": "G90 ; use absolute coordinates\\nM83 ; extruder relative mode\\nM140 S[first_layer_bed_temperature] ; set final bed temp\\nM104 S150 ; set temporary nozzle temp to prevent oozing during homing and auto bed leveling\\nG4 S10 ; allow partial nozzle warmup\\nG28 ; home all axis\\nG1 Z50 F240\\nG1 X2 Y10 F3000\\nM104 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; set final nozzle temp\\nM190 S[first_layer_bed_temperature] ; wait for bed temp to stabilize\\nM109 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; wait for nozzle temp to stabilize\\nG1 Z0.28 F240\\nG92 E0\\nG1 Y140 E10 F1500 ; prime the nozzle\\nG1 X2.3 F5000\\nG92 E0\\nG1 Y10 E10 F1200 ; prime the nozzle\\nG92 E0",
                     "toolchange_gcode": "",
                     "use_firmware_retraction": "0",
                     "use_relative_e_distances": "0",
@@ -138,9 +144,12 @@
                     "z_offset": "0",
                     "z_step": "0.04"
                 },
-                "name": "Creality CR-10 SMART 0.4mm"
+                "name": "Creality CR-10 0.4mm"
             },
             "0.5": {
+                "context": {
+                    "variant_key": "0.5"
+                },
                 "data": {
                     "bed_shape": "5x5,295x5,295x295,5x295",
                     "before_layer_gcode": ";BEFORE_LAYER_CHANGE\\n;{layer_z}\\n\\n",
@@ -206,11 +215,14 @@
                 "name": "Creality CR-10 SMART 0.5mm"
             },
             "0.6": {
+                "context": {
+                    "variant_key": "0.6"
+                },
                 "data": {
-                    "bed_shape": "5x5,295x5,295x295,5x295",
+                    "bed_shape": "5x5,305x5,305x305,5x305",
                     "before_layer_gcode": ";BEFORE_LAYER_CHANGE\\n;{layer_z}\\n\\n",
                     "between_objects_gcode": "",
-                    "default_filament_profile": "Generic PLA @CREALITY",
+                    "default_filament_profile": "Creality PLA @CREALITY",
                     "default_print_profile": "0.32mm NORMAL 0.6 nozzle",
                     "deretract_speed": "40",
                     "end_gcode": "{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+2, max_print_height)} F600 ; Move print head up{endif}\\nG1 X5 Y{print_bed_max[1]*0.8} F{travel_speed*60} ; present print\\n{if max_layer_z < max_print_height-10}G1 Z{z_offset+min(max_layer_z+70, max_print_height-10)} F600 ; Move print head further up{endif}\\n{if max_layer_z < max_print_height*0.6}G1 Z{max_print_height*0.6} F600 ; Move print head further up{endif}\\nM140 S0 ; turn off heatbed\\nM104 S0 ; turn off temperature\\nM107 ; turn off fan\\nM84 X Y E ; disable motors",
@@ -239,9 +251,9 @@
                     "min_layer_height": "0.08",
                     "nozzle_diameter": "0.6",
                     "pause_print_gcode": "",
-                    "printer_model": "CR10SMART",
-                    "printer_notes": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_CREALITY\\nPRINTER_MODEL_CR10SMART\\nPRINTER_HAS_BOWDEN",
-                    "printer_settings_id": "Creality CR-10 SMART 0.6mm",
+                    "printer_model": "CR10",
+                    "printer_notes": "Don't remove the following keywords! These keywords are used in the \"compatible printer\" condition of the print and filament profiles to link the particular print and filament profiles to this printer profile.\\nPRINTER_VENDOR_CREALITY\\nPRINTER_MODEL_CR10\\nPRINTER_HAS_BOWDEN",
+                    "printer_settings_id": "Creality CR-10 0.6mm",
                     "printer_technology": "FFF",
                     "printer_variant": "0.6",
                     "remaining_times": "0",
@@ -258,7 +270,7 @@
                     "retract_speed": "60",
                     "silent_mode": "0",
                     "single_extruder_multi_material": "0",
-                    "start_gcode": "G90 ; use absolute coordinates\\nM83 ; extruder relative mode\\nM140 S{first_layer_bed_temperature[initial_extruder]} ; set final bed temp\\nM109 S{first_layer_temperature[initial_extruder]-50} ; set temporary nozzle temp to prevent oozing during homing\\nM190 S{first_layer_bed_temperature[initial_extruder]} ; wait for bed temp to stabilize\\nG28 ; home all axis\\nG1 Z50 F240\\nG1 X2 Y10 F3000\\nM104 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; set final nozzle temp\\nM109 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; wait for nozzle temp to stabilize\\nG1 Z0.28 F240\\nG92 E0\\nG1 Y140 E10 F1500 ; prime the nozzle\\nG1 X2.3 F5000\\nG92 E0\\nG1 Y10 E10 F1200 ; prime the nozzle\\nG92 E0",
+                    "start_gcode": "G90 ; use absolute coordinates\\nM83 ; extruder relative mode\\nM140 S[first_layer_bed_temperature] ; set final bed temp\\nM104 S150 ; set temporary nozzle temp to prevent oozing during homing and auto bed leveling\\nG4 S10 ; allow partial nozzle warmup\\nG28 ; home all axis\\nG1 Z50 F240\\nG1 X2 Y10 F3000\\nM104 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; set final nozzle temp\\nM190 S[first_layer_bed_temperature] ; wait for bed temp to stabilize\\nM109 S{first_layer_temperature[initial_extruder]+extruder_temperature_offset[initial_extruder]} ; wait for nozzle temp to stabilize\\nG1 Z0.28 F240\\nG92 E0\\nG1 Y140 E10 F1500 ; prime the nozzle\\nG1 X2.3 F5000\\nG92 E0\\nG1 Y10 E10 F1200 ; prime the nozzle\\nG92 E0",
                     "toolchange_gcode": "",
                     "use_firmware_retraction": "0",
                     "use_relative_e_distances": "0",
@@ -268,7 +280,7 @@
                     "z_offset": "0",
                     "z_step": "0.04"
                 },
-                "name": "Creality CR-10 SMART 0.6mm"
+                "name": "Creality CR-10 0.6mm"
             }
         },
         "vendor": "Creality"
