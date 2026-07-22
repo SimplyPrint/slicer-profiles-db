@@ -633,6 +633,52 @@
             "scarf_joint_seam_length": 0,
             "scarf_joint_seam_start_height_ratio": 0,
             "scarf_split_distance": 1.0,
+            "scene": {
+                "coordinate_space": "machine_build_volume",
+                "model_transform": {
+                    "translation": {
+                        "unit": "mm",
+                        "x": {
+                            "constant": 0.0,
+                            "terms": [
+                                {
+                                    "scale": -0.5,
+                                    "setting": "machine_width",
+                                    "when": {
+                                        "equals": false,
+                                        "setting": "machine_center_is_zero"
+                                    }
+                                }
+                            ]
+                        },
+                        "y": {
+                            "constant": 0.0,
+                            "terms": [
+                                {
+                                    "scale": -0.5,
+                                    "setting": "machine_depth",
+                                    "when": {
+                                        "equals": false,
+                                        "setting": "machine_center_is_zero"
+                                    }
+                                }
+                            ]
+                        },
+                        "z": {
+                            "constant": 0.0,
+                            "terms": []
+                        }
+                    }
+                },
+                "origin": {
+                    "setting": "machine_center_is_zero",
+                    "values": {
+                        "false": "build_volume_minimum_xy",
+                        "true": "build_volume_center"
+                    }
+                },
+                "schema": "scene-transform.v1"
+            },
             "seam_overhang_angle": 50,
             "skin_angles": [],
             "skin_line_width": 0.4,
