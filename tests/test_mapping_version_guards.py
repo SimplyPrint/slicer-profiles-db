@@ -1,8 +1,14 @@
 import os
+import tempfile
 import unittest
+from pathlib import Path
 from unittest.mock import Mock, patch
 
-from slicer_profiles_db.mapping import _evaluate_stable, fetch_sp_slicer_versions
+from slicer_profiles_db.mapping import (
+    _evaluate_stable,
+    _write_import_manifest,
+    fetch_sp_slicer_versions,
+)
 from slicer_profiles_db.models import SlicerType, StoredProfile
 
 
@@ -46,6 +52,40 @@ class MappingVersionGuardTests(unittest.TestCase):
 
         self.assertEqual(snapshot, {"gcode": "safe gcode"})
 
+    def test_external_profile_versions_are_not_compared_to_runtime_versions(self) -> None:
+        for slicer in (
+            SlicerType.PRUSASLICER,
+            SlicerType.SUPERSLICER,
+            SlicerType.CURA,
+        ):
+            with self.subTest(slicer=slicer):
+                profile = StoredProfile(
+                    slicer=slicer.value,
+                    profile_type="machine",
+                    name="External profile",
+                    vendor="Example",
+                    first_seen="3.0.0",
+                    last_seen="3.0.0",
+                    settings={"gcode": {"3.0.0": "external gcode"}},
+                )
+
+                snapshot = _evaluate_stable(profile, {slicer: "2.9.6"})
+
+                self.assertEqual(snapshot, {"gcode": "external gcode"})
+
+    def test_import_manifest_rejects_missing_required_slicer(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output_dir = Path(directory)
+            artifact = output_dir / "models/1/bambustudio/machine_profiles.json"
+            artifact.parent.mkdir(parents=True)
+            artifact.write_text("[]", encoding="utf-8")
+
+            with self.assertRaisesRegex(RuntimeError, "prusaslicer"):
+                _write_import_manifest(
+                    output_dir,
+                    [SlicerType.BAMBUSTUDIO, SlicerType.PRUSASLICER],
+                )
+
     @patch.dict(
         os.environ,
         {},
@@ -59,6 +99,7 @@ class MappingVersionGuardTests(unittest.TestCase):
         response.json.return_value = {
             "slicers": [
                 {"name": "BambuStudio", "latest": "02.07.01.62"},
+                {"name": "PrusaSlicer", "latest": "2.9.6"},
                 {"name": "UnsupportedSlicer", "latest": "1.0.0"},
             ]
         }

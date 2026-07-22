@@ -16,7 +16,7 @@ import re
 import shutil
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any, Mapping, Sequence
 
 import requests
 
@@ -68,6 +68,21 @@ def _get_sp_slicer_versions_url() -> str:
 # Slicers that participate in model mapping.
 _MAPPING_SLICERS = list(SlicerType)
 
+# These slicers publish versioned vendor-profile releases whose version
+# namespace matches the runtime versions returned by SimplyPrint.  Branch and
+# externally sourced profile sets use their own version stream, so comparing
+# those versions to an engine/runtime version can incorrectly hide every
+# profile (for example Prusa profile data at 3.0.0 with a 2.9.6 runtime).
+_VERSION_GUARDED_SLICERS = frozenset(
+    {
+        SlicerType.ANYCUBICSLICER,
+        SlicerType.BAMBUSTUDIO,
+        SlicerType.CREALITYPRINT,
+        SlicerType.ELEGOOSLICER,
+        SlicerType.ORCASLICER,
+    }
+)
+
 _IMPORT_ARTIFACT_FILENAMES = {
     "machine_profiles.json",
     "print_profiles.json",
@@ -101,11 +116,12 @@ def _evaluate_stable(
 ) -> dict[str, Any]:
     """Evaluate a profile at its latest SimplyPrint-supported stable version."""
     version = _stable_version(profile)
-    if version_guards:
-        try:
-            guard = version_guards.get(SlicerType(profile.slicer))
-        except ValueError:
-            guard = None
+    try:
+        slicer = SlicerType(profile.slicer)
+    except ValueError:
+        slicer = None
+    if version_guards and slicer in _VERSION_GUARDED_SLICERS:
+        guard = version_guards.get(slicer)
         if guard and version_key(guard) < version_key(version):
             version = guard
     return profile.evaluate(version)
@@ -1015,7 +1031,9 @@ def fetch_sp_slicer_versions() -> dict[SlicerType, str]:
         if not isinstance(name, str) or not isinstance(latest, str) or not latest:
             continue
         try:
-            guards[SlicerType(name.casefold())] = normalize_version(latest)
+            slicer = SlicerType(name.casefold())
+            if slicer in _VERSION_GUARDED_SLICERS:
+                guards[slicer] = normalize_version(latest)
         except ValueError:
             logger.warning("Ignoring unsupported SimplyPrint slicer %r", name)
     return guards
@@ -1827,6 +1845,7 @@ def export_output(
     output_dir: Path,
     ofd_index: Any | None = None,
     version_guards: Mapping[SlicerType, str] | None = None,
+    required_slicers: Sequence[SlicerType] | None = None,
 ) -> None:
     """
     Write the mapped profile data to the output directory.
@@ -1940,7 +1959,7 @@ def export_output(
     _write_resource_manifest(store, output_dir)
 
     # --- Authoritative importer artifact manifest ---
-    _write_import_manifest(output_dir)
+    _write_import_manifest(output_dir, required_slicers)
 
 
 def _canonicalize_resource_refs(
@@ -2166,7 +2185,10 @@ def _sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
-def _write_import_manifest(output_dir: Path) -> None:
+def _write_import_manifest(
+    output_dir: Path,
+    required_slicers: Sequence[SlicerType] | None = None,
+) -> None:
     """Describe every generated profile artifact consumed by the importer.
 
     The completed output tree is the source of truth.  This keeps the contract
@@ -2184,6 +2206,17 @@ def _write_import_manifest(output_dir: Path) -> None:
         artifacts_by_engine.setdefault(engine, {})[
             relative_path.as_posix()
         ] = _sha256_file(path)
+
+    missing_slicers = sorted(
+        slicer.value
+        for slicer in (required_slicers or ())
+        if not artifacts_by_engine.get(slicer.value)
+    )
+    if missing_slicers:
+        raise RuntimeError(
+            "Refusing to publish an incomplete import manifest; no profile "
+            f"artifacts were generated for: {', '.join(missing_slicers)}"
+        )
 
     manifest = {
         "schema_version": 1,
@@ -2315,6 +2348,7 @@ def run_mapping_pipeline(
         output_dir,
         ofd_index,
         version_guards,
+        target_slicers,
     )
 
     return model_map
