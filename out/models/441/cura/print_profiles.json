@@ -5,7 +5,7 @@
                 "ultimaker_method"
             ],
             "material_native_ids": [
-                "ultimaker_nylon_175"
+                "ultimaker_petg_175"
             ],
             "variant_names": [
                 "1A"
@@ -22,7 +22,7 @@
                     "ultimaker_method"
                 ],
                 "material_native_ids": [
-                    "ultimaker_nylon_175"
+                    "ultimaker_petg_175"
                 ],
                 "variant_names": [
                     "1A"
@@ -31,8 +31,8 @@
             "definition": "ultimaker_method",
             "global_quality_id": "quality:ultimaker_method:ultimaker_method/um_method_global_Draft_Quality",
             "intent_category": null,
-            "material_id": "ultimaker_nylon_175",
-            "native_id": "quality:ultimaker_method:ultimaker_method/um_method_1a_um-nylon-175_0.2mm",
+            "material_id": "ultimaker_petg_175",
+            "native_id": "quality:ultimaker_method:ultimaker_method/um_method_1a_um-petg-175_0.2mm",
             "quality_type": "draft",
             "resource_version": "5.13.0",
             "source_kind": "quality",
@@ -40,222 +40,118 @@
         },
         "data": {
             "cool_fan_enabled": true,
-            "cool_fan_speed": 0,
-            "cool_fan_speed_max": 0,
-            "cool_min_layer_time": 8,
-            "cool_min_speed": 10,
-            "cool_min_temperature": 250,
+            "cool_fan_speed": 50,
+            "cool_fan_speed_0": 0,
+            "cool_fan_speed_max": 100,
+            "cool_min_layer_time": 10,
+            "cool_min_speed": 5,
+            "initial_layer_line_width_factor": 150,
             "layer_height": 0.203,
-            "material_final_print_temperature": 240,
-            "material_initial_print_temperature": 240,
-            "raft_airgap": 0.3,
-            "raft_base_flow": 105,
+            "min_bead_width": 0.30000000000000004,
+            "min_wall_line_width": 0.30000000000000004,
+            "raft_airgap": 0.2,
+            "raft_base_infill_overlap": 10,
+            "raft_base_line_spacing": 4,
             "raft_base_line_width": 1.2,
-            "raft_base_speed": 10,
             "raft_base_thickness": 0.6,
-            "raft_interface_thickness": 0.25,
-            "retraction_amount": 0.5,
-            "retraction_min_travel": 3.2,
-            "small_skin_width": 3.6,
-            "speed_prime_tower": 50,
-            "speed_print": 50,
-            "speed_roofing": 30,
-            "speed_topbottom": 30,
-            "speed_wall": 30.0,
-            "speed_wall_0": 25.0,
-            "speed_wall_x": 30.0,
-            "support_angle": 30,
-            "support_bottom_density": 24,
+            "raft_interface_infill_overlap": 35,
+            "raft_interface_layers": 1,
+            "raft_interface_line_spacing": 0.75,
+            "raft_interface_speed": 40,
+            "raft_interface_thickness": 0.2,
+            "raft_speed": 15,
+            "raft_surface_infill_overlap": 25,
+            "raft_surface_line_spacing": 0.425,
+            "raft_surface_line_width": 0.4,
+            "raft_surface_speed": 40,
+            "skin_overlap": 10,
+            "speed_layer_0": 15,
+            "speed_print": 60,
+            "speed_roofing": 20.0,
+            "speed_support": 60,
+            "speed_support_interface": 40,
+            "speed_topbottom": 36.0,
+            "speed_wall": 10.0,
+            "speed_wall_0": 10.0,
+            "speed_wall_x": 10.0,
+            "support_angle": 50.0,
             "support_bottom_distance": 0.203,
             "support_bottom_enable": false,
-            "support_bottom_line_width": 0.6,
-            "support_bottom_stair_step_height": 0,
-            "support_infill_rate": 0,
-            "support_interface_height": 0.406,
-            "support_interface_material_flow": 95,
-            "support_interface_pattern": "lines",
+            "support_infill_angles": [
+                45
+            ],
+            "support_infill_rate": 12,
+            "support_interface_density": 83,
+            "support_interface_height": 0.812,
+            "support_interface_material_flow": 100,
             "support_line_width": 0.30000000000000004,
-            "support_material_flow": 92,
-            "support_roof_density": 50,
-            "support_roof_height": 0.406,
-            "support_structure": "tree",
-            "support_supported_skin_fan_speed": 75,
-            "support_wall_count": 1,
+            "support_material_flow": 100,
+            "support_offset": 3,
+            "support_roof_density": 83,
+            "support_roof_line_width": 0.4,
+            "support_supported_skin_fan_speed": 100,
+            "support_top_distance": 0.2,
             "support_xy_distance": 0.3,
-            "support_z_distance": 0.406
+            "support_xy_overrides_z": "xy_overrides_z",
+            "support_z_distance": 0.2,
+            "switch_extruder_retraction_amount": 1
         },
-        "name": "Fast · @ultimaker_method · 1A · ultimaker_nylon_175",
+        "name": "Fast · @ultimaker_method · 1A · ultimaker_petg_175",
         "setting_scopes": {
             "cool_fan_enabled": "extruder.0",
             "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_0": "extruder.0",
             "cool_fan_speed_max": "extruder.0",
             "cool_min_layer_time": "extruder.0",
             "cool_min_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
+            "initial_layer_line_width_factor": "extruder.0",
             "layer_height": "global",
-            "material_final_print_temperature": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
+            "min_bead_width": "extruder.0",
+            "min_wall_line_width": "extruder.0",
             "raft_airgap": "extruder.0",
-            "raft_base_flow": "extruder.0",
+            "raft_base_infill_overlap": "extruder.0",
+            "raft_base_line_spacing": "extruder.0",
             "raft_base_line_width": "extruder.0",
-            "raft_base_speed": "extruder.0",
             "raft_base_thickness": "extruder.0",
+            "raft_interface_infill_overlap": "extruder.0",
+            "raft_interface_layers": "extruder.0",
+            "raft_interface_line_spacing": "extruder.0",
+            "raft_interface_speed": "extruder.0",
             "raft_interface_thickness": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_min_travel": "extruder.0",
-            "small_skin_width": "extruder.0",
-            "speed_prime_tower": "extruder.0",
+            "raft_speed": "extruder.0",
+            "raft_surface_infill_overlap": "extruder.0",
+            "raft_surface_line_spacing": "extruder.0",
+            "raft_surface_line_width": "extruder.0",
+            "raft_surface_speed": "extruder.0",
+            "skin_overlap": "extruder.0",
+            "speed_layer_0": "extruder.0",
             "speed_print": "extruder.0",
             "speed_roofing": "extruder.0",
+            "speed_support": "extruder.0",
+            "speed_support_interface": "extruder.0",
             "speed_topbottom": "extruder.0",
             "speed_wall": "extruder.0",
             "speed_wall_0": "extruder.0",
             "speed_wall_x": "extruder.0",
             "support_angle": "extruder.0",
-            "support_bottom_density": "extruder.0",
             "support_bottom_distance": "extruder.0",
             "support_bottom_enable": "extruder.0",
-            "support_bottom_line_width": "extruder.0",
-            "support_bottom_stair_step_height": "extruder.0",
+            "support_infill_angles": "extruder.0",
             "support_infill_rate": "extruder.0",
+            "support_interface_density": "extruder.0",
             "support_interface_height": "extruder.0",
             "support_interface_material_flow": "extruder.0",
-            "support_interface_pattern": "extruder.0",
             "support_line_width": "extruder.0",
             "support_material_flow": "extruder.0",
+            "support_offset": "extruder.0",
             "support_roof_density": "extruder.0",
-            "support_roof_height": "extruder.0",
-            "support_structure": "global",
+            "support_roof_line_width": "extruder.0",
             "support_supported_skin_fan_speed": "extruder.0",
-            "support_wall_count": "extruder.0",
+            "support_top_distance": "extruder.0",
             "support_xy_distance": "extruder.0",
-            "support_z_distance": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker_method"
-            ],
-            "material_native_ids": [
-                "ultimaker_nylon_175"
-            ],
-            "variant_names": [
-                "1A"
-            ]
-        },
-        "compatible_printers": {
-            "UltiMaker Method": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker_method"
-                ],
-                "material_native_ids": [
-                    "ultimaker_nylon_175"
-                ],
-                "variant_names": [
-                    "1A"
-                ]
-            },
-            "definition": "ultimaker_method",
-            "global_quality_id": null,
-            "intent_category": "solid",
-            "material_id": "ultimaker_nylon_175",
-            "native_id": "intent:ultimaker_method:ultimaker_method/um_method_1a_um-nylon-175_0.2mm_solid",
-            "quality_type": "draft",
-            "resource_version": "5.13.0",
-            "source_kind": "intent",
-            "variant_name": "1A"
-        },
-        "data": {
-            "bottom_thickness": 0.3,
-            "infill_angles": [
-                45,
-                135
-            ],
-            "infill_material_flow": 97,
-            "infill_pattern": "zigzag",
-            "infill_sparse_density": 99,
-            "top_bottom_thickness": 0.3,
-            "top_thickness": 0.3
-        },
-        "name": "Solid · @ultimaker_method · 1A · ultimaker_nylon_175 · solid",
-        "setting_scopes": {
-            "bottom_thickness": "extruder.0",
-            "infill_angles": "extruder.0",
-            "infill_material_flow": "extruder.0",
-            "infill_pattern": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "top_thickness": "extruder.0"
-        }
-    },
-    {
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker_method"
-            ],
-            "material_native_ids": [
-                "ultimaker_pla_175"
-            ],
-            "variant_names": [
-                "1A"
-            ]
-        },
-        "compatible_printers": {
-            "UltiMaker Method": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker_method"
-                ],
-                "material_native_ids": [
-                    "ultimaker_pla_175"
-                ],
-                "variant_names": [
-                    "1A"
-                ]
-            },
-            "definition": "ultimaker_method",
-            "global_quality_id": null,
-            "intent_category": "solid",
-            "material_id": "ultimaker_pla_175",
-            "native_id": "intent:ultimaker_method:ultimaker_method/um_method_1a_um-pla-175_0.2mm_solid",
-            "quality_type": "draft",
-            "resource_version": "5.13.0",
-            "source_kind": "intent",
-            "variant_name": "1A"
-        },
-        "data": {
-            "bottom_thickness": 0.3,
-            "build_volume_temperature": 47,
-            "infill_angles": [
-                45,
-                135
-            ],
-            "infill_material_flow": 97,
-            "infill_pattern": "zigzag",
-            "infill_sparse_density": 99,
-            "top_bottom_thickness": 0.3,
-            "top_thickness": 0.3
-        },
-        "name": "Solid · @ultimaker_method · 1A · ultimaker_pla_175 · solid",
-        "setting_scopes": {
-            "bottom_thickness": "extruder.0",
-            "build_volume_temperature": "global",
-            "infill_angles": "extruder.0",
-            "infill_material_flow": "extruder.0",
-            "infill_pattern": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "top_thickness": "extruder.0"
+            "support_xy_overrides_z": "extruder.0",
+            "support_z_distance": "extruder.0",
+            "switch_extruder_retraction_amount": "extruder.0"
         }
     },
     {
@@ -431,7 +327,7 @@
                 "ultimaker_method"
             ],
             "material_native_ids": [
-                "ultimaker_petg_175"
+                "ultimaker_nylon_175"
             ],
             "variant_names": [
                 "1A"
@@ -448,136 +344,43 @@
                     "ultimaker_method"
                 ],
                 "material_native_ids": [
-                    "ultimaker_petg_175"
+                    "ultimaker_nylon_175"
                 ],
                 "variant_names": [
                     "1A"
                 ]
             },
             "definition": "ultimaker_method",
-            "global_quality_id": "quality:ultimaker_method:ultimaker_method/um_method_global_Draft_Quality",
-            "intent_category": null,
-            "material_id": "ultimaker_petg_175",
-            "native_id": "quality:ultimaker_method:ultimaker_method/um_method_1a_um-petg-175_0.2mm",
+            "global_quality_id": null,
+            "intent_category": "solid",
+            "material_id": "ultimaker_nylon_175",
+            "native_id": "intent:ultimaker_method:ultimaker_method/um_method_1a_um-nylon-175_0.2mm_solid",
             "quality_type": "draft",
             "resource_version": "5.13.0",
-            "source_kind": "quality",
+            "source_kind": "intent",
             "variant_name": "1A"
         },
         "data": {
-            "cool_fan_enabled": true,
-            "cool_fan_speed": 50,
-            "cool_fan_speed_0": 0,
-            "cool_fan_speed_max": 100,
-            "cool_min_layer_time": 10,
-            "cool_min_speed": 5,
-            "initial_layer_line_width_factor": 150,
-            "layer_height": 0.203,
-            "min_bead_width": 0.30000000000000004,
-            "min_wall_line_width": 0.30000000000000004,
-            "raft_airgap": 0.2,
-            "raft_base_infill_overlap": 10,
-            "raft_base_line_spacing": 4,
-            "raft_base_line_width": 1.2,
-            "raft_base_thickness": 0.6,
-            "raft_interface_infill_overlap": 35,
-            "raft_interface_layers": 1,
-            "raft_interface_line_spacing": 0.75,
-            "raft_interface_speed": 40,
-            "raft_interface_thickness": 0.2,
-            "raft_speed": 15,
-            "raft_surface_infill_overlap": 25,
-            "raft_surface_line_spacing": 0.425,
-            "raft_surface_line_width": 0.4,
-            "raft_surface_speed": 40,
-            "skin_overlap": 10,
-            "speed_layer_0": 15,
-            "speed_print": 60,
-            "speed_roofing": 20.0,
-            "speed_support": 60,
-            "speed_support_interface": 40,
-            "speed_topbottom": 36.0,
-            "speed_wall": 10.0,
-            "speed_wall_0": 10.0,
-            "speed_wall_x": 10.0,
-            "support_angle": 50.0,
-            "support_bottom_distance": 0.203,
-            "support_bottom_enable": false,
-            "support_infill_angles": [
-                45
+            "bottom_thickness": 0.3,
+            "infill_angles": [
+                45,
+                135
             ],
-            "support_infill_rate": 12,
-            "support_interface_density": 83,
-            "support_interface_height": 0.812,
-            "support_interface_material_flow": 100,
-            "support_line_width": 0.30000000000000004,
-            "support_material_flow": 100,
-            "support_offset": 3,
-            "support_roof_density": 83,
-            "support_roof_line_width": 0.4,
-            "support_supported_skin_fan_speed": 100,
-            "support_top_distance": 0.2,
-            "support_xy_distance": 0.3,
-            "support_xy_overrides_z": "xy_overrides_z",
-            "support_z_distance": 0.2,
-            "switch_extruder_retraction_amount": 1
+            "infill_material_flow": 97,
+            "infill_pattern": "zigzag",
+            "infill_sparse_density": 99,
+            "top_bottom_thickness": 0.3,
+            "top_thickness": 0.3
         },
-        "name": "Fast · @ultimaker_method · 1A · ultimaker_petg_175",
+        "name": "Solid · @ultimaker_method · 1A · ultimaker_nylon_175 · solid",
         "setting_scopes": {
-            "cool_fan_enabled": "extruder.0",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_0": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_min_layer_time": "extruder.0",
-            "cool_min_speed": "extruder.0",
-            "initial_layer_line_width_factor": "extruder.0",
-            "layer_height": "global",
-            "min_bead_width": "extruder.0",
-            "min_wall_line_width": "extruder.0",
-            "raft_airgap": "extruder.0",
-            "raft_base_infill_overlap": "extruder.0",
-            "raft_base_line_spacing": "extruder.0",
-            "raft_base_line_width": "extruder.0",
-            "raft_base_thickness": "extruder.0",
-            "raft_interface_infill_overlap": "extruder.0",
-            "raft_interface_layers": "extruder.0",
-            "raft_interface_line_spacing": "extruder.0",
-            "raft_interface_speed": "extruder.0",
-            "raft_interface_thickness": "extruder.0",
-            "raft_speed": "extruder.0",
-            "raft_surface_infill_overlap": "extruder.0",
-            "raft_surface_line_spacing": "extruder.0",
-            "raft_surface_line_width": "extruder.0",
-            "raft_surface_speed": "extruder.0",
-            "skin_overlap": "extruder.0",
-            "speed_layer_0": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_roofing": "extruder.0",
-            "speed_support": "extruder.0",
-            "speed_support_interface": "extruder.0",
-            "speed_topbottom": "extruder.0",
-            "speed_wall": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "speed_wall_x": "extruder.0",
-            "support_angle": "extruder.0",
-            "support_bottom_distance": "extruder.0",
-            "support_bottom_enable": "extruder.0",
-            "support_infill_angles": "extruder.0",
-            "support_infill_rate": "extruder.0",
-            "support_interface_density": "extruder.0",
-            "support_interface_height": "extruder.0",
-            "support_interface_material_flow": "extruder.0",
-            "support_line_width": "extruder.0",
-            "support_material_flow": "extruder.0",
-            "support_offset": "extruder.0",
-            "support_roof_density": "extruder.0",
-            "support_roof_line_width": "extruder.0",
-            "support_supported_skin_fan_speed": "extruder.0",
-            "support_top_distance": "extruder.0",
-            "support_xy_distance": "extruder.0",
-            "support_xy_overrides_z": "extruder.0",
-            "support_z_distance": "extruder.0",
-            "switch_extruder_retraction_amount": "extruder.0"
+            "bottom_thickness": "extruder.0",
+            "infill_angles": "extruder.0",
+            "infill_material_flow": "extruder.0",
+            "infill_pattern": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "top_thickness": "extruder.0"
         }
     },
     {
@@ -788,6 +591,203 @@
             "top_thickness": 0.3
         },
         "name": "Solid · @ultimaker_method · 1A · ultimaker_tough_pla_175 · solid",
+        "setting_scopes": {
+            "bottom_thickness": "extruder.0",
+            "build_volume_temperature": "global",
+            "infill_angles": "extruder.0",
+            "infill_material_flow": "extruder.0",
+            "infill_pattern": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "top_thickness": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker_method"
+            ],
+            "material_native_ids": [
+                "ultimaker_nylon_175"
+            ],
+            "variant_names": [
+                "1A"
+            ]
+        },
+        "compatible_printers": {
+            "UltiMaker Method": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker_method"
+                ],
+                "material_native_ids": [
+                    "ultimaker_nylon_175"
+                ],
+                "variant_names": [
+                    "1A"
+                ]
+            },
+            "definition": "ultimaker_method",
+            "global_quality_id": "quality:ultimaker_method:ultimaker_method/um_method_global_Draft_Quality",
+            "intent_category": null,
+            "material_id": "ultimaker_nylon_175",
+            "native_id": "quality:ultimaker_method:ultimaker_method/um_method_1a_um-nylon-175_0.2mm",
+            "quality_type": "draft",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "1A"
+        },
+        "data": {
+            "cool_fan_enabled": true,
+            "cool_fan_speed": 0,
+            "cool_fan_speed_max": 0,
+            "cool_min_layer_time": 8,
+            "cool_min_speed": 10,
+            "cool_min_temperature": 250,
+            "layer_height": 0.203,
+            "material_final_print_temperature": 240,
+            "material_initial_print_temperature": 240,
+            "raft_airgap": 0.3,
+            "raft_base_flow": 105,
+            "raft_base_line_width": 1.2,
+            "raft_base_speed": 10,
+            "raft_base_thickness": 0.6,
+            "raft_interface_thickness": 0.25,
+            "retraction_amount": 0.5,
+            "retraction_min_travel": 3.2,
+            "small_skin_width": 3.6,
+            "speed_prime_tower": 50,
+            "speed_print": 50,
+            "speed_roofing": 30,
+            "speed_topbottom": 30,
+            "speed_wall": 30.0,
+            "speed_wall_0": 25.0,
+            "speed_wall_x": 30.0,
+            "support_angle": 30,
+            "support_bottom_density": 24,
+            "support_bottom_distance": 0.203,
+            "support_bottom_enable": false,
+            "support_bottom_line_width": 0.6,
+            "support_bottom_stair_step_height": 0,
+            "support_infill_rate": 0,
+            "support_interface_height": 0.406,
+            "support_interface_material_flow": 95,
+            "support_interface_pattern": "lines",
+            "support_line_width": 0.30000000000000004,
+            "support_material_flow": 92,
+            "support_roof_density": 50,
+            "support_roof_height": 0.406,
+            "support_structure": "tree",
+            "support_supported_skin_fan_speed": 75,
+            "support_wall_count": 1,
+            "support_xy_distance": 0.3,
+            "support_z_distance": 0.406
+        },
+        "name": "Fast · @ultimaker_method · 1A · ultimaker_nylon_175",
+        "setting_scopes": {
+            "cool_fan_enabled": "extruder.0",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_max": "extruder.0",
+            "cool_min_layer_time": "extruder.0",
+            "cool_min_speed": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "layer_height": "global",
+            "material_final_print_temperature": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "raft_airgap": "extruder.0",
+            "raft_base_flow": "extruder.0",
+            "raft_base_line_width": "extruder.0",
+            "raft_base_speed": "extruder.0",
+            "raft_base_thickness": "extruder.0",
+            "raft_interface_thickness": "extruder.0",
+            "retraction_amount": "extruder.0",
+            "retraction_min_travel": "extruder.0",
+            "small_skin_width": "extruder.0",
+            "speed_prime_tower": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_roofing": "extruder.0",
+            "speed_topbottom": "extruder.0",
+            "speed_wall": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "speed_wall_x": "extruder.0",
+            "support_angle": "extruder.0",
+            "support_bottom_density": "extruder.0",
+            "support_bottom_distance": "extruder.0",
+            "support_bottom_enable": "extruder.0",
+            "support_bottom_line_width": "extruder.0",
+            "support_bottom_stair_step_height": "extruder.0",
+            "support_infill_rate": "extruder.0",
+            "support_interface_height": "extruder.0",
+            "support_interface_material_flow": "extruder.0",
+            "support_interface_pattern": "extruder.0",
+            "support_line_width": "extruder.0",
+            "support_material_flow": "extruder.0",
+            "support_roof_density": "extruder.0",
+            "support_roof_height": "extruder.0",
+            "support_structure": "global",
+            "support_supported_skin_fan_speed": "extruder.0",
+            "support_wall_count": "extruder.0",
+            "support_xy_distance": "extruder.0",
+            "support_z_distance": "extruder.0"
+        }
+    },
+    {
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker_method"
+            ],
+            "material_native_ids": [
+                "ultimaker_pla_175"
+            ],
+            "variant_names": [
+                "1A"
+            ]
+        },
+        "compatible_printers": {
+            "UltiMaker Method": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker_method"
+                ],
+                "material_native_ids": [
+                    "ultimaker_pla_175"
+                ],
+                "variant_names": [
+                    "1A"
+                ]
+            },
+            "definition": "ultimaker_method",
+            "global_quality_id": null,
+            "intent_category": "solid",
+            "material_id": "ultimaker_pla_175",
+            "native_id": "intent:ultimaker_method:ultimaker_method/um_method_1a_um-pla-175_0.2mm_solid",
+            "quality_type": "draft",
+            "resource_version": "5.13.0",
+            "source_kind": "intent",
+            "variant_name": "1A"
+        },
+        "data": {
+            "bottom_thickness": 0.3,
+            "build_volume_temperature": 47,
+            "infill_angles": [
+                45,
+                135
+            ],
+            "infill_material_flow": 97,
+            "infill_pattern": "zigzag",
+            "infill_sparse_density": 99,
+            "top_bottom_thickness": 0.3,
+            "top_thickness": 0.3
+        },
+        "name": "Solid · @ultimaker_method · 1A · ultimaker_pla_175 · solid",
         "setting_scopes": {
             "bottom_thickness": "extruder.0",
             "build_volume_temperature": "global",
