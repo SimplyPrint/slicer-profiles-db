@@ -1049,11 +1049,6 @@ def _prepare_sp_data(
 ) -> tuple[list[str], list[dict], dict[int, list[str]]]:
     """Normalise the raw SP API response into lookup-friendly structures.
 
-    Child variants inherit their ancestors' canonical and slicer profile names.
-    Slicers commonly publish only the base machine profile for variants such as
-    Combo editions, so the ``parent`` relationship is part of profile identity
-    rather than catalog-only metadata.
-
     Returns (sp_brands, sp_models, sp_slicer_names).
     """
     sp_brands = [b.casefold() for b in raw["brands"]]
@@ -1080,29 +1075,6 @@ def _prepare_sp_data(
             sp_slicer_names[model["id"]] = [
                 name for name in alias_names if isinstance(name, str)
             ]
-
-    models_by_id = {model["id"]: model for model in sp_models}
-    direct_slicer_names = {
-        model_id: list(names) for model_id, names in sp_slicer_names.items()
-    }
-    for model in sp_models:
-        inherited_names: list[str] = []
-        seen_ids = {model["id"]}
-        parent_id = model.get("parent")
-        while parent_id is not None and parent_id not in seen_ids:
-            seen_ids.add(parent_id)
-            parent = models_by_id.get(parent_id)
-            if parent is None or parent["brand"] != model["brand"]:
-                break
-
-            inherited_names.append(parent["name"])
-            inherited_names.extend(direct_slicer_names.get(parent_id, []))
-            parent_id = parent.get("parent")
-
-        if inherited_names:
-            sp_slicer_names[model["id"]] = list(
-                dict.fromkeys([*sp_slicer_names.get(model["id"], []), *inherited_names])
-            )
 
     return sp_brands, sp_models, sp_slicer_names
 
