@@ -3,10 +3,19 @@ name: Ruff
 on:
   push:
     paths:
+      - ".github/workflows/ruff.yml"
+      - "pyproject.toml"
       - "slicer_profiles_db/**/*.py"
+      - "tests/**/*.py"
+      - "tools/**/*.py"
   pull_request:
     paths:
+      - ".github/workflows/ruff.yml"
+      - "pyproject.toml"
       - "slicer_profiles_db/**/*.py"
+      - "tests/**/*.py"
+      - "tools/**/*.py"
+  workflow_dispatch:
 
 jobs:
   ruff:
@@ -15,7 +24,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: astral-sh/ruff-action@v3
         with:
-          args: "format --check slicer_profiles_db/"
+          version: "0.16.0"
+          args: "format --check ."
       - uses: astral-sh/ruff-action@v3
         with:
-          args: "check slicer_profiles_db/"
+          version: "0.16.0"
+          args: "check ."
