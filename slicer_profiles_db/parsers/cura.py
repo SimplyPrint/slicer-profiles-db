@@ -58,7 +58,7 @@ def _material_compatibility_aliases(
             .strip()
             .casefold(),
             str(context.get("color") or "").strip().casefold(),
-            profile.name.strip().casefold(),
+            str(context.get("display_name") or profile.name).strip().casefold(),
         )
         if not native_id or not all(identity):
             continue

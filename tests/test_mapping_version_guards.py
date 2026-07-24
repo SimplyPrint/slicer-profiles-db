@@ -7,19 +7,28 @@ from unittest.mock import Mock, patch
 from slicer_profiles_db.mapping import (
     _apply_bed_visual_fallback,
     _bambu_runtime_variants,
+    _cura_material_compatibility_aliases,
     _evaluate_stable,
     _find_variant_lookup,
     _machine_model_export,
     _model_variants,
     _parse_variant_from_name,
     _profile_matches_printer,
+    _propagate_bed_visual_donors_by_profile,
     _public_variant_payload,
     _same_variant,
     _write_import_manifest,
+    ModelMap,
     fetch_sp_slicer_versions,
     map_printer_models,
 )
-from slicer_profiles_db.models import ProfileType, SlicerType, StoredProfile
+from slicer_profiles_db.models import (
+    ParsedProfile,
+    ProfileType,
+    SlicerType,
+    StoredProfile,
+)
+from slicer_profiles_db.parsers.cura import _material_compatibility_aliases
 
 
 class MappingVersionGuardTests(unittest.TestCase):
@@ -394,6 +403,79 @@ class MappingVersionGuardTests(unittest.TestCase):
             target["bed_assets"],
             {"model": {"ref": "sha256:donor"}},
         )
+
+    def test_cura_generic_material_diameter_ids_are_compatibility_aliases(
+        self,
+    ) -> None:
+        self.assertEqual(
+            _cura_material_compatibility_aliases(["generic_petg"]),
+            ["generic_petg", "generic_petg_175"],
+        )
+        self.assertEqual(
+            _cura_material_compatibility_aliases(["generic_petg_175"]),
+            ["generic_petg_175", "generic_petg"],
+        )
+
+    def test_cura_parser_groups_material_ids_by_upstream_display_name(
+        self,
+    ) -> None:
+        def material(native_id: str) -> ParsedProfile:
+            return ParsedProfile(
+                slicer=SlicerType.CURA,
+                profile_type=ProfileType.FILAMENT,
+                name=f"Generic PETG Generic · {native_id}",
+                vendor="Generic",
+                settings={},
+                native_id=native_id,
+                filament_type="PETG",
+                context={
+                    "brand": "Generic",
+                    "material_type": "PETG",
+                    "color": "Generic",
+                    "display_name": "Generic PETG Generic",
+                },
+            )
+
+        aliases = _material_compatibility_aliases(
+            [material("generic_petg"), material("generic_petg_175")]
+        )
+
+        self.assertEqual(
+            aliases,
+            {
+                "generic_petg": ("generic_petg", "generic_petg_175"),
+                "generic_petg_175": ("generic_petg_175", "generic_petg"),
+            },
+        )
+
+    def test_kiri_bed_visual_donor_is_shared_across_same_machine_profile(
+        self,
+    ) -> None:
+        model_map = ModelMap(
+            model_to_profiles={
+                model_id: {
+                    SlicerType.KIRIMOTO.value: ["Creality/Creality Ender 3"]
+                }
+                for model_id in (6, 42, 43)
+            }
+        )
+        donor = {
+            "bed_assets": {
+                "model": {
+                    "ref": "sha256:donor",
+                    "geometry_space": "raw_mesh",
+                    "transform": {"rotation": {"euler": [90, 0, 0]}},
+                }
+            }
+        }
+
+        propagated = _propagate_bed_visual_donors_by_profile(
+            model_map,
+            {42: donor},
+        )
+
+        self.assertEqual(propagated, {6: donor, 42: donor, 43: donor})
+        self.assertIsNot(propagated[6], propagated[42])
 
     def test_machine_model_compatibility_alias_maps_kiri_to_ender_3_pro(
         self,

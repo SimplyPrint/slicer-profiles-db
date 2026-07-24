@@ -138,7 +138,19 @@ def _profile_payload(
     snapshot = data if data is not None else _evaluate_stable(profile)
     payload: dict[str, Any] = {"data": snapshot}
     if profile.context:
-        payload["context"] = profile.context
+        context = copy.deepcopy(profile.context)
+        if (
+            profile.slicer == SlicerType.CURA.value
+            and profile.profile_type == ProfileType.PRINT.value
+        ):
+            compatibility = context.get("compatibility")
+            if isinstance(compatibility, dict):
+                material_ids = compatibility.get("material_native_ids")
+                if isinstance(material_ids, list):
+                    compatibility["material_native_ids"] = (
+                        _cura_material_compatibility_aliases(material_ids)
+                    )
+        payload["context"] = context
     if profile.setting_scopes:
         payload["setting_scopes"] = {
             key: scope
@@ -146,10 +158,28 @@ def _profile_payload(
             if key in snapshot
         }
     for metadata_key in ("attributes", "compatibility"):
-        metadata = profile.context.get(metadata_key)
+        metadata = payload.get("context", {}).get(metadata_key)
         if isinstance(metadata, Mapping):
             payload[metadata_key] = dict(metadata)
     return payload
+
+
+def _cura_material_compatibility_aliases(material_ids: Sequence[Any]) -> list[Any]:
+    """Keep Cura's equivalent 2.85 mm and 1.75 mm generic IDs compatible."""
+    aliases: list[Any] = []
+    for material_id in material_ids:
+        if material_id not in aliases:
+            aliases.append(material_id)
+        if not isinstance(material_id, str) or not material_id.startswith("generic_"):
+            continue
+        counterpart = (
+            material_id.removesuffix("_175")
+            if material_id.endswith("_175")
+            else f"{material_id}_175"
+        )
+        if counterpart not in aliases:
+            aliases.append(counterpart)
+    return aliases
 
 
 def _model_variants(
@@ -2349,6 +2379,46 @@ def _apply_bed_visual_fallback(
             target[key] = copy.deepcopy(fallback[key])
 
 
+def _propagate_bed_visual_donors_by_profile(
+    model_map: ModelMap,
+    donors: Mapping[int, Mapping[str, Any]],
+) -> dict[int, dict[str, Any]]:
+    """Share an unambiguous donor between models using the same Kiri profile."""
+    profile_models: dict[str, set[int]] = {}
+    for model_id, slicer_profiles in model_map.model_to_profiles.items():
+        for profile_key in slicer_profiles.get(SlicerType.KIRIMOTO.value, []):
+            profile_models.setdefault(profile_key, set()).add(model_id)
+
+    propagated = {
+        model_id: copy.deepcopy(dict(payload))
+        for model_id, payload in donors.items()
+    }
+    candidates: dict[int, dict[str, dict[str, Any]]] = {}
+    for model_ids in profile_models.values():
+        distinct_donors: dict[str, dict[str, Any]] = {}
+        for model_id in model_ids:
+            donor = donors.get(model_id)
+            if donor:
+                canonical = json.dumps(
+                    donor,
+                    ensure_ascii=False,
+                    separators=(",", ":"),
+                    sort_keys=True,
+                )
+                distinct_donors.setdefault(canonical, copy.deepcopy(dict(donor)))
+        if len(distinct_donors) != 1:
+            continue
+
+        canonical, donor = next(iter(distinct_donors.items()))
+        for model_id in model_ids:
+            candidates.setdefault(model_id, {})[canonical] = donor
+
+    for model_id, model_candidates in candidates.items():
+        if model_id not in propagated and len(model_candidates) == 1:
+            propagated[model_id] = copy.deepcopy(next(iter(model_candidates.values())))
+    return propagated
+
+
 def _build_bed_visual_donors(
     model_map: ModelMap,
     store: ProfileStore,
@@ -2388,7 +2458,7 @@ def _build_bed_visual_donors(
         if candidates:
             candidates.sort(key=lambda candidate: (candidate[0], candidate[1]))
             donors[model_id] = candidates[0][2]
-    return donors
+    return _propagate_bed_visual_donors_by_profile(model_map, donors)
 
 
 def _canonicalize_resource_refs(
