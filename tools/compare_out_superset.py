@@ -180,7 +180,7 @@ def compare(base: OutIndex, candidate: OutIndex) -> dict[str, Any]:
         if missing:
             missing_slicers[model_id] = missing
 
-    for key, base_path in base.files.items():
+    for key in base.files:
         model_id, slicer, profile_file = key
         if key not in candidate.files:
             missing_files.append(f"{model_id}/{slicer}/{profile_file}")
