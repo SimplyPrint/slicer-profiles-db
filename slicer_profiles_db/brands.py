@@ -78,6 +78,13 @@ _SLICER_OVERRIDES: dict[SlicerType, dict[str, str]] = {
         "nwa 3d llc": "nwa3d",
         "unknown": "any generic printer",
     },
+    SlicerType.KIRIMOTO: {
+        "any": "any generic printer",
+        "bambu": "bambu lab",
+        "folgertech": "folger tech",
+        "taz": "lulzbot",
+        "xyz": "xyzprinting",
+    },
     SlicerType.SUPERSLICER: {
         "prusaresearch": "prusa",
         "qiditechnology": "qidi tech",

@@ -1,5 +1,7 @@
 import json
 
+from slicer_profiles_db.brands import BRAND_MAPS
+from slicer_profiles_db.matching import match_printer_model
 from slicer_profiles_db.models import ProfileType, SlicerType
 from slicer_profiles_db.parsers.kirimoto import KiriMotoParser
 
@@ -75,3 +77,48 @@ def test_profile_type_filter_only_emits_machine_models(tmp_path):
 
     assert len(profiles) == 1
     assert profiles[0].profile_type == ProfileType.MACHINE_MODEL
+
+
+def test_kirimoto_vendor_aliases_match_simplyprint_brands():
+    models = [
+        {"id": 19, "brand": "Folger Tech", "name": "FT-5"},
+        {"id": 431, "brand": "Bambu Lab", "name": "P1S"},
+        {"id": 476, "brand": "Bambu Lab", "name": "A1"},
+        {"id": 89, "brand": "Ultimaker", "name": "2"},
+    ]
+    brands = ["Bambu Lab", "Folger Tech", "Ultimaker"]
+    aliases: dict[int, list[str]] = {}
+    brand_map = BRAND_MAPS[SlicerType.KIRIMOTO]
+
+    assert match_printer_model(
+        models,
+        brands,
+        aliases,
+        "Bambu",
+        "Bambu A1",
+        brand_map,
+    ) == {476}
+    assert match_printer_model(
+        models,
+        brands,
+        aliases,
+        "Bambu",
+        "Bambu P1S",
+        brand_map,
+    ) == {431}
+    assert match_printer_model(
+        models,
+        brands,
+        aliases,
+        "FolgerTech",
+        "FolgerTech FT5",
+        brand_map,
+    ) == {19}
+    assert match_printer_model(
+        models,
+        brands,
+        aliases,
+        "Ultimaker",
+        "Ultimaker Ultimaker2",
+        brand_map,
+    ) == {89}

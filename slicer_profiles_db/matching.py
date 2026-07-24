@@ -50,6 +50,13 @@ def normalised_comparison(sp_name: str, slicer_name: str, brand: str) -> bool:
     return bool(sp_key) and sp_key == _comparison_key(slicer_name)
 
 
+def remove_repeated_brand(sp_name: str, slicer_name: str, brand: str) -> bool:
+    """Handle upstream names that repeat their owning brand."""
+    if not slicer_name.startswith(brand):
+        return False
+    return normalised_comparison(sp_name, slicer_name[len(brand) :].strip(), brand)
+
+
 def remove_dashes(sp_name: str, slicer_name: str, brand: str) -> bool:
     return sp_name.replace("-", " ") == slicer_name.replace("-", " ")
 
@@ -146,6 +153,7 @@ def alternate_remove_bed_size(sp_name: str, slicer_name: str, brand: str) -> boo
 CHECK_MODEL_ALGOS: list[Callable[[str, str, str], bool]] = [
     direct_comparison,
     normalised_comparison,
+    remove_repeated_brand,
     remove_dashes,
     remove_spaces,
     remove_parentheses,
