@@ -199,6 +199,29 @@ def _model_variants(
     for variant in discovered:
         if not any(_same_variant(variant, existing) for existing in declared):
             declared.append(variant)
+
+    # Bambu-compatible slicers can advertise the nozzle-volume choices inside
+    # a standard machine role instead of publishing a sibling HF role. Expand
+    # those choices before profile mapping so the synthetic HF hardware gets
+    # its own compatible filament and process relations as well as a selector.
+    for variant in list(declared):
+        parsed = _parse_nozzle_variant_token(variant)
+        if parsed is None or parsed[1]:
+            continue
+        lookup = _find_variant_lookup(
+            profile,
+            data,
+            profile.name,
+            variant,
+            variant_lookup,
+        )
+        if lookup is None:
+            continue
+        for runtime_variant, _ in _bambu_runtime_variants(variant, lookup):
+            if not any(
+                _same_variant(runtime_variant, existing) for existing in declared
+            ):
+                declared.append(runtime_variant)
     return declared
 
 
@@ -504,6 +527,27 @@ def _find_variant_lookup(
             ),
         )
 
+    # An embedded High Flow choice has no native sibling lookup. Resolve the
+    # standard role for the same diameter and materialize its selected runtime
+    # values so compatibility conditions see the actual HF machine settings.
+    parsed_variant = _parse_nozzle_variant_token(variant)
+    if parsed_variant is not None and parsed_variant[1]:
+        standard_variant = f"{parsed_variant[0]:g}"
+        standard_lookup = _find_variant_lookup(
+            machine_model,
+            machine_data,
+            fallback_name,
+            standard_variant,
+            variant_lookup,
+        )
+        if standard_lookup is not None:
+            runtime_variants = dict(
+                _bambu_runtime_variants(standard_variant, standard_lookup)
+            )
+            high_flow_key = f"HF{parsed_variant[0]:g}"
+            if high_flow_key in runtime_variants:
+                return runtime_variants[high_flow_key]
+
     return None
 
 
@@ -609,12 +653,12 @@ def _public_variant_payload(
 
 
 def _bambu_volume_type_options(data: Mapping[str, Any]) -> set[str]:
-    """Return nozzle-volume choices supported by every declared Bambu tool.
+    """Return nozzle-volume choices supported by every declared tool.
 
-    Bambu stores these as comma-separated extruder choices inside each
-    machine role instead of publishing separate ``HF0.x`` machine profiles.
-    SimplyPrint's portable selector is global, so only choices supported by
-    every tool can safely become runtime variants.
+    BambuStudio and compatible slicers store these as comma-separated
+    extruder choices inside each machine role instead of publishing separate
+    ``HF0.x`` machine profiles. SimplyPrint's selector is global, so only
+    choices supported by every tool can safely become runtime variants.
     """
 
     declared = data.get("extruder_variant_list")
@@ -642,7 +686,7 @@ def _bambu_runtime_variants(
     variant_key: str,
     payload: Mapping[str, Any],
 ) -> list[tuple[str, dict[str, Any]]]:
-    """Expand one Bambu machine role into portable standard/HF variants."""
+    """Expand one embedded-volume machine role into portable standard/HF variants."""
 
     base = copy.deepcopy(dict(payload))
     data = base.get("data")
@@ -1115,9 +1159,21 @@ def _machine_model_export(
         if isinstance(bed_assets, dict):
             model = bed_assets.get("model")
             texture = bed_assets.get("texture")
-            if isinstance(model, dict) and isinstance(texture, dict):
+            if isinstance(model, dict):
                 if model.get("format") == "3mf":
                     model.setdefault("mesh_selection", "largest_face_count")
+                    model.setdefault("geometry_space", "raw_mesh")
+                    transform = model.setdefault("transform", {})
+                    if isinstance(transform, dict):
+                        transform.setdefault(
+                            "rotation",
+                            {
+                                "euler": [90, 0, 0],
+                                "unit": "deg",
+                                "order": "XYZ",
+                            },
+                        )
+            if isinstance(model, dict) and isinstance(texture, dict):
                 texture.setdefault("target", "model")
                 texture.setdefault("mapping", "uv")
                 texture.setdefault("flip_y", True)
@@ -2218,19 +2274,13 @@ def export_output(
                             selection_defaults,
                             variant,
                         )
-                        runtime_variants = (
-                            _bambu_runtime_variants(variant, payload)
-                            if slicer == SlicerType.BAMBUSTUDIO
-                            else [(variant, payload)]
-                        )
-                        for runtime_key, runtime_payload in runtime_variants:
-                            existing = sub_data["variants"].get(runtime_key)
-                            if existing is not None and existing != runtime_payload:
-                                raise ValueError(
-                                    f"duplicate runtime variant {runtime_key!r} "
-                                    f"for {model_name_key!r}"
-                                )
-                            sub_data["variants"][runtime_key] = runtime_payload
+                        existing = sub_data["variants"].get(variant)
+                        if existing is not None and existing != payload:
+                            raise ValueError(
+                                f"duplicate runtime variant {variant!r} "
+                                f"for {model_name_key!r}"
+                            )
+                        sub_data["variants"][variant] = payload
 
                 machine_profiles_data.append(sub_data)
 

@@ -8,6 +8,7 @@ from slicer_profiles_db.mapping import (
     _apply_bed_visual_fallback,
     _bambu_runtime_variants,
     _evaluate_stable,
+    _find_variant_lookup,
     _machine_model_export,
     _model_variants,
     _parse_variant_from_name,
@@ -147,7 +148,6 @@ class MappingVersionGuardTests(unittest.TestCase):
             context={
                 "bed_assets": {
                     "model": {"url": "sha256:model", "format": "3mf"},
-                    "texture": {"url": "sha256:texture"},
                 }
             },
             settings={},
@@ -158,6 +158,18 @@ class MappingVersionGuardTests(unittest.TestCase):
         self.assertEqual(
             exported["bed_assets"]["model"]["mesh_selection"],
             "largest_face_count",
+        )
+        self.assertEqual(
+            exported["bed_assets"]["model"]["geometry_space"],
+            "raw_mesh",
+        )
+        self.assertEqual(
+            exported["bed_assets"]["model"]["transform"]["rotation"],
+            {
+                "euler": [90, 0, 0],
+                "unit": "deg",
+                "order": "XYZ",
+            },
         )
 
     def test_hardware_variant_parser_preserves_high_flow_identity(self) -> None:
@@ -283,6 +295,55 @@ class MappingVersionGuardTests(unittest.TestCase):
         )
 
         self.assertEqual([key for key, _ in variants], ["0.4"])
+
+    def test_orca_embedded_high_flow_choice_maps_profiles_and_runtime(self) -> None:
+        profile = StoredProfile(
+            slicer=SlicerType.ORCASLICER.value,
+            profile_type=ProfileType.MACHINE_MODEL.value,
+            name="Bambu Lab X1 Carbon",
+            vendor="BBL",
+            first_seen="2.3.2",
+            last_seen="2.3.2",
+            settings={},
+        )
+        machine_data = {
+            "name": "Bambu Lab X1 Carbon",
+            "nozzle_diameter": "0.4",
+        }
+        standard_role = {
+            "name": "Bambu Lab X1 Carbon 0.4 nozzle",
+            "data": {
+                "name": "Bambu Lab X1 Carbon 0.4 nozzle",
+                "nozzle_diameter": ["0.4"],
+                "default_nozzle_volume_type": ["Standard"],
+                "extruder_variant_list": [
+                    "Direct Drive Standard,Direct Drive High Flow",
+                ],
+            },
+        }
+        lookup = {"Bambu Lab X1 Carbon0.4": standard_role}
+
+        self.assertEqual(
+            _model_variants(profile, machine_data, lookup),
+            ["0.4", "HF0.4"],
+        )
+        high_flow = _find_variant_lookup(
+            profile,
+            machine_data,
+            profile.name,
+            "HF0.4",
+            lookup,
+        )
+
+        self.assertIsNotNone(high_flow)
+        self.assertEqual(
+            high_flow["data"]["default_nozzle_volume_type"],
+            ["High Flow"],
+        )
+        self.assertEqual(
+            high_flow["attributes"]["nozzle_volume_type"],
+            "high_flow",
+        )
 
     def test_profile_condition_overrides_broad_printer_compatibility(self) -> None:
         shared = {
