@@ -8,7 +8,7 @@ name without leaking into another brand.
 
 import re
 import unicodedata
-from typing import Callable
+from collections.abc import Callable
 
 from .brands import strip_brand_from_name
 

@@ -5,9 +5,8 @@ OFDFilamentIndex: O(1) lookups for OFD filaments by various keys.
 from __future__ import annotations
 
 import logging
-from typing import Optional
 
-from .repo import OFDRepo, OFDFilament
+from .repo import OFDFilament, OFDRepo
 
 logger = logging.getLogger(__name__)
 
@@ -126,7 +125,7 @@ class OFDFilamentIndex:
         profile_name: str,
         slicer: str,
         *,
-        filament_id: Optional[str] = None,
+        filament_id: str | None = None,
     ) -> str | None:
         """Resolve an OFD filesystem path using multi-strategy lookup.
 
@@ -215,7 +214,7 @@ class OFDFilamentIndex:
         result: dict[str, dict[str, str]] = {}
         for slicer, profiles in self.by_slicer_profile.items():
             slicer_map: dict[str, str] = {}
-            for _lower_name, fil in profiles.items():
+            for fil in profiles.values():
                 # Use the original-case profile name from slicer_settings
                 original_name = fil.slicer_settings.get(slicer, {}).get("profile_name")
                 if original_name:

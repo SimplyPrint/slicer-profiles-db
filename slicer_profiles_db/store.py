@@ -2,19 +2,18 @@
 ProfileStore: persistent versioned storage with change detection.
 """
 
+import hashlib
 import json
 import logging
 import re
-import hashlib
 from pathlib import Path
-from typing import Optional
 
 from .models import (
-    SlicerType,
-    ProfileType,
-    ParsedProfile,
-    StoredProfile,
     IngestionReport,
+    ParsedProfile,
+    ProfileType,
+    SlicerType,
+    StoredProfile,
 )
 
 logger = logging.getLogger(__name__)
@@ -59,15 +58,15 @@ class ProfileStore:
     def _get_parser(self, slicer: SlicerType):
         """Lazy-import parsers to avoid circular dependency."""
         from .parsers import (
+            AnycubicSlicerParser,
             BambuStudioParser,
-            OrcaSlicerParser,
             CrealityPrintParser,
-            PrusaSlicerParser,
             CuraParser,
             ElegooSlicerParser,
-            AnycubicSlicerParser,
-            SuperSlicerParser,
             KiriMotoParser,
+            OrcaSlicerParser,
+            PrusaSlicerParser,
+            SuperSlicerParser,
         )
 
         parsers = {
@@ -190,14 +189,14 @@ class ProfileStore:
         profile_type: str,
         vendor: str,
         name: str,
-    ) -> Optional[StoredProfile]:
+    ) -> StoredProfile | None:
         """Load a stored profile by its coordinates."""
         return self._load(slicer, profile_type, vendor, name)
 
     def list_profiles(
         self,
         slicer: SlicerType,
-        profile_type: Optional[str] = None,
+        profile_type: str | None = None,
     ) -> list[StoredProfile]:
         """List all stored profiles for a slicer, optionally filtered by type."""
         slicer_dir = self.root / slicer.value
@@ -220,7 +219,10 @@ class ProfileStore:
                                     json_file.read_text(encoding="utf-8")
                                 )
                             )
-                        except Exception:
+                        except (OSError, UnicodeError, ValueError) as exc:
+                            logger.debug(
+                                "Skipping unreadable profile %s: %s", json_file, exc
+                            )
                             continue
             else:
                 for type_dir in vendor_dir.iterdir():
@@ -233,7 +235,10 @@ class ProfileStore:
                                     json_file.read_text(encoding="utf-8")
                                 )
                             )
-                        except Exception:
+                        except (OSError, UnicodeError, ValueError) as exc:
+                            logger.debug(
+                                "Skipping unreadable profile %s: %s", json_file, exc
+                            )
                             continue
 
         return profiles
@@ -386,7 +391,7 @@ class ProfileStore:
         profile_type: str,
         vendor: str,
         name: str,
-    ) -> Optional[StoredProfile]:
+    ) -> StoredProfile | None:
         path = self._profile_path(slicer, profile_type, vendor, name)
         if not path.exists():
             return None

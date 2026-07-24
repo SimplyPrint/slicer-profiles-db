@@ -8,9 +8,8 @@ from collections.abc import Iterator
 from pathlib import Path
 from typing import Any
 
-from .base import BaseParser
 from ..models import ParsedProfile, ProfileType, SlicerType
-
+from .base import BaseParser
 
 _FILAMENT_TYPES = (
     "TPU-AMS",

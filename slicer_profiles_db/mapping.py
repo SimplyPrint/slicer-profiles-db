@@ -15,9 +15,10 @@ import math
 import os
 import re
 import shutil
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Mapping, Sequence
+from typing import Any
 
 import requests
 
@@ -25,8 +26,8 @@ from .brands import BRAND_MAPS, normalize_brand
 from .conditions import evaluate_printer_condition
 from .index import (
     ProfileIndex,
-    is_profile_model_specific,
     build_generic_profile_index,
+    is_profile_model_specific,
     resolve_generic_id,
 )
 from .matching import match_printer_model
@@ -105,9 +106,10 @@ def _stable_version(profile: StoredProfile) -> str:
     best: str | None = None
     for versions_dict in profile.settings.values():
         for ver in versions_dict:
-            if not ver.startswith("nightly"):
-                if best is None or version_key(ver) > version_key(best):
-                    best = ver
+            if not ver.startswith("nightly") and (
+                best is None or version_key(ver) > version_key(best)
+            ):
+                best = ver
     return best or last
 
 
@@ -272,7 +274,7 @@ def _variant_identity_lookup_key(identity: Mapping[str, Any]) -> str:
 
     nozzle_diameter = identity["nozzle_diameter"]
     if isinstance(nozzle_diameter, bool):
-        raise ValueError("hardware variant identity has invalid nozzle_diameter")
+        raise TypeError("hardware variant identity has invalid nozzle_diameter")
     try:
         nozzle_diameter = float(nozzle_diameter)
     except (TypeError, ValueError) as exc:
@@ -283,9 +285,13 @@ def _variant_identity_lookup_key(identity: Mapping[str, Any]) -> str:
         raise ValueError("hardware variant identity has invalid nozzle_diameter")
 
     tool_indices = identity["tool_indices"]
-    if not isinstance(tool_indices, list) or not tool_indices or not all(
-        isinstance(index, int) and not isinstance(index, bool) and index >= 0
-        for index in tool_indices
+    if (
+        not isinstance(tool_indices, list)
+        or not tool_indices
+        or not all(
+            isinstance(index, int) and not isinstance(index, bool) and index >= 0
+            for index in tool_indices
+        )
     ):
         raise ValueError("hardware variant identity has invalid tool_indices")
     if len(set(tool_indices)) != len(tool_indices):
@@ -341,8 +347,7 @@ def _model_variant_identity(
     matches = [
         _structured_variant_identity(item)
         for item in descriptors
-        if isinstance(item, Mapping)
-        and str(item.get("key")) == variant
+        if isinstance(item, Mapping) and str(item.get("key")) == variant
     ]
     matches = [identity for identity in matches if identity is not None]
     if len(matches) > 1:
@@ -437,9 +442,7 @@ def _find_variant_lookup(
         ):
             return item
 
-    compact_display_names = {
-        name.replace(" ", "").casefold() for name in display_names
-    }
+    compact_display_names = {name.replace(" ", "").casefold() for name in display_names}
     compact_prefix_matches: list[dict[str, Any]] = []
     for item in unique_items:
         item_name = str(item.get("name", ""))
@@ -646,10 +649,8 @@ def _named_machine_variant_matches(
         return False
 
     suffix = normalized_name[len(normalized_model) :]
-    if suffix.endswith("nozzle"):
-        suffix = suffix[: -len("nozzle")]
-    if suffix.endswith("mm"):
-        suffix = suffix[: -len("mm")]
+    suffix = suffix.removesuffix("nozzle")
+    suffix = suffix.removesuffix("mm")
     return suffix == _normalise_native_identity(variant)
 
 
@@ -835,9 +836,7 @@ def _resolve_material_overrides(
                 matched_hotend = str(hotend.get("id") or selected_hotend)
             break
     plan = variant_context.get(CURA_MATERIAL_RECOMPUTE_PLAN)
-    cache_key = _overlay_resolution_cache_key(
-        variant_data, resolved, plan, plan_cache
-    )
+    cache_key = _overlay_resolution_cache_key(variant_data, resolved, plan, plan_cache)
     cached = overlay_cache.get(cache_key) if overlay_cache is not None else None
     if cached is None:
         resolved, dependent_scopes = resolve_cura_overlay(
@@ -896,11 +895,7 @@ def _overlay_resolution_cache_key(
             plan_cache[plan_id] = cached_plan
 
     canonical_plan, dependencies = cached_plan
-    inputs = {
-        key: baseline.get(key)
-        for key in dependencies
-        if key not in overlay
-    }
+    inputs = {key: baseline.get(key) for key in dependencies if key not in overlay}
     digest = hashlib.sha256()
     for value in (canonical_plan, inputs, overlay):
         encoded = (
@@ -1126,9 +1121,7 @@ def map_printer_models(
             if not data:
                 continue
             name = (
-                profile.context.get("display_name")
-                or data.get("name")
-                or profile.name
+                profile.context.get("display_name") or data.get("name") or profile.name
             )
             vendor = profile.vendor
 
@@ -1200,9 +1193,11 @@ def _build_variant_map(
                 )
         else:
             name_variant = _parse_variant_from_name(data.get("name", profile.name))
-            if variant is None:
-                variant = name_variant
-            elif name_variant and not _same_variant(str(variant), name_variant):
+            if (
+                variant is None
+                or name_variant
+                and not _same_variant(str(variant), name_variant)
+            ):
                 variant = name_variant
         if variant is None:
             continue
@@ -1350,9 +1345,7 @@ def map_filament_profiles(
         index, [SlicerType(s) for s in active_slicers]
     )
     _global_templates = {
-        slicer: _global_filament_templates(
-            index, SlicerType(slicer), version_guards
-        )
+        slicer: _global_filament_templates(index, SlicerType(slicer), version_guards)
         for slicer in active_slicers
     }
 
@@ -1572,10 +1565,7 @@ def _variant_matches_item(variant: str, item: dict[str, Any]) -> bool:
         nozzle = nozzle[0] if nozzle else None
     if isinstance(nozzle, str):
         nozzle = re.split("[;,]", nozzle)[0].strip()
-    if nozzle is not None and _same_variant(str(nozzle), variant):
-        return True
-
-    return False
+    return nozzle is not None and _same_variant(str(nozzle), variant)
 
 
 def _same_variant(left: str, right: str) -> bool:
@@ -2218,9 +2208,9 @@ def _write_import_manifest(
         engine = _import_artifact_engine(relative_path)
         if engine is None:
             continue
-        artifacts_by_engine.setdefault(engine, {})[
-            relative_path.as_posix()
-        ] = _sha256_file(path)
+        artifacts_by_engine.setdefault(engine, {})[relative_path.as_posix()] = (
+            _sha256_file(path)
+        )
 
     missing_slicers = sorted(
         slicer.value
@@ -2311,7 +2301,7 @@ def run_mapping_pipeline(
     # Build OFD index if path provided
     ofd_index = None
     if ofd_path is not None:
-        from .ofd import OFDRepo, OFDFilamentIndex
+        from .ofd import OFDFilamentIndex, OFDRepo
 
         logger.info("Loading OFD data from %s ...", ofd_path)
         ofd_repo = OFDRepo(ofd_path)
@@ -2326,7 +2316,9 @@ def run_mapping_pipeline(
         "Using SimplyPrint newest-version guards: %s",
         ", ".join(
             f"{slicer.value}={version}"
-            for slicer, version in sorted(version_guards.items(), key=lambda item: item[0].value)
+            for slicer, version in sorted(
+                version_guards.items(), key=lambda item: item[0].value
+            )
         ),
     )
 

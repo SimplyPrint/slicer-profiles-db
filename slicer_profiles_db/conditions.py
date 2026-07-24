@@ -7,7 +7,7 @@ logical operators, and nested parentheses.
 """
 
 import re
-from typing import Any, Optional
+from typing import Any
 
 
 def evaluate_printer_condition(
@@ -207,7 +207,7 @@ def _evaluate_single_condition(condition: str, get_value: callable) -> bool:
     return False
 
 
-def _find_first_parenthesis_set(string: str) -> Optional[tuple[int, int]]:
+def _find_first_parenthesis_set(string: str) -> tuple[int, int] | None:
     """Return indices of the first balanced parenthesis pair, skipping regex patterns."""
     depth = 0
     is_in_regex = False

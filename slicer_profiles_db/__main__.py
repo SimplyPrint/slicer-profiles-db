@@ -13,7 +13,7 @@ import os
 import sys
 from pathlib import Path
 
-from slicer_profiles_db import SlicerType, ProfileType, ProfileStore
+from slicer_profiles_db import ProfileStore, ProfileType, SlicerType
 
 logger = logging.getLogger(__name__)
 
@@ -464,7 +464,7 @@ def _default_overlay() -> str:
 
 def _make_reporter(use_json: bool):
     """Create the appropriate progress reporter."""
-    from slicer_profiles_db.progress import RichProgressReporter, NullProgressReporter
+    from slicer_profiles_db.progress import NullProgressReporter, RichProgressReporter
 
     return NullProgressReporter() if use_json else RichProgressReporter()
 
@@ -472,6 +472,7 @@ def _make_reporter(use_json: bool):
 def run_ingest(args: argparse.Namespace) -> int:
     """Execute the ingest command — download, squash, parse, store from GitHub."""
     import shutil
+
     from slicer_profiles_db.pipeline import ProfilePipeline
     from slicer_profiles_db.versions import check_github_token
 
@@ -578,6 +579,7 @@ def run_ingest(args: argparse.Namespace) -> int:
 def run_ingest_all(args: argparse.Namespace) -> int:
     """Execute the ingest-all command — ingest all slicers from GitHub."""
     import shutil
+
     from slicer_profiles_db.pipeline import ProfilePipeline
     from slicer_profiles_db.versions import check_github_token
 
@@ -631,6 +633,7 @@ def run_ingest_all(args: argparse.Namespace) -> int:
         except Exception as e:
             errors.append((slicer.value, str(e)))
             reporter.update_status(f"Error processing {slicer.value}: {e}")
+            logger.exception("Failed to ingest %s", slicer.value)
 
     # Output
     if use_json:
@@ -841,8 +844,8 @@ def run_map(args: argparse.Namespace) -> int:
 
     try:
         model_map = run_mapping_pipeline(store, output_dir, slicers, ofd_path=ofd_path)
-    except Exception as e:
-        logger.error("%s", e)
+    except Exception:
+        logger.exception("Mapping pipeline failed")
         return 1
 
     if use_json:

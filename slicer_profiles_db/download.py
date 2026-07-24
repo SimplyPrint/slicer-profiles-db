@@ -15,11 +15,11 @@ from zipfile import ZipFile
 import requests
 
 from .models import (
-    SlicerType,
+    DownloadResult,
     ProfileType,
+    SlicerType,
     SourceConfig,
     VersionInfo,
-    DownloadResult,
 )
 from .progress import NullProgressReporter, ProgressReporter
 from .versions import normalize_version

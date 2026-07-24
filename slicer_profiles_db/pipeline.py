@@ -7,52 +7,52 @@ High-level interface that chains all the slicer profile processing steps.
 import logging
 import shutil
 import tempfile
-from datetime import date
+from datetime import datetime, timezone
 from pathlib import Path
 
-from .models import (
-    SlicerType,
-    ProfileType,
-    IngestionReport,
-)
-from .progress import NullProgressReporter, ProgressReporter
-from .store import ProfileStore
 from .download import (
-    download_and_extract,
     apply_overlays,
+    download_and_extract,
     get_source_config,
 )
-from .squash import (
-    unpack_prusaslicer_bundles,
-    squash_all_slic3r_vendors,
-    iter_ini_bundle_versions,
-    split_prusaslicer_bundle,
+from .models import (
+    IngestionReport,
+    ProfileType,
+    SlicerType,
 )
+from .parsers import (
+    AnycubicSlicerParser,
+    BambuStudioParser,
+    CrealityPrintParser,
+    CuraParser,
+    ElegooSlicerParser,
+    KiriMotoParser,
+    OrcaSlicerParser,
+    PrusaSlicerParser,
+    SuperSlicerParser,
+)
+from .parsers.base import BaseParser
+from .progress import NullProgressReporter, ProgressReporter
 from .resources import (
     ResourceStore,
+    collect_referenced_hashes,
     collect_resources,
     rewrite_resource_refs,
-    collect_referenced_hashes,
 )
+from .squash import (
+    iter_ini_bundle_versions,
+    split_prusaslicer_bundle,
+    squash_all_slic3r_vendors,
+    unpack_prusaslicer_bundles,
+)
+from .store import ProfileStore
 from .versions import (
     enumerate_github_tags,
-    normalize_version,
     is_prerelease,
+    normalize_version,
     sort_versions,
     version_key,
 )
-from .parsers import (
-    BambuStudioParser,
-    OrcaSlicerParser,
-    CrealityPrintParser,
-    PrusaSlicerParser,
-    CuraParser,
-    ElegooSlicerParser,
-    AnycubicSlicerParser,
-    SuperSlicerParser,
-    KiriMotoParser,
-)
-from .parsers.base import BaseParser
 
 logger = logging.getLogger(__name__)
 
@@ -221,7 +221,7 @@ class ProfilePipeline:
             if detected_version:
                 normalized_version = detected_version
             else:
-                normalized_version = date.today().isoformat()
+                normalized_version = datetime.now(timezone.utc).date().isoformat()
         if is_nightly:
             normalized_version = f"nightly-{normalized_version}"
 
@@ -358,6 +358,9 @@ class ProfilePipeline:
                     self.reporter.update_status(
                         f"Failed to ingest {slicer.value} {ver}: {e}"
                     )
+                    logger.warning(
+                        "Failed to ingest %s %s", slicer.value, ver, exc_info=True
+                    )
                     continue
                 finally:
                     # Clean up split dir
@@ -440,6 +443,9 @@ class ProfilePipeline:
                 self.reporter.update_status(
                     f"Failed to ingest {slicer.value} {tag.raw}: {e}"
                 )
+                logger.warning(
+                    "Failed to ingest %s %s", slicer.value, tag.raw, exc_info=True
+                )
                 continue
 
         return reports
@@ -455,9 +461,7 @@ class ProfilePipeline:
         normalized = normalize_version(version)
         if normalized in ("main", "master", "develop", "dev"):
             return True
-        if normalized.startswith("nightly"):
-            return True
-        return False
+        return normalized.startswith("nightly")
 
     def _resolve_latest_version(self, slicer: SlicerType) -> str:
         """Resolve 'latest' to the most recent stable version.

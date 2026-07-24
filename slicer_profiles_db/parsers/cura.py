@@ -20,20 +20,21 @@ from __future__ import annotations
 
 import ast
 import configparser
-import functools
 import copy
+import functools
 import json
 import logging
 import math
 import operator
 import re
 import xml.etree.ElementTree as ET
+from collections.abc import Iterator, Mapping, Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Iterator, Mapping, Sequence
+from typing import Any, ClassVar
 
-from .base import BaseParser
 from ..models import ParsedProfile, ProfileType, SlicerType
+from .base import BaseParser
 
 logger = logging.getLogger(__name__)
 
@@ -148,7 +149,7 @@ class _UnsafeExpression(ValueError):
     """An expression uses syntax outside Cura's supported safe subset."""
 
 
-@functools.lru_cache(maxsize=None)
+@functools.cache
 def _parse_expression(expression: str) -> ast.AST:
     """Parse and validate each immutable Cura expression once per process."""
 
@@ -170,7 +171,7 @@ class _SafeExpressionEvaluator:
     one-tool input.
     """
 
-    _BINARY_OPERATORS = {
+    _BINARY_OPERATORS: ClassVar = {
         ast.Add: operator.add,
         ast.Sub: operator.sub,
         ast.Mult: operator.mul,
@@ -179,12 +180,12 @@ class _SafeExpressionEvaluator:
         ast.Mod: operator.mod,
         ast.Pow: operator.pow,
     }
-    _UNARY_OPERATORS = {
+    _UNARY_OPERATORS: ClassVar = {
         ast.UAdd: operator.pos,
         ast.USub: operator.neg,
         ast.Not: operator.not_,
     }
-    _COMPARE_OPERATORS = {
+    _COMPARE_OPERATORS: ClassVar = {
         ast.Eq: operator.eq,
         ast.NotEq: operator.ne,
         ast.Lt: operator.lt,
@@ -486,12 +487,14 @@ def _bed_assets(
         transform: dict[str, Any] = {}
         offset = metadata.get("platform_offset")
         if isinstance(offset, (list, tuple)) and len(offset) >= 3:
-            transform.update({
-                # Cura stores platform offsets in its Y-up scene. Normalise
-                # them into the exported Z-up machine coordinate space.
-                "translation": [offset[0], -offset[2], offset[1]],
-                "unit": "mm",
-            })
+            transform.update(
+                {
+                    # Cura stores platform offsets in its Y-up scene. Normalise
+                    # them into the exported Z-up machine coordinate space.
+                    "translation": [offset[0], -offset[2], offset[1]],
+                    "unit": "mm",
+                }
+            )
         if model["format"] == "3mf":
             # Cura platform 3MF resources use a Y-up X/Z build plane. Declare
             # that consumers must use the authored mesh coordinates rather
@@ -1326,8 +1329,7 @@ class CuraParser(BaseParser):
         if unresolved_defaults:
             raise ValueError(
                 f"Cura definition {definition.native_id!r} has no concrete value "
-                "for required settings: "
-                + ", ".join(sorted(unresolved_defaults))
+                "for required settings: " + ", ".join(sorted(unresolved_defaults))
             )
         material_recompute_plan = _build_overlay_recompute_plan(
             schema, material_trigger_keys
@@ -1362,8 +1364,7 @@ class CuraParser(BaseParser):
             if unresolved:
                 raise ValueError(
                     f"Cura variant {variant_source_id!r} "
-                    "has unresolved explicit settings: "
-                    + ", ".join(sorted(unresolved))
+                    "has unresolved explicit settings: " + ", ".join(sorted(unresolved))
                 )
             nozzle = data.get("machine_nozzle_size")
             if nozzle is None:

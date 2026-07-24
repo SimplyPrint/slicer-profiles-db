@@ -1,8 +1,11 @@
+import logging
 from abc import ABC, abstractmethod
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Iterator
 
-from ..models import SlicerType, ProfileType, ParsedProfile
+from ..models import ParsedProfile, ProfileType, SlicerType
+
+logger = logging.getLogger(__name__)
 
 
 class BaseParser(ABC):
@@ -39,7 +42,8 @@ class BaseParser(ABC):
                     ):
                         continue
                     yield profile
-                except Exception:
+                except (KeyError, OSError, TypeError, ValueError) as exc:
+                    logger.warning("Skipping invalid profile %s: %s", path, exc)
                     continue
 
     @abstractmethod

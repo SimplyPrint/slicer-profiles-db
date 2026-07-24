@@ -6,60 +6,53 @@ persists them to disk with versioned settings, and tracks changes across
 slicer versions.
 """
 
-from .models import (
-    SlicerType,
-    ProfileType,
-    ParsedProfile,
-    StoredProfile,
-    IngestionReport,
-    SourceConfig,
-    VersionInfo,
-    DownloadResult,
-)
-from .store import ProfileStore
-from .index import ProfileIndex, is_profile_generic, is_profile_model_specific
+from .brands import BRAND_MAPS, normalize_brand
 from .conditions import evaluate_printer_condition
-from .brands import normalize_brand, BRAND_MAPS
-from .matching import match_printer_model
+from .index import ProfileIndex, is_profile_generic, is_profile_model_specific
 from .mapping import (
-    map_printer_models,
+    export_output,
     map_filament_profiles,
     map_print_profiles,
-    export_output,
+    map_printer_models,
     run_mapping_pipeline,
 )
+from .matching import match_printer_model
+from .models import (
+    DownloadResult,
+    IngestionReport,
+    ParsedProfile,
+    ProfileType,
+    SlicerType,
+    SourceConfig,
+    StoredProfile,
+    VersionInfo,
+)
 from .pipeline import DownloadError, ParseError, StoreError
+from .store import ProfileStore
 
 __all__ = [
-    # Enums
-    "SlicerType",
-    "ProfileType",
-    # Models
-    "ParsedProfile",
-    "StoredProfile",
-    "IngestionReport",
-    "SourceConfig",
-    "VersionInfo",
+    "BRAND_MAPS",
+    "DownloadError",
     "DownloadResult",
-    # Store & Index
-    "ProfileStore",
+    "IngestionReport",
+    "ParseError",
+    "ParsedProfile",
     "ProfileIndex",
-    # Helpers
+    "ProfileStore",
+    "ProfileType",
+    "SlicerType",
+    "SourceConfig",
+    "StoreError",
+    "StoredProfile",
+    "VersionInfo",
     "evaluate_printer_condition",
+    "export_output",
     "is_profile_generic",
     "is_profile_model_specific",
-    # Brands & Matching
-    "normalize_brand",
-    "BRAND_MAPS",
-    "match_printer_model",
-    # Mapping Pipeline
-    "map_printer_models",
     "map_filament_profiles",
     "map_print_profiles",
-    "export_output",
+    "map_printer_models",
+    "match_printer_model",
+    "normalize_brand",
     "run_mapping_pipeline",
-    # Exceptions
-    "DownloadError",
-    "ParseError",
-    "StoreError",
 ]

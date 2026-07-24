@@ -1,9 +1,10 @@
 import json
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any
 
+from ..models import ParsedProfile, ProfileType
 from .base import BaseParser
-from ..models import ProfileType, ParsedProfile
 
 
 def _first(value: Any) -> str | None:

@@ -1,9 +1,9 @@
 import json
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Iterator
 
+from ..models import ParsedProfile, ProfileType, SlicerType
 from .base import BaseParser
-from ..models import SlicerType, ProfileType, ParsedProfile
 
 
 class PrusaSlicerParser(BaseParser):

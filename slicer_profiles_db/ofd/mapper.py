@@ -11,6 +11,7 @@ from pathlib import Path
 
 from slicer_profiles_db import ProfileIndex, SlicerType, StoredProfile
 from slicer_profiles_db.index import build_generic_profile_index, resolve_generic_id
+
 from .vendor_map import get_profile_prefixes
 
 logger = logging.getLogger(__name__)

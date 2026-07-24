@@ -2,11 +2,9 @@
 ProfileIndex: in-memory O(1) lookups over stored profiles.
 """
 
-from typing import Optional
-
-from .models import SlicerType, ProfileType, StoredProfile
-from .store import ProfileStore
 from .conditions import evaluate_printer_condition
+from .models import ProfileType, SlicerType, StoredProfile
+from .store import ProfileStore
 
 
 class ProfileIndex:
@@ -35,7 +33,7 @@ class ProfileIndex:
             SlicerType, dict[str, dict[str, list[StoredProfile]]]
         ] = {}
 
-    def build(self, slicers: Optional[list[SlicerType]] = None) -> None:
+    def build(self, slicers: list[SlicerType] | None = None) -> None:
         """Build indexes from the store."""
         self._by_slicer_id.clear()
         self._by_name.clear()
@@ -182,7 +180,7 @@ class ProfileIndex:
         printer_name: str,
         printer_data: dict,
         slicer: str = "bambustudio",
-    ) -> Optional[StoredProfile]:
+    ) -> StoredProfile | None:
         """Filter profiles by printer compatibility (evaluates conditions)."""
         for profile in profiles:
             compat = profile.get_latest("compatible_printers") or []
@@ -235,7 +233,7 @@ class ProfileIndex:
         printer_data: dict,
         filament_name: str,
         filament_type: str,
-    ) -> Optional[StoredProfile]:
+    ) -> StoredProfile | None:
         """
         Hierarchical search (ported from printer-slicing-db/find_filament_profile.py):
         1. Specific: vendor + name + printer compatible

@@ -9,7 +9,10 @@ under /out.
 
 import hashlib
 import json
+import logging
 from pathlib import Path
+
+logger = logging.getLogger(__name__)
 
 
 class ResourceStore:
@@ -77,9 +80,8 @@ class ResourceStore:
             if (
                 manifest_filename == filename
                 or manifest_filename.lower() == filename_lower
-            ):
-                if self.get_path(hash_hex):
-                    matches.append(hash_hex)
+            ) and self.get_path(hash_hex):
+                matches.append(hash_hex)
         return sorted(matches)
 
     def find_by_filename(self, filename: str) -> list[Path]:
@@ -223,6 +225,7 @@ def collect_referenced_hashes(store_root: Path, slicer_value: str) -> set[str]:
         try:
             data = json.loads(json_file.read_text(encoding="utf-8"))
             _collect_hash_refs(data, hashes)
-        except Exception:
+        except (OSError, UnicodeError, ValueError) as exc:
+            logger.debug("Skipping unreadable profile %s: %s", json_file, exc)
             continue
     return hashes

@@ -104,38 +104,16 @@ def split_prusaslicer_bundle(
 
     for profile_type, profiles in profiles_by_type.items():
         squashed: dict[str, dict[str, str]] = {}
-
-        def squash_inherits(profile_name: str) -> dict[str, str]:
-            if profile_name in squashed:
-                return squashed[profile_name]
-
-            if profile_name not in profiles:
-                return {}
-
-            profile = profiles[profile_name]
-            if "inherits" not in profile:
-                return profile
-
-            profile_out: dict[str, str] = {}
-            inherits = [x.strip() for x in profile["inherits"].split(";")]
-            for parent in inherits:
-                if parent:
-                    profile_out.update(squash_inherits(parent))
-            profile_out.update(profile)
-            del profile_out["inherits"]
-            squashed[profile_name] = profile_out
-            return squashed[profile_name]
-
         settings_id_key = _SETTINGS_ID_KEY.get(profile_type)
 
-        for name, data in profiles.items():
+        for name in profiles:
             # Skip template profiles (prefixed with *)
             if name.startswith("*"):
                 continue
 
             safe_name = name.replace("/", " ")
             out_path = output_dir / f"{safe_name}.json"
-            data_out = squash_inherits(name)
+            data_out = _squash_ini_inheritance(name, profiles, squashed)
 
             # Add the settings ID to the output
             if settings_id_key and settings_id_key != "name":
@@ -146,6 +124,32 @@ def split_prusaslicer_bundle(
             created_files.append(out_path)
 
     return created_files
+
+
+def _squash_ini_inheritance(
+    profile_name: str,
+    profiles: dict[str, dict[str, str]],
+    squashed: dict[str, dict[str, str]],
+) -> dict[str, str]:
+    """Resolve one INI profile using explicit per-section state."""
+    if profile_name in squashed:
+        return squashed[profile_name]
+    if profile_name not in profiles:
+        return {}
+
+    profile = profiles[profile_name]
+    if "inherits" not in profile:
+        return profile
+
+    profile_out: dict[str, str] = {}
+    for parent in profile["inherits"].split(";"):
+        parent = parent.strip()
+        if parent:
+            profile_out.update(_squash_ini_inheritance(parent, profiles, squashed))
+    profile_out.update(profile)
+    del profile_out["inherits"]
+    squashed[profile_name] = profile_out
+    return profile_out
 
 
 def squash_slic3r_profiles(

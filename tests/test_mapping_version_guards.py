@@ -30,13 +30,13 @@ class MappingVersionGuardTests(unittest.TestCase):
             },
         )
 
-        snapshot = _evaluate_stable(
-            profile, {SlicerType.BAMBUSTUDIO: "02.07.01.62"}
-        )
+        snapshot = _evaluate_stable(profile, {SlicerType.BAMBUSTUDIO: "02.07.01.62"})
 
         self.assertEqual(snapshot, {"gcode": "safe gcode"})
 
-    def test_evaluate_stable_keeps_the_newest_local_profile_when_supported(self) -> None:
+    def test_evaluate_stable_keeps_the_newest_local_profile_when_supported(
+        self,
+    ) -> None:
         profile = StoredProfile(
             slicer=SlicerType.BAMBUSTUDIO.value,
             profile_type="machine",
@@ -47,13 +47,13 @@ class MappingVersionGuardTests(unittest.TestCase):
             settings={"gcode": {"02.07.00.55": "safe gcode"}},
         )
 
-        snapshot = _evaluate_stable(
-            profile, {SlicerType.BAMBUSTUDIO: "02.07.01.62"}
-        )
+        snapshot = _evaluate_stable(profile, {SlicerType.BAMBUSTUDIO: "02.07.01.62"})
 
         self.assertEqual(snapshot, {"gcode": "safe gcode"})
 
-    def test_external_profile_versions_are_not_compared_to_runtime_versions(self) -> None:
+    def test_external_profile_versions_are_not_compared_to_runtime_versions(
+        self,
+    ) -> None:
         for slicer in (
             SlicerType.PRUSASLICER,
             SlicerType.SUPERSLICER,
