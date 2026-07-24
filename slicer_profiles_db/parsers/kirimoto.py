@@ -246,6 +246,12 @@ class KiriMotoParser(BaseParser):
                 process_name = str(
                     process.get("processName") or f"{display_name} process {index + 1}"
                 )
+                # Kiri:Moto commonly reuses process names such as "Bambu PLA"
+                # across multiple devices from the same vendor.  The persistent
+                # store is keyed by vendor/type/name, so keep a device-qualified
+                # storage identity while preserving Kiri's display/runtime name
+                # in the evaluated settings.
+                storage_name = f"{process_name} @{display_name}"
                 process.update(
                     {
                         "type": "process",
@@ -257,12 +263,15 @@ class KiriMotoParser(BaseParser):
                     yield ParsedProfile(
                         slicer=self.slicer_type,
                         profile_type=ProfileType.PRINT,
-                        name=process_name,
+                        name=storage_name,
                         vendor=vendor,
                         settings=process,
                         source_path=path,
-                        native_id=f"{path.stem}:process:{index}",
-                        context={"printer_model": display_name},
+                        native_id=(native_id := f"{path.stem}:process:{index}"),
+                        context={
+                            "native_id": native_id,
+                            "printer_model": display_name,
+                        },
                     )
 
                 filament_type = _infer_filament_type(raw_process, process_name)
@@ -283,13 +292,16 @@ class KiriMotoParser(BaseParser):
                     yield ParsedProfile(
                         slicer=self.slicer_type,
                         profile_type=ProfileType.FILAMENT,
-                        name=process_name,
+                        name=storage_name,
                         vendor=vendor,
                         settings=filament,
                         source_path=path,
                         filament_type=filament_type,
-                        native_id=f"{path.stem}:filament:{index}",
-                        context={"printer_model": display_name},
+                        native_id=(native_id := f"{path.stem}:filament:{index}"),
+                        context={
+                            "native_id": native_id,
+                            "printer_model": display_name,
+                        },
                     )
 
     def _glob_profiles(self, vendor_dir: Path) -> Iterator[Path]:

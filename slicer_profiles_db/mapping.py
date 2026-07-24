@@ -1648,7 +1648,15 @@ def _add_filament_output(
         )
 
     is_generic_name = filament_name.lower().startswith("generic")
-    if ofd_index and not filament_db_id and not is_generic_name:
+    # Kiri:Moto embeds printer-specific material roles directly in each
+    # device profile.  They are valid slicing presets even when they do not
+    # correspond to a product entry in Open Filament Database.
+    if (
+        ofd_index
+        and not filament_db_id
+        and not is_generic_name
+        and slicer_val != SlicerType.KIRIMOTO.value
+    ):
         return
 
     entries_by_payload = compatible_filaments.setdefault(output_name, {})
