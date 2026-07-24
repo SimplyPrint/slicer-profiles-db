@@ -8,6 +8,11 @@ from slicer_profiles_db.mapping import (
     _apply_bed_visual_fallback,
     _evaluate_stable,
     _machine_model_export,
+    _model_variants,
+    _parse_variant_from_name,
+    _profile_matches_printer,
+    _public_variant_payload,
+    _same_variant,
     _write_import_manifest,
     fetch_sp_slicer_versions,
     map_printer_models,
@@ -152,6 +157,99 @@ class MappingVersionGuardTests(unittest.TestCase):
         self.assertEqual(
             exported["bed_assets"]["model"]["mesh_selection"],
             "largest_face_count",
+        )
+
+    def test_hardware_variant_parser_preserves_high_flow_identity(self) -> None:
+        self.assertEqual(
+            _parse_variant_from_name("Prusa MK4S HF0.4 nozzle"),
+            "HF0.4",
+        )
+        self.assertEqual(
+            _parse_variant_from_name("Prusa CORE One HF 0.6 nozzle"),
+            "HF0.6",
+        )
+        self.assertEqual(
+            _parse_variant_from_name("Flashforge Guider4 0.8 HF nozzle"),
+            "HF0.8",
+        )
+        self.assertTrue(_same_variant("HF0.4", "0.4HF"))
+        self.assertFalse(_same_variant("HF0.4", "0.4"))
+
+    def test_machine_model_discovers_omitted_high_flow_sibling_roles(self) -> None:
+        profile = StoredProfile(
+            slicer=SlicerType.ORCASLICER.value,
+            profile_type=ProfileType.MACHINE_MODEL.value,
+            name="Prusa MK4S",
+            vendor="Prusa",
+            first_seen="2.4.0",
+            last_seen="2.4.0",
+            settings={},
+        )
+        variants = _model_variants(
+            profile,
+            {
+                "name": "Prusa MK4S",
+                "nozzle_diameter": "0.4;0.6",
+            },
+            {
+                "standard": {"name": "Prusa MK4S 0.4 nozzle"},
+                "high-flow": {"name": "Prusa MK4S HF0.4 nozzle"},
+                "child-model": {"name": "Prusa MK4S MMU3 HF0.4 nozzle"},
+            },
+        )
+
+        self.assertEqual(variants, ["0.4", "0.6", "HF0.4"])
+
+    def test_high_flow_variant_payload_has_explicit_portable_attributes(
+        self,
+    ) -> None:
+        payload = _public_variant_payload(
+            {
+                "name": "Flashforge Guider4 0.4 HF nozzle",
+                "data": {"printer_variant": "0.4HF"},
+            },
+            variant_key="0.4HF",
+        )
+
+        self.assertEqual(
+            payload["attributes"],
+            {
+                "nozzle_diameter": 0.4,
+                "nozzle_volume_type": "high_flow",
+            },
+        )
+
+    def test_profile_condition_overrides_broad_printer_compatibility(self) -> None:
+        shared = {
+            "compat": ["Prusa MK4S HF0.4 nozzle"],
+            "printer_identities": {"Prusa MK4S HF0.4 nozzle"},
+            "printer_name": "Prusa MK4S HF0.4 nozzle",
+            "model_name": "Prusa MK4S",
+            "variant": "HF0.4",
+            "variant_data": {
+                "nozzle_diameter": ["0.4"],
+                "printer_notes": ["PRINTER_MODEL_MK4S\nHF_NOZZLE"],
+            },
+            "slicer": SlicerType.ORCASLICER.value,
+        }
+
+        self.assertFalse(
+            _profile_matches_printer(
+                **shared,
+                condition=(
+                    "nozzle_diameter[0]==0.4 "
+                    "and printer_notes!~/.*HF_NOZZLE.*/"
+                ),
+            )
+        )
+        self.assertTrue(
+            _profile_matches_printer(
+                **shared,
+                condition=(
+                    "nozzle_diameter[0]==0.4 "
+                    "and printer_notes=~/.*HF_NOZZLE.*/"
+                ),
+            )
         )
 
     def test_bed_visual_fallback_only_fills_missing_hardware_assets(self) -> None:

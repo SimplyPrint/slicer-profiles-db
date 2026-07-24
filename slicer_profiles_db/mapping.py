@@ -152,14 +152,18 @@ def _profile_payload(
     return payload
 
 
-def _model_variants(profile: StoredProfile, data: Mapping[str, Any]) -> list[str]:
+def _model_variants(
+    profile: StoredProfile,
+    data: Mapping[str, Any],
+    variant_lookup: Mapping[str, dict[str, Any]] | None = None,
+) -> list[str]:
     variants = profile.context.get("variants")
     if isinstance(variants, list):
         runtime = profile.context.get("runtime")
         active_tool_index = (
             runtime.get("active_tool_index") if isinstance(runtime, Mapping) else None
         )
-        return [
+        declared = [
             str(item["key"])
             for item in variants
             if isinstance(item, dict)
@@ -170,14 +174,32 @@ def _model_variants(profile: StoredProfile, data: Mapping[str, Any]) -> list[str
                 or active_tool_index in item["runtime_compatible_tool_indices"]
             )
         ]
+    else:
+        nozzle_str = data.get("nozzle_diameter", "")
+        if isinstance(nozzle_str, list):
+            nozzle_str = ";".join(str(nozzle) for nozzle in nozzle_str)
+        variants_raw = data.get("variants", nozzle_str)
+        if isinstance(variants_raw, str):
+            declared = [
+                value.strip() for value in variants_raw.split(";") if value.strip()
+            ]
+        else:
+            declared = [str(value) for value in variants_raw] if variants_raw else []
 
-    nozzle_str = data.get("nozzle_diameter", "")
-    if isinstance(nozzle_str, list):
-        nozzle_str = ";".join(str(nozzle) for nozzle in nozzle_str)
-    variants_raw = data.get("variants", nozzle_str)
-    if isinstance(variants_raw, str):
-        return [value.strip() for value in variants_raw.split(";") if value.strip()]
-    return [str(value) for value in variants_raw] if variants_raw else []
+    if not variant_lookup:
+        return declared
+
+    # Orca/Bambu-family machine-model records are not always complete. For
+    # example, current Prusa MK4S/CORE One records list only standard nozzle
+    # diameters while sibling machine roles also publish HF0.x configurations.
+    # Discover only direct "<model> <hardware> nozzle" siblings so variants
+    # remain producer-owned without accidentally pulling in similarly named
+    # printer models.
+    discovered = _discover_named_machine_variants(profile, data, variant_lookup)
+    for variant in discovered:
+        if not any(_same_variant(variant, existing) for existing in declared):
+            declared.append(variant)
+    return declared
 
 
 def _format_variant_scalar(value: Any) -> str:
@@ -568,6 +590,13 @@ def _public_variant_payload(
         public_context.setdefault("selection_defaults", dict(selection_defaults))
     if variant_key is not None:
         public_context.setdefault("variant_key", str(variant_key))
+        parsed_variant = _parse_nozzle_variant_token(variant_key)
+        if parsed_variant is not None and parsed_variant[1]:
+            attributes = payload.get("attributes")
+            attributes = dict(attributes) if isinstance(attributes, Mapping) else {}
+            attributes.setdefault("nozzle_diameter", parsed_variant[0])
+            attributes.setdefault("nozzle_volume_type", "high_flow")
+            payload["attributes"] = attributes
     identity = _structured_variant_identity(public_context)
     if identity is not None:
         # Validate and normalize the identity contract before it reaches the
@@ -634,11 +663,11 @@ def _named_machine_variant_matches(
         declared_values.extend(raw_nozzles)
     elif raw_nozzles is not None:
         declared_values.append(raw_nozzles)
-    if str(variant) not in {
-        _format_variant_scalar(value)
+    if not any(
+        _same_variant(str(variant), _format_variant_scalar(value))
         for value in declared_values
         if value not in (None, "")
-    }:
+    ):
         return False
 
     normalized_model = _normalise_native_identity(model_name)
@@ -1272,12 +1301,16 @@ def _build_variant_map(
 def _parse_variant_from_name(name: str) -> str | None:
     """Extract nozzle-like variant value from a machine profile name."""
     match = re.search(
-        r"(?<![A-Za-z0-9.])(HF)?(0\.\d+|[12]\.\d+)\s*(?:mm\s*)?nozzle\b",
+        r"(?<![A-Za-z0-9.])"
+        r"(?:(HF|high[\s_-]*flow)\s*)?"
+        r"(0\.\d+|[12]\.\d+)\s*(?:mm\s*)?"
+        r"(?:(HF|high[\s_-]*flow)\s*)?"
+        r"nozzle\b",
         name,
         re.IGNORECASE,
     )
     if match:
-        prefix = "HF" if match.group(1) else ""
+        prefix = "HF" if match.group(1) or match.group(3) else ""
         return prefix + match.group(2)
 
     # Some upstream machine profiles encode only the nozzle value in the name
@@ -1288,6 +1321,110 @@ def _parse_variant_from_name(name: str) -> str | None:
     if match:
         return match.group(1)
     return None
+
+
+def _parse_nozzle_variant_token(value: Any) -> tuple[float, bool] | None:
+    """Parse canonical and vendor spellings of a nozzle hardware key."""
+
+    normalized = re.sub(
+        r"high[\s_-]*flow",
+        "HF",
+        str(value).strip(),
+        flags=re.IGNORECASE,
+    )
+    normalized = re.sub(r"\s+", "", normalized)
+    normalized = re.sub(r"mm", "", normalized, flags=re.IGNORECASE)
+    match = re.fullmatch(
+        r"(?:(HF))?(\d+(?:\.\d+)?)(?:(HF))?",
+        normalized,
+        re.IGNORECASE,
+    )
+    if not match:
+        return None
+    size = float(match.group(2))
+    if size <= 0 or size >= 4:
+        return None
+    return size, bool(match.group(1) or match.group(3))
+
+
+def _direct_named_variant(model_name: str, profile_name: str) -> str | None:
+    """Return a direct hardware suffix without matching child model names."""
+
+    if not profile_name.casefold().startswith(model_name.casefold()):
+        return None
+    boundary = profile_name[len(model_name) : len(model_name) + 1]
+    if boundary and boundary not in {" ", "\t", "(", "-", "–", "—"}:
+        return None
+    suffix = profile_name[len(model_name) :].strip(" \t-–—()")
+    match = re.fullmatch(
+        r"(?:(HF|high[\s_-]*flow)\s*)?"
+        r"(\d+(?:\.\d+)?)\s*(?:mm\s*)?"
+        r"(?:(HF|high[\s_-]*flow)\s*)?"
+        r"nozzle",
+        suffix,
+        re.IGNORECASE,
+    )
+    if not match:
+        return None
+    prefix = "HF" if match.group(1) or match.group(3) else ""
+    return prefix + match.group(2)
+
+
+def _discover_named_machine_variants(
+    machine_model: StoredProfile,
+    machine_data: Mapping[str, Any],
+    variant_lookup: Mapping[str, dict[str, Any]],
+) -> list[str]:
+    """Discover machine roles omitted from a machine-model variant list."""
+
+    model_name = _model_display_name(
+        machine_model,
+        machine_data,
+        machine_model.name,
+    )
+    model_names = _variant_display_model_names(model_name)
+    for candidate in (
+        machine_model.name,
+        machine_model.context.get("display_name"),
+        machine_data.get("name"),
+    ):
+        if isinstance(candidate, str) and candidate:
+            model_names.extend(_variant_display_model_names(candidate))
+    model_names = sorted(set(model_names), key=len, reverse=True)
+
+    unique_items: list[dict[str, Any]] = []
+    seen: set[int] = set()
+    for item in variant_lookup.values():
+        identity = id(item)
+        if identity in seen:
+            continue
+        seen.add(identity)
+        unique_items.append(item)
+
+    discovered: list[str] = []
+    for item in unique_items:
+        profile_name = str(item.get("name", ""))
+        variant = next(
+            (
+                direct
+                for candidate in model_names
+                if (direct := _direct_named_variant(candidate, profile_name)) is not None
+            ),
+            None,
+        )
+        if variant is not None and not any(
+            _same_variant(variant, existing) for existing in discovered
+        ):
+            discovered.append(variant)
+
+    return sorted(
+        discovered,
+        key=lambda variant: (
+            (_parse_nozzle_variant_token(variant) or (float("inf"), False))[1],
+            (_parse_nozzle_variant_token(variant) or (float("inf"), False))[0],
+            variant,
+        ),
+    )
 
 
 def _variant_candidate_is_better(
@@ -1381,9 +1518,8 @@ def map_filament_profiles(
                 model_name = _model_display_name(mm, mm_data, name)
 
                 # Get nozzle variants
-                variants = _model_variants(mm, mm_data)
-
                 variant_lookup = model_map.variant_map.get(slicer_val, {})
+                variants = _model_variants(mm, mm_data, variant_lookup)
                 uses_resource_constraints = _uses_material_resource_constraints(mm)
 
                 # For each variant, find compatible filament profiles
@@ -1440,18 +1576,19 @@ def map_filament_profiles(
                                 fp,
                                 fp_data,
                             )
-                        elif printer_identities.intersection(
-                            compat
-                        ) or _compat_matches_printer(
-                            compat, printer_name, model_name, variant
-                        ):
-                            is_compatible = True
                         else:
-                            condition = fp_data.get("compatible_printers_condition")
-                            if condition:
-                                is_compatible = evaluate_printer_condition(
-                                    condition, variant_data, slicer_val
-                                )
+                            is_compatible = _profile_matches_printer(
+                                compat=compat,
+                                printer_identities=printer_identities,
+                                printer_name=printer_name,
+                                model_name=model_name,
+                                variant=variant,
+                                condition=fp_data.get(
+                                    "compatible_printers_condition"
+                                ),
+                                variant_data=variant_data,
+                                slicer=slicer_val,
+                            )
 
                         if not is_compatible:
                             continue
@@ -1582,10 +1719,13 @@ def _variant_matches_item(variant: str, item: dict[str, Any]) -> bool:
 def _same_variant(left: str, right: str) -> bool:
     if left == right:
         return True
-    try:
-        return float(left.removeprefix("HF")) == float(right.removeprefix("HF"))
-    except ValueError:
-        return False
+    left_variant = _parse_nozzle_variant_token(left)
+    right_variant = _parse_nozzle_variant_token(right)
+    return (
+        left_variant is not None
+        and right_variant is not None
+        and left_variant == right_variant
+    )
 
 
 def _compat_matches_printer(
@@ -1596,6 +1736,28 @@ def _compat_matches_printer(
         return True
     variant_prefix = f"{model_name} {variant}".strip()
     return any(item.startswith(variant_prefix) for item in compat)
+
+
+def _profile_matches_printer(
+    *,
+    compat: list[str],
+    printer_identities: set[str],
+    printer_name: str,
+    model_name: str,
+    variant: str,
+    condition: Any,
+    variant_data: dict[str, Any],
+    slicer: str,
+) -> bool:
+    """Apply an upstream condition as the authoritative compatibility rule."""
+
+    if isinstance(condition, str) and condition.strip():
+        return evaluate_printer_condition(condition, variant_data, slicer)
+
+    return bool(
+        printer_identities.intersection(compat)
+        or _compat_matches_printer(compat, printer_name, model_name, variant)
+    )
 
 
 def _global_filament_templates(
@@ -1740,9 +1902,8 @@ def map_print_profiles(
                 model_name = _model_display_name(mm, mm_data, name)
 
                 # Get variants
-                variants = _model_variants(mm, mm_data)
-
                 variant_lookup = model_map.variant_map.get(slicer_val, {})
+                variants = _model_variants(mm, mm_data, variant_lookup)
                 uses_definition_constraints = _uses_definition_quality_constraints(mm)
 
                 # Get all print profiles for this vendor
@@ -1822,18 +1983,19 @@ def map_print_profiles(
                                     or selected_variant in compatible_variants
                                 )
                             )
-                        elif printer_identities.intersection(
-                            compat
-                        ) or _compat_matches_printer(
-                            compat, printer_name, model_name, variant
-                        ):
-                            is_compatible = True
                         else:
-                            condition = pp_data.get("compatible_printers_condition")
-                            if condition:
-                                is_compatible = evaluate_printer_condition(
-                                    condition, variant_data, slicer_val
-                                )
+                            is_compatible = _profile_matches_printer(
+                                compat=compat,
+                                printer_identities=printer_identities,
+                                printer_name=printer_name,
+                                model_name=model_name,
+                                variant=variant,
+                                condition=pp_data.get(
+                                    "compatible_printers_condition"
+                                ),
+                                variant_data=variant_data,
+                                slicer=slicer_val,
+                            )
 
                         if not is_compatible:
                             continue
@@ -1944,9 +2106,8 @@ def export_output(
 
                 # Build variants
                 model_name_key = _model_display_name(mm, mm_data, name)
-                variants = _model_variants(mm, mm_data)
-
                 variant_lookup = model_map.variant_map.get(slicer_val, {})
+                variants = _model_variants(mm, mm_data, variant_lookup)
                 sub_data["variants"] = {}
 
                 for variant in variants:
