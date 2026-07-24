@@ -6,6 +6,7 @@ from unittest.mock import Mock, patch
 
 from slicer_profiles_db.mapping import (
     _apply_bed_visual_fallback,
+    _bambu_runtime_variants,
     _evaluate_stable,
     _machine_model_export,
     _model_variants,
@@ -218,6 +219,70 @@ class MappingVersionGuardTests(unittest.TestCase):
                 "nozzle_volume_type": "high_flow",
             },
         )
+
+    def test_bambu_embedded_high_flow_choice_becomes_runtime_variant(self) -> None:
+        variants = _bambu_runtime_variants(
+            "0.4",
+            {
+                "name": "Bambu Lab X1 Carbon 0.4 nozzle",
+                "data": {
+                    "name": "Bambu Lab X1 Carbon 0.4 nozzle",
+                    "nozzle_diameter": ["0.4"],
+                    "default_nozzle_volume_type": ["Standard"],
+                    "extruder_variant_list": [
+                        "Direct Drive Standard,Direct Drive High Flow",
+                    ],
+                },
+                "context": {"variant_key": "0.4"},
+            },
+        )
+
+        self.assertEqual([key for key, _ in variants], ["0.4", "HF0.4"])
+        standard = variants[0][1]
+        high_flow = variants[1][1]
+        self.assertEqual(
+            standard["attributes"],
+            {
+                "nozzle_diameter": 0.4,
+                "nozzle_volume_type": "standard",
+            },
+        )
+        self.assertEqual(
+            high_flow["attributes"],
+            {
+                "nozzle_diameter": 0.4,
+                "nozzle_volume_type": "high_flow",
+            },
+        )
+        self.assertEqual(
+            high_flow["data"]["default_nozzle_volume_type"],
+            ["High Flow"],
+        )
+        self.assertEqual(
+            high_flow["data"]["name"],
+            "Bambu Lab X1 Carbon 0.4 nozzle",
+        )
+        self.assertEqual(
+            high_flow["name"],
+            "Bambu Lab X1 Carbon HF0.4 nozzle",
+        )
+
+    def test_bambu_does_not_invent_hf_when_one_tool_lacks_it(self) -> None:
+        variants = _bambu_runtime_variants(
+            "0.4",
+            {
+                "name": "Dual tool printer 0.4 nozzle",
+                "data": {
+                    "nozzle_diameter": ["0.4", "0.4"],
+                    "extruder_variant_list": [
+                        "Direct Drive Standard,Direct Drive High Flow",
+                        "Bowden Standard",
+                    ],
+                },
+            },
+        )
+
+        self.assertEqual([key for key, _ in variants], ["0.4"])
 
     def test_profile_condition_overrides_broad_printer_compatibility(self) -> None:
         shared = {

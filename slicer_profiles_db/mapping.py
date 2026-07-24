@@ -608,6 +608,104 @@ def _public_variant_payload(
     return payload
 
 
+def _bambu_volume_type_options(data: Mapping[str, Any]) -> set[str]:
+    """Return nozzle-volume choices supported by every declared Bambu tool.
+
+    Bambu stores these as comma-separated extruder choices inside each
+    machine role instead of publishing separate ``HF0.x`` machine profiles.
+    SimplyPrint's portable selector is global, so only choices supported by
+    every tool can safely become runtime variants.
+    """
+
+    declared = data.get("extruder_variant_list")
+    if not isinstance(declared, list) or not declared:
+        return set()
+
+    per_tool: list[set[str]] = []
+    for raw_choices in declared:
+        if not isinstance(raw_choices, str) or not raw_choices.strip():
+            continue
+        choices: set[str] = set()
+        for raw_choice in raw_choices.split(","):
+            choice = raw_choice.strip().casefold()
+            if choice.endswith("standard"):
+                choices.add("standard")
+            if choice.endswith("high flow") and "tpu high flow" not in choice:
+                choices.add("high_flow")
+        if choices:
+            per_tool.append(choices)
+
+    return set.intersection(*per_tool) if per_tool else set()
+
+
+def _bambu_runtime_variants(
+    variant_key: str,
+    payload: Mapping[str, Any],
+) -> list[tuple[str, dict[str, Any]]]:
+    """Expand one Bambu machine role into portable standard/HF variants."""
+
+    base = copy.deepcopy(dict(payload))
+    data = base.get("data")
+    if not isinstance(data, Mapping):
+        return [(variant_key, base)]
+
+    parsed = _parse_nozzle_variant_token(variant_key)
+    if parsed is None or parsed[1]:
+        return [(variant_key, base)]
+    diameter = parsed[0]
+
+    options = _bambu_volume_type_options(data)
+    if not {"standard", "high_flow"}.issubset(options):
+        return [(variant_key, base)]
+
+    default_values = data.get("default_nozzle_volume_type")
+    nozzle_values = data.get("nozzle_diameter")
+    value_count = (
+        len(default_values)
+        if isinstance(default_values, list) and default_values
+        else len(nozzle_values)
+        if isinstance(nozzle_values, list) and nozzle_values
+        else 1
+    )
+
+    def build(volume_type: str, key: str) -> dict[str, Any]:
+        result = copy.deepcopy(base)
+        result_data = dict(result["data"])
+        result_data["default_nozzle_volume_type"] = [
+            "High Flow" if volume_type == "high_flow" else "Standard"
+        ] * value_count
+        result["data"] = result_data
+
+        attributes = result.get("attributes")
+        attributes = dict(attributes) if isinstance(attributes, Mapping) else {}
+        attributes["nozzle_diameter"] = diameter
+        attributes["nozzle_volume_type"] = volume_type
+        result["attributes"] = attributes
+
+        context = result.get("context")
+        context = dict(context) if isinstance(context, Mapping) else {}
+        context["variant_key"] = key
+        result["context"] = context
+        return result
+
+    standard = build("standard", variant_key)
+    high_flow_key = f"HF{diameter:g}"
+    high_flow = build("high_flow", high_flow_key)
+    source_name = high_flow.get("name")
+    if isinstance(source_name, str) and source_name:
+        high_flow["name"] = re.sub(
+            rf"(?<![\d.]){re.escape(f'{diameter:g}')}(?:\s*mm)?(?=\s+nozzle\b)",
+            high_flow_key,
+            source_name,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+        if high_flow["name"] == source_name:
+            high_flow["name"] = f"{source_name} (High Flow)"
+
+    return [(variant_key, standard), (high_flow_key, high_flow)]
+
+
 def _model_display_name(
     profile: StoredProfile, data: Mapping[str, Any], fallback: str
 ) -> str:
@@ -2115,11 +2213,24 @@ def export_output(
                         mm, mm_data, model_name_key, variant, variant_lookup
                     )
                     if lookup is not None:
-                        sub_data["variants"][variant] = _public_variant_payload(
+                        payload = _public_variant_payload(
                             lookup,
                             selection_defaults,
                             variant,
                         )
+                        runtime_variants = (
+                            _bambu_runtime_variants(variant, payload)
+                            if slicer == SlicerType.BAMBUSTUDIO
+                            else [(variant, payload)]
+                        )
+                        for runtime_key, runtime_payload in runtime_variants:
+                            existing = sub_data["variants"].get(runtime_key)
+                            if existing is not None and existing != runtime_payload:
+                                raise ValueError(
+                                    f"duplicate runtime variant {runtime_key!r} "
+                                    f"for {model_name_key!r}"
+                                )
+                            sub_data["variants"][runtime_key] = runtime_payload
 
                 machine_profiles_data.append(sub_data)
 
