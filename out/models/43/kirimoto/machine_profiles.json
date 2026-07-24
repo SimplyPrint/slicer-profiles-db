@@ -1,0 +1,213 @@
+[
+    {
+        "machine_model": {
+            "bed_belt": false,
+            "bed_depth": 220,
+            "bed_width": 220,
+            "build_height": 300,
+            "name": "Creality Ender 3",
+            "nozzle_diameter": [
+                0.4
+            ],
+            "printer_model": "Creality Ender 3",
+            "selection_defaults": {
+                "filament_profile": {
+                    "match": {
+                        "name": "Ender 3 PLA"
+                    }
+                },
+                "process_profile": {
+                    "match": {
+                        "name": "Ender 3 PLA"
+                    }
+                }
+            },
+            "type": "machine_model",
+            "variants": [
+                "0.4"
+            ]
+        },
+        "variants": {
+            "0.4": {
+                "context": {
+                    "printer_model": "Creality Ender 3",
+                    "selection_defaults": {
+                        "filament_profile": {
+                            "match": {
+                                "name": "Ender 3 PLA"
+                            }
+                        },
+                        "process_profile": {
+                            "match": {
+                                "name": "Ender 3 PLA"
+                            }
+                        }
+                    },
+                    "variant_key": "0.4"
+                },
+                "data": {
+                    "bedBelt": false,
+                    "bedDepth": 220,
+                    "bedRound": false,
+                    "bedWidth": 220,
+                    "deviceName": "Creality Ender 3",
+                    "deviceZMax": 0,
+                    "extNozzle": 0.4,
+                    "extrudeAbs": true,
+                    "extruders": [
+                        {
+                            "extFilament": 1.75,
+                            "extNozzle": 0.4,
+                            "extOffsetX": 0,
+                            "extOffsetY": 0
+                        }
+                    ],
+                    "fwRetract": false,
+                    "gcodeChange": [],
+                    "gcodeDwell": [],
+                    "gcodeFExt": "gcode",
+                    "gcodeFan": [
+                        "M106 S{fan_speed}"
+                    ],
+                    "gcodeLaserOff": [],
+                    "gcodeLaserOn": [],
+                    "gcodeLayer": [
+                        ";; LAYER {layer} of {layers}",
+                        "M117 Layer {layer} of {layers}"
+                    ],
+                    "gcodePost": [
+                        "G0 E-1 F900  ; retract slightly",
+                        "M104 S0      ; turn off nozzle heat",
+                        "M140 S0      ; turn off bed heat",
+                        "M107         ; turn off fan",
+                        "G0 F3000     ; set feedrate",
+                        "G0 Y210 Z210 ; serve up print",
+                        "G4           ; wait",
+                        "M84          ; disable steppers",
+                        "M117 Print Done"
+                    ],
+                    "gcodePre": [
+                        "M104 S160          ; set extruder temp",
+                        "M140 S{bed_temp}   ; set bed temp",
+                        "M190 S{bed_temp}   ; wait for bed temp",
+                        "G28 W              ; home all without mesh bed level",
+                        "G80                ; mesh bed leveling",
+                        "G90                ; set absolute positioning mode",
+                        "M83                ; set relative positioning for extruder",
+                        "G1 F1000           ; set feedrate",
+                        "G1 Y-3.0 Z0.5      ; park outside print area",
+                        "M104 S{temp}       ; set extruder actual required temp",
+                        "M109 S{temp}       ; wait for extruder actual required temp",
+                        "G1 X60.0 E9.0      ; purge line",
+                        "G1 X100.0 E12.5    ; purge line",
+                        "M117 Printing"
+                    ],
+                    "gcodeProc": "",
+                    "gcodeSpace": true,
+                    "gcodeSpindle": [],
+                    "gcodeStrip": false,
+                    "gcodeTrack": [
+                        "M73 P{progress}"
+                    ],
+                    "internal": 0,
+                    "maxHeight": 300,
+                    "mode": "FDM",
+                    "name": "Creality Ender 3 0.4 nozzle",
+                    "new": false,
+                    "nozzle_diameter": [
+                        0.4
+                    ],
+                    "originCenter": false,
+                    "printer_model": "Creality Ender 3",
+                    "profiles": [
+                        {
+                            "antiBacklash": 0,
+                            "arcTolerance": 0,
+                            "firstLayerBedTemp": 0,
+                            "firstLayerBeltBump": 0,
+                            "firstLayerBeltLead": 200,
+                            "firstLayerBrim": 0,
+                            "firstLayerBrimGap": 0,
+                            "firstLayerBrimIn": 0,
+                            "firstLayerBrimTrig": 0,
+                            "firstLayerFanSpeed": 0,
+                            "firstLayerFillRate": 35,
+                            "firstLayerFlatten": 0,
+                            "firstLayerLineMult": 1,
+                            "firstLayerNozzleTemp": 0,
+                            "firstLayerPrintMult": 1,
+                            "firstLayerRate": 10,
+                            "firstLayerYOffset": 0,
+                            "firstSliceHeight": 0.2,
+                            "outputAvoidGaps": true,
+                            "outputBedTemp": 70,
+                            "outputBeltFirst": false,
+                            "outputBrimCount": 0,
+                            "outputBrimOffset": 2,
+                            "outputCoastDist": 0.05,
+                            "outputDraftShield": false,
+                            "outputFanSpeed": 255,
+                            "outputFeedrate": 80,
+                            "outputFillMult": 1.3,
+                            "outputFinishrate": 30,
+                            "outputInvertX": false,
+                            "outputInvertY": false,
+                            "outputLayerRetract": false,
+                            "outputLoops": 0,
+                            "outputMinSpeed": 1,
+                            "outputPurgeTower": 0,
+                            "outputRaft": false,
+                            "outputRaftSpacing": 0.2,
+                            "outputRetractDist": 4,
+                            "outputRetractDwell": 0,
+                            "outputRetractSpeed": 60,
+                            "outputRetractWipe": 2,
+                            "outputSeekrate": 150,
+                            "outputShellMult": 1.35,
+                            "outputShortPoly": 50,
+                            "outputSparseMult": 1.3,
+                            "outputTemp": 205,
+                            "processName": "Ender 3 PLA",
+                            "ranges": [],
+                            "sliceAdaptive": false,
+                            "sliceBottomLayers": 2,
+                            "sliceDetectThin": "off",
+                            "sliceFillAngle": 45,
+                            "sliceFillOverlap": 0.35,
+                            "sliceFillRate": 0,
+                            "sliceFillRepeat": 4,
+                            "sliceFillSparse": 0.1,
+                            "sliceFillType": "hex",
+                            "sliceFillWidth": 1,
+                            "sliceHeight": 0.2,
+                            "sliceLayerStart": "center",
+                            "sliceLineWidth": 0,
+                            "sliceMinHeight": 0,
+                            "sliceShellOrder": "in-out",
+                            "sliceShells": 3,
+                            "sliceSolidLayers": 2,
+                            "sliceSolidMinArea": 5,
+                            "sliceSupportAngle": 1,
+                            "sliceSupportArea": 0.25,
+                            "sliceSupportDensity": 0.25,
+                            "sliceSupportEnable": false,
+                            "sliceSupportExtra": 0,
+                            "sliceSupportGap": 0,
+                            "sliceSupportNozzle": 0,
+                            "sliceSupportOffset": 0.4,
+                            "sliceSupportOutline": true,
+                            "sliceSupportSize": 6,
+                            "sliceSupportSpan": 5,
+                            "sliceTopLayers": 3,
+                            "zHopDistance": 0.1
+                        }
+                    ],
+                    "spindleMax": 0,
+                    "type": "machine"
+                },
+                "name": "Creality Ender 3 0.4 nozzle"
+            }
+        },
+        "vendor": "Creality"
+    }
+]

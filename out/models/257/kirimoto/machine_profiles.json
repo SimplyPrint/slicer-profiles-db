@@ -1,0 +1,115 @@
+[
+    {
+        "machine_model": {
+            "bed_belt": false,
+            "bed_depth": 222,
+            "bed_width": 222,
+            "build_height": 222,
+            "name": "Anycubic Kobra",
+            "nozzle_diameter": [
+                0.4
+            ],
+            "printer_model": "Anycubic Kobra",
+            "type": "machine_model",
+            "variants": [
+                "0.4"
+            ]
+        },
+        "variants": {
+            "0.4": {
+                "context": {
+                    "printer_model": "Anycubic Kobra",
+                    "variant_key": "0.4"
+                },
+                "data": {
+                    "bedBelt": false,
+                    "bedDepth": 222,
+                    "bedHeight": 2.5,
+                    "bedRound": false,
+                    "bedWidth": 222,
+                    "deviceName": "Anycubic Kobra",
+                    "extNozzle": 0.4,
+                    "extras": {
+                        "palette": {
+                            "cool": null,
+                            "feed": null,
+                            "heat": null,
+                            "offset": null,
+                            "ping": null,
+                            "press": null,
+                            "printer": "6c99ea036da",
+                            "push": null
+                        }
+                    },
+                    "extrudeAbs": false,
+                    "extruders": [
+                        {
+                            "extFilament": 1.75,
+                            "extNozzle": 0.4,
+                            "extOffsetX": 0,
+                            "extOffsetY": 0
+                        }
+                    ],
+                    "fwRetract": false,
+                    "gcodeChange": [],
+                    "gcodeDwell": [],
+                    "gcodeExt": [],
+                    "gcodeFExt": "gcode",
+                    "gcodeFan": [
+                        "M106 S{fan_speed}"
+                    ],
+                    "gcodeInt": [],
+                    "gcodeLaserOff": [],
+                    "gcodeLaserOn": [],
+                    "gcodeLayer": [],
+                    "gcodePause": [],
+                    "gcodePost": [
+                        "M107                ; turn off filament cooling fan",
+                        "M104 S0 T0          ; turn off extruder",
+                        "M140 S0 T0          ; turn off bed",
+                        "G91                 ; relative movement",
+                        "G1 Z10 F1200        ; drop bed 10mm",
+                        "G90                 ; absolute positioning",
+                        "G28 X0 Y0           ; home XY axes",
+                        "M84                 ; disable stepper motors"
+                    ],
+                    "gcodePre": [
+                        "M107                         ; turn off filament cooling fan",
+                        "M104 S{temp} T0              ; set extruder temperature",
+                        "M140 S{bed_temp} T0          ; set bed temperature",
+                        "G90                          ; set absolute positioning mode",
+                        "M83                          ; set relative positioning for extruder",
+                        "G28                          ; home axes",
+                        "G1 F3000                     ; set default move speed",
+                        "G1 Z1 F6000                  ; pause above the bed",
+                        "M190 S{bed_temp} T0          ; wait for bed to reach target temp",
+                        "M109 S{temp} T0              ; wait for extruder to reach target temp",
+                        "G92 E0                       ; set extruder position to 0"
+                    ],
+                    "gcodeProc": "",
+                    "gcodeSpace": true,
+                    "gcodeSpindle": [],
+                    "gcodeStrip": false,
+                    "gcodeTrack": [
+                        "M117 {progress}% layer {layer} / {layers}"
+                    ],
+                    "internal": 0,
+                    "maxHeight": 222,
+                    "mode": "FDM",
+                    "name": "Anycubic Kobra 0.4 nozzle",
+                    "noclone": false,
+                    "nozzle_diameter": [
+                        0.4
+                    ],
+                    "originCenter": false,
+                    "printer_model": "Anycubic Kobra",
+                    "resolutionX": 1600,
+                    "resolutionY": 900,
+                    "type": "machine"
+                },
+                "name": "Anycubic Kobra 0.4 nozzle"
+            }
+        },
+        "vendor": "Anycubic"
+    }
+]

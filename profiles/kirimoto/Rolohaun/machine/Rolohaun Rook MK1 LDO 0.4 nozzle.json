@@ -1,0 +1,402 @@
+{
+  "slicer": "kirimoto",
+  "profile_type": "machine",
+  "name": "Rolohaun Rook MK1 LDO 0.4 nozzle",
+  "vendor": "Rolohaun",
+  "first_seen": "4.7.1",
+  "last_seen": "4.7.1",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": "Rolohaun.Rook.MK1.LDO",
+  "context": {
+    "printer_model": "Rolohaun Rook MK1 LDO"
+  },
+  "setting_scopes": {},
+  "settings": {
+    "mode": {
+      "4.7.1": "FDM"
+    },
+    "internal": {
+      "4.7.1": 0
+    },
+    "bedHeight": {
+      "4.7.1": 2.5
+    },
+    "bedWidth": {
+      "4.7.1": 110
+    },
+    "bedDepth": {
+      "4.7.1": 110
+    },
+    "bedRound": {
+      "4.7.1": false
+    },
+    "bedBelt": {
+      "4.7.1": false
+    },
+    "deviceZMax": {
+      "4.7.1": 0
+    },
+    "gcodeTime": {
+      "4.7.1": 1
+    },
+    "maxHeight": {
+      "4.7.1": 110
+    },
+    "originCenter": {
+      "4.7.1": false
+    },
+    "gcodeFan": {
+      "4.7.1": [
+        "M106 S{fan_speed}"
+      ]
+    },
+    "gcodeFeature": {
+      "4.7.1": []
+    },
+    "gcodeTrack": {
+      "4.7.1": []
+    },
+    "gcodeLayer": {
+      "4.7.1": [
+        "G92 E0"
+      ]
+    },
+    "gcodePre": {
+      "4.7.1": [
+        "M190 S{bed_temp} ; wait for bed to reach target temp",
+        "M109 S{temp} ; wait for extruder to reach target temp",
+        "PRINT_START EXTRUDER={temp} BED={bed_temp}"
+      ]
+    },
+    "gcodePost": {
+      "4.7.1": [
+        "PRINT_END"
+      ]
+    },
+    "gcodeProc": {
+      "4.7.1": ""
+    },
+    "gcodeFExt": {
+      "4.7.1": "gcode"
+    },
+    "extruders": {
+      "4.7.1": [
+        {
+          "extFilament": 1.75,
+          "extNozzle": 0.4,
+          "extOffsetX": 0,
+          "extOffsetY": 0
+        }
+      ]
+    },
+    "new": {
+      "4.7.1": false
+    },
+    "deviceName": {
+      "4.7.1": "Rolohaun Rook MK1 LDO"
+    },
+    "imageURL": {
+      "4.7.1": ""
+    },
+    "fwRetract": {
+      "4.7.1": false
+    },
+    "filamentSource": {
+      "4.7.1": "direct"
+    },
+    "profiles": {
+      "4.7.1": [
+        {
+          "processName": "0.2 Standard",
+          "sliceAngle": 45,
+          "sliceHeight": 0.2,
+          "sliceShells": 4,
+          "sliceShellOrder": "alternate",
+          "sliceLayerStart": "last",
+          "sliceLayerStartX": 0,
+          "sliceLayerStartY": 0,
+          "sliceLineWidth": 0,
+          "sliceFillGrow": 0,
+          "sliceFillAngle": 45,
+          "sliceFillWidth": 1,
+          "sliceFillOverlap": 0.25,
+          "sliceFillSparse": 0.1,
+          "sliceFillRepeat": 1,
+          "sliceFillRate": 150,
+          "sliceSolidRate": 150,
+          "sliceFillType": "hex",
+          "sliceSupportDensity": 0.1,
+          "sliceSupportOffset": 1,
+          "sliceSupportGap": 1,
+          "sliceSupportSize": 5,
+          "sliceSupportArea": 0.1,
+          "sliceSupportSpan": 5,
+          "sliceSupportGrow": 0,
+          "sliceSupportExtra": 0,
+          "sliceSupportAngle": 50,
+          "sliceSupportNozzle": 0,
+          "sliceSupportEnable": false,
+          "sliceSupportOutline": true,
+          "sliceSolidMinArea": 1,
+          "sliceBottomLayers": 3,
+          "sliceTopLayers": 4,
+          "firstSliceHeight": 0.2,
+          "firstLayerRate": 50,
+          "firstLayerFillRate": 105,
+          "firstLayerPrintMult": 1,
+          "firstLayerLineMult": 1.2,
+          "firstLayerYOffset": 0,
+          "firstLayerNozzleTemp": 220,
+          "firstLayerBedTemp": 60,
+          "firstLayerBrim": 0,
+          "firstLayerBrimIn": 0,
+          "firstLayerBrimTrig": 0,
+          "firstLayerBrimGap": 0,
+          "firstLayerBeltLead": 3,
+          "firstLayerBeltBump": 0,
+          "firstLayerFanSpeed": 0,
+          "firstLayerFlatten": 0,
+          "outputRaft": false,
+          "outputRaftSpacing": 0.2,
+          "outputDraftShield": false,
+          "outputTemp": 200,
+          "outputBedTemp": 60,
+          "outputFeedrate": 150,
+          "outputFinishrate": 150,
+          "outputSeekrate": 500,
+          "outputShellMult": 1,
+          "outputFillMult": 1,
+          "outputSparseMult": 1,
+          "outputFanLayer": 1,
+          "outputFanSpeed": 255,
+          "outputRetractDist": 2.9,
+          "outputRetractSpeed": 50,
+          "outputRetractWipe": 1,
+          "outputRetractDwell": 20,
+          "outputBrimCount": 2,
+          "outputBrimOffset": 2,
+          "outputShortPoly": 100,
+          "outputMinSpeed": 10,
+          "outputCoastDist": 0,
+          "outputPurgeTower": 0,
+          "outputBeltFirst": false,
+          "outputAvoidGaps": true,
+          "outputAlternating": false,
+          "outputLayerRetract": false,
+          "outputNozzle": 0,
+          "outputLoops": 0,
+          "outputInvertX": false,
+          "outputInvertY": false,
+          "sliceDetectThin": "off",
+          "sliceMinHeight": 0,
+          "sliceAdaptive": false,
+          "zHopDistance": 0.2,
+          "arcTolerance": 0,
+          "antiBacklash": 0,
+          "ranges": []
+        },
+        {
+          "processName": "0.26 Draft",
+          "sliceAngle": 45,
+          "sliceHeight": 0.26,
+          "sliceShells": 4,
+          "sliceShellOrder": "alternate",
+          "sliceLayerStart": "last",
+          "sliceLayerStartX": 0,
+          "sliceLayerStartY": 0,
+          "sliceLineWidth": 0,
+          "sliceFillGrow": 0,
+          "sliceFillAngle": 45,
+          "sliceFillWidth": 1,
+          "sliceFillOverlap": 0.25,
+          "sliceFillSparse": 0.1,
+          "sliceFillRepeat": 1,
+          "sliceFillRate": 150,
+          "sliceSolidRate": 150,
+          "sliceFillType": "hex",
+          "sliceSupportDensity": 0.1,
+          "sliceSupportOffset": 1,
+          "sliceSupportGap": 1,
+          "sliceSupportSize": 5,
+          "sliceSupportArea": 0.1,
+          "sliceSupportSpan": 5,
+          "sliceSupportGrow": 0,
+          "sliceSupportExtra": 0,
+          "sliceSupportAngle": 50,
+          "sliceSupportNozzle": 0,
+          "sliceSupportEnable": false,
+          "sliceSupportOutline": true,
+          "sliceSolidMinArea": 1,
+          "sliceBottomLayers": 2,
+          "sliceTopLayers": 3,
+          "firstSliceHeight": 0.2,
+          "firstLayerRate": 50,
+          "firstLayerFillRate": 105,
+          "firstLayerPrintMult": 1,
+          "firstLayerLineMult": 1.2,
+          "firstLayerYOffset": 0,
+          "firstLayerNozzleTemp": 220,
+          "firstLayerBedTemp": 60,
+          "firstLayerBrim": 0,
+          "firstLayerBrimIn": 0,
+          "firstLayerBrimTrig": 0,
+          "firstLayerBrimGap": 0,
+          "firstLayerBeltLead": 3,
+          "firstLayerBeltBump": 0,
+          "firstLayerFanSpeed": 0,
+          "firstLayerFlatten": 0,
+          "outputRaft": false,
+          "outputRaftSpacing": 0.2,
+          "outputDraftShield": false,
+          "outputTemp": 200,
+          "outputBedTemp": 60,
+          "outputFeedrate": 150,
+          "outputFinishrate": 100,
+          "outputSeekrate": 500,
+          "outputShellMult": 1,
+          "outputFillMult": 1,
+          "outputSparseMult": 1,
+          "outputFanLayer": 1,
+          "outputFanSpeed": 255,
+          "outputRetractDist": 2.9,
+          "outputRetractSpeed": 50,
+          "outputRetractWipe": 1,
+          "outputRetractDwell": 20,
+          "outputBrimCount": 2,
+          "outputBrimOffset": 2,
+          "outputShortPoly": 100,
+          "outputMinSpeed": 10,
+          "outputCoastDist": 0,
+          "outputPurgeTower": 0,
+          "outputBeltFirst": false,
+          "outputAvoidGaps": true,
+          "outputAlternating": false,
+          "outputLayerRetract": false,
+          "outputNozzle": 0,
+          "outputLoops": 0,
+          "outputInvertX": false,
+          "outputInvertY": false,
+          "sliceDetectThin": "off",
+          "sliceMinHeight": 0,
+          "sliceAdaptive": false,
+          "zHopDistance": 0.2,
+          "arcTolerance": 0,
+          "antiBacklash": 0,
+          "ranges": []
+        },
+        {
+          "processName": "0.1 Fine",
+          "sliceAngle": 45,
+          "sliceHeight": 0.1,
+          "sliceShells": 4,
+          "sliceShellOrder": "alternate",
+          "sliceLayerStart": "last",
+          "sliceLayerStartX": 0,
+          "sliceLayerStartY": 0,
+          "sliceLineWidth": 0,
+          "sliceFillGrow": 0,
+          "sliceFillAngle": 45,
+          "sliceFillWidth": 1,
+          "sliceFillOverlap": 0.25,
+          "sliceFillSparse": 0.1,
+          "sliceFillRepeat": 1,
+          "sliceFillRate": 150,
+          "sliceSolidRate": 150,
+          "sliceFillType": "hex",
+          "sliceSupportDensity": 0.1,
+          "sliceSupportOffset": 1,
+          "sliceSupportGap": 1,
+          "sliceSupportSize": 5,
+          "sliceSupportArea": 0.1,
+          "sliceSupportSpan": 5,
+          "sliceSupportGrow": 0,
+          "sliceSupportExtra": 0,
+          "sliceSupportAngle": 50,
+          "sliceSupportNozzle": 0,
+          "sliceSupportEnable": false,
+          "sliceSupportOutline": true,
+          "sliceSolidMinArea": 1,
+          "sliceBottomLayers": 4,
+          "sliceTopLayers": 5,
+          "firstSliceHeight": 0.2,
+          "firstLayerRate": 50,
+          "firstLayerFillRate": 105,
+          "firstLayerPrintMult": 1,
+          "firstLayerLineMult": 1.2,
+          "firstLayerYOffset": 0,
+          "firstLayerNozzleTemp": 220,
+          "firstLayerBedTemp": 60,
+          "firstLayerBrim": 0,
+          "firstLayerBrimIn": 0,
+          "firstLayerBrimTrig": 0,
+          "firstLayerBrimGap": 0,
+          "firstLayerBeltLead": 3,
+          "firstLayerBeltBump": 0,
+          "firstLayerFanSpeed": 0,
+          "firstLayerFlatten": 0,
+          "outputRaft": false,
+          "outputRaftSpacing": 0.2,
+          "outputDraftShield": false,
+          "outputTemp": 200,
+          "outputBedTemp": 60,
+          "outputFeedrate": 80,
+          "outputFinishrate": 80,
+          "outputSeekrate": 500,
+          "outputShellMult": 1,
+          "outputFillMult": 1,
+          "outputSparseMult": 1,
+          "outputFanLayer": 1,
+          "outputFanSpeed": 255,
+          "outputRetractDist": 2.9,
+          "outputRetractSpeed": 50,
+          "outputRetractWipe": 1,
+          "outputRetractDwell": 20,
+          "outputBrimCount": 2,
+          "outputBrimOffset": 2,
+          "outputShortPoly": 100,
+          "outputMinSpeed": 10,
+          "outputCoastDist": 0,
+          "outputPurgeTower": 0,
+          "outputBeltFirst": false,
+          "outputAvoidGaps": true,
+          "outputAlternating": false,
+          "outputLayerRetract": false,
+          "outputNozzle": 0,
+          "outputLoops": 0,
+          "outputInvertX": false,
+          "outputInvertY": false,
+          "sliceDetectThin": "off",
+          "sliceMinHeight": 0,
+          "sliceAdaptive": false,
+          "zHopDistance": 0.2,
+          "arcTolerance": 0,
+          "antiBacklash": 0,
+          "ranges": []
+        }
+      ]
+    },
+    "extras": {
+      "4.7.1": {}
+    },
+    "type": {
+      "4.7.1": "machine"
+    },
+    "name": {
+      "4.7.1": "Rolohaun Rook MK1 LDO 0.4 nozzle"
+    },
+    "printer_model": {
+      "4.7.1": "Rolohaun Rook MK1 LDO"
+    },
+    "nozzle_diameter": {
+      "4.7.1": [
+        0.4
+      ]
+    },
+    "extNozzle": {
+      "4.7.1": 0.4
+    }
+  }
+}

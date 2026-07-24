@@ -1,0 +1,164 @@
+{
+  "slicer": "kirimoto",
+  "profile_type": "machine",
+  "name": "DeltaMaker 2T 0.5 nozzle",
+  "vendor": "DeltaMaker",
+  "first_seen": "4.7.1",
+  "last_seen": "4.7.1",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": "DeltaMaker.2T",
+  "context": {
+    "printer_model": "DeltaMaker 2T"
+  },
+  "setting_scopes": {},
+  "settings": {
+    "noclone": {
+      "4.7.1": false
+    },
+    "mode": {
+      "4.7.1": "FDM"
+    },
+    "deviceName": {
+      "4.7.1": "DeltaMaker 2T 0.4 nozzle"
+    },
+    "internal": {
+      "4.7.1": 0
+    },
+    "imageURL": {
+      "4.7.1": ""
+    },
+    "imageScale": {
+      "4.7.1": 0.75
+    },
+    "imageAnchor": {
+      "4.7.1": 0
+    },
+    "bedHeight": {
+      "4.7.1": 2.5
+    },
+    "bedWidth": {
+      "4.7.1": 240
+    },
+    "bedDepth": {
+      "4.7.1": 240
+    },
+    "bedRound": {
+      "4.7.1": true
+    },
+    "bedBelt": {
+      "4.7.1": false
+    },
+    "maxHeight": {
+      "4.7.1": 480
+    },
+    "originCenter": {
+      "4.7.1": true
+    },
+    "extrudeAbs": {
+      "4.7.1": false
+    },
+    "spindleMax": {
+      "4.7.1": 0
+    },
+    "gcodeFan": {
+      "4.7.1": [
+        "M106 S{fan_speed}"
+      ]
+    },
+    "gcodeFeature": {
+      "4.7.1": []
+    },
+    "gcodeTrack": {
+      "4.7.1": []
+    },
+    "gcodeLayer": {
+      "4.7.1": []
+    },
+    "gcodePre": {
+      "4.7.1": [
+        "M104 S{temp} T{tool} ; set extruder temperature",
+        "G21             ; Make sure we're in metric mode",
+        "G90             ; set absolute positioning mode",
+        "M83             ; set relative positioning for extruder",
+        "G28             ; home axes",
+        "G92 E0          ; zero the extruded",
+        "M109 S{temp} T{tool} ; wait for extruder to reach target temp",
+        "G1 F200 E3.5    ; set feed speed, prime nozzle",
+        "G92 E0          ; zero the extruded",
+        "G1 Z30          ; position near the bed before first position"
+      ]
+    },
+    "gcodePost": {
+      "4.7.1": [
+        "G28             ; home axes",
+        "M104 S0 T{tool} ; turn off right extruder",
+        "M140 S0 T{tool} ; turn off bed",
+        "M84             ; disable stepper motors"
+      ]
+    },
+    "gcodeProc": {
+      "4.7.1": ""
+    },
+    "gcodeDwell": {
+      "4.7.1": []
+    },
+    "gcodeSpindle": {
+      "4.7.1": []
+    },
+    "gcodeResetA": {
+      "4.7.1": []
+    },
+    "gcodeChange": {
+      "4.7.1": []
+    },
+    "gcodeFExt": {
+      "4.7.1": "gcode"
+    },
+    "gcodeSpace": {
+      "4.7.1": true
+    },
+    "gcodeStrip": {
+      "4.7.1": false
+    },
+    "gcodeLaserOn": {
+      "4.7.1": []
+    },
+    "gcodeLaserOff": {
+      "4.7.1": []
+    },
+    "extruders": {
+      "4.7.1": [
+        {
+          "extFilament": 1.75,
+          "extNozzle": 0.5,
+          "extSelect": [
+            "T0"
+          ],
+          "extDeselect": [],
+          "extOffsetX": 0,
+          "extOffsetY": 0
+        }
+      ]
+    },
+    "type": {
+      "4.7.1": "machine"
+    },
+    "name": {
+      "4.7.1": "DeltaMaker 2T 0.5 nozzle"
+    },
+    "printer_model": {
+      "4.7.1": "DeltaMaker 2T"
+    },
+    "nozzle_diameter": {
+      "4.7.1": [
+        0.5
+      ]
+    },
+    "extNozzle": {
+      "4.7.1": 0.5
+    }
+  }
+}

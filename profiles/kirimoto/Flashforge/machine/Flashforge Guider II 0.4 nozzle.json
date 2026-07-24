@@ -1,0 +1,177 @@
+{
+  "slicer": "kirimoto",
+  "profile_type": "machine",
+  "name": "Flashforge Guider II 0.4 nozzle",
+  "vendor": "Flashforge",
+  "first_seen": "4.7.1",
+  "last_seen": "4.7.1",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": "Flashforge.Guider.II",
+  "context": {
+    "printer_model": "Flashforge Guider II"
+  },
+  "setting_scopes": {},
+  "settings": {
+    "noclone": {
+      "4.7.1": false
+    },
+    "mode": {
+      "4.7.1": "FDM"
+    },
+    "deviceName": {
+      "4.7.1": "Flashforge Guider II 0.4 nozzle"
+    },
+    "internal": {
+      "4.7.1": 0
+    },
+    "imageURL": {
+      "4.7.1": ""
+    },
+    "imageScale": {
+      "4.7.1": 0.75
+    },
+    "imageAnchor": {
+      "4.7.1": 0
+    },
+    "bedHeight": {
+      "4.7.1": 2.5
+    },
+    "bedWidth": {
+      "4.7.1": 280
+    },
+    "bedDepth": {
+      "4.7.1": 250
+    },
+    "bedRound": {
+      "4.7.1": false
+    },
+    "bedBelt": {
+      "4.7.1": false
+    },
+    "maxHeight": {
+      "4.7.1": 300
+    },
+    "originCenter": {
+      "4.7.1": true
+    },
+    "extrudeAbs": {
+      "4.7.1": true
+    },
+    "spindleMax": {
+      "4.7.1": 0
+    },
+    "gcodeFan": {
+      "4.7.1": [
+        "M106 S{fan_speed}"
+      ]
+    },
+    "gcodeFeature": {
+      "4.7.1": []
+    },
+    "gcodeTrack": {
+      "4.7.1": []
+    },
+    "gcodeLayer": {
+      "4.7.1": []
+    },
+    "gcodePre": {
+      "4.7.1": [
+        "; set bed and nozzle temps",
+        "M104 S{temp} T{tool}",
+        "M140 S{bed_temp}",
+        "; absolute positioning and home",
+        "G90",
+        "G28",
+        "; wait for nozzle and bed to reach target temps",
+        "M190 S{bed_temp}",
+        "M109 S{temp} T{tool}",
+        "M7 T{tool}",
+        "M6 T{tool}",
+        "; select nozzle 0",
+        "M108 T{tool}",
+        "G92 E0",
+        "G1 E0 F300",
+        "; purge nozzle",
+        "G1 X150 Y75 Z15 E-2 F500",
+        "G1 Y125 Z0.5 F600",
+        "G1 Y50 E40 F600"
+      ]
+    },
+    "gcodePost": {
+      "4.7.1": [
+        "; stop fan, cool nozzle and bed",
+        "M107",
+        "M104 S0 T{tool}",
+        "M140 S0",
+        "; slow descent of bed",
+        "G0 F300",
+        "; end print",
+        "M18"
+      ]
+    },
+    "gcodeProc": {
+      "4.7.1": ""
+    },
+    "gcodeDwell": {
+      "4.7.1": []
+    },
+    "gcodeSpindle": {
+      "4.7.1": []
+    },
+    "gcodeResetA": {
+      "4.7.1": []
+    },
+    "gcodeChange": {
+      "4.7.1": []
+    },
+    "gcodeFExt": {
+      "4.7.1": "gcode"
+    },
+    "gcodeSpace": {
+      "4.7.1": true
+    },
+    "gcodeStrip": {
+      "4.7.1": false
+    },
+    "gcodeLaserOn": {
+      "4.7.1": []
+    },
+    "gcodeLaserOff": {
+      "4.7.1": []
+    },
+    "extruders": {
+      "4.7.1": [
+        {
+          "extFilament": 1.75,
+          "extNozzle": 0.4,
+          "extSelect": [
+            "T0"
+          ],
+          "extDeselect": [],
+          "extOffsetX": 0,
+          "extOffsetY": 0
+        }
+      ]
+    },
+    "type": {
+      "4.7.1": "machine"
+    },
+    "name": {
+      "4.7.1": "Flashforge Guider II 0.4 nozzle"
+    },
+    "printer_model": {
+      "4.7.1": "Flashforge Guider II"
+    },
+    "nozzle_diameter": {
+      "4.7.1": [
+        0.4
+      ]
+    },
+    "extNozzle": {
+      "4.7.1": 0.4
+    }
+  }
+}

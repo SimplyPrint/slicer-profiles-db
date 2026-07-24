@@ -88,6 +88,13 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
         min_version="5.13.0",
         additional_repos=["Ultimaker/cura"],
     ),
+    SlicerType.KIRIMOTO: SourceConfig(
+        slicer=SlicerType.KIRIMOTO,
+        github_repo="GridSpace/grid-apps",
+        profile_path_in_repo="src/kiri/dev/fdm",
+        tag_pattern=r"^\d+\.\d+\.\d+$",
+        min_version="4.7.0",
+    ),
     SlicerType.ELEGOOSLICER: SourceConfig(
         slicer=SlicerType.ELEGOOSLICER,
         github_repo="ELEGOO-3D/ElegooSlicer",

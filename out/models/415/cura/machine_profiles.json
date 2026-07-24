@@ -36,6 +36,38 @@
             "alternate_carve_order": true,
             "alternate_extra_perimeter": false,
             "anti_overhang_mesh": false,
+            "bed_assets": {
+                "build_volume": {
+                    "depth": 240,
+                    "width": 330
+                },
+                "coordinate_space": "machine_build_volume",
+                "model": {
+                    "format": "obj",
+                    "media_type": "model/obj",
+                    "mesh_selection": "largest_face_count",
+                    "ref": "sha256:4522d3282f023ea8f62f39e801d18d66a7bac4d42674e084f0218490d2287b69",
+                    "transform": {
+                        "translation": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "unit": "mm"
+                    }
+                },
+                "origin": "build_volume_center",
+                "texture": {
+                    "flip_y": true,
+                    "format": "png",
+                    "mapping": "uv",
+                    "media_type": "image/png",
+                    "ref": "sha256:80ce204981a69a18777d073687111ba40d0c223dd4aa1009c493f8cb91263b07",
+                    "target": "model"
+                }
+            },
+            "bed_model": "sha256:4522d3282f023ea8f62f39e801d18d66a7bac4d42674e084f0218490d2287b69",
+            "bed_texture": "sha256:80ce204981a69a18777d073687111ba40d0c223dd4aa1009c493f8cb91263b07",
             "bottom_layers": 7,
             "bottom_skin_expand_distance": 0.8,
             "bottom_skin_preshrink": 0.8,

@@ -13,6 +13,7 @@ class SlicerType(str, Enum):
     CREALITYPRINT = "crealityprint"
     PRUSASLICER = "prusaslicer"
     CURA = "cura"
+    KIRIMOTO = "kirimoto"
     ELEGOOSLICER = "elegooslicer"
     ANYCUBICSLICER = "anycubicslicer"
     SUPERSLICER = "superslicer"

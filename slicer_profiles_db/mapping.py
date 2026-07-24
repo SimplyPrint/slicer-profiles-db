@@ -7,6 +7,7 @@ and print profile compatibility, and exports the results.
 
 from __future__ import annotations
 
+import copy
 import hashlib
 import json
 import logging
@@ -981,13 +982,22 @@ def _machine_model_export(
     ):
         value = profile.context.get(key)
         if value is not None:
-            exported[key] = value
+            exported[key] = copy.deepcopy(value)
     if profile.slicer == SlicerType.CURA.value:
-        # Cura's upstream platform models and textures do not share a stable
-        # render-space contract.  Never expose them to SimplyPrint clients;
-        # Cura machines must use the generic build surface.
-        for key in ("bed_assets", "bed_model", "bed_texture"):
-            exported.pop(key, None)
+        # Older stored Cura snapshots predate the explicit model-target
+        # texture contract. Cura's platform_texture is authored for the
+        # platform model UVs, not as a second planar build-surface image.
+        # Complete that metadata while exporting so existing profile stores
+        # render identically to newly ingested snapshots.
+        bed_assets = exported.get("bed_assets")
+        if isinstance(bed_assets, dict):
+            model = bed_assets.get("model")
+            texture = bed_assets.get("texture")
+            if isinstance(model, dict) and isinstance(texture, dict):
+                model.setdefault("mesh_selection", "largest_face_count")
+                texture.setdefault("target", "model")
+                texture.setdefault("mapping", "uv")
+                texture.setdefault("flip_y", True)
         scene = build_cura_scene_context(data)
         if scene is None:
             exported.pop("scene", None)

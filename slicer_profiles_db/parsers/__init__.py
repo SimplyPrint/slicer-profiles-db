@@ -6,6 +6,7 @@ from .cura import CuraParser
 from .elegooslicer import ElegooSlicerParser
 from .anycubicslicer import AnycubicSlicerParser
 from .superslicer import SuperSlicerParser
+from .kirimoto import KiriMotoParser
 
 __all__ = [
     "BambuStudioParser",
@@ -16,4 +17,5 @@ __all__ = [
     "ElegooSlicerParser",
     "AnycubicSlicerParser",
     "SuperSlicerParser",
+    "KiriMotoParser",
 ]

@@ -1,0 +1,264 @@
+{
+  "slicer": "kirimoto",
+  "profile_type": "machine",
+  "name": "Tina2 Basic 0.4 nozzle",
+  "vendor": "Tina2",
+  "first_seen": "4.7.1",
+  "last_seen": "4.7.1",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": "Tina2.Basic",
+  "context": {
+    "printer_model": "Tina2 Basic"
+  },
+  "setting_scopes": {},
+  "settings": {
+    "mode": {
+      "4.7.1": "FDM"
+    },
+    "internal": {
+      "4.7.1": 0
+    },
+    "imageURL": {
+      "4.7.1": ""
+    },
+    "bedHeight": {
+      "4.7.1": 2.5
+    },
+    "bedWidth": {
+      "4.7.1": 100
+    },
+    "bedDepth": {
+      "4.7.1": 120
+    },
+    "bedRound": {
+      "4.7.1": false
+    },
+    "bedBelt": {
+      "4.7.1": false
+    },
+    "deviceZMax": {
+      "4.7.1": 0
+    },
+    "gcodeTime": {
+      "4.7.1": 1
+    },
+    "maxHeight": {
+      "4.7.1": 100
+    },
+    "originCenter": {
+      "4.7.1": false
+    },
+    "gcodeFan": {
+      "4.7.1": [
+        "M106 S{fan_speed}"
+      ]
+    },
+    "gcodeFeature": {
+      "4.7.1": []
+    },
+    "gcodeTrack": {
+      "4.7.1": [
+        "M73 {progress}"
+      ]
+    },
+    "gcodeLayer": {
+      "4.7.1": [
+        "M117 Layer {layer}/{layers}"
+      ]
+    },
+    "gcodePre": {
+      "4.7.1": [
+        ";(**** start.gcode for tina2****)",
+        "M203 Z15",
+        "M104 S{temp}",
+        "G28 Z",
+        "G28 X Y; Home extruder",
+        "G1 X55 Y55 F1000",
+        "G29",
+        "M107 ; Turn off fan",
+        "G90 ; Absolute positioning",
+        "M82 ; Extruder in absolute mode",
+        "M109 S{temp}      ; wait for extruder to reach target temp",
+        "G92 E0 ; Reset extruder position",
+        "G1 X90 Y6 Z0.27 F2000",
+        "G1 X20 Y6 Z0.27 E15 F1000",
+        "G92 E0 ; Reset extruder position",
+        "M203 Z5"
+      ]
+    },
+    "gcodePost": {
+      "4.7.1": [
+        ";(**** end.gcode for tina2****)",
+        "M203 Z15",
+        "M104 S0",
+        "M107",
+        "G92 E0 (Reset after prime)",
+        "G0 E-1 F300",
+        "G28 Z F300",
+        "G28 X0 Y0",
+        "G1 Y90 F1000"
+      ]
+    },
+    "gcodeProc": {
+      "4.7.1": ""
+    },
+    "gcodeFExt": {
+      "4.7.1": "gcode"
+    },
+    "extruders": {
+      "4.7.1": [
+        {
+          "extFilament": 1.75,
+          "extNozzle": 0.4,
+          "extOffsetX": 0,
+          "extOffsetY": 0
+        },
+        {
+          "extFilament": 1.75,
+          "extNozzle": 0.4,
+          "extOffsetX": 0,
+          "extOffsetY": 0
+        }
+      ]
+    },
+    "new": {
+      "4.7.1": false
+    },
+    "deviceName": {
+      "4.7.1": "Tina2 Basic"
+    },
+    "fwRetract": {
+      "4.7.1": false
+    },
+    "filamentSource": {
+      "4.7.1": "direct"
+    },
+    "profiles": {
+      "4.7.1": [
+        {
+          "processName": "Tina2 PLA Profile",
+          "sliceAngle": 45,
+          "sliceHeight": 0.2,
+          "sliceShells": 3,
+          "sliceShellOrder": "in-out",
+          "sliceLayerStart": "last",
+          "sliceLayerStartX": 0,
+          "sliceLayerStartY": 0,
+          "sliceLineWidth": 0,
+          "sliceFillGrow": 0,
+          "sliceFillAngle": 45,
+          "sliceFillWidth": 1,
+          "sliceFillOverlap": 0.35,
+          "sliceFillSparse": 0.1,
+          "sliceFillRepeat": 1,
+          "sliceFillRate": 0,
+          "sliceSolidRate": 0,
+          "sliceFillType": "grid",
+          "sliceSupportDensity": 0.1,
+          "sliceSupportOffset": 1,
+          "sliceSupportGap": 1,
+          "sliceSupportSize": 5,
+          "sliceSupportArea": 0.1,
+          "sliceSupportSpan": 5,
+          "sliceSupportGrow": 0,
+          "sliceSupportExtra": 0,
+          "sliceSupportAngle": 50,
+          "sliceSupportNozzle": 0,
+          "sliceSupportEnable": false,
+          "sliceSupportOutline": true,
+          "sliceSolidMinArea": 1,
+          "sliceBottomLayers": 3,
+          "sliceTopLayers": 3,
+          "firstSliceHeight": 0.2,
+          "firstLayerRate": 30,
+          "firstLayerFillRate": 35,
+          "firstLayerPrintMult": 1,
+          "firstLayerLineMult": 1,
+          "firstLayerYOffset": 0,
+          "firstLayerNozzleTemp": 200,
+          "firstLayerBedTemp": 0,
+          "firstLayerBrim": 0,
+          "firstLayerBrimIn": 0,
+          "firstLayerBrimTrig": 0,
+          "firstLayerBrimGap": 0,
+          "firstLayerBeltLead": 3,
+          "firstLayerBeltBump": 0,
+          "firstLayerFanSpeed": 0,
+          "firstLayerFlatten": 0,
+          "outputRaft": false,
+          "outputRaftSpacing": 0.2,
+          "outputDraftShield": false,
+          "outputTemp": 200,
+          "outputBedTemp": 0,
+          "outputFeedrate": 50,
+          "outputFinishrate": 50,
+          "outputSeekrate": 80,
+          "outputShellMult": 1.25,
+          "outputFillMult": 1.25,
+          "outputSparseMult": 1.25,
+          "outputFanLayer": 1,
+          "outputFanSpeed": 255,
+          "outputRetractDist": 1.5,
+          "outputRetractSpeed": 40,
+          "outputRetractWipe": 0,
+          "outputRetractDwell": 20,
+          "outputBrimCount": 2,
+          "outputBrimOffset": 2,
+          "outputShortPoly": 100,
+          "outputMinSpeed": 10,
+          "outputCoastDist": 0,
+          "outputPurgeTower": 0,
+          "outputBeltFirst": false,
+          "outputAvoidGaps": true,
+          "outputAlternating": false,
+          "outputLayerRetract": false,
+          "outputNozzle": 0,
+          "outputLoops": 0,
+          "outputInvertX": false,
+          "outputInvertY": false,
+          "sliceDetectThin": "off",
+          "sliceMinHeight": 0,
+          "sliceAdaptive": false,
+          "zHopDistance": 0.2,
+          "arcTolerance": 0,
+          "antiBacklash": 0,
+          "ranges": []
+        }
+      ]
+    },
+    "extras": {
+      "4.7.1": {
+        "palette": {
+          "printer": "54ac97df7bd4",
+          "ping": null,
+          "feed": null,
+          "push": null,
+          "offset": null,
+          "heat": null,
+          "cool": null,
+          "press": null
+        }
+      }
+    },
+    "type": {
+      "4.7.1": "machine"
+    },
+    "name": {
+      "4.7.1": "Tina2 Basic 0.4 nozzle"
+    },
+    "printer_model": {
+      "4.7.1": "Tina2 Basic"
+    },
+    "nozzle_diameter": {
+      "4.7.1": [
+        0.4
+      ]
+    },
+    "extNozzle": {
+      "4.7.1": 0.4
+    }
+  }
+}

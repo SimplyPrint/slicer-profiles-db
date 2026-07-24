@@ -87,7 +87,7 @@ class MappingVersionGuardTests(unittest.TestCase):
                     [SlicerType.BAMBUSTUDIO, SlicerType.PRUSASLICER],
                 )
 
-    def test_cura_machine_export_strips_custom_bed_resources(self) -> None:
+    def test_cura_machine_export_preserves_custom_bed_resources(self) -> None:
         profile = StoredProfile(
             slicer=SlicerType.CURA.value,
             profile_type="machine_model",
@@ -96,7 +96,10 @@ class MappingVersionGuardTests(unittest.TestCase):
             first_seen="5.13.0",
             last_seen="5.13.0",
             context={
-                "bed_assets": {"model": {"url": "sha256:model"}},
+                "bed_assets": {
+                    "model": {"url": "sha256:model"},
+                    "texture": {"url": "sha256:texture"},
+                },
                 "bed_model": "sha256:model",
                 "bed_texture": "sha256:texture",
             },
@@ -114,9 +117,16 @@ class MappingVersionGuardTests(unittest.TestCase):
             },
         )
 
-        self.assertNotIn("bed_assets", exported)
-        self.assertNotIn("bed_model", exported)
-        self.assertNotIn("bed_texture", exported)
+        self.assertEqual(exported["bed_model"], "sha256:model")
+        self.assertEqual(exported["bed_texture"], "sha256:texture")
+        self.assertEqual(exported["bed_assets"]["model"]["url"], "sha256:model")
+        self.assertEqual(
+            exported["bed_assets"]["model"]["mesh_selection"],
+            "largest_face_count",
+        )
+        self.assertEqual(exported["bed_assets"]["texture"]["target"], "model")
+        self.assertEqual(exported["bed_assets"]["texture"]["mapping"], "uv")
+        self.assertTrue(exported["bed_assets"]["texture"]["flip_y"])
 
     @patch.dict(
         os.environ,

@@ -1,0 +1,186 @@
+{
+  "slicer": "kirimoto",
+  "profile_type": "machine",
+  "name": "Raise3D N2 0.4 nozzle",
+  "vendor": "Raise3D",
+  "first_seen": "4.7.1",
+  "last_seen": "4.7.1",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": "Raise3D.N2",
+  "context": {
+    "printer_model": "Raise3D N2"
+  },
+  "setting_scopes": {},
+  "settings": {
+    "noclone": {
+      "4.7.1": false
+    },
+    "mode": {
+      "4.7.1": "FDM"
+    },
+    "deviceName": {
+      "4.7.1": "Raise3D N2 0.4 nozzle"
+    },
+    "internal": {
+      "4.7.1": 0
+    },
+    "imageURL": {
+      "4.7.1": ""
+    },
+    "imageScale": {
+      "4.7.1": 0.75
+    },
+    "imageAnchor": {
+      "4.7.1": 0
+    },
+    "bedHeight": {
+      "4.7.1": 2.5
+    },
+    "bedWidth": {
+      "4.7.1": 310
+    },
+    "bedDepth": {
+      "4.7.1": 310
+    },
+    "bedRound": {
+      "4.7.1": false
+    },
+    "bedBelt": {
+      "4.7.1": false
+    },
+    "maxHeight": {
+      "4.7.1": 305
+    },
+    "originCenter": {
+      "4.7.1": false
+    },
+    "extrudeAbs": {
+      "4.7.1": true
+    },
+    "spindleMax": {
+      "4.7.1": 0
+    },
+    "gcodeFan": {
+      "4.7.1": [
+        "M106 S{fan_speed}"
+      ]
+    },
+    "gcodeFeature": {
+      "4.7.1": []
+    },
+    "gcodeTrack": {
+      "4.7.1": []
+    },
+    "gcodeLayer": {
+      "4.7.1": [
+        ";LAYER:{layer}",
+        ";HEIGHT:{height}"
+      ]
+    },
+    "gcodePre": {
+      "4.7.1": [
+        "M140 S{bed_temp}",
+        "M221 T{tool} S100.00",
+        "M104 T{tool} S{temp}",
+        "M109 T{tool} S{temp}",
+        "M190 S{bed_temp}",
+        "G21",
+        "G90",
+        "M82",
+        "M107",
+        "G28 X0 Y0",
+        "G28 Z0",
+        "T{tool}",
+        "G1 Z0.05 F6000.00",
+        "G92 E0",
+        "G1 F140 E29",
+        "G4 P500",
+        "G1 X15 Y15 Z0.02 F2000",
+        "G1 F6000.00",
+        "M117 Printing...",
+        "M1001"
+      ]
+    },
+    "gcodePost": {
+      "4.7.1": [
+        "G91",
+        "G1 Z10",
+        "G90",
+        "M1002",
+        "M104 T{tool} S0",
+        "M104 S0",
+        "M140 S0",
+        "G1 X20 Y20 F6000",
+        "G1 X0 Y0",
+        "M84",
+        ";Print Time: {time}",
+        ";Material#1 Used: {material}",
+        ";Material#2 Used: 0.0"
+      ]
+    },
+    "gcodeProc": {
+      "4.7.1": ""
+    },
+    "gcodeDwell": {
+      "4.7.1": []
+    },
+    "gcodeSpindle": {
+      "4.7.1": []
+    },
+    "gcodeResetA": {
+      "4.7.1": []
+    },
+    "gcodeChange": {
+      "4.7.1": []
+    },
+    "gcodeFExt": {
+      "4.7.1": "gcode"
+    },
+    "gcodeSpace": {
+      "4.7.1": true
+    },
+    "gcodeStrip": {
+      "4.7.1": false
+    },
+    "gcodeLaserOn": {
+      "4.7.1": []
+    },
+    "gcodeLaserOff": {
+      "4.7.1": []
+    },
+    "extruders": {
+      "4.7.1": [
+        {
+          "extFilament": 1.75,
+          "extNozzle": 0.4,
+          "extSelect": [
+            "T0"
+          ],
+          "extDeselect": [],
+          "extOffsetX": 0,
+          "extOffsetY": 0
+        }
+      ]
+    },
+    "type": {
+      "4.7.1": "machine"
+    },
+    "name": {
+      "4.7.1": "Raise3D N2 0.4 nozzle"
+    },
+    "printer_model": {
+      "4.7.1": "Raise3D N2"
+    },
+    "nozzle_diameter": {
+      "4.7.1": [
+        0.4
+      ]
+    },
+    "extNozzle": {
+      "4.7.1": 0.4
+    }
+  }
+}

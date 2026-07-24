@@ -1,0 +1,116 @@
+[
+    {
+        "machine_model": {
+            "bed_belt": false,
+            "bed_depth": 175,
+            "bed_width": 300,
+            "build_height": 150,
+            "name": "Makerbot Replicator2",
+            "nozzle_diameter": [
+                0.4
+            ],
+            "printer_model": "Makerbot Replicator2",
+            "type": "machine_model",
+            "variants": [
+                "0.4"
+            ]
+        },
+        "variants": {
+            "0.4": {
+                "context": {
+                    "printer_model": "Makerbot Replicator2",
+                    "variant_key": "0.4"
+                },
+                "data": {
+                    "bedBelt": false,
+                    "bedDepth": 175,
+                    "bedHeight": 2.5,
+                    "bedRound": false,
+                    "bedWidth": 300,
+                    "deviceName": "Makerbot Replicator2 0.4 nozzle",
+                    "extNozzle": 0.4,
+                    "extrudeAbs": false,
+                    "extruders": [
+                        {
+                            "extDeselect": [],
+                            "extFilament": 1.75,
+                            "extNozzle": 0.4,
+                            "extOffsetX": 0,
+                            "extOffsetY": 0,
+                            "extSelect": [
+                                "T0"
+                            ]
+                        }
+                    ],
+                    "gcodeChange": [],
+                    "gcodeDwell": [],
+                    "gcodeFExt": "gcode",
+                    "gcodeFan": [
+                        "M126 S{fan_speed}"
+                    ],
+                    "gcodeFeature": [],
+                    "gcodeLaserOff": [],
+                    "gcodeLaserOn": [],
+                    "gcodeLayer": [],
+                    "gcodePost": [
+                        "M127            ; stop filament cooling fan",
+                        "M73 P100        ; set build progress to 100%",
+                        "G1 Z150 F1000   ; send Z axis to bottom (engaging end stop)",
+                        "G162 X Y F3000  ; move X,Y axis to maximum position at speed 3000 (top/right of table)",
+                        "M18             ; disable all stepper motors",
+                        "M72 P1          ; play song 1 (tada)"
+                    ],
+                    "gcodePre": [
+                        "M73 P0          ; set progress to 0%",
+                        "G90             ; set absolute positioning mode",
+                        "M83             ; set relative positioning for extruder",
+                        "M104 S{temp} T{tool} ; set extruder temperature for T{tool} (tool 0)",
+                        "M127            ; close extruder valve (if it has one)",
+                        "G162 X Y F3000  ; move X,Y axis to maximum position at speed 3000 (top/right of table)",
+                        "G161 Z F1200    ; move Z axis to minimum position as speed 1200 (bottom)",
+                        "G92 Z-5         ; set Z axis value to -5 (no move)",
+                        "G1 Z0           ; move Z axis to 0 (lifting it 5mm off endstop)",
+                        "G161 Z F100     ; move Z axis to minimum position at speed 100",
+                        "M132 X Y Z A B  ; load EEPROM home offsets for all axis",
+                        "G1 X{left} Y{bottom+10} Z30 F9000 ; move to wait position off table",
+                        "G130 X20 Y20 Z20 A20 B20  ; lower stepper Vrefs to give more juice to the extruder heater",
+                        "M133 T{tool}    ; wait for extruder T{tool} temperature to stabilize",
+                        "G130 X127 Y127 Z40 A127 B127 ; default stepper Vrefs now that extruder is hot",
+                        "G92 A0          ; set extruder position value to 0 (no move)",
+                        "G1 Z0.4         ; move nozzle just above the bed height",
+                        "G1 E25 F300     ; purge extruder for 25mm at speed 300",
+                        "G1 X{left+10} Y{bottom+10} Z0.15 F1200 ; slow wipe",
+                        "G1 X{left+15} Y{bottom+15} Z0.5 F1200  ; lift",
+                        "G92 A0          ; set extruder position value to 0 (no move)",
+                        "M135 T{tool}    ; set toolhead 0"
+                    ],
+                    "gcodeProc": "",
+                    "gcodeResetA": [],
+                    "gcodeSpace": true,
+                    "gcodeSpindle": [],
+                    "gcodeStrip": false,
+                    "gcodeTrack": [
+                        "M73 P{progress}"
+                    ],
+                    "imageAnchor": 0,
+                    "imageScale": 0.75,
+                    "imageURL": "",
+                    "internal": 0,
+                    "maxHeight": 150,
+                    "mode": "FDM",
+                    "name": "Makerbot Replicator2 0.4 nozzle",
+                    "noclone": false,
+                    "nozzle_diameter": [
+                        0.4
+                    ],
+                    "originCenter": true,
+                    "printer_model": "Makerbot Replicator2",
+                    "spindleMax": 0,
+                    "type": "machine"
+                },
+                "name": "Makerbot Replicator2 0.4 nozzle"
+            }
+        },
+        "vendor": "Makerbot"
+    }
+]

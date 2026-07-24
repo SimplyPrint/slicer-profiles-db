@@ -1,0 +1,87 @@
+[
+    {
+        "machine_model": {
+            "bed_belt": false,
+            "bed_depth": 220,
+            "bed_width": 220,
+            "build_height": 250,
+            "name": "Creality K1",
+            "nozzle_diameter": [
+                0.4
+            ],
+            "printer_model": "Creality K1",
+            "type": "machine_model",
+            "variants": [
+                "0.4"
+            ]
+        },
+        "variants": {
+            "0.4": {
+                "context": {
+                    "printer_model": "Creality K1",
+                    "variant_key": "0.4"
+                },
+                "data": {
+                    "bedBelt": false,
+                    "bedDepth": 220,
+                    "bedHeight": 2.5,
+                    "bedRound": false,
+                    "bedWidth": 220,
+                    "deviceName": "Creality K1",
+                    "deviceZMax": 0,
+                    "extNozzle": 0.4,
+                    "extras": {},
+                    "extruders": [
+                        {
+                            "extFilament": 1.75,
+                            "extNozzle": 0.4,
+                            "extOffsetX": 0,
+                            "extOffsetY": 0
+                        }
+                    ],
+                    "filamentSource": "direct",
+                    "fwRetract": false,
+                    "gcodeFExt": "gcode",
+                    "gcodeFan": [
+                        "M106 S{fan_speed}"
+                    ],
+                    "gcodeFeature": [],
+                    "gcodeLayer": [],
+                    "gcodePost": [
+                        "M106 S0",
+                        "M106 P2 S0",
+                        "M106 P1 S0",
+                        "END_PRINT",
+                        "M82 ;absolute extrusion mode",
+                        "M104 S0"
+                    ],
+                    "gcodePre": [
+                        "M140 S0",
+                        "M104 S0 ",
+                        "START_PRINT EXTRUDER_TEMP=220.000000 BED_TEMP=45.000000",
+                        "G92 E0",
+                        "G1 F2400 E-0.5"
+                    ],
+                    "gcodeProc": "",
+                    "gcodeTime": 1,
+                    "gcodeTrack": [],
+                    "imageURL": "",
+                    "internal": 0,
+                    "maxHeight": 250,
+                    "mode": "FDM",
+                    "name": "Creality K1 0.4 nozzle",
+                    "new": false,
+                    "nozzle_diameter": [
+                        0.4
+                    ],
+                    "originCenter": false,
+                    "printer_model": "Creality K1",
+                    "profiles": [],
+                    "type": "machine"
+                },
+                "name": "Creality K1 0.4 nozzle"
+            }
+        },
+        "vendor": "Creality"
+    }
+]

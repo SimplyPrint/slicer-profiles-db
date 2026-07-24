@@ -67,6 +67,7 @@ class ProfileStore:
             ElegooSlicerParser,
             AnycubicSlicerParser,
             SuperSlicerParser,
+            KiriMotoParser,
         )
 
         parsers = {
@@ -78,6 +79,7 @@ class ProfileStore:
             SlicerType.ELEGOOSLICER: ElegooSlicerParser,
             SlicerType.ANYCUBICSLICER: AnycubicSlicerParser,
             SlicerType.SUPERSLICER: SuperSlicerParser,
+            SlicerType.KIRIMOTO: KiriMotoParser,
         }
         return parsers[slicer]()
 

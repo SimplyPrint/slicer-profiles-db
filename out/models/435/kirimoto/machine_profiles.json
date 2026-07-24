@@ -1,0 +1,223 @@
+[
+    {
+        "machine_model": {
+            "bed_belt": false,
+            "bed_depth": 180,
+            "bed_width": 180,
+            "build_height": 180,
+            "name": "Prusa mini",
+            "nozzle_diameter": [
+                0.4
+            ],
+            "printer_model": "Prusa mini",
+            "selection_defaults": {
+                "filament_profile": {
+                    "match": {
+                        "name": "Prusa Mini 0.20mm"
+                    }
+                },
+                "process_profile": {
+                    "match": {
+                        "name": "Prusa Mini 0.20mm"
+                    }
+                }
+            },
+            "type": "machine_model",
+            "variants": [
+                "0.4"
+            ]
+        },
+        "variants": {
+            "0.4": {
+                "context": {
+                    "printer_model": "Prusa mini",
+                    "selection_defaults": {
+                        "filament_profile": {
+                            "match": {
+                                "name": "Prusa Mini 0.20mm"
+                            }
+                        },
+                        "process_profile": {
+                            "match": {
+                                "name": "Prusa Mini 0.20mm"
+                            }
+                        }
+                    },
+                    "variant_key": "0.4"
+                },
+                "data": {
+                    "bedBelt": false,
+                    "bedDepth": 180,
+                    "bedHeight": 2.5,
+                    "bedRound": false,
+                    "bedWidth": 180,
+                    "deviceName": "Prusa mini",
+                    "deviceZMax": 0,
+                    "extNozzle": 0.4,
+                    "extras": {
+                        "palette": {
+                            "cool": null,
+                            "feed": null,
+                            "heat": null,
+                            "offset": null,
+                            "ping": null,
+                            "press": null,
+                            "printer": "d13ef1ba370f",
+                            "push": null
+                        }
+                    },
+                    "extruders": [
+                        {
+                            "extFilament": 1.75,
+                            "extNozzle": 0.4,
+                            "extOffsetX": 0,
+                            "extOffsetY": 0
+                        }
+                    ],
+                    "filamentSource": "direct",
+                    "fwRetract": false,
+                    "gcodeFan": [],
+                    "gcodeLayer": [
+                        ";AFTER_LAYER_CHANGE",
+                        ";[layer_z]"
+                    ],
+                    "gcodePost": [
+                        "G1 E-1 F2100              ; retract",
+                        "G1 Z178 Y178 F4200        ; park print head",
+                        "G4                        ; wait",
+                        "M104 S0                   ; turn off temperature",
+                        "M140 S0                   ; turn off heatbed",
+                        "M107                      ; turn off fan",
+                        "M221 S100                 ; reset flow",
+                        "M900 K0                   ; reset LA",
+                        "M84                       ; disable motors"
+                    ],
+                    "gcodePre": [
+                        "G90                 ; use absolute coordinates",
+                        "M83                 ; extruder relative mode",
+                        "M104 S170           ; set extruder temp for bed leveling",
+                        "M140 S{bed_temp}    ; set bed temp",
+                        "M109 R170           ; wait for bed leveling temp",
+                        "M190 S{bed_temp}    ; wait for bed temp",
+                        "G28                 ; home all without mesh bed level",
+                        "G29                 ; mesh bed leveling ",
+                        "M104 S{temp}        ; set extruder temp",
+                        "G92 E0.0",
+                        "G1 Y-2.0 X179 F2400",
+                        "G1 Z3 F720",
+                        "M109 S{temp}        ; wait for extruder temp",
+                        "                    ; intro line",
+                        "G1 X170 F1000       ; purge line",
+                        "G1 Z0.2 F720        ; purge line",
+                        "G1 X110.0 E8.0 F900 ; purge line",
+                        "G1 X40.0 E10.0 F700 ; purge line",
+                        "G92 E0.0",
+                        "M221 S95            ; set flow"
+                    ],
+                    "gcodeProc": "",
+                    "gcodeTrack": [],
+                    "imageURL": "",
+                    "internal": 0,
+                    "maxHeight": 180,
+                    "mode": "FDM",
+                    "name": "Prusa mini 0.4 nozzle",
+                    "new": false,
+                    "nozzle_diameter": [
+                        0.4
+                    ],
+                    "originCenter": false,
+                    "printer_model": "Prusa mini",
+                    "profiles": [
+                        {
+                            "antiBacklash": 1,
+                            "arcTolerance": 0,
+                            "beltAnchor": 3,
+                            "firstLayerBedTemp": 60,
+                            "firstLayerBeltBump": 0,
+                            "firstLayerBeltLead": 3,
+                            "firstLayerBrim": 0,
+                            "firstLayerBrimGap": 0,
+                            "firstLayerBrimIn": 0,
+                            "firstLayerBrimTrig": 0,
+                            "firstLayerFanSpeed": 0,
+                            "firstLayerFillRate": 35,
+                            "firstLayerFlatten": 0,
+                            "firstLayerLineMult": 2,
+                            "firstLayerNozzleTemp": 215,
+                            "firstLayerPrintMult": 1,
+                            "firstLayerRate": 8,
+                            "firstLayerYOffset": 0,
+                            "firstSliceHeight": 0.2,
+                            "outputAvoidGaps": true,
+                            "outputBedTemp": 60,
+                            "outputBeltFirst": false,
+                            "outputBrimCount": 2,
+                            "outputBrimOffset": 2,
+                            "outputCoastDist": 0,
+                            "outputDraftShield": false,
+                            "outputFanSpeed": 255,
+                            "outputFeedrate": 40,
+                            "outputFillMult": 1.25,
+                            "outputFinishrate": 50,
+                            "outputInvertX": false,
+                            "outputInvertY": false,
+                            "outputLayerRetract": false,
+                            "outputLoops": 0,
+                            "outputMinSpeed": 10,
+                            "outputPurgeTower": 0,
+                            "outputRaft": false,
+                            "outputRaftSpacing": 0.2,
+                            "outputRetractDist": 3.2,
+                            "outputRetractDwell": 20,
+                            "outputRetractSpeed": 70,
+                            "outputRetractWipe": 0,
+                            "outputSeekrate": 150,
+                            "outputShellMult": 1.25,
+                            "outputShortPoly": 100,
+                            "outputSparseMult": 1.25,
+                            "outputTemp": 215,
+                            "processName": "Prusa Mini 0.20mm",
+                            "ranges": [],
+                            "sliceAdaptive": false,
+                            "sliceBottomLayers": 4,
+                            "sliceDetectThin": "off",
+                            "sliceFillAngle": 45,
+                            "sliceFillGrow": 0,
+                            "sliceFillOverlap": 0.4,
+                            "sliceFillRate": 0,
+                            "sliceFillRepeat": 1,
+                            "sliceFillSparse": 0.2,
+                            "sliceFillType": "hex",
+                            "sliceFillWidth": 1,
+                            "sliceHeight": 0.2,
+                            "sliceLayerStart": "last",
+                            "sliceLineWidth": 0.45,
+                            "sliceMinHeight": 0,
+                            "sliceShellOrder": "in-out",
+                            "sliceShells": 2,
+                            "sliceSolidLayers": 3,
+                            "sliceSolidMinArea": 1,
+                            "sliceSolidRate": 0,
+                            "sliceSupportAngle": 50,
+                            "sliceSupportArea": 0.1,
+                            "sliceSupportDensity": 0.25,
+                            "sliceSupportEnable": true,
+                            "sliceSupportExtra": 0,
+                            "sliceSupportGap": 1,
+                            "sliceSupportNozzle": 0,
+                            "sliceSupportOffset": 1,
+                            "sliceSupportOutline": true,
+                            "sliceSupportSize": 5,
+                            "sliceSupportSpan": 5,
+                            "sliceTopLayers": 5,
+                            "zHopDistance": 0.2
+                        }
+                    ],
+                    "type": "machine"
+                },
+                "name": "Prusa mini 0.4 nozzle"
+            }
+        },
+        "vendor": "Prusa"
+    }
+]

@@ -1,0 +1,230 @@
+{
+  "slicer": "kirimoto",
+  "profile_type": "machine",
+  "name": "ULIO 3D BRIX 0.4 nozzle",
+  "vendor": "ULIO",
+  "first_seen": "4.7.1",
+  "last_seen": "4.7.1",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": "ULIO.3D.BRIX",
+  "context": {
+    "printer_model": "ULIO 3D BRIX"
+  },
+  "setting_scopes": {},
+  "settings": {
+    "mode": {
+      "4.7.1": "FDM"
+    },
+    "internal": {
+      "4.7.1": 0
+    },
+    "imageURL": {
+      "4.7.1": ""
+    },
+    "bedHeight": {
+      "4.7.1": 2.5
+    },
+    "bedWidth": {
+      "4.7.1": 100
+    },
+    "bedDepth": {
+      "4.7.1": 50
+    },
+    "bedRound": {
+      "4.7.1": false
+    },
+    "bedBelt": {
+      "4.7.1": false
+    },
+    "deviceZMax": {
+      "4.7.1": 0
+    },
+    "gcodeTime": {
+      "4.7.1": 1
+    },
+    "maxHeight": {
+      "4.7.1": 50.1
+    },
+    "originCenter": {
+      "4.7.1": false
+    },
+    "gcodeFan": {
+      "4.7.1": [
+        "M106 S{fan_speed}"
+      ]
+    },
+    "gcodeFeature": {
+      "4.7.1": [
+        "M73 P{progress}"
+      ]
+    },
+    "gcodeTrack": {
+      "4.7.1": []
+    },
+    "gcodeLayer": {
+      "4.7.1": []
+    },
+    "gcodePre": {
+      "4.7.1": [
+        "G90            ; use absolute coordinates",
+        "M83            ; extruder relative mode",
+        "M104 S{temp}   ; set extruder temp",
+        "M109 S{temp}   ; wait for extruder temp",
+        "G28 W          ; home all without mesh bed level",
+        "G92 E0.0",
+        "G1 F{600} ",
+        "M425 X0 Y0 Z0  ; Set backlash to specific values for all axis",
+        "M425 F1 S3     ; Enable backlash compensation at 100% for 3 mm",
+        "M117 ULIO 3D BRIX Printing"
+      ]
+    },
+    "gcodePost": {
+      "4.7.1": [
+        "M104 S0        ; turn off right extruder",
+        "M107           ; turn off filament cooling fan",
+        "G1 Z50 F{180}  ; drop bed G1 50 mm ",
+        "G28 X0 Y0      ; home XY axes",
+        "M84            ; disable stepper motors"
+      ]
+    },
+    "gcodeProc": {
+      "4.7.1": ""
+    },
+    "gcodeFExt": {
+      "4.7.1": "gcode"
+    },
+    "extruders": {
+      "4.7.1": [
+        {
+          "extFilament": 1.75,
+          "extNozzle": 0.4,
+          "extOffsetX": 0,
+          "extOffsetY": 0
+        }
+      ]
+    },
+    "new": {
+      "4.7.1": false
+    },
+    "deviceName": {
+      "4.7.1": "ULIO 3D BRIX"
+    },
+    "fwRetract": {
+      "4.7.1": false
+    },
+    "filamentSource": {
+      "4.7.1": "direct"
+    },
+    "profiles": {
+      "4.7.1": [
+        {
+          "processName": "ULIO 3D BRIX PLA",
+          "sliceHeight": 0.25,
+          "sliceShells": 3,
+          "sliceShellOrder": "in-out",
+          "sliceLayerStart": "center",
+          "sliceFillAngle": 45,
+          "sliceFillOverlap": 0.35,
+          "sliceFillSparse": 0.25,
+          "sliceFillType": "grid",
+          "sliceAdaptive": false,
+          "sliceMinHeight": 0,
+          "sliceSupportDensity": 0.25,
+          "sliceSupportOffset": 0.5,
+          "sliceSupportGap": 1,
+          "sliceSupportSize": 5,
+          "sliceSupportArea": 0.25,
+          "sliceSupportExtra": 0,
+          "sliceSupportAngle": 50,
+          "sliceSupportNozzle": 0,
+          "sliceSolidMinArea": 1,
+          "sliceBottomLayers": 3,
+          "sliceTopLayers": 5,
+          "firstLayerRate": 20,
+          "firstLayerPrintMult": 1,
+          "firstLayerYOffset": 0,
+          "firstLayerBrim": 0,
+          "firstLayerBeltLead": 200,
+          "firstLayerFanSpeed": 0,
+          "outputTemp": 215,
+          "outputBedTemp": 0,
+          "outputFanSpeed": 255,
+          "outputFeedrate": 35,
+          "outputFinishrate": 20,
+          "outputSeekrate": 35,
+          "outputShellMult": 1.05,
+          "outputFillMult": 1.1,
+          "outputSparseMult": 1.1,
+          "outputRetractDist": 3.2,
+          "outputRetractSpeed": 80,
+          "outputRetractWipe": 2,
+          "outputRetractDwell": 0,
+          "outputShortPoly": 50,
+          "outputMinSpeed": 1,
+          "outputCoastDist": 0,
+          "outputLayerRetract": false,
+          "zHopDistance": 0,
+          "antiBacklash": 0,
+          "sliceFillWidth": 1,
+          "sliceFillRate": 0,
+          "sliceSupportEnable": false,
+          "firstSliceHeight": 0.5,
+          "firstLayerFillRate": 20,
+          "firstLayerLineMult": 1,
+          "firstLayerNozzleTemp": 0,
+          "firstLayerBedTemp": 0,
+          "firstLayerBrimTrig": 0,
+          "firstLayerBrimGap": 0,
+          "outputRaft": false,
+          "outputRaftSpacing": 0.2,
+          "outputBrimCount": 0,
+          "outputBrimOffset": 2,
+          "outputPurgeTower": 0,
+          "outputInvertX": false,
+          "outputInvertY": false,
+          "arcTolerance": 0,
+          "ranges": [],
+          "outputLoops": 0,
+          "firstLayerBrimIn": 0,
+          "firstLayerBeltBump": 0,
+          "outputBeltFirst": false,
+          "sliceFillRepeat": 4,
+          "sliceLineWidth": 0,
+          "sliceSupportSpan": 5,
+          "sliceSupportOutline": false,
+          "firstLayerFlatten": 0,
+          "outputDraftShield": false,
+          "outputAvoidGaps": true,
+          "sliceDetectThin": "off",
+          "sliceLayerStartX": 0,
+          "sliceLayerStartY": 0,
+          "sliceFillGrow": 0,
+          "sliceSolidRate": 0,
+          "sliceSupportGrow": 0,
+          "outputAlternating": false,
+          "outputFanLayer": 5
+        }
+      ]
+    },
+    "type": {
+      "4.7.1": "machine"
+    },
+    "name": {
+      "4.7.1": "ULIO 3D BRIX 0.4 nozzle"
+    },
+    "printer_model": {
+      "4.7.1": "ULIO 3D BRIX"
+    },
+    "nozzle_diameter": {
+      "4.7.1": [
+        0.4
+      ]
+    },
+    "extNozzle": {
+      "4.7.1": 0.4
+    }
+  }
+}

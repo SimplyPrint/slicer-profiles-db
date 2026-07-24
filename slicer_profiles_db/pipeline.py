@@ -50,6 +50,7 @@ from .parsers import (
     ElegooSlicerParser,
     AnycubicSlicerParser,
     SuperSlicerParser,
+    KiriMotoParser,
 )
 from .parsers.base import BaseParser
 
@@ -103,6 +104,7 @@ class ProfilePipeline:
             SlicerType.ELEGOOSLICER: ElegooSlicerParser(),
             SlicerType.ANYCUBICSLICER: AnycubicSlicerParser(),
             SlicerType.SUPERSLICER: SuperSlicerParser(),
+            SlicerType.KIRIMOTO: KiriMotoParser(),
         }
 
     def ingest(

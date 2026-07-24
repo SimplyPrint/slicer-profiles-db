@@ -1,0 +1,165 @@
+{
+  "slicer": "kirimoto",
+  "profile_type": "machine",
+  "name": "Cubicon Style 0.4 nozzle",
+  "vendor": "Cubicon",
+  "first_seen": "4.7.1",
+  "last_seen": "4.7.1",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": "Cubicon.Style",
+  "context": {
+    "printer_model": "Cubicon Style"
+  },
+  "setting_scopes": {},
+  "settings": {
+    "noclone": {
+      "4.7.1": false
+    },
+    "mode": {
+      "4.7.1": "FDM"
+    },
+    "deviceName": {
+      "4.7.1": "Cubicon Style 0.4 nozzle"
+    },
+    "internal": {
+      "4.7.1": 0
+    },
+    "imageURL": {
+      "4.7.1": ""
+    },
+    "imageScale": {
+      "4.7.1": 0.75
+    },
+    "imageAnchor": {
+      "4.7.1": 0
+    },
+    "bedHeight": {
+      "4.7.1": 2.5
+    },
+    "bedWidth": {
+      "4.7.1": 150
+    },
+    "bedDepth": {
+      "4.7.1": 150
+    },
+    "bedRound": {
+      "4.7.1": false
+    },
+    "bedBelt": {
+      "4.7.1": false
+    },
+    "maxHeight": {
+      "4.7.1": 150
+    },
+    "originCenter": {
+      "4.7.1": false
+    },
+    "extrudeAbs": {
+      "4.7.1": true
+    },
+    "spindleMax": {
+      "4.7.1": 0
+    },
+    "gcodeFan": {
+      "4.7.1": [
+        "M106 S{fan_speed}"
+      ]
+    },
+    "gcodeFeature": {
+      "4.7.1": []
+    },
+    "gcodeTrack": {
+      "4.7.1": []
+    },
+    "gcodeLayer": {
+      "4.7.1": []
+    },
+    "gcodePre": {
+      "4.7.1": [
+        "T{tool}                ; select extruder #0",
+        "M104 S{temp}           ; set nozzle temp",
+        "M140 S{bed_temp} T{tool} ; set bed temperature",
+        "M109 S{temp}           ; wait for nozzle to heat",
+        "S210 T{tool}           ; wait for heating?",
+        "M82                    ; absolute extrusion mode",
+        "G28                    ; home",
+        "G1 Z15 F6000           ; lower platform 15mm",
+        "G92 E0                 ; zero out extruder position",
+        "G1 F200 E3             ; prime the extruder 3mm"
+      ]
+    },
+    "gcodePost": {
+      "4.7.1": [
+        "M107                   ; turn off filament cooling fan",
+        "M104 S0 T{tool}        ; turn off right extruder",
+        "M140 S0                ; turn off bed",
+        "M904                   ; park extruder",
+        "M84                    ; disable stepper motors"
+      ]
+    },
+    "gcodeProc": {
+      "4.7.1": ""
+    },
+    "gcodeDwell": {
+      "4.7.1": []
+    },
+    "gcodeSpindle": {
+      "4.7.1": []
+    },
+    "gcodeResetA": {
+      "4.7.1": []
+    },
+    "gcodeChange": {
+      "4.7.1": []
+    },
+    "gcodeFExt": {
+      "4.7.1": "hvs"
+    },
+    "gcodeSpace": {
+      "4.7.1": true
+    },
+    "gcodeStrip": {
+      "4.7.1": false
+    },
+    "gcodeLaserOn": {
+      "4.7.1": []
+    },
+    "gcodeLaserOff": {
+      "4.7.1": []
+    },
+    "extruders": {
+      "4.7.1": [
+        {
+          "extFilament": 1.75,
+          "extNozzle": 0.4,
+          "extSelect": [
+            "T0"
+          ],
+          "extDeselect": [],
+          "extOffsetX": 0,
+          "extOffsetY": 0
+        }
+      ]
+    },
+    "type": {
+      "4.7.1": "machine"
+    },
+    "name": {
+      "4.7.1": "Cubicon Style 0.4 nozzle"
+    },
+    "printer_model": {
+      "4.7.1": "Cubicon Style"
+    },
+    "nozzle_diameter": {
+      "4.7.1": [
+        0.4
+      ]
+    },
+    "extNozzle": {
+      "4.7.1": 0.4
+    }
+  }
+}

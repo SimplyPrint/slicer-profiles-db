@@ -1,0 +1,181 @@
+{
+  "slicer": "kirimoto",
+  "profile_type": "machine",
+  "name": "Anycubic Kobra 0.4 nozzle",
+  "vendor": "Anycubic",
+  "first_seen": "4.7.1",
+  "last_seen": "4.7.1",
+  "filament_id": null,
+  "setting_id": null,
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": "Anycubic.Kobra",
+  "context": {
+    "printer_model": "Anycubic Kobra"
+  },
+  "setting_scopes": {},
+  "settings": {
+    "noclone": {
+      "4.7.1": false
+    },
+    "mode": {
+      "4.7.1": "FDM"
+    },
+    "internal": {
+      "4.7.1": 0
+    },
+    "bedHeight": {
+      "4.7.1": 2.5
+    },
+    "bedWidth": {
+      "4.7.1": 222
+    },
+    "bedDepth": {
+      "4.7.1": 222
+    },
+    "bedRound": {
+      "4.7.1": false
+    },
+    "bedBelt": {
+      "4.7.1": false
+    },
+    "resolutionX": {
+      "4.7.1": 1600
+    },
+    "resolutionY": {
+      "4.7.1": 900
+    },
+    "maxHeight": {
+      "4.7.1": 222
+    },
+    "originCenter": {
+      "4.7.1": false
+    },
+    "extrudeAbs": {
+      "4.7.1": false
+    },
+    "gcodeFan": {
+      "4.7.1": [
+        "M106 S{fan_speed}"
+      ]
+    },
+    "gcodeTrack": {
+      "4.7.1": [
+        "M117 {progress}% layer {layer} / {layers}"
+      ]
+    },
+    "gcodeLayer": {
+      "4.7.1": []
+    },
+    "gcodePre": {
+      "4.7.1": [
+        "M107                         ; turn off filament cooling fan",
+        "M104 S{temp} T0              ; set extruder temperature",
+        "M140 S{bed_temp} T0          ; set bed temperature",
+        "G90                          ; set absolute positioning mode",
+        "M83                          ; set relative positioning for extruder",
+        "G28                          ; home axes",
+        "G1 F3000                     ; set default move speed",
+        "G1 Z1 F6000                  ; pause above the bed",
+        "M190 S{bed_temp} T0          ; wait for bed to reach target temp",
+        "M109 S{temp} T0              ; wait for extruder to reach target temp",
+        "G92 E0                       ; set extruder position to 0"
+      ]
+    },
+    "gcodePost": {
+      "4.7.1": [
+        "M107                ; turn off filament cooling fan",
+        "M104 S0 T0          ; turn off extruder",
+        "M140 S0 T0          ; turn off bed",
+        "G91                 ; relative movement",
+        "G1 Z10 F1200        ; drop bed 10mm",
+        "G90                 ; absolute positioning",
+        "G28 X0 Y0           ; home XY axes",
+        "M84                 ; disable stepper motors"
+      ]
+    },
+    "gcodeExt": {
+      "4.7.1": []
+    },
+    "gcodeInt": {
+      "4.7.1": []
+    },
+    "gcodeProc": {
+      "4.7.1": ""
+    },
+    "gcodePause": {
+      "4.7.1": []
+    },
+    "gcodeDwell": {
+      "4.7.1": []
+    },
+    "gcodeSpindle": {
+      "4.7.1": []
+    },
+    "gcodeChange": {
+      "4.7.1": []
+    },
+    "gcodeFExt": {
+      "4.7.1": "gcode"
+    },
+    "gcodeSpace": {
+      "4.7.1": true
+    },
+    "gcodeStrip": {
+      "4.7.1": false
+    },
+    "gcodeLaserOn": {
+      "4.7.1": []
+    },
+    "gcodeLaserOff": {
+      "4.7.1": []
+    },
+    "extruders": {
+      "4.7.1": [
+        {
+          "extFilament": 1.75,
+          "extNozzle": 0.4,
+          "extOffsetX": 0,
+          "extOffsetY": 0
+        }
+      ]
+    },
+    "deviceName": {
+      "4.7.1": "Anycubic Kobra"
+    },
+    "fwRetract": {
+      "4.7.1": false
+    },
+    "extras": {
+      "4.7.1": {
+        "palette": {
+          "printer": "6c99ea036da",
+          "ping": null,
+          "feed": null,
+          "push": null,
+          "offset": null,
+          "heat": null,
+          "cool": null,
+          "press": null
+        }
+      }
+    },
+    "type": {
+      "4.7.1": "machine"
+    },
+    "name": {
+      "4.7.1": "Anycubic Kobra 0.4 nozzle"
+    },
+    "printer_model": {
+      "4.7.1": "Anycubic Kobra"
+    },
+    "nozzle_diameter": {
+      "4.7.1": [
+        0.4
+      ]
+    },
+    "extNozzle": {
+      "4.7.1": 0.4
+    }
+  }
+}
