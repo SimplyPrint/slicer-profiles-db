@@ -138,6 +138,28 @@ def test_same_named_embedded_profiles_remain_distinct_per_device(tmp_path):
     assert len(store.list_profiles(SlicerType.KIRIMOTO, "filament")) == 2
 
 
+def test_ender_3_profile_declares_ender_3_pro_compatibility(tmp_path):
+    path = tmp_path / "Creality.Ender.3.json"
+    path.write_text(
+        json.dumps(
+            {
+                "extruders": [{"nozzle": 0.4}],
+                "profiles": [{"processName": "Ender 3 PLA"}],
+            }
+        )
+    )
+
+    machine_model = next(
+        profile
+        for profile in KiriMotoParser().parse_directory(tmp_path)
+        if profile.profile_type == ProfileType.MACHINE_MODEL
+    )
+
+    assert machine_model.context["compatible_printer_models"] == [
+        "Creality Ender-3 Pro"
+    ]
+
+
 def test_kirimoto_vendor_aliases_match_simplyprint_brands():
     models = [
         {"id": 19, "brand": "Folger Tech", "name": "FT-5"},

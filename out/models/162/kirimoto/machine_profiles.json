@@ -1,8 +1,39 @@
 [
     {
         "machine_model": {
+            "bed_assets": {
+                "build_volume": {
+                    "depth": 150,
+                    "width": 225
+                },
+                "coordinate_space": "machine_build_volume",
+                "model": {
+                    "format": "obj",
+                    "media_type": "model/obj",
+                    "ref": "sha256:5792f4899330c499c4e28dc8a8602e814a85b5cb8dd5b513a7dd673432ff7883",
+                    "transform": {
+                        "translation": [
+                            0,
+                            -28,
+                            5
+                        ],
+                        "unit": "mm"
+                    }
+                },
+                "origin": "build_volume_center",
+                "texture": {
+                    "flip_y": true,
+                    "format": "png",
+                    "mapping": "uv",
+                    "media_type": "image/png",
+                    "ref": "sha256:31e65d99724850c1ca52b6e60c64f63fb82affe04ab84b1f9d608d926e2fbc45",
+                    "target": "model"
+                }
+            },
             "bed_belt": false,
             "bed_depth": 145,
+            "bed_model": "sha256:5792f4899330c499c4e28dc8a8602e814a85b5cb8dd5b513a7dd673432ff7883",
+            "bed_texture": "sha256:31e65d99724850c1ca52b6e60c64f63fb82affe04ab84b1f9d608d926e2fbc45",
             "bed_width": 225,
             "build_height": 150,
             "name": "Wanhao Duplicator 4s",

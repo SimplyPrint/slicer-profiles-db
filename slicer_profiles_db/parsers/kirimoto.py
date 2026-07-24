@@ -39,6 +39,13 @@ _FILAMENT_TYPES = (
     "PP",
 )
 
+_COMPATIBLE_PRINTER_MODELS: dict[str, tuple[str, ...]] = {
+    # GridSpace ships one Ender 3 device profile. The Ender-3 Pro uses the
+    # same bed, motion system and Kiri process defaults, so expose that
+    # upstream profile for both SimplyPrint hardware records.
+    "Creality Ender 3": ("Creality Ender-3 Pro",),
+}
+
 
 def _infer_filament_type(process: dict[str, Any], process_name: str) -> str | None:
     explicit = process.get("filament_type")
@@ -204,6 +211,9 @@ class KiriMotoParser(BaseParser):
             device = machine.settings
             nozzle = device["extruders"][0]["extNozzle"]
             context: dict[str, Any] = {"display_name": display_name}
+            compatible_models = _COMPATIBLE_PRINTER_MODELS.get(display_name)
+            if compatible_models:
+                context["compatible_printer_models"] = list(compatible_models)
             processes = source.get("profiles")
             if isinstance(processes, list) and processes:
                 first_name = processes[0].get("processName")

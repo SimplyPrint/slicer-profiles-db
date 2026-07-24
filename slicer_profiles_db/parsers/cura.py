@@ -480,10 +480,11 @@ def _bed_assets(
         assets["build_volume"] = {"width": width, "depth": depth}
 
     if model is not None:
-        # Uranium's Platform node reduces multi-node reader results to the
-        # mesh with the greatest face count. Preserve that behavior explicitly
-        # so generic clients do not render auxiliary OBJ/3MF geometry.
-        model["mesh_selection"] = "largest_face_count"
+        # Uranium's OBJ reader returns one node containing every OBJ group, so
+        # the complete model must be rendered. Its 3MF reader can return
+        # multiple nodes, in which case Platform selects the largest mesh.
+        if model["format"] == "3mf":
+            model["mesh_selection"] = "largest_face_count"
         transform: dict[str, Any] = {}
         offset = metadata.get("platform_offset")
         if isinstance(offset, (list, tuple)) and len(offset) >= 3:

@@ -5,12 +5,14 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 
 from slicer_profiles_db.mapping import (
+    _apply_bed_visual_fallback,
     _evaluate_stable,
     _machine_model_export,
     _write_import_manifest,
     fetch_sp_slicer_versions,
+    map_printer_models,
 )
-from slicer_profiles_db.models import SlicerType, StoredProfile
+from slicer_profiles_db.models import ProfileType, SlicerType, StoredProfile
 
 
 class MappingVersionGuardTests(unittest.TestCase):
@@ -97,7 +99,7 @@ class MappingVersionGuardTests(unittest.TestCase):
             last_seen="5.13.0",
             context={
                 "bed_assets": {
-                    "model": {"url": "sha256:model"},
+                    "model": {"url": "sha256:model", "format": "obj"},
                     "texture": {"url": "sha256:texture"},
                 },
                 "bed_model": "sha256:model",
@@ -120,13 +122,93 @@ class MappingVersionGuardTests(unittest.TestCase):
         self.assertEqual(exported["bed_model"], "sha256:model")
         self.assertEqual(exported["bed_texture"], "sha256:texture")
         self.assertEqual(exported["bed_assets"]["model"]["url"], "sha256:model")
-        self.assertEqual(
-            exported["bed_assets"]["model"]["mesh_selection"],
-            "largest_face_count",
+        self.assertNotIn(
+            "mesh_selection",
+            exported["bed_assets"]["model"],
         )
         self.assertEqual(exported["bed_assets"]["texture"]["target"], "model")
         self.assertEqual(exported["bed_assets"]["texture"]["mapping"], "uv")
         self.assertTrue(exported["bed_assets"]["texture"]["flip_y"])
+
+    def test_cura_machine_export_selects_largest_3mf_mesh(self) -> None:
+        profile = StoredProfile(
+            slicer=SlicerType.CURA.value,
+            profile_type="machine_model",
+            name="Cura printer",
+            vendor="Example",
+            first_seen="5.13.0",
+            last_seen="5.13.0",
+            context={
+                "bed_assets": {
+                    "model": {"url": "sha256:model", "format": "3mf"},
+                    "texture": {"url": "sha256:texture"},
+                }
+            },
+            settings={},
+        )
+
+        exported = _machine_model_export(profile, {})
+
+        self.assertEqual(
+            exported["bed_assets"]["model"]["mesh_selection"],
+            "largest_face_count",
+        )
+
+    def test_bed_visual_fallback_only_fills_missing_hardware_assets(self) -> None:
+        target = {"bed_model": "sha256:engine-owned"}
+        fallback = {
+            "bed_assets": {"model": {"ref": "sha256:donor"}},
+            "bed_model": "sha256:donor",
+            "bed_texture": "sha256:texture",
+        }
+
+        _apply_bed_visual_fallback(target, fallback)
+
+        self.assertEqual(target["bed_model"], "sha256:engine-owned")
+        self.assertEqual(target["bed_texture"], "sha256:texture")
+        self.assertEqual(
+            target["bed_assets"],
+            {"model": {"ref": "sha256:donor"}},
+        )
+
+    def test_machine_model_compatibility_alias_maps_kiri_to_ender_3_pro(
+        self,
+    ) -> None:
+        profile = StoredProfile(
+            slicer=SlicerType.KIRIMOTO.value,
+            profile_type=ProfileType.MACHINE_MODEL.value,
+            name="Creality Ender 3",
+            vendor="Creality",
+            first_seen="4.7.1",
+            last_seen="4.7.1",
+            context={
+                "display_name": "Creality Ender 3",
+                "compatible_printer_models": ["Creality Ender-3 Pro"],
+            },
+            settings={"name": {"4.7.1": "Creality Ender 3"}},
+        )
+        index = Mock()
+        index.find_by_type.side_effect = (
+            lambda _slicer, profile_type, *_args: (
+                [profile] if profile_type == ProfileType.MACHINE_MODEL else []
+            )
+        )
+
+        result = map_printer_models(
+            Mock(),
+            index,
+            {
+                "brands": ["Creality"],
+                "models": [
+                    {"id": 43, "brand": "Creality", "name": "Ender-3"},
+                    {"id": 42, "brand": "Creality", "name": "Ender-3 Pro"},
+                ],
+            },
+            slicers=[SlicerType.KIRIMOTO],
+        )
+
+        self.assertIn(SlicerType.KIRIMOTO.value, result.model_to_profiles[43])
+        self.assertIn(SlicerType.KIRIMOTO.value, result.model_to_profiles[42])
 
     @patch.dict(
         os.environ,

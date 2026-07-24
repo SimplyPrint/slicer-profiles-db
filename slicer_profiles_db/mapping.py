@@ -989,7 +989,8 @@ def _machine_model_export(
             model = bed_assets.get("model")
             texture = bed_assets.get("texture")
             if isinstance(model, dict) and isinstance(texture, dict):
-                model.setdefault("mesh_selection", "largest_face_count")
+                if model.get("format") == "3mf":
+                    model.setdefault("mesh_selection", "largest_face_count")
                 texture.setdefault("target", "model")
                 texture.setdefault("mapping", "uv")
                 texture.setdefault("flip_y", True)
@@ -1125,14 +1126,24 @@ def map_printer_models(
             )
             vendor = profile.vendor
 
-            ids = match_printer_model(
-                sp_models,
-                sp_brands,
-                sp_slicer_names,
-                vendor,
-                name,
-                brand_map,
-            )
+            compatible_names = [name]
+            aliases = profile.context.get("compatible_printer_models")
+            if isinstance(aliases, (list, tuple)):
+                compatible_names.extend(
+                    alias for alias in aliases if isinstance(alias, str) and alias
+                )
+            ids: set[int] = set()
+            for compatible_name in dict.fromkeys(compatible_names):
+                ids.update(
+                    match_printer_model(
+                        sp_models,
+                        sp_brands,
+                        sp_slicer_names,
+                        vendor,
+                        compatible_name,
+                        brand_map,
+                    )
+                )
 
             if ids:
                 profile_key = f"{vendor}/{profile.name}"
@@ -1881,6 +1892,13 @@ def export_output(
     if output_dir.exists():
         shutil.rmtree(output_dir)
 
+    bed_visual_donors = _build_bed_visual_donors(
+        model_map,
+        store,
+        index,
+        version_guards,
+    )
+
     # --- Machine profiles + assets ---
     for model_id, slicer_profiles in model_map.model_to_profiles.items():
         for slicer_val, profile_keys in slicer_profiles.items():
@@ -1901,11 +1919,16 @@ def export_output(
                 mm_data = _evaluate_stable(mm, version_guards)
                 if not mm_data:
                     continue
+                machine_model_export = _machine_model_export(mm, mm_data)
                 # Keep /out small: resource files live under
                 # profiles/{slicer}/_resources and are resolved by the
                 # ecosystem importer using resources.json.
-                _canonicalize_resource_refs(mm_data, store, slicer)
-                machine_model_export = _machine_model_export(mm, mm_data)
+                _canonicalize_resource_refs(machine_model_export, store, slicer)
+                if slicer == SlicerType.KIRIMOTO:
+                    _apply_bed_visual_fallback(
+                        machine_model_export,
+                        bed_visual_donors.get(model_id),
+                    )
                 selection_defaults = _profile_selection_defaults(mm)
                 # Discovery metadata is required by the legacy ecosystem
                 # importer, but need not be persisted in a runtime variant's
@@ -1975,6 +1998,77 @@ def export_output(
     _write_import_manifest(output_dir, required_slicers)
 
 
+_BED_VISUAL_KEYS = ("bed_assets", "bed_model", "bed_texture")
+_BED_VISUAL_DONOR_PRIORITY = {
+    SlicerType.CURA.value: 0,
+    SlicerType.BAMBUSTUDIO.value: 1,
+    SlicerType.ORCASLICER.value: 2,
+    SlicerType.CREALITYPRINT.value: 3,
+}
+
+
+def _bed_visual_payload(data: Mapping[str, Any]) -> dict[str, Any] | None:
+    payload = {
+        key: copy.deepcopy(data[key])
+        for key in _BED_VISUAL_KEYS
+        if data.get(key) not in (None, "")
+    }
+    return payload or None
+
+
+def _apply_bed_visual_fallback(
+    target: dict[str, Any], fallback: Mapping[str, Any] | None
+) -> None:
+    """Fill missing hardware visuals without replacing engine-owned metadata."""
+    if not fallback:
+        return
+    for key in _BED_VISUAL_KEYS:
+        if target.get(key) in (None, "") and fallback.get(key) not in (None, ""):
+            target[key] = copy.deepcopy(fallback[key])
+
+
+def _build_bed_visual_donors(
+    model_map: ModelMap,
+    store: ProfileStore,
+    index: ProfileIndex,
+    version_guards: Mapping[SlicerType, str] | None,
+) -> dict[int, dict[str, Any]]:
+    """Select one engine-independent bed visual set for each hardware model."""
+    donors: dict[int, dict[str, Any]] = {}
+    for model_id, slicer_profiles in model_map.model_to_profiles.items():
+        candidates: list[tuple[int, str, dict[str, Any]]] = []
+        for slicer_val, profile_keys in slicer_profiles.items():
+            if slicer_val == SlicerType.KIRIMOTO.value:
+                continue
+            slicer = SlicerType(slicer_val)
+            for profile_key in profile_keys:
+                vendor, name = profile_key.split("/", 1)
+                profiles = index.find_by_type(
+                    slicer, ProfileType.MACHINE_MODEL, vendor, name
+                )
+                if not profiles:
+                    continue
+                profile = profiles[0]
+                data = _evaluate_stable(profile, version_guards)
+                if not data:
+                    continue
+                exported = _machine_model_export(profile, data)
+                _canonicalize_resource_refs(exported, store, slicer)
+                payload = _bed_visual_payload(exported)
+                if payload:
+                    candidates.append(
+                        (
+                            _BED_VISUAL_DONOR_PRIORITY.get(slicer_val, 100),
+                            slicer_val,
+                            payload,
+                        )
+                    )
+        if candidates:
+            candidates.sort(key=lambda candidate: (candidate[0], candidate[1]))
+            donors[model_id] = candidates[0][2]
+    return donors
+
+
 def _canonicalize_resource_refs(
     data: dict[str, Any], store: ProfileStore, slicer: SlicerType
 ) -> None:
@@ -1994,23 +2088,34 @@ def _canonicalize_resource_refs(
         return
     rs = ResourceStore(resource_store_dir)
 
-    for key in ("bed_model", "bed_texture", "thumbnail", "hotend_model"):
-        value = data.get(key)
+    references: list[tuple[dict[str, Any], str]] = [
+        (data, key)
+        for key in ("bed_model", "bed_texture", "thumbnail", "hotend_model")
+    ]
+    bed_assets = data.get("bed_assets")
+    if isinstance(bed_assets, dict):
+        for asset_key in ("model", "texture"):
+            asset = bed_assets.get(asset_key)
+            if isinstance(asset, dict):
+                references.append((asset, "ref"))
+
+    for container, key in references:
+        value = container.get(key)
         if not isinstance(value, str) or not value:
             continue
         if value.startswith("sha256:"):
             if rs.get_path(value[7:]):
                 continue
-            data.pop(key, None)
+            container.pop(key, None)
             continue
 
         hashes = rs.find_hashes_by_filename(value)
         if hashes:
-            data[key] = f"sha256:{hashes[0]}"
+            container[key] = f"sha256:{hashes[0]}"
         else:
             # Do not emit resource references the importer cannot resolve from
             # the cloned profiles repository.
-            data.pop(key, None)
+            container.pop(key, None)
 
 
 def _export_generic_filaments(
