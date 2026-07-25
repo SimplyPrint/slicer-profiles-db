@@ -1855,6 +1855,7 @@ def map_filament_profiles(
     for slicer_val, profiles_by_name in roles_by_slicer.items():
         for entries_by_payload in profiles_by_name.values():
             for entry in entries_by_payload.values():
+                _apply_compatible_variant_attributes(entry)
                 owner = role_owners[id(entry)]
                 output.setdefault(owner, {}).setdefault(slicer_val, []).append(entry)
 
@@ -1910,6 +1911,50 @@ def _same_variant(left: str, right: str) -> bool:
         and right_variant is not None
         and left_variant == right_variant
     )
+
+
+def _apply_compatible_variant_attributes(entry: dict[str, Any]) -> None:
+    """Tag a role when all hardware relations imply one nozzle configuration.
+
+    Orca/Prusa profiles commonly express high-flow compatibility only through
+    ``compatible_printers`` (for example ``HF0.4``). The importer stores these
+    portable attributes on the profile row and the frontend uses them when
+    switching nozzle hardware, so the relation must not remain implicit.
+    """
+
+    compatible_printers = entry.get("compatible_printers")
+    if not isinstance(compatible_printers, Mapping):
+        return
+
+    parsed_variants: list[tuple[float, bool]] = []
+    for raw_variants in compatible_printers.values():
+        if not isinstance(raw_variants, list):
+            return
+        for raw_variant in raw_variants:
+            parsed = _parse_nozzle_variant_token(raw_variant)
+            if parsed is None:
+                return
+            parsed_variants.append(parsed)
+
+    if not parsed_variants:
+        return
+
+    attributes = entry.get("attributes")
+    attributes = dict(attributes) if isinstance(attributes, Mapping) else {}
+
+    diameters = {diameter for diameter, _ in parsed_variants}
+    if len(diameters) == 1:
+        attributes.setdefault("nozzle_diameter", next(iter(diameters)))
+
+    volume_types = {is_high_flow for _, is_high_flow in parsed_variants}
+    if len(volume_types) == 1:
+        attributes.setdefault(
+            "nozzle_volume_type",
+            "high_flow" if next(iter(volume_types)) else "standard",
+        )
+
+    if attributes:
+        entry["attributes"] = attributes
 
 
 def _compat_matches_printer(
@@ -2199,6 +2244,8 @@ def map_print_profiles(
                             out["compatible_printers"][model_name].append(variant)
 
             if compatible_prints:
+                for entry in compatible_prints.values():
+                    _apply_compatible_variant_attributes(entry)
                 output.setdefault(model_id, {})[slicer_val] = list(
                     compatible_prints.values()
                 )

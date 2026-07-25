@@ -6,6 +6,7 @@ from unittest.mock import Mock, patch
 
 from slicer_profiles_db.mapping import (
     _apply_bed_visual_fallback,
+    _apply_compatible_variant_attributes,
     _bambu_runtime_variants,
     _cura_material_compatibility_aliases,
     _evaluate_stable,
@@ -240,6 +241,41 @@ class MappingVersionGuardTests(unittest.TestCase):
                 "nozzle_volume_type": "high_flow",
             },
         )
+
+    def test_profile_exclusively_related_to_hf_variants_is_tagged(self) -> None:
+        entry = {
+            "name": "0.20mm SPEED @MK4S HF0.4",
+            "compatible_printers": {
+                "Prusa MK4S": ["HF0.4"],
+                "Prusa CORE One": ["0.4HF"],
+            },
+            "data": {},
+        }
+
+        _apply_compatible_variant_attributes(entry)
+
+        self.assertEqual(
+            entry["attributes"],
+            {
+                "nozzle_diameter": 0.4,
+                "nozzle_volume_type": "high_flow",
+            },
+        )
+
+    def test_profile_shared_by_standard_and_hf_keeps_volume_type_generic(
+        self,
+    ) -> None:
+        entry = {
+            "name": "Generic PLA",
+            "compatible_printers": {
+                "Prusa MK4S": ["0.4", "HF0.4"],
+            },
+            "data": {},
+        }
+
+        _apply_compatible_variant_attributes(entry)
+
+        self.assertEqual(entry["attributes"], {"nozzle_diameter": 0.4})
 
     def test_bambu_embedded_high_flow_choice_becomes_runtime_variant(self) -> None:
         variants = _bambu_runtime_variants(
