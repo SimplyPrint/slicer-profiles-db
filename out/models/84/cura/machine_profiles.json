@@ -36,6 +36,33 @@
             "alternate_carve_order": true,
             "alternate_extra_perimeter": false,
             "anti_overhang_mesh": false,
+            "bed_assets": {
+                "build_volume": {
+                    "depth": 300,
+                    "width": 300
+                },
+                "coordinate_space": "machine_build_volume",
+                "model": {
+                    "format": "3mf",
+                    "geometry_space": "raw_mesh",
+                    "media_type": "model/3mf",
+                    "mesh_selection": "largest_face_count",
+                    "ref": "sha256:641818099994eb4ea92b3f4f2392b4a21131d3153fe9c9857d5d8069c682458b",
+                    "transform": {
+                        "rotation": {
+                            "euler": [
+                                90,
+                                0,
+                                0
+                            ],
+                            "order": "XYZ",
+                            "unit": "deg"
+                        }
+                    }
+                },
+                "origin": "build_volume_center"
+            },
+            "bed_model": "sha256:641818099994eb4ea92b3f4f2392b4a21131d3153fe9c9857d5d8069c682458b",
             "bottom_layers": 10,
             "bottom_skin_expand_distance": 0.8,
             "bottom_skin_preshrink": 0.8,
