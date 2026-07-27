@@ -5,6 +5,8 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 
 from slicer_profiles_db.mapping import (
+    ModelMap,
+    _add_filament_output,
     _apply_bed_visual_fallback,
     _apply_compatible_variant_attributes,
     _bambu_runtime_variants,
@@ -14,12 +16,12 @@ from slicer_profiles_db.mapping import (
     _machine_model_export,
     _model_variants,
     _parse_variant_from_name,
+    _profile_coverage_report,
     _profile_matches_printer,
     _propagate_bed_visual_donors_by_profile,
     _public_variant_payload,
     _same_variant,
     _write_import_manifest,
-    ModelMap,
     fetch_sp_slicer_versions,
     map_printer_models,
 )
@@ -33,6 +35,81 @@ from slicer_profiles_db.parsers.cura import _material_compatibility_aliases
 
 
 class MappingVersionGuardTests(unittest.TestCase):
+    def test_coverage_report_checks_roles_across_owner_artifacts(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output_dir = Path(directory)
+            machine_dir = output_dir / "models/469/crealityprint"
+            role_dir = output_dir / "models/1/crealityprint"
+            machine_dir.mkdir(parents=True)
+            role_dir.mkdir(parents=True)
+            (machine_dir / "machine_profiles.json").write_text(
+                """[{
+                    "machine_model": {"name": "Creality Ender-3 V3 KE"},
+                    "variants": {"0.4": {}}
+                }]""",
+                encoding="utf-8",
+            )
+            (role_dir / "filament_profiles.json").write_text(
+                """[{
+                    "name": "Hyper PLA",
+                    "compatible_printers": {
+                        "Creality Ender-3 V3 KE": ["0.4"]
+                    }
+                }]""",
+                encoding="utf-8",
+            )
+
+            report = _profile_coverage_report(output_dir)
+
+        self.assertEqual(
+            report["engines"]["crealityprint"],
+            {"mapped_models": 1, "variants": 1},
+        )
+        self.assertEqual(
+            report["gaps"],
+            [
+                {
+                    "engine": "crealityprint",
+                    "missing": ["print"],
+                    "model": "Creality Ender-3 V3 KE",
+                    "model_id": 469,
+                    "variant": "0.4",
+                }
+            ],
+        )
+
+    def test_native_filament_profile_does_not_require_ofd_enrichment(self) -> None:
+        profile = StoredProfile(
+            slicer=SlicerType.CREALITYPRINT.value,
+            profile_type=ProfileType.FILAMENT.value,
+            name="Hyper PLA @Creality Ender-3 V3 KE 0.4 nozzle",
+            vendor="Creality",
+            first_seen="6.1.0",
+            last_seen="6.1.0",
+            settings={},
+        )
+        ofd_index = Mock()
+        ofd_index.resolve_path.return_value = None
+
+        entry = _add_filament_output(
+            compatible_filaments={},
+            profile=profile,
+            profile_data={},
+            filament_name=profile.name,
+            filament_type="PLA",
+            model_name="Creality Ender-3 V3 KE",
+            variant="0.4",
+            slicer_val=SlicerType.CREALITYPRINT.value,
+            generic_profiles={},
+            ofd_index=ofd_index,
+        )
+
+        self.assertEqual(
+            entry["compatible_printers"],
+            {"Creality Ender-3 V3 KE": ["0.4"]},
+        )
+        self.assertNotIn("filament_db_ids", entry)
+
     def test_evaluate_stable_caps_profiles_at_simplyprint_latest(self) -> None:
         profile = StoredProfile(
             slicer=SlicerType.BAMBUSTUDIO.value,

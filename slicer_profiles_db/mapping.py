@@ -1820,8 +1820,7 @@ def map_filament_profiles(
                             role_name=role_name,
                             role_payload=role_payload,
                         )
-                        if role is not None:
-                            role_owners.setdefault(id(role), model_id)
+                        role_owners.setdefault(id(role), model_id)
 
                     # Shared Orca library generic @System filament presets are
                     # material presets, not printer-vendor presets. Brand-specific
@@ -1847,8 +1846,7 @@ def map_filament_profiles(
                             generic_profiles=_generic_profiles,
                             ofd_index=ofd_index,
                         )
-                        if role is not None:
-                            role_owners.setdefault(id(role), model_id)
+                        role_owners.setdefault(id(role), model_id)
 
     # Assign every coalesced role to the first compatible model.  Its complete
     # compatible-printer map retains all model and variant relations.
@@ -2035,7 +2033,7 @@ def _add_filament_output(
     ofd_index: Any | None,
     role_name: str | None = None,
     role_payload: dict[str, Any] | None = None,
-) -> dict | None:
+) -> dict:
     """Add one filament profile to the mapper output, merging variants."""
     output_name = role_name or filament_name
     payload = role_payload or _profile_payload(profile, profile_data)
@@ -2048,18 +2046,6 @@ def _add_filament_output(
             slicer_val,
             filament_id=profile.filament_id,
         )
-
-    is_generic_name = filament_name.lower().startswith("generic")
-    # Kiri:Moto embeds printer-specific material roles directly in each
-    # device profile.  They are valid slicing presets even when they do not
-    # correspond to a product entry in Open Filament Database.
-    if (
-        ofd_index
-        and not filament_db_id
-        and not is_generic_name
-        and slicer_val != SlicerType.KIRIMOTO.value
-    ):
-        return
 
     entries_by_payload = compatible_filaments.setdefault(output_name, {})
     payload_key = json.dumps(
@@ -2393,8 +2379,84 @@ def export_output(
     # --- Resource manifest for SHA-256 resolution ---
     _write_resource_manifest(store, output_dir)
 
+    # --- Coverage report for every mapped machine/engine/variant ---
+    coverage_report = _profile_coverage_report(output_dir)
+    _write_json(output_dir / "profile_coverage.json", coverage_report)
+    logger.info(
+        "Wrote profile_coverage.json with %d incomplete variants",
+        len(coverage_report["gaps"]),
+    )
+
     # --- Authoritative importer artifact manifest ---
     _write_import_manifest(output_dir, required_slicers)
+
+
+def _profile_coverage_report(output_dir: Path) -> dict[str, Any]:
+    """Compare every exported machine variant with all exported profile roles."""
+    role_variants: dict[tuple[str, str, str], set[str]] = {}
+    for role_type in ("filament", "print"):
+        for path in output_dir.glob(f"models/*/*/{role_type}_profiles.json"):
+            engine = path.parent.name
+            for role in json.loads(path.read_text(encoding="utf-8")):
+                for model, variants in role.get("compatible_printers", {}).items():
+                    role_variants.setdefault((engine, role_type, model), set()).update(
+                        str(variant) for variant in variants
+                    )
+
+    gaps: list[dict[str, Any]] = []
+    model_ids: dict[str, set[int]] = {}
+    variant_counts: dict[str, int] = {}
+    for path in output_dir.glob("models/*/*/machine_profiles.json"):
+        model_id = int(path.parents[1].name)
+        engine = path.parent.name
+        model_ids.setdefault(engine, set()).add(model_id)
+        for profile in json.loads(path.read_text(encoding="utf-8")):
+            model = profile.get("machine_model", {}).get("name")
+            variants = profile.get("variants", {})
+            if not isinstance(model, str) or not isinstance(variants, dict):
+                continue
+            variant_counts[engine] = variant_counts.get(engine, 0) + len(variants)
+            for variant in variants:
+                missing = [
+                    role_type
+                    for role_type in ("filament", "print")
+                    if not any(
+                        _same_variant(str(variant), available)
+                        for available in role_variants.get(
+                            (engine, role_type, model), set()
+                        )
+                    )
+                ]
+                if missing:
+                    gaps.append(
+                        {
+                            "engine": engine,
+                            "missing": missing,
+                            "model": model,
+                            "model_id": model_id,
+                            "variant": variant,
+                        }
+                    )
+
+    gaps.sort(
+        key=lambda gap: (
+            gap["engine"],
+            gap["model_id"],
+            gap["model"],
+            str(gap["variant"]),
+        )
+    )
+    return {
+        "schema_version": 1,
+        "engines": {
+            engine: {
+                "mapped_models": len(model_ids[engine]),
+                "variants": variant_counts.get(engine, 0),
+            }
+            for engine in sorted(model_ids)
+        },
+        "gaps": gaps,
+    }
 
 
 _BED_VISUAL_KEYS = ("bed_assets", "bed_model", "bed_texture")
