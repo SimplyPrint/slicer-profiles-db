@@ -4,10 +4,14 @@
   "name": "Creality Hi 0.4 nozzle",
   "vendor": "Creality",
   "first_seen": "1.3.0.11",
-  "last_seen": "1.3.0.11",
+  "last_seen": "1.5.3.4",
   "filament_id": null,
-  "setting_id": "GM001",
+  "setting_id": "eUOvgX9fGP2CSq0d",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "1.3.0.11": "machine"
@@ -32,12 +36,14 @@
     "extruder_colour": {
       "1.3.0.11": [
         "#FCE94F"
-      ]
+      ],
+      "1.5.3.4": "#018001"
     },
     "extruder_offset": {
       "1.3.0.11": [
         "0x0"
-      ]
+      ],
+      "1.5.3.4": "0x0"
     },
     "gcode_flavor": {
       "1.3.0.11": "klipper"
@@ -46,7 +52,8 @@
       "1.3.0.11": "0"
     },
     "support_chamber_temp_control": {
-      "1.3.0.11": "0"
+      "1.3.0.11": "0",
+      "1.5.3.4": "1"
     },
     "support_air_filtration": {
       "1.3.0.11": "0"
@@ -85,6 +92,10 @@
       "1.3.0.11": [
         "1000",
         "1000"
+      ],
+      "1.5.3.4": [
+        "500",
+        "500"
       ]
     },
     "machine_max_speed_e": {
@@ -97,18 +108,30 @@
       "1.3.0.11": [
         "500",
         "500"
+      ],
+      "1.5.3.4": [
+        "300",
+        "300"
       ]
     },
     "machine_max_speed_y": {
       "1.3.0.11": [
         "500",
         "500"
+      ],
+      "1.5.3.4": [
+        "300",
+        "300"
       ]
     },
     "machine_max_speed_z": {
       "1.3.0.11": [
         "30",
         "30"
+      ],
+      "1.5.3.4": [
+        "20",
+        "20"
       ]
     },
     "machine_max_jerk_e": {
@@ -139,13 +162,15 @@
       "1.3.0.11": [
         "0",
         "0"
-      ]
+      ],
+      "1.5.3.4": "0,0"
     },
     "machine_min_travel_rate": {
       "1.3.0.11": [
         "0",
         "0"
-      ]
+      ],
+      "1.5.3.4": "0,0"
     },
     "max_layer_height": {
       "1.3.0.11": [
@@ -167,7 +192,8 @@
       "1.3.0.11": "27"
     },
     "extruder_clearance_height_to_lid": {
-      "1.3.0.11": "301"
+      "1.3.0.11": "301",
+      "1.5.3.4": "20"
     },
     "nozzle_diameter": {
       "1.3.0.11": [
@@ -213,12 +239,14 @@
     "retract_restart_extra": {
       "1.3.0.11": [
         "0"
-      ]
+      ],
+      "1.5.3.4": "0"
     },
     "retract_restart_extra_toolchange": {
       "1.3.0.11": [
         "0"
-      ]
+      ],
+      "1.5.3.4": "0"
     },
     "retraction_speed": {
       "1.3.0.11": [
@@ -234,7 +262,8 @@
     "wipe": {
       "1.3.0.11": [
         "1"
-      ]
+      ],
+      "1.5.3.4": "1"
     },
     "z_hop_types": {
       "1.3.0.11": [
@@ -248,15 +277,21 @@
       "1.3.0.11": "0.20mm Standard @Creality Hi"
     },
     "machine_start_gcode": {
-      "1.3.0.11": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM109 S[nozzle_temperature_initial_layer]\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y150 F12000\nG1 X0 F12000\nG1 Z0.2 F600\nG1 X0 Y150 F6000\nG1 X0 Y0 E15 F6000\nG1 X150 Y0 E15 F6000\nG92 E0\nG1 Z1 F600"
+      "1.3.0.11": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM109 S[nozzle_temperature_initial_layer]\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y150 F12000\nG1 X0 F12000\nG1 Z0.2 F600\nG1 X0 Y150 F6000\nG1 X0 Y0 E15 F6000\nG1 X150 Y0 E15 F6000\nG92 E0\nG1 Z1 F600",
+      "1.5.3.4": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM104 S[nozzle_temperature_initial_layer]\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y150 F12000\nG1 X0 F12000\nG1 Z0.2 F600\nG1 X0 Y150 F6000\nG1 E0.8 F300\nG1 X0 Y0 E9 F{filament_max_volumetric_speed[initial_extruder]/0.3*60}\nG1 X150 Y0 E9 F{filament_max_volumetric_speed[initial_extruder]/0.3*60}\nG92 E0\nG1 Z1 F600"
     },
     "machine_end_gcode": {
-      "1.3.0.11": "END_PRINT"
+      "1.3.0.11": "END_PRINT",
+      "1.5.3.4": "G1 X0 Y180 F8000\nEND_PRINT"
     },
     "machine_max_acceleration_travel": {
       "1.3.0.11": [
         "12000",
         "12000"
+      ],
+      "1.5.3.4": [
+        "20000",
+        "20000"
       ]
     },
     "machine_pause_gcode": {
@@ -270,10 +305,12 @@
     "bed_exclude_area": {
       "1.3.0.11": [
         "0x0"
-      ]
+      ],
+      "1.5.3.4": "0x0"
     },
     "layer_change_gcode": {
-      "1.3.0.11": ""
+      "1.3.0.11": "",
+      "1.5.3.4": ";AFTER_LAYER_CHANGE\n;[layer_z]"
     },
     "scan_first_layer": {
       "1.3.0.11": "0"
@@ -285,7 +322,8 @@
       "1.3.0.11": "0"
     },
     "setting_id": {
-      "1.3.0.11": "GM001"
+      "1.3.0.11": "GM001",
+      "1.5.3.4": "eUOvgX9fGP2CSq0d"
     },
     "printer_model": {
       "1.3.0.11": "Creality Hi"
@@ -329,7 +367,119 @@
     "thumbnails": {
       "1.3.0.11": [
         "96x96/PNG, 300x300/PNG"
+      ],
+      "1.5.3.4": [
+        "96x96",
+        "300x300"
       ]
+    },
+    "bbl_use_printhost": {
+      "1.5.3.4": "0"
+    },
+    "bed_mesh_max": {
+      "1.5.3.4": "99999,99999"
+    },
+    "bed_mesh_min": {
+      "1.5.3.4": "-99999,-99999"
+    },
+    "bed_mesh_probe_distance": {
+      "1.5.3.4": "50,50"
+    },
+    "best_object_pos": {
+      "1.5.3.4": "0.5,0.5"
+    },
+    "cooling_tube_length": {
+      "1.5.3.4": "0"
+    },
+    "cooling_tube_retraction": {
+      "1.5.3.4": "0"
+    },
+    "creality_flush_time": {
+      "1.5.3.4": "105"
+    },
+    "disable_m73": {
+      "1.5.3.4": "0"
+    },
+    "emit_machine_limits_to_gcode": {
+      "1.5.3.4": "1"
+    },
+    "extra_loading_move": {
+      "1.5.3.4": "0"
+    },
+    "fan_kickstart": {
+      "1.5.3.4": "0"
+    },
+    "fan_speedup_overhangs": {
+      "1.5.3.4": "1"
+    },
+    "fan_speedup_time": {
+      "1.5.3.4": "0"
+    },
+    "high_current_on_filament_swap": {
+      "1.5.3.4": "0"
+    },
+    "host_type": {
+      "1.5.3.4": "octoprint"
+    },
+    "machine_LED_light_exist": {
+      "1.5.3.4": "1"
+    },
+    "machine_platform_motion_enable": {
+      "1.5.3.4": "0"
+    },
+    "machine_unload_filament_time": {
+      "1.5.3.4": "0"
+    },
+    "manual_filament_change": {
+      "1.5.3.4": "0"
+    },
+    "nozzle_hrc": {
+      "1.5.3.4": "0"
+    },
+    "parking_pos_retraction": {
+      "1.5.3.4": "0"
+    },
+    "preferred_orientation": {
+      "1.5.3.4": "0"
+    },
+    "prime_tower_position_type": {
+      "1.5.3.4": "Left Upper"
+    },
+    "print_host": {
+      "1.5.3.4": "http://172.23.209.71:4408/"
+    },
+    "print_host_webui": {
+      "1.5.3.4": "http://172.23.209.71:4408/"
+    },
+    "printhost_authorization_type": {
+      "1.5.3.4": "key"
+    },
+    "printhost_ssl_ignore_revoke": {
+      "1.5.3.4": "0"
+    },
+    "thumbnails_format": {
+      "1.5.3.4": "PNG"
+    },
+    "time_cost": {
+      "1.5.3.4": "0"
+    },
+    "time_lapse_gcode": {
+      "1.5.3.4": "{if !spiral_mode && print_sequence != \"by object\" && layer_num != 0}\n;don't support timelapse gcode in spiral_mode and by object sequence for I3 structure printer\n;time lapse begin\nM5001 G92 E0\nM5001 G17\nM5001 G2 Z{layer_z + 0.4} I0.86 J0.86 P1 F20000 ; spiral lift a little\nM5001 G1 X0 Y180 F24000 ; move to safe pos\nM5001 P15\nM5001 M400 P300\nM5001 G92 E0\n;time lapse end\n{endif}"
+    },
+    "use_firmware_retraction": {
+      "1.5.3.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.5.3.4": "1"
+    },
+    "z_offset": {
+      "1.5.3.4": "0"
+    },
+    "retract_lift_above": {
+      "1.5.3.4": "0"
+    },
+    "retract_lift_enforce": {
+      "1.5.3.4": "All Surfaces"
     }
   }
 }

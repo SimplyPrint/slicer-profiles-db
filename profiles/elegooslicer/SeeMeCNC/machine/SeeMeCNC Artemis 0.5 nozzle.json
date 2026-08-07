@@ -1,0 +1,659 @@
+{
+  "slicer": "elegooslicer",
+  "profile_type": "machine",
+  "name": "SeeMeCNC Artemis 0.5 nozzle",
+  "vendor": "SeeMeCNC",
+  "first_seen": "1.5.3.4",
+  "last_seen": "1.5.3.4",
+  "filament_id": null,
+  "setting_id": "T7UbsCeU4Spvljh1",
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "context": {},
+  "setting_scopes": {},
+  "settings": {
+    "type": {
+      "1.5.3.4": "machine"
+    },
+    "name": {
+      "1.5.3.4": "SeeMeCNC Artemis 0.5 nozzle"
+    },
+    "from": {
+      "1.5.3.4": "System"
+    },
+    "setting_id": {
+      "1.5.3.4": "T7UbsCeU4Spvljh1"
+    },
+    "instantiation": {
+      "1.5.3.4": "true"
+    },
+    "adaptive_bed_mesh_margin": {
+      "1.5.3.4": "0"
+    },
+    "auxiliary_fan": {
+      "1.5.3.4": "0"
+    },
+    "bed_custom_model": {
+      "1.5.3.4": "sha256:3ada07ac19282b32097f32653b8795b934f9a4177a95e6f5b027159f9b06bd82"
+    },
+    "bed_custom_texture": {
+      "1.5.3.4": "sha256:9f9905e93dcb417726701feccdff3897c450afc1bd6fafa70146aa0370fb140b"
+    },
+    "bed_exclude_area": {
+      "1.5.3.4": [
+        "0x0"
+      ]
+    },
+    "bed_mesh_max": {
+      "1.5.3.4": "99999,99999"
+    },
+    "bed_mesh_min": {
+      "1.5.3.4": "-99999,-99999"
+    },
+    "bed_mesh_probe_distance": {
+      "1.5.3.4": "50,50"
+    },
+    "bed_temperature_formula": {
+      "1.5.3.4": "by_first_filament"
+    },
+    "before_layer_change_gcode": {
+      "1.5.3.4": ";BEFORE_LAYER_CHANGE\n;[layer_z]\n{if layer_num == 1}M104 S[nozzle_temperature] ; Step down from first layer temp to print temp{endif}\nG92 E0\n"
+    },
+    "best_object_pos": {
+      "1.5.3.4": "0.5,0.5"
+    },
+    "change_extrusion_role_gcode": {
+      "1.5.3.4": ""
+    },
+    "change_filament_gcode": {
+      "1.5.3.4": "{if layer_num >= 0}\nG92 E0\nG1 E-5 F3000\nG1 E-155 F5000\nT[next_extruder]\n{if layer_num == 0}\nM109 S[first_layer_temperature]\n{else}\nM109 S[nozzle_temperature]\n{endif}\nG1 E160 F5000\nG92 E0\n{endif}"
+    },
+    "cooling_tube_length": {
+      "1.5.3.4": "5"
+    },
+    "cooling_tube_retraction": {
+      "1.5.3.4": "160"
+    },
+    "default_filament_profile": {
+      "1.5.3.4": [
+        "SeeMeCNC PLA"
+      ]
+    },
+    "default_nozzle_volume_type": {
+      "1.5.3.4": [
+        "Standard"
+      ]
+    },
+    "default_print_profile": {
+      "1.5.3.4": "0.25mm Standard @SeeMeCNC Artemis 0.5"
+    },
+    "deretraction_speed": {
+      "1.5.3.4": [
+        "60"
+      ]
+    },
+    "disable_m73": {
+      "1.5.3.4": "0"
+    },
+    "emit_machine_limits_to_gcode": {
+      "1.5.3.4": "1"
+    },
+    "enable_filament_ramming": {
+      "1.5.3.4": "0"
+    },
+    "enable_long_retraction_when_cut": {
+      "1.5.3.4": "0"
+    },
+    "enable_power_loss_recovery": {
+      "1.5.3.4": "printer_configuration"
+    },
+    "extra_loading_move": {
+      "1.5.3.4": "0"
+    },
+    "extruder_clearance_height_to_lid": {
+      "1.5.3.4": "70"
+    },
+    "extruder_clearance_height_to_rod": {
+      "1.5.3.4": "70"
+    },
+    "extruder_clearance_radius": {
+      "1.5.3.4": "75"
+    },
+    "extruder_colour": {
+      "1.5.3.4": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "1.5.3.4": [
+        "0x0"
+      ]
+    },
+    "extruder_printable_area": {
+      "1.5.3.4": []
+    },
+    "extruder_printable_height": {
+      "1.5.3.4": [
+        "500"
+      ]
+    },
+    "extruder_type": {
+      "1.5.3.4": [
+        "Bowden"
+      ]
+    },
+    "extruder_variant_list": {
+      "1.5.3.4": [
+        "Bowden Standard"
+      ]
+    },
+    "fan_kickstart": {
+      "1.5.3.4": "0"
+    },
+    "fan_speedup_overhangs": {
+      "1.5.3.4": "1"
+    },
+    "fan_speedup_time": {
+      "1.5.3.4": "0"
+    },
+    "file_start_gcode": {
+      "1.5.3.4": ""
+    },
+    "gcode_flavor": {
+      "1.5.3.4": "reprapfirmware"
+    },
+    "grab_length": {
+      "1.5.3.4": [
+        "0"
+      ]
+    },
+    "head_wrap_detect_zone": {
+      "1.5.3.4": []
+    },
+    "high_current_on_filament_swap": {
+      "1.5.3.4": "0"
+    },
+    "host_type": {
+      "1.5.3.4": "duet"
+    },
+    "layer_change_gcode": {
+      "1.5.3.4": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "long_retractions_when_cut": {
+      "1.5.3.4": [
+        "0"
+      ]
+    },
+    "machine_end_gcode": {
+      "1.5.3.4": [
+        ";======= SEEMECNC ARTEMIS END G-CODE =======\nM104 S0          ; Turn off hotend\nM140 S0          ; Turn off heated bed\nM107 T0          ; Turn off part cooling fan\nG91              ; Relative positioning\nG1 Z2 E-160 F6000  ; Lift 2mm and retract 160mm\nG92 E0\nG90              ; Absolute positioning\nM203 Z18000      ; Allow fast Z for homing\nG28              ; Home all axes - clears part immediately on a delta\n;======= END G-CODE ======="
+      ]
+    },
+    "machine_load_filament_time": {
+      "1.5.3.4": "4"
+    },
+    "machine_max_acceleration_e": {
+      "1.5.3.4": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "1.5.3.4": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "1.5.3.4": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "1.5.3.4": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "1.5.3.4": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "1.5.3.4": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "1.5.3.4": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "1.5.3.4": [
+        "15",
+        "15"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "1.5.3.4": [
+        "15",
+        "15"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "1.5.3.4": [
+        "15",
+        "15"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "1.5.3.4": [
+        "15",
+        "15"
+      ]
+    },
+    "machine_max_junction_deviation": {
+      "1.5.3.4": [
+        "0.01"
+      ]
+    },
+    "machine_max_speed_e": {
+      "1.5.3.4": [
+        "150",
+        "25"
+      ]
+    },
+    "machine_max_speed_x": {
+      "1.5.3.4": [
+        "300",
+        "300"
+      ]
+    },
+    "machine_max_speed_y": {
+      "1.5.3.4": [
+        "300",
+        "300"
+      ]
+    },
+    "machine_max_speed_z": {
+      "1.5.3.4": [
+        "200",
+        "200"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "1.5.3.4": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "1.5.3.4": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_pause_gcode": {
+      "1.5.3.4": "M601"
+    },
+    "machine_start_gcode": {
+      "1.5.3.4": [
+        ";======= SEEMECNC ARTEMIS START G-CODE =======\nG21              ; Set units to mm\nG90              ; Absolute positioning\nM82              ; Extruder to absolute mode\nG28              ; Home all axes\nG1 Z50 F9000     ; Lift nozzle for safe heating\n; --- SELECT STARTING TOOL ---\nT[initial_tool]  ; Activate the first assigned filament in OrcaSlicer\n; --- PREHEAT ---\nM140 S[first_layer_bed_temperature]  ; Start bed heating\nM104 S[first_layer_temperature]      ; Start nozzle heating\nM190 S[first_layer_bed_temperature]  ; Wait for bed to reach temp\nM109 S[first_layer_temperature]      ; Wait for nozzle to reach temp\n; --- RE-PRIME BOWDEN TUBE ---\nG92 E0\nG1 E160.5 F3000  ; Retract 160mm\nG92 E0\n; --- PURGE LINE (curved arc near front edge, 290mm bed) ---\nG92 E0\nG1 X-50 Y-129.9 Z0.4 F5000   ; Move to arc start (inside 145mm radius)\nG1 Z0.3 F1000                    ; Drop to prime height\nG3 X50 Y-129.9 R139.2 E40 F600  ; Arc purge, 100mm sweep, heavy extrusion\nG1 E38 F4500                     ; Retract 2mm before wipe (Bowden)\nG1 X65 Y-119.9 Z0.2 F6000     ; Wipe move at Z0.2\nG92 E0                           ; Zero extruder before print\n;======= END START G-CODE ======="
+      ]
+    },
+    "machine_tool_change_time": {
+      "1.5.3.4": "0"
+    },
+    "machine_unload_filament_time": {
+      "1.5.3.4": "4"
+    },
+    "manual_filament_change": {
+      "1.5.3.4": "0"
+    },
+    "master_extruder_id": {
+      "1.5.3.4": "1"
+    },
+    "max_layer_height": {
+      "1.5.3.4": [
+        "0.40"
+      ]
+    },
+    "max_resonance_avoidance_speed": {
+      "1.5.3.4": "100"
+    },
+    "min_layer_height": {
+      "1.5.3.4": [
+        "0.10"
+      ]
+    },
+    "min_resonance_avoidance_speed": {
+      "1.5.3.4": "50"
+    },
+    "nozzle_diameter": {
+      "1.5.3.4": [
+        "0.5"
+      ]
+    },
+    "nozzle_flush_dataset": {
+      "1.5.3.4": [
+        "0"
+      ]
+    },
+    "nozzle_height": {
+      "1.5.3.4": "2.5"
+    },
+    "nozzle_hrc": {
+      "1.5.3.4": "0"
+    },
+    "nozzle_type": {
+      "1.5.3.4": [
+        "brass"
+      ]
+    },
+    "nozzle_volume": {
+      "1.5.3.4": [
+        "0"
+      ]
+    },
+    "parking_pos_retraction": {
+      "1.5.3.4": "160"
+    },
+    "pellet_modded_printer": {
+      "1.5.3.4": "0"
+    },
+    "physical_extruder_map": {
+      "1.5.3.4": [
+        "0"
+      ]
+    },
+    "preferred_orientation": {
+      "1.5.3.4": "0"
+    },
+    "printable_area": {
+      "1.5.3.4": [
+        "145.0000x0.0000",
+        "144.4482x12.6376",
+        "142.7971x25.1790",
+        "140.0592x37.5288",
+        "136.2554x49.5929",
+        "131.4146x61.2796",
+        "125.5737x72.5000",
+        "118.7770x83.1686",
+        "111.0764x93.2042",
+        "102.5305x102.5305",
+        "93.2042x111.0764",
+        "83.1686x118.7770",
+        "72.5000x125.5737",
+        "61.2796x131.4146",
+        "49.5929x136.2554",
+        "37.5288x140.0592",
+        "25.1790x142.7971",
+        "12.6376x144.4482",
+        "0.0000x145.0000",
+        "-12.6376x144.4482",
+        "-25.1790x142.7971",
+        "-37.5288x140.0592",
+        "-49.5929x136.2554",
+        "-61.2796x131.4146",
+        "-72.5000x125.5737",
+        "-83.1686x118.7770",
+        "-93.2042x111.0764",
+        "-102.5305x102.5305",
+        "-111.0764x93.2042",
+        "-118.7770x83.1686",
+        "-125.5737x72.5000",
+        "-131.4146x61.2796",
+        "-136.2554x49.5929",
+        "-140.0592x37.5288",
+        "-142.7971x25.1790",
+        "-144.4482x12.6376",
+        "-145.0000x0.0000",
+        "-144.4482x-12.6376",
+        "-142.7971x-25.1790",
+        "-140.0592x-37.5288",
+        "-136.2554x-49.5929",
+        "-131.4146x-61.2796",
+        "-125.5737x-72.5000",
+        "-118.7770x-83.1686",
+        "-111.0764x-93.2042",
+        "-102.5305x-102.5305",
+        "-93.2042x-111.0764",
+        "-83.1686x-118.7770",
+        "-72.5000x-125.5737",
+        "-61.2796x-131.4146",
+        "-49.5929x-136.2554",
+        "-37.5288x-140.0592",
+        "-25.1790x-142.7971",
+        "-12.6376x-144.4482",
+        "-0.0000x-145.0000",
+        "12.6376x-144.4482",
+        "25.1790x-142.7971",
+        "37.5288x-140.0592",
+        "49.5929x-136.2554",
+        "61.2796x-131.4146",
+        "72.5000x-125.5737",
+        "83.1686x-118.7770",
+        "93.2042x-111.0764",
+        "102.5305x-102.5305",
+        "111.0764x-93.2042",
+        "118.7770x-83.1686",
+        "125.5737x-72.5000",
+        "131.4146x-61.2796",
+        "136.2554x-49.5929",
+        "140.0592x-37.5288",
+        "142.7971x-25.1790",
+        "144.4482x-12.6376"
+      ]
+    },
+    "printable_height": {
+      "1.5.3.4": "500"
+    },
+    "printer_agent": {
+      "1.5.3.4": ""
+    },
+    "printer_extruder_id": {
+      "1.5.3.4": [
+        "1"
+      ]
+    },
+    "printer_extruder_variant": {
+      "1.5.3.4": [
+        "Bowden Standard"
+      ]
+    },
+    "printer_model": {
+      "1.5.3.4": "SeeMeCNC Artemis 300"
+    },
+    "printer_notes": {
+      "1.5.3.4": ""
+    },
+    "printer_settings_id": {
+      "1.5.3.4": "SeeMeCNC Artemis 0.5 nozzle"
+    },
+    "printer_structure": {
+      "1.5.3.4": "delta"
+    },
+    "printer_technology": {
+      "1.5.3.4": "FFF"
+    },
+    "printer_variant": {
+      "1.5.3.4": "0.5"
+    },
+    "printhost_authorization_type": {
+      "1.5.3.4": "key"
+    },
+    "printhost_ssl_ignore_revoke": {
+      "1.5.3.4": "0"
+    },
+    "printing_by_object_gcode": {
+      "1.5.3.4": ""
+    },
+    "purge_in_prime_tower": {
+      "1.5.3.4": "0"
+    },
+    "resonance_avoidance": {
+      "1.5.3.4": "0"
+    },
+    "retract_before_wipe": {
+      "1.5.3.4": [
+        "70%"
+      ]
+    },
+    "retract_length_toolchange": {
+      "1.5.3.4": [
+        "3"
+      ]
+    },
+    "retract_lift_above": {
+      "1.5.3.4": [
+        "0"
+      ]
+    },
+    "retract_lift_below": {
+      "1.5.3.4": [
+        "0"
+      ]
+    },
+    "retract_lift_enforce": {
+      "1.5.3.4": [
+        "All Surfaces"
+      ]
+    },
+    "retract_restart_extra": {
+      "1.5.3.4": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "1.5.3.4": [
+        "2"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "1.5.3.4": [
+        "1"
+      ]
+    },
+    "retraction_distances_when_cut": {
+      "1.5.3.4": [
+        "18"
+      ]
+    },
+    "retraction_length": {
+      "1.5.3.4": [
+        "6"
+      ]
+    },
+    "retraction_minimum_travel": {
+      "1.5.3.4": [
+        "1"
+      ]
+    },
+    "retraction_speed": {
+      "1.5.3.4": [
+        "60"
+      ]
+    },
+    "scan_first_layer": {
+      "1.5.3.4": "0"
+    },
+    "silent_mode": {
+      "1.5.3.4": "0"
+    },
+    "single_extruder_multi_material": {
+      "1.5.3.4": "1"
+    },
+    "support_air_filtration": {
+      "1.5.3.4": "1"
+    },
+    "support_chamber_temp_control": {
+      "1.5.3.4": "1"
+    },
+    "support_multi_bed_types": {
+      "1.5.3.4": "0"
+    },
+    "support_object_skip_flush": {
+      "1.5.3.4": "0"
+    },
+    "template_custom_gcode": {
+      "1.5.3.4": ""
+    },
+    "thumbnails": {
+      "1.5.3.4": "48x48/PNG, 300x300/PNG"
+    },
+    "thumbnails_format": {
+      "1.5.3.4": "PNG"
+    },
+    "time_cost": {
+      "1.5.3.4": "0"
+    },
+    "time_lapse_gcode": {
+      "1.5.3.4": ""
+    },
+    "travel_slope": {
+      "1.5.3.4": [
+        "3"
+      ]
+    },
+    "upward_compatible_machine": {
+      "1.5.3.4": []
+    },
+    "use_firmware_retraction": {
+      "1.5.3.4": "0"
+    },
+    "use_relative_e_distances": {
+      "1.5.3.4": "1"
+    },
+    "wipe": {
+      "1.5.3.4": [
+        "1"
+      ]
+    },
+    "wipe_distance": {
+      "1.5.3.4": [
+        "1"
+      ]
+    },
+    "wipe_tower_type": {
+      "1.5.3.4": "type2"
+    },
+    "wrapping_detection_gcode": {
+      "1.5.3.4": ""
+    },
+    "wrapping_detection_layers": {
+      "1.5.3.4": "20"
+    },
+    "wrapping_exclude_area": {
+      "1.5.3.4": []
+    },
+    "z_hop": {
+      "1.5.3.4": [
+        "0.4"
+      ]
+    },
+    "z_hop_types": {
+      "1.5.3.4": [
+        "Auto Lift"
+      ]
+    },
+    "z_offset": {
+      "1.5.3.4": "0"
+    },
+    "model": {
+      "1.5.3.4": "SeeMeCNC Artemis 300"
+    },
+    "thumbnail": {
+      "1.5.3.4": "sha256:a1c92258dd7f93be78cdc50335c2d438a66ac1aee3e5078cdac7a5148ca0ca69"
+    },
+    "description": {
+      "1.5.3.4": "SeeMeCNC configurations"
+    }
+  }
+}

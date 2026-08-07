@@ -4,10 +4,14 @@
   "name": "D12 300 PRO M2 MONO DUAL 0.4 nozzle",
   "vendor": "Wanhao France",
   "first_seen": "1.3.0.11",
-  "last_seen": "1.3.0.11",
+  "last_seen": "1.5.3.4",
   "filament_id": null,
-  "setting_id": "GM001",
+  "setting_id": "bTbd37YEZf43Pkw2",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "1.3.0.11": "machine"
@@ -244,7 +248,8 @@
       "1.3.0.11": "; Wanhao D12-230 Default End Gcode\nG91                     ; Mode déplacement relatif\nG1 E-2 F300             ; Retrait léger du filament pour éviter le suintement\nG1 Z10 F1200             ; Monte la tête de 10 mm\nG90                     ; Retour en position absolue\nG1 X0 Y200 F3000         ; Déplace la tête vers l'arrière pour dégager la pièce\nM104 S0                  ; Éteint la chauffe de la buse\nM140 S0                  ; Éteint la chauffe du plateau\nM107                     ; Arrête tous les ventilateurs\nM106 S0 P3               ; Arrête le ventilateur de la carte mère\nM106 S0 P2               ; Arrête le ventilateur auxiliaire\nM84 X Y E                ; Désactive les moteurs des axes X, Y et de l'extrudeur\nSET_VELOCITY_LIMIT ACCEL=2000 ACCEL_TO_DECEL=1000"
     },
     "setting_id": {
-      "1.3.0.11": "GM001"
+      "1.3.0.11": "GM001",
+      "1.5.3.4": "bTbd37YEZf43Pkw2"
     },
     "printer_model": {
       "1.3.0.11": "D12 300 PRO M2 MONO DUAL"
