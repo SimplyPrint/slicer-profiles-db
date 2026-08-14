@@ -34,9 +34,107 @@
             },
             "definition": "ultimaker_methodx",
             "global_quality_id": null,
-            "intent_category": "solid",
+            "intent_category": "highspeedsolid",
             "material_id": "ultimaker_absr_175",
-            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-absr-175_0.2mm_solid",
+            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-absr-175_0.2mm_highspeedsolid",
+            "quality_type": "draft",
+            "resource_version": "5.13.0",
+            "source_kind": "intent",
+            "variant_name": "1XA"
+        },
+        "data": {
+            "acceleration_print": 3500,
+            "bottom_thickness": 0.3,
+            "bridge_wall_speed": 300,
+            "cool_fan_enabled": true,
+            "cool_fan_speed": 100,
+            "cool_min_layer_time": 3,
+            "cool_min_temperature": 245.0,
+            "infill_angles": [
+                45,
+                135
+            ],
+            "infill_material_flow": 97,
+            "infill_pattern": "zigzag",
+            "infill_sparse_density": 99,
+            "jerk_print": 35,
+            "speed_layer_0": 55,
+            "speed_prime_tower": 60.0,
+            "speed_print": 300,
+            "speed_support": 100,
+            "speed_support_interface": 75,
+            "speed_travel": 500,
+            "speed_travel_layer_0": 250,
+            "speed_wall_0": 40,
+            "support_pattern": "zigzag",
+            "top_bottom_thickness": 0.3,
+            "top_thickness": 0.3
+        },
+        "name": "High Speed Solid · @ultimaker_methodx · 1XA · ultimaker_absr_175 · highspeedsolid",
+        "setting_scopes": {
+            "acceleration_print": "extruder.0",
+            "bottom_thickness": "extruder.0",
+            "bridge_wall_speed": "extruder.0",
+            "cool_fan_enabled": "extruder.0",
+            "cool_fan_speed": "extruder.0",
+            "cool_min_layer_time": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "infill_angles": "extruder.0",
+            "infill_material_flow": "extruder.0",
+            "infill_pattern": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "jerk_print": "extruder.0",
+            "speed_layer_0": "extruder.0",
+            "speed_prime_tower": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_support": "extruder.0",
+            "speed_support_interface": "extruder.0",
+            "speed_travel": "extruder.0",
+            "speed_travel_layer_0": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "support_pattern": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "top_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker_methodx"
+            ],
+            "material_native_ids": [
+                "ultimaker_pc-abs_175"
+            ],
+            "variant_names": [
+                "1XA"
+            ]
+        },
+        "compatible_printers": {
+            "UltiMaker Method X": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker_methodx"
+                ],
+                "material_native_ids": [
+                    "ultimaker_pc-abs_175"
+                ],
+                "variant_names": [
+                    "1XA"
+                ]
+            },
+            "definition": "ultimaker_methodx",
+            "global_quality_id": null,
+            "intent_category": "solid",
+            "material_id": "ultimaker_pc-abs_175",
+            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-pc-abs-175_0.2mm_solid",
             "quality_type": "draft",
             "resource_version": "5.13.0",
             "source_kind": "intent",
@@ -54,7 +152,7 @@
             "top_bottom_thickness": 0.3,
             "top_thickness": 0.3
         },
-        "name": "Solid · @ultimaker_methodx · 1XA · ultimaker_absr_175 · solid",
+        "name": "Solid · @ultimaker_methodx · 1XA · ultimaker_pc-abs_175 · solid",
         "setting_scopes": {
             "bottom_thickness": "extruder.0",
             "infill_angles": "extruder.0",
@@ -241,7 +339,7 @@
                 "ultimaker_methodx"
             ],
             "material_native_ids": [
-                "ultimaker_pc-abs-fr_175"
+                "ultimaker_abs_175"
             ],
             "variant_names": [
                 "1XA"
@@ -258,7 +356,7 @@
                     "ultimaker_methodx"
                 ],
                 "material_native_ids": [
-                    "ultimaker_pc-abs-fr_175"
+                    "ultimaker_abs_175"
                 ],
                 "variant_names": [
                     "1XA"
@@ -267,8 +365,8 @@
             "definition": "ultimaker_methodx",
             "global_quality_id": null,
             "intent_category": "solid",
-            "material_id": "ultimaker_pc-abs-fr_175",
-            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-pc-abs-fr-175_0.2mm_solid",
+            "material_id": "ultimaker_abs_175",
+            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-abs-175_0.2mm_solid",
             "quality_type": "draft",
             "resource_version": "5.13.0",
             "source_kind": "intent",
@@ -276,6 +374,7 @@
         },
         "data": {
             "bottom_thickness": 0.3,
+            "build_volume_temperature": 100,
             "infill_angles": [
                 45,
                 135
@@ -286,9 +385,10 @@
             "top_bottom_thickness": 0.3,
             "top_thickness": 0.3
         },
-        "name": "Solid · @ultimaker_methodx · 1XA · ultimaker_pc-abs-fr_175 · solid",
+        "name": "Solid · @ultimaker_methodx · 1XA · ultimaker_abs_175 · solid",
         "setting_scopes": {
             "bottom_thickness": "extruder.0",
+            "build_volume_temperature": "global",
             "infill_angles": "extruder.0",
             "infill_material_flow": "extruder.0",
             "infill_pattern": "extruder.0",
@@ -487,321 +587,6 @@
                 "ultimaker_methodx"
             ],
             "material_native_ids": [
-                "ultimaker_asa_175"
-            ],
-            "variant_names": [
-                "1XA"
-            ]
-        },
-        "compatible_printers": {
-            "UltiMaker Method X": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker_methodx"
-                ],
-                "material_native_ids": [
-                    "ultimaker_asa_175"
-                ],
-                "variant_names": [
-                    "1XA"
-                ]
-            },
-            "definition": "ultimaker_methodx",
-            "global_quality_id": null,
-            "intent_category": "solid",
-            "material_id": "ultimaker_asa_175",
-            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-asa-175_0.2mm_solid",
-            "quality_type": "draft",
-            "resource_version": "5.13.0",
-            "source_kind": "intent",
-            "variant_name": "1XA"
-        },
-        "data": {
-            "bottom_thickness": 0.3,
-            "infill_angles": [
-                45,
-                135
-            ],
-            "infill_material_flow": 97,
-            "infill_pattern": "zigzag",
-            "infill_sparse_density": 99,
-            "top_bottom_thickness": 0.3,
-            "top_thickness": 0.3
-        },
-        "name": "Solid · @ultimaker_methodx · 1XA · ultimaker_asa_175 · solid",
-        "setting_scopes": {
-            "bottom_thickness": "extruder.0",
-            "infill_angles": "extruder.0",
-            "infill_material_flow": "extruder.0",
-            "infill_pattern": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "top_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker_methodx"
-            ],
-            "material_native_ids": [
-                "ultimaker_absr_175"
-            ],
-            "variant_names": [
-                "1XA"
-            ]
-        },
-        "compatible_printers": {
-            "UltiMaker Method X": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker_methodx"
-                ],
-                "material_native_ids": [
-                    "ultimaker_absr_175"
-                ],
-                "variant_names": [
-                    "1XA"
-                ]
-            },
-            "definition": "ultimaker_methodx",
-            "global_quality_id": null,
-            "intent_category": "highspeed",
-            "material_id": "ultimaker_absr_175",
-            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-absr-175_0.2mm_highspeed",
-            "quality_type": "draft",
-            "resource_version": "5.13.0",
-            "source_kind": "intent",
-            "variant_name": "1XA"
-        },
-        "data": {
-            "acceleration_print": 3500,
-            "bridge_wall_speed": 300,
-            "cool_fan_enabled": true,
-            "cool_fan_speed": 100,
-            "cool_min_layer_time": 3,
-            "cool_min_temperature": 245.0,
-            "infill_pattern": "zigzag",
-            "jerk_print": 35,
-            "speed_layer_0": 55,
-            "speed_prime_tower": 60.0,
-            "speed_print": 300,
-            "speed_support": 100,
-            "speed_support_interface": 75,
-            "speed_travel": 500,
-            "speed_travel_layer_0": 250,
-            "speed_wall_0": 40,
-            "support_pattern": "zigzag"
-        },
-        "name": "High Speed · @ultimaker_methodx · 1XA · ultimaker_absr_175 · highspeed",
-        "setting_scopes": {
-            "acceleration_print": "extruder.0",
-            "bridge_wall_speed": "extruder.0",
-            "cool_fan_enabled": "extruder.0",
-            "cool_fan_speed": "extruder.0",
-            "cool_min_layer_time": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "infill_pattern": "extruder.0",
-            "jerk_print": "extruder.0",
-            "speed_layer_0": "extruder.0",
-            "speed_prime_tower": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_support": "extruder.0",
-            "speed_support_interface": "extruder.0",
-            "speed_travel": "extruder.0",
-            "speed_travel_layer_0": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "support_pattern": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker_methodx"
-            ],
-            "material_native_ids": [
-                "ultimaker_absr_175"
-            ],
-            "variant_names": [
-                "1XA"
-            ]
-        },
-        "compatible_printers": {
-            "UltiMaker Method X": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker_methodx"
-                ],
-                "material_native_ids": [
-                    "ultimaker_absr_175"
-                ],
-                "variant_names": [
-                    "1XA"
-                ]
-            },
-            "definition": "ultimaker_methodx",
-            "global_quality_id": null,
-            "intent_category": "highspeedsolid",
-            "material_id": "ultimaker_absr_175",
-            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-absr-175_0.2mm_highspeedsolid",
-            "quality_type": "draft",
-            "resource_version": "5.13.0",
-            "source_kind": "intent",
-            "variant_name": "1XA"
-        },
-        "data": {
-            "acceleration_print": 3500,
-            "bottom_thickness": 0.3,
-            "bridge_wall_speed": 300,
-            "cool_fan_enabled": true,
-            "cool_fan_speed": 100,
-            "cool_min_layer_time": 3,
-            "cool_min_temperature": 245.0,
-            "infill_angles": [
-                45,
-                135
-            ],
-            "infill_material_flow": 97,
-            "infill_pattern": "zigzag",
-            "infill_sparse_density": 99,
-            "jerk_print": 35,
-            "speed_layer_0": 55,
-            "speed_prime_tower": 60.0,
-            "speed_print": 300,
-            "speed_support": 100,
-            "speed_support_interface": 75,
-            "speed_travel": 500,
-            "speed_travel_layer_0": 250,
-            "speed_wall_0": 40,
-            "support_pattern": "zigzag",
-            "top_bottom_thickness": 0.3,
-            "top_thickness": 0.3
-        },
-        "name": "High Speed Solid · @ultimaker_methodx · 1XA · ultimaker_absr_175 · highspeedsolid",
-        "setting_scopes": {
-            "acceleration_print": "extruder.0",
-            "bottom_thickness": "extruder.0",
-            "bridge_wall_speed": "extruder.0",
-            "cool_fan_enabled": "extruder.0",
-            "cool_fan_speed": "extruder.0",
-            "cool_min_layer_time": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "infill_angles": "extruder.0",
-            "infill_material_flow": "extruder.0",
-            "infill_pattern": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "jerk_print": "extruder.0",
-            "speed_layer_0": "extruder.0",
-            "speed_prime_tower": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_support": "extruder.0",
-            "speed_support_interface": "extruder.0",
-            "speed_travel": "extruder.0",
-            "speed_travel_layer_0": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "support_pattern": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "top_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker_methodx"
-            ],
-            "material_native_ids": [
-                "ultimaker_abs_175"
-            ],
-            "variant_names": [
-                "1XA"
-            ]
-        },
-        "compatible_printers": {
-            "UltiMaker Method X": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker_methodx"
-                ],
-                "material_native_ids": [
-                    "ultimaker_abs_175"
-                ],
-                "variant_names": [
-                    "1XA"
-                ]
-            },
-            "definition": "ultimaker_methodx",
-            "global_quality_id": null,
-            "intent_category": "solid",
-            "material_id": "ultimaker_abs_175",
-            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-abs-175_0.2mm_solid",
-            "quality_type": "draft",
-            "resource_version": "5.13.0",
-            "source_kind": "intent",
-            "variant_name": "1XA"
-        },
-        "data": {
-            "bottom_thickness": 0.3,
-            "build_volume_temperature": 100,
-            "infill_angles": [
-                45,
-                135
-            ],
-            "infill_material_flow": 97,
-            "infill_pattern": "zigzag",
-            "infill_sparse_density": 99,
-            "top_bottom_thickness": 0.3,
-            "top_thickness": 0.3
-        },
-        "name": "Solid · @ultimaker_methodx · 1XA · ultimaker_abs_175 · solid",
-        "setting_scopes": {
-            "bottom_thickness": "extruder.0",
-            "build_volume_temperature": "global",
-            "infill_angles": "extruder.0",
-            "infill_material_flow": "extruder.0",
-            "infill_pattern": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "top_bottom_thickness": "extruder.0",
-            "top_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker_methodx"
-            ],
-            "material_native_ids": [
                 "ultimaker_absr_175"
             ],
             "variant_names": [
@@ -970,7 +755,7 @@
                 "ultimaker_methodx"
             ],
             "material_native_ids": [
-                "ultimaker_pc-abs_175"
+                "ultimaker_absr_175"
             ],
             "variant_names": [
                 "1XA"
@@ -987,7 +772,7 @@
                     "ultimaker_methodx"
                 ],
                 "material_native_ids": [
-                    "ultimaker_pc-abs_175"
+                    "ultimaker_absr_175"
                 ],
                 "variant_names": [
                     "1XA"
@@ -996,8 +781,8 @@
             "definition": "ultimaker_methodx",
             "global_quality_id": null,
             "intent_category": "solid",
-            "material_id": "ultimaker_pc-abs_175",
-            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-pc-abs-175_0.2mm_solid",
+            "material_id": "ultimaker_absr_175",
+            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-absr-175_0.2mm_solid",
             "quality_type": "draft",
             "resource_version": "5.13.0",
             "source_kind": "intent",
@@ -1015,7 +800,7 @@
             "top_bottom_thickness": 0.3,
             "top_thickness": 0.3
         },
-        "name": "Solid · @ultimaker_methodx · 1XA · ultimaker_pc-abs_175 · solid",
+        "name": "Solid · @ultimaker_methodx · 1XA · ultimaker_absr_175 · solid",
         "setting_scopes": {
             "bottom_thickness": "extruder.0",
             "infill_angles": "extruder.0",
@@ -1372,6 +1157,221 @@
             "top_skin_expand_distance": "extruder.0",
             "wall_overhang_angle": "extruder.0",
             "wall_overhang_speed_factors": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker_methodx"
+            ],
+            "material_native_ids": [
+                "ultimaker_absr_175"
+            ],
+            "variant_names": [
+                "1XA"
+            ]
+        },
+        "compatible_printers": {
+            "UltiMaker Method X": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker_methodx"
+                ],
+                "material_native_ids": [
+                    "ultimaker_absr_175"
+                ],
+                "variant_names": [
+                    "1XA"
+                ]
+            },
+            "definition": "ultimaker_methodx",
+            "global_quality_id": null,
+            "intent_category": "highspeed",
+            "material_id": "ultimaker_absr_175",
+            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-absr-175_0.2mm_highspeed",
+            "quality_type": "draft",
+            "resource_version": "5.13.0",
+            "source_kind": "intent",
+            "variant_name": "1XA"
+        },
+        "data": {
+            "acceleration_print": 3500,
+            "bridge_wall_speed": 300,
+            "cool_fan_enabled": true,
+            "cool_fan_speed": 100,
+            "cool_min_layer_time": 3,
+            "cool_min_temperature": 245.0,
+            "infill_pattern": "zigzag",
+            "jerk_print": 35,
+            "speed_layer_0": 55,
+            "speed_prime_tower": 60.0,
+            "speed_print": 300,
+            "speed_support": 100,
+            "speed_support_interface": 75,
+            "speed_travel": 500,
+            "speed_travel_layer_0": 250,
+            "speed_wall_0": 40,
+            "support_pattern": "zigzag"
+        },
+        "name": "High Speed · @ultimaker_methodx · 1XA · ultimaker_absr_175 · highspeed",
+        "setting_scopes": {
+            "acceleration_print": "extruder.0",
+            "bridge_wall_speed": "extruder.0",
+            "cool_fan_enabled": "extruder.0",
+            "cool_fan_speed": "extruder.0",
+            "cool_min_layer_time": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "infill_pattern": "extruder.0",
+            "jerk_print": "extruder.0",
+            "speed_layer_0": "extruder.0",
+            "speed_prime_tower": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_support": "extruder.0",
+            "speed_support_interface": "extruder.0",
+            "speed_travel": "extruder.0",
+            "speed_travel_layer_0": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "support_pattern": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker_methodx"
+            ],
+            "material_native_ids": [
+                "ultimaker_pc-abs-fr_175"
+            ],
+            "variant_names": [
+                "1XA"
+            ]
+        },
+        "compatible_printers": {
+            "UltiMaker Method X": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker_methodx"
+                ],
+                "material_native_ids": [
+                    "ultimaker_pc-abs-fr_175"
+                ],
+                "variant_names": [
+                    "1XA"
+                ]
+            },
+            "definition": "ultimaker_methodx",
+            "global_quality_id": null,
+            "intent_category": "solid",
+            "material_id": "ultimaker_pc-abs-fr_175",
+            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-pc-abs-fr-175_0.2mm_solid",
+            "quality_type": "draft",
+            "resource_version": "5.13.0",
+            "source_kind": "intent",
+            "variant_name": "1XA"
+        },
+        "data": {
+            "bottom_thickness": 0.3,
+            "infill_angles": [
+                45,
+                135
+            ],
+            "infill_material_flow": 97,
+            "infill_pattern": "zigzag",
+            "infill_sparse_density": 99,
+            "top_bottom_thickness": 0.3,
+            "top_thickness": 0.3
+        },
+        "name": "Solid · @ultimaker_methodx · 1XA · ultimaker_pc-abs-fr_175 · solid",
+        "setting_scopes": {
+            "bottom_thickness": "extruder.0",
+            "infill_angles": "extruder.0",
+            "infill_material_flow": "extruder.0",
+            "infill_pattern": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "top_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker_methodx"
+            ],
+            "material_native_ids": [
+                "ultimaker_asa_175"
+            ],
+            "variant_names": [
+                "1XA"
+            ]
+        },
+        "compatible_printers": {
+            "UltiMaker Method X": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker_methodx"
+                ],
+                "material_native_ids": [
+                    "ultimaker_asa_175"
+                ],
+                "variant_names": [
+                    "1XA"
+                ]
+            },
+            "definition": "ultimaker_methodx",
+            "global_quality_id": null,
+            "intent_category": "solid",
+            "material_id": "ultimaker_asa_175",
+            "native_id": "intent:ultimaker_methodx:ultimaker_methodx/um_methodx_1xa_um-asa-175_0.2mm_solid",
+            "quality_type": "draft",
+            "resource_version": "5.13.0",
+            "source_kind": "intent",
+            "variant_name": "1XA"
+        },
+        "data": {
+            "bottom_thickness": 0.3,
+            "infill_angles": [
+                45,
+                135
+            ],
+            "infill_material_flow": 97,
+            "infill_pattern": "zigzag",
+            "infill_sparse_density": 99,
+            "top_bottom_thickness": 0.3,
+            "top_thickness": 0.3
+        },
+        "name": "Solid · @ultimaker_methodx · 1XA · ultimaker_asa_175 · solid",
+        "setting_scopes": {
+            "bottom_thickness": "extruder.0",
+            "infill_angles": "extruder.0",
+            "infill_material_flow": "extruder.0",
+            "infill_pattern": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "top_bottom_thickness": "extruder.0",
+            "top_thickness": "extruder.0"
         }
     }
 ]

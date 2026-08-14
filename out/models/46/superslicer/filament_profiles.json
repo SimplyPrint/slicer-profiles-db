@@ -13,27 +13,32 @@
             ]
         },
         "data": {
-            "bed_temperature": "60",
+            "bed_temperature": "90",
+            "bridge_fan_speed": "50",
             "compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_ANYCUBIC.*/ and printer_notes=~/.*PRINTER_MODEL_I3_MEGA.*/",
-            "disable_fan_first_layers": "1",
             "end_filament_gcode": "\"; Filament-specific end gcode\"",
             "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF3232",
-            "filament_cost": "26.65",
-            "filament_density": "1.24",
-            "filament_max_volumetric_speed": "10",
-            "filament_notes": "\"ReForm is a sustainable initiative within Formfutura to efficiently manage residual extrusion waste streams and re-use them into high-end upcycled filaments. The ideology behind ReForm is to a make 3D printing more sustainable – without having to make compromises on material properties – and yet keep it affordable.\\n\\nhttps://www.formfutura.com/shop/product/reform-rpla-2838\"",
-            "filament_settings_id": "FormFutura ReForm rPLA @MEGA",
+            "fan_below_layer_time": "20",
+            "filament_colour": "#FF8000",
+            "filament_cost": "46.65",
+            "filament_density": "1.27",
+            "filament_max_volumetric_speed": "8",
+            "filament_notes": "\"HDglass is a high performance PETG type of 3D printer with unsurpassed 3D printing properties and improved mechanical strength, flexibility, toughness and heat resistance.\\n\\nhttps://www.formfutura.com/shop/product/hdglass-2812\"",
+            "filament_settings_id": "FormFutura HDglass @MEGA",
+            "filament_type": "PETG",
             "filament_vendor": "FormFutura",
-            "first_layer_bed_temperature": "65",
-            "first_layer_temperature": "215",
-            "min_fan_speed": "100",
+            "first_layer_bed_temperature": "90",
+            "first_layer_temperature": "230",
+            "max_fan_speed": "50",
+            "min_fan_speed": "30",
             "min_print_speed": "15",
             "slowdown_below_layer_time": "20",
-            "temperature": "210"
+            "temperature": "240"
         },
-        "name": "FormFutura ReForm rPLA @MEGA"
+        "filament_db_ids": [
+            "formfutura/PETG/petg_hdglass"
+        ],
+        "name": "FormFutura HDglass @MEGA"
     },
     {
         "attributes": {
@@ -49,61 +54,31 @@
             ]
         },
         "data": {
-            "bed_temperature": "60",
+            "bed_temperature": "75",
+            "bridge_fan_speed": "50",
             "compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_ANYCUBIC.*/ and printer_notes=~/.*PRINTER_MODEL_I3_MEGA.*/",
-            "disable_fan_first_layers": "1",
             "end_filament_gcode": "\"; Filament-specific end gcode\"",
             "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF3232",
-            "filament_cost": "19.99",
-            "filament_density": "1.24",
-            "filament_max_volumetric_speed": "10",
-            "filament_settings_id": "3D Warhorse PLA @MEGA",
-            "filament_vendor": "3D Warhorse",
-            "first_layer_bed_temperature": "65",
-            "first_layer_temperature": "215",
-            "min_fan_speed": "100",
+            "fan_below_layer_time": "20",
+            "filament_colour": "#FF8000",
+            "filament_cost": "27.82",
+            "filament_density": "1.27",
+            "filament_max_volumetric_speed": "8",
+            "filament_settings_id": "DAS FILAMENT PETG @MEGA",
+            "filament_type": "PETG",
+            "filament_vendor": "DAS FILAMENT",
+            "first_layer_bed_temperature": "75",
+            "first_layer_temperature": "220",
+            "max_fan_speed": "50",
+            "min_fan_speed": "30",
             "min_print_speed": "15",
             "slowdown_below_layer_time": "20",
-            "temperature": "210"
+            "temperature": "225"
         },
-        "name": "3D Warhorse PLA @MEGA"
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatible_printers": {
-            "Anycubic i3 Mega": [
-                "0.4"
-            ],
-            "Anycubic i3 Mega S": [
-                "0.4"
-            ]
-        },
-        "data": {
-            "bed_temperature": "60",
-            "compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_ANYCUBIC.*/ and printer_notes=~/.*PRINTER_MODEL_I3_MEGA.*/",
-            "disable_fan_first_layers": "1",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#FF3232",
-            "filament_cost": "24.99",
-            "filament_density": "1.24",
-            "filament_max_volumetric_speed": "10",
-            "filament_settings_id": "GIANTARM PLA @MEGA",
-            "filament_vendor": "GIANTARM",
-            "first_layer_bed_temperature": "65",
-            "first_layer_temperature": "215",
-            "min_fan_speed": "100",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "20",
-            "temperature": "210"
-        },
-        "name": "GIANTARM PLA @MEGA"
+        "filament_db_ids": [
+            "das_filament/PETG/petg"
+        ],
+        "name": "DAS FILAMENT PETG @MEGA"
     },
     {
         "attributes": {
@@ -165,121 +140,6 @@
             ]
         },
         "data": {
-            "bed_temperature": "110",
-            "bridge_fan_speed": "25",
-            "compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_ANYCUBIC.*/ and printer_notes=~/.*PRINTER_MODEL_I3_MEGA.*/",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "fan_always_on": "0",
-            "fan_below_layer_time": "20",
-            "filament_colour": "#3A80CA",
-            "filament_cost": "27.82",
-            "filament_density": "1.04",
-            "filament_max_volumetric_speed": "11",
-            "filament_ramming_parameters": "\"120 100 5.70968 6.03226 7 8.25806 9 9.19355 9.3871 9.77419 10.129 10.3226 10.4516 10.5161| 0.05 5.69677 0.45 6.15484 0.95 8.76774 1.45 9.20323 1.95 9.95806 2.45 10.3871 2.95 10.5677 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_settings_id": "Generic ABS @MEGA",
-            "filament_type": "ABS",
-            "filament_vendor": "Generic",
-            "first_layer_bed_temperature": "105",
-            "first_layer_temperature": "255",
-            "max_fan_speed": "30",
-            "min_fan_speed": "0",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "20",
-            "temperature": "255"
-        },
-        "name": "Generic ABS @MEGA"
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatible_printers": {
-            "Anycubic i3 Mega": [
-                "0.4"
-            ],
-            "Anycubic i3 Mega S": [
-                "0.4"
-            ]
-        },
-        "data": {
-            "bed_temperature": "50",
-            "bridge_fan_speed": "80",
-            "compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_ANYCUBIC.*/ and printer_notes=~/.*PRINTER_MODEL_I3_MEGA.*/",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "extrusion_multiplier": "1.15",
-            "fan_always_on": "0",
-            "fan_below_layer_time": "100",
-            "filament_colour": "#008000",
-            "filament_cost": "82.00",
-            "filament_density": "1.22",
-            "filament_deretract_speed": "25",
-            "filament_max_volumetric_speed": "1.2",
-            "filament_retract_length": "0.8",
-            "filament_settings_id": "Generic FLEX @MEGA",
-            "filament_type": "FLEX",
-            "filament_vendor": "Generic",
-            "first_layer_bed_temperature": "55",
-            "first_layer_temperature": "240",
-            "max_fan_speed": "90",
-            "min_fan_speed": "0",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "20",
-            "temperature": "240"
-        },
-        "name": "Generic FLEX @MEGA"
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatible_printers": {
-            "Anycubic i3 Mega": [
-                "0.4"
-            ],
-            "Anycubic i3 Mega S": [
-                "0.4"
-            ]
-        },
-        "data": {
-            "bed_temperature": "90",
-            "bridge_fan_speed": "50",
-            "compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_ANYCUBIC.*/ and printer_notes=~/.*PRINTER_MODEL_I3_MEGA.*/",
-            "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "20",
-            "filament_colour": "#FF8000",
-            "filament_cost": "27.82",
-            "filament_density": "1.27",
-            "filament_max_volumetric_speed": "8",
-            "filament_settings_id": "Generic PETG @MEGA",
-            "filament_type": "PETG",
-            "filament_vendor": "Generic",
-            "first_layer_bed_temperature": "90",
-            "first_layer_temperature": "230",
-            "max_fan_speed": "50",
-            "min_fan_speed": "30",
-            "min_print_speed": "15",
-            "slowdown_below_layer_time": "20",
-            "temperature": "240"
-        },
-        "name": "Generic PETG @MEGA"
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatible_printers": {
-            "Anycubic i3 Mega": [
-                "0.4"
-            ],
-            "Anycubic i3 Mega S": [
-                "0.4"
-            ]
-        },
-        "data": {
             "bed_temperature": "60",
             "compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_ANYCUBIC.*/ and printer_notes=~/.*PRINTER_MODEL_I3_MEGA.*/",
             "disable_fan_first_layers": "1",
@@ -287,11 +147,11 @@
             "fan_always_on": "1",
             "fan_below_layer_time": "100",
             "filament_colour": "#FF3232",
-            "filament_cost": "23.88",
+            "filament_cost": "25.40",
             "filament_density": "1.24",
             "filament_max_volumetric_speed": "10",
-            "filament_settings_id": "Verbatim PLA @MEGA",
-            "filament_vendor": "Verbatim",
+            "filament_settings_id": "Generic PLA @MEGA",
+            "filament_vendor": "Generic",
             "first_layer_bed_temperature": "65",
             "first_layer_temperature": "215",
             "min_fan_speed": "100",
@@ -299,10 +159,7 @@
             "slowdown_below_layer_time": "20",
             "temperature": "210"
         },
-        "filament_db_ids": [
-            "verbatim/PLA/pla"
-        ],
-        "name": "Verbatim PLA @MEGA"
+        "name": "Generic PLA @MEGA"
     },
     {
         "attributes": {
@@ -364,12 +221,11 @@
             "fan_always_on": "1",
             "fan_below_layer_time": "100",
             "filament_colour": "#FF3232",
-            "filament_cost": "39.93",
+            "filament_cost": "24.99",
             "filament_density": "1.24",
             "filament_max_volumetric_speed": "10",
-            "filament_notes": "\"EasyFil PLA is an easy to print PLA type of 3D printer filament that is available in a wide variety of colors. Its improved flowing behavior make 3D printed layers flow more into each other.\\n\\nhttps://www.formfutura.com/shop/product/easyfil-pla-2801\"",
-            "filament_settings_id": "FormFutura EasyFil PLA @MEGA",
-            "filament_vendor": "FormFutura",
+            "filament_settings_id": "GIANTARM PLA @MEGA",
+            "filament_vendor": "GIANTARM",
             "first_layer_bed_temperature": "65",
             "first_layer_temperature": "215",
             "min_fan_speed": "100",
@@ -377,10 +233,43 @@
             "slowdown_below_layer_time": "20",
             "temperature": "210"
         },
-        "filament_db_ids": [
-            "formfutura/PLA/easyfil_pla"
-        ],
-        "name": "FormFutura EasyFil PLA @MEGA"
+        "name": "GIANTARM PLA @MEGA"
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatible_printers": {
+            "Anycubic i3 Mega": [
+                "0.4"
+            ],
+            "Anycubic i3 Mega S": [
+                "0.4"
+            ]
+        },
+        "data": {
+            "bed_temperature": "60",
+            "compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_ANYCUBIC.*/ and printer_notes=~/.*PRINTER_MODEL_I3_MEGA.*/",
+            "disable_fan_first_layers": "1",
+            "end_filament_gcode": "\"; Filament-specific end gcode\"",
+            "fan_always_on": "1",
+            "fan_below_layer_time": "100",
+            "filament_colour": "#FF3232",
+            "filament_cost": "22.90",
+            "filament_density": "1.24",
+            "filament_max_volumetric_speed": "10",
+            "filament_notes": "\"Das 3DFilaments - PLA von 3Dmensionals ist ein sehr leicht zu druckendes 3D-Drucker Filament. Dabei handelt es sich um ein etwas härteres PLA mit einer exzellenten thermischen Stabilität. Das Filament zeichnet sich vor allem durch verzugfreies 3D-Drucken aus und weist minimale bis keine Verformung nach dem Abkühlen auf. Daher ist es besonders gut für den Druck größerer Objekte geeignet. Zudem bietet 3DFilaments - PLA über die gesamte Fadenläge eine hervorragende Durchmesser- und Rundheitstoleranz.\\n\\nhttps://www.3dmensionals.de/3dfilaments?number=PSU3DM001V\"",
+            "filament_settings_id": "3Dmensionals PLA @MEGA",
+            "filament_vendor": "3Dmensionals",
+            "first_layer_bed_temperature": "65",
+            "first_layer_temperature": "215",
+            "min_fan_speed": "100",
+            "min_print_speed": "15",
+            "slowdown_below_layer_time": "20",
+            "temperature": "210"
+        },
+        "name": "3Dmensionals PLA @MEGA"
     },
     {
         "attributes": {
@@ -436,31 +325,102 @@
             ]
         },
         "data": {
-            "bed_temperature": "75",
-            "bridge_fan_speed": "50",
+            "bed_temperature": "60",
             "compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_ANYCUBIC.*/ and printer_notes=~/.*PRINTER_MODEL_I3_MEGA.*/",
+            "disable_fan_first_layers": "1",
             "end_filament_gcode": "\"; Filament-specific end gcode\"",
             "fan_always_on": "1",
-            "fan_below_layer_time": "20",
-            "filament_colour": "#FF8000",
-            "filament_cost": "27.82",
-            "filament_density": "1.27",
-            "filament_max_volumetric_speed": "8",
-            "filament_settings_id": "DAS FILAMENT PETG @MEGA",
-            "filament_type": "PETG",
-            "filament_vendor": "DAS FILAMENT",
-            "first_layer_bed_temperature": "75",
-            "first_layer_temperature": "220",
-            "max_fan_speed": "50",
-            "min_fan_speed": "30",
+            "fan_below_layer_time": "100",
+            "filament_colour": "#FF3232",
+            "filament_cost": "19.99",
+            "filament_density": "1.24",
+            "filament_max_volumetric_speed": "10",
+            "filament_settings_id": "3D Warhorse PLA @MEGA",
+            "filament_vendor": "3D Warhorse",
+            "first_layer_bed_temperature": "65",
+            "first_layer_temperature": "215",
+            "min_fan_speed": "100",
             "min_print_speed": "15",
             "slowdown_below_layer_time": "20",
-            "temperature": "225"
+            "temperature": "210"
+        },
+        "name": "3D Warhorse PLA @MEGA"
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatible_printers": {
+            "Anycubic i3 Mega": [
+                "0.4"
+            ],
+            "Anycubic i3 Mega S": [
+                "0.4"
+            ]
+        },
+        "data": {
+            "bed_temperature": "60",
+            "compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_ANYCUBIC.*/ and printer_notes=~/.*PRINTER_MODEL_I3_MEGA.*/",
+            "disable_fan_first_layers": "1",
+            "end_filament_gcode": "\"; Filament-specific end gcode\"",
+            "fan_always_on": "1",
+            "fan_below_layer_time": "100",
+            "filament_colour": "#FF3232",
+            "filament_cost": "23.88",
+            "filament_density": "1.24",
+            "filament_max_volumetric_speed": "10",
+            "filament_settings_id": "Verbatim PLA @MEGA",
+            "filament_vendor": "Verbatim",
+            "first_layer_bed_temperature": "65",
+            "first_layer_temperature": "215",
+            "min_fan_speed": "100",
+            "min_print_speed": "15",
+            "slowdown_below_layer_time": "20",
+            "temperature": "210"
         },
         "filament_db_ids": [
-            "das_filament/PETG/petg"
+            "verbatim/PLA/pla"
         ],
-        "name": "DAS FILAMENT PETG @MEGA"
+        "name": "Verbatim PLA @MEGA"
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatible_printers": {
+            "Anycubic i3 Mega": [
+                "0.4"
+            ],
+            "Anycubic i3 Mega S": [
+                "0.4"
+            ]
+        },
+        "data": {
+            "bed_temperature": "110",
+            "bridge_fan_speed": "25",
+            "compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_ANYCUBIC.*/ and printer_notes=~/.*PRINTER_MODEL_I3_MEGA.*/",
+            "end_filament_gcode": "\"; Filament-specific end gcode\"",
+            "fan_always_on": "0",
+            "fan_below_layer_time": "20",
+            "filament_colour": "#3A80CA",
+            "filament_cost": "27.82",
+            "filament_density": "1.04",
+            "filament_max_volumetric_speed": "11",
+            "filament_ramming_parameters": "\"120 100 5.70968 6.03226 7 8.25806 9 9.19355 9.3871 9.77419 10.129 10.3226 10.4516 10.5161| 0.05 5.69677 0.45 6.15484 0.95 8.76774 1.45 9.20323 1.95 9.95806 2.45 10.3871 2.95 10.5677 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
+            "filament_settings_id": "Generic ABS @MEGA",
+            "filament_type": "ABS",
+            "filament_vendor": "Generic",
+            "first_layer_bed_temperature": "105",
+            "first_layer_temperature": "255",
+            "max_fan_speed": "30",
+            "min_fan_speed": "0",
+            "min_print_speed": "15",
+            "slowdown_below_layer_time": "20",
+            "temperature": "255"
+        },
+        "name": "Generic ABS @MEGA"
     },
     {
         "attributes": {
@@ -483,25 +443,22 @@
             "fan_always_on": "1",
             "fan_below_layer_time": "20",
             "filament_colour": "#FF8000",
-            "filament_cost": "46.65",
+            "filament_cost": "31.99",
             "filament_density": "1.27",
             "filament_max_volumetric_speed": "8",
-            "filament_notes": "\"HDglass is a high performance PETG type of 3D printer with unsurpassed 3D printing properties and improved mechanical strength, flexibility, toughness and heat resistance.\\n\\nhttps://www.formfutura.com/shop/product/hdglass-2812\"",
-            "filament_settings_id": "FormFutura HDglass @MEGA",
+            "filament_settings_id": "Janbex transparent PETG @MEGA",
+            "filament_spool_weight": "222",
             "filament_type": "PETG",
-            "filament_vendor": "FormFutura",
+            "filament_vendor": "Janbex",
             "first_layer_bed_temperature": "90",
-            "first_layer_temperature": "230",
+            "first_layer_temperature": "215",
             "max_fan_speed": "50",
-            "min_fan_speed": "30",
+            "min_fan_speed": "100",
             "min_print_speed": "15",
             "slowdown_below_layer_time": "20",
-            "temperature": "240"
+            "temperature": "210"
         },
-        "filament_db_ids": [
-            "formfutura/PETG/petg_hdglass"
-        ],
-        "name": "FormFutura HDglass @MEGA"
+        "name": "Janbex transparent PETG @MEGA"
     },
     {
         "attributes": {
@@ -565,11 +522,12 @@
             "fan_always_on": "1",
             "fan_below_layer_time": "100",
             "filament_colour": "#FF3232",
-            "filament_cost": "25.40",
+            "filament_cost": "26.65",
             "filament_density": "1.24",
             "filament_max_volumetric_speed": "10",
-            "filament_settings_id": "Generic PLA @MEGA",
-            "filament_vendor": "Generic",
+            "filament_notes": "\"ReForm is a sustainable initiative within Formfutura to efficiently manage residual extrusion waste streams and re-use them into high-end upcycled filaments. The ideology behind ReForm is to a make 3D printing more sustainable – without having to make compromises on material properties – and yet keep it affordable.\\n\\nhttps://www.formfutura.com/shop/product/reform-rpla-2838\"",
+            "filament_settings_id": "FormFutura ReForm rPLA @MEGA",
+            "filament_vendor": "FormFutura",
             "first_layer_bed_temperature": "65",
             "first_layer_temperature": "215",
             "min_fan_speed": "100",
@@ -577,7 +535,7 @@
             "slowdown_below_layer_time": "20",
             "temperature": "210"
         },
-        "name": "Generic PLA @MEGA"
+        "name": "FormFutura ReForm rPLA @MEGA"
     },
     {
         "attributes": {
@@ -593,29 +551,31 @@
             ]
         },
         "data": {
-            "bed_temperature": "90",
-            "bridge_fan_speed": "50",
+            "bed_temperature": "50",
+            "bridge_fan_speed": "80",
             "compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_ANYCUBIC.*/ and printer_notes=~/.*PRINTER_MODEL_I3_MEGA.*/",
             "end_filament_gcode": "\"; Filament-specific end gcode\"",
-            "fan_always_on": "1",
-            "fan_below_layer_time": "20",
-            "filament_colour": "#FF8000",
-            "filament_cost": "31.99",
-            "filament_density": "1.27",
-            "filament_max_volumetric_speed": "8",
-            "filament_settings_id": "Janbex transparent PETG @MEGA",
-            "filament_spool_weight": "222",
-            "filament_type": "PETG",
-            "filament_vendor": "Janbex",
-            "first_layer_bed_temperature": "90",
-            "first_layer_temperature": "215",
-            "max_fan_speed": "50",
-            "min_fan_speed": "100",
+            "extrusion_multiplier": "1.15",
+            "fan_always_on": "0",
+            "fan_below_layer_time": "100",
+            "filament_colour": "#008000",
+            "filament_cost": "82.00",
+            "filament_density": "1.22",
+            "filament_deretract_speed": "25",
+            "filament_max_volumetric_speed": "1.2",
+            "filament_retract_length": "0.8",
+            "filament_settings_id": "Generic FLEX @MEGA",
+            "filament_type": "FLEX",
+            "filament_vendor": "Generic",
+            "first_layer_bed_temperature": "55",
+            "first_layer_temperature": "240",
+            "max_fan_speed": "90",
+            "min_fan_speed": "0",
             "min_print_speed": "15",
             "slowdown_below_layer_time": "20",
-            "temperature": "210"
+            "temperature": "240"
         },
-        "name": "Janbex transparent PETG @MEGA"
+        "name": "Generic FLEX @MEGA"
     },
     {
         "attributes": {
@@ -638,12 +598,12 @@
             "fan_always_on": "1",
             "fan_below_layer_time": "100",
             "filament_colour": "#FF3232",
-            "filament_cost": "22.90",
+            "filament_cost": "39.93",
             "filament_density": "1.24",
             "filament_max_volumetric_speed": "10",
-            "filament_notes": "\"Das 3DFilaments - PLA von 3Dmensionals ist ein sehr leicht zu druckendes 3D-Drucker Filament. Dabei handelt es sich um ein etwas härteres PLA mit einer exzellenten thermischen Stabilität. Das Filament zeichnet sich vor allem durch verzugfreies 3D-Drucken aus und weist minimale bis keine Verformung nach dem Abkühlen auf. Daher ist es besonders gut für den Druck größerer Objekte geeignet. Zudem bietet 3DFilaments - PLA über die gesamte Fadenläge eine hervorragende Durchmesser- und Rundheitstoleranz.\\n\\nhttps://www.3dmensionals.de/3dfilaments?number=PSU3DM001V\"",
-            "filament_settings_id": "3Dmensionals PLA @MEGA",
-            "filament_vendor": "3Dmensionals",
+            "filament_notes": "\"EasyFil PLA is an easy to print PLA type of 3D printer filament that is available in a wide variety of colors. Its improved flowing behavior make 3D printed layers flow more into each other.\\n\\nhttps://www.formfutura.com/shop/product/easyfil-pla-2801\"",
+            "filament_settings_id": "FormFutura EasyFil PLA @MEGA",
+            "filament_vendor": "FormFutura",
             "first_layer_bed_temperature": "65",
             "first_layer_temperature": "215",
             "min_fan_speed": "100",
@@ -651,6 +611,46 @@
             "slowdown_below_layer_time": "20",
             "temperature": "210"
         },
-        "name": "3Dmensionals PLA @MEGA"
+        "filament_db_ids": [
+            "formfutura/PLA/easyfil_pla"
+        ],
+        "name": "FormFutura EasyFil PLA @MEGA"
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatible_printers": {
+            "Anycubic i3 Mega": [
+                "0.4"
+            ],
+            "Anycubic i3 Mega S": [
+                "0.4"
+            ]
+        },
+        "data": {
+            "bed_temperature": "90",
+            "bridge_fan_speed": "50",
+            "compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_ANYCUBIC.*/ and printer_notes=~/.*PRINTER_MODEL_I3_MEGA.*/",
+            "end_filament_gcode": "\"; Filament-specific end gcode\"",
+            "fan_always_on": "1",
+            "fan_below_layer_time": "20",
+            "filament_colour": "#FF8000",
+            "filament_cost": "27.82",
+            "filament_density": "1.27",
+            "filament_max_volumetric_speed": "8",
+            "filament_settings_id": "Generic PETG @MEGA",
+            "filament_type": "PETG",
+            "filament_vendor": "Generic",
+            "first_layer_bed_temperature": "90",
+            "first_layer_temperature": "230",
+            "max_fan_speed": "50",
+            "min_fan_speed": "30",
+            "min_print_speed": "15",
+            "slowdown_below_layer_time": "20",
+            "temperature": "240"
+        },
+        "name": "Generic PETG @MEGA"
     }
 ]
