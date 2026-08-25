@@ -68,6 +68,7 @@
                         "Direct Drive Standard,Direct Drive High Flow"
                     ],
                     "fan_direction": "right",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -353,9 +354,11 @@
                     "default_print_profile": "0.20mm Standard @BBL P2S",
                     "deretract_speed_extruder_change": [
                         "30",
+                        "30",
                         "30"
                     ],
                     "deretraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -382,9 +385,10 @@
                         "Direct Drive"
                     ],
                     "extruder_variant_list": [
-                        "Direct Drive Standard,Direct Drive High Flow"
+                        "Direct Drive Standard,Direct Drive High Flow,Direct Drive E3D High Flow"
                     ],
                     "fan_direction": "right",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -394,15 +398,18 @@
                     "head_wrap_detect_zone": [],
                     "hotend_cooling_rate": [
                         "2",
+                        "2",
                         "2"
                     ],
                     "hotend_heating_rate": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "instantiation": "true",
                     "layer_change_gcode": ";======== P2S layer_change gcode ==========\n;===== 2026/05/15 ====\n\n{if (layer_num + 1 == 1)}\n{if (overall_chamber_temperature >= 40)}\n    ;not reset filter fan in first layer\n    ;not reset fan\n{else}\n{if (min_vitrification_temperature > 50)}\n    ;not reset filter fan in first layer\n    ;not reset fan\n{endif}\n{endif}\n{endif}\n\n{if (layer_num + 1 <= close_additional_fan_first_x_layers[current_filament_id])}\n{if (overall_chamber_temperature < 40)}\n    {if (min_vitrification_temperature <= 50)}\n        M106 P2 S{first_x_layer_fan_speed[current_filament_id]*255.0/100.0}\n    {endif}\n{endif}\n    M622.1 S0\n    M1002 judge_flag ventobox_replace_aux1_fan_flag\n    M622 J0\n    M106 P10 S{first_x_layer_fan_speed[current_filament_id]*255.0/100.0}; set first x_layer left aux fan\n    M623\n;not reset fan\n{elsif (layer_num + 1 < additional_fan_full_speed_layer[current_filament_id] && additional_fan_full_speed_layer[current_filament_id] > close_additional_fan_first_x_layers[current_filament_id])}\n{if (overall_chamber_temperature < 40)}\n    {if (min_vitrification_temperature <= 50)}\n        M106 P2 S{(first_x_layer_fan_speed[current_filament_id] + (additional_cooling_fan_speed[current_filament_id] - first_x_layer_fan_speed[current_filament_id]) * (layer_num + 1 - close_additional_fan_first_x_layers[current_filament_id]) / max(additional_fan_full_speed_layer[current_filament_id] - close_additional_fan_first_x_layers[current_filament_id], 1)) * 255.0/100.0}\n    {endif}\n{endif}\n    M622.1 S0\n    M1002 judge_flag ventobox_replace_aux1_fan_flag\n    M622 J0\n    M106 P10 S{(first_x_layer_fan_speed[current_filament_id] + (additional_cooling_fan_speed[current_filament_id] - first_x_layer_fan_speed[current_filament_id]) * (layer_num + 1 - close_additional_fan_first_x_layers[current_filament_id]) / max(additional_fan_full_speed_layer[current_filament_id] - close_additional_fan_first_x_layers[current_filament_id], 1)) * 255.0/100.0}\n    M623\n;not reset fan\n{elsif (layer_num + 1 == max(close_additional_fan_first_x_layers[current_filament_id] + 1, additional_fan_full_speed_layer[current_filament_id]))}\n{if (overall_chamber_temperature < 40)}\n    ;updata chamber autocooling in Xth layer\n    {if (min_vitrification_temperature <= 50)}\n        {if (nozzle_diameter_at_nozzle_id[current_nozzle_id] == 0.2)}\n            M142 P1 R30 S40 U{max_additional_fan/100.0} V1.0 O45; set PLA/TPU ND0.2 chamber autocooling\n        {else}\n            M142 P1 R30 S40 U{max_additional_fan/100.0} V1.0 O45; set PLA/TPU ND0.4 chamber autocooling\n        {endif}\n    {else}\n            ;not reset filter fan in Xth layer\n    {endif}\n{else}\n        ;not reset filter fan in Xth layer\n{endif}\n    M622.1 S0\n    M1002 judge_flag ventobox_replace_aux1_fan_flag\n    M622 J0\n    M106 P10 S{additional_cooling_fan_speed[current_filament_id]*255.0/100.0}; set left aux fan\n    M623\n;not reset fan\n{endif}\n\n; update layer progress\nM73 L{layer_num+1}\nM991 S0 P{layer_num} ;notify layer change\n\n",
                     "long_retractions_when_cut": [
+                        "0",
                         "0",
                         "0"
                     ],
@@ -414,9 +421,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000",
                         "20000",
                         "20000",
                         "20000",
@@ -426,9 +437,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_travel": [
+                        "10000",
+                        "10000",
                         "10000",
                         "10000",
                         "10000",
@@ -438,15 +453,21 @@
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_y": [
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
+                        "500",
+                        "500",
                         "500",
                         "500",
                         "500",
@@ -457,9 +478,13 @@
                         "2.5",
                         "2.5",
                         "2.5",
+                        "2.5",
+                        "2.5",
                         "2.5"
                     ],
                     "machine_max_jerk_x": [
+                        "9",
+                        "9",
                         "9",
                         "9",
                         "9",
@@ -469,9 +494,13 @@
                         "9",
                         "9",
                         "9",
+                        "9",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_z": [
+                        "3",
+                        "3",
                         "3",
                         "3",
                         "3",
@@ -482,9 +511,13 @@
                         "30",
                         "30",
                         "30",
+                        "30",
+                        "30",
                         "30"
                     ],
                     "machine_max_speed_x": [
+                        "600",
+                        "600",
                         "600",
                         "600",
                         "600",
@@ -494,9 +527,13 @@
                         "600",
                         "600",
                         "600",
+                        "600",
+                        "600",
                         "600"
                     ],
                     "machine_max_speed_z": [
+                        "20",
+                        "20",
                         "20",
                         "20",
                         "20",
@@ -526,14 +563,17 @@
                     ],
                     "nozzle_flush_dataset": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "nozzle_height": "4.2",
                     "nozzle_type": [
                         "hardened_steel",
+                        "hardened_steel",
                         "hardened_steel"
                     ],
                     "nozzle_volume": [
+                        "110",
                         "110",
                         "110"
                     ],
@@ -550,11 +590,13 @@
                     "printable_height": "256",
                     "printer_extruder_id": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "printer_extruder_variant": [
                         "Direct Drive Standard",
-                        "Direct Drive High Flow"
+                        "Direct Drive High Flow",
+                        "Direct Drive E3D High Flow"
                     ],
                     "printer_model": "Bambu Lab P2S",
                     "printer_settings_id": "",
@@ -563,45 +605,56 @@
                     "printer_variant": "0.4",
                     "retract_before_wipe": [
                         "0%",
+                        "0%",
                         "0%"
                     ],
                     "retract_length_toolchange": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "retract_lift_above": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_lift_below": [
+                        "249",
                         "249",
                         "249"
                     ],
                     "retract_restart_extra": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_restart_extra_toolchange": [
+                        "0",
                         "0",
                         "0"
                     ],
                     "retract_when_changing_layer": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_distances_when_cut": [
+                        "18",
                         "18",
                         "18"
                     ],
                     "retraction_length": [
                         "0.8",
+                        "0.8",
                         "0.8"
                     ],
                     "retraction_minimum_travel": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -627,9 +680,11 @@
                     ],
                     "wipe": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "wipe_distance": [
+                        "2",
                         "2",
                         "2"
                     ],
@@ -642,9 +697,11 @@
                     ],
                     "z_hop": [
                         "0.4",
+                        "0.4",
                         "0.4"
                     ],
                     "z_hop_types": [
+                        "Auto Lift",
                         "Auto Lift",
                         "Auto Lift"
                     ]
@@ -670,9 +727,11 @@
                     "default_print_profile": "0.30mm Standard @BBL P2S 0.6 nozzle",
                     "deretract_speed_extruder_change": [
                         "30",
+                        "30",
                         "30"
                     ],
                     "deretraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -699,9 +758,10 @@
                         "Direct Drive"
                     ],
                     "extruder_variant_list": [
-                        "Direct Drive Standard,Direct Drive High Flow"
+                        "Direct Drive Standard,Direct Drive High Flow,Direct Drive E3D High Flow"
                     ],
                     "fan_direction": "right",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -711,15 +771,18 @@
                     "head_wrap_detect_zone": [],
                     "hotend_cooling_rate": [
                         "2",
+                        "2",
                         "2"
                     ],
                     "hotend_heating_rate": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "instantiation": "true",
                     "layer_change_gcode": ";======== P2S layer_change gcode ==========\n;===== 2026/05/15 ====\n\n{if (layer_num + 1 == 1)}\n{if (overall_chamber_temperature >= 40)}\n    ;not reset filter fan in first layer\n    ;not reset fan\n{else}\n{if (min_vitrification_temperature > 50)}\n    ;not reset filter fan in first layer\n    ;not reset fan\n{endif}\n{endif}\n{endif}\n\n{if (layer_num + 1 <= close_additional_fan_first_x_layers[current_filament_id])}\n{if (overall_chamber_temperature < 40)}\n    {if (min_vitrification_temperature <= 50)}\n        M106 P2 S{first_x_layer_fan_speed[current_filament_id]*255.0/100.0}\n    {endif}\n{endif}\n    M622.1 S0\n    M1002 judge_flag ventobox_replace_aux1_fan_flag\n    M622 J0\n    M106 P10 S{first_x_layer_fan_speed[current_filament_id]*255.0/100.0}; set first x_layer left aux fan\n    M623\n;not reset fan\n{elsif (layer_num + 1 < additional_fan_full_speed_layer[current_filament_id] && additional_fan_full_speed_layer[current_filament_id] > close_additional_fan_first_x_layers[current_filament_id])}\n{if (overall_chamber_temperature < 40)}\n    {if (min_vitrification_temperature <= 50)}\n        M106 P2 S{(first_x_layer_fan_speed[current_filament_id] + (additional_cooling_fan_speed[current_filament_id] - first_x_layer_fan_speed[current_filament_id]) * (layer_num + 1 - close_additional_fan_first_x_layers[current_filament_id]) / max(additional_fan_full_speed_layer[current_filament_id] - close_additional_fan_first_x_layers[current_filament_id], 1)) * 255.0/100.0}\n    {endif}\n{endif}\n    M622.1 S0\n    M1002 judge_flag ventobox_replace_aux1_fan_flag\n    M622 J0\n    M106 P10 S{(first_x_layer_fan_speed[current_filament_id] + (additional_cooling_fan_speed[current_filament_id] - first_x_layer_fan_speed[current_filament_id]) * (layer_num + 1 - close_additional_fan_first_x_layers[current_filament_id]) / max(additional_fan_full_speed_layer[current_filament_id] - close_additional_fan_first_x_layers[current_filament_id], 1)) * 255.0/100.0}\n    M623\n;not reset fan\n{elsif (layer_num + 1 == max(close_additional_fan_first_x_layers[current_filament_id] + 1, additional_fan_full_speed_layer[current_filament_id]))}\n{if (overall_chamber_temperature < 40)}\n    ;updata chamber autocooling in Xth layer\n    {if (min_vitrification_temperature <= 50)}\n        {if (nozzle_diameter_at_nozzle_id[current_nozzle_id] == 0.2)}\n            M142 P1 R30 S40 U{max_additional_fan/100.0} V1.0 O45; set PLA/TPU ND0.2 chamber autocooling\n        {else}\n            M142 P1 R30 S40 U{max_additional_fan/100.0} V1.0 O45; set PLA/TPU ND0.4 chamber autocooling\n        {endif}\n    {else}\n            ;not reset filter fan in Xth layer\n    {endif}\n{else}\n        ;not reset filter fan in Xth layer\n{endif}\n    M622.1 S0\n    M1002 judge_flag ventobox_replace_aux1_fan_flag\n    M622 J0\n    M106 P10 S{additional_cooling_fan_speed[current_filament_id]*255.0/100.0}; set left aux fan\n    M623\n;not reset fan\n{endif}\n\n; update layer progress\nM73 L{layer_num+1}\nM991 S0 P{layer_num} ;notify layer change\n\n",
                     "long_retractions_when_cut": [
+                        "0",
                         "0",
                         "0"
                     ],
@@ -731,9 +794,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000",
                         "20000",
                         "20000",
                         "20000",
@@ -743,9 +810,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_travel": [
+                        "10000",
+                        "10000",
                         "10000",
                         "10000",
                         "10000",
@@ -755,15 +826,21 @@
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_y": [
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
+                        "500",
+                        "500",
                         "500",
                         "500",
                         "500",
@@ -774,9 +851,13 @@
                         "2.5",
                         "2.5",
                         "2.5",
+                        "2.5",
+                        "2.5",
                         "2.5"
                     ],
                     "machine_max_jerk_x": [
+                        "9",
+                        "9",
                         "9",
                         "9",
                         "9",
@@ -786,9 +867,13 @@
                         "9",
                         "9",
                         "9",
+                        "9",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_z": [
+                        "3",
+                        "3",
                         "3",
                         "3",
                         "3",
@@ -799,9 +884,13 @@
                         "30",
                         "30",
                         "30",
+                        "30",
+                        "30",
                         "30"
                     ],
                     "machine_max_speed_x": [
+                        "600",
+                        "600",
                         "600",
                         "600",
                         "600",
@@ -811,9 +900,13 @@
                         "600",
                         "600",
                         "600",
+                        "600",
+                        "600",
                         "600"
                     ],
                     "machine_max_speed_z": [
+                        "20",
+                        "20",
                         "20",
                         "20",
                         "20",
@@ -843,14 +936,17 @@
                     ],
                     "nozzle_flush_dataset": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "nozzle_height": "4.2",
                     "nozzle_type": [
                         "hardened_steel",
+                        "hardened_steel",
                         "hardened_steel"
                     ],
                     "nozzle_volume": [
+                        "110",
                         "110",
                         "110"
                     ],
@@ -867,11 +963,13 @@
                     "printable_height": "256",
                     "printer_extruder_id": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "printer_extruder_variant": [
                         "Direct Drive Standard",
-                        "Direct Drive High Flow"
+                        "Direct Drive High Flow",
+                        "Direct Drive E3D High Flow"
                     ],
                     "printer_model": "Bambu Lab P2S",
                     "printer_settings_id": "",
@@ -880,45 +978,56 @@
                     "printer_variant": "0.6",
                     "retract_before_wipe": [
                         "0%",
+                        "0%",
                         "0%"
                     ],
                     "retract_length_toolchange": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "retract_lift_above": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_lift_below": [
+                        "249",
                         "249",
                         "249"
                     ],
                     "retract_restart_extra": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_restart_extra_toolchange": [
+                        "0",
                         "0",
                         "0"
                     ],
                     "retract_when_changing_layer": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_distances_when_cut": [
+                        "18",
                         "18",
                         "18"
                     ],
                     "retraction_length": [
                         "1.4",
+                        "1.4",
                         "1.4"
                     ],
                     "retraction_minimum_travel": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -944,9 +1053,11 @@
                     ],
                     "wipe": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "wipe_distance": [
+                        "2",
                         "2",
                         "2"
                     ],
@@ -959,9 +1070,11 @@
                     ],
                     "z_hop": [
                         "0.4",
+                        "0.4",
                         "0.4"
                     ],
                     "z_hop_types": [
+                        "Auto Lift",
                         "Auto Lift",
                         "Auto Lift"
                     ]
@@ -1019,6 +1132,7 @@
                         "Direct Drive Standard,Direct Drive High Flow"
                     ],
                     "fan_direction": "right",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -1340,6 +1454,7 @@
                         "Direct Drive Standard,Direct Drive High Flow"
                     ],
                     "fan_direction": "right",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -1629,9 +1744,11 @@
                     "default_print_profile": "0.20mm Standard @BBL P2S",
                     "deretract_speed_extruder_change": [
                         "30",
+                        "30",
                         "30"
                     ],
                     "deretraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -1658,9 +1775,10 @@
                         "Direct Drive"
                     ],
                     "extruder_variant_list": [
-                        "Direct Drive Standard,Direct Drive High Flow"
+                        "Direct Drive Standard,Direct Drive High Flow,Direct Drive E3D High Flow"
                     ],
                     "fan_direction": "right",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -1670,15 +1788,18 @@
                     "head_wrap_detect_zone": [],
                     "hotend_cooling_rate": [
                         "2",
+                        "2",
                         "2"
                     ],
                     "hotend_heating_rate": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "instantiation": "true",
                     "layer_change_gcode": ";======== P2S layer_change gcode ==========\n;===== 2026/05/15 ====\n\n{if (layer_num + 1 == 1)}\n{if (overall_chamber_temperature >= 40)}\n    ;not reset filter fan in first layer\n    ;not reset fan\n{else}\n{if (min_vitrification_temperature > 50)}\n    ;not reset filter fan in first layer\n    ;not reset fan\n{endif}\n{endif}\n{endif}\n\n{if (layer_num + 1 <= close_additional_fan_first_x_layers[current_filament_id])}\n{if (overall_chamber_temperature < 40)}\n    {if (min_vitrification_temperature <= 50)}\n        M106 P2 S{first_x_layer_fan_speed[current_filament_id]*255.0/100.0}\n    {endif}\n{endif}\n    M622.1 S0\n    M1002 judge_flag ventobox_replace_aux1_fan_flag\n    M622 J0\n    M106 P10 S{first_x_layer_fan_speed[current_filament_id]*255.0/100.0}; set first x_layer left aux fan\n    M623\n;not reset fan\n{elsif (layer_num + 1 < additional_fan_full_speed_layer[current_filament_id] && additional_fan_full_speed_layer[current_filament_id] > close_additional_fan_first_x_layers[current_filament_id])}\n{if (overall_chamber_temperature < 40)}\n    {if (min_vitrification_temperature <= 50)}\n        M106 P2 S{(first_x_layer_fan_speed[current_filament_id] + (additional_cooling_fan_speed[current_filament_id] - first_x_layer_fan_speed[current_filament_id]) * (layer_num + 1 - close_additional_fan_first_x_layers[current_filament_id]) / max(additional_fan_full_speed_layer[current_filament_id] - close_additional_fan_first_x_layers[current_filament_id], 1)) * 255.0/100.0}\n    {endif}\n{endif}\n    M622.1 S0\n    M1002 judge_flag ventobox_replace_aux1_fan_flag\n    M622 J0\n    M106 P10 S{(first_x_layer_fan_speed[current_filament_id] + (additional_cooling_fan_speed[current_filament_id] - first_x_layer_fan_speed[current_filament_id]) * (layer_num + 1 - close_additional_fan_first_x_layers[current_filament_id]) / max(additional_fan_full_speed_layer[current_filament_id] - close_additional_fan_first_x_layers[current_filament_id], 1)) * 255.0/100.0}\n    M623\n;not reset fan\n{elsif (layer_num + 1 == max(close_additional_fan_first_x_layers[current_filament_id] + 1, additional_fan_full_speed_layer[current_filament_id]))}\n{if (overall_chamber_temperature < 40)}\n    ;updata chamber autocooling in Xth layer\n    {if (min_vitrification_temperature <= 50)}\n        {if (nozzle_diameter_at_nozzle_id[current_nozzle_id] == 0.2)}\n            M142 P1 R30 S40 U{max_additional_fan/100.0} V1.0 O45; set PLA/TPU ND0.2 chamber autocooling\n        {else}\n            M142 P1 R30 S40 U{max_additional_fan/100.0} V1.0 O45; set PLA/TPU ND0.4 chamber autocooling\n        {endif}\n    {else}\n            ;not reset filter fan in Xth layer\n    {endif}\n{else}\n        ;not reset filter fan in Xth layer\n{endif}\n    M622.1 S0\n    M1002 judge_flag ventobox_replace_aux1_fan_flag\n    M622 J0\n    M106 P10 S{additional_cooling_fan_speed[current_filament_id]*255.0/100.0}; set left aux fan\n    M623\n;not reset fan\n{endif}\n\n; update layer progress\nM73 L{layer_num+1}\nM991 S0 P{layer_num} ;notify layer change\n\n",
                     "long_retractions_when_cut": [
+                        "0",
                         "0",
                         "0"
                     ],
@@ -1690,9 +1811,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000",
                         "20000",
                         "20000",
                         "20000",
@@ -1702,9 +1827,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_travel": [
+                        "10000",
+                        "10000",
                         "10000",
                         "10000",
                         "10000",
@@ -1714,15 +1843,21 @@
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_y": [
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
+                        "500",
+                        "500",
                         "500",
                         "500",
                         "500",
@@ -1733,9 +1868,13 @@
                         "2.5",
                         "2.5",
                         "2.5",
+                        "2.5",
+                        "2.5",
                         "2.5"
                     ],
                     "machine_max_jerk_x": [
+                        "9",
+                        "9",
                         "9",
                         "9",
                         "9",
@@ -1745,9 +1884,13 @@
                         "9",
                         "9",
                         "9",
+                        "9",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_z": [
+                        "3",
+                        "3",
                         "3",
                         "3",
                         "3",
@@ -1758,9 +1901,13 @@
                         "30",
                         "30",
                         "30",
+                        "30",
+                        "30",
                         "30"
                     ],
                     "machine_max_speed_x": [
+                        "600",
+                        "600",
                         "600",
                         "600",
                         "600",
@@ -1770,9 +1917,13 @@
                         "600",
                         "600",
                         "600",
+                        "600",
+                        "600",
                         "600"
                     ],
                     "machine_max_speed_z": [
+                        "20",
+                        "20",
                         "20",
                         "20",
                         "20",
@@ -1802,14 +1953,17 @@
                     ],
                     "nozzle_flush_dataset": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "nozzle_height": "4.2",
                     "nozzle_type": [
                         "hardened_steel",
+                        "hardened_steel",
                         "hardened_steel"
                     ],
                     "nozzle_volume": [
+                        "110",
                         "110",
                         "110"
                     ],
@@ -1826,11 +1980,13 @@
                     "printable_height": "256",
                     "printer_extruder_id": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "printer_extruder_variant": [
                         "Direct Drive Standard",
-                        "Direct Drive High Flow"
+                        "Direct Drive High Flow",
+                        "Direct Drive E3D High Flow"
                     ],
                     "printer_model": "Bambu Lab P2S",
                     "printer_settings_id": "",
@@ -1839,45 +1995,56 @@
                     "printer_variant": "0.4",
                     "retract_before_wipe": [
                         "0%",
+                        "0%",
                         "0%"
                     ],
                     "retract_length_toolchange": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "retract_lift_above": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_lift_below": [
+                        "249",
                         "249",
                         "249"
                     ],
                     "retract_restart_extra": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_restart_extra_toolchange": [
+                        "0",
                         "0",
                         "0"
                     ],
                     "retract_when_changing_layer": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_distances_when_cut": [
+                        "18",
                         "18",
                         "18"
                     ],
                     "retraction_length": [
                         "0.8",
+                        "0.8",
                         "0.8"
                     ],
                     "retraction_minimum_travel": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -1903,9 +2070,11 @@
                     ],
                     "wipe": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "wipe_distance": [
+                        "2",
                         "2",
                         "2"
                     ],
@@ -1918,9 +2087,11 @@
                     ],
                     "z_hop": [
                         "0.4",
+                        "0.4",
                         "0.4"
                     ],
                     "z_hop_types": [
+                        "Auto Lift",
                         "Auto Lift",
                         "Auto Lift"
                     ]
@@ -1950,9 +2121,11 @@
                     "default_print_profile": "0.30mm Standard @BBL P2S 0.6 nozzle",
                     "deretract_speed_extruder_change": [
                         "30",
+                        "30",
                         "30"
                     ],
                     "deretraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -1979,9 +2152,10 @@
                         "Direct Drive"
                     ],
                     "extruder_variant_list": [
-                        "Direct Drive Standard,Direct Drive High Flow"
+                        "Direct Drive Standard,Direct Drive High Flow,Direct Drive E3D High Flow"
                     ],
                     "fan_direction": "right",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -1991,15 +2165,18 @@
                     "head_wrap_detect_zone": [],
                     "hotend_cooling_rate": [
                         "2",
+                        "2",
                         "2"
                     ],
                     "hotend_heating_rate": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "instantiation": "true",
                     "layer_change_gcode": ";======== P2S layer_change gcode ==========\n;===== 2026/05/15 ====\n\n{if (layer_num + 1 == 1)}\n{if (overall_chamber_temperature >= 40)}\n    ;not reset filter fan in first layer\n    ;not reset fan\n{else}\n{if (min_vitrification_temperature > 50)}\n    ;not reset filter fan in first layer\n    ;not reset fan\n{endif}\n{endif}\n{endif}\n\n{if (layer_num + 1 <= close_additional_fan_first_x_layers[current_filament_id])}\n{if (overall_chamber_temperature < 40)}\n    {if (min_vitrification_temperature <= 50)}\n        M106 P2 S{first_x_layer_fan_speed[current_filament_id]*255.0/100.0}\n    {endif}\n{endif}\n    M622.1 S0\n    M1002 judge_flag ventobox_replace_aux1_fan_flag\n    M622 J0\n    M106 P10 S{first_x_layer_fan_speed[current_filament_id]*255.0/100.0}; set first x_layer left aux fan\n    M623\n;not reset fan\n{elsif (layer_num + 1 < additional_fan_full_speed_layer[current_filament_id] && additional_fan_full_speed_layer[current_filament_id] > close_additional_fan_first_x_layers[current_filament_id])}\n{if (overall_chamber_temperature < 40)}\n    {if (min_vitrification_temperature <= 50)}\n        M106 P2 S{(first_x_layer_fan_speed[current_filament_id] + (additional_cooling_fan_speed[current_filament_id] - first_x_layer_fan_speed[current_filament_id]) * (layer_num + 1 - close_additional_fan_first_x_layers[current_filament_id]) / max(additional_fan_full_speed_layer[current_filament_id] - close_additional_fan_first_x_layers[current_filament_id], 1)) * 255.0/100.0}\n    {endif}\n{endif}\n    M622.1 S0\n    M1002 judge_flag ventobox_replace_aux1_fan_flag\n    M622 J0\n    M106 P10 S{(first_x_layer_fan_speed[current_filament_id] + (additional_cooling_fan_speed[current_filament_id] - first_x_layer_fan_speed[current_filament_id]) * (layer_num + 1 - close_additional_fan_first_x_layers[current_filament_id]) / max(additional_fan_full_speed_layer[current_filament_id] - close_additional_fan_first_x_layers[current_filament_id], 1)) * 255.0/100.0}\n    M623\n;not reset fan\n{elsif (layer_num + 1 == max(close_additional_fan_first_x_layers[current_filament_id] + 1, additional_fan_full_speed_layer[current_filament_id]))}\n{if (overall_chamber_temperature < 40)}\n    ;updata chamber autocooling in Xth layer\n    {if (min_vitrification_temperature <= 50)}\n        {if (nozzle_diameter_at_nozzle_id[current_nozzle_id] == 0.2)}\n            M142 P1 R30 S40 U{max_additional_fan/100.0} V1.0 O45; set PLA/TPU ND0.2 chamber autocooling\n        {else}\n            M142 P1 R30 S40 U{max_additional_fan/100.0} V1.0 O45; set PLA/TPU ND0.4 chamber autocooling\n        {endif}\n    {else}\n            ;not reset filter fan in Xth layer\n    {endif}\n{else}\n        ;not reset filter fan in Xth layer\n{endif}\n    M622.1 S0\n    M1002 judge_flag ventobox_replace_aux1_fan_flag\n    M622 J0\n    M106 P10 S{additional_cooling_fan_speed[current_filament_id]*255.0/100.0}; set left aux fan\n    M623\n;not reset fan\n{endif}\n\n; update layer progress\nM73 L{layer_num+1}\nM991 S0 P{layer_num} ;notify layer change\n\n",
                     "long_retractions_when_cut": [
+                        "0",
                         "0",
                         "0"
                     ],
@@ -2011,9 +2188,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000",
                         "20000",
                         "20000",
                         "20000",
@@ -2023,9 +2204,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_travel": [
+                        "10000",
+                        "10000",
                         "10000",
                         "10000",
                         "10000",
@@ -2035,15 +2220,21 @@
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_y": [
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
+                        "500",
+                        "500",
                         "500",
                         "500",
                         "500",
@@ -2054,9 +2245,13 @@
                         "2.5",
                         "2.5",
                         "2.5",
+                        "2.5",
+                        "2.5",
                         "2.5"
                     ],
                     "machine_max_jerk_x": [
+                        "9",
+                        "9",
                         "9",
                         "9",
                         "9",
@@ -2066,9 +2261,13 @@
                         "9",
                         "9",
                         "9",
+                        "9",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_z": [
+                        "3",
+                        "3",
                         "3",
                         "3",
                         "3",
@@ -2079,9 +2278,13 @@
                         "30",
                         "30",
                         "30",
+                        "30",
+                        "30",
                         "30"
                     ],
                     "machine_max_speed_x": [
+                        "600",
+                        "600",
                         "600",
                         "600",
                         "600",
@@ -2091,9 +2294,13 @@
                         "600",
                         "600",
                         "600",
+                        "600",
+                        "600",
                         "600"
                     ],
                     "machine_max_speed_z": [
+                        "20",
+                        "20",
                         "20",
                         "20",
                         "20",
@@ -2123,14 +2330,17 @@
                     ],
                     "nozzle_flush_dataset": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "nozzle_height": "4.2",
                     "nozzle_type": [
                         "hardened_steel",
+                        "hardened_steel",
                         "hardened_steel"
                     ],
                     "nozzle_volume": [
+                        "110",
                         "110",
                         "110"
                     ],
@@ -2147,11 +2357,13 @@
                     "printable_height": "256",
                     "printer_extruder_id": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "printer_extruder_variant": [
                         "Direct Drive Standard",
-                        "Direct Drive High Flow"
+                        "Direct Drive High Flow",
+                        "Direct Drive E3D High Flow"
                     ],
                     "printer_model": "Bambu Lab P2S",
                     "printer_settings_id": "",
@@ -2160,45 +2372,56 @@
                     "printer_variant": "0.6",
                     "retract_before_wipe": [
                         "0%",
+                        "0%",
                         "0%"
                     ],
                     "retract_length_toolchange": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "retract_lift_above": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_lift_below": [
+                        "249",
                         "249",
                         "249"
                     ],
                     "retract_restart_extra": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_restart_extra_toolchange": [
+                        "0",
                         "0",
                         "0"
                     ],
                     "retract_when_changing_layer": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_distances_when_cut": [
+                        "18",
                         "18",
                         "18"
                     ],
                     "retraction_length": [
                         "1.4",
+                        "1.4",
                         "1.4"
                     ],
                     "retraction_minimum_travel": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -2224,9 +2447,11 @@
                     ],
                     "wipe": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "wipe_distance": [
+                        "2",
                         "2",
                         "2"
                     ],
@@ -2239,9 +2464,11 @@
                     ],
                     "z_hop": [
                         "0.4",
+                        "0.4",
                         "0.4"
                     ],
                     "z_hop_types": [
+                        "Auto Lift",
                         "Auto Lift",
                         "Auto Lift"
                     ]
@@ -2303,6 +2530,7 @@
                         "Direct Drive Standard,Direct Drive High Flow"
                     ],
                     "fan_direction": "right",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
