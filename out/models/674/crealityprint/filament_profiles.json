@@ -892,6 +892,7 @@
             "customized_plate_temp": "55",
             "customized_plate_temp_initial_layer": "55",
             "default_filament_colour": "\"\"",
+            "dont_slow_down_outer_wall": "0",
             "during_print_exhaust_fan_speed": "0",
             "enable_overhang_bridge_fan": "1",
             "enable_pressure_advance": "1",
@@ -1502,6 +1503,7 @@
             "customized_plate_temp": "55",
             "customized_plate_temp_initial_layer": "55",
             "default_filament_colour": "\"\"",
+            "dont_slow_down_outer_wall": "0",
             "during_print_exhaust_fan_speed": "0",
             "enable_overhang_bridge_fan": "1",
             "enable_pressure_advance": "1",
@@ -2778,7 +2780,7 @@
             "filament_cooling_moves": "4",
             "filament_cost": "14",
             "filament_density": "1.23",
-            "filament_deretraction_speed": "10",
+            "filament_deretraction_speed": "40",
             "filament_diameter": "1.75",
             "filament_end_gcode": [
                 ";filament end gcode \n"
@@ -2802,9 +2804,9 @@
             "filament_retract_lift_enforce": "nil",
             "filament_retract_restart_extra": "nil",
             "filament_retract_when_changing_layer": "nil",
-            "filament_retraction_length": "0.4",
+            "filament_retraction_length": "0.8",
             "filament_retraction_minimum_travel": "nil",
-            "filament_retraction_speed": "10",
+            "filament_retraction_speed": "40",
             "filament_settings_id": [
                 ""
             ],
@@ -3143,6 +3145,7 @@
             "customized_plate_temp": "55",
             "customized_plate_temp_initial_layer": "55",
             "default_filament_colour": "\"\"",
+            "dont_slow_down_outer_wall": "0",
             "during_print_exhaust_fan_speed": "0",
             "enable_overhang_bridge_fan": "1",
             "enable_pressure_advance": "1",
@@ -4413,6 +4416,7 @@
             "customized_plate_temp": "55",
             "customized_plate_temp_initial_layer": "55",
             "default_filament_colour": "\"\"",
+            "dont_slow_down_outer_wall": "0",
             "during_print_exhaust_fan_speed": "0",
             "enable_overhang_bridge_fan": "1",
             "enable_pressure_advance": "1",
@@ -4593,7 +4597,7 @@
             "filament_shrink": "100%",
             "filament_soluble": "0",
             "filament_start_gcode": [
-                ";filament start gcode"
+                ";filament start gcode\n{if (position[2] > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n\n{if(initial_extruder != current_extruder || position[2] > first_layer_height)}\n{if (position[2] +0.4  < printable_height) }\nG2 Z{position[2]  + 0.4} I0.86 J0.86 P1 F10000 ; spiral lift a little from second lift\nG1 X205 Y345 F20000\nG1 Z{position[2] } F1200\n{else}\nG1 X205 Y345 F20000\n{endif}\n{endif}"
             ],
             "filament_toolchange_delay": "0",
             "filament_type": [
@@ -5158,6 +5162,7 @@
             "customized_plate_temp": "55",
             "customized_plate_temp_initial_layer": "55",
             "default_filament_colour": "\"\"",
+            "dont_slow_down_outer_wall": "1",
             "during_print_exhaust_fan_speed": "0",
             "enable_overhang_bridge_fan": "1",
             "enable_pressure_advance": "1",
@@ -6557,6 +6562,7 @@
             "customized_plate_temp": "55",
             "customized_plate_temp_initial_layer": "55",
             "default_filament_colour": "\"\"",
+            "dont_slow_down_outer_wall": "0",
             "during_print_exhaust_fan_speed": "0",
             "enable_overhang_bridge_fan": "1",
             "enable_pressure_advance": "1",
@@ -6685,6 +6691,7 @@
             "customized_plate_temp": "55",
             "customized_plate_temp_initial_layer": "55",
             "default_filament_colour": "\"\"",
+            "dont_slow_down_outer_wall": "0",
             "during_print_exhaust_fan_speed": "0",
             "enable_overhang_bridge_fan": "1",
             "enable_pressure_advance": "1",
