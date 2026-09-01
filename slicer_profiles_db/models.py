@@ -24,7 +24,6 @@ class ProfileType(str, Enum):
     MACHINE = "machine"
     MACHINE_MODEL = "machine_model"
     PRINT = "print"
-    TOOL_PRINT = "tool_print"
 
 
 def _version_key(v: str) -> tuple[int, ...]:
@@ -201,6 +200,7 @@ class SourceConfig(BaseModel):
     profile_type_dirs: dict[ProfileType, str] = Field(default_factory=dict)
     additional_repos: list[str] = Field(default_factory=list)
     evaluated_profile_bundle_index: str | None = None
+    runtime_version_guard: bool = False
 
 
 class VersionInfo(BaseModel):
