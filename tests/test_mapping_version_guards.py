@@ -23,6 +23,7 @@ from slicer_profiles_db.mapping import (
     _same_variant,
     _write_import_manifest,
     fetch_sp_slicer_versions,
+    map_print_profiles,
     map_printer_models,
 )
 from slicer_profiles_db.models import (
@@ -35,6 +36,75 @@ from slicer_profiles_db.parsers.cura import _material_compatibility_aliases
 
 
 class MappingVersionGuardTests(unittest.TestCase):
+    def test_prusa_evaluated_print_variants_with_same_name_are_not_collapsed(
+        self,
+    ) -> None:
+        machine_model = StoredProfile(
+            slicer=SlicerType.PRUSASLICER.value,
+            profile_type=ProfileType.MACHINE_MODEL.value,
+            name="Original Prusa MK4",
+            vendor="PrusaResearch",
+            first_seen="3.0.0-alpha11",
+            last_seen="3.0.0-alpha11",
+            context={
+                "display_name": "Original Prusa MK4",
+                "variants": [{"key": "0.4"}],
+            },
+            settings={"name": {"3.0.0-alpha11": "Original Prusa MK4"}},
+        )
+        print_profiles = [
+            StoredProfile(
+                slicer=SlicerType.PRUSASLICER.value,
+                profile_type=ProfileType.PRINT.value,
+                name="0.20mm QUALITY",
+                vendor="PrusaResearch",
+                first_seen="3.0.0-alpha11",
+                last_seen="3.0.0-alpha11",
+                storage_key=f"process:quality:{variant}",
+                settings={
+                    "print_settings_id": {"3.0.0-alpha11": "0.20mm QUALITY"},
+                    "compatible_printers": {
+                        "3.0.0-alpha11": ["Original Prusa MK4 0.4 nozzle"]
+                    },
+                    "variant": {"3.0.0-alpha11": variant},
+                },
+            )
+            for variant in ("one", "two")
+        ]
+        index = Mock()
+
+        def find_by_type(_slicer, profile_type, *_args):
+            if profile_type == ProfileType.MACHINE_MODEL:
+                return [machine_model]
+            if profile_type == ProfileType.PRINT:
+                return print_profiles
+            return []
+
+        index.find_by_type.side_effect = find_by_type
+        model_map = ModelMap(
+            model_to_profiles={
+                1: {SlicerType.PRUSASLICER.value: ["PrusaResearch/Original Prusa MK4"]}
+            },
+            variant_map={
+                SlicerType.PRUSASLICER.value: {
+                    "__profile_name__:Original Prusa MK4 0.4 nozzle": {
+                        "name": "Original Prusa MK4 0.4 nozzle",
+                        "data": {
+                            "printer_settings_id": ("Original Prusa MK4 0.4 nozzle"),
+                            "nozzle_diameter": [0.4],
+                        },
+                        "context": {},
+                    }
+                }
+            },
+        )
+
+        result = map_print_profiles(Mock(), index, model_map)
+
+        exported = result[1][SlicerType.PRUSASLICER.value]
+        self.assertEqual(len(exported), 2)
+        self.assertEqual({item["data"]["variant"] for item in exported}, {"one", "two"})
+
     def test_coverage_report_checks_roles_across_owner_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             output_dir = Path(directory)

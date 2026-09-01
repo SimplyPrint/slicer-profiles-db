@@ -78,6 +78,10 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
         ini_bundle=True,
         min_version="2.4.0",
         additional_repos=["prusa3d/PrusaSlicer-settings-non-prusa-fff"],
+        evaluated_profile_bundle_index=(
+            "https://raw.githubusercontent.com/SimplyPrint/slicer-builds/main/"
+            "slicers/PrusaSlicer/out/_index.json"
+        ),
     ),
     SlicerType.CURA: SourceConfig(
         slicer=SlicerType.CURA,

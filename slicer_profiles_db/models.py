@@ -24,6 +24,7 @@ class ProfileType(str, Enum):
     MACHINE = "machine"
     MACHINE_MODEL = "machine_model"
     PRINT = "print"
+    TOOL_PRINT = "tool_print"
 
 
 def _version_key(v: str) -> tuple[int, ...]:
@@ -36,8 +37,20 @@ def _version_key(v: str) -> tuple[int, ...]:
     """
     import re
 
+    normalized = v.removeprefix("version_").removeprefix("v")
+    match = re.fullmatch(r"(\d+(?:\.\d+){1,3})(?:-(alpha|beta|rc)(\d+))?", normalized)
+    if match:
+        core = tuple(int(part) for part in match.group(1).split("."))
+        core = (*core, *(0 for _ in range(4 - len(core))))
+        stage = match.group(2)
+        return (
+            *core,
+            {None: 4, "rc": 3, "beta": 2, "alpha": 1}[stage],
+            int(match.group(3) or 0),
+        )
+
     parts: list[int] = []
-    for part in re.split(r"[.\-_]", v):
+    for part in re.split(r"[.\-_]", normalized):
         try:
             parts.append(int(part))
         except ValueError:
@@ -68,6 +81,9 @@ class ParsedProfile(BaseModel):
     # not identifiers in Cura (multiple quality/material resources commonly
     # share one), so parsers should populate this whenever the source has one.
     native_id: str | None = None
+    # Optional persistent identity used when an upstream format allows several
+    # same-named profiles with different evaluated values or compatibility.
+    storage_key: str | None = None
     # Non-engine metadata used to compose and trace a profile.  Keeping this
     # separate prevents identifiers and compatibility hints from leaking into
     # the settings sent to a slicer process.
@@ -94,6 +110,7 @@ class StoredProfile(BaseModel):
     renamed_from: str | None = None
     filament_type: str | None = None
     native_id: str | None = None
+    storage_key: str | None = None
     context: dict[str, Any] = Field(default_factory=dict)
     setting_scopes: dict[str, str] = Field(default_factory=dict)
     settings: dict[str, dict[str, Any]] = Field(default_factory=dict)
@@ -183,6 +200,7 @@ class SourceConfig(BaseModel):
     min_version: str | None = None  # minimum version to ingest (normalized)
     profile_type_dirs: dict[ProfileType, str] = Field(default_factory=dict)
     additional_repos: list[str] = Field(default_factory=list)
+    evaluated_profile_bundle_index: str | None = None
 
 
 class VersionInfo(BaseModel):
