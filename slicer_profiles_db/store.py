@@ -130,7 +130,9 @@ class ProfileStore:
         # oscillation that creates duplicate version entries.
         deduped: dict[str, ParsedProfile] = {}
         for p in profiles:
-            key = self._profile_key(slicer, p.profile_type, p.vendor, p.name)
+            key = self._profile_key(
+                slicer, p.profile_type, p.vendor, p.name, p.storage_key
+            )
             deduped[key] = p
         profiles = list(deduped.values())
 
@@ -139,10 +141,18 @@ class ProfileStore:
         seen_keys = set()
 
         for p in profiles:
-            key = self._profile_key(slicer, p.profile_type, p.vendor, p.name)
+            key = self._profile_key(
+                slicer, p.profile_type, p.vendor, p.name, p.storage_key
+            )
             seen_keys.add(key)
 
-            existing = self._load(slicer, p.profile_type.value, p.vendor, p.name)
+            existing = self._load(
+                slicer,
+                p.profile_type.value,
+                p.vendor,
+                p.name,
+                p.storage_key,
+            )
             if existing is None:
                 stored = self._create_stored(p, version)
                 # Handle renames: merge history from old-name profile
@@ -310,7 +320,13 @@ class ProfileStore:
                 changed.append(key)
 
         metadata_changed = False
-        for field_name in ("filament_id", "setting_id", "filament_type", "native_id"):
+        for field_name in (
+            "filament_id",
+            "setting_id",
+            "filament_type",
+            "native_id",
+            "storage_key",
+        ):
             new_value = getattr(parsed, field_name)
             if new_value is not None and getattr(stored, field_name) != new_value:
                 setattr(stored, field_name, new_value)
@@ -353,6 +369,7 @@ class ProfileStore:
             setting_id=parsed.setting_id,
             filament_type=parsed.filament_type,
             native_id=parsed.native_id,
+            storage_key=parsed.storage_key,
             context=parsed.context,
             setting_scopes=parsed.setting_scopes,
             settings=settings,
@@ -364,6 +381,7 @@ class ProfileStore:
         profile_type: ProfileType | str,
         vendor: str,
         name: str,
+        storage_key: str | None = None,
     ) -> str:
         """Compute a unique key for a profile."""
         pt = (
@@ -371,7 +389,8 @@ class ProfileStore:
             if isinstance(profile_type, ProfileType)
             else profile_type
         )
-        return f"{slicer.value}/{vendor}/{pt}/{name}"
+        identity = storage_key or name
+        return f"{slicer.value}/{vendor}/{pt}/{identity}"
 
     def _profile_path(
         self,
@@ -379,10 +398,16 @@ class ProfileStore:
         profile_type: str,
         vendor: str,
         name: str,
+        storage_key: str | None = None,
     ) -> Path:
         """Compute filesystem path for a profile."""
         slicer_val = slicer.value if isinstance(slicer, SlicerType) else slicer
         safe_name = self._sanitize(name)
+        if storage_key:
+            identity_hash = hashlib.sha256(storage_key.encode("utf-8")).hexdigest()[
+                : self.FILENAME_HASH_LENGTH
+            ]
+            safe_name = self._sanitize(f"{safe_name}__{identity_hash}")
         return self.root / slicer_val / vendor / profile_type / f"{safe_name}.json"
 
     def _load(
@@ -391,15 +416,20 @@ class ProfileStore:
         profile_type: str,
         vendor: str,
         name: str,
+        storage_key: str | None = None,
     ) -> StoredProfile | None:
-        path = self._profile_path(slicer, profile_type, vendor, name)
+        path = self._profile_path(slicer, profile_type, vendor, name, storage_key)
         if not path.exists():
             return None
         return StoredProfile.model_validate_json(path.read_text(encoding="utf-8"))
 
     def _save(self, stored: StoredProfile) -> None:
         path = self._profile_path(
-            stored.slicer, stored.profile_type, stored.vendor, stored.name
+            stored.slicer,
+            stored.profile_type,
+            stored.vendor,
+            stored.name,
+            stored.storage_key,
         )
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(
@@ -450,6 +480,7 @@ class ProfileStore:
                             stored.profile_type or profile_type,
                             stored.vendor or vendor,
                             stored.name,
+                            stored.storage_key,
                         )
                     )
 

@@ -2215,10 +2215,11 @@ def map_print_profiles(
                         if not is_compatible:
                             continue
 
-                        if print_name in compatible_prints:
-                            out = compatible_prints[print_name]
+                        print_identity = pp.storage_key or print_name
+                        if print_identity in compatible_prints:
+                            out = compatible_prints[print_identity]
                         else:
-                            out = compatible_prints[print_name] = {
+                            out = compatible_prints[print_identity] = {
                                 "name": print_name,
                                 "compatible_printers": {},
                                 **_profile_payload(pp, pp_data),

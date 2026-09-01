@@ -1,6 +1,15 @@
 # slicer-profiles-db
 An open database of printer and filament profiles for various 3D printing slicers. Integrated directly with the SimplyPrint slicer, allowing you to use PrusaSlicer, BambuStudio and OrcaSlicer in the browser. Contribute by adding profiles here that everyone can benefit from - for users and brands alike.
 
+PrusaSlicer 3.0 profiles are ingested from the evaluated `profile-bundle.json`
+published by `SimplyPrint/slicer-builds`. These profiles retain their upstream
+native ID and explicit compatibility contexts. A stable storage key allows
+multiple evaluated variants with the same display name to coexist; legacy 2.x
+INI profiles continue to use their existing name-based layout. Mapping-friendly
+machine-model roles are derived from evaluated machine variants, and each
+process role carries its matching per-tool process configs in context so the
+3.0 output does not flatten away the new split configuration model.
+
 ## Contributing
 
 As we are working on the process, the simplest way to add profiles is to add them as "overlays" in the `overlay/` folder, these correspond 1:1 with the format from the slicer you'd want to add the profile to, and is the simplest way to integrate the profile consistently.
