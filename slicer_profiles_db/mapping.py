@@ -24,6 +24,7 @@ import requests
 
 from .brands import BRAND_MAPS, normalize_brand
 from .conditions import evaluate_printer_condition
+from .download import DEFAULT_CONFIGS
 from .index import (
     ProfileIndex,
     build_generic_profile_index,
@@ -76,13 +77,7 @@ _MAPPING_SLICERS = list(SlicerType)
 # those versions to an engine/runtime version can incorrectly hide every
 # profile (for example Prusa profile data at 3.0.0 with a 2.9.6 runtime).
 _VERSION_GUARDED_SLICERS = frozenset(
-    {
-        SlicerType.ANYCUBICSLICER,
-        SlicerType.BAMBUSTUDIO,
-        SlicerType.CREALITYPRINT,
-        SlicerType.ELEGOOSLICER,
-        SlicerType.ORCASLICER,
-    }
+    slicer for slicer, config in DEFAULT_CONFIGS.items() if config.runtime_version_guard
 )
 
 _IMPORT_ARTIFACT_FILENAMES = {
@@ -1189,20 +1184,19 @@ def _machine_model_export(
         if isinstance(bed_assets, dict):
             model = bed_assets.get("model")
             texture = bed_assets.get("texture")
-            if isinstance(model, dict):
-                if model.get("format") == "3mf":
-                    model.setdefault("mesh_selection", "largest_face_count")
-                    model.setdefault("geometry_space", "raw_mesh")
-                    transform = model.setdefault("transform", {})
-                    if isinstance(transform, dict):
-                        transform.setdefault(
-                            "rotation",
-                            {
-                                "euler": [90, 0, 0],
-                                "unit": "deg",
-                                "order": "XYZ",
-                            },
-                        )
+            if isinstance(model, dict) and model.get("format") == "3mf":
+                model.setdefault("mesh_selection", "largest_face_count")
+                model.setdefault("geometry_space", "raw_mesh")
+                transform = model.setdefault("transform", {})
+                if isinstance(transform, dict):
+                    transform.setdefault(
+                        "rotation",
+                        {
+                            "euler": [90, 0, 0],
+                            "unit": "deg",
+                            "order": "XYZ",
+                        },
+                    )
             if isinstance(model, dict) and isinstance(texture, dict):
                 texture.setdefault("target", "model")
                 texture.setdefault("mapping", "uv")

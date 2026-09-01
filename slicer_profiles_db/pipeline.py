@@ -185,18 +185,9 @@ class ProfilePipeline:
             created_temp = True
 
         try:
-            report = self._run_pipeline(
+            return self._run_pipeline(
                 slicer, config, version, work, profile_types, is_nightly
             )
-            if config.evaluated_profile_bundle_index and version in (
-                config.branch,
-                "main",
-            ):
-                evaluated = self.ingest_evaluated_profile_bundle(
-                    slicer, profile_types, work, requested_version=version
-                )
-                return evaluated or report
-            return report
         finally:
             if created_temp and work.exists():
                 shutil.rmtree(work, ignore_errors=True)
@@ -490,7 +481,6 @@ class ProfilePipeline:
         self,
         slicer: SlicerType,
         profile_types: list[ProfileType] | None = None,
-        work: Path | None = None,
         requested_version: str | None = None,
     ) -> IngestionReport | None:
         """Ingest the newest PrusaSlicer 3 bundle published by slicer-builds."""
@@ -502,9 +492,9 @@ class ProfilePipeline:
         self.reporter.update_status(
             f"Checking evaluated profile bundle for {slicer.value}..."
         )
-        response = requests.get(index_url, timeout=60)
-        response.raise_for_status()
-        index = response.json()
+        index_response = requests.get(index_url, timeout=60)
+        index_response.raise_for_status()
+        index = index_response.json()
         latest = index.get("latest") if isinstance(index, dict) else None
         if requested_version and normalize_version(requested_version).startswith("3."):
             latest = (
@@ -514,8 +504,7 @@ class ProfilePipeline:
             )
         if not isinstance(latest, str) or not latest.startswith("version_3."):
             return None
-        versions = index.get("versions", {})
-        entry = versions.get(latest) if isinstance(versions, dict) else None
+        entry = index.get("versions", {}).get(latest)
         if not isinstance(entry, dict) or not isinstance(entry.get("config"), dict):
             return None
 
@@ -526,11 +515,8 @@ class ProfilePipeline:
             return None
         bundle_response.raise_for_status()
 
-        created_temp = work is None
-        bundle_dir = work or Path(tempfile.mkdtemp(prefix="prusa-profile-bundle-"))
-        bundle_dir.mkdir(parents=True, exist_ok=True)
-        bundle_path = bundle_dir / "profile-bundle.json"
-        try:
+        with tempfile.TemporaryDirectory(prefix="prusa-profile-bundle-") as directory:
+            bundle_path = Path(directory) / "profile-bundle.json"
             bundle_path.write_bytes(bundle_response.content)
             parser = self._parsers[slicer]
             if not isinstance(parser, PrusaSlicerParser):
@@ -542,9 +528,6 @@ class ProfilePipeline:
                 f"(version {version})..."
             )
             return self.store.ingest_profiles(slicer, version, parsed)
-        finally:
-            if created_temp:
-                shutil.rmtree(bundle_dir, ignore_errors=True)
 
     @staticmethod
     def _is_version_mutable(version: str) -> bool:

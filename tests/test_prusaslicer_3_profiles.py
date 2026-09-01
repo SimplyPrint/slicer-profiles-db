@@ -18,7 +18,7 @@ def _record(native_id, name, value, contexts):
     }
 
 
-def test_evaluated_bundle_preserves_context_and_same_named_variants(tmp_path):
+def test_evaluated_bundle_reduces_tool_profiles_to_standard_process_profiles(tmp_path):
     bundle = {
         "schema_version": 1,
         "format": "prusa-evaluated-profiles",
@@ -27,28 +27,39 @@ def test_evaluated_bundle_preserves_context_and_same_named_variants(tmp_path):
         "process": [
             _record(
                 "quality",
-                "0.20mm QUALITY",
+                "0.20mm",
                 1,
-                [{"machine_id": "mk4", "machine_name": "Original Prusa MK4"}],
+                [
+                    {
+                        "machine_id": "mk4",
+                        "machine_name": "Original Prusa MK4",
+                        "preset": {"id": "quality"},
+                        "tool_processes": [
+                            {
+                                "tool": 0,
+                                "native_id": "speed",
+                                "root_id": "speed",
+                                "name": "0.20mm SPEED @MK4 0.4",
+                                "data": {"example_setting": 2},
+                                "preset": {"id": "speed"},
+                            },
+                            {
+                                "tool": 0,
+                                "native_id": "structural",
+                                "root_id": "structural",
+                                "name": "0.20mm STRUCTURAL @MK4 0.4",
+                                "data": {"example_setting": 3},
+                            },
+                        ],
+                    }
+                ],
             ),
-            _record("quality", "0.20mm QUALITY", 2, [{"machine_id": "xl"}]),
-        ],
-        "tool_process": [
             _record(
-                "tool-quality",
-                "Quality tool",
-                3,
-                [{"machine_id": "mk4", "process_id": "quality", "tool": 0}],
+                "quality",
+                "0.20mm",
+                4,
+                [{"machine_id": "xl", "machine_name": "Original Prusa XL"}],
             ),
-            {
-                **_record(
-                    "no-tool",
-                    "no tool",
-                    0,
-                    [{"machine_id": "xl", "process_id": "quality", "tool": 0}],
-                ),
-                "data": None,
-            },
         ],
         "filament": [],
     }
@@ -57,24 +68,30 @@ def test_evaluated_bundle_preserves_context_and_same_named_variants(tmp_path):
 
     parsed = list(PrusaSlicerParser().parse_directory(tmp_path))
 
-    assert [profile.profile_type for profile in parsed] == [
-        ProfileType.PRINT,
-        ProfileType.PRINT,
-        ProfileType.TOOL_PRINT,
-    ]
-    assert parsed[0].storage_key != parsed[1].storage_key
-    assert parsed[0].settings["print_settings_id"] == "0.20mm QUALITY"
-    assert parsed[0].settings["compatible_printers"] == ["Original Prusa MK4"]
-    assert parsed[0].context["tool_process_profiles"][0]["native_id"] == (
-        "tool-quality"
-    )
+    assert [profile.profile_type for profile in parsed] == [ProfileType.PRINT] * 3
+    assert {profile.name for profile in parsed} == {
+        "0.20mm SPEED",
+        "0.20mm STRUCTURAL",
+        "0.20mm",
+    }
+    speed = next(profile for profile in parsed if profile.name == "0.20mm SPEED")
+    assert speed.settings["example_setting"] == 2
+    assert speed.settings["compatible_printers"] == ["Original Prusa MK4"]
+    assert speed.context["configuration"]["print_settings"]["example_setting"] == 1
+    assert speed.context["configuration"]["toolprint_settings"] == {
+        "example_setting": [2]
+    }
+    assert speed.context["configuration"]["preset"] == {
+        "print": {"id": "quality"},
+        "tools": [{"id": "speed"}],
+    }
+    assert speed.setting_scopes["example_setting"] == "extruder.0"
 
     store = ProfileStore(tmp_path / "store")
     report = store.ingest_profiles(SlicerType.PRUSASLICER, "3.0.0-alpha11", parsed)
 
     assert report.profiles_processed == 3
-    assert len(store.list_profiles(SlicerType.PRUSASLICER, "print")) == 2
-    assert len(store.list_profiles(SlicerType.PRUSASLICER, "tool_print")) == 1
+    assert len(store.list_profiles(SlicerType.PRUSASLICER, "print")) == 3
 
 
 def test_prerelease_versions_sort_numerically():
@@ -111,7 +128,6 @@ def test_explicit_3_version_routes_directly_to_evaluated_bundle(tmp_path, monkey
             }
         ],
         "process": [],
-        "tool_process": [],
         "filament": [],
     }
     index = {

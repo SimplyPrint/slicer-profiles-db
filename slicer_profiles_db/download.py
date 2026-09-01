@@ -36,6 +36,7 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
         tag_pattern=r"^v\d+",
         nightly_branch="master",
         min_version="02.04.00.70",
+        runtime_version_guard=True,
         profile_type_dirs={
             ProfileType.FILAMENT: "filament",
             ProfileType.MACHINE: "machine",
@@ -49,6 +50,7 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
         profile_path_in_repo="resources/profiles",
         tag_pattern=r"^v\d+",
         min_version="2.2.0",
+        runtime_version_guard=True,
         filament_library_name="OrcaFilamentLibrary",
         profile_type_dirs={
             ProfileType.FILAMENT: "filament",
@@ -64,6 +66,7 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
         tag_pattern=r"^v\d+",
         min_version="7.1.0",
         nightly_branch="master",
+        runtime_version_guard=True,
         profile_type_dirs={
             ProfileType.FILAMENT: "filament",
             ProfileType.MACHINE: "machine",
@@ -105,6 +108,7 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
         profile_path_in_repo="resources/profiles",
         tag_pattern=r"^v\d+",
         min_version="1.1.5",
+        runtime_version_guard=True,
         profile_type_dirs={
             ProfileType.FILAMENT: "filament",
             ProfileType.MACHINE: "machine",
@@ -118,6 +122,7 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
         profile_path_in_repo="resources/profiles",
         tag_pattern=r"^v\d+",
         min_version="2.3.0",
+        runtime_version_guard=True,
         profile_type_dirs={
             ProfileType.FILAMENT: "filament",
             ProfileType.MACHINE: "machine",
