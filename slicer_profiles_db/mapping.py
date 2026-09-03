@@ -24,7 +24,7 @@ from typing import Any
 import requests
 
 from .brands import BRAND_MAPS, normalize_brand
-from .bundle import collect_records, merge_prerelease, write_bundle
+from .bundle import collect_records, write_bundle
 from .catalog import load_engine_targets
 from .conditions import evaluate_printer_condition
 from .download import DEFAULT_CONFIGS
@@ -115,15 +115,7 @@ def _evaluate_stable(
         else None
     )
     if guard:
-        versions = {
-            version
-            for history in profile.settings.values()
-            for version in history
-            if version_key(version) <= version_key(guard)
-        }
-        if not versions:
-            return {}
-        version = max(versions, key=version_key)
+        return profile.evaluate_at_or_before(guard)
     else:
         version = _stable_version(profile)
         if version is None:
@@ -2377,7 +2369,8 @@ def export_output(
                             )
                         sub_data["variants"][variant] = payload
 
-                machine_profiles_data.append(sub_data)
+                if sub_data["variants"]:
+                    machine_profiles_data.append(sub_data)
 
             _write_json(slicer_path / "machine_profiles.json", machine_profiles_data)
 
@@ -2938,10 +2931,7 @@ def run_mapping_pipeline(
     Returns:
         The ModelMap for inspection/logging.
     """
-    # Build index
-    index = ProfileIndex(store)
     target_slicers = slicers or _MAPPING_SLICERS
-    index.build(target_slicers)
 
     # Build OFD index if path provided
     ofd_index = None
@@ -2958,9 +2948,16 @@ def run_mapping_pipeline(
     sp_data = fetch_sp_model_data()
     lock_path = engine_lock_path or Path("engines.lock.json")
     targets = load_engine_targets(lock_path)
-    version_guards = {slicer: target.stable for slicer, target in targets.items()}
+    version_guards = {slicer: target.version for slicer, target in targets.items()}
+    lane_formats = {
+        lane.format
+        for target in targets.values()
+        for lane in (target.lanes or {}).values()
+    }
+    index = ProfileIndex(store)
+    index.build(target_slicers, excluded_formats=lane_formats)
     logger.info(
-        "Using locked stable engine versions: %s",
+        "Using locked engine versions: %s",
         ", ".join(
             f"{slicer.value}={version}"
             for slicer, version in sorted(
@@ -2991,77 +2988,75 @@ def run_mapping_pipeline(
     logger.info("Mapping print profiles...")
     print_map = map_print_profiles(store, index, model_map, version_guards)
 
-    prerelease_targets = {
-        slicer: target
-        for slicer, target in targets.items()
-        if target.prerelease and slicer in target_slicers
-    }
-
     with tempfile.TemporaryDirectory(prefix="sp-profile-bundle-") as directory:
         staging = Path(directory)
-        stable_root = staging / "stable"
+        base_root = staging / "base"
         export_output(
             model_map,
             filament_map,
             print_map,
             store,
             index,
-            stable_root,
+            base_root,
             ofd_index,
             version_guards,
             target_slicers,
         )
-        records = collect_records(stable_root)
+        records = collect_records(base_root)
         resource_manifests = [
-            json.loads((stable_root / "resources.json").read_text(encoding="utf-8"))
+            json.loads((base_root / "resources.json").read_text(encoding="utf-8"))
         ]
-        coverage: dict[str, Any] = {"stable": model_map.coverage}
+        coverage: dict[str, Any] = {"base": model_map.coverage}
 
-        if prerelease_targets:
-            prerelease_guards = dict(version_guards)
-            prerelease_guards.update(
-                {
-                    slicer: target.prerelease
-                    for slicer, target in prerelease_targets.items()
-                    if target.prerelease
-                }
-            )
-            prerelease_model_map = map_printer_models(
-                store, index, sp_data, target_slicers, prerelease_guards
-            )
-            prerelease_filaments = map_filament_profiles(
-                store, index, prerelease_model_map, ofd_index, prerelease_guards
-            )
-            prerelease_prints = map_print_profiles(
-                store, index, prerelease_model_map, prerelease_guards
-            )
-            prerelease_root = staging / "prerelease"
-            export_output(
-                prerelease_model_map,
-                prerelease_filaments,
-                prerelease_prints,
-                store,
-                index,
-                prerelease_root,
-                ofd_index,
-                prerelease_guards,
-                target_slicers,
-            )
-            records = merge_prerelease(
-                records,
-                collect_records(prerelease_root),
-                {
-                    slicer.value: target.catalog_lane
-                    for slicer, target in prerelease_targets.items()
-                    if target.catalog_lane
-                },
-            )
-            resource_manifests.append(
-                json.loads(
-                    (prerelease_root / "resources.json").read_text(encoding="utf-8")
+        for slicer in target_slicers:
+            for lane_name, lane in (targets[slicer].lanes or {}).items():
+                if lane.version not in store.get_versions(slicer):
+                    raise ValueError(
+                        f"Missing {slicer.value} lane {lane_name} version {lane.version}"
+                    )
+                lane_index = ProfileIndex(store)
+                lane_index.build(
+                    [slicer], required_formats={slicer: lane.format}
                 )
-            )
-            coverage["prerelease"] = prerelease_model_map.coverage
+                lane_guards = {slicer: lane.version}
+                lane_model_map = map_printer_models(
+                    store, lane_index, sp_data, [slicer], lane_guards
+                )
+                if not lane_model_map.variant_map.get(slicer.value):
+                    raise ValueError(
+                        f"Missing {slicer.value} lane {lane_name} format {lane.format}"
+                    )
+                lane_filaments = map_filament_profiles(
+                    store, lane_index, lane_model_map, ofd_index, lane_guards
+                )
+                lane_prints = map_print_profiles(
+                    store, lane_index, lane_model_map, lane_guards
+                )
+                lane_root = staging / lane_name
+                export_output(
+                    lane_model_map,
+                    lane_filaments,
+                    lane_prints,
+                    store,
+                    lane_index,
+                    lane_root,
+                    ofd_index,
+                    lane_guards,
+                    [slicer],
+                )
+                lane_records = collect_records(lane_root, lane_name)
+                duplicate_ids = records.keys() & lane_records.keys()
+                if duplicate_ids:
+                    raise ValueError(
+                        f"Duplicate lane record: {min(duplicate_ids)}"
+                    )
+                records.update(lane_records)
+                resource_manifests.append(
+                    json.loads(
+                        (lane_root / "resources.json").read_text(encoding="utf-8")
+                    )
+                )
+                coverage[lane_name] = lane_model_map.coverage
 
         resources = {
             key: value

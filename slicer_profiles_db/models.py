@@ -1,10 +1,11 @@
 from __future__ import annotations
 
 from enum import Enum
+from functools import cache
 from pathlib import Path
 from typing import Any
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, PrivateAttr
 
 
 class SlicerType(str, Enum):
@@ -26,6 +27,7 @@ class ProfileType(str, Enum):
     PRINT = "print"
 
 
+@cache
 def _version_key(v: str) -> tuple[int, ...]:
     """Convert a version string to a comparable tuple of ints.
 
@@ -113,6 +115,8 @@ class StoredProfile(BaseModel):
     context: dict[str, Any] = Field(default_factory=dict)
     setting_scopes: dict[str, str] = Field(default_factory=dict)
     settings: dict[str, dict[str, Any]] = Field(default_factory=dict)
+    _evaluated: dict[str, dict[str, Any]] = PrivateAttr(default_factory=dict)
+    _guarded: dict[str, dict[str, Any]] = PrivateAttr(default_factory=dict)
 
     def get_latest(self, key: str) -> Any:
         """Get the most recent value for a setting key."""
@@ -157,6 +161,10 @@ class StoredProfile(BaseModel):
         state at the given version.  Keys whose first recorded version is
         after the requested version are omitted.
         """
+        cached = self._evaluated.get(version)
+        if cached is not None:
+            return cached
+
         target = _version_key(version)
         snapshot: dict[str, Any] = {}
         for key, versions in self.settings.items():
@@ -170,6 +178,24 @@ class StoredProfile(BaseModel):
             # later slicer release.  Omit tombstoned keys from snapshots.
             if found and value is not None:
                 snapshot[key] = value
+        self._evaluated[version] = snapshot
+        return snapshot
+
+    def evaluate_at_or_before(self, version: str) -> dict[str, Any]:
+        """Evaluate the newest stored snapshot not newer than ``version``."""
+        cached = self._guarded.get(version)
+        if cached is not None:
+            return cached
+
+        target = _version_key(version)
+        versions = {
+            candidate
+            for history in self.settings.values()
+            for candidate in history
+            if _version_key(candidate) <= target
+        }
+        snapshot = self.evaluate(max(versions, key=_version_key)) if versions else {}
+        self._guarded[version] = snapshot
         return snapshot
 
 

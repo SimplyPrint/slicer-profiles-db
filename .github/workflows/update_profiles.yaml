@@ -32,7 +32,8 @@ jobs:
         run: |
           uv run slicer-profiles-db ingest-all --version latest --overlay overlay --skip prusaslicer
           uv run slicer-profiles-db ingest prusaslicer --version latest --legacy-source --force --overlay overlay
-          uv run slicer-profiles-db ingest prusaslicer --version latest --force --overlay overlay
+          prusa_lane_version=$(jq -r '.engines.prusaslicer.lanes["prusaslicer-3"].version' engines.lock.json)
+          uv run slicer-profiles-db ingest prusaslicer --version "$prusa_lane_version" --force --overlay overlay
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

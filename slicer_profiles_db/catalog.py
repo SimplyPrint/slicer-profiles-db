@@ -11,11 +11,17 @@ from .versions import normalize_version
 
 
 @dataclass(frozen=True)
+class LaneTarget:
+    version: str
+    format: str
+    gcode_abi: str
+
+
+@dataclass(frozen=True)
 class EngineTarget:
-    stable: str
-    prerelease: str | None = None
-    catalog_lane: str | None = None
+    version: str
     gcode_abi: str = "text-gcode/v1"
+    lanes: dict[str, LaneTarget] | None = None
 
 
 def load_engine_targets(path: Path) -> dict[SlicerType, EngineTarget]:
@@ -25,7 +31,7 @@ def load_engine_targets(path: Path) -> dict[SlicerType, EngineTarget]:
     except (OSError, json.JSONDecodeError) as error:
         raise ValueError(f"Invalid engine lock {path}: {error}") from error
 
-    if document.get("schema_version") != 1 or not isinstance(
+    if document.get("schema_version") != 2 or not isinstance(
         document.get("engines"), dict
     ):
         raise ValueError(f"Invalid engine lock schema in {path}")
@@ -36,19 +42,33 @@ def load_engine_targets(path: Path) -> dict[SlicerType, EngineTarget]:
             slicer = SlicerType(name)
         except ValueError as error:
             raise ValueError(f"Unknown engine {name!r} in {path}") from error
-        if not isinstance(value, dict) or not isinstance(value.get("stable"), str):
-            raise TypeError(f"Engine {name!r} has no stable version in {path}")
-        prerelease = value.get("prerelease")
-        lane = value.get("catalog_lane")
-        if prerelease is not None and not isinstance(prerelease, str):
-            raise ValueError(f"Engine {name!r} has an invalid prerelease version")
-        if lane is not None and not isinstance(lane, str):
-            raise ValueError(f"Engine {name!r} has an invalid catalog lane")
+        if not isinstance(value, dict) or not isinstance(value.get("version"), str):
+            raise TypeError(f"Engine {name!r} has no version in {path}")
+        lane_values = value.get("lanes") or {}
+        if not isinstance(lane_values, dict):
+            raise TypeError(f"Engine {name!r} has invalid lanes")
+        lanes: dict[str, LaneTarget] = {}
+        for lane, lane_value in lane_values.items():
+            if (
+                not isinstance(lane, str)
+                or not isinstance(lane_value, dict)
+                or not isinstance(lane_value.get("version"), str)
+                or not isinstance(lane_value.get("format"), str)
+            ):
+                raise TypeError(f"Engine {name!r} has an invalid lane")
+            lanes[lane] = LaneTarget(
+                version=normalize_version(lane_value["version"]),
+                format=lane_value["format"],
+                gcode_abi=str(
+                    lane_value.get("gcode_abi")
+                    or value.get("gcode_abi")
+                    or "text-gcode/v1"
+                ),
+            )
         targets[slicer] = EngineTarget(
-            stable=normalize_version(value["stable"]),
-            prerelease=normalize_version(prerelease) if prerelease else None,
-            catalog_lane=lane,
+            version=normalize_version(value["version"]),
             gcode_abi=str(value.get("gcode_abi") or "text-gcode/v1"),
+            lanes=lanes,
         )
 
     missing = sorted(slicer.value for slicer in SlicerType if slicer not in targets)

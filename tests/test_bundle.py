@@ -2,8 +2,8 @@ import hashlib
 import json
 import zipfile
 
-from slicer_profiles_db.bundle import collect_records, merge_prerelease, write_bundle
-from slicer_profiles_db.catalog import EngineTarget
+from slicer_profiles_db.bundle import collect_records, write_bundle
+from slicer_profiles_db.catalog import EngineTarget, LaneTarget
 from slicer_profiles_db.models import SlicerType
 
 
@@ -14,7 +14,7 @@ def _write(path, value):
 
 def _coverage():
     return {
-        "stable": {
+        "base": {
             "schema_version": 1,
             "engines": ["orcaslicer"],
             "total_models": 1,
@@ -58,7 +58,7 @@ def test_bundle_deduplicates_profiles_and_is_deterministic(tmp_path):
     assert records["orcaslicer:print:quality"]["model_ids"] == [1, 2]
 
     targets = {
-        SlicerType.ORCASLICER: EngineTarget(stable="2.4.2"),
+        SlicerType.ORCASLICER: EngineTarget(version="2.4.2"),
     }
     first = tmp_path / "first.spdb"
     second = tmp_path / "second.spdb"
@@ -72,113 +72,104 @@ def test_bundle_deduplicates_profiles_and_is_deterministic(tmp_path):
     with zipfile.ZipFile(first) as archive:
         manifest = json.loads(archive.read("manifest.json"))
         lines = archive.read("profiles.ndjson").splitlines()
+        record = json.loads(lines[0])
     assert manifest["records"] == 1
+    assert manifest["schema_version"] == 2
+    assert manifest["engines"]["orcaslicer"]["version"] == "2.4.2"
+    content_hash = record.pop("content_hash")
+    assert (
+        content_hash
+        == hashlib.sha256(
+            json.dumps(record, separators=(",", ":"), sort_keys=True).encode()
+        ).hexdigest()
+    )
     assert (
         manifest["profiles_sha256"]
         == hashlib.sha256(b"\n".join(lines) + b"\n").hexdigest()
     )
 
 
-def test_prerelease_catalog_lane_uses_deltas_until_topology_changes():
-    stable = {
-        "orcaslicer:print:quality": {
-            "engine": "orcaslicer",
-            "id": "orcaslicer:print:quality",
-            "kind": "print",
-            "model_ids": [1],
-            "profile": {"name": "Quality", "data": {"speed": 50, "old": True}},
-        }
-    }
-    prerelease = {
-        "orcaslicer:print:quality": {
-            **stable["orcaslicer:print:quality"],
-            "profile": {"name": "Quality", "data": {"speed": 60}},
-        },
-        "orcaslicer:print:belt": {
-            "engine": "orcaslicer",
-            "id": "orcaslicer:print:belt",
-            "kind": "print",
-            "model_ids": [2],
-            "profile": {"name": "Belt", "data": {"belt": True}},
-        },
-    }
-
-    merged = merge_prerelease(stable, prerelease, {"orcaslicer": "orca-beta"})
-
-    assert merged["orcaslicer:print:quality"]["prerelease"] == {
-        "set": {"speed": 60},
-        "unset": ["old"],
-    }
-    assert "orcaslicer:print:quality@orca-beta" not in merged
-    assert merged["orcaslicer:print:belt@orca-beta"]["catalog_lane"] == "orca-beta"
-    assert merged["orcaslicer:print:belt@orca-beta"]["id"] == (
-        "orcaslicer:print:belt@orca-beta"
+def test_catalog_lane_is_a_complete_source_format_snapshot(tmp_path):
+    staging = tmp_path / "staging"
+    _write(
+        staging / "models/1/prusaslicer/print_profiles.json",
+        [
+            {
+                "name": "Quality",
+                "data": {"speed": 60},
+                "context": {"source_id": "quality"},
+            }
+        ],
     )
 
+    records = collect_records(staging, "prusaslicer-3")
 
-def test_prerelease_topology_change_replaces_stable_profile():
-    stable = {
-        "orcaslicer:print:quality": {
-            "engine": "orcaslicer",
-            "id": "orcaslicer:print:quality",
-            "kind": "print",
-            "model_ids": [1],
-            "profile": {"name": "Quality", "data": {"speed": 50}},
-        }
-    }
-    prerelease = {
-        "orcaslicer:print:quality": {
-            **stable["orcaslicer:print:quality"],
-            "model_ids": [2],
-            "profile": {"name": "Quality", "data": {"speed": 60}},
-        }
-    }
+    assert list(records) == ["prusaslicer:print:quality@prusaslicer-3"]
+    assert (
+        records["prusaslicer:print:quality@prusaslicer-3"]["catalog_lane"]
+        == "prusaslicer-3"
+    )
 
-    merged = merge_prerelease(stable, prerelease, {"orcaslicer": "orca-beta"})
+    target = EngineTarget(
+        version="2.9.6",
+        lanes={
+            "prusaslicer-3": LaneTarget(
+                version="3.0.0-alpha11",
+                format="prusa-evaluated-profiles",
+                gcode_abi="slic3r-profile-gcode/v1",
+            )
+        },
+    )
+    manifest = write_bundle(
+        tmp_path / "lane.spdb",
+        records,
+        {SlicerType.PRUSASLICER: target},
+        {},
+        tmp_path,
+        _coverage(),
+    )
+    assert manifest["engines"]["prusaslicer"]["records"] == 0
+    assert manifest["engines"]["prusaslicer"]["lanes"]["prusaslicer-3"]["records"] == 1
 
-    assert merged["orcaslicer:print:quality"]["prerelease"] == {"hidden": True}
-    assert merged["orcaslicer:print:quality@orca-beta"]["model_ids"] == [2]
 
+def test_profiles_with_one_source_id_and_different_payloads_remain_distinct(tmp_path):
+    first = tmp_path / "models" / "1" / "superslicer"
+    second = tmp_path / "models" / "2" / "superslicer"
+    first.mkdir(parents=True)
+    second.mkdir(parents=True)
+    (first / "print_profiles.json").write_text(
+        json.dumps(
+            [{"name": "quality", "context": {"source_id": "quality"}, "speed": 40}]
+        )
+    )
+    (second / "print_profiles.json").write_text(
+        json.dumps(
+            [{"name": "quality", "context": {"source_id": "quality"}, "speed": 50}]
+        )
+    )
 
-def test_prerelease_overlay_without_lane_stores_only_setting_delta():
-    stable = {
-        "orcaslicer:print:quality": {
-            "engine": "orcaslicer",
-            "id": "orcaslicer:print:quality",
-            "kind": "print",
-            "model_ids": [1],
-            "profile": {"name": "Quality", "data": {"speed": 50, "old": True}},
-        }
-    }
-    prerelease = {
-        "orcaslicer:print:quality": {
-            **stable["orcaslicer:print:quality"],
-            "profile": {"name": "Quality", "data": {"speed": 60}},
-        }
-    }
+    records = collect_records(tmp_path)
 
-    merged = merge_prerelease(stable, prerelease, {})
-
-    assert merged["orcaslicer:print:quality"]["prerelease"] == {
-        "set": {"speed": 60},
-        "unset": ["old"],
+    assert set(records) == {
+        "superslicer:print:quality:models:1",
+        "superslicer:print:quality:models:2",
     }
 
 
 def test_bundle_rejects_incomplete_model_coverage(tmp_path):
     coverage = _coverage()
-    coverage["stable"]["models"][0]["outcomes"] = {}
+    coverage["base"]["models"][0]["outcomes"] = {}
 
     try:
         write_bundle(
             tmp_path / "invalid.spdb",
             {},
-            {SlicerType.ORCASLICER: EngineTarget(stable="2.4.2")},
+            {SlicerType.ORCASLICER: EngineTarget(version="2.4.2")},
             {},
             tmp_path,
             coverage,
         )
     except ValueError as error:
-        assert "Incomplete stable model coverage" in str(error)
+        assert "Incomplete base model coverage" in str(error)
     else:
         raise AssertionError("incomplete coverage must fail the build")

@@ -90,7 +90,9 @@ def _read_list(path: Path) -> list[dict[str, Any]]:
     return value
 
 
-def collect_records(root: Path) -> dict[str, dict[str, Any]]:
+def collect_records(
+    root: Path, catalog_lane: str | None = None
+) -> dict[str, dict[str, Any]]:
     """Collapse the legacy per-model staging tree to one record per identity."""
     records: dict[str, dict[str, Any]] = {}
     machines: dict[str, dict[bytes, dict[str, Any]]] = {}
@@ -111,6 +113,8 @@ def collect_records(root: Path) -> dict[str, dict[str, Any]]:
             )
             source_id = str(source.get("source_id") or fallback)
             record_id = f"{engine}:machine:{source_id}"
+            if catalog_lane:
+                record_id += f"@{catalog_lane}"
             payload_key = _json_bytes(source)
             existing = machines.setdefault(record_id, {}).get(payload_key)
             if existing is None:
@@ -120,6 +124,7 @@ def collect_records(root: Path) -> dict[str, dict[str, Any]]:
                     "kind": "machine",
                     "model_ids": [model_id],
                     "profile": source,
+                    **({"catalog_lane": catalog_lane} if catalog_lane else {}),
                 }
             else:
                 existing["model_ids"] = sorted(set(existing["model_ids"] + [model_id]))
@@ -134,6 +139,7 @@ def collect_records(root: Path) -> dict[str, dict[str, Any]]:
                 record["id"] = final_id
             records[final_id] = record
 
+    profiles: dict[str, dict[bytes, dict[str, Any]]] = {}
     for kind in ("print", "filament"):
         for path in sorted(root.glob(f"models/*/*/{kind}_profiles.json")):
             model_id = int(path.parents[1].name)
@@ -142,18 +148,36 @@ def collect_records(root: Path) -> dict[str, dict[str, Any]]:
                 fallback = f"{source.get('name') or ''}:model:{model_id}"
                 source_id = _source_id(source, fallback)
                 record_id = f"{engine}:{kind}:{source_id}"
+                if catalog_lane:
+                    record_id += f"@{catalog_lane}"
                 incoming = {
                     "engine": engine,
                     "id": record_id,
                     "kind": kind,
                     "model_ids": [model_id],
                     "profile": source,
+                    **({"catalog_lane": catalog_lane} if catalog_lane else {}),
                 }
-                existing = records.get(record_id)
+                payload = copy.deepcopy(source)
+                payload.pop("compatible_printers", None)
+                payload.pop("filament_db_ids", None)
+                group = profiles.setdefault(record_id, {})
+                payload_key = _json_bytes(payload)
+                existing = group.get(payload_key)
                 if existing is None:
-                    records[record_id] = incoming
+                    group[payload_key] = incoming
                 else:
                     _merge_profile(existing, incoming)
+
+    for record_id, payloads in profiles.items():
+        for record in payloads.values():
+            final_id = record_id
+            if len(payloads) > 1:
+                final_id += ":models:" + ",".join(
+                    str(model_id) for model_id in record["model_ids"]
+                )
+                record["id"] = final_id
+            records[final_id] = record
 
     for path in sorted(root.glob("brands/*/**/generic_filament_profiles.json")):
         engine = path.parts[path.parts.index("brands") + 1]
@@ -164,6 +188,8 @@ def collect_records(root: Path) -> dict[str, dict[str, Any]]:
             )
             source_id = _source_id(source, fallback)
             record_id = f"{engine}:filament:generic:{source_id}"
+            if catalog_lane:
+                record_id += f"@{catalog_lane}"
             records[record_id] = {
                 "engine": engine,
                 "generic": True,
@@ -172,72 +198,9 @@ def collect_records(root: Path) -> dict[str, dict[str, Any]]:
                 "model_ids": [],
                 "profile": source,
                 "source_vendor": source_vendor,
+                **({"catalog_lane": catalog_lane} if catalog_lane else {}),
             }
     return records
-
-
-def _settings_overlay(
-    stable: Mapping[str, Any], prerelease: Mapping[str, Any]
-) -> dict[str, Any] | None:
-    set_values = {
-        key: value
-        for key, value in prerelease.items()
-        if key not in stable or stable[key] != value
-    }
-    unset = sorted(key for key in stable if key not in prerelease)
-    return {"set": set_values, "unset": unset} if set_values or unset else None
-
-
-def merge_prerelease(
-    stable: dict[str, dict[str, Any]],
-    prerelease: dict[str, dict[str, Any]],
-    lanes: Mapping[str, str],
-) -> dict[str, dict[str, Any]]:
-    """Store value-only changes inline and topology changes as lane records."""
-    result = copy.deepcopy(stable)
-    for record_id, candidate in prerelease.items():
-        base = result.get(record_id)
-        lane = lanes.get(candidate["engine"])
-        if base is None:
-            if not lane:
-                raise ValueError(f"Prerelease-only record without a lane: {record_id}")
-            candidate = copy.deepcopy(candidate)
-            candidate["catalog_lane"] = lane
-            candidate["id"] = f"{record_id}@{lane}"
-            result[candidate["id"]] = candidate
-            continue
-
-        # Machine profiles are atomic because their nested variants and assets are
-        # relational data at ingest. Keep a complete lane snapshot for them.
-        if candidate["kind"] == "machine" and lane:
-            candidate = copy.deepcopy(candidate)
-            candidate["catalog_lane"] = lane
-            candidate["id"] = f"{record_id}@{lane}"
-            result[candidate["id"]] = candidate
-            continue
-
-        base_shape = copy.deepcopy(base)
-        candidate_shape = copy.deepcopy(candidate)
-        base_data = base_shape["profile"].pop("data", {})
-        candidate_data = candidate_shape["profile"].pop("data", {})
-        if base_shape == candidate_shape:
-            overlay = _settings_overlay(base_data, candidate_data)
-            if overlay:
-                base["prerelease"] = overlay
-            continue
-
-        if not lane:
-            raise ValueError(f"Prerelease topology changed without a lane: {record_id}")
-        base["prerelease"] = {"hidden": True}
-        candidate = copy.deepcopy(candidate)
-        candidate["catalog_lane"] = lane
-        candidate["id"] = f"{record_id}@{lane}"
-        result[candidate["id"]] = candidate
-
-    for record_id, record in result.items():
-        if record_id in stable and record_id not in prerelease:
-            record["prerelease"] = {"hidden": True}
-    return result
 
 
 def _resource_refs(value: Any) -> Iterable[str]:
@@ -307,13 +270,15 @@ def write_bundle(
     _validate_coverage(coverage)
     kind_order = {"machine": 0, "filament": 1, "print": 2}
     ordered = sorted(
-        records.values(),
+        (dict(record) for record in records.values()),
         key=lambda record: (
             str(record["engine"]),
             kind_order.get(str(record["kind"]), 99),
             str(record["id"]),
         ),
     )
+    for record in ordered:
+        record["content_hash"] = hashlib.sha256(_json_bytes(record)).hexdigest()
     lines = [_json_bytes(record) for record in ordered]
     profiles_content = b"\n".join(lines) + (b"\n" if lines else b"")
     refs = sorted(set(_resource_refs(ordered)))
@@ -335,19 +300,28 @@ def write_bundle(
         resources[ref] = {"path": member, "size": len(content)}
         resource_content[member] = content
 
-    engine_counts: dict[str, int] = {}
+    engine_counts: dict[tuple[str, str | None], int] = {}
     for record in ordered:
         engine = str(record["engine"])
-        engine_counts[engine] = engine_counts.get(engine, 0) + 1
+        lane = record.get("catalog_lane")
+        key = (engine, str(lane) if lane is not None else None)
+        engine_counts[key] = engine_counts.get(key, 0) + 1
     manifest = {
         "coverage": coverage,
         "engines": {
             slicer.value: {
-                "catalog_lane": target.catalog_lane,
                 "gcode_abi": target.gcode_abi,
-                "prerelease": target.prerelease,
-                "records": engine_counts.get(slicer.value, 0),
-                "stable": target.stable,
+                "records": engine_counts.get((slicer.value, None), 0),
+                "version": target.version,
+                "lanes": {
+                    lane: {
+                        "format": lane_target.format,
+                        "gcode_abi": lane_target.gcode_abi,
+                        "records": engine_counts.get((slicer.value, lane), 0),
+                        "version": lane_target.version,
+                    }
+                    for lane, lane_target in sorted((target.lanes or {}).items())
+                },
             }
             for slicer, target in sorted(
                 targets.items(), key=lambda item: item[0].value
@@ -357,7 +331,7 @@ def write_bundle(
         "profiles_sha256": hashlib.sha256(profiles_content).hexdigest(),
         "records": len(ordered),
         "resources": resources,
-        "schema_version": 1,
+        "schema_version": 2,
     }
     manifest_content = _json_bytes(manifest) + b"\n"
     path.parent.mkdir(parents=True, exist_ok=True)

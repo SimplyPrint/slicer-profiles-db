@@ -2,6 +2,7 @@ import json
 
 import pytest
 
+from slicer_profiles_db.index import ProfileIndex
 from slicer_profiles_db.mapping import _evaluate_stable
 from slicer_profiles_db.models import (
     ParsedProfile,
@@ -137,6 +138,44 @@ def test_same_version_snapshot_is_immutable(tmp_path):
         store.ingest_profiles(SlicerType.PRUSASLICER, "3.0.0-alpha11", [profile])
 
 
+def test_catalog_indexes_are_partitioned_by_source_format(tmp_path):
+    store = ProfileStore(tmp_path / "store")
+    legacy = ParsedProfile(
+        slicer=SlicerType.PRUSASLICER,
+        profile_type=ProfileType.PRINT,
+        name="Legacy",
+        vendor="Prusa",
+        settings={"value": 1},
+    )
+    evaluated = ParsedProfile(
+        slicer=SlicerType.PRUSASLICER,
+        profile_type=ProfileType.PRINT,
+        name="Evaluated",
+        vendor="Prusa",
+        settings={"value": 2},
+        context={"format": "prusa-evaluated-profiles"},
+    )
+    store.ingest_profiles(SlicerType.PRUSASLICER, "3.0.0", [legacy])
+    store.ingest_profiles(SlicerType.PRUSASLICER, "3.0.0-alpha11", [evaluated])
+
+    base = ProfileIndex(store)
+    base.build([SlicerType.PRUSASLICER], excluded_formats={"prusa-evaluated-profiles"})
+    lane = ProfileIndex(store)
+    lane.build(
+        [SlicerType.PRUSASLICER],
+        required_formats={SlicerType.PRUSASLICER: "prusa-evaluated-profiles"},
+    )
+
+    assert [
+        profile.name
+        for profile in base.find_by_type(SlicerType.PRUSASLICER, ProfileType.PRINT)
+    ] == ["Legacy"]
+    assert [
+        profile.name
+        for profile in lane.find_by_type(SlicerType.PRUSASLICER, ProfileType.PRINT)
+    ] == ["Evaluated"]
+
+
 def test_machine_name_nozzle_variants_support_native_3_names():
     parser = PrusaSlicerParser()
 
@@ -148,7 +187,7 @@ def test_machine_name_nozzle_variants_support_native_3_names():
     ]
 
 
-def test_latest_uses_prerelease_profile_channel(tmp_path, monkeypatch):
+def test_explicit_version_uses_evaluated_profile_channel(tmp_path, monkeypatch):
     bundle = {
         "schema_version": 1,
         "format": "prusa-evaluated-profiles",
@@ -193,7 +232,7 @@ def test_latest_uses_prerelease_profile_channel(tmp_path, monkeypatch):
 
     monkeypatch.setattr("slicer_profiles_db.pipeline.requests.get", fake_get)
     store = ProfileStore(tmp_path / "store")
-    report = ProfilePipeline(store).ingest(SlicerType.PRUSASLICER, "latest")
+    report = ProfilePipeline(store).ingest(SlicerType.PRUSASLICER, "3.0.0-alpha11")
 
     assert report.version == "3.0.0-alpha11"
     assert report.profiles_processed == 2
