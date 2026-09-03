@@ -16,6 +16,22 @@ As we are working on the process, the simplest way to add profiles is to add the
 
 The `profiles/` folder is a generated, centralized result of ingesting multiple data sources, including the overlays, while manual edits are possible, they are not intended.
 
+## Import bundle
+
+`uv run slicer-profiles-db map` produces one deterministic
+`dist/profiles.spdb` bundle. It replaces the duplicated per-model `out/` tree:
+profiles are stored once under a stable producer ID, model relationships are ID
+lists, and resources are content-addressed. The manifest records the stable and
+prerelease engine inputs, G-code ABI, hashes, and a model-by-engine mapping
+outcome for every SimplyPrint printer model. Bundle creation fails unless that
+classification matrix is 100% complete; an unmatched model is valid only when
+it has an explicit reason.
+
+Engine targets live in `engines.lock.json`. A catalog lane is used only for a
+real topology boundary such as PrusaSlicer 3. Value-only prerelease changes are
+stored as an inline `set`/`unset` overlay. User-created SimplyPrint profiles are
+not part of this producer delta system.
+
 ## Cura resources
 
 Cura and `fdm_materials` are pinned together at 5.13.0 to match the cloud

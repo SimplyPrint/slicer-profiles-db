@@ -1,8 +1,7 @@
-import os
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import Mock, patch
+from unittest.mock import Mock
 
 from slicer_profiles_db.mapping import (
     ModelMap,
@@ -22,7 +21,6 @@ from slicer_profiles_db.mapping import (
     _public_variant_payload,
     _same_variant,
     _write_import_manifest,
-    fetch_sp_slicer_versions,
     map_print_profiles,
     map_printer_models,
 )
@@ -690,33 +688,6 @@ class MappingVersionGuardTests(unittest.TestCase):
 
         self.assertIn(SlicerType.KIRIMOTO.value, result.model_to_profiles[43])
         self.assertIn(SlicerType.KIRIMOTO.value, result.model_to_profiles[42])
-
-    @patch.dict(
-        os.environ,
-        {},
-        clear=True,
-    )
-    @patch("slicer_profiles_db.mapping.requests.get")
-    def test_fetch_slicer_versions_uses_the_default_simplyprint_endpoint(
-        self, get: Mock
-    ) -> None:
-        response = Mock()
-        response.json.return_value = {
-            "slicers": [
-                {"name": "BambuStudio", "latest": "02.07.01.62"},
-                {"name": "PrusaSlicer", "latest": "2.9.6"},
-                {"name": "UnsupportedSlicer", "latest": "1.0.0"},
-            ]
-        }
-        get.return_value = response
-
-        versions = fetch_sp_slicer_versions()
-
-        self.assertEqual(versions, {SlicerType.BAMBUSTUDIO: "02.07.01.62"})
-        get.assert_called_once_with(
-            "https://slicing-test.simplyprint.io/api/v1/slicers/versions", timeout=30
-        )
-        response.raise_for_status.assert_called_once_with()
 
 
 if __name__ == "__main__":
