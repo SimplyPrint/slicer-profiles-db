@@ -1,19 +1,24 @@
 {
-    "schema_version": 1,
+    "schema_version": 2,
     "engines": {
-        "anycubicslicer": {"stable": "2.3.0", "gcode_abi": "bambu-profile-gcode/v1"},
-        "bambustudio": {"stable": "02.07.01.62", "gcode_abi": "bambu-profile-gcode/v1"},
-        "crealityprint": {"stable": "7.2.0", "gcode_abi": "bambu-profile-gcode/v1"},
-        "cura": {"stable": "5.13.0", "gcode_abi": "cura-profile-gcode/v1"},
-        "elegooslicer": {"stable": "1.5.2.2", "gcode_abi": "bambu-profile-gcode/v1"},
-        "kirimoto": {"stable": "4.7.1", "gcode_abi": "kirimoto-profile-gcode/v1"},
-        "orcaslicer": {"stable": "2.4.2", "gcode_abi": "bambu-profile-gcode/v1"},
+        "anycubicslicer": {"version": "2.3.0", "gcode_abi": "bambu-profile-gcode/v1"},
+        "bambustudio": {"version": "02.07.01.62", "gcode_abi": "bambu-profile-gcode/v1"},
+        "crealityprint": {"version": "7.2.0", "gcode_abi": "bambu-profile-gcode/v1"},
+        "cura": {"version": "5.13.0", "gcode_abi": "cura-profile-gcode/v1"},
+        "elegooslicer": {"version": "1.5.2.2", "gcode_abi": "bambu-profile-gcode/v1"},
+        "kirimoto": {"version": "4.7.1", "gcode_abi": "kirimoto-profile-gcode/v1"},
+        "orcaslicer": {"version": "2.4.2", "gcode_abi": "bambu-profile-gcode/v1"},
         "prusaslicer": {
-            "stable": "2.9.6",
-            "prerelease": "3.0.0",
-            "catalog_lane": "prusaslicer-3",
-            "gcode_abi": "slic3r-profile-gcode/v1"
+            "version": "2.9.6",
+            "gcode_abi": "slic3r-profile-gcode/v1",
+            "lanes": {
+                "prusaslicer-3": {
+                    "version": "3.0.0-alpha11",
+                    "format": "prusa-evaluated-profiles",
+                    "gcode_abi": "slic3r-profile-gcode/v1"
+                }
+            }
         },
-        "superslicer": {"stable": "2.5.59.13", "gcode_abi": "slic3r-profile-gcode/v1"}
+        "superslicer": {"version": "2.5.59.13", "gcode_abi": "slic3r-profile-gcode/v1"}
     }
 }

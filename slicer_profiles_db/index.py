@@ -33,16 +33,30 @@ class ProfileIndex:
             SlicerType, dict[str, dict[str, list[StoredProfile]]]
         ] = {}
 
-    def build(self, slicers: list[SlicerType] | None = None) -> None:
+    def build(
+        self,
+        slicers: list[SlicerType] | None = None,
+        *,
+        required_formats: dict[SlicerType, str] | None = None,
+        excluded_formats: set[str] | None = None,
+    ) -> None:
         """Build indexes from the store."""
         self._by_slicer_id.clear()
         self._by_name.clear()
         self._generics.clear()
         self._by_type.clear()
         self._by_base_name.clear()
+        required_formats = required_formats or {}
+        excluded_formats = excluded_formats or set()
 
         for slicer in slicers or list(SlicerType):
             for profile in self.store.list_profiles(slicer):
+                profile_format = profile.context.get("format")
+                required = required_formats.get(slicer)
+                if required is not None and profile_format != required:
+                    continue
+                if required is None and profile_format in excluded_formats:
+                    continue
                 self._index(slicer, profile)
 
     def _index(self, slicer: SlicerType, profile: StoredProfile) -> None:

@@ -22,15 +22,17 @@ The `profiles/` folder is a generated, centralized result of ingesting multiple 
 `dist/profiles.spdb` bundle. It replaces the duplicated per-model `out/` tree:
 profiles are stored once under a stable producer ID, model relationships are ID
 lists, and resources are content-addressed. The manifest records the stable and
-prerelease engine inputs, G-code ABI, hashes, and a model-by-engine mapping
+lane engine inputs, G-code ABI, hashes, and a model-by-engine mapping
 outcome for every SimplyPrint printer model. Bundle creation fails unless that
 classification matrix is 100% complete; an unmatched model is valid only when
 it has an explicit reason.
 
-Engine targets live in `engines.lock.json`. A catalog lane is used only for a
-real topology boundary such as PrusaSlicer 3. Value-only prerelease changes are
-stored as an inline `set`/`unset` overlay. User-created SimplyPrint profiles are
-not part of this producer delta system.
+Engine targets live in `engines.lock.json`. A catalog lane is a complete snapshot
+selected by an authoritative source format and is used only for a real topology
+boundary such as PrusaSlicer 3. Sparse backwards-compatibility settings may be
+attached to individual records when a G-code ABI changes; they are never inferred
+from prerelease version names. User-created SimplyPrint profiles do not need these
+producer compatibility values.
 
 ## Cura resources
 
