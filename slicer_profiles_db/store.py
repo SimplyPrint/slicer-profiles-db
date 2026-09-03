@@ -190,8 +190,10 @@ class ProfileStore:
         # This avoids synthetic branch-based versions (for example daily Cura
         # ingests) accumulating in _meta.json when the parsed profiles are
         # identical to what is already stored.
-        if added or changed or (
-            version in meta.get("versions", []) and not isinstance(recorded, str)
+        if (
+            added
+            or changed
+            or (version in meta.get("versions", []) and not isinstance(recorded, str))
         ):
             self._update_meta(slicer, version, snapshot_scope, snapshot_hash)
 
