@@ -134,8 +134,16 @@ class PrusaSlicerParser(BaseParser):
 
         storage_key = f"{collection}:{record['native_id']}"
         if duplicate:
+            identity = [
+                {
+                    key: context.get(key)
+                    for key in ("machine_id", "hardware_id", "printer_model")
+                    if context.get(key) not in (None, "")
+                }
+                for context in contexts
+            ]
             digest = hashlib.sha256(
-                json.dumps(data, sort_keys=True, separators=(",", ":")).encode()
+                json.dumps(identity, sort_keys=True, separators=(",", ":")).encode()
             ).hexdigest()[:12]
             storage_key += f":{digest}"
         return ParsedProfile(

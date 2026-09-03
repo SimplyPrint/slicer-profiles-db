@@ -115,6 +115,7 @@ class ProfilePipeline:
         version: str = "latest",
         profile_types: list[ProfileType] | None = None,
         force: bool = False,
+        use_evaluated: bool = True,
     ) -> IngestionReport:
         """
         Full pipeline: download → extract → squash → parse → store.
@@ -133,8 +134,10 @@ class ProfilePipeline:
         # not published as tags in the legacy settings repository. Route an
         # explicit 3.x request (and "latest", when a 3.x bundle exists)
         # directly to that authoritative evaluated bundle.
-        evaluated_request = config.evaluated_profile_bundle_index and (
-            version == "latest" or normalize_version(version).startswith("3.")
+        evaluated_request = (
+            use_evaluated
+            and config.evaluated_profile_bundle_index
+            and (version == "latest" or normalize_version(version).startswith("3."))
         )
         if evaluated_request:
             evaluated = self.ingest_evaluated_profile_bundle(

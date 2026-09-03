@@ -29,7 +29,10 @@ jobs:
       - run: uv sync
 
       - name: Ingest profiles
-        run: uv run slicer-profiles-db ingest-all --version latest --overlay overlay
+        run: |
+          uv run slicer-profiles-db ingest-all --version latest --overlay overlay --skip prusaslicer
+          uv run slicer-profiles-db ingest prusaslicer --version latest --legacy-source --force --overlay overlay
+          uv run slicer-profiles-db ingest prusaslicer --version latest --force --overlay overlay
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -38,11 +41,22 @@ jobs:
         env:
           SP_API_URL: ${{ secrets.SP_PRINTER_DB_MODELS_URL }}
 
+      - name: Publish content-addressed bundle
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          hash=$(sha256sum dist/profiles.spdb | cut -d' ' -f1)
+          asset="dist/profiles-${hash}.spdb"
+          cp dist/profiles.spdb "$asset"
+          gh release view profile-catalogues >/dev/null 2>&1 || \
+            gh release create profile-catalogues --title "Profile catalogues" --notes "Content-addressed import bundles."
+          gh release upload profile-catalogues dist/profiles.spdb "$asset" --clobber
+
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A profiles out
+          git add -A profiles
           git diff --cached --quiet && exit 0
           git commit -m "chore(profiles): update generated profiles"
           git push
