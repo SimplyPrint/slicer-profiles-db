@@ -3015,9 +3015,7 @@ def run_mapping_pipeline(
                         f"Missing {slicer.value} lane {lane_name} version {lane.version}"
                     )
                 lane_index = ProfileIndex(store)
-                lane_index.build(
-                    [slicer], required_formats={slicer: lane.format}
-                )
+                lane_index.build([slicer], required_formats={slicer: lane.format})
                 lane_guards = {slicer: lane.version}
                 lane_model_map = map_printer_models(
                     store, lane_index, sp_data, [slicer], lane_guards
@@ -3047,9 +3045,7 @@ def run_mapping_pipeline(
                 lane_records = collect_records(lane_root, lane_name)
                 duplicate_ids = records.keys() & lane_records.keys()
                 if duplicate_ids:
-                    raise ValueError(
-                        f"Duplicate lane record: {min(duplicate_ids)}"
-                    )
+                    raise ValueError(f"Duplicate lane record: {min(duplicate_ids)}")
                 records.update(lane_records)
                 resource_manifests.append(
                     json.loads(
