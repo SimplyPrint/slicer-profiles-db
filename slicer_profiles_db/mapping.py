@@ -1586,7 +1586,8 @@ def _discover_named_machine_variants(
             (
                 direct
                 for candidate in model_names
-                if (direct := _direct_named_variant(candidate, profile_name)) is not None
+                if (direct := _direct_named_variant(candidate, profile_name))
+                is not None
             ),
             None,
         )
@@ -1761,9 +1762,7 @@ def map_filament_profiles(
                                 printer_name=printer_name,
                                 model_name=model_name,
                                 variant=variant,
-                                condition=fp_data.get(
-                                    "compatible_printers_condition"
-                                ),
+                                condition=fp_data.get("compatible_printers_condition"),
                                 variant_data=variant_data,
                                 slicer=slicer_val,
                             )
@@ -2199,9 +2198,7 @@ def map_print_profiles(
                                 printer_name=printer_name,
                                 model_name=model_name,
                                 variant=variant,
-                                condition=pp_data.get(
-                                    "compatible_printers_condition"
-                                ),
+                                condition=pp_data.get("compatible_printers_condition"),
                                 variant_data=variant_data,
                                 slicer=slicer_val,
                             )
@@ -2494,8 +2491,7 @@ def _propagate_bed_visual_donors_by_profile(
             profile_models.setdefault(profile_key, set()).add(model_id)
 
     propagated = {
-        model_id: copy.deepcopy(dict(payload))
-        for model_id, payload in donors.items()
+        model_id: copy.deepcopy(dict(payload)) for model_id, payload in donors.items()
     }
     candidates: dict[int, dict[str, dict[str, Any]]] = {}
     for model_ids in profile_models.values():
@@ -2585,8 +2581,7 @@ def _canonicalize_resource_refs(
     rs = ResourceStore(resource_store_dir)
 
     references: list[tuple[dict[str, Any], str]] = [
-        (data, key)
-        for key in ("bed_model", "bed_texture", "thumbnail", "hotend_model")
+        (data, key) for key in ("bed_model", "bed_texture", "thumbnail", "hotend_model")
     ]
     bed_assets = data.get("bed_assets")
     if isinstance(bed_assets, dict):

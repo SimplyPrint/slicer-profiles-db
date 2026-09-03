@@ -555,8 +555,7 @@ class MappingVersionGuardTests(unittest.TestCase):
             _profile_matches_printer(
                 **shared,
                 condition=(
-                    "nozzle_diameter[0]==0.4 "
-                    "and printer_notes!~/.*HF_NOZZLE.*/"
+                    "nozzle_diameter[0]==0.4 and printer_notes!~/.*HF_NOZZLE.*/"
                 ),
             )
         )
@@ -564,8 +563,7 @@ class MappingVersionGuardTests(unittest.TestCase):
             _profile_matches_printer(
                 **shared,
                 condition=(
-                    "nozzle_diameter[0]==0.4 "
-                    "and printer_notes=~/.*HF_NOZZLE.*/"
+                    "nozzle_diameter[0]==0.4 and printer_notes=~/.*HF_NOZZLE.*/"
                 ),
             )
         )
@@ -636,9 +634,7 @@ class MappingVersionGuardTests(unittest.TestCase):
     ) -> None:
         model_map = ModelMap(
             model_to_profiles={
-                model_id: {
-                    SlicerType.KIRIMOTO.value: ["Creality/Creality Ender 3"]
-                }
+                model_id: {SlicerType.KIRIMOTO.value: ["Creality/Creality Ender 3"]}
                 for model_id in (6, 42, 43)
             }
         )
@@ -677,10 +673,8 @@ class MappingVersionGuardTests(unittest.TestCase):
             settings={"name": {"4.7.1": "Creality Ender 3"}},
         )
         index = Mock()
-        index.find_by_type.side_effect = (
-            lambda _slicer, profile_type, *_args: (
-                [profile] if profile_type == ProfileType.MACHINE_MODEL else []
-            )
+        index.find_by_type.side_effect = lambda _slicer, profile_type, *_args: (
+            [profile] if profile_type == ProfileType.MACHINE_MODEL else []
         )
 
         result = map_printer_models(
