@@ -135,6 +135,16 @@ class ProfileStore:
             )
             deduped[key] = p
         profiles = list(deduped.values())
+        snapshot_hash = self._snapshot_hash(slicer, profiles)
+        snapshot_scope = ",".join(
+            sorted({profile.profile_type.value for profile in profiles})
+        )
+        meta = self._load_meta(slicer)
+        recorded = meta.get("snapshots", {}).get(version, {}).get(snapshot_scope)
+        if isinstance(recorded, str) and recorded != snapshot_hash:
+            raise ValueError(
+                f"Refusing to change immutable {slicer.value} snapshot {version}"
+            )
 
         added = []
         changed = {}
@@ -181,7 +191,9 @@ class ProfileStore:
         # ingests) accumulating in _meta.json when the parsed profiles are
         # identical to what is already stored.
         if added or changed:
-            self._update_meta(slicer, version)
+            self._update_meta(slicer, version, snapshot_scope, snapshot_hash)
+        elif version in meta.get("versions", []) and not isinstance(recorded, str):
+            self._update_meta(slicer, version, snapshot_scope, snapshot_hash)
 
         return IngestionReport(
             slicer=slicer,
@@ -492,13 +504,22 @@ class ProfileStore:
             return {}
         return json.loads(meta_path.read_text(encoding="utf-8"))
 
-    def _update_meta(self, slicer: SlicerType, version: str) -> None:
+    def _update_meta(
+        self,
+        slicer: SlicerType,
+        version: str,
+        snapshot_scope: str,
+        snapshot_hash: str,
+    ) -> None:
         meta = self._load_meta(slicer)
         versions = meta.get("versions", [])
         if version not in versions:
             versions.append(version)
         meta["versions"] = versions
         meta["last_ingested"] = version
+        meta.setdefault("snapshots", {}).setdefault(version, {})[snapshot_scope] = (
+            snapshot_hash
+        )
 
         meta_path = self.root / slicer.value / "_meta.json"
         meta_path.parent.mkdir(parents=True, exist_ok=True)
@@ -506,6 +527,29 @@ class ProfileStore:
             json.dumps(meta, indent=2, ensure_ascii=False),
             encoding="utf-8",
         )
+
+    def _snapshot_hash(self, slicer: SlicerType, profiles: list[ParsedProfile]) -> str:
+        """Hash normalized parser output before mutating the persistent store."""
+        payload = sorted(
+            (
+                self._profile_key(
+                    slicer,
+                    profile.profile_type,
+                    profile.vendor,
+                    profile.name,
+                    profile.storage_key,
+                ),
+                profile.model_dump(mode="json", exclude={"source_path"}),
+            )
+            for profile in profiles
+        )
+        canonical = json.dumps(
+            payload,
+            ensure_ascii=False,
+            sort_keys=True,
+            separators=(",", ":"),
+        )
+        return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
     @staticmethod
     def _extract_renamed_from(settings: dict) -> str | None:

@@ -44,13 +44,13 @@ class MappingVersionGuardTests(unittest.TestCase):
             profile_type=ProfileType.MACHINE_MODEL.value,
             name="Original Prusa MK4",
             vendor="PrusaResearch",
-            first_seen="3.0.0-alpha11",
-            last_seen="3.0.0-alpha11",
+            first_seen="3.0.0",
+            last_seen="3.0.0",
             context={
                 "display_name": "Original Prusa MK4",
                 "variants": [{"key": "0.4"}],
             },
-            settings={"name": {"3.0.0-alpha11": "Original Prusa MK4"}},
+            settings={"name": {"3.0.0": "Original Prusa MK4"}},
         )
         print_profiles = [
             StoredProfile(
@@ -58,15 +58,13 @@ class MappingVersionGuardTests(unittest.TestCase):
                 profile_type=ProfileType.PRINT.value,
                 name="0.20mm QUALITY",
                 vendor="PrusaResearch",
-                first_seen="3.0.0-alpha11",
-                last_seen="3.0.0-alpha11",
+                first_seen="3.0.0",
+                last_seen="3.0.0",
                 storage_key=f"process:quality:{variant}",
                 settings={
-                    "print_settings_id": {"3.0.0-alpha11": "0.20mm QUALITY"},
-                    "compatible_printers": {
-                        "3.0.0-alpha11": ["Original Prusa MK4 0.4 nozzle"]
-                    },
-                    "variant": {"3.0.0-alpha11": variant},
+                    "print_settings_id": {"3.0.0": "0.20mm QUALITY"},
+                    "compatible_printers": {"3.0.0": ["Original Prusa MK4 0.4 nozzle"]},
+                    "variant": {"3.0.0": variant},
                 },
             )
             for variant in ("one", "two")

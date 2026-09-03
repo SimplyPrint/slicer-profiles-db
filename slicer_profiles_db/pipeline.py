@@ -495,7 +495,11 @@ class ProfilePipeline:
         index_response = requests.get(index_url, timeout=60)
         index_response.raise_for_status()
         index = index_response.json()
-        latest = index.get("latest") if isinstance(index, dict) else None
+        latest = (
+            index.get("channels", {}).get("prerelease") or index.get("latest")
+            if isinstance(index, dict)
+            else None
+        )
         if requested_version and normalize_version(requested_version).startswith("3."):
             latest = (
                 requested_version

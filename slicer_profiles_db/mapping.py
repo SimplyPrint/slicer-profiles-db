@@ -41,7 +41,7 @@ from .parsers.cura import (
 )
 from .resources import ResourceStore
 from .store import ProfileStore
-from .versions import normalize_version, version_key
+from .versions import is_prerelease, normalize_version, version_key
 
 logger = logging.getLogger(__name__)
 
@@ -88,24 +88,26 @@ _IMPORT_ARTIFACT_FILENAMES = {
 }
 
 
-def _stable_version(profile: StoredProfile) -> str:
-    """Return the latest non-nightly version for a profile.
+def _stable_version(profile: StoredProfile) -> str | None:
+    """Return the latest stable version for a profile.
 
-    Falls back to last_seen if no stable version exists.
+    Branch snapshots remain eligible; prerelease-only profiles stay opt-in.
     """
     last = profile.last_seen
-    if not last.startswith("nightly"):
+    if not last.startswith("nightly") and not is_prerelease(last):
         return last
 
     # Walk all versioned settings to find the latest stable version key
     best: str | None = None
     for versions_dict in profile.settings.values():
         for ver in versions_dict:
-            if not ver.startswith("nightly") and (
-                best is None or version_key(ver) > version_key(best)
+            if (
+                not ver.startswith("nightly")
+                and not is_prerelease(ver)
+                and (best is None or version_key(ver) > version_key(best))
             ):
                 best = ver
-    return best or last
+    return best or (last if last.startswith("nightly") else None)
 
 
 def _evaluate_stable(
@@ -114,6 +116,8 @@ def _evaluate_stable(
 ) -> dict[str, Any]:
     """Evaluate a profile at its latest SimplyPrint-supported stable version."""
     version = _stable_version(profile)
+    if version is None:
+        return {}
     try:
         slicer = SlicerType(profile.slicer)
     except ValueError:
