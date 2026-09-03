@@ -211,7 +211,10 @@ class PrusaSlicerParser(BaseParser):
                         "preset": {
                             "print": machine.get("preset", {}),
                             "tools": (
-                                [by_tool[index].get("preset", {}) for index in sorted(by_tool)]
+                                [
+                                    by_tool[index].get("preset", {})
+                                    for index in sorted(by_tool)
+                                ]
                                 if by_tool
                                 else [tool.get("preset", {}) for tool in tools]
                             ),
