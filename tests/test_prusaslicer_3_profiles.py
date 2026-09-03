@@ -1,6 +1,14 @@
 import json
 
-from slicer_profiles_db.models import ProfileType, SlicerType, _version_key
+import pytest
+
+from slicer_profiles_db.mapping import _evaluate_stable
+from slicer_profiles_db.models import (
+    ParsedProfile,
+    ProfileType,
+    SlicerType,
+    _version_key,
+)
 from slicer_profiles_db.parsers.prusaslicer import PrusaSlicerParser
 from slicer_profiles_db.pipeline import ProfilePipeline
 from slicer_profiles_db.store import ProfileStore
@@ -100,6 +108,35 @@ def test_prerelease_versions_sort_numerically():
     assert _version_key("3.0.0-rc1") < _version_key("3.0.0")
 
 
+def test_prerelease_only_profile_is_not_exported_as_stable():
+    parsed = ParsedProfile(
+        slicer=SlicerType.PRUSASLICER,
+        profile_type=ProfileType.PRINT,
+        name="Alpha profile",
+        vendor="Prusa",
+        settings={"new_setting": True},
+    )
+    stored = ProfileStore("unused")._create_stored(parsed, "3.0.0-alpha11")
+
+    assert _evaluate_stable(stored) == {}
+
+
+def test_same_version_snapshot_is_immutable(tmp_path):
+    store = ProfileStore(tmp_path / "store")
+    profile = ParsedProfile(
+        slicer=SlicerType.PRUSASLICER,
+        profile_type=ProfileType.PRINT,
+        name="Profile",
+        vendor="Prusa",
+        settings={"value": 1},
+    )
+    store.ingest_profiles(SlicerType.PRUSASLICER, "3.0.0-alpha11", [profile])
+
+    profile.settings["value"] = 2
+    with pytest.raises(ValueError, match="immutable"):
+        store.ingest_profiles(SlicerType.PRUSASLICER, "3.0.0-alpha11", [profile])
+
+
 def test_machine_name_nozzle_variants_support_native_3_names():
     parser = PrusaSlicerParser()
 
@@ -111,7 +148,7 @@ def test_machine_name_nozzle_variants_support_native_3_names():
     ]
 
 
-def test_explicit_3_version_routes_directly_to_evaluated_bundle(tmp_path, monkeypatch):
+def test_latest_uses_prerelease_profile_channel(tmp_path, monkeypatch):
     bundle = {
         "schema_version": 1,
         "format": "prusa-evaluated-profiles",
@@ -131,7 +168,8 @@ def test_explicit_3_version_routes_directly_to_evaluated_bundle(tmp_path, monkey
         "filament": [],
     }
     index = {
-        "latest": "version_3.0.0-alpha11",
+        "latest": "version_2.9.6",
+        "channels": {"prerelease": "version_3.0.0-alpha11"},
         "versions": {"version_3.0.0-alpha11": {"config": {"sha256": "test"}}},
     }
 
@@ -155,9 +193,7 @@ def test_explicit_3_version_routes_directly_to_evaluated_bundle(tmp_path, monkey
 
     monkeypatch.setattr("slicer_profiles_db.pipeline.requests.get", fake_get)
     store = ProfileStore(tmp_path / "store")
-    report = ProfilePipeline(store).ingest(
-        SlicerType.PRUSASLICER, "version_3.0.0-alpha11"
-    )
+    report = ProfilePipeline(store).ingest(SlicerType.PRUSASLICER, "latest")
 
     assert report.version == "3.0.0-alpha11"
     assert report.profiles_processed == 2
