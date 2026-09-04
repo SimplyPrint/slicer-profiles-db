@@ -5,8 +5,8 @@ import zipfile
 from slicer_profiles_db.bundle import collect_records, write_bundle
 from slicer_profiles_db.catalog import (
     EngineTarget,
-    GcodeTarget,
     LaneTarget,
+    ProfileTarget,
 )
 from slicer_profiles_db.models import SlicerType
 
@@ -78,7 +78,7 @@ def test_bundle_deduplicates_profiles_and_is_deterministic(tmp_path):
         lines = archive.read("profiles.ndjson").splitlines()
         record = json.loads(lines[0])
     assert manifest["records"] == 1
-    assert manifest["schema_version"] == 3
+    assert manifest["schema_version"] == 4
     assert manifest["engines"]["orcaslicer"]["version"] == "2.4.2"
     content_hash = record.pop("content_hash")
     assert (
@@ -179,16 +179,16 @@ def test_bundle_rejects_incomplete_model_coverage(tmp_path):
         raise AssertionError("incomplete coverage must fail the build")
 
 
-def test_bundle_rejects_undeclared_gcode_abi(tmp_path):
+def test_bundle_rejects_undeclared_profile_abi(tmp_path):
     staging = tmp_path / "staging"
     _write(
         staging / "models/1/orcaslicer/print_profiles.json",
         [{"name": "Quality", "data": {"speed": 60}}],
     )
     records = collect_records(staging)
-    next(iter(records.values()))["profile"]["gcode_history"] = {
-        "machine_start_gcode": [{"abis": ["unknown/v1"], "value": "G28"}]
-    }
+    next(iter(records.values()))["profile"]["profile_overrides"] = [
+        {"targets": ["unknown/v1"], "settings": {"machine_start_gcode": "G28"}}
+    ]
 
     try:
         write_bundle(
@@ -197,8 +197,10 @@ def test_bundle_rejects_undeclared_gcode_abi(tmp_path):
             {
                 SlicerType.ORCASLICER: EngineTarget(
                     version="2.4.2",
-                    gcode_settings=("machine_start_gcode",),
-                    gcode_targets=(GcodeTarget(version="2.3.1", gcode_abi="orca/v1"),),
+                    profile_override_settings=("machine_start_gcode",),
+                    profile_targets=(
+                        ProfileTarget(version="2.3.1", profile_abi="orca/v1"),
+                    ),
                 )
             },
             {},
@@ -206,31 +208,31 @@ def test_bundle_rejects_undeclared_gcode_abi(tmp_path):
             _coverage(),
         )
     except ValueError as error:
-        assert "Invalid G-code history" in str(error)
+        assert "Invalid profile overrides" in str(error)
     else:
-        raise AssertionError("undeclared G-code ABI must fail the build")
+        raise AssertionError("undeclared profile ABI must fail the build")
 
 
-def test_bundle_reports_sparse_gcode_history_counts(tmp_path):
+def test_bundle_reports_sparse_profile_override_counts(tmp_path):
     staging = tmp_path / "staging"
     _write(
         staging / "models/1/orcaslicer/print_profiles.json",
         [{"name": "Quality", "data": {"speed": 60}}],
     )
     records = collect_records(staging)
-    next(iter(records.values()))["profile"]["gcode_history"] = {
-        "machine_start_gcode": [
-            {"abis": ["orca/v1"], "value": "G28"},
-        ]
-    }
+    next(iter(records.values()))["profile"]["profile_overrides"] = [
+        {"targets": ["orca/v1"], "settings": {"machine_start_gcode": "G28"}}
+    ]
     manifest = write_bundle(
         tmp_path / "compat.spdb",
         records,
         {
             SlicerType.ORCASLICER: EngineTarget(
                 version="2.4.2",
-                gcode_settings=("machine_start_gcode",),
-                gcode_targets=(GcodeTarget(version="2.3.1", gcode_abi="orca/v1"),),
+                profile_override_settings=("machine_start_gcode",),
+                profile_targets=(
+                    ProfileTarget(version="2.3.1", profile_abi="orca/v1"),
+                ),
             )
         },
         {},
@@ -238,32 +240,30 @@ def test_bundle_reports_sparse_gcode_history_counts(tmp_path):
         _coverage(),
     )
 
-    assert manifest["engines"]["orcaslicer"]["gcode_targets"]["orca/v1"] == {
+    assert manifest["engines"]["orcaslicer"]["profile_targets"]["orca/v1"] == {
         "owners": 1,
         "settings": 1,
         "version": "2.3.1",
     }
 
 
-def test_bundle_rejects_duplicate_gcode_values(tmp_path):
+def test_bundle_rejects_duplicate_profile_override_values(tmp_path):
     staging = tmp_path / "staging"
     _write(
         staging / "models/1/orcaslicer/print_profiles.json",
         [{"name": "Quality", "data": {"machine_start_gcode": "G28"}}],
     )
     records = collect_records(staging)
-    next(iter(records.values()))["profile"]["gcode_history"] = {
-        "machine_start_gcode": [
-            {"abis": ["orca/2.3"], "value": "G27"},
-            {"abis": ["orca/2.2"], "value": "G27"},
-        ]
-    }
+    next(iter(records.values()))["profile"]["profile_overrides"] = [
+        {"targets": ["orca/2.3"], "settings": {"machine_start_gcode": "G27"}},
+        {"targets": ["orca/2.2"], "settings": {"machine_start_gcode": "G27"}},
+    ]
     target = EngineTarget(
         version="2.4.2",
-        gcode_settings=("machine_start_gcode",),
-        gcode_targets=(
-            GcodeTarget(version="2.3.0", gcode_abi="orca/2.3"),
-            GcodeTarget(version="2.2.0", gcode_abi="orca/2.2"),
+        profile_override_settings=("machine_start_gcode",),
+        profile_targets=(
+            ProfileTarget(version="2.3.0", profile_abi="orca/2.3"),
+            ProfileTarget(version="2.2.0", profile_abi="orca/2.2"),
         ),
     )
 
@@ -277,6 +277,6 @@ def test_bundle_rejects_duplicate_gcode_values(tmp_path):
             _coverage(),
         )
     except ValueError as error:
-        assert "Duplicate G-code value" in str(error)
+        assert "Duplicate profile override value" in str(error)
     else:
-        raise AssertionError("duplicate historical G-code must fail the build")
+        raise AssertionError("duplicate profile override values must fail the build")

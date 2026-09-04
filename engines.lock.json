@@ -1,11 +1,11 @@
 {
-    "schema_version": 3,
+    "schema_version": 4,
     "engines": {
         "anycubicslicer": {"version": "2.3.0", "gcode_abi": "bambu-profile-gcode/v1"},
         "bambustudio": {
             "version": "02.08.02.61",
             "gcode_abi": "bambu-profile-gcode/nightly",
-            "gcode_settings": [
+            "profile_override_settings": [
                 "machine_start_gcode",
                 "machine_end_gcode",
                 "printing_by_object_gcode",
@@ -20,18 +20,18 @@
                 "filament_start_gcode",
                 "filament_end_gcode"
             ],
-            "gcode_targets": [
+            "profile_targets": [
                 {
                     "version": "02.07.01.62",
-                    "gcode_abi": "bambu-profile-gcode/02.07.01.62"
+                    "profile_abi": "bambu-profile-gcode/02.07.01.62"
                 },
                 {
                     "version": "02.07.00.55",
-                    "gcode_abi": "bambu-profile-gcode/02.07.00.55"
+                    "profile_abi": "bambu-profile-gcode/02.07.00.55"
                 },
                 {
                     "version": "02.06.01.55",
-                    "gcode_abi": "bambu-profile-gcode/02.06.01.55"
+                    "profile_abi": "bambu-profile-gcode/02.06.01.55"
                 }
             ]
         },

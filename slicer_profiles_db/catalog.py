@@ -18,9 +18,9 @@ class LaneTarget:
 
 
 @dataclass(frozen=True)
-class GcodeTarget:
+class ProfileTarget:
     version: str
-    gcode_abi: str
+    profile_abi: str
 
 
 @dataclass(frozen=True)
@@ -28,8 +28,8 @@ class EngineTarget:
     version: str
     gcode_abi: str = "text-gcode/v1"
     lanes: dict[str, LaneTarget] | None = None
-    gcode_settings: tuple[str, ...] = ()
-    gcode_targets: tuple[GcodeTarget, ...] = ()
+    profile_override_settings: tuple[str, ...] = ()
+    profile_targets: tuple[ProfileTarget, ...] = ()
 
 
 def load_engine_targets(path: Path) -> dict[SlicerType, EngineTarget]:
@@ -39,7 +39,7 @@ def load_engine_targets(path: Path) -> dict[SlicerType, EngineTarget]:
     except (OSError, json.JSONDecodeError) as error:
         raise ValueError(f"Invalid engine lock {path}: {error}") from error
 
-    if document.get("schema_version") != 3 or not isinstance(
+    if document.get("schema_version") != 4 or not isinstance(
         document.get("engines"), dict
     ):
         raise ValueError(f"Invalid engine lock schema in {path}")
@@ -73,24 +73,26 @@ def load_engine_targets(path: Path) -> dict[SlicerType, EngineTarget]:
                     or "text-gcode/v1"
                 ),
             )
-        target_values = value.get("gcode_targets") or []
+        target_values = value.get("profile_targets") or []
         if not isinstance(target_values, list):
-            raise TypeError(f"Engine {name!r} has invalid G-code targets")
-        gcode_targets = tuple(
-            GcodeTarget(
+            raise TypeError(f"Engine {name!r} has invalid profile targets")
+        profile_targets = tuple(
+            ProfileTarget(
                 version=normalize_version(target["version"]),
-                gcode_abi=str(target["gcode_abi"]),
+                profile_abi=str(target["profile_abi"]),
             )
             for target in target_values
             if isinstance(target, dict)
             and isinstance(target.get("version"), str)
-            and isinstance(target.get("gcode_abi"), str)
+            and isinstance(target.get("profile_abi"), str)
         )
-        if len(gcode_targets) != len(target_values):
-            raise TypeError(f"Engine {name!r} has an invalid G-code target")
-        if len({target.gcode_abi for target in gcode_targets}) != len(gcode_targets):
-            raise ValueError(f"Engine {name!r} has duplicate G-code target ABIs")
-        settings_value = value.get("gcode_settings") or []
+        if len(profile_targets) != len(target_values):
+            raise TypeError(f"Engine {name!r} has an invalid profile target")
+        if len({target.profile_abi for target in profile_targets}) != len(
+            profile_targets
+        ):
+            raise ValueError(f"Engine {name!r} has duplicate profile target ABIs")
+        settings_value = value.get("profile_override_settings") or []
         if (
             not isinstance(settings_value, list)
             or not all(
@@ -98,15 +100,15 @@ def load_engine_targets(path: Path) -> dict[SlicerType, EngineTarget]:
             )
             or len(set(settings_value)) != len(settings_value)
         ):
-            raise TypeError(f"Engine {name!r} has invalid G-code settings")
-        if gcode_targets and not settings_value:
-            raise TypeError(f"Engine {name!r} G-code targets need G-code settings")
+            raise TypeError(f"Engine {name!r} has invalid profile override settings")
+        if profile_targets and not settings_value:
+            raise TypeError(f"Engine {name!r} profile targets need override settings")
         targets[slicer] = EngineTarget(
             version=normalize_version(value["version"]),
             gcode_abi=str(value.get("gcode_abi") or "text-gcode/v1"),
             lanes=lanes,
-            gcode_settings=tuple(settings_value),
-            gcode_targets=gcode_targets,
+            profile_override_settings=tuple(settings_value),
+            profile_targets=profile_targets,
         )
 
     missing = sorted(slicer.value for slicer in SlicerType if slicer not in targets)

@@ -33,9 +33,9 @@ boundary such as PrusaSlicer 3. Ordinary setting compatibility is derived from
 the versioned setting definitions and is never copied into profile rows. Only
 historical G-code is attached to its owning machine, filament, or process profile;
 equal values for several engine ABIs are stored once. BambuStudio currently
-publishes canonical nightly settings with G-code history for the latest release
+publishes canonical nightly settings with sparse profile overrides for older releases
 and its two other supported releases. User-created SimplyPrint profiles remain
-history-free.
+override-free.
 
 ## Cura resources
 
