@@ -57,15 +57,8 @@ def test_non_gcode_changes_are_never_materialized():
     assert build_gcode_history(profile, profile.evaluate("3.0.0"), _target()) == {}
 
 
-def test_profile_specific_gcode_absence_is_explicit():
+def test_profile_specific_gcode_absence_is_derived_not_materialized():
     profile = _profile({"machine_start_gcode": {"3.0.0": "G28"}})
     profile.first_seen = "2.6.0"
 
-    assert build_gcode_history(profile, profile.evaluate("3.0.0"), _target()) == {
-        "machine_start_gcode": [
-            {
-                "abis": ["engine/2.8", "engine/2.7", "engine/2.6"],
-                "absent": True,
-            }
-        ]
-    }
+    assert build_gcode_history(profile, profile.evaluate("3.0.0"), _target()) == {}

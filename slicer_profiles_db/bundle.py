@@ -276,20 +276,17 @@ def _validate_setting_history(
             if not isinstance(rule, Mapping):
                 raise TypeError(f"Invalid G-code history for {record_id}")
             abis = rule.get("abis")
-            has_value = "value" in rule
-            absent = rule.get("absent") is True
             if (
-                set(rule) - {"abis", "value", "absent"}
+                set(rule) != {"abis", "value"}
                 or not isinstance(abis, list)
                 or not abis
                 or not all(isinstance(abi, str) for abi in abis)
                 or len(set(abis)) != len(abis)
                 or not set(abis) <= declared
-                or bool(has_value) == bool(absent)
                 or setting_abis & set(abis)
             ):
                 raise ValueError(f"Invalid G-code history for {record_id}")
-            identity = b"__absent__" if absent else _json_bytes(rule.get("value"))
+            identity = _json_bytes(rule["value"])
             if identity in values:
                 raise ValueError(f"Duplicate G-code value for {record_id}")
             values.add(identity)
