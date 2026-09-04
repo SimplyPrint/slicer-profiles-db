@@ -4,10 +4,9 @@ import zipfile
 
 from slicer_profiles_db.bundle import collect_records, write_bundle
 from slicer_profiles_db.catalog import (
-    CompatibilityTarget,
     EngineTarget,
+    GcodeTarget,
     LaneTarget,
-    SettingSchemaSource,
 )
 from slicer_profiles_db.models import SlicerType
 
@@ -79,7 +78,7 @@ def test_bundle_deduplicates_profiles_and_is_deterministic(tmp_path):
         lines = archive.read("profiles.ndjson").splitlines()
         record = json.loads(lines[0])
     assert manifest["records"] == 1
-    assert manifest["schema_version"] == 2
+    assert manifest["schema_version"] == 3
     assert manifest["engines"]["orcaslicer"]["version"] == "2.4.2"
     content_hash = record.pop("content_hash")
     assert (
@@ -180,53 +179,58 @@ def test_bundle_rejects_incomplete_model_coverage(tmp_path):
         raise AssertionError("incomplete coverage must fail the build")
 
 
-def test_bundle_rejects_undeclared_compatibility_abi(tmp_path):
+def test_bundle_rejects_undeclared_gcode_abi(tmp_path):
     staging = tmp_path / "staging"
     _write(
         staging / "models/1/orcaslicer/print_profiles.json",
         [{"name": "Quality", "data": {"speed": 60}}],
     )
     records = collect_records(staging)
-    next(iter(records.values()))["compat"] = {"unknown/v1": {"unset": ["new_setting"]}}
+    next(iter(records.values()))["profile"]["gcode_history"] = {
+        "machine_start_gcode": [{"abis": ["unknown/v1"], "value": "G28"}]
+    }
 
     try:
         write_bundle(
             tmp_path / "invalid.spdb",
             records,
-            {SlicerType.ORCASLICER: EngineTarget(version="2.4.2")},
+            {
+                SlicerType.ORCASLICER: EngineTarget(
+                    version="2.4.2",
+                    gcode_settings=("machine_start_gcode",),
+                    gcode_targets=(GcodeTarget(version="2.3.1", gcode_abi="orca/v1"),),
+                )
+            },
             {},
             tmp_path,
             _coverage(),
         )
     except ValueError as error:
-        assert "Invalid compatibility delta" in str(error)
+        assert "Invalid G-code history" in str(error)
     else:
-        raise AssertionError("undeclared compatibility ABI must fail the build")
+        raise AssertionError("undeclared G-code ABI must fail the build")
 
 
-def test_bundle_reports_sparse_compatibility_counts(tmp_path):
+def test_bundle_reports_sparse_gcode_history_counts(tmp_path):
     staging = tmp_path / "staging"
     _write(
         staging / "models/1/orcaslicer/print_profiles.json",
         [{"name": "Quality", "data": {"speed": 60}}],
     )
     records = collect_records(staging)
-    next(iter(records.values()))["compat"] = {
-        "orca/v1": {"set": {"legacy": True}, "unset": ["new_setting"]}
+    next(iter(records.values()))["profile"]["gcode_history"] = {
+        "machine_start_gcode": [
+            {"abis": ["orca/v1"], "value": "G28"},
+        ]
     }
-    schema = SettingSchemaSource(url="https://example.com/schema", sha256="a" * 64)
     manifest = write_bundle(
         tmp_path / "compat.spdb",
         records,
         {
             SlicerType.ORCASLICER: EngineTarget(
                 version="2.4.2",
-                setting_schema=schema,
-                compatibility=(
-                    CompatibilityTarget(
-                        version="2.3.1", gcode_abi="orca/v1", setting_schema=schema
-                    ),
-                ),
+                gcode_settings=("machine_start_gcode",),
+                gcode_targets=(GcodeTarget(version="2.3.1", gcode_abi="orca/v1"),),
             )
         },
         {},
@@ -234,9 +238,45 @@ def test_bundle_reports_sparse_compatibility_counts(tmp_path):
         _coverage(),
     )
 
-    assert manifest["engines"]["orcaslicer"]["compatibility"]["orca/v1"] == {
-        "records": 1,
-        "set": 1,
-        "unset": 1,
+    assert manifest["engines"]["orcaslicer"]["gcode_targets"]["orca/v1"] == {
+        "owners": 1,
+        "settings": 1,
         "version": "2.3.1",
     }
+
+
+def test_bundle_rejects_duplicate_gcode_values(tmp_path):
+    staging = tmp_path / "staging"
+    _write(
+        staging / "models/1/orcaslicer/print_profiles.json",
+        [{"name": "Quality", "data": {"machine_start_gcode": "G28"}}],
+    )
+    records = collect_records(staging)
+    next(iter(records.values()))["profile"]["gcode_history"] = {
+        "machine_start_gcode": [
+            {"abis": ["orca/2.3"], "value": "G27"},
+            {"abis": ["orca/2.2"], "value": "G27"},
+        ]
+    }
+    target = EngineTarget(
+        version="2.4.2",
+        gcode_settings=("machine_start_gcode",),
+        gcode_targets=(
+            GcodeTarget(version="2.3.0", gcode_abi="orca/2.3"),
+            GcodeTarget(version="2.2.0", gcode_abi="orca/2.2"),
+        ),
+    )
+
+    try:
+        write_bundle(
+            tmp_path / "invalid.spdb",
+            records,
+            {SlicerType.ORCASLICER: target},
+            {},
+            tmp_path,
+            _coverage(),
+        )
+    except ValueError as error:
+        assert "Duplicate G-code value" in str(error)
+    else:
+        raise AssertionError("duplicate historical G-code must fail the build")

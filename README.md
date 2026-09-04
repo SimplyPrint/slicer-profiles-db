@@ -29,13 +29,13 @@ it has an explicit reason.
 
 Engine targets live in `engines.lock.json`. A catalog lane is a complete snapshot
 selected by an authoritative source format and is used only for a real topology
-boundary such as PrusaSlicer 3. Sparse backwards-compatibility settings may be
-attached to individual records when a target engine cannot consume the canonical
-nightly value; they are never inferred from prerelease version names. The target
-setting schemas are content-hash pinned to `slicer-builds`. BambuStudio currently
-publishes nightly settings with checked backwards projections for the latest
-release and its two other supported releases. User-created SimplyPrint profiles
-do not need these producer compatibility values.
+boundary such as PrusaSlicer 3. Ordinary setting compatibility is derived from
+the versioned setting definitions and is never copied into profile rows. Only
+historical G-code is attached to its owning machine, filament, or process profile;
+equal values for several engine ABIs are stored once. BambuStudio currently
+publishes canonical nightly settings with G-code history for the latest release
+and its two other supported releases. User-created SimplyPrint profiles remain
+history-free.
 
 ## Cura resources
 

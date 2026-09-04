@@ -18,16 +18,9 @@ class LaneTarget:
 
 
 @dataclass(frozen=True)
-class SettingSchemaSource:
-    url: str
-    sha256: str
-
-
-@dataclass(frozen=True)
-class CompatibilityTarget:
+class GcodeTarget:
     version: str
     gcode_abi: str
-    setting_schema: SettingSchemaSource
 
 
 @dataclass(frozen=True)
@@ -35,24 +28,8 @@ class EngineTarget:
     version: str
     gcode_abi: str = "text-gcode/v1"
     lanes: dict[str, LaneTarget] | None = None
-    setting_schema: SettingSchemaSource | None = None
-    compatibility: tuple[CompatibilityTarget, ...] = ()
-
-
-def _setting_schema(value: object, description: str) -> SettingSchemaSource:
-    if not isinstance(value, dict):
-        raise TypeError(f"{description} has no setting schema")
-    url = value.get("url")
-    digest = value.get("sha256")
-    if (
-        not isinstance(url, str)
-        or not url.startswith("https://")
-        or not isinstance(digest, str)
-        or len(digest) != 64
-        or any(character not in "0123456789abcdef" for character in digest)
-    ):
-        raise TypeError(f"{description} has an invalid setting schema")
-    return SettingSchemaSource(url=url, sha256=digest)
+    gcode_settings: tuple[str, ...] = ()
+    gcode_targets: tuple[GcodeTarget, ...] = ()
 
 
 def load_engine_targets(path: Path) -> dict[SlicerType, EngineTarget]:
@@ -62,7 +39,7 @@ def load_engine_targets(path: Path) -> dict[SlicerType, EngineTarget]:
     except (OSError, json.JSONDecodeError) as error:
         raise ValueError(f"Invalid engine lock {path}: {error}") from error
 
-    if document.get("schema_version") != 2 or not isinstance(
+    if document.get("schema_version") != 3 or not isinstance(
         document.get("engines"), dict
     ):
         raise ValueError(f"Invalid engine lock schema in {path}")
@@ -96,40 +73,40 @@ def load_engine_targets(path: Path) -> dict[SlicerType, EngineTarget]:
                     or "text-gcode/v1"
                 ),
             )
-        compatibility_values = value.get("compatibility") or []
-        if not isinstance(compatibility_values, list):
-            raise TypeError(f"Engine {name!r} has invalid compatibility targets")
-        compatibility = tuple(
-            CompatibilityTarget(
+        target_values = value.get("gcode_targets") or []
+        if not isinstance(target_values, list):
+            raise TypeError(f"Engine {name!r} has invalid G-code targets")
+        gcode_targets = tuple(
+            GcodeTarget(
                 version=normalize_version(target["version"]),
                 gcode_abi=str(target["gcode_abi"]),
-                setting_schema=_setting_schema(
-                    target.get("setting_schema"),
-                    f"Engine {name!r} compatibility target",
-                ),
             )
-            for target in compatibility_values
+            for target in target_values
             if isinstance(target, dict)
             and isinstance(target.get("version"), str)
             and isinstance(target.get("gcode_abi"), str)
         )
-        if len(compatibility) != len(compatibility_values):
-            raise TypeError(f"Engine {name!r} has an invalid compatibility target")
-        if len({target.gcode_abi for target in compatibility}) != len(compatibility):
-            raise ValueError(f"Engine {name!r} has duplicate compatibility ABIs")
-        setting_schema = (
-            _setting_schema(value["setting_schema"], f"Engine {name!r}")
-            if "setting_schema" in value
-            else None
-        )
-        if compatibility and setting_schema is None:
-            raise TypeError(f"Engine {name!r} compatibility needs a setting schema")
+        if len(gcode_targets) != len(target_values):
+            raise TypeError(f"Engine {name!r} has an invalid G-code target")
+        if len({target.gcode_abi for target in gcode_targets}) != len(gcode_targets):
+            raise ValueError(f"Engine {name!r} has duplicate G-code target ABIs")
+        settings_value = value.get("gcode_settings") or []
+        if (
+            not isinstance(settings_value, list)
+            or not all(
+                isinstance(setting, str) and setting for setting in settings_value
+            )
+            or len(set(settings_value)) != len(settings_value)
+        ):
+            raise TypeError(f"Engine {name!r} has invalid G-code settings")
+        if gcode_targets and not settings_value:
+            raise TypeError(f"Engine {name!r} G-code targets need G-code settings")
         targets[slicer] = EngineTarget(
             version=normalize_version(value["version"]),
             gcode_abi=str(value.get("gcode_abi") or "text-gcode/v1"),
             lanes=lanes,
-            setting_schema=setting_schema,
-            compatibility=compatibility,
+            gcode_settings=tuple(settings_value),
+            gcode_targets=gcode_targets,
         )
 
     missing = sorted(slicer.value for slicer in SlicerType if slicer not in targets)
