@@ -1,0 +1,56 @@
+{
+    "schema_version": 4,
+    "engines": {
+        "anycubicslicer": {"version": "2.3.0", "gcode_abi": "bambu-profile-gcode/v1"},
+        "bambustudio": {
+            "version": "02.08.02.61",
+            "gcode_abi": "bambu-profile-gcode/nightly",
+            "profile_override_settings": [
+                "machine_start_gcode",
+                "machine_end_gcode",
+                "printing_by_object_gcode",
+                "before_layer_change_gcode",
+                "layer_change_gcode",
+                "time_lapse_gcode",
+                "wrapping_detection_gcode",
+                "change_filament_gcode",
+                "change_extrusion_role_gcode",
+                "machine_pause_gcode",
+                "template_custom_gcode",
+                "filament_start_gcode",
+                "filament_end_gcode"
+            ],
+            "profile_targets": [
+                {
+                    "version": "02.07.01.62",
+                    "profile_abi": "bambu-profile-gcode/02.07.01.62"
+                },
+                {
+                    "version": "02.07.00.55",
+                    "profile_abi": "bambu-profile-gcode/02.07.00.55"
+                },
+                {
+                    "version": "02.06.01.55",
+                    "profile_abi": "bambu-profile-gcode/02.06.01.55"
+                }
+            ]
+        },
+        "crealityprint": {"version": "7.2.0", "gcode_abi": "bambu-profile-gcode/v1"},
+        "cura": {"version": "5.13.0", "gcode_abi": "cura-profile-gcode/v1"},
+        "elegooslicer": {"version": "1.5.2.2", "gcode_abi": "bambu-profile-gcode/v1"},
+        "kirimoto": {"version": "4.7.1", "gcode_abi": "kirimoto-profile-gcode/v1"},
+        "orcaslicer": {"version": "2.4.2", "gcode_abi": "bambu-profile-gcode/v1"},
+        "prusaslicer": {
+            "version": "2.9.6",
+            "gcode_abi": "slic3r-profile-gcode/v1",
+            "lanes": {
+                "prusaslicer-3": {
+                    "version": "3.0.0-alpha11",
+                    "format": "prusa-evaluated-profiles",
+                    "gcode_abi": "slic3r-profile-gcode/v1"
+                }
+            }
+        },
+        "superslicer": {"version": "2.5.59.13", "gcode_abi": "slic3r-profile-gcode/v1"}
+    }
+}

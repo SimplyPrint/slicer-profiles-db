@@ -15,6 +15,7 @@ import math
 import os
 import re
 import shutil
+import tempfile
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -23,7 +24,10 @@ from typing import Any
 import requests
 
 from .brands import BRAND_MAPS, normalize_brand
+from .bundle import collect_records, write_bundle
+from .catalog import load_engine_targets
 from .conditions import evaluate_printer_condition
+from .download import DEFAULT_CONFIGS
 from .index import (
     ProfileIndex,
     build_generic_profile_index,
@@ -38,15 +42,12 @@ from .parsers.cura import (
     build_cura_scene_context,
     resolve_cura_overlay,
 )
+from .profile_overrides import apply_profile_overrides
 from .resources import ResourceStore
 from .store import ProfileStore
-from .versions import normalize_version, version_key
+from .versions import is_prerelease, version_key
 
 logger = logging.getLogger(__name__)
-
-_DEFAULT_SP_SLICER_VERSIONS_API_URL = (
-    "https://slicing-test.simplyprint.io/api/v1/slicers/versions"
-)
 
 
 def _get_sp_api_url() -> str:
@@ -60,30 +61,8 @@ def _get_sp_api_url() -> str:
     return url
 
 
-def _get_sp_slicer_versions_url() -> str:
-    """Return the SimplyPrint endpoint that declares supported slicer versions."""
-    return os.environ.get(
-        "SP_SLICER_VERSIONS_API_URL", _DEFAULT_SP_SLICER_VERSIONS_API_URL
-    )
-
-
 # Slicers that participate in model mapping.
 _MAPPING_SLICERS = list(SlicerType)
-
-# These slicers publish versioned vendor-profile releases whose version
-# namespace matches the runtime versions returned by SimplyPrint.  Branch and
-# externally sourced profile sets use their own version stream, so comparing
-# those versions to an engine/runtime version can incorrectly hide every
-# profile (for example Prusa profile data at 3.0.0 with a 2.9.6 runtime).
-_VERSION_GUARDED_SLICERS = frozenset(
-    {
-        SlicerType.ANYCUBICSLICER,
-        SlicerType.BAMBUSTUDIO,
-        SlicerType.CREALITYPRINT,
-        SlicerType.ELEGOOSLICER,
-        SlicerType.ORCASLICER,
-    }
-)
 
 _IMPORT_ARTIFACT_FILENAMES = {
     "machine_profiles.json",
@@ -93,24 +72,26 @@ _IMPORT_ARTIFACT_FILENAMES = {
 }
 
 
-def _stable_version(profile: StoredProfile) -> str:
-    """Return the latest non-nightly version for a profile.
+def _stable_version(profile: StoredProfile) -> str | None:
+    """Return the latest stable version for a profile.
 
-    Falls back to last_seen if no stable version exists.
+    Branch snapshots remain eligible; prerelease-only profiles stay opt-in.
     """
     last = profile.last_seen
-    if not last.startswith("nightly"):
+    if not last.startswith("nightly") and not is_prerelease(last):
         return last
 
     # Walk all versioned settings to find the latest stable version key
     best: str | None = None
     for versions_dict in profile.settings.values():
         for ver in versions_dict:
-            if not ver.startswith("nightly") and (
-                best is None or version_key(ver) > version_key(best)
+            if (
+                not ver.startswith("nightly")
+                and not is_prerelease(ver)
+                and (best is None or version_key(ver) > version_key(best))
             ):
                 best = ver
-    return best or last
+    return best or (last if last.startswith("nightly") else None)
 
 
 def _evaluate_stable(
@@ -118,15 +99,28 @@ def _evaluate_stable(
     version_guards: Mapping[SlicerType, str] | None = None,
 ) -> dict[str, Any]:
     """Evaluate a profile at its latest SimplyPrint-supported stable version."""
-    version = _stable_version(profile)
     try:
         slicer = SlicerType(profile.slicer)
     except ValueError:
         slicer = None
-    if version_guards and slicer in _VERSION_GUARDED_SLICERS:
-        guard = version_guards.get(slicer)
-        if guard and version_key(guard) < version_key(version):
-            version = guard
+    engine_coupled = bool(
+        slicer
+        and (
+            DEFAULT_CONFIGS[slicer].runtime_version_guard
+            or profile.context.get("format") == "prusa-evaluated-profiles"
+        )
+    )
+    guard = (
+        version_guards.get(slicer)
+        if version_guards and slicer and engine_coupled
+        else None
+    )
+    if guard:
+        return profile.evaluate_at_or_before(guard)
+    else:
+        version = _stable_version(profile)
+        if version is None:
+            return {}
     return profile.evaluate(version)
 
 
@@ -137,8 +131,13 @@ def _profile_payload(
 
     snapshot = data if data is not None else _evaluate_stable(profile)
     payload: dict[str, Any] = {"data": snapshot}
-    if profile.context:
-        context = copy.deepcopy(profile.context)
+    context = copy.deepcopy(profile.context)
+    context["source_id"] = (
+        profile.storage_key
+        or profile.native_id
+        or f"{profile.vendor}/{profile.profile_type}/{profile.name}"
+    )
+    if context:
         if (
             profile.slicer == SlicerType.CURA.value
             and profile.profile_type == ProfileType.PRINT.value
@@ -1189,20 +1188,19 @@ def _machine_model_export(
         if isinstance(bed_assets, dict):
             model = bed_assets.get("model")
             texture = bed_assets.get("texture")
-            if isinstance(model, dict):
-                if model.get("format") == "3mf":
-                    model.setdefault("mesh_selection", "largest_face_count")
-                    model.setdefault("geometry_space", "raw_mesh")
-                    transform = model.setdefault("transform", {})
-                    if isinstance(transform, dict):
-                        transform.setdefault(
-                            "rotation",
-                            {
-                                "euler": [90, 0, 0],
-                                "unit": "deg",
-                                "order": "XYZ",
-                            },
-                        )
+            if isinstance(model, dict) and model.get("format") == "3mf":
+                model.setdefault("mesh_selection", "largest_face_count")
+                model.setdefault("geometry_space", "raw_mesh")
+                transform = model.setdefault("transform", {})
+                if isinstance(transform, dict):
+                    transform.setdefault(
+                        "rotation",
+                        {
+                            "euler": [90, 0, 0],
+                            "unit": "deg",
+                            "order": "XYZ",
+                        },
+                    )
             if isinstance(model, dict) and isinstance(texture, dict):
                 texture.setdefault("target", "model")
                 texture.setdefault("mapping", "uv")
@@ -1232,6 +1230,10 @@ class ModelMap:
     failed_brands: set[str] = field(default_factory=set)
     failed_models: set[str] = field(default_factory=set)
 
+    # Every SimplyPrint model is reported, including models with no upstream
+    # profile. This makes mapping coverage inspectable instead of silently partial.
+    coverage: dict[str, Any] = field(default_factory=dict)
+
 
 def fetch_sp_model_data() -> dict[str, Any]:
     """Fetch printer model data from the SimplyPrint API."""
@@ -1239,28 +1241,6 @@ def fetch_sp_model_data() -> dict[str, Any]:
     resp = requests.get(url, timeout=30)
     resp.raise_for_status()
     return resp.json()
-
-
-def fetch_sp_slicer_versions() -> dict[SlicerType, str]:
-    """Fetch the newest stable slicer version supported by SimplyPrint."""
-    resp = requests.get(_get_sp_slicer_versions_url(), timeout=30)
-    resp.raise_for_status()
-    data = resp.json()
-    guards: dict[SlicerType, str] = {}
-    for slicer_data in data.get("slicers", []):
-        if not isinstance(slicer_data, Mapping):
-            continue
-        name = slicer_data.get("name")
-        latest = slicer_data.get("latest")
-        if not isinstance(name, str) or not isinstance(latest, str) or not latest:
-            continue
-        try:
-            slicer = SlicerType(name.casefold())
-            if slicer in _VERSION_GUARDED_SLICERS:
-                guards[slicer] = normalize_version(latest)
-        except ValueError:
-            logger.warning("Ignoring unsupported SimplyPrint slicer %r", name)
-    return guards
 
 
 def _prepare_sp_data(
@@ -1373,6 +1353,48 @@ def map_printer_models(
 
         # Build variant lookup map for this slicer
         _build_variant_map(store, index, slicer, result, version_guards)
+
+    engine_names = sorted(slicer.value for slicer in slicers)
+    coverage_models: list[dict[str, Any]] = []
+    mapped = 0
+    for model in sorted(sp_models, key=lambda item: int(item["id"])):
+        model_id = int(model["id"])
+        outcomes: dict[str, Any] = {}
+        for engine in engine_names:
+            profiles = sorted(
+                set(result.model_to_profiles.get(model_id, {}).get(engine, []))
+            )
+            if profiles:
+                mapped += 1
+                outcomes[engine] = {
+                    "status": "mapped",
+                    "source_profiles": profiles,
+                }
+            else:
+                outcomes[engine] = {
+                    "status": "unmapped",
+                    "reason": "no matching upstream machine profile",
+                }
+        coverage_models.append(
+            {
+                "brand": model["brand"],
+                "id": model_id,
+                "name": model["name"],
+                "outcomes": outcomes,
+            }
+        )
+
+    classified = len(sp_models) * len(engine_names)
+    result.coverage = {
+        "schema_version": 1,
+        "engines": engine_names,
+        "total_models": len(sp_models),
+        "classified": classified,
+        "classified_percent": 100,
+        "mapped": mapped,
+        "unmapped": classified - mapped,
+        "models": coverage_models,
+    }
 
     return result
 
@@ -1592,7 +1614,8 @@ def _discover_named_machine_variants(
             (
                 direct
                 for candidate in model_names
-                if (direct := _direct_named_variant(candidate, profile_name)) is not None
+                if (direct := _direct_named_variant(candidate, profile_name))
+                is not None
             ),
             None,
         )
@@ -1767,9 +1790,7 @@ def map_filament_profiles(
                                 printer_name=printer_name,
                                 model_name=model_name,
                                 variant=variant,
-                                condition=fp_data.get(
-                                    "compatible_printers_condition"
-                                ),
+                                condition=fp_data.get("compatible_printers_condition"),
                                 variant_data=variant_data,
                                 slicer=slicer_val,
                             )
@@ -2205,9 +2226,7 @@ def map_print_profiles(
                                 printer_name=printer_name,
                                 model_name=model_name,
                                 variant=variant,
-                                condition=pp_data.get(
-                                    "compatible_printers_condition"
-                                ),
+                                condition=pp_data.get("compatible_printers_condition"),
                                 variant_data=variant_data,
                                 slicer=slicer_val,
                             )
@@ -2215,10 +2234,11 @@ def map_print_profiles(
                         if not is_compatible:
                             continue
 
-                        if print_name in compatible_prints:
-                            out = compatible_prints[print_name]
+                        print_identity = pp.storage_key or print_name
+                        if print_identity in compatible_prints:
+                            out = compatible_prints[print_identity]
                         else:
-                            out = compatible_prints[print_name] = {
+                            out = compatible_prints[print_identity] = {
                                 "name": print_name,
                                 "compatible_printers": {},
                                 **_profile_payload(pp, pp_data),
@@ -2299,7 +2319,7 @@ def export_output(
                 if not mm_data:
                     continue
                 machine_model_export = _machine_model_export(mm, mm_data)
-                # Keep /out small: resource files live under
+                # Keep staging small: resource files live under
                 # profiles/{slicer}/_resources and are resolved by the
                 # ecosystem importer using resources.json.
                 _canonicalize_resource_refs(machine_model_export, store, slicer)
@@ -2313,6 +2333,11 @@ def export_output(
                 # importer, but need not be persisted in a runtime variant's
                 # engine settings.  Parsers can provide it as role context.
                 sub_data: dict[str, Any] = {
+                    "source_id": (
+                        mm.storage_key
+                        or mm.native_id
+                        or f"{vendor}/{mm.profile_type}/{mm.name}"
+                    ),
                     "vendor": vendor,
                     # The ecosystem importer stores this discovery record
                     # directly and expects its established flat shape.  The
@@ -2345,7 +2370,8 @@ def export_output(
                             )
                         sub_data["variants"][variant] = payload
 
-                machine_profiles_data.append(sub_data)
+                if sub_data["variants"]:
+                    machine_profiles_data.append(sub_data)
 
             _write_json(slicer_path / "machine_profiles.json", machine_profiles_data)
 
@@ -2499,8 +2525,7 @@ def _propagate_bed_visual_donors_by_profile(
             profile_models.setdefault(profile_key, set()).add(model_id)
 
     propagated = {
-        model_id: copy.deepcopy(dict(payload))
-        for model_id, payload in donors.items()
+        model_id: copy.deepcopy(dict(payload)) for model_id, payload in donors.items()
     }
     candidates: dict[int, dict[str, dict[str, Any]]] = {}
     for model_ids in profile_models.values():
@@ -2573,7 +2598,7 @@ def _build_bed_visual_donors(
 def _canonicalize_resource_refs(
     data: dict[str, Any], store: ProfileStore, slicer: SlicerType
 ) -> None:
-    """Ensure /out resource references are content-addressed sha256 refs."""
+    """Ensure staging resource references are content-addressed sha256 refs."""
     resource_store_dir = store.root / slicer.value / "_resources"
     if not resource_store_dir.exists():
         referenced = [
@@ -2590,8 +2615,7 @@ def _canonicalize_resource_refs(
     rs = ResourceStore(resource_store_dir)
 
     references: list[tuple[dict[str, Any], str]] = [
-        (data, key)
-        for key in ("bed_model", "bed_texture", "thumbnail", "hotend_model")
+        (data, key) for key in ("bed_model", "bed_texture", "thumbnail", "hotend_model")
     ]
     bed_assets = data.get("bed_assets")
     if isinstance(bed_assets, dict):
@@ -2718,7 +2742,7 @@ def _export_global_generic_filaments(
 ) -> None:
     """Export slicer-wide generic filament library profiles.
 
-    This restores the legacy ``out/brands/{slicer}/generic_filament_profiles.json``
+    This writes the staging ``brands/{slicer}/generic_filament_profiles.json``
     file consumed by the ecosystem importer.
     """
     generic_data: dict[str, dict[str, Any]] = {}
@@ -2738,7 +2762,7 @@ def _export_global_generic_filaments(
         if filament_vendor != "Generic":
             continue
 
-        entry = {"name": name, "data": fp_data}
+        entry = {"name": name, **_profile_payload(fp, fp_data)}
         if ofd_index:
             filament_type = fp_data.get("filament_type", "")
             if isinstance(filament_type, list):
@@ -2853,13 +2877,13 @@ def _write_import_manifest(
 
 
 def _write_resource_manifest(store: ProfileStore, output_dir: Path) -> None:
-    """Write a manifest for resolving sha256 resource refs from /out.
+    """Write a manifest for resolving sha256 resource refs from staging.
 
     Shape:
         {"sha256:{hash}": {path, filename, size, type}}
 
     The path is repo-relative, so the ecosystem importer can resolve assets from
-    the cloned profiles repository without duplicating them under /out.
+    the cloned profiles repository without duplicating them in staging.
     """
     manifest: dict[str, dict[str, Any]] = {}
 
@@ -2874,7 +2898,10 @@ def _write_resource_manifest(store: ProfileStore, output_dir: Path) -> None:
                 continue
             suffix = f".{meta['type']}" if meta.get("type") else ""
             manifest[ref_key] = {
-                "path": f"profiles/{slicer.value}/_resources/{hash_hex}{suffix}",
+                "path": (
+                    f"{store.root.name}/{slicer.value}/_resources/"
+                    f"{hash_hex}{suffix}"
+                ),
                 "filename": meta.get("filename", ""),
                 "source_path": meta.get("source_path", ""),
                 "size": meta.get("size", 0),
@@ -2890,6 +2917,7 @@ def run_mapping_pipeline(
     output_dir: Path,
     slicers: list[SlicerType] | None = None,
     ofd_path: Path | None = None,
+    engine_lock_path: Path | None = None,
 ) -> ModelMap:
     """
     Run the complete mapping pipeline: fetch SP data → match models →
@@ -2907,10 +2935,7 @@ def run_mapping_pipeline(
     Returns:
         The ModelMap for inspection/logging.
     """
-    # Build index
-    index = ProfileIndex(store)
     target_slicers = slicers or _MAPPING_SLICERS
-    index.build(target_slicers)
 
     # Build OFD index if path provided
     ofd_index = None
@@ -2921,13 +2946,22 @@ def run_mapping_pipeline(
         ofd_repo = OFDRepo(ofd_path)
         ofd_index = OFDFilamentIndex(ofd_repo)
 
-    # Fetch SimplyPrint model data
+    # Fetch SimplyPrint model data. Engine/profile compatibility is a committed
+    # input, never a read from the deployment this bundle may later update.
     logger.info("Fetching SimplyPrint model data...")
     sp_data = fetch_sp_model_data()
-    logger.info("Fetching SimplyPrint slicer versions...")
-    version_guards = fetch_sp_slicer_versions()
+    lock_path = engine_lock_path or Path("engines.lock.json")
+    targets = load_engine_targets(lock_path)
+    version_guards = {slicer: target.version for slicer, target in targets.items()}
+    lane_formats = {
+        lane.format
+        for target in targets.values()
+        for lane in (target.lanes or {}).values()
+    }
+    index = ProfileIndex(store)
+    index.build(target_slicers, excluded_formats=lane_formats)
     logger.info(
-        "Using SimplyPrint newest-version guards: %s",
+        "Using locked engine versions: %s",
         ", ".join(
             f"{slicer.value}={version}"
             for slicer, version in sorted(
@@ -2958,18 +2992,86 @@ def run_mapping_pipeline(
     logger.info("Mapping print profiles...")
     print_map = map_print_profiles(store, index, model_map, version_guards)
 
-    # Step 4: Export
-    logger.info("Exporting to %s ...", output_dir)
-    export_output(
-        model_map,
-        filament_map,
-        print_map,
-        store,
-        index,
-        output_dir,
-        ofd_index,
-        version_guards,
-        target_slicers,
-    )
+    with tempfile.TemporaryDirectory(prefix="sp-profile-bundle-") as directory:
+        staging = Path(directory)
+        base_root = staging / "base"
+        export_output(
+            model_map,
+            filament_map,
+            print_map,
+            store,
+            index,
+            base_root,
+            ofd_index,
+            version_guards,
+            target_slicers,
+        )
+        records = collect_records(base_root)
+        resource_manifests = [
+            json.loads((base_root / "resources.json").read_text(encoding="utf-8"))
+        ]
+        coverage: dict[str, Any] = {"base": model_map.coverage}
+
+        for slicer in target_slicers:
+            for lane_name, lane in (targets[slicer].lanes or {}).items():
+                if lane.version not in store.get_versions(slicer):
+                    raise ValueError(
+                        f"Missing {slicer.value} lane {lane_name} version {lane.version}"
+                    )
+                lane_index = ProfileIndex(store)
+                lane_index.build([slicer], required_formats={slicer: lane.format})
+                lane_guards = {slicer: lane.version}
+                lane_model_map = map_printer_models(
+                    store, lane_index, sp_data, [slicer], lane_guards
+                )
+                if not lane_model_map.variant_map.get(slicer.value):
+                    raise ValueError(
+                        f"Missing {slicer.value} lane {lane_name} format {lane.format}"
+                    )
+                lane_filaments = map_filament_profiles(
+                    store, lane_index, lane_model_map, ofd_index, lane_guards
+                )
+                lane_prints = map_print_profiles(
+                    store, lane_index, lane_model_map, lane_guards
+                )
+                lane_root = staging / lane_name
+                export_output(
+                    lane_model_map,
+                    lane_filaments,
+                    lane_prints,
+                    store,
+                    lane_index,
+                    lane_root,
+                    ofd_index,
+                    lane_guards,
+                    [slicer],
+                )
+                lane_records = collect_records(lane_root, lane_name)
+                duplicate_ids = records.keys() & lane_records.keys()
+                if duplicate_ids:
+                    raise ValueError(f"Duplicate lane record: {min(duplicate_ids)}")
+                records.update(lane_records)
+                resource_manifests.append(
+                    json.loads(
+                        (lane_root / "resources.json").read_text(encoding="utf-8")
+                    )
+                )
+                coverage[lane_name] = lane_model_map.coverage
+
+        apply_profile_overrides(records, store, targets)
+        resources = {
+            key: value
+            for manifest in resource_manifests
+            for key, value in manifest.items()
+        }
+        logger.info("Writing deterministic profile bundle to %s ...", output_dir)
+        write_bundle(
+            output_dir,
+            records,
+            targets,
+            resources,
+            store.root.parent,
+            coverage,
+        )
 
     return model_map

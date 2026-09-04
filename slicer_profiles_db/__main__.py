@@ -50,7 +50,6 @@ Examples:
 Environment variables:
   GITHUB_TOKEN              GitHub API token (increases rate limit)
   SP_API_URL                SimplyPrint printer model endpoint URL
-  SP_SLICER_VERSIONS_API_URL  Optional slicer-version URL (defaults to slicing-test)
   SLICER_PROFILES_STORE     Default store directory (instead of "profiles")
   SLICER_PROFILES_OVERLAY   Default overlay directory (instead of "overlay")
         """,
@@ -153,6 +152,11 @@ Environment variables:
         "--force",
         action="store_true",
         help="Re-process the version even if it already exists in the store",
+    )
+    pipeline_parser.add_argument(
+        "--legacy-source",
+        action="store_true",
+        help="Use the legacy INI source instead of an evaluated profile bundle",
     )
     pipeline_parser.add_argument(
         "--json", action="store_true", help="Output report as JSON"
@@ -315,8 +319,13 @@ Environment variables:
     map_parser.add_argument(
         "--output",
         "-o",
-        default="out",
-        help="Output directory path (default: out)",
+        default="dist/profiles.spdb",
+        help="Output bundle path (default: dist/profiles.spdb)",
+    )
+    map_parser.add_argument(
+        "--engine-lock",
+        default="engines.lock.json",
+        help="Committed engine target lock (default: engines.lock.json)",
     )
     map_parser.add_argument(
         "--skip",
@@ -548,6 +557,7 @@ def run_ingest(args: argparse.Namespace) -> int:
             version=args.version,
             profile_types=profile_types,
             force=getattr(args, "force", False),
+            use_evaluated=not getattr(args, "legacy_source", False),
         )
 
         if use_json:
@@ -843,7 +853,16 @@ def run_map(args: argparse.Namespace) -> int:
     ofd_path = Path(ofd_path_str) if ofd_path_str else None
 
     try:
-        model_map = run_mapping_pipeline(store, output_dir, slicers, ofd_path=ofd_path)
+        lock_path = Path(args.engine_lock)
+        if not lock_path.is_absolute():
+            lock_path = project_root / lock_path
+        model_map = run_mapping_pipeline(
+            store,
+            output_dir,
+            slicers,
+            ofd_path=ofd_path,
+            engine_lock_path=lock_path,
+        )
     except Exception:
         logger.exception("Mapping pipeline failed")
         return 1
@@ -855,7 +874,7 @@ def run_map(args: argparse.Namespace) -> int:
                     "models_mapped": len(model_map.model_to_profiles),
                     "failed_brands": sorted(model_map.failed_brands),
                     "failed_models": sorted(model_map.failed_models),
-                    "output_dir": str(output_dir),
+                    "output": str(output_dir),
                 },
                 indent=2,
             )
@@ -866,7 +885,7 @@ def run_map(args: argparse.Namespace) -> int:
         print(f"  Models mapped:  {len(model_map.model_to_profiles)}")
         print(f"  Failed brands:  {len(model_map.failed_brands)}")
         print(f"  Failed models:  {len(model_map.failed_models)}")
-        print(f"  Output:         {output_dir}")
+        print(f"  Bundle:         {output_dir}")
 
         if model_map.failed_brands:
             print("\n  Unmatched brands:")
