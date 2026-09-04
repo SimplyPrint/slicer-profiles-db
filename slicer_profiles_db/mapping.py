@@ -26,6 +26,7 @@ import requests
 from .brands import BRAND_MAPS, normalize_brand
 from .bundle import collect_records, write_bundle
 from .catalog import load_engine_targets
+from .compatibility import apply_profile_compatibility
 from .conditions import evaluate_printer_condition
 from .download import DEFAULT_CONFIGS
 from .index import (
@@ -2761,7 +2762,7 @@ def _export_global_generic_filaments(
         if filament_vendor != "Generic":
             continue
 
-        entry = {"name": name, "data": fp_data}
+        entry = {"name": name, **_profile_payload(fp, fp_data)}
         if ofd_index:
             filament_type = fp_data.get("filament_type", "")
             if isinstance(filament_type, list):
@@ -3054,6 +3055,7 @@ def run_mapping_pipeline(
                 )
                 coverage[lane_name] = lane_model_map.coverage
 
+        apply_profile_compatibility(records, store, targets)
         resources = {
             key: value
             for manifest in resource_manifests
