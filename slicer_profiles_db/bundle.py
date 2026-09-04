@@ -301,11 +301,44 @@ def write_bundle(
         resource_content[member] = content
 
     engine_counts: dict[tuple[str, str | None], int] = {}
+    compatibility_counts: dict[tuple[str, str], dict[str, int]] = {}
+    declared_abis = {
+        slicer.value: {
+            compatibility.gcode_abi for compatibility in target.compatibility
+        }
+        for slicer, target in targets.items()
+    }
     for record in ordered:
         engine = str(record["engine"])
         lane = record.get("catalog_lane")
         key = (engine, str(lane) if lane is not None else None)
         engine_counts[key] = engine_counts.get(key, 0) + 1
+        for abi, delta in (
+            record.get("compat", {}).items()
+            if isinstance(record.get("compat"), Mapping)
+            else []
+        ):
+            if not isinstance(abi, str) or not isinstance(delta, Mapping):
+                raise TypeError(f"Invalid compatibility delta for {record['id']}")
+            replacements = delta.get("set", {})
+            removals = delta.get("unset", [])
+            if (
+                abi not in declared_abis.get(engine, set())
+                or not isinstance(replacements, Mapping)
+                or not all(isinstance(key, str) for key in replacements)
+                or not isinstance(removals, list)
+                or not all(isinstance(key, str) for key in removals)
+                or set(replacements) & set(removals)
+                or not replacements
+                and not removals
+            ):
+                raise ValueError(f"Invalid compatibility delta for {record['id']}")
+            counts = compatibility_counts.setdefault(
+                (engine, abi), {"records": 0, "set": 0, "unset": 0}
+            )
+            counts["records"] += 1
+            counts["set"] += len(replacements)
+            counts["unset"] += len(removals)
     manifest = {
         "coverage": coverage,
         "engines": {
@@ -313,6 +346,16 @@ def write_bundle(
                 "gcode_abi": target.gcode_abi,
                 "records": engine_counts.get((slicer.value, None), 0),
                 "version": target.version,
+                "compatibility": {
+                    compatibility.gcode_abi: {
+                        **compatibility_counts.get(
+                            (slicer.value, compatibility.gcode_abi),
+                            {"records": 0, "set": 0, "unset": 0},
+                        ),
+                        "version": compatibility.version,
+                    }
+                    for compatibility in target.compatibility
+                },
                 "lanes": {
                     lane: {
                         "format": lane_target.format,

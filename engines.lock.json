@@ -2,7 +2,40 @@
     "schema_version": 2,
     "engines": {
         "anycubicslicer": {"version": "2.3.0", "gcode_abi": "bambu-profile-gcode/v1"},
-        "bambustudio": {"version": "02.07.01.62", "gcode_abi": "bambu-profile-gcode/v1"},
+        "bambustudio": {
+            "version": "02.08.02.61",
+            "gcode_abi": "bambu-profile-gcode/nightly",
+            "setting_schema": {
+                "url": "https://raw.githubusercontent.com/SimplyPrint/slicer-builds/03f3ed7c11b39a4ad992f9f4ceb6403e8e9560b7/slicers/BambuStudio/out/nightly/print_config_def.json",
+                "sha256": "8fcc6c40820b23413543edfc864040b79fefda79813f0fd48a490038d243f78e"
+            },
+            "compatibility": [
+                {
+                    "version": "02.07.01.62",
+                    "gcode_abi": "bambu-profile-gcode/02.07.01.62",
+                    "setting_schema": {
+                        "url": "https://raw.githubusercontent.com/SimplyPrint/slicer-builds/03f3ed7c11b39a4ad992f9f4ceb6403e8e9560b7/slicers/BambuStudio/out/v02.07.01.62/print_config_def.json",
+                        "sha256": "ea31c03ac6755c4b89e83a4bab7866e2a1771ec65088317fa72942ad4135ebd9"
+                    }
+                },
+                {
+                    "version": "02.07.00.55",
+                    "gcode_abi": "bambu-profile-gcode/02.07.00.55",
+                    "setting_schema": {
+                        "url": "https://raw.githubusercontent.com/SimplyPrint/slicer-builds/03f3ed7c11b39a4ad992f9f4ceb6403e8e9560b7/slicers/BambuStudio/out/v02.07.00.55/print_config_def.json",
+                        "sha256": "40e1b241efecebd1d495420defecebce82bf9b4217b2dab89ae46b4497579070"
+                    }
+                },
+                {
+                    "version": "02.06.01.55",
+                    "gcode_abi": "bambu-profile-gcode/02.06.01.55",
+                    "setting_schema": {
+                        "url": "https://raw.githubusercontent.com/SimplyPrint/slicer-builds/03f3ed7c11b39a4ad992f9f4ceb6403e8e9560b7/slicers/BambuStudio/out/v02.06.01.55/print_config_def.json",
+                        "sha256": "a76049f92aa1d4044090ac359d9cf8c4a74acd9925a1caefa14471feb7dd2e03"
+                    }
+                }
+            ]
+        },
         "crealityprint": {"version": "7.2.0", "gcode_abi": "bambu-profile-gcode/v1"},
         "cura": {"version": "5.13.0", "gcode_abi": "cura-profile-gcode/v1"},
         "elegooslicer": {"version": "1.5.2.2", "gcode_abi": "bambu-profile-gcode/v1"},

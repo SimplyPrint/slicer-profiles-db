@@ -3,7 +3,12 @@ import json
 import zipfile
 
 from slicer_profiles_db.bundle import collect_records, write_bundle
-from slicer_profiles_db.catalog import EngineTarget, LaneTarget
+from slicer_profiles_db.catalog import (
+    CompatibilityTarget,
+    EngineTarget,
+    LaneTarget,
+    SettingSchemaSource,
+)
 from slicer_profiles_db.models import SlicerType
 
 
@@ -173,3 +178,65 @@ def test_bundle_rejects_incomplete_model_coverage(tmp_path):
         assert "Incomplete base model coverage" in str(error)
     else:
         raise AssertionError("incomplete coverage must fail the build")
+
+
+def test_bundle_rejects_undeclared_compatibility_abi(tmp_path):
+    staging = tmp_path / "staging"
+    _write(
+        staging / "models/1/orcaslicer/print_profiles.json",
+        [{"name": "Quality", "data": {"speed": 60}}],
+    )
+    records = collect_records(staging)
+    next(iter(records.values()))["compat"] = {"unknown/v1": {"unset": ["new_setting"]}}
+
+    try:
+        write_bundle(
+            tmp_path / "invalid.spdb",
+            records,
+            {SlicerType.ORCASLICER: EngineTarget(version="2.4.2")},
+            {},
+            tmp_path,
+            _coverage(),
+        )
+    except ValueError as error:
+        assert "Invalid compatibility delta" in str(error)
+    else:
+        raise AssertionError("undeclared compatibility ABI must fail the build")
+
+
+def test_bundle_reports_sparse_compatibility_counts(tmp_path):
+    staging = tmp_path / "staging"
+    _write(
+        staging / "models/1/orcaslicer/print_profiles.json",
+        [{"name": "Quality", "data": {"speed": 60}}],
+    )
+    records = collect_records(staging)
+    next(iter(records.values()))["compat"] = {
+        "orca/v1": {"set": {"legacy": True}, "unset": ["new_setting"]}
+    }
+    schema = SettingSchemaSource(url="https://example.com/schema", sha256="a" * 64)
+    manifest = write_bundle(
+        tmp_path / "compat.spdb",
+        records,
+        {
+            SlicerType.ORCASLICER: EngineTarget(
+                version="2.4.2",
+                setting_schema=schema,
+                compatibility=(
+                    CompatibilityTarget(
+                        version="2.3.1", gcode_abi="orca/v1", setting_schema=schema
+                    ),
+                ),
+            )
+        },
+        {},
+        tmp_path,
+        _coverage(),
+    )
+
+    assert manifest["engines"]["orcaslicer"]["compatibility"]["orca/v1"] == {
+        "records": 1,
+        "set": 1,
+        "unset": 1,
+        "version": "2.3.1",
+    }
