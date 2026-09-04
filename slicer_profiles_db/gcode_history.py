@@ -51,27 +51,19 @@ def build_gcode_history(
                 continue
             previous = profile.evaluate_at_or_before(compatibility.version)
             previous_value = previous.get(setting, _MISSING)
-            if previous_value == current_value:
+            if previous_value is _MISSING or previous_value == current_value:
                 continue
-            identity = (
-                "__absent__"
-                if previous_value is _MISSING
-                else json.dumps(
-                    previous_value,
-                    ensure_ascii=False,
-                    separators=(",", ":"),
-                    sort_keys=True,
-                )
+            identity = json.dumps(
+                previous_value,
+                ensure_ascii=False,
+                separators=(",", ":"),
+                sort_keys=True,
             )
             rule = groups.setdefault(
                 identity,
                 {
                     "abis": [],
-                    **(
-                        {"absent": True}
-                        if previous_value is _MISSING
-                        else {"value": previous_value}
-                    ),
+                    "value": previous_value,
                 },
             )
             rule["abis"].append(compatibility.gcode_abi)
