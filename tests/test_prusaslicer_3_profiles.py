@@ -94,7 +94,7 @@ def test_evaluated_bundle_reduces_tool_profiles_to_standard_process_profiles(tmp
         "print": {"id": "quality"},
         "tools": [{"id": "speed"}],
     }
-    assert speed.setting_scopes["example_setting"] == "extruder.0"
+    assert speed.setting_scopes == {"example_setting": "extruder.0"}
 
     store = ProfileStore(tmp_path / "store")
     report = store.ingest_profiles(SlicerType.PRUSASLICER, "3.0.0-alpha11", parsed)
