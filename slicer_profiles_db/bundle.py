@@ -17,6 +17,7 @@ from .models import SlicerType
 logger = logging.getLogger(__name__)
 
 _FIXED_ZIP_TIME = (1980, 1, 1, 0, 0, 0)
+_MISSING = object()
 
 
 def _json_bytes(value: Any) -> bytes:
@@ -258,100 +259,90 @@ def _validate_coverage(coverage: Mapping[str, Any]) -> None:
             raise ValueError(f"Inconsistent {snapshot} model coverage totals")
 
 
-def _validate_setting_history(
-    history: Mapping[str, Any], record_id: Any, target: EngineTarget
-) -> set[str]:
-    declared = {item.gcode_abi for item in target.gcode_targets}
-    owner_abis: set[str] = set()
-    for setting, rules in history.items():
-        if (
-            setting not in target.gcode_settings
-            or not isinstance(rules, list)
-            or not rules
-        ):
-            raise ValueError(f"Invalid G-code history for {record_id}")
-        setting_abis: set[str] = set()
-        values: set[bytes] = set()
-        for rule in rules:
-            if not isinstance(rule, Mapping):
-                raise TypeError(f"Invalid G-code history for {record_id}")
-            abis = rule.get("abis")
-            if (
-                set(rule) != {"abis", "value"}
-                or not isinstance(abis, list)
-                or not abis
-                or not all(isinstance(abi, str) for abi in abis)
-                or len(set(abis)) != len(abis)
-                or not set(abis) <= declared
-                or setting_abis & set(abis)
-            ):
-                raise ValueError(f"Invalid G-code history for {record_id}")
-            identity = _json_bytes(rule["value"])
-            if identity in values:
-                raise ValueError(f"Duplicate G-code value for {record_id}")
-            values.add(identity)
-            setting_abis.update(abis)
-            owner_abis.update(abis)
-    return owner_abis
-
-
-def _validate_gcode_history(
+def _validate_profile_overrides(
     record: Mapping[str, Any], target: EngineTarget
 ) -> dict[str, dict[str, int]]:
     profile = record.get("profile")
-    if not isinstance(profile, Mapping) or "gcode_history" not in profile:
+    if not isinstance(profile, Mapping) or "profile_overrides" not in profile:
         return {}
-    payload = profile["gcode_history"]
-    histories: list[Mapping[str, Any]] = []
-    if record.get("kind") == "machine":
-        variants = profile.get("variants")
-        if (
-            not isinstance(variants, Mapping)
-            or not isinstance(payload, list)
-            or not payload
-        ):
-            raise TypeError(f"Invalid G-code history for {record['id']}")
-        seen_variants: set[str] = set()
-        seen_histories: set[bytes] = set()
-        for group in payload:
-            if not isinstance(group, Mapping) or set(group) != {"variants", "settings"}:
-                raise TypeError(f"Invalid G-code history for {record['id']}")
-            group_variants = group["variants"]
-            settings = group["settings"]
-            if (
-                not isinstance(group_variants, list)
-                or not group_variants
-                or not all(isinstance(variant, str) for variant in group_variants)
-                or len(set(group_variants)) != len(group_variants)
-                or not set(group_variants) <= set(variants)
-                or seen_variants & set(group_variants)
-                or not isinstance(settings, Mapping)
-                or not settings
-            ):
-                raise ValueError(f"Invalid G-code history for {record['id']}")
-            identity = _json_bytes(settings)
-            if identity in seen_histories:
-                raise ValueError(f"Duplicate G-code history for {record['id']}")
-            seen_histories.add(identity)
-            seen_variants.update(group_variants)
-            histories.append(settings)
-    elif isinstance(payload, Mapping) and payload:
-        histories.append(payload)
-    else:
-        raise TypeError(f"Invalid G-code history for {record['id']}")
-
+    payload = profile["profile_overrides"]
+    variants = profile.get("variants") if record.get("kind") == "machine" else None
+    if (
+        not isinstance(payload, list)
+        or not payload
+        or (record.get("kind") == "machine" and not isinstance(variants, Mapping))
+    ):
+        raise TypeError(f"Invalid profile overrides for {record['id']}")
+    declared = {item.profile_abi for item in target.profile_targets}
+    allowed = set(target.profile_override_settings)
     counts: dict[str, dict[str, int]] = {}
-    owner_abis: set[str] = set()
-    for history in histories:
-        abis = _validate_setting_history(history, record["id"], target)
-        owner_abis.update(abis)
-        for setting_rules in history.values():
-            for rule in setting_rules:
-                for abi in rule["abis"]:
-                    counts.setdefault(abi, {"owners": 0, "settings": 0})[
-                        "settings"
-                    ] += 1
-    for abi in owner_abis:
+    owner_targets: set[str] = set()
+    seen: set[tuple[str, str, str]] = set()
+    seen_values: set[tuple[str, str, bytes]] = set()
+    grouped: set[bytes] = set()
+    for override in payload:
+        expected = {"targets", "settings"} | (
+            {"variants"} if variants is not None else set()
+        )
+        targets = override.get("targets") if isinstance(override, Mapping) else None
+        settings = override.get("settings") if isinstance(override, Mapping) else None
+        block_variants = (
+            override.get("variants")
+            if variants is not None and isinstance(override, Mapping)
+            else [""]
+        )
+        if (
+            not isinstance(override, Mapping)
+            or set(override) != expected
+            or not isinstance(targets, list)
+            or not targets
+            or not all(isinstance(abi, str) for abi in targets)
+            or len(set(targets)) != len(targets)
+            or not set(targets) <= declared
+            or not isinstance(settings, Mapping)
+            or not settings
+            or not set(settings) <= allowed
+            or not isinstance(block_variants, list)
+            or not block_variants
+            or not all(isinstance(variant, str) for variant in block_variants)
+            or len(set(block_variants)) != len(block_variants)
+            or (variants is not None and not set(block_variants) <= set(variants))
+        ):
+            raise ValueError(f"Invalid profile overrides for {record['id']}")
+        identity = _json_bytes({"settings": settings, "targets": targets})
+        if identity in grouped:
+            raise ValueError(f"Duplicate profile override block for {record['id']}")
+        grouped.add(identity)
+        for variant in block_variants:
+            current = (
+                profile.get("data")
+                if variants is None
+                else variants[variant].get("data")
+            )
+            if not isinstance(current, Mapping):
+                raise TypeError(f"Invalid profile owner for {record['id']}")
+            for setting, value in settings.items():
+                if current.get(setting, _MISSING) == value:
+                    raise ValueError(f"Unchanged profile override for {record['id']}")
+                value_key = (variant, str(setting), _json_bytes(value))
+                if value_key in seen_values:
+                    raise ValueError(
+                        f"Duplicate profile override value for {record['id']}"
+                    )
+                seen_values.add(value_key)
+                for abi in targets:
+                    key = (variant, str(setting), abi)
+                    if key in seen:
+                        raise ValueError(
+                            f"Overlapping profile override for {record['id']}"
+                        )
+                    seen.add(key)
+        for abi in targets:
+            owner_targets.add(abi)
+            counts.setdefault(abi, {"owners": 0, "settings": 0})["settings"] += len(
+                settings
+            )
+    for abi in owner_targets:
         counts.setdefault(abi, {"owners": 0, "settings": 0})["owners"] += 1
     return counts
 
@@ -399,7 +390,7 @@ def write_bundle(
         resource_content[member] = content
 
     engine_counts: dict[tuple[str, str | None], int] = {}
-    gcode_counts: dict[tuple[str, str], dict[str, int]] = {}
+    override_counts: dict[tuple[str, str], dict[str, int]] = {}
     for record in ordered:
         engine = str(record["engine"])
         lane = record.get("catalog_lane")
@@ -409,8 +400,8 @@ def write_bundle(
             target = targets[SlicerType(engine)]
         except (KeyError, ValueError) as error:
             raise ValueError(f"Unknown record engine {engine}") from error
-        for abi, actual in _validate_gcode_history(record, target).items():
-            counts = gcode_counts.setdefault(
+        for abi, actual in _validate_profile_overrides(record, target).items():
+            counts = override_counts.setdefault(
                 (engine, abi), {"owners": 0, "settings": 0}
             )
             counts["owners"] += actual["owners"]
@@ -420,17 +411,18 @@ def write_bundle(
         "engines": {
             slicer.value: {
                 "gcode_abi": target.gcode_abi,
+                "profile_override_settings": list(target.profile_override_settings),
                 "records": engine_counts.get((slicer.value, None), 0),
                 "version": target.version,
-                "gcode_targets": {
-                    compatibility.gcode_abi: {
-                        **gcode_counts.get(
-                            (slicer.value, compatibility.gcode_abi),
+                "profile_targets": {
+                    compatibility.profile_abi: {
+                        **override_counts.get(
+                            (slicer.value, compatibility.profile_abi),
                             {"owners": 0, "settings": 0},
                         ),
                         "version": compatibility.version,
                     }
-                    for compatibility in target.gcode_targets
+                    for compatibility in target.profile_targets
                 },
                 "lanes": {
                     lane: {
@@ -450,7 +442,7 @@ def write_bundle(
         "profiles_sha256": hashlib.sha256(profiles_content).hexdigest(),
         "records": len(ordered),
         "resources": resources,
-        "schema_version": 3,
+        "schema_version": 4,
     }
     manifest_content = _json_bytes(manifest) + b"\n"
     path.parent.mkdir(parents=True, exist_ok=True)
