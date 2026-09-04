@@ -258,6 +258,107 @@ def _validate_coverage(coverage: Mapping[str, Any]) -> None:
             raise ValueError(f"Inconsistent {snapshot} model coverage totals")
 
 
+def _validate_setting_history(
+    history: Mapping[str, Any], record_id: Any, target: EngineTarget
+) -> set[str]:
+    declared = {item.gcode_abi for item in target.gcode_targets}
+    owner_abis: set[str] = set()
+    for setting, rules in history.items():
+        if (
+            setting not in target.gcode_settings
+            or not isinstance(rules, list)
+            or not rules
+        ):
+            raise ValueError(f"Invalid G-code history for {record_id}")
+        setting_abis: set[str] = set()
+        values: set[bytes] = set()
+        for rule in rules:
+            if not isinstance(rule, Mapping):
+                raise TypeError(f"Invalid G-code history for {record_id}")
+            abis = rule.get("abis")
+            has_value = "value" in rule
+            absent = rule.get("absent") is True
+            if (
+                set(rule) - {"abis", "value", "absent"}
+                or not isinstance(abis, list)
+                or not abis
+                or not all(isinstance(abi, str) for abi in abis)
+                or len(set(abis)) != len(abis)
+                or not set(abis) <= declared
+                or bool(has_value) == bool(absent)
+                or setting_abis & set(abis)
+            ):
+                raise ValueError(f"Invalid G-code history for {record_id}")
+            identity = b"__absent__" if absent else _json_bytes(rule.get("value"))
+            if identity in values:
+                raise ValueError(f"Duplicate G-code value for {record_id}")
+            values.add(identity)
+            setting_abis.update(abis)
+            owner_abis.update(abis)
+    return owner_abis
+
+
+def _validate_gcode_history(
+    record: Mapping[str, Any], target: EngineTarget
+) -> dict[str, dict[str, int]]:
+    profile = record.get("profile")
+    if not isinstance(profile, Mapping) or "gcode_history" not in profile:
+        return {}
+    payload = profile["gcode_history"]
+    histories: list[Mapping[str, Any]] = []
+    if record.get("kind") == "machine":
+        variants = profile.get("variants")
+        if (
+            not isinstance(variants, Mapping)
+            or not isinstance(payload, list)
+            or not payload
+        ):
+            raise TypeError(f"Invalid G-code history for {record['id']}")
+        seen_variants: set[str] = set()
+        seen_histories: set[bytes] = set()
+        for group in payload:
+            if not isinstance(group, Mapping) or set(group) != {"variants", "settings"}:
+                raise TypeError(f"Invalid G-code history for {record['id']}")
+            group_variants = group["variants"]
+            settings = group["settings"]
+            if (
+                not isinstance(group_variants, list)
+                or not group_variants
+                or not all(isinstance(variant, str) for variant in group_variants)
+                or len(set(group_variants)) != len(group_variants)
+                or not set(group_variants) <= set(variants)
+                or seen_variants & set(group_variants)
+                or not isinstance(settings, Mapping)
+                or not settings
+            ):
+                raise ValueError(f"Invalid G-code history for {record['id']}")
+            identity = _json_bytes(settings)
+            if identity in seen_histories:
+                raise ValueError(f"Duplicate G-code history for {record['id']}")
+            seen_histories.add(identity)
+            seen_variants.update(group_variants)
+            histories.append(settings)
+    elif isinstance(payload, Mapping) and payload:
+        histories.append(payload)
+    else:
+        raise TypeError(f"Invalid G-code history for {record['id']}")
+
+    counts: dict[str, dict[str, int]] = {}
+    owner_abis: set[str] = set()
+    for history in histories:
+        abis = _validate_setting_history(history, record["id"], target)
+        owner_abis.update(abis)
+        for setting_rules in history.values():
+            for rule in setting_rules:
+                for abi in rule["abis"]:
+                    counts.setdefault(abi, {"owners": 0, "settings": 0})[
+                        "settings"
+                    ] += 1
+    for abi in owner_abis:
+        counts.setdefault(abi, {"owners": 0, "settings": 0})["owners"] += 1
+    return counts
+
+
 def write_bundle(
     path: Path,
     records: Mapping[str, Mapping[str, Any]],
@@ -301,44 +402,22 @@ def write_bundle(
         resource_content[member] = content
 
     engine_counts: dict[tuple[str, str | None], int] = {}
-    compatibility_counts: dict[tuple[str, str], dict[str, int]] = {}
-    declared_abis = {
-        slicer.value: {
-            compatibility.gcode_abi for compatibility in target.compatibility
-        }
-        for slicer, target in targets.items()
-    }
+    gcode_counts: dict[tuple[str, str], dict[str, int]] = {}
     for record in ordered:
         engine = str(record["engine"])
         lane = record.get("catalog_lane")
         key = (engine, str(lane) if lane is not None else None)
         engine_counts[key] = engine_counts.get(key, 0) + 1
-        for abi, delta in (
-            record.get("compat", {}).items()
-            if isinstance(record.get("compat"), Mapping)
-            else []
-        ):
-            if not isinstance(abi, str) or not isinstance(delta, Mapping):
-                raise TypeError(f"Invalid compatibility delta for {record['id']}")
-            replacements = delta.get("set", {})
-            removals = delta.get("unset", [])
-            if (
-                abi not in declared_abis.get(engine, set())
-                or not isinstance(replacements, Mapping)
-                or not all(isinstance(key, str) for key in replacements)
-                or not isinstance(removals, list)
-                or not all(isinstance(key, str) for key in removals)
-                or set(replacements) & set(removals)
-                or not replacements
-                and not removals
-            ):
-                raise ValueError(f"Invalid compatibility delta for {record['id']}")
-            counts = compatibility_counts.setdefault(
-                (engine, abi), {"records": 0, "set": 0, "unset": 0}
+        try:
+            target = targets[SlicerType(engine)]
+        except (KeyError, ValueError) as error:
+            raise ValueError(f"Unknown record engine {engine}") from error
+        for abi, actual in _validate_gcode_history(record, target).items():
+            counts = gcode_counts.setdefault(
+                (engine, abi), {"owners": 0, "settings": 0}
             )
-            counts["records"] += 1
-            counts["set"] += len(replacements)
-            counts["unset"] += len(removals)
+            counts["owners"] += actual["owners"]
+            counts["settings"] += actual["settings"]
     manifest = {
         "coverage": coverage,
         "engines": {
@@ -346,15 +425,15 @@ def write_bundle(
                 "gcode_abi": target.gcode_abi,
                 "records": engine_counts.get((slicer.value, None), 0),
                 "version": target.version,
-                "compatibility": {
+                "gcode_targets": {
                     compatibility.gcode_abi: {
-                        **compatibility_counts.get(
+                        **gcode_counts.get(
                             (slicer.value, compatibility.gcode_abi),
-                            {"records": 0, "set": 0, "unset": 0},
+                            {"owners": 0, "settings": 0},
                         ),
                         "version": compatibility.version,
                     }
-                    for compatibility in target.compatibility
+                    for compatibility in target.gcode_targets
                 },
                 "lanes": {
                     lane: {
@@ -374,7 +453,7 @@ def write_bundle(
         "profiles_sha256": hashlib.sha256(profiles_content).hexdigest(),
         "records": len(ordered),
         "resources": resources,
-        "schema_version": 2,
+        "schema_version": 3,
     }
     manifest_content = _json_bytes(manifest) + b"\n"
     path.parent.mkdir(parents=True, exist_ok=True)
