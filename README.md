@@ -31,11 +31,12 @@ Engine targets live in `engines.lock.json`. A catalog lane is a complete snapsho
 selected by an authoritative source format and is used only for a real topology
 boundary such as PrusaSlicer 3. Ordinary setting compatibility is derived from
 the versioned setting definitions and is never copied into profile rows. Only
-historical G-code is attached to its owning machine, filament, or process profile;
-equal values for several engine ABIs are stored once. BambuStudio currently
-publishes canonical nightly settings with sparse profile overrides for older releases
-and its two other supported releases. User-created SimplyPrint profiles remain
-override-free.
+allowlisted, profile-specific historical values are attached to their owning machine,
+filament, or process profile; equal values for several engine ABIs are stored once.
+BambuStudio currently needs overrides only for G-code settings, but the mechanism is
+setting-agnostic. It publishes canonical nightly settings with sparse overrides for
+older releases and its two other supported releases. User-created SimplyPrint
+profiles remain override-free.
 
 ## Cura resources
 
