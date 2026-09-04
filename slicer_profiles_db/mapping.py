@@ -2898,7 +2898,10 @@ def _write_resource_manifest(store: ProfileStore, output_dir: Path) -> None:
                 continue
             suffix = f".{meta['type']}" if meta.get("type") else ""
             manifest[ref_key] = {
-                "path": f"profiles/{slicer.value}/_resources/{hash_hex}{suffix}",
+                "path": (
+                    f"{store.root.name}/{slicer.value}/_resources/"
+                    f"{hash_hex}{suffix}"
+                ),
                 "filename": meta.get("filename", ""),
                 "source_path": meta.get("source_path", ""),
                 "size": meta.get("size", 0),

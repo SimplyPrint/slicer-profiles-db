@@ -240,8 +240,7 @@ class PrusaSlicerParser(BaseParser):
                     storage_key=storage_key,
                     context=context,
                     setting_scopes={
-                        key: "extruder.0" if key in tool_settings else "global"
-                        for key in base.keys() | tool_settings.keys()
+                        key: "extruder.0" for key in tool_settings
                     },
                 )
 

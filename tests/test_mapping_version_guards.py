@@ -1,3 +1,4 @@
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -21,6 +22,7 @@ from slicer_profiles_db.mapping import (
     _public_variant_payload,
     _same_variant,
     _write_import_manifest,
+    _write_resource_manifest,
     map_print_profiles,
     map_printer_models,
 )
@@ -31,9 +33,33 @@ from slicer_profiles_db.models import (
     StoredProfile,
 )
 from slicer_profiles_db.parsers.cura import _material_compatibility_aliases
+from slicer_profiles_db.resources import ResourceStore
+from slicer_profiles_db.store import ProfileStore
 
 
 class MappingVersionGuardTests(unittest.TestCase):
+    def test_resource_manifest_uses_configured_store_directory(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            store = ProfileStore(root / "custom-store")
+            resources = ResourceStore(
+                store.root / SlicerType.PRUSASLICER.value / "_resources"
+            )
+            source = root / "bed.stl"
+            source.write_bytes(b"solid bed\nendsolid bed\n")
+            digest = resources.store(source)
+            resources.save_manifest()
+            output = root / "output"
+            output.mkdir()
+
+            _write_resource_manifest(store, output)
+
+            manifest = json.loads((output / "resources.json").read_text())
+            self.assertEqual(
+                manifest[f"sha256:{digest}"]["path"],
+                f"custom-store/prusaslicer/_resources/{digest}.stl",
+            )
+
     def test_prusa_evaluated_print_variants_with_same_name_are_not_collapsed(
         self,
     ) -> None:
