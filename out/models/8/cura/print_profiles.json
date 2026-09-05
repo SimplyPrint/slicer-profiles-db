@@ -9,108 +9,6 @@
                 "ultimaker2_plus"
             ],
             "material_native_ids": [
-                "generic_cpe",
-                "generic_cpe_175"
-            ],
-            "variant_names": [
-                "0.25 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.25"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_cpe",
-                    "generic_cpe_175"
-                ],
-                "variant_names": [
-                    "0.25 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_High_Quality",
-            "intent_category": null,
-            "material_id": "generic_cpe",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpe_0.25_normal",
-            "quality_type": "high",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.25 mm"
-        },
-        "data": {
-            "cool_fan_speed_min": 20.0,
-            "infill_sparse_density": 22,
-            "layer_height": 0.06,
-            "speed_print": 30,
-            "top_bottom_thickness": 0.72
-        },
-        "name": "Extra Fine · @ultimaker2_plus · 0.25 mm · generic_cpe",
-        "setting_scopes": {
-            "cool_fan_speed_min": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_height": "global",
-            "speed_print": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.25",
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": null,
-            "intent_category": null,
-            "material_id": null,
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Coarse_Quality",
-            "quality_type": "coarse",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": null
-        },
-        "data": {
-            "layer_height": 0.4
-        },
-        "name": "Coarse Quality · @ultimaker2_plus",
-        "setting_scopes": {
-            "layer_height": "global"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.25,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
                 "generic_tpu",
                 "generic_tpu_175"
             ],
@@ -191,6 +89,156 @@
             "support_angle": "extruder.0",
             "support_enable": "global",
             "support_z_distance": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.25,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_nylon",
+                "generic_nylon_175"
+            ],
+            "variant_names": [
+                "0.25 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.25"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_nylon",
+                    "generic_nylon_175"
+                ],
+                "variant_names": [
+                    "0.25 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Normal_Quality",
+            "intent_category": null,
+            "material_id": "generic_nylon",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_nylon_0.25_normal",
+            "quality_type": "normal",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.25 mm"
+        },
+        "data": {
+            "adhesion_type": "raft",
+            "brim_line_count": 8,
+            "cool_fan_speed": 60,
+            "cool_fan_speed_min": 35.0,
+            "infill_overlap": 5,
+            "infill_sparse_density": 25,
+            "layer_0_z_overlap": 0.1,
+            "layer_height": 0.1,
+            "raft_airgap": 0.15,
+            "retraction_hop_enabled": 0.2,
+            "speed_print": 40,
+            "speed_support": 40,
+            "speed_topbottom": 35,
+            "speed_travel": 150,
+            "speed_wall_0": 20,
+            "speed_wall_x": 40,
+            "support_enable": true,
+            "support_z_distance": 0.2,
+            "top_bottom_thickness": 1.2
+        },
+        "name": "Fine · @ultimaker2_plus · 0.25 mm · generic_nylon",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "brim_line_count": "extruder.0",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "infill_overlap": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
+            "layer_height": "global",
+            "raft_airgap": "extruder.0",
+            "retraction_hop_enabled": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_support": "extruder.0",
+            "speed_topbottom": "extruder.0",
+            "speed_travel": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "speed_wall_x": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.25,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_cpe",
+                "generic_cpe_175"
+            ],
+            "variant_names": [
+                "0.25 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.25"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_cpe",
+                    "generic_cpe_175"
+                ],
+                "variant_names": [
+                    "0.25 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_High_Quality",
+            "intent_category": null,
+            "material_id": "generic_cpe",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpe_0.25_normal",
+            "quality_type": "high",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.25 mm"
+        },
+        "data": {
+            "cool_fan_speed_min": 20.0,
+            "infill_sparse_density": 22,
+            "layer_height": 0.06,
+            "speed_print": 30,
+            "top_bottom_thickness": 0.72
+        },
+        "name": "Extra Fine · @ultimaker2_plus · 0.25 mm · generic_cpe",
+        "setting_scopes": {
+            "cool_fan_speed_min": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_height": "global",
+            "speed_print": "extruder.0",
             "top_bottom_thickness": "extruder.0"
         }
     },
@@ -332,91 +380,43 @@
     },
     {
         "attributes": {
-            "nozzle_diameter": 0.25,
             "nozzle_volume_type": "standard"
         },
         "compatibility": {
             "machine_definition_ids": [
                 "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_nylon",
-                "generic_nylon_175"
-            ],
-            "variant_names": [
-                "0.25 mm"
             ]
         },
         "compatible_printers": {
             "Ultimaker 2+": [
-                "0.25"
+                "0.25",
+                "0.4",
+                "0.6",
+                "0.8"
             ]
         },
         "context": {
             "compatibility": {
                 "machine_definition_ids": [
                     "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_nylon",
-                    "generic_nylon_175"
-                ],
-                "variant_names": [
-                    "0.25 mm"
                 ]
             },
             "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Normal_Quality",
+            "global_quality_id": null,
             "intent_category": null,
-            "material_id": "generic_nylon",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_nylon_0.25_normal",
-            "quality_type": "normal",
+            "material_id": null,
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Coarse_Quality",
+            "quality_type": "coarse",
             "resource_version": "5.13.0",
             "source_kind": "quality",
-            "variant_name": "0.25 mm"
+            "variant_name": null
         },
         "data": {
-            "adhesion_type": "raft",
-            "brim_line_count": 8,
-            "cool_fan_speed": 60,
-            "cool_fan_speed_min": 35.0,
-            "infill_overlap": 5,
-            "infill_sparse_density": 25,
-            "layer_0_z_overlap": 0.1,
-            "layer_height": 0.1,
-            "raft_airgap": 0.15,
-            "retraction_hop_enabled": 0.2,
-            "speed_print": 40,
-            "speed_support": 40,
-            "speed_topbottom": 35,
-            "speed_travel": 150,
-            "speed_wall_0": 20,
-            "speed_wall_x": 40,
-            "support_enable": true,
-            "support_z_distance": 0.2,
-            "top_bottom_thickness": 1.2
+            "layer_height": 0.4
         },
-        "name": "Fine · @ultimaker2_plus · 0.25 mm · generic_nylon",
+        "name": "Coarse Quality · @ultimaker2_plus",
         "setting_scopes": {
-            "adhesion_type": "global",
-            "brim_line_count": "extruder.0",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "infill_overlap": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
-            "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "retraction_hop_enabled": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_support": "extruder.0",
-            "speed_topbottom": "extruder.0",
-            "speed_travel": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "speed_wall_x": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
+            "layer_height": "global"
         }
     },
     {
@@ -429,8 +429,8 @@
                 "ultimaker2_plus"
             ],
             "material_native_ids": [
-                "generic_pla",
-                "generic_pla_175"
+                "generic_pc",
+                "generic_pc_175"
             ],
             "variant_names": [
                 "0.25 mm"
@@ -447,8 +447,8 @@
                     "ultimaker2_plus"
                 ],
                 "material_native_ids": [
-                    "generic_pla",
-                    "generic_pla_175"
+                    "generic_pc",
+                    "generic_pc_175"
                 ],
                 "variant_names": [
                     "0.25 mm"
@@ -457,31 +457,45 @@
             "definition": "ultimaker2_plus",
             "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_High_Quality",
             "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/pla_0.25_normal",
+            "material_id": "generic_pc",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_pc_0.25_high",
             "quality_type": "high",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.25 mm"
         },
         "data": {
-            "cool_min_layer_time": 5,
-            "cool_min_speed": 10,
-            "infill_sparse_density": 22,
+            "adhesion_type": "raft",
+            "brim_line_count": 32,
+            "cool_fan_speed": 50,
+            "cool_fan_speed_min": 0,
+            "infill_overlap": 5,
+            "infill_sparse_density": 25,
+            "layer_0_z_overlap": 0.2,
             "layer_height": 0.06,
-            "speed_layer_0": 30,
+            "raft_airgap": 0.25,
+            "speed_infill": 80,
             "speed_print": 30,
-            "top_bottom_thickness": 0.72
+            "speed_topbottom": 15,
+            "support_enable": true,
+            "support_z_distance": 0.19
         },
-        "name": "Extra Fine · @ultimaker2_plus · 0.25 mm · generic_pla",
+        "name": "Extra Fine · @ultimaker2_plus · 0.25 mm · generic_pc",
         "setting_scopes": {
-            "cool_min_layer_time": "extruder.0",
-            "cool_min_speed": "extruder.0",
+            "adhesion_type": "global",
+            "brim_line_count": "extruder.0",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "infill_overlap": "extruder.0",
             "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
             "layer_height": "global",
-            "speed_layer_0": "extruder.0",
+            "raft_airgap": "extruder.0",
+            "speed_infill": "extruder.0",
             "speed_print": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
+            "speed_topbottom": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0"
         }
     },
     {
@@ -585,8 +599,8 @@
                 "ultimaker2_plus"
             ],
             "material_native_ids": [
-                "generic_pc",
-                "generic_pc_175"
+                "generic_pla",
+                "generic_pla_175"
             ],
             "variant_names": [
                 "0.25 mm"
@@ -603,8 +617,8 @@
                     "ultimaker2_plus"
                 ],
                 "material_native_ids": [
-                    "generic_pc",
-                    "generic_pc_175"
+                    "generic_pla",
+                    "generic_pla_175"
                 ],
                 "variant_names": [
                     "0.25 mm"
@@ -613,45 +627,31 @@
             "definition": "ultimaker2_plus",
             "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_High_Quality",
             "intent_category": null,
-            "material_id": "generic_pc",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_pc_0.25_high",
+            "material_id": "generic_pla",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/pla_0.25_normal",
             "quality_type": "high",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.25 mm"
         },
         "data": {
-            "adhesion_type": "raft",
-            "brim_line_count": 32,
-            "cool_fan_speed": 50,
-            "cool_fan_speed_min": 0,
-            "infill_overlap": 5,
-            "infill_sparse_density": 25,
-            "layer_0_z_overlap": 0.2,
+            "cool_min_layer_time": 5,
+            "cool_min_speed": 10,
+            "infill_sparse_density": 22,
             "layer_height": 0.06,
-            "raft_airgap": 0.25,
-            "speed_infill": 80,
+            "speed_layer_0": 30,
             "speed_print": 30,
-            "speed_topbottom": 15,
-            "support_enable": true,
-            "support_z_distance": 0.19
+            "top_bottom_thickness": 0.72
         },
-        "name": "Extra Fine · @ultimaker2_plus · 0.25 mm · generic_pc",
+        "name": "Extra Fine · @ultimaker2_plus · 0.25 mm · generic_pla",
         "setting_scopes": {
-            "adhesion_type": "global",
-            "brim_line_count": "extruder.0",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "infill_overlap": "extruder.0",
+            "cool_min_layer_time": "extruder.0",
+            "cool_min_speed": "extruder.0",
             "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
             "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "speed_infill": "extruder.0",
+            "speed_layer_0": "extruder.0",
             "speed_print": "extruder.0",
-            "speed_topbottom": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0"
+            "top_bottom_thickness": "extruder.0"
         }
     },
     {
@@ -753,11 +753,11 @@
                 ]
             },
             "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_High_Quality",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Normal_Quality",
             "intent_category": null,
             "material_id": "generic_pla",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/pla_0.4_high",
-            "quality_type": "high",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/pla_0.4_normal",
+            "quality_type": "normal",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.4 mm"
@@ -765,14 +765,14 @@
         "data": {
             "cool_min_layer_time": 5,
             "cool_min_speed": 10,
-            "infill_sparse_density": 22,
-            "layer_height": 0.06,
+            "infill_sparse_density": 20,
+            "layer_height": 0.1,
             "speed_layer_0": 30,
             "speed_print": 50,
             "speed_topbottom": 20,
-            "top_bottom_thickness": 0.72
+            "top_bottom_thickness": 0.8
         },
-        "name": "Extra Fine · @ultimaker2_plus · 0.4 mm · generic_pla",
+        "name": "Fine · @ultimaker2_plus · 0.4 mm · generic_pla",
         "setting_scopes": {
             "cool_min_layer_time": "extruder.0",
             "cool_min_speed": "extruder.0",
@@ -781,172 +781,6 @@
             "speed_layer_0": "extruder.0",
             "speed_print": "extruder.0",
             "speed_topbottom": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_cpe_plus",
-                "generic_cpe_plus_175"
-            ],
-            "variant_names": [
-                "0.4 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_cpe_plus",
-                    "generic_cpe_plus_175"
-                ],
-                "variant_names": [
-                    "0.4 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
-            "intent_category": null,
-            "material_id": "generic_cpe_plus",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpep_0.4_normal",
-            "quality_type": "fast",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4 mm"
-        },
-        "data": {
-            "adhesion_type": "raft",
-            "cool_fan_speed": 50,
-            "cool_fan_speed_min": 25.0,
-            "infill_overlap": 5,
-            "infill_sparse_density": 30,
-            "layer_0_z_overlap": 0.22,
-            "layer_height": 0.15,
-            "raft_airgap": 0.37,
-            "speed_print": 35,
-            "speed_topbottom": 20,
-            "speed_wall_0": 20,
-            "speed_wall_x": 30,
-            "support_angle": 45,
-            "support_enable": true,
-            "support_z_distance": 0.26,
-            "top_bottom_thickness": 1.5
-        },
-        "name": "Fine · @ultimaker2_plus · 0.4 mm · generic_cpe_plus",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "infill_overlap": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
-            "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_topbottom": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "speed_wall_x": "extruder.0",
-            "support_angle": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_cpe_plus",
-                "generic_cpe_plus_175"
-            ],
-            "variant_names": [
-                "0.4 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_cpe_plus",
-                    "generic_cpe_plus_175"
-                ],
-                "variant_names": [
-                    "0.4 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Draft_Quality",
-            "intent_category": null,
-            "material_id": "generic_cpe_plus",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpep_0.4_draft",
-            "quality_type": "draft",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4 mm"
-        },
-        "data": {
-            "adhesion_type": "raft",
-            "cool_fan_speed": 50,
-            "cool_fan_speed_min": 25.0,
-            "infill_overlap": 5,
-            "infill_sparse_density": 30,
-            "layer_0_z_overlap": 0.22,
-            "layer_height": 0.2,
-            "raft_airgap": 0.37,
-            "speed_print": 25,
-            "speed_topbottom": 20,
-            "speed_wall_0": 20,
-            "speed_wall_x": 25,
-            "support_angle": 45,
-            "support_enable": true,
-            "support_z_distance": 0.26,
-            "top_bottom_thickness": 1.5
-        },
-        "name": "Fast · @ultimaker2_plus · 0.4 mm · generic_cpe_plus",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "infill_overlap": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
-            "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_topbottom": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "speed_wall_x": "extruder.0",
-            "support_angle": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0",
             "top_bottom_thickness": "extruder.0"
         }
     },
@@ -986,29 +820,26 @@
                 ]
             },
             "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_High_Quality",
             "intent_category": null,
             "material_id": "generic_abs",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_abs_0.4_fast",
-            "quality_type": "fast",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_abs_0.4_high",
+            "quality_type": "high",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.4 mm"
         },
         "data": {
             "cool_fan_speed_min": 20.0,
-            "infill_sparse_density": 18,
-            "layer_height": 0.15,
-            "speed_infill": 100,
-            "speed_print": 55,
-            "speed_topbottom": 30,
-            "speed_travel": 150,
-            "speed_wall": 40,
-            "speed_wall_0": 40,
-            "speed_wall_x": 80,
-            "top_bottom_thickness": 0.75
+            "infill_sparse_density": 22,
+            "layer_height": 0.06,
+            "speed_infill": 45,
+            "speed_print": 45,
+            "speed_topbottom": 15,
+            "speed_wall": 30,
+            "top_bottom_thickness": 0.72
         },
-        "name": "Normal · @ultimaker2_plus · 0.4 mm · generic_abs",
+        "name": "Extra Fine · @ultimaker2_plus · 0.4 mm · generic_abs",
         "setting_scopes": {
             "cool_fan_speed_min": "extruder.0",
             "infill_sparse_density": "extruder.0",
@@ -1016,10 +847,161 @@
             "speed_infill": "extruder.0",
             "speed_print": "extruder.0",
             "speed_topbottom": "extruder.0",
+            "speed_wall": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_nylon",
+                "generic_nylon_175"
+            ],
+            "variant_names": [
+                "0.4 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_nylon",
+                    "generic_nylon_175"
+                ],
+                "variant_names": [
+                    "0.4 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Draft_Quality",
+            "intent_category": null,
+            "material_id": "generic_nylon",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_nylon_0.4_fast",
+            "quality_type": "draft",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4 mm"
+        },
+        "data": {
+            "adhesion_type": "raft",
+            "cool_fan_speed_min": 35.0,
+            "infill_overlap": 5,
+            "infill_sparse_density": 30,
+            "layer_0_z_overlap": 0.22,
+            "layer_height": 0.2,
+            "raft_airgap": 0.57,
+            "speed_infill": 45,
+            "speed_print": 45,
+            "speed_topbottom": 20,
+            "speed_travel": 150,
+            "speed_wall": 40,
+            "speed_wall_0": 30,
+            "speed_wall_x": 40,
+            "support_angle": 45,
+            "support_enable": true,
+            "support_z_distance": 0.4,
+            "top_bottom_thickness": 0.75
+        },
+        "name": "Normal · @ultimaker2_plus · 0.4 mm · generic_nylon",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "cool_fan_speed_min": "extruder.0",
+            "infill_overlap": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
+            "layer_height": "global",
+            "raft_airgap": "extruder.0",
+            "speed_infill": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_topbottom": "extruder.0",
             "speed_travel": "extruder.0",
             "speed_wall": "extruder.0",
             "speed_wall_0": "extruder.0",
             "speed_wall_x": "extruder.0",
+            "support_angle": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_cpe",
+                "generic_cpe_175"
+            ],
+            "variant_names": [
+                "0.4 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_cpe",
+                    "generic_cpe_175"
+                ],
+                "variant_names": [
+                    "0.4 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_High_Quality",
+            "intent_category": null,
+            "material_id": "generic_cpe",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpe_0.4_high",
+            "quality_type": "high",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4 mm"
+        },
+        "data": {
+            "cool_fan_speed_min": 80.0,
+            "infill_sparse_density": 22,
+            "layer_height": 0.06,
+            "speed_infill": 45,
+            "speed_print": 45,
+            "speed_topbottom": 15,
+            "speed_wall": 30,
+            "top_bottom_thickness": 0.72
+        },
+        "name": "Extra Fine · @ultimaker2_plus · 0.4 mm · generic_cpe",
+        "setting_scopes": {
+            "cool_fan_speed_min": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_height": "global",
+            "speed_infill": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_topbottom": "extruder.0",
+            "speed_wall": "extruder.0",
             "top_bottom_thickness": "extruder.0"
         }
     },
@@ -1150,8 +1132,8 @@
                 "ultimaker2_plus"
             ],
             "material_native_ids": [
-                "generic_cpe",
-                "generic_cpe_175"
+                "generic_nylon",
+                "generic_nylon_175"
             ],
             "variant_names": [
                 "0.4 mm"
@@ -1168,38 +1150,54 @@
                     "ultimaker2_plus"
                 ],
                 "material_native_ids": [
-                    "generic_cpe",
-                    "generic_cpe_175"
+                    "generic_nylon",
+                    "generic_nylon_175"
                 ],
                 "variant_names": [
                     "0.4 mm"
                 ]
             },
             "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Normal_Quality",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
             "intent_category": null,
-            "material_id": "generic_cpe",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpe_0.4_normal",
-            "quality_type": "normal",
+            "material_id": "generic_nylon",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_nylon_0.4_normal",
+            "quality_type": "fast",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.4 mm"
         },
         "data": {
-            "cool_fan_speed_min": 80.0,
-            "infill_sparse_density": 20,
-            "layer_height": 0.1,
+            "adhesion_type": "raft",
+            "cool_fan_speed_min": 35.0,
+            "infill_overlap": 5,
+            "infill_sparse_density": 30,
+            "layer_0_z_overlap": 0.22,
+            "layer_height": 0.15,
+            "raft_airgap": 0.57,
             "speed_print": 45,
-            "speed_wall": 30,
-            "top_bottom_thickness": 0.8
+            "speed_travel": 150,
+            "speed_wall": 40,
+            "support_angle": 45,
+            "support_enable": true,
+            "support_z_distance": 0.3,
+            "top_bottom_thickness": 0.75
         },
-        "name": "Fine · @ultimaker2_plus · 0.4 mm · generic_cpe",
+        "name": "Fine · @ultimaker2_plus · 0.4 mm · generic_nylon",
         "setting_scopes": {
+            "adhesion_type": "global",
             "cool_fan_speed_min": "extruder.0",
+            "infill_overlap": "extruder.0",
             "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
             "layer_height": "global",
+            "raft_airgap": "extruder.0",
             "speed_print": "extruder.0",
+            "speed_travel": "extruder.0",
             "speed_wall": "extruder.0",
+            "support_angle": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0",
             "top_bottom_thickness": "extruder.0"
         }
     },
@@ -1213,8 +1211,8 @@
                 "ultimaker2_plus"
             ],
             "material_native_ids": [
-                "generic_cpe",
-                "generic_cpe_175"
+                "generic_abs",
+                "generic_abs_175"
             ],
             "variant_names": [
                 "0.4 mm"
@@ -1231,8 +1229,8 @@
                     "ultimaker2_plus"
                 ],
                 "material_native_ids": [
-                    "generic_cpe",
-                    "generic_cpe_175"
+                    "generic_abs",
+                    "generic_abs_175"
                 ],
                 "variant_names": [
                     "0.4 mm"
@@ -1241,27 +1239,27 @@
             "definition": "ultimaker2_plus",
             "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
             "intent_category": null,
-            "material_id": "generic_cpe",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpe_0.4_fast",
+            "material_id": "generic_abs",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_abs_0.4_fast",
             "quality_type": "fast",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.4 mm"
         },
         "data": {
-            "cool_fan_speed_min": 80.0,
+            "cool_fan_speed_min": 20.0,
             "infill_sparse_density": 18,
             "layer_height": 0.15,
-            "speed_infill": 45,
-            "speed_print": 45,
+            "speed_infill": 100,
+            "speed_print": 55,
             "speed_topbottom": 30,
             "speed_travel": 150,
             "speed_wall": 40,
-            "speed_wall_0": 30,
-            "speed_wall_x": 40,
+            "speed_wall_0": 40,
+            "speed_wall_x": 80,
             "top_bottom_thickness": 0.75
         },
-        "name": "Normal · @ultimaker2_plus · 0.4 mm · generic_cpe",
+        "name": "Normal · @ultimaker2_plus · 0.4 mm · generic_abs",
         "setting_scopes": {
             "cool_fan_speed_min": "extruder.0",
             "infill_sparse_density": "extruder.0",
@@ -1286,8 +1284,8 @@
                 "ultimaker2_plus"
             ],
             "material_native_ids": [
-                "generic_pla",
-                "generic_pla_175"
+                "generic_cpe_plus",
+                "generic_cpe_plus_175"
             ],
             "variant_names": [
                 "0.4 mm"
@@ -1304,42 +1302,58 @@
                     "ultimaker2_plus"
                 ],
                 "material_native_ids": [
-                    "generic_pla",
-                    "generic_pla_175"
+                    "generic_cpe_plus",
+                    "generic_cpe_plus_175"
                 ],
                 "variant_names": [
                     "0.4 mm"
                 ]
             },
             "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Normal_Quality",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
             "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/pla_0.4_normal",
-            "quality_type": "normal",
+            "material_id": "generic_cpe_plus",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpep_0.4_normal",
+            "quality_type": "fast",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.4 mm"
         },
         "data": {
-            "cool_min_layer_time": 5,
-            "cool_min_speed": 10,
-            "infill_sparse_density": 20,
-            "layer_height": 0.1,
-            "speed_layer_0": 30,
-            "speed_print": 50,
+            "adhesion_type": "raft",
+            "cool_fan_speed": 50,
+            "cool_fan_speed_min": 25.0,
+            "infill_overlap": 5,
+            "infill_sparse_density": 30,
+            "layer_0_z_overlap": 0.22,
+            "layer_height": 0.15,
+            "raft_airgap": 0.37,
+            "speed_print": 35,
             "speed_topbottom": 20,
-            "top_bottom_thickness": 0.8
+            "speed_wall_0": 20,
+            "speed_wall_x": 30,
+            "support_angle": 45,
+            "support_enable": true,
+            "support_z_distance": 0.26,
+            "top_bottom_thickness": 1.5
         },
-        "name": "Fine · @ultimaker2_plus · 0.4 mm · generic_pla",
+        "name": "Fine · @ultimaker2_plus · 0.4 mm · generic_cpe_plus",
         "setting_scopes": {
-            "cool_min_layer_time": "extruder.0",
-            "cool_min_speed": "extruder.0",
+            "adhesion_type": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "infill_overlap": "extruder.0",
             "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
             "layer_height": "global",
-            "speed_layer_0": "extruder.0",
+            "raft_airgap": "extruder.0",
             "speed_print": "extruder.0",
             "speed_topbottom": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "speed_wall_x": "extruder.0",
+            "support_angle": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0",
             "top_bottom_thickness": "extruder.0"
         }
     },
@@ -1474,8 +1488,8 @@
                 "ultimaker2_plus"
             ],
             "material_native_ids": [
-                "generic_pc",
-                "generic_pc_175"
+                "generic_pla",
+                "generic_pla_175"
             ],
             "variant_names": [
                 "0.4 mm"
@@ -1492,358 +1506,46 @@
                     "ultimaker2_plus"
                 ],
                 "material_native_ids": [
-                    "generic_pc",
-                    "generic_pc_175"
+                    "generic_pla",
+                    "generic_pla_175"
                 ],
                 "variant_names": [
                     "0.4 mm"
                 ]
             },
             "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Normal_Quality",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
             "intent_category": null,
-            "material_id": "generic_pc",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_pc_0.4_normal",
-            "quality_type": "normal",
+            "material_id": "generic_pla",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/pla_0.4_fast",
+            "quality_type": "fast",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.4 mm"
         },
         "data": {
-            "adhesion_type": "raft",
-            "cool_fan_speed": 50,
-            "cool_fan_speed_min": 0,
-            "infill_overlap": 5,
-            "infill_sparse_density": 30,
-            "layer_0_z_overlap": 0.3,
-            "layer_height": 0.1,
-            "raft_airgap": 0.35,
-            "speed_print": 45,
-            "speed_wall_0": 20,
-            "speed_wall_x": 30,
-            "support_angle": 45,
-            "support_enable": true,
-            "support_z_distance": 0.19
-        },
-        "name": "Fine · @ultimaker2_plus · 0.4 mm · generic_pc",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "infill_overlap": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
-            "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "speed_wall_x": "extruder.0",
-            "support_angle": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_abs",
-                "generic_abs_175"
-            ],
-            "variant_names": [
-                "0.4 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_abs",
-                    "generic_abs_175"
-                ],
-                "variant_names": [
-                    "0.4 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_High_Quality",
-            "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_abs_0.4_high",
-            "quality_type": "high",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4 mm"
-        },
-        "data": {
-            "cool_fan_speed_min": 20.0,
-            "infill_sparse_density": 22,
-            "layer_height": 0.06,
-            "speed_infill": 45,
-            "speed_print": 45,
-            "speed_topbottom": 15,
-            "speed_wall": 30,
-            "top_bottom_thickness": 0.72
-        },
-        "name": "Extra Fine · @ultimaker2_plus · 0.4 mm · generic_abs",
-        "setting_scopes": {
-            "cool_fan_speed_min": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_height": "global",
-            "speed_infill": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_topbottom": "extruder.0",
-            "speed_wall": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_cpe",
-                "generic_cpe_175"
-            ],
-            "variant_names": [
-                "0.4 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_cpe",
-                    "generic_cpe_175"
-                ],
-                "variant_names": [
-                    "0.4 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_High_Quality",
-            "intent_category": null,
-            "material_id": "generic_cpe",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpe_0.4_high",
-            "quality_type": "high",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4 mm"
-        },
-        "data": {
-            "cool_fan_speed_min": 80.0,
-            "infill_sparse_density": 22,
-            "layer_height": 0.06,
-            "speed_infill": 45,
-            "speed_print": 45,
-            "speed_topbottom": 15,
-            "speed_wall": 30,
-            "top_bottom_thickness": 0.72
-        },
-        "name": "Extra Fine · @ultimaker2_plus · 0.4 mm · generic_cpe",
-        "setting_scopes": {
-            "cool_fan_speed_min": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_height": "global",
-            "speed_infill": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_topbottom": "extruder.0",
-            "speed_wall": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_pc",
-                "generic_pc_175"
-            ],
-            "variant_names": [
-                "0.4 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_pc",
-                    "generic_pc_175"
-                ],
-                "variant_names": [
-                    "0.4 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Draft_Quality",
-            "intent_category": null,
-            "material_id": "generic_pc",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_pc_0.4_fast",
-            "quality_type": "draft",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4 mm"
-        },
-        "data": {
-            "adhesion_type": "raft",
-            "cool_fan_speed": 50,
-            "cool_fan_speed_min": 0,
-            "infill_overlap": 5,
-            "infill_sparse_density": 30,
-            "layer_0_z_overlap": 0.3,
-            "layer_height": 0.2,
-            "raft_airgap": 0.35,
-            "speed_infill": 45,
-            "speed_print": 45,
+            "cool_min_layer_time": 5,
+            "cool_min_speed": 10,
+            "infill_sparse_density": 18,
+            "layer_height": 0.15,
+            "speed_layer_0": 30,
+            "speed_print": 60,
             "speed_topbottom": 30,
-            "speed_wall_0": 20,
-            "speed_wall_x": 30,
-            "support_angle": 45,
-            "support_enable": true,
-            "support_z_distance": 0.19
-        },
-        "name": "Normal · @ultimaker2_plus · 0.4 mm · generic_pc",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "infill_overlap": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
-            "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "speed_infill": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_topbottom": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "speed_wall_x": "extruder.0",
-            "support_angle": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_nylon",
-                "generic_nylon_175"
-            ],
-            "variant_names": [
-                "0.4 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_nylon",
-                    "generic_nylon_175"
-                ],
-                "variant_names": [
-                    "0.4 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Draft_Quality",
-            "intent_category": null,
-            "material_id": "generic_nylon",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_nylon_0.4_fast",
-            "quality_type": "draft",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4 mm"
-        },
-        "data": {
-            "adhesion_type": "raft",
-            "cool_fan_speed_min": 35.0,
-            "infill_overlap": 5,
-            "infill_sparse_density": 30,
-            "layer_0_z_overlap": 0.22,
-            "layer_height": 0.2,
-            "raft_airgap": 0.57,
-            "speed_infill": 45,
-            "speed_print": 45,
-            "speed_topbottom": 20,
             "speed_travel": 150,
-            "speed_wall": 40,
-            "speed_wall_0": 30,
-            "speed_wall_x": 40,
-            "support_angle": 45,
-            "support_enable": true,
-            "support_z_distance": 0.4,
+            "speed_wall": 50,
             "top_bottom_thickness": 0.75
         },
-        "name": "Normal · @ultimaker2_plus · 0.4 mm · generic_nylon",
+        "name": "Normal · @ultimaker2_plus · 0.4 mm · generic_pla",
         "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed_min": "extruder.0",
-            "infill_overlap": "extruder.0",
+            "cool_min_layer_time": "extruder.0",
+            "cool_min_speed": "extruder.0",
             "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
             "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "speed_infill": "extruder.0",
+            "speed_layer_0": "extruder.0",
             "speed_print": "extruder.0",
             "speed_topbottom": "extruder.0",
             "speed_travel": "extruder.0",
             "speed_wall": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "speed_wall_x": "extruder.0",
-            "support_angle": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0",
             "top_bottom_thickness": "extruder.0"
         }
     },
@@ -1944,85 +1646,6 @@
                 "ultimaker2_plus"
             ],
             "material_native_ids": [
-                "generic_nylon",
-                "generic_nylon_175"
-            ],
-            "variant_names": [
-                "0.4 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_nylon",
-                    "generic_nylon_175"
-                ],
-                "variant_names": [
-                    "0.4 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
-            "intent_category": null,
-            "material_id": "generic_nylon",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_nylon_0.4_normal",
-            "quality_type": "fast",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.4 mm"
-        },
-        "data": {
-            "adhesion_type": "raft",
-            "cool_fan_speed_min": 35.0,
-            "infill_overlap": 5,
-            "infill_sparse_density": 30,
-            "layer_0_z_overlap": 0.22,
-            "layer_height": 0.15,
-            "raft_airgap": 0.57,
-            "speed_print": 45,
-            "speed_travel": 150,
-            "speed_wall": 40,
-            "support_angle": 45,
-            "support_enable": true,
-            "support_z_distance": 0.3,
-            "top_bottom_thickness": 0.75
-        },
-        "name": "Fine · @ultimaker2_plus · 0.4 mm · generic_nylon",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed_min": "extruder.0",
-            "infill_overlap": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
-            "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_travel": "extruder.0",
-            "speed_wall": "extruder.0",
-            "support_angle": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
                 "generic_pla",
                 "generic_pla_175"
             ],
@@ -2049,11 +1672,11 @@
                 ]
             },
             "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_High_Quality",
             "intent_category": null,
             "material_id": "generic_pla",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/pla_0.4_fast",
-            "quality_type": "fast",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/pla_0.4_high",
+            "quality_type": "high",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.4 mm"
@@ -2061,16 +1684,14 @@
         "data": {
             "cool_min_layer_time": 5,
             "cool_min_speed": 10,
-            "infill_sparse_density": 18,
-            "layer_height": 0.15,
+            "infill_sparse_density": 22,
+            "layer_height": 0.06,
             "speed_layer_0": 30,
-            "speed_print": 60,
-            "speed_topbottom": 30,
-            "speed_travel": 150,
-            "speed_wall": 50,
-            "top_bottom_thickness": 0.75
+            "speed_print": 50,
+            "speed_topbottom": 20,
+            "top_bottom_thickness": 0.72
         },
-        "name": "Normal · @ultimaker2_plus · 0.4 mm · generic_pla",
+        "name": "Extra Fine · @ultimaker2_plus · 0.4 mm · generic_pla",
         "setting_scopes": {
             "cool_min_layer_time": "extruder.0",
             "cool_min_speed": "extruder.0",
@@ -2079,9 +1700,388 @@
             "speed_layer_0": "extruder.0",
             "speed_print": "extruder.0",
             "speed_topbottom": "extruder.0",
-            "speed_travel": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_cpe",
+                "generic_cpe_175"
+            ],
+            "variant_names": [
+                "0.4 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_cpe",
+                    "generic_cpe_175"
+                ],
+                "variant_names": [
+                    "0.4 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Normal_Quality",
+            "intent_category": null,
+            "material_id": "generic_cpe",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpe_0.4_normal",
+            "quality_type": "normal",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4 mm"
+        },
+        "data": {
+            "cool_fan_speed_min": 80.0,
+            "infill_sparse_density": 20,
+            "layer_height": 0.1,
+            "speed_print": 45,
+            "speed_wall": 30,
+            "top_bottom_thickness": 0.8
+        },
+        "name": "Fine · @ultimaker2_plus · 0.4 mm · generic_cpe",
+        "setting_scopes": {
+            "cool_fan_speed_min": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_height": "global",
+            "speed_print": "extruder.0",
             "speed_wall": "extruder.0",
             "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_cpe_plus",
+                "generic_cpe_plus_175"
+            ],
+            "variant_names": [
+                "0.4 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_cpe_plus",
+                    "generic_cpe_plus_175"
+                ],
+                "variant_names": [
+                    "0.4 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Draft_Quality",
+            "intent_category": null,
+            "material_id": "generic_cpe_plus",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpep_0.4_draft",
+            "quality_type": "draft",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4 mm"
+        },
+        "data": {
+            "adhesion_type": "raft",
+            "cool_fan_speed": 50,
+            "cool_fan_speed_min": 25.0,
+            "infill_overlap": 5,
+            "infill_sparse_density": 30,
+            "layer_0_z_overlap": 0.22,
+            "layer_height": 0.2,
+            "raft_airgap": 0.37,
+            "speed_print": 25,
+            "speed_topbottom": 20,
+            "speed_wall_0": 20,
+            "speed_wall_x": 25,
+            "support_angle": 45,
+            "support_enable": true,
+            "support_z_distance": 0.26,
+            "top_bottom_thickness": 1.5
+        },
+        "name": "Fast · @ultimaker2_plus · 0.4 mm · generic_cpe_plus",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "infill_overlap": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
+            "layer_height": "global",
+            "raft_airgap": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_topbottom": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "speed_wall_x": "extruder.0",
+            "support_angle": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_pc",
+                "generic_pc_175"
+            ],
+            "variant_names": [
+                "0.4 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_pc",
+                    "generic_pc_175"
+                ],
+                "variant_names": [
+                    "0.4 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Normal_Quality",
+            "intent_category": null,
+            "material_id": "generic_pc",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_pc_0.4_normal",
+            "quality_type": "normal",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4 mm"
+        },
+        "data": {
+            "adhesion_type": "raft",
+            "cool_fan_speed": 50,
+            "cool_fan_speed_min": 0,
+            "infill_overlap": 5,
+            "infill_sparse_density": 30,
+            "layer_0_z_overlap": 0.3,
+            "layer_height": 0.1,
+            "raft_airgap": 0.35,
+            "speed_print": 45,
+            "speed_wall_0": 20,
+            "speed_wall_x": 30,
+            "support_angle": 45,
+            "support_enable": true,
+            "support_z_distance": 0.19
+        },
+        "name": "Fine · @ultimaker2_plus · 0.4 mm · generic_pc",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "infill_overlap": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
+            "layer_height": "global",
+            "raft_airgap": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "speed_wall_x": "extruder.0",
+            "support_angle": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_cpe",
+                "generic_cpe_175"
+            ],
+            "variant_names": [
+                "0.4 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_cpe",
+                    "generic_cpe_175"
+                ],
+                "variant_names": [
+                    "0.4 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
+            "intent_category": null,
+            "material_id": "generic_cpe",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpe_0.4_fast",
+            "quality_type": "fast",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4 mm"
+        },
+        "data": {
+            "cool_fan_speed_min": 80.0,
+            "infill_sparse_density": 18,
+            "layer_height": 0.15,
+            "speed_infill": 45,
+            "speed_print": 45,
+            "speed_topbottom": 30,
+            "speed_travel": 150,
+            "speed_wall": 40,
+            "speed_wall_0": 30,
+            "speed_wall_x": 40,
+            "top_bottom_thickness": 0.75
+        },
+        "name": "Normal · @ultimaker2_plus · 0.4 mm · generic_cpe",
+        "setting_scopes": {
+            "cool_fan_speed_min": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_height": "global",
+            "speed_infill": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_topbottom": "extruder.0",
+            "speed_travel": "extruder.0",
+            "speed_wall": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "speed_wall_x": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_pc",
+                "generic_pc_175"
+            ],
+            "variant_names": [
+                "0.4 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_pc",
+                    "generic_pc_175"
+                ],
+                "variant_names": [
+                    "0.4 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Draft_Quality",
+            "intent_category": null,
+            "material_id": "generic_pc",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_pc_0.4_fast",
+            "quality_type": "draft",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.4 mm"
+        },
+        "data": {
+            "adhesion_type": "raft",
+            "cool_fan_speed": 50,
+            "cool_fan_speed_min": 0,
+            "infill_overlap": 5,
+            "infill_sparse_density": 30,
+            "layer_0_z_overlap": 0.3,
+            "layer_height": 0.2,
+            "raft_airgap": 0.35,
+            "speed_infill": 45,
+            "speed_print": 45,
+            "speed_topbottom": 30,
+            "speed_wall_0": 20,
+            "speed_wall_x": 30,
+            "support_angle": 45,
+            "support_enable": true,
+            "support_z_distance": 0.19
+        },
+        "name": "Normal · @ultimaker2_plus · 0.4 mm · generic_pc",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "infill_overlap": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
+            "layer_height": "global",
+            "raft_airgap": "extruder.0",
+            "speed_infill": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_topbottom": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "speed_wall_x": "extruder.0",
+            "support_angle": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0"
         }
     },
     {
@@ -2215,130 +2215,6 @@
                 "ultimaker2_plus"
             ],
             "material_native_ids": [
-                "generic_abs",
-                "generic_abs_175"
-            ],
-            "variant_names": [
-                "0.6 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_abs",
-                    "generic_abs_175"
-                ],
-                "variant_names": [
-                    "0.6 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
-            "intent_category": null,
-            "material_id": "generic_abs",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_abs_0.6_normal",
-            "quality_type": "fast",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.6 mm"
-        },
-        "data": {
-            "cool_fan_speed_min": 50.0,
-            "infill_sparse_density": 20,
-            "layer_height": 0.15,
-            "speed_infill": 55,
-            "speed_print": 40,
-            "top_bottom_thickness": 1.2
-        },
-        "name": "Fine · @ultimaker2_plus · 0.6 mm · generic_abs",
-        "setting_scopes": {
-            "cool_fan_speed_min": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_height": "global",
-            "speed_infill": "extruder.0",
-            "speed_print": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.6,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_cpe",
-                "generic_cpe_175"
-            ],
-            "variant_names": [
-                "0.6 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_cpe",
-                    "generic_cpe_175"
-                ],
-                "variant_names": [
-                    "0.6 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
-            "intent_category": null,
-            "material_id": "generic_cpe",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpe_0.6_normal",
-            "quality_type": "fast",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.6 mm"
-        },
-        "data": {
-            "cool_fan_speed_min": 80.0,
-            "infill_sparse_density": 20,
-            "layer_height": 0.15,
-            "speed_print": 40,
-            "top_bottom_thickness": 1.2
-        },
-        "name": "Fine · @ultimaker2_plus · 0.6 mm · generic_cpe",
-        "setting_scopes": {
-            "cool_fan_speed_min": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_height": "global",
-            "speed_print": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.6,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
                 "generic_pc",
                 "generic_pc_175"
             ],
@@ -2403,249 +2279,6 @@
             "layer_0_z_overlap": "extruder.0",
             "layer_height": "global",
             "raft_airgap": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_topbottom": "extruder.0",
-            "speed_travel": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "speed_wall_x": "extruder.0",
-            "support_angle": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.6,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_cpe_plus",
-                "generic_cpe_plus_175"
-            ],
-            "variant_names": [
-                "0.6 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_cpe_plus",
-                    "generic_cpe_plus_175"
-                ],
-                "variant_names": [
-                    "0.6 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Slightly_Coarse_Quality",
-            "intent_category": null,
-            "material_id": "generic_cpe_plus",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpep_0.6_draft",
-            "quality_type": "slightlycoarse",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.6 mm"
-        },
-        "data": {
-            "adhesion_type": "raft",
-            "cool_fan_speed": 45,
-            "cool_fan_speed_min": 25.0,
-            "infill_overlap": 5,
-            "infill_sparse_density": 35,
-            "layer_0_z_overlap": 0.22,
-            "layer_height": 0.3,
-            "raft_airgap": 0.37,
-            "speed_print": 25,
-            "speed_topbottom": 20,
-            "speed_travel": 150,
-            "speed_wall_0": 20,
-            "speed_wall_x": 25,
-            "support_angle": 45,
-            "support_enable": true,
-            "support_z_distance": 0.22,
-            "top_bottom_thickness": 0.75
-        },
-        "name": "Fast · @ultimaker2_plus · 0.6 mm · generic_cpe_plus",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "infill_overlap": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
-            "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_topbottom": "extruder.0",
-            "speed_travel": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "speed_wall_x": "extruder.0",
-            "support_angle": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.6,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_pla",
-                "generic_pla_175"
-            ],
-            "variant_names": [
-                "0.6 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_pla",
-                    "generic_pla_175"
-                ],
-                "variant_names": [
-                    "0.6 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
-            "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/pla_0.6_normal",
-            "quality_type": "fast",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.6 mm"
-        },
-        "data": {
-            "cool_min_layer_time": 5,
-            "cool_min_speed": 10,
-            "infill_sparse_density": 20,
-            "layer_height": 0.15,
-            "speed_layer_0": 30,
-            "speed_print": 55,
-            "speed_topbottom": 20,
-            "speed_wall": 40,
-            "speed_wall_0": 25,
-            "top_bottom_thickness": 1.2
-        },
-        "name": "Fine · @ultimaker2_plus · 0.6 mm · generic_pla",
-        "setting_scopes": {
-            "cool_min_layer_time": "extruder.0",
-            "cool_min_speed": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_height": "global",
-            "speed_layer_0": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_topbottom": "extruder.0",
-            "speed_wall": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.6,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_pc",
-                "generic_pc_175"
-            ],
-            "variant_names": [
-                "0.6 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_pc",
-                    "generic_pc_175"
-                ],
-                "variant_names": [
-                    "0.6 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Slightly_Coarse_Quality",
-            "intent_category": null,
-            "material_id": "generic_pc",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_pc_0.6_fast",
-            "quality_type": "slightlycoarse",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.6 mm"
-        },
-        "data": {
-            "adhesion_type": "raft",
-            "cool_fan_speed": 50,
-            "cool_fan_speed_min": 0,
-            "infill_overlap": 5,
-            "infill_sparse_density": 35,
-            "layer_0_z_overlap": 0.22,
-            "layer_height": 0.3,
-            "raft_airgap": 0.52,
-            "speed_infill": 45,
-            "speed_print": 45,
-            "speed_topbottom": 20,
-            "speed_travel": 150,
-            "speed_wall_0": 30,
-            "speed_wall_x": 40,
-            "support_angle": 45,
-            "support_enable": true,
-            "support_z_distance": 0.21,
-            "top_bottom_thickness": 0.75
-        },
-        "name": "Normal · @ultimaker2_plus · 0.6 mm · generic_pc",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "infill_overlap": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
-            "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "speed_infill": "extruder.0",
             "speed_print": "extruder.0",
             "speed_topbottom": "extruder.0",
             "speed_travel": "extruder.0",
@@ -2736,6 +2369,472 @@
             "retraction_hop_enabled": "extruder.0",
             "speed_print": "extruder.0",
             "speed_support": "extruder.0",
+            "speed_topbottom": "extruder.0",
+            "speed_travel": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "speed_wall_x": "extruder.0",
+            "support_angle": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.6,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_abs",
+                "generic_abs_175"
+            ],
+            "variant_names": [
+                "0.6 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.6"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_abs",
+                    "generic_abs_175"
+                ],
+                "variant_names": [
+                    "0.6 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
+            "intent_category": null,
+            "material_id": "generic_abs",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_abs_0.6_normal",
+            "quality_type": "fast",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.6 mm"
+        },
+        "data": {
+            "cool_fan_speed_min": 50.0,
+            "infill_sparse_density": 20,
+            "layer_height": 0.15,
+            "speed_infill": 55,
+            "speed_print": 40,
+            "top_bottom_thickness": 1.2
+        },
+        "name": "Fine · @ultimaker2_plus · 0.6 mm · generic_abs",
+        "setting_scopes": {
+            "cool_fan_speed_min": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_height": "global",
+            "speed_infill": "extruder.0",
+            "speed_print": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.6,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_pla",
+                "generic_pla_175"
+            ],
+            "variant_names": [
+                "0.6 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.6"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_pla",
+                    "generic_pla_175"
+                ],
+                "variant_names": [
+                    "0.6 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
+            "intent_category": null,
+            "material_id": "generic_pla",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/pla_0.6_normal",
+            "quality_type": "fast",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.6 mm"
+        },
+        "data": {
+            "cool_min_layer_time": 5,
+            "cool_min_speed": 10,
+            "infill_sparse_density": 20,
+            "layer_height": 0.15,
+            "speed_layer_0": 30,
+            "speed_print": 55,
+            "speed_topbottom": 20,
+            "speed_wall": 40,
+            "speed_wall_0": 25,
+            "top_bottom_thickness": 1.2
+        },
+        "name": "Fine · @ultimaker2_plus · 0.6 mm · generic_pla",
+        "setting_scopes": {
+            "cool_min_layer_time": "extruder.0",
+            "cool_min_speed": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_height": "global",
+            "speed_layer_0": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_topbottom": "extruder.0",
+            "speed_wall": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.6,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_tpu",
+                "generic_tpu_175"
+            ],
+            "variant_names": [
+                "0.6 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.6"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_tpu",
+                    "generic_tpu_175"
+                ],
+                "variant_names": [
+                    "0.6 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
+            "intent_category": null,
+            "material_id": "generic_tpu",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_tpu_0.6_fast",
+            "quality_type": "fast",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.6 mm"
+        },
+        "data": {
+            "adhesion_type": "brim",
+            "brim_line_count": 8,
+            "cool_fan_speed": 60,
+            "cool_fan_speed_min": 35.0,
+            "infill_sparse_density": 10,
+            "layer_0_z_overlap": 0.12,
+            "layer_height": 0.15,
+            "raft_airgap": 0.24,
+            "retraction_count_max": 15,
+            "retraction_hop_enabled": 0.2,
+            "speed_infill": 45,
+            "speed_print": 45,
+            "speed_support": 40,
+            "speed_topbottom": 35,
+            "speed_travel": 150,
+            "speed_wall_0": 15,
+            "speed_wall_x": 40,
+            "support_angle": 45,
+            "support_enable": true,
+            "support_z_distance": 0.3,
+            "top_bottom_thickness": 1.2
+        },
+        "name": "Normal · @ultimaker2_plus · 0.6 mm · generic_tpu",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "brim_line_count": "extruder.0",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
+            "layer_height": "global",
+            "raft_airgap": "extruder.0",
+            "retraction_count_max": "extruder.0",
+            "retraction_hop_enabled": "extruder.0",
+            "speed_infill": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_support": "extruder.0",
+            "speed_topbottom": "extruder.0",
+            "speed_travel": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "speed_wall_x": "extruder.0",
+            "support_angle": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.6,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_cpe",
+                "generic_cpe_175"
+            ],
+            "variant_names": [
+                "0.6 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.6"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_cpe",
+                    "generic_cpe_175"
+                ],
+                "variant_names": [
+                    "0.6 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
+            "intent_category": null,
+            "material_id": "generic_cpe",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpe_0.6_normal",
+            "quality_type": "fast",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.6 mm"
+        },
+        "data": {
+            "cool_fan_speed_min": 80.0,
+            "infill_sparse_density": 20,
+            "layer_height": 0.15,
+            "speed_print": 40,
+            "top_bottom_thickness": 1.2
+        },
+        "name": "Fine · @ultimaker2_plus · 0.6 mm · generic_cpe",
+        "setting_scopes": {
+            "cool_fan_speed_min": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_height": "global",
+            "speed_print": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.6,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_nylon",
+                "generic_nylon_175"
+            ],
+            "variant_names": [
+                "0.6 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.6"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_nylon",
+                    "generic_nylon_175"
+                ],
+                "variant_names": [
+                    "0.6 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Slightly_Coarse_Quality",
+            "intent_category": null,
+            "material_id": "generic_nylon",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_nylon_0.6_fast",
+            "quality_type": "slightlycoarse",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.6 mm"
+        },
+        "data": {
+            "adhesion_type": "raft",
+            "brim_line_count": 8,
+            "cool_fan_speed_min": 35.0,
+            "infill_overlap": 5,
+            "infill_sparse_density": 35,
+            "layer_0_z_overlap": 0.22,
+            "layer_height": 0.3,
+            "raft_airgap": 0.44,
+            "retraction_hop_enabled": 0.2,
+            "speed_infill": 55,
+            "speed_print": 55,
+            "speed_support": 40,
+            "speed_topbottom": 35,
+            "speed_travel": 150,
+            "speed_wall_0": 15,
+            "speed_wall_x": 40,
+            "support_angle": 45,
+            "support_enable": true,
+            "support_z_distance": 0.55,
+            "top_bottom_thickness": 1.2
+        },
+        "name": "Normal · @ultimaker2_plus · 0.6 mm · generic_nylon",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "brim_line_count": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "infill_overlap": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
+            "layer_height": "global",
+            "raft_airgap": "extruder.0",
+            "retraction_hop_enabled": "extruder.0",
+            "speed_infill": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_support": "extruder.0",
+            "speed_topbottom": "extruder.0",
+            "speed_travel": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "speed_wall_x": "extruder.0",
+            "support_angle": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.6,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_pc",
+                "generic_pc_175"
+            ],
+            "variant_names": [
+                "0.6 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.6"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_pc",
+                    "generic_pc_175"
+                ],
+                "variant_names": [
+                    "0.6 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Slightly_Coarse_Quality",
+            "intent_category": null,
+            "material_id": "generic_pc",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_pc_0.6_fast",
+            "quality_type": "slightlycoarse",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.6 mm"
+        },
+        "data": {
+            "adhesion_type": "raft",
+            "cool_fan_speed": 50,
+            "cool_fan_speed_min": 0,
+            "infill_overlap": 5,
+            "infill_sparse_density": 35,
+            "layer_0_z_overlap": 0.22,
+            "layer_height": 0.3,
+            "raft_airgap": 0.52,
+            "speed_infill": 45,
+            "speed_print": 45,
+            "speed_topbottom": 20,
+            "speed_travel": 150,
+            "speed_wall_0": 30,
+            "speed_wall_x": 40,
+            "support_angle": 45,
+            "support_enable": true,
+            "support_z_distance": 0.21,
+            "top_bottom_thickness": 0.75
+        },
+        "name": "Normal · @ultimaker2_plus · 0.6 mm · generic_pc",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "infill_overlap": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
+            "layer_height": "global",
+            "raft_airgap": "extruder.0",
+            "speed_infill": "extruder.0",
+            "speed_print": "extruder.0",
             "speed_topbottom": "extruder.0",
             "speed_travel": "extruder.0",
             "speed_wall_0": "extruder.0",
@@ -2873,8 +2972,8 @@
                 "ultimaker2_plus"
             ],
             "material_native_ids": [
-                "generic_nylon",
-                "generic_nylon_175"
+                "generic_cpe_plus",
+                "generic_cpe_plus_175"
             ],
             "variant_names": [
                 "0.6 mm"
@@ -2891,8 +2990,8 @@
                     "ultimaker2_plus"
                 ],
                 "material_native_ids": [
-                    "generic_nylon",
-                    "generic_nylon_175"
+                    "generic_cpe_plus",
+                    "generic_cpe_plus_175"
                 ],
                 "variant_names": [
                     "0.6 mm"
@@ -2901,8 +3000,8 @@
             "definition": "ultimaker2_plus",
             "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Slightly_Coarse_Quality",
             "intent_category": null,
-            "material_id": "generic_nylon",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_nylon_0.6_fast",
+            "material_id": "generic_cpe_plus",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpep_0.6_draft",
             "quality_type": "slightlycoarse",
             "resource_version": "5.13.0",
             "source_kind": "quality",
@@ -2910,40 +3009,34 @@
         },
         "data": {
             "adhesion_type": "raft",
-            "brim_line_count": 8,
-            "cool_fan_speed_min": 35.0,
+            "cool_fan_speed": 45,
+            "cool_fan_speed_min": 25.0,
             "infill_overlap": 5,
             "infill_sparse_density": 35,
             "layer_0_z_overlap": 0.22,
             "layer_height": 0.3,
-            "raft_airgap": 0.44,
-            "retraction_hop_enabled": 0.2,
-            "speed_infill": 55,
-            "speed_print": 55,
-            "speed_support": 40,
-            "speed_topbottom": 35,
+            "raft_airgap": 0.37,
+            "speed_print": 25,
+            "speed_topbottom": 20,
             "speed_travel": 150,
-            "speed_wall_0": 15,
-            "speed_wall_x": 40,
+            "speed_wall_0": 20,
+            "speed_wall_x": 25,
             "support_angle": 45,
             "support_enable": true,
-            "support_z_distance": 0.55,
-            "top_bottom_thickness": 1.2
+            "support_z_distance": 0.22,
+            "top_bottom_thickness": 0.75
         },
-        "name": "Normal · @ultimaker2_plus · 0.6 mm · generic_nylon",
+        "name": "Fast · @ultimaker2_plus · 0.6 mm · generic_cpe_plus",
         "setting_scopes": {
             "adhesion_type": "global",
-            "brim_line_count": "extruder.0",
+            "cool_fan_speed": "extruder.0",
             "cool_fan_speed_min": "extruder.0",
             "infill_overlap": "extruder.0",
             "infill_sparse_density": "extruder.0",
             "layer_0_z_overlap": "extruder.0",
             "layer_height": "global",
             "raft_airgap": "extruder.0",
-            "retraction_hop_enabled": "extruder.0",
-            "speed_infill": "extruder.0",
             "speed_print": "extruder.0",
-            "speed_support": "extruder.0",
             "speed_topbottom": "extruder.0",
             "speed_travel": "extruder.0",
             "speed_wall_0": "extruder.0",
@@ -3041,99 +3134,6 @@
     },
     {
         "attributes": {
-            "nozzle_diameter": 0.6,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_tpu",
-                "generic_tpu_175"
-            ],
-            "variant_names": [
-                "0.6 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_tpu",
-                    "generic_tpu_175"
-                ],
-                "variant_names": [
-                    "0.6 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Fast_Quality",
-            "intent_category": null,
-            "material_id": "generic_tpu",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_tpu_0.6_fast",
-            "quality_type": "fast",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.6 mm"
-        },
-        "data": {
-            "adhesion_type": "brim",
-            "brim_line_count": 8,
-            "cool_fan_speed": 60,
-            "cool_fan_speed_min": 35.0,
-            "infill_sparse_density": 10,
-            "layer_0_z_overlap": 0.12,
-            "layer_height": 0.15,
-            "raft_airgap": 0.24,
-            "retraction_count_max": 15,
-            "retraction_hop_enabled": 0.2,
-            "speed_infill": 45,
-            "speed_print": 45,
-            "speed_support": 40,
-            "speed_topbottom": 35,
-            "speed_travel": 150,
-            "speed_wall_0": 15,
-            "speed_wall_x": 40,
-            "support_angle": 45,
-            "support_enable": true,
-            "support_z_distance": 0.3,
-            "top_bottom_thickness": 1.2
-        },
-        "name": "Normal · @ultimaker2_plus · 0.6 mm · generic_tpu",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "brim_line_count": "extruder.0",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
-            "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "retraction_count_max": "extruder.0",
-            "retraction_hop_enabled": "extruder.0",
-            "speed_infill": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_support": "extruder.0",
-            "speed_topbottom": "extruder.0",
-            "speed_travel": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "speed_wall_x": "extruder.0",
-            "support_angle": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
             "nozzle_diameter": 0.8,
             "nozzle_volume_type": "standard"
         },
@@ -3142,8 +3142,8 @@
                 "ultimaker2_plus"
             ],
             "material_native_ids": [
-                "generic_pc",
-                "generic_pc_175"
+                "generic_nylon",
+                "generic_nylon_175"
             ],
             "variant_names": [
                 "0.8 mm"
@@ -3160,87 +3160,8 @@
                     "ultimaker2_plus"
                 ],
                 "material_native_ids": [
-                    "generic_pc",
-                    "generic_pc_175"
-                ],
-                "variant_names": [
-                    "0.8 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Extra_Coarse_Quality",
-            "intent_category": null,
-            "material_id": "generic_pc",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_pc_0.8_draft",
-            "quality_type": "extracoarse",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.8 mm"
-        },
-        "data": {
-            "adhesion_type": "raft",
-            "brim_line_count": 10,
-            "cool_fan_speed": 50,
-            "cool_fan_speed_min": 25.0,
-            "infill_overlap": 5,
-            "infill_sparse_density": 40,
-            "layer_0_z_overlap": 0.22,
-            "layer_height": 0.6,
-            "raft_airgap": 0.47,
-            "speed_print": 40,
-            "support_angle": 45,
-            "support_enable": true,
-            "support_z_distance": 0.26,
-            "top_bottom_thickness": 2.0
-        },
-        "name": "Fast · @ultimaker2_plus · 0.8 mm · generic_pc",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "brim_line_count": "extruder.0",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "infill_overlap": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
-            "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "speed_print": "extruder.0",
-            "support_angle": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.8,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_cpe_plus",
-                "generic_cpe_plus_175"
-            ],
-            "variant_names": [
-                "0.8 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.8"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_cpe_plus",
-                    "generic_cpe_plus_175"
+                    "generic_nylon",
+                    "generic_nylon_175"
                 ],
                 "variant_names": [
                     "0.8 mm"
@@ -3249,8 +3170,8 @@
             "definition": "ultimaker2_plus",
             "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Slightly_Coarse_Quality",
             "intent_category": null,
-            "material_id": "generic_cpe_plus",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpep_0.8_draft",
+            "material_id": "generic_nylon",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_nylon_0.8_draft",
             "quality_type": "slightlycoarse",
             "resource_version": "5.13.0",
             "source_kind": "quality",
@@ -3258,102 +3179,47 @@
         },
         "data": {
             "adhesion_type": "raft",
-            "brim_line_count": 10,
-            "cool_fan_speed": 50,
-            "cool_fan_speed_min": 25.0,
+            "brim_line_count": 8,
+            "cool_fan_speed_min": 35.0,
             "infill_overlap": 5,
             "infill_sparse_density": 40,
-            "layer_0_z_overlap": 0.22,
+            "layer_0_z_overlap": 0.25,
             "layer_height": 0.3,
-            "raft_airgap": 0.37,
-            "speed_print": 25,
-            "speed_topbottom": 20,
-            "speed_wall_0": 20,
-            "speed_wall_x": 25,
+            "raft_airgap": 0.44,
+            "retraction_hop_enabled": 0.2,
+            "speed_print": 55,
+            "speed_support": 40,
+            "speed_topbottom": 35,
+            "speed_travel": 150,
+            "speed_wall_0": 15,
+            "speed_wall_x": 40,
             "support_angle": 45,
+            "support_bottom_distance": 0.65,
             "support_enable": true,
-            "support_z_distance": 0.26,
+            "support_z_distance": 0.5,
             "top_bottom_thickness": 1.2
         },
-        "name": "Fast · @ultimaker2_plus · 0.8 mm · generic_cpe_plus",
+        "name": "Fast · @ultimaker2_plus · 0.8 mm · generic_nylon",
         "setting_scopes": {
             "adhesion_type": "global",
             "brim_line_count": "extruder.0",
-            "cool_fan_speed": "extruder.0",
             "cool_fan_speed_min": "extruder.0",
             "infill_overlap": "extruder.0",
             "infill_sparse_density": "extruder.0",
             "layer_0_z_overlap": "extruder.0",
             "layer_height": "global",
             "raft_airgap": "extruder.0",
+            "retraction_hop_enabled": "extruder.0",
             "speed_print": "extruder.0",
+            "speed_support": "extruder.0",
             "speed_topbottom": "extruder.0",
+            "speed_travel": "extruder.0",
             "speed_wall_0": "extruder.0",
             "speed_wall_x": "extruder.0",
             "support_angle": "extruder.0",
+            "support_bottom_distance": "extruder.0",
             "support_enable": "global",
             "support_z_distance": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.8,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_cpe",
-                "generic_cpe_175"
-            ],
-            "variant_names": [
-                "0.8 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.8"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_cpe",
-                    "generic_cpe_175"
-                ],
-                "variant_names": [
-                    "0.8 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Draft_Quality",
-            "intent_category": null,
-            "material_id": "generic_cpe",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpe_0.8_normal",
-            "quality_type": "draft",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.8 mm"
-        },
-        "data": {
-            "cool_fan_speed_min": 80.0,
-            "infill_sparse_density": 20,
-            "layer_height": 0.2,
-            "speed_print": 40,
-            "top_bottom_thickness": 1.2
-        },
-        "name": "Normal · @ultimaker2_plus · 0.8 mm · generic_cpe",
-        "setting_scopes": {
-            "cool_fan_speed_min": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_height": "global",
-            "speed_print": "extruder.0",
             "top_bottom_thickness": "extruder.0"
         }
     },
@@ -3415,6 +3281,170 @@
             "infill_sparse_density": "extruder.0",
             "layer_height": "global",
             "speed_print": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.8,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_pc",
+                "generic_pc_175"
+            ],
+            "variant_names": [
+                "0.8 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.8"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_pc",
+                    "generic_pc_175"
+                ],
+                "variant_names": [
+                    "0.8 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Draft_Quality",
+            "intent_category": null,
+            "material_id": "generic_pc",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_pc_0.8_normal",
+            "quality_type": "draft",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.8 mm"
+        },
+        "data": {
+            "adhesion_type": "raft",
+            "brim_line_count": 10,
+            "cool_fan_speed": 50,
+            "cool_fan_speed_min": 25.0,
+            "infill_overlap": 5,
+            "infill_sparse_density": 40,
+            "layer_0_z_overlap": 0.22,
+            "layer_height": 0.2,
+            "raft_airgap": 0.47,
+            "speed_print": 40,
+            "support_angle": 45,
+            "support_enable": true,
+            "support_z_distance": 0.26,
+            "top_bottom_thickness": 1.2
+        },
+        "name": "Fine · @ultimaker2_plus · 0.8 mm · generic_pc",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "brim_line_count": "extruder.0",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "infill_overlap": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
+            "layer_height": "global",
+            "raft_airgap": "extruder.0",
+            "speed_print": "extruder.0",
+            "support_angle": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.8,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_cpe_plus",
+                "generic_cpe_plus_175"
+            ],
+            "variant_names": [
+                "0.8 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.8"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_cpe_plus",
+                    "generic_cpe_plus_175"
+                ],
+                "variant_names": [
+                    "0.8 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Draft_Quality",
+            "intent_category": null,
+            "material_id": "generic_cpe_plus",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpep_0.8_normal",
+            "quality_type": "draft",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.8 mm"
+        },
+        "data": {
+            "adhesion_type": "raft",
+            "brim_line_count": 10,
+            "cool_fan_speed": 50,
+            "cool_fan_speed_min": 25.0,
+            "infill_overlap": 5,
+            "infill_sparse_density": 40,
+            "layer_0_z_overlap": 0.22,
+            "layer_height": 0.2,
+            "raft_airgap": 0.37,
+            "speed_print": 30,
+            "speed_topbottom": 20,
+            "speed_wall_0": 20,
+            "speed_wall_x": 30,
+            "support_angle": 45,
+            "support_enable": true,
+            "support_z_distance": 0.26,
+            "top_bottom_thickness": 1.2
+        },
+        "name": "Fine · @ultimaker2_plus · 0.8 mm · generic_cpe_plus",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "brim_line_count": "extruder.0",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "infill_overlap": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
+            "layer_height": "global",
+            "raft_airgap": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_topbottom": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "speed_wall_x": "extruder.0",
+            "support_angle": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0",
             "top_bottom_thickness": "extruder.0"
         }
     },
@@ -3662,8 +3692,8 @@
                 "ultimaker2_plus"
             ],
             "material_native_ids": [
-                "generic_pla",
-                "generic_pla_175"
+                "generic_cpe",
+                "generic_cpe_175"
             ],
             "variant_names": [
                 "0.8 mm"
@@ -3680,8 +3710,8 @@
                     "ultimaker2_plus"
                 ],
                 "material_native_ids": [
-                    "generic_pla",
-                    "generic_pla_175"
+                    "generic_cpe",
+                    "generic_cpe_175"
                 ],
                 "variant_names": [
                     "0.8 mm"
@@ -3690,202 +3720,26 @@
             "definition": "ultimaker2_plus",
             "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Draft_Quality",
             "intent_category": null,
-            "material_id": "generic_pla",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/pla_0.8_normal",
+            "material_id": "generic_cpe",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpe_0.8_normal",
             "quality_type": "draft",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.8 mm"
         },
         "data": {
-            "cool_min_layer_time": 5,
-            "cool_min_speed": 10,
+            "cool_fan_speed_min": 80.0,
             "infill_sparse_density": 20,
             "layer_height": 0.2,
-            "speed_layer_0": 30,
             "speed_print": 40,
-            "speed_wall_0": 25,
             "top_bottom_thickness": 1.2
         },
-        "name": "Normal · @ultimaker2_plus · 0.8 mm · generic_pla",
+        "name": "Normal · @ultimaker2_plus · 0.8 mm · generic_cpe",
         "setting_scopes": {
-            "cool_min_layer_time": "extruder.0",
-            "cool_min_speed": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_height": "global",
-            "speed_layer_0": "extruder.0",
-            "speed_print": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.8,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_nylon",
-                "generic_nylon_175"
-            ],
-            "variant_names": [
-                "0.8 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.8"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_nylon",
-                    "generic_nylon_175"
-                ],
-                "variant_names": [
-                    "0.8 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Slightly_Coarse_Quality",
-            "intent_category": null,
-            "material_id": "generic_nylon",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_nylon_0.8_draft",
-            "quality_type": "slightlycoarse",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.8 mm"
-        },
-        "data": {
-            "adhesion_type": "raft",
-            "brim_line_count": 8,
-            "cool_fan_speed_min": 35.0,
-            "infill_overlap": 5,
-            "infill_sparse_density": 40,
-            "layer_0_z_overlap": 0.25,
-            "layer_height": 0.3,
-            "raft_airgap": 0.44,
-            "retraction_hop_enabled": 0.2,
-            "speed_print": 55,
-            "speed_support": 40,
-            "speed_topbottom": 35,
-            "speed_travel": 150,
-            "speed_wall_0": 15,
-            "speed_wall_x": 40,
-            "support_angle": 45,
-            "support_bottom_distance": 0.65,
-            "support_enable": true,
-            "support_z_distance": 0.5,
-            "top_bottom_thickness": 1.2
-        },
-        "name": "Fast · @ultimaker2_plus · 0.8 mm · generic_nylon",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "brim_line_count": "extruder.0",
             "cool_fan_speed_min": "extruder.0",
-            "infill_overlap": "extruder.0",
             "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
             "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "retraction_hop_enabled": "extruder.0",
             "speed_print": "extruder.0",
-            "speed_support": "extruder.0",
-            "speed_topbottom": "extruder.0",
-            "speed_travel": "extruder.0",
-            "speed_wall_0": "extruder.0",
-            "speed_wall_x": "extruder.0",
-            "support_angle": "extruder.0",
-            "support_bottom_distance": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0",
-            "top_bottom_thickness": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.8,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "machine_definition_ids": [
-                "ultimaker2_plus"
-            ],
-            "material_native_ids": [
-                "generic_pc",
-                "generic_pc_175"
-            ],
-            "variant_names": [
-                "0.8 mm"
-            ]
-        },
-        "compatible_printers": {
-            "Ultimaker 2+": [
-                "0.8"
-            ]
-        },
-        "context": {
-            "compatibility": {
-                "machine_definition_ids": [
-                    "ultimaker2_plus"
-                ],
-                "material_native_ids": [
-                    "generic_pc",
-                    "generic_pc_175"
-                ],
-                "variant_names": [
-                    "0.8 mm"
-                ]
-            },
-            "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Draft_Quality",
-            "intent_category": null,
-            "material_id": "generic_pc",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_pc_0.8_normal",
-            "quality_type": "draft",
-            "resource_version": "5.13.0",
-            "source_kind": "quality",
-            "variant_name": "0.8 mm"
-        },
-        "data": {
-            "adhesion_type": "raft",
-            "brim_line_count": 10,
-            "cool_fan_speed": 50,
-            "cool_fan_speed_min": 25.0,
-            "infill_overlap": 5,
-            "infill_sparse_density": 40,
-            "layer_0_z_overlap": 0.22,
-            "layer_height": 0.2,
-            "raft_airgap": 0.47,
-            "speed_print": 40,
-            "support_angle": 45,
-            "support_enable": true,
-            "support_z_distance": 0.26,
-            "top_bottom_thickness": 1.2
-        },
-        "name": "Fine · @ultimaker2_plus · 0.8 mm · generic_pc",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "brim_line_count": "extruder.0",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "infill_overlap": "extruder.0",
-            "infill_sparse_density": "extruder.0",
-            "layer_0_z_overlap": "extruder.0",
-            "layer_height": "global",
-            "raft_airgap": "extruder.0",
-            "speed_print": "extruder.0",
-            "support_angle": "extruder.0",
-            "support_enable": "global",
-            "support_z_distance": "extruder.0",
             "top_bottom_thickness": "extruder.0"
         }
     },
@@ -3992,6 +3846,73 @@
                 "ultimaker2_plus"
             ],
             "material_native_ids": [
+                "generic_pla",
+                "generic_pla_175"
+            ],
+            "variant_names": [
+                "0.8 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.8"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_pla",
+                    "generic_pla_175"
+                ],
+                "variant_names": [
+                    "0.8 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Draft_Quality",
+            "intent_category": null,
+            "material_id": "generic_pla",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/pla_0.8_normal",
+            "quality_type": "draft",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.8 mm"
+        },
+        "data": {
+            "cool_min_layer_time": 5,
+            "cool_min_speed": 10,
+            "infill_sparse_density": 20,
+            "layer_height": 0.2,
+            "speed_layer_0": 30,
+            "speed_print": 40,
+            "speed_wall_0": 25,
+            "top_bottom_thickness": 1.2
+        },
+        "name": "Normal · @ultimaker2_plus · 0.8 mm · generic_pla",
+        "setting_scopes": {
+            "cool_min_layer_time": "extruder.0",
+            "cool_min_speed": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_height": "global",
+            "speed_layer_0": "extruder.0",
+            "speed_print": "extruder.0",
+            "speed_wall_0": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.8,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
                 "generic_cpe_plus",
                 "generic_cpe_plus_175"
             ],
@@ -4018,11 +3939,11 @@
                 ]
             },
             "definition": "ultimaker2_plus",
-            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Draft_Quality",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Slightly_Coarse_Quality",
             "intent_category": null,
             "material_id": "generic_cpe_plus",
-            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpep_0.8_normal",
-            "quality_type": "draft",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_cpep_0.8_draft",
+            "quality_type": "slightlycoarse",
             "resource_version": "5.13.0",
             "source_kind": "quality",
             "variant_name": "0.8 mm"
@@ -4035,18 +3956,18 @@
             "infill_overlap": 5,
             "infill_sparse_density": 40,
             "layer_0_z_overlap": 0.22,
-            "layer_height": 0.2,
+            "layer_height": 0.3,
             "raft_airgap": 0.37,
-            "speed_print": 30,
+            "speed_print": 25,
             "speed_topbottom": 20,
             "speed_wall_0": 20,
-            "speed_wall_x": 30,
+            "speed_wall_x": 25,
             "support_angle": 45,
             "support_enable": true,
             "support_z_distance": 0.26,
             "top_bottom_thickness": 1.2
         },
-        "name": "Fine · @ultimaker2_plus · 0.8 mm · generic_cpe_plus",
+        "name": "Fast · @ultimaker2_plus · 0.8 mm · generic_cpe_plus",
         "setting_scopes": {
             "adhesion_type": "global",
             "brim_line_count": "extruder.0",
@@ -4061,6 +3982,85 @@
             "speed_topbottom": "extruder.0",
             "speed_wall_0": "extruder.0",
             "speed_wall_x": "extruder.0",
+            "support_angle": "extruder.0",
+            "support_enable": "global",
+            "support_z_distance": "extruder.0",
+            "top_bottom_thickness": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.8,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "machine_definition_ids": [
+                "ultimaker2_plus"
+            ],
+            "material_native_ids": [
+                "generic_pc",
+                "generic_pc_175"
+            ],
+            "variant_names": [
+                "0.8 mm"
+            ]
+        },
+        "compatible_printers": {
+            "Ultimaker 2+": [
+                "0.8"
+            ]
+        },
+        "context": {
+            "compatibility": {
+                "machine_definition_ids": [
+                    "ultimaker2_plus"
+                ],
+                "material_native_ids": [
+                    "generic_pc",
+                    "generic_pc_175"
+                ],
+                "variant_names": [
+                    "0.8 mm"
+                ]
+            },
+            "definition": "ultimaker2_plus",
+            "global_quality_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_global_Extra_Coarse_Quality",
+            "intent_category": null,
+            "material_id": "generic_pc",
+            "native_id": "quality:ultimaker2_plus:ultimaker2_plus/um2p_pc_0.8_draft",
+            "quality_type": "extracoarse",
+            "resource_version": "5.13.0",
+            "source_kind": "quality",
+            "variant_name": "0.8 mm"
+        },
+        "data": {
+            "adhesion_type": "raft",
+            "brim_line_count": 10,
+            "cool_fan_speed": 50,
+            "cool_fan_speed_min": 25.0,
+            "infill_overlap": 5,
+            "infill_sparse_density": 40,
+            "layer_0_z_overlap": 0.22,
+            "layer_height": 0.6,
+            "raft_airgap": 0.47,
+            "speed_print": 40,
+            "support_angle": 45,
+            "support_enable": true,
+            "support_z_distance": 0.26,
+            "top_bottom_thickness": 2.0
+        },
+        "name": "Fast · @ultimaker2_plus · 0.8 mm · generic_pc",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "brim_line_count": "extruder.0",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "infill_overlap": "extruder.0",
+            "infill_sparse_density": "extruder.0",
+            "layer_0_z_overlap": "extruder.0",
+            "layer_height": "global",
+            "raft_airgap": "extruder.0",
+            "speed_print": "extruder.0",
             "support_angle": "extruder.0",
             "support_enable": "global",
             "support_z_distance": "extruder.0",

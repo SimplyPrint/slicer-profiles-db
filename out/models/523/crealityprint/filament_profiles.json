@@ -12,6 +12,9 @@
             ]
         },
         "data": {
+            "activate_air_filtration": [
+                "1"
+            ],
             "bed_type": [
                 "Cool Plate"
             ],
@@ -24,32 +27,38 @@
                 "Sovol SV08 0.6 nozzle",
                 "Sovol SV08 0.8 nozzle"
             ],
+            "complete_print_exhaust_fan_speed": [
+                "60"
+            ],
             "cool_plate_temp": [
-                "85"
+                "80"
             ],
             "cool_plate_temp_initial_layer": [
-                "85"
+                "80"
+            ],
+            "during_print_exhaust_fan_speed": [
+                "100"
             ],
             "eng_plate_temp": [
-                "85"
+                "80"
             ],
             "eng_plate_temp_initial_layer": [
-                "85"
+                "80"
             ],
             "fan_cooling_layer_time": [
                 "30"
             ],
             "fan_max_speed": [
-                "70"
+                "30"
             ],
             "fan_min_speed": [
-                "30"
+                "10"
             ],
             "filament_cost": [
-                "30"
+                "20"
             ],
             "filament_density": [
-                "1.27"
+                "1.10"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -65,7 +74,7 @@
             ],
             "filament_id": "GFL99",
             "filament_max_volumetric_speed": [
-                "17"
+                "21"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -80,7 +89,7 @@
                 "nil"
             ],
             "filament_retraction_length": [
-                "0.5"
+                "nil"
             ],
             "filament_retraction_minimum_travel": [
                 "nil"
@@ -95,10 +104,10 @@
                 "0"
             ],
             "filament_start_gcode": [
-                "; filament start gcode\n"
+                "; Filament gcode\n"
             ],
             "filament_type": [
-                "PETG"
+                "ABS"
             ],
             "filament_vendor": [
                 "Generic"
@@ -110,7 +119,7 @@
                 "nil"
             ],
             "filament_z_hop": [
-                "0.4"
+                "nil"
             ],
             "filament_z_hop_types": [
                 "nil"
@@ -120,19 +129,19 @@
                 "0"
             ],
             "hot_plate_temp": [
-                "75"
+                "95"
             ],
             "hot_plate_temp_initial_layer": [
-                "75"
+                "95"
             ],
             "instantiation": "true",
             "is_custom_defined": "0",
-            "name": "Sovol SV08 PETG",
+            "name": "Sovol SV08 ABS",
             "nozzle_temperature": [
-                "235"
+                "270"
             ],
             "nozzle_temperature_initial_layer": [
-                "255"
+                "280"
             ],
             "nozzle_temperature_range_high": [
                 "280"
@@ -141,10 +150,10 @@
                 "230"
             ],
             "overhang_fan_speed": [
-                "70"
+                "30"
             ],
             "overhang_fan_threshold": [
-                "10%"
+                "25%"
             ],
             "reduce_fan_stop_start_freq": [
                 "1"
@@ -154,7 +163,7 @@
                 "1"
             ],
             "slow_down_layer_time": [
-                "5"
+                "4"
             ],
             "slow_down_min_speed": [
                 "10"
@@ -163,15 +172,15 @@
                 "60"
             ],
             "textured_plate_temp": [
-                "85"
+                "80"
             ],
             "textured_plate_temp_initial_layer": [
-                "85"
+                "80"
             ],
             "type": "filament"
         },
-        "generic_id": "GFG99",
-        "name": "Sovol SV08 PETG"
+        "generic_id": "GFB99",
+        "name": "Sovol SV08 ABS"
     },
     {
         "attributes": {
@@ -358,6 +367,180 @@
                 "Cool Plate"
             ],
             "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Sovol SV08 0.2 nozzle",
+                "Sovol SV08 0.4 nozzle",
+                "Sovol SV08 0.6 nozzle",
+                "Sovol SV08 0.8 nozzle"
+            ],
+            "cool_plate_temp": [
+                "85"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "85"
+            ],
+            "eng_plate_temp": [
+                "85"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "85"
+            ],
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "70"
+            ],
+            "fan_min_speed": [
+                "30"
+            ],
+            "filament_cost": [
+                "30"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.98"
+            ],
+            "filament_id": "GFL99",
+            "filament_max_volumetric_speed": [
+                "17"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.5"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; filament start gcode\n"
+            ],
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "0.4"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "75"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "75"
+            ],
+            "instantiation": "true",
+            "is_custom_defined": "0",
+            "name": "Sovol SV08 PETG",
+            "nozzle_temperature": [
+                "235"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "255"
+            ],
+            "nozzle_temperature_range_high": [
+                "280"
+            ],
+            "nozzle_temperature_range_low": [
+                "230"
+            ],
+            "overhang_fan_speed": [
+                "70"
+            ],
+            "overhang_fan_threshold": [
+                "10%"
+            ],
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "setting_id": "GFSA04",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "5"
+            ],
+            "slow_down_min_speed": [
+                "10"
+            ],
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "85"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "85"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFG99",
+        "name": "Sovol SV08 PETG"
+    },
+    {
+        "attributes": {
+            "nozzle_volume_type": "standard"
+        },
+        "compatible_printers": {
+            "Sovol SV08": [
+                "0.2",
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "data": {
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "close_fan_the_first_x_layers": [
                 "1"
             ],
             "compatible_printers": [
@@ -514,189 +697,6 @@
         },
         "generic_id": "GFL99",
         "name": "Sovol SV08 TPU"
-    },
-    {
-        "attributes": {
-            "nozzle_volume_type": "standard"
-        },
-        "compatible_printers": {
-            "Sovol SV08": [
-                "0.2",
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "data": {
-            "activate_air_filtration": [
-                "1"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "close_fan_the_first_x_layers": [
-                "3"
-            ],
-            "compatible_printers": [
-                "Sovol SV08 0.2 nozzle",
-                "Sovol SV08 0.4 nozzle",
-                "Sovol SV08 0.6 nozzle",
-                "Sovol SV08 0.8 nozzle"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "60"
-            ],
-            "cool_plate_temp": [
-                "80"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "80"
-            ],
-            "during_print_exhaust_fan_speed": [
-                "100"
-            ],
-            "eng_plate_temp": [
-                "80"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "80"
-            ],
-            "fan_cooling_layer_time": [
-                "30"
-            ],
-            "fan_max_speed": [
-                "30"
-            ],
-            "fan_min_speed": [
-                "10"
-            ],
-            "filament_cost": [
-                "20"
-            ],
-            "filament_density": [
-                "1.10"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "0.98"
-            ],
-            "filament_id": "GFL99",
-            "filament_max_volumetric_speed": [
-                "21"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "; Filament gcode\n"
-            ],
-            "filament_type": [
-                "ABS"
-            ],
-            "filament_vendor": [
-                "Generic"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "95"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "95"
-            ],
-            "instantiation": "true",
-            "is_custom_defined": "0",
-            "name": "Sovol SV08 ABS",
-            "nozzle_temperature": [
-                "270"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "280"
-            ],
-            "nozzle_temperature_range_high": [
-                "280"
-            ],
-            "nozzle_temperature_range_low": [
-                "230"
-            ],
-            "overhang_fan_speed": [
-                "30"
-            ],
-            "overhang_fan_threshold": [
-                "25%"
-            ],
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "setting_id": "GFSA04",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "4"
-            ],
-            "slow_down_min_speed": [
-                "10"
-            ],
-            "temperature_vitrification": [
-                "60"
-            ],
-            "textured_plate_temp": [
-                "80"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "80"
-            ],
-            "type": "filament"
-        },
-        "generic_id": "GFB99",
-        "name": "Sovol SV08 ABS"
     },
     {
         "attributes": {

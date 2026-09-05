@@ -10,26 +10,25 @@
                 {
                     "compatible": true,
                     "hotends": {
-                        "0.25mm thermoplastic extruder": true,
-                        "0.4mm thermoplastic extruder": true,
-                        "0.8mm thermoplastic extruder": true
+                        "1A": false,
+                        "1C": false,
+                        "1XA": false,
+                        "2A": false,
+                        "2XA": false,
+                        "LABS": true
                     },
                     "identifiers": [
                         {
-                            "manufacturer": "Cartesio bv",
-                            "product": "cartesio"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "0.4 mm": true
-                    },
-                    "identifiers": [
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "UltiMaker Method"
+                        },
                         {
-                            "manufacturer": "IMADE3D",
-                            "product": "IMADE3D JellyBOX"
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "UltiMaker Method X"
+                        },
+                        {
+                            "manufacturer": "Ultimaker B.V.",
+                            "product": "UltiMaker Method XL"
                         }
                     ]
                 }
@@ -41,50 +40,74 @@
             ]
         },
         "context": {
-            "brand": "TiZYX",
+            "brand": "Jabil",
             "color": "Generic",
-            "color_code": "#FF55FF",
-            "description": "Fast, safe and reliable printing. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
+            "color_code": "#0e0e10",
+            "description": "Soft material great for prototyping where rubber-like or elastomeric properties and durability are required.",
             "diameter": 1.75,
-            "guid": "f42acc2b-f5b0-467c-8fb5-bd02005dc586",
-            "material_type": "FLEX",
-            "native_id": "tizyx_flex#resolved-b888090eb7c0cfbc",
+            "guid": "149ae256-a462-40b0-8003-edbab2fde4ef",
+            "material_type": "TPE SEBS 1300 95A",
+            "native_id": "jabil_tpe_sebs_1300_95a_175#resolved-e49d69c60a3e4d2f",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "tizyx_flex"
+            "source_native_id": "jabil_tpe_sebs_1300_95a_175"
         },
         "data": {
             "adhesion_type": "skirt",
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 210.0,
-            "material_brand": "TiZYX",
+            "build_volume_temperature": 40,
+            "cool_fan_speed": 0,
+            "cool_fan_speed_max": 75,
+            "cool_fan_speed_min": 0,
+            "cool_min_layer_time": 5,
+            "cool_min_temperature": 245,
+            "default_material_bed_temperature": 40,
+            "default_material_print_temperature": 260,
+            "material_adhesion_tendency": 0,
+            "material_bed_temperature": 40,
+            "material_bed_temperature_layer_0": 40,
+            "material_brand": "Jabil",
+            "material_break_preparation_temperature": 260,
             "material_diameter": 1.75,
-            "material_guid": "f42acc2b-f5b0-467c-8fb5-bd02005dc586",
-            "material_standby_temperature": 210.0,
-            "material_type": "FLEX",
+            "material_final_print_temperature": 250,
+            "material_guid": "149ae256-a462-40b0-8003-edbab2fde4ef",
+            "material_initial_print_temperature": 250,
+            "material_print_temperature": 260,
+            "material_print_temperature_layer_0": 260,
+            "material_standby_temperature": 180,
+            "material_surface_energy": 100,
+            "material_type": "TPE SEBS 1300 95A",
             "prime_tower_brim_enable": false,
             "prime_tower_mode": "interleaved",
-            "retraction_amount": 4,
-            "retraction_combing": "noskin",
-            "retraction_speed": 30,
-            "wipe_retraction_amount": 4
+            "retraction_combing": "noskin"
         },
-        "name": "FLEX TiZYX",
+        "name": "Jabil TPE SEBS 1300 95A Generic",
         "setting_scopes": {
             "adhesion_type": "global",
+            "build_volume_temperature": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_max": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "cool_min_layer_time": "extruder.0",
+            "cool_min_temperature": "extruder.0",
             "default_material_bed_temperature": "global",
             "default_material_print_temperature": "extruder.0",
+            "material_adhesion_tendency": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
             "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
             "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
             "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
             "material_standby_temperature": "extruder.0",
+            "material_surface_energy": "extruder.0",
             "material_type": "extruder.0",
             "prime_tower_brim_enable": "global",
             "prime_tower_mode": "global",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0"
+            "retraction_combing": "global"
         }
     },
     {
@@ -182,7 +205,34 @@
         },
         "compatibility": {
             "default": true,
-            "machines": []
+            "machines": [
+                {
+                    "compatible": true,
+                    "hotends": {
+                        "0.25mm thermoplastic extruder": true,
+                        "0.4mm thermoplastic extruder": true,
+                        "0.8mm thermoplastic extruder": true
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "Cartesio bv",
+                            "product": "cartesio"
+                        }
+                    ]
+                },
+                {
+                    "compatible": true,
+                    "hotends": {
+                        "0.4 mm": true
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "IMADE3D",
+                            "product": "IMADE3D JellyBOX"
+                        }
+                    ]
+                }
+            ]
         },
         "compatible_printers": {
             "Anycubic Mega Zero": [
@@ -190,66 +240,42 @@
             ]
         },
         "context": {
-            "brand": "Volumic",
+            "brand": "TiZYX",
             "color": "Generic",
-            "color_code": "#00ff00",
-            "description": "Professional grade ASA (Acrylonitirle Styrene Acrylate)",
+            "color_code": "#FF55FF",
+            "description": "Fast, safe and reliable printing. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
             "diameter": 1.75,
-            "guid": "831a6fdd-80a7-4f1b-936c-cf77b469a3d4",
-            "material_type": "ASA",
-            "native_id": "volumic_asa_ultra#resolved-3bf18bd064b77788",
+            "guid": "f42acc2b-f5b0-467c-8fb5-bd02005dc586",
+            "material_type": "FLEX",
+            "native_id": "tizyx_flex#resolved-b888090eb7c0cfbc",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "volumic_asa_ultra"
+            "source_native_id": "tizyx_flex"
         },
         "data": {
             "adhesion_type": "skirt",
-            "cool_fan_speed": 30.0,
-            "cool_fan_speed_max": 30.0,
-            "cool_fan_speed_min": 30.0,
-            "cool_min_temperature": 245.0,
-            "default_material_bed_temperature": 90.0,
-            "default_material_print_temperature": 245.0,
-            "material_adhesion_tendency": 0,
-            "material_bed_temperature": 90.0,
-            "material_bed_temperature_layer_0": 90.0,
-            "material_brand": "Volumic",
-            "material_break_preparation_temperature": 245.0,
+            "default_material_bed_temperature": 60,
+            "default_material_print_temperature": 210.0,
+            "material_brand": "TiZYX",
             "material_diameter": 1.75,
-            "material_final_print_temperature": 245.0,
-            "material_guid": "831a6fdd-80a7-4f1b-936c-cf77b469a3d4",
-            "material_initial_print_temperature": 245.0,
-            "material_print_temperature": 245.0,
-            "material_print_temperature_layer_0": 245.0,
-            "material_standby_temperature": 180.0,
-            "material_type": "ASA",
+            "material_guid": "f42acc2b-f5b0-467c-8fb5-bd02005dc586",
+            "material_standby_temperature": 210.0,
+            "material_type": "FLEX",
             "prime_tower_brim_enable": false,
             "prime_tower_mode": "interleaved",
-            "retraction_amount": 1.2,
+            "retraction_amount": 4,
             "retraction_combing": "noskin",
-            "retraction_speed": 30.0,
-            "wipe_retraction_amount": 1.2
+            "retraction_speed": 30,
+            "wipe_retraction_amount": 4
         },
-        "name": "ASA Ultra",
+        "name": "FLEX TiZYX",
         "setting_scopes": {
             "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "cool_min_temperature": "extruder.0",
             "default_material_bed_temperature": "global",
             "default_material_print_temperature": "extruder.0",
-            "material_adhesion_tendency": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
             "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
             "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
             "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
             "material_standby_temperature": "extruder.0",
             "material_type": "extruder.0",
             "prime_tower_brim_enable": "global",
@@ -363,6 +389,91 @@
             "brand": "Volumic",
             "color": "Generic",
             "color_code": "#00ff00",
+            "description": "Professional grade ASA (Acrylonitirle Styrene Acrylate)",
+            "diameter": 1.75,
+            "guid": "831a6fdd-80a7-4f1b-936c-cf77b469a3d4",
+            "material_type": "ASA",
+            "native_id": "volumic_asa_ultra#resolved-3bf18bd064b77788",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "volumic_asa_ultra"
+        },
+        "data": {
+            "adhesion_type": "skirt",
+            "cool_fan_speed": 30.0,
+            "cool_fan_speed_max": 30.0,
+            "cool_fan_speed_min": 30.0,
+            "cool_min_temperature": 245.0,
+            "default_material_bed_temperature": 90.0,
+            "default_material_print_temperature": 245.0,
+            "material_adhesion_tendency": 0,
+            "material_bed_temperature": 90.0,
+            "material_bed_temperature_layer_0": 90.0,
+            "material_brand": "Volumic",
+            "material_break_preparation_temperature": 245.0,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": 245.0,
+            "material_guid": "831a6fdd-80a7-4f1b-936c-cf77b469a3d4",
+            "material_initial_print_temperature": 245.0,
+            "material_print_temperature": 245.0,
+            "material_print_temperature_layer_0": 245.0,
+            "material_standby_temperature": 180.0,
+            "material_type": "ASA",
+            "prime_tower_brim_enable": false,
+            "prime_tower_mode": "interleaved",
+            "retraction_amount": 1.2,
+            "retraction_combing": "noskin",
+            "retraction_speed": 30.0,
+            "wipe_retraction_amount": 1.2
+        },
+        "name": "ASA Ultra",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_max": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_adhesion_tendency": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_brim_enable": "global",
+            "prime_tower_mode": "global",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_amount": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": []
+        },
+        "compatible_printers": {
+            "Anycubic Mega Zero": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "brand": "Volumic",
+            "color": "Generic",
+            "color_code": "#00ff00",
             "description": "The medical ULTRA have a USP Classe VI / ISO 10993-1 certification for medical use.",
             "diameter": 1.75,
             "guid": "397bdd04-a387-4cb8-84c5-f9ee2d792782",
@@ -428,117 +539,6 @@
             "retraction_combing": "global",
             "retraction_speed": "extruder.0",
             "wipe_retraction_amount": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "1A": false,
-                        "1C": false,
-                        "1XA": false,
-                        "2A": false,
-                        "2XA": false,
-                        "LABS": true
-                    },
-                    "identifiers": [
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "UltiMaker Method"
-                        },
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "UltiMaker Method X"
-                        },
-                        {
-                            "manufacturer": "Ultimaker B.V.",
-                            "product": "UltiMaker Method XL"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Anycubic Mega Zero": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Jabil",
-            "color": "Generic",
-            "color_code": "#0e0e10",
-            "description": "Soft material great for prototyping where rubber-like or elastomeric properties and durability are required.",
-            "diameter": 1.75,
-            "guid": "149ae256-a462-40b0-8003-edbab2fde4ef",
-            "material_type": "TPE SEBS 1300 95A",
-            "native_id": "jabil_tpe_sebs_1300_95a_175#resolved-e49d69c60a3e4d2f",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "jabil_tpe_sebs_1300_95a_175"
-        },
-        "data": {
-            "adhesion_type": "skirt",
-            "build_volume_temperature": 40,
-            "cool_fan_speed": 0,
-            "cool_fan_speed_max": 75,
-            "cool_fan_speed_min": 0,
-            "cool_min_layer_time": 5,
-            "cool_min_temperature": 245,
-            "default_material_bed_temperature": 40,
-            "default_material_print_temperature": 260,
-            "material_adhesion_tendency": 0,
-            "material_bed_temperature": 40,
-            "material_bed_temperature_layer_0": 40,
-            "material_brand": "Jabil",
-            "material_break_preparation_temperature": 260,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 250,
-            "material_guid": "149ae256-a462-40b0-8003-edbab2fde4ef",
-            "material_initial_print_temperature": 250,
-            "material_print_temperature": 260,
-            "material_print_temperature_layer_0": 260,
-            "material_standby_temperature": 180,
-            "material_surface_energy": 100,
-            "material_type": "TPE SEBS 1300 95A",
-            "prime_tower_brim_enable": false,
-            "prime_tower_mode": "interleaved",
-            "retraction_combing": "noskin"
-        },
-        "name": "Jabil TPE SEBS 1300 95A Generic",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "build_volume_temperature": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "cool_min_layer_time": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_adhesion_tendency": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_surface_energy": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_brim_enable": "global",
-            "prime_tower_mode": "global",
-            "retraction_combing": "global"
         }
     },
     {
