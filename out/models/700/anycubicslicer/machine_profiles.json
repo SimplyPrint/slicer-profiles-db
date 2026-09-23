@@ -1,0 +1,203 @@
+[
+    {
+        "machine_model": {
+            "bed_model": "sha256:595673976e78084a666edf4047a514e5bb0885721074bd44ab4b7d79f7f6744d",
+            "bed_texture": "",
+            "default_materials": "Dremel Generic PLA @3D40 all",
+            "family": "Dremel",
+            "hotend_model": "",
+            "machine_tech": "FFF",
+            "model_id": "Dremel_3D40",
+            "name": "Dremel 3D40",
+            "nozzle_diameter": "0.4",
+            "type": "machine_model"
+        },
+        "variants": {
+            "0.4": {
+                "context": {
+                    "variant_key": "0.4"
+                },
+                "data": {
+                    "auxiliary_fan": "0",
+                    "bed_exclude_area": [
+                        "0x0"
+                    ],
+                    "before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+                    "change_filament_gcode": "",
+                    "default_filament_profile": [
+                        "Dremel Generic PLA @3D40 all"
+                    ],
+                    "default_print_profile": ".20mm Standard @Dremel 3D40 0.4",
+                    "deretraction_speed": [
+                        "40"
+                    ],
+                    "emit_machine_limits_to_gcode": "1",
+                    "enable_filament_ramming": "1",
+                    "extra_loading_move": "-2",
+                    "extruder_clearance_height_to_lid": "101",
+                    "extruder_clearance_height_to_rod": "45",
+                    "extruder_clearance_radius": "45",
+                    "extruder_colour": [
+                        "#FCE94F"
+                    ],
+                    "extruder_offset": [
+                        "0x0"
+                    ],
+                    "fan_speedup_overhangs": "1",
+                    "from": "system",
+                    "gcode_flavor": "marlin",
+                    "instantiation": "true",
+                    "layer_change_gcode": "",
+                    "machine_end_gcode": "M104 S0\nM140 S0\nG92 E1\nG1 E-1 F300\nG162 Z F600\nG162 X Y F2000\nM84",
+                    "machine_max_acceleration_e": [
+                        "6200",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_extruding": [
+                        "6200",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_retracting": [
+                        "5000",
+                        "5000"
+                    ],
+                    "machine_max_acceleration_travel": [
+                        "9000",
+                        "9000"
+                    ],
+                    "machine_max_acceleration_x": [
+                        "6200",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_y": [
+                        "6200",
+                        "20000"
+                    ],
+                    "machine_max_acceleration_z": [
+                        "500",
+                        "500"
+                    ],
+                    "machine_max_jerk_e": [
+                        "2.5",
+                        "2.5"
+                    ],
+                    "machine_max_jerk_x": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_y": [
+                        "12",
+                        "12"
+                    ],
+                    "machine_max_jerk_z": [
+                        "2",
+                        "2"
+                    ],
+                    "machine_max_speed_e": [
+                        "3000",
+                        "100"
+                    ],
+                    "machine_max_speed_x": [
+                        "1000",
+                        "1000"
+                    ],
+                    "machine_max_speed_y": [
+                        "1000",
+                        "1000"
+                    ],
+                    "machine_max_speed_z": [
+                        "30",
+                        "30"
+                    ],
+                    "machine_min_extruding_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_min_travel_rate": [
+                        "0",
+                        "0"
+                    ],
+                    "machine_pause_gcode": "M25 ;pause print",
+                    "machine_start_gcode": "G90\nG28\nM132 X Y Z A\nG1 Z100 F3300\nG1 X-110.5 Y-74 F6000\nM6 T0\nM907 X100 Y100 Z60 A100\nG1 Z0.6 F3300\nG4 P2000\nM108 T0",
+                    "max_layer_height": [
+                        "0.34"
+                    ],
+                    "min_layer_height": [
+                        "0.05"
+                    ],
+                    "name": "Dremel 3D40 0.4 nozzle",
+                    "nozzle_diameter": [
+                        "0.4"
+                    ],
+                    "nozzle_type": "undefine",
+                    "printable_area": [
+                        "-127.5x-77.5",
+                        "97.5x-77.5",
+                        "97.5x77.5",
+                        "-127.5x77.5"
+                    ],
+                    "printable_height": "170",
+                    "printer_model": "Dremel 3D40",
+                    "printer_settings_id": "Dremel",
+                    "printer_structure": "hbot",
+                    "printer_technology": "FFF",
+                    "printer_variant": "0.4",
+                    "retract_before_wipe": [
+                        "70%"
+                    ],
+                    "retract_length_toolchange": [
+                        "1"
+                    ],
+                    "retract_lift_enforce": [
+                        "Top Only"
+                    ],
+                    "retract_restart_extra": [
+                        "0"
+                    ],
+                    "retract_restart_extra_toolchange": [
+                        "0"
+                    ],
+                    "retract_when_changing_layer": [
+                        "1"
+                    ],
+                    "retraction_length": [
+                        "3"
+                    ],
+                    "retraction_minimum_travel": [
+                        "5"
+                    ],
+                    "retraction_speed": [
+                        "60"
+                    ],
+                    "scan_first_layer": "0",
+                    "setting_id": "GM001",
+                    "silent_mode": "0",
+                    "single_extruder_multi_material": "1",
+                    "support_air_filtration": "0",
+                    "support_chamber_temp_control": "0",
+                    "thumbnails": [
+                        "96x96",
+                        "300x300"
+                    ],
+                    "thumbnails_format": "PNG",
+                    "type": "machine",
+                    "use_relative_e_distances": "0",
+                    "wipe": [
+                        "1"
+                    ],
+                    "wipe_distance": [
+                        "1"
+                    ],
+                    "z_hop": [
+                        "0.5"
+                    ],
+                    "z_hop_types": [
+                        "Normal Lift"
+                    ]
+                },
+                "name": "Dremel 3D40 0.4 nozzle"
+            }
+        },
+        "vendor": "Dremel"
+    }
+]
