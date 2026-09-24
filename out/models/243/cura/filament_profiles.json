@@ -127,90 +127,85 @@
     },
     {
         "attributes": {
-            "nozzle_diameter": 1.0,
+            "nozzle_diameter": 0.6,
             "nozzle_volume_type": "standard"
         },
         "compatibility": {
             "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "Standard 0.4": true,
-                        "Standard 0.6": true,
-                        "Standard 0.8": true,
-                        "Standard 1.0 Experimental": true,
-                        "Standard 1.2 Experimental": true
-                    },
-                    "identifiers": [
-                        {
-                            "manufacturer": "eMotionTech",
-                            "product": "Strateo3D"
-                        }
-                    ]
-                }
-            ]
+            "machines": []
         },
         "compatible_printers": {
             "RatRig V-Core 3 200mm": [
-                "1"
+                "0.6"
             ],
             "RatRig V-Core 3 300mm": [
-                "1"
+                "0.6"
             ],
             "RatRig V-Core 3 400mm": [
-                "1"
+                "0.6"
             ],
             "RatRig V-Core 3 500mm": [
-                "1"
+                "0.6"
             ],
             "RatRig V-Minion": [
-                "1"
+                "0.6"
             ]
         },
         "context": {
-            "brand": "eMotionTech",
+            "brand": "Volumic",
             "color": "Generic",
-            "color_code": "#27292b",
-            "description": null,
+            "color_code": "#00ff00",
+            "description": "Professional ABS that doesn't warp! Much easier to print than standard ABS, low warping, very high quality material and excellent rendering.",
             "diameter": 1.75,
-            "guid": "cb7cbe23-bb0b-4d54-95e0-340aaac4541f",
-            "material_type": "Nylon",
-            "native_id": "emotiontech_nylon_1030#resolved-fafb587446691bb9",
+            "guid": "6cc2db78-1538-43c8-964a-24a4f33119ce",
+            "material_type": "ABS",
+            "native_id": "volumic_abs_ultra#resolved-0976909231356664",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "emotiontech_nylon_1030"
+            "source_native_id": "volumic_abs_ultra"
         },
         "data": {
             "adhesion_type": "skirt",
-            "build_volume_temperature": 35,
-            "cool_min_temperature": 250,
-            "default_material_bed_temperature": 100,
-            "default_material_print_temperature": 250,
-            "material_bed_temperature": 100,
-            "material_bed_temperature_layer_0": 100,
-            "material_brand": "eMotionTech",
-            "material_break_preparation_temperature": 250,
+            "cool_fan_speed": 30.0,
+            "cool_fan_speed_max": 30.0,
+            "cool_fan_speed_min": 30.0,
+            "cool_min_temperature": 235.0,
+            "default_material_bed_temperature": 75.0,
+            "default_material_print_temperature": 235.0,
+            "material_adhesion_tendency": 0,
+            "material_bed_temperature": 75.0,
+            "material_bed_temperature_layer_0": 75.0,
+            "material_brand": "Volumic",
+            "material_break_preparation_temperature": 235.0,
             "material_diameter": 1.75,
-            "material_final_print_temperature": 250,
-            "material_guid": "cb7cbe23-bb0b-4d54-95e0-340aaac4541f",
-            "material_initial_print_temperature": 250,
-            "material_print_temperature": 250,
-            "material_print_temperature_layer_0": 250,
-            "material_standby_temperature": 150,
-            "material_type": "Nylon",
+            "material_final_print_temperature": 235.0,
+            "material_guid": "6cc2db78-1538-43c8-964a-24a4f33119ce",
+            "material_initial_print_temperature": 235.0,
+            "material_print_temperature": 235.0,
+            "material_print_temperature_layer_0": 235.0,
+            "material_standby_temperature": 175.0,
+            "material_type": "ABS",
             "prime_tower_brim_enable": false,
             "prime_tower_mode": "interleaved",
-            "retraction_amount": 2,
-            "retraction_combing": "noskin"
+            "retraction_amount": 1.2,
+            "retraction_combing": "noskin",
+            "retraction_prime_speed": 30.0,
+            "retraction_retract_speed": 30.0,
+            "retraction_speed": 30.0,
+            "wipe_retraction_prime_speed": 30.0,
+            "wipe_retraction_retract_speed": 30.0,
+            "wipe_retraction_speed": 30.0
         },
-        "name": "Nylon 1030 - Deprecated",
+        "name": "ABS Ultra",
         "setting_scopes": {
             "adhesion_type": "global",
-            "build_volume_temperature": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_max": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
             "cool_min_temperature": "extruder.0",
             "default_material_bed_temperature": "global",
             "default_material_print_temperature": "extruder.0",
+            "material_adhesion_tendency": "extruder.0",
             "material_bed_temperature": "global",
             "material_bed_temperature_layer_0": "global",
             "material_brand": "extruder.0",
@@ -226,7 +221,13 @@
             "prime_tower_brim_enable": "global",
             "prime_tower_mode": "global",
             "retraction_amount": "extruder.0",
-            "retraction_combing": "global"
+            "retraction_combing": "global",
+            "retraction_prime_speed": "extruder.0",
+            "retraction_retract_speed": "extruder.0",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_prime_speed": "extruder.0",
+            "wipe_retraction_retract_speed": "extruder.0",
+            "wipe_retraction_speed": "extruder.0"
         }
     },
     {
@@ -236,48 +237,7 @@
         },
         "compatibility": {
             "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "High temp 0.4": true,
-                        "Standard 0.4": true,
-                        "Standard 0.6": true,
-                        "Standard 0.8": false,
-                        "Standard 1.0 Experimental": false,
-                        "Standard 1.2 Experimental": false
-                    },
-                    "identifiers": [
-                        {
-                            "manufacturer": "eMotionTech",
-                            "product": "DUAL600"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "IDEX420 Acier Durci 0.4": false,
-                        "IDEX420 Laiton 0.4": true,
-                        "IDEX420 Laiton 0.6": true,
-                        "IDEX420 Laiton 0.8": false
-                    },
-                    "identifiers": [
-                        {
-                            "manufacturer": "eMotionTech",
-                            "product": "IDEX420"
-                        },
-                        {
-                            "manufacturer": "eMotionTech",
-                            "product": "IDEX420 Duplicate"
-                        },
-                        {
-                            "manufacturer": "eMotionTech",
-                            "product": "IDEX420 Mirror"
-                        }
-                    ]
-                }
-            ]
+            "machines": []
         },
         "compatible_printers": {
             "RatRig V-Core 3 200mm": [
@@ -297,48 +257,60 @@
             ]
         },
         "context": {
-            "brand": "eMotionTech",
+            "brand": "Volumic",
             "color": "Generic",
-            "color_code": "#D5D8DC",
-            "description": "The Acetate 3D filament is recognized for its biodegradable properties and its natural UV resistance. In addition, it is a material that behaves very well against chemical agents such as chlorine, which makes it a real asset in the printing of 3D parts intended for optics or intended to be in contact with the skin.",
+            "color_code": "#00ff00",
+            "description": "The Support Ultra is a modified PVA to increase bed adhesion and to other materials, much easier than a standard PVA.",
             "diameter": 1.75,
-            "guid": "3ae65b77-96f2-4a9e-a949-5b24e29a09b2",
-            "material_type": "Acetate",
-            "native_id": "emotiontech_acetate#resolved-5a040103222e285c",
+            "guid": "a14eeb2d-3faa-4892-ade6-c56bb34d38eb",
+            "material_type": "PVA",
+            "native_id": "volumic_support_ultra#resolved-e74094b9a4c8173c",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "emotiontech_acetate"
+            "source_native_id": "volumic_support_ultra"
         },
         "data": {
             "adhesion_type": "skirt",
-            "build_volume_temperature": 0,
-            "cool_min_temperature": 235,
-            "default_material_bed_temperature": 65,
-            "default_material_print_temperature": 235,
-            "material_bed_temperature": 65,
-            "material_bed_temperature_layer_0": 65,
-            "material_brand": "eMotionTech",
-            "material_break_preparation_temperature": 235,
+            "cool_fan_speed": 0.0,
+            "cool_fan_speed_max": 0.0,
+            "cool_fan_speed_min": 0.0,
+            "cool_min_temperature": 245.0,
+            "default_material_bed_temperature": 65.0,
+            "default_material_print_temperature": 245.0,
+            "material_adhesion_tendency": 0,
+            "material_bed_temperature": 65.0,
+            "material_bed_temperature_layer_0": 65.0,
+            "material_brand": "Volumic",
+            "material_break_preparation_temperature": 245.0,
             "material_diameter": 1.75,
-            "material_final_print_temperature": 235,
-            "material_guid": "3ae65b77-96f2-4a9e-a949-5b24e29a09b2",
-            "material_initial_print_temperature": 235,
-            "material_print_temperature": 235,
-            "material_print_temperature_layer_0": 235,
-            "material_standby_temperature": 100,
-            "material_type": "Acetate",
+            "material_final_print_temperature": 245.0,
+            "material_guid": "a14eeb2d-3faa-4892-ade6-c56bb34d38eb",
+            "material_initial_print_temperature": 245.0,
+            "material_print_temperature": 245.0,
+            "material_print_temperature_layer_0": 245.0,
+            "material_standby_temperature": 175.0,
+            "material_type": "PVA",
             "prime_tower_brim_enable": false,
             "prime_tower_mode": "interleaved",
-            "retraction_amount": 2,
-            "retraction_combing": "noskin"
+            "retraction_amount": 2.0,
+            "retraction_combing": "noskin",
+            "retraction_prime_speed": 25.0,
+            "retraction_retract_speed": 25.0,
+            "retraction_speed": 25.0,
+            "wipe_retraction_prime_speed": 25.0,
+            "wipe_retraction_retract_speed": 25.0,
+            "wipe_retraction_speed": 25.0
         },
-        "name": "eMotionTech Acetate Generic",
+        "name": "SUPPORT Ultra",
         "setting_scopes": {
             "adhesion_type": "global",
-            "build_volume_temperature": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_max": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
             "cool_min_temperature": "extruder.0",
             "default_material_bed_temperature": "global",
             "default_material_print_temperature": "extruder.0",
+            "material_adhesion_tendency": "extruder.0",
             "material_bed_temperature": "global",
             "material_bed_temperature_layer_0": "global",
             "material_brand": "extruder.0",
@@ -354,95 +326,96 @@
             "prime_tower_brim_enable": "global",
             "prime_tower_mode": "global",
             "retraction_amount": "extruder.0",
-            "retraction_combing": "global"
+            "retraction_combing": "global",
+            "retraction_prime_speed": "extruder.0",
+            "retraction_retract_speed": "extruder.0",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_prime_speed": "extruder.0",
+            "wipe_retraction_retract_speed": "extruder.0",
+            "wipe_retraction_speed": "extruder.0"
         }
     },
     {
         "attributes": {
-            "nozzle_diameter": 1.0,
+            "nozzle_diameter": 0.6,
             "nozzle_volume_type": "standard"
         },
         "compatibility": {
             "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "Standard 0.4": true,
-                        "Standard 0.6": true,
-                        "Standard 0.8": true,
-                        "Standard 1.0 Experimental": true,
-                        "Standard 1.2 Experimental": true
-                    },
-                    "identifiers": [
-                        {
-                            "manufacturer": "eMotionTech",
-                            "product": "Strateo3D"
-                        }
-                    ]
-                }
-            ]
+            "machines": []
         },
         "compatible_printers": {
             "RatRig V-Core 3 200mm": [
-                "1"
+                "0.6"
             ],
             "RatRig V-Core 3 300mm": [
-                "1"
+                "0.6"
             ],
             "RatRig V-Core 3 400mm": [
-                "1"
+                "0.6"
             ],
             "RatRig V-Core 3 500mm": [
-                "1"
+                "0.6"
             ],
             "RatRig V-Minion": [
-                "1"
+                "0.6"
             ]
         },
         "context": {
-            "brand": "eMotionTech",
+            "brand": "Volumic",
             "color": "Generic",
-            "color_code": "#27292b",
-            "description": null,
+            "color_code": "#00ff00",
+            "description": "Professional grade ASA (Acrylonitirle Styrene Acrylate)",
             "diameter": 1.75,
-            "guid": "e8ec7612-b626-4861-af93-56549c209bad",
-            "material_type": "Nylon",
-            "native_id": "emotiontech_nylon_1070#resolved-7d3ac3019833a8a8",
+            "guid": "831a6fdd-80a7-4f1b-936c-cf77b469a3d4",
+            "material_type": "ASA",
+            "native_id": "volumic_asa_ultra#resolved-9404d04fe567cdcc",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "emotiontech_nylon_1070"
+            "source_native_id": "volumic_asa_ultra"
         },
         "data": {
             "adhesion_type": "skirt",
-            "build_volume_temperature": 35,
-            "cool_min_temperature": 260,
-            "default_material_bed_temperature": 100,
-            "default_material_print_temperature": 260,
-            "material_bed_temperature": 100,
-            "material_bed_temperature_layer_0": 100,
-            "material_brand": "eMotionTech",
-            "material_break_preparation_temperature": 260,
+            "cool_fan_speed": 30.0,
+            "cool_fan_speed_max": 30.0,
+            "cool_fan_speed_min": 30.0,
+            "cool_min_temperature": 245.0,
+            "default_material_bed_temperature": 90.0,
+            "default_material_print_temperature": 245.0,
+            "material_adhesion_tendency": 0,
+            "material_bed_temperature": 90.0,
+            "material_bed_temperature_layer_0": 90.0,
+            "material_brand": "Volumic",
+            "material_break_preparation_temperature": 245.0,
             "material_diameter": 1.75,
-            "material_final_print_temperature": 260,
-            "material_guid": "e8ec7612-b626-4861-af93-56549c209bad",
-            "material_initial_print_temperature": 260,
-            "material_print_temperature": 260,
-            "material_print_temperature_layer_0": 260,
-            "material_standby_temperature": 150,
-            "material_type": "Nylon",
+            "material_final_print_temperature": 245.0,
+            "material_guid": "831a6fdd-80a7-4f1b-936c-cf77b469a3d4",
+            "material_initial_print_temperature": 245.0,
+            "material_print_temperature": 245.0,
+            "material_print_temperature_layer_0": 245.0,
+            "material_standby_temperature": 180.0,
+            "material_type": "ASA",
             "prime_tower_brim_enable": false,
             "prime_tower_mode": "interleaved",
-            "retraction_amount": 2,
-            "retraction_combing": "noskin"
+            "retraction_amount": 1.2,
+            "retraction_combing": "noskin",
+            "retraction_prime_speed": 30.0,
+            "retraction_retract_speed": 30.0,
+            "retraction_speed": 30.0,
+            "wipe_retraction_prime_speed": 30.0,
+            "wipe_retraction_retract_speed": 30.0,
+            "wipe_retraction_speed": 30.0
         },
-        "name": "Nylon 1070 - Deprecated",
+        "name": "ASA Ultra",
         "setting_scopes": {
             "adhesion_type": "global",
-            "build_volume_temperature": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_max": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
             "cool_min_temperature": "extruder.0",
             "default_material_bed_temperature": "global",
             "default_material_print_temperature": "extruder.0",
+            "material_adhesion_tendency": "extruder.0",
             "material_bed_temperature": "global",
             "material_bed_temperature_layer_0": "global",
             "material_brand": "extruder.0",
@@ -458,7 +431,13 @@
             "prime_tower_brim_enable": "global",
             "prime_tower_mode": "global",
             "retraction_amount": "extruder.0",
-            "retraction_combing": "global"
+            "retraction_combing": "global",
+            "retraction_prime_speed": "extruder.0",
+            "retraction_retract_speed": "extruder.0",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_prime_speed": "extruder.0",
+            "wipe_retraction_retract_speed": "extruder.0",
+            "wipe_retraction_speed": "extruder.0"
         }
     },
     {
@@ -568,7 +547,7 @@
     },
     {
         "attributes": {
-            "nozzle_diameter": 0.6,
+            "nozzle_diameter": 1.0,
             "nozzle_volume_type": "standard"
         },
         "compatibility": {
@@ -577,67 +556,67 @@
         },
         "compatible_printers": {
             "RatRig V-Core 3 200mm": [
-                "0.6"
+                "1"
             ],
             "RatRig V-Core 3 300mm": [
-                "0.6"
+                "1"
             ],
             "RatRig V-Core 3 400mm": [
-                "0.6"
+                "1"
             ],
             "RatRig V-Core 3 500mm": [
-                "0.6"
+                "1"
             ],
             "RatRig V-Minion": [
-                "0.6"
+                "1"
             ]
         },
         "context": {
             "brand": "Volumic",
             "color": "Generic",
             "color_code": "#00ff00",
-            "description": "Professional ABS that doesn't warp! Much easier to print than standard ABS, low warping, very high quality material and excellent rendering.",
+            "description": "PEKK, easier to print than PEEK, and having similar characteristics. Please note, this material requires a good knowledge of 3D printing.",
             "diameter": 1.75,
-            "guid": "6cc2db78-1538-43c8-964a-24a4f33119ce",
-            "material_type": "ABS",
-            "native_id": "volumic_abs_ultra#resolved-0976909231356664",
+            "guid": "78b50ccb-12de-4119-8fb2-7b90a4c0fa46",
+            "material_type": "PEKK",
+            "native_id": "volumic_pekk_carbone#resolved-5d3ec58bce8d379d",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "volumic_abs_ultra"
+            "source_native_id": "volumic_pekk_carbone"
         },
         "data": {
             "adhesion_type": "skirt",
-            "cool_fan_speed": 30.0,
-            "cool_fan_speed_max": 30.0,
-            "cool_fan_speed_min": 30.0,
-            "cool_min_temperature": 235.0,
-            "default_material_bed_temperature": 75.0,
-            "default_material_print_temperature": 235.0,
+            "cool_fan_speed": 0.0,
+            "cool_fan_speed_max": 0.0,
+            "cool_fan_speed_min": 0.0,
+            "cool_min_temperature": 340.0,
+            "default_material_bed_temperature": 135.0,
+            "default_material_print_temperature": 340.0,
             "material_adhesion_tendency": 0,
-            "material_bed_temperature": 75.0,
-            "material_bed_temperature_layer_0": 75.0,
+            "material_bed_temperature": 135.0,
+            "material_bed_temperature_layer_0": 135.0,
             "material_brand": "Volumic",
-            "material_break_preparation_temperature": 235.0,
+            "material_break_preparation_temperature": 340.0,
             "material_diameter": 1.75,
-            "material_final_print_temperature": 235.0,
-            "material_guid": "6cc2db78-1538-43c8-964a-24a4f33119ce",
-            "material_initial_print_temperature": 235.0,
-            "material_print_temperature": 235.0,
-            "material_print_temperature_layer_0": 235.0,
-            "material_standby_temperature": 175.0,
-            "material_type": "ABS",
+            "material_final_print_temperature": 340.0,
+            "material_guid": "78b50ccb-12de-4119-8fb2-7b90a4c0fa46",
+            "material_initial_print_temperature": 340.0,
+            "material_print_temperature": 340.0,
+            "material_print_temperature_layer_0": 340.0,
+            "material_standby_temperature": 260.0,
+            "material_type": "PEKK",
             "prime_tower_brim_enable": false,
             "prime_tower_mode": "interleaved",
-            "retraction_amount": 1.2,
+            "retraction_amount": 2.0,
             "retraction_combing": "noskin",
-            "retraction_prime_speed": 30.0,
-            "retraction_retract_speed": 30.0,
-            "retraction_speed": 30.0,
-            "wipe_retraction_prime_speed": 30.0,
-            "wipe_retraction_retract_speed": 30.0,
-            "wipe_retraction_speed": 30.0
+            "retraction_prime_speed": 15.0,
+            "retraction_retract_speed": 15.0,
+            "retraction_speed": 15.0,
+            "wipe_retraction_prime_speed": 15.0,
+            "wipe_retraction_retract_speed": 15.0,
+            "wipe_retraction_speed": 15.0
         },
-        "name": "ABS Ultra",
+        "name": "PEKK Carbone",
         "setting_scopes": {
             "adhesion_type": "global",
             "cool_fan_speed": "extruder.0",
@@ -865,111 +844,6 @@
     },
     {
         "attributes": {
-            "nozzle_diameter": 0.6,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "RatRig V-Core 3 200mm": [
-                "0.6"
-            ],
-            "RatRig V-Core 3 300mm": [
-                "0.6"
-            ],
-            "RatRig V-Core 3 400mm": [
-                "0.6"
-            ],
-            "RatRig V-Core 3 500mm": [
-                "0.6"
-            ],
-            "RatRig V-Minion": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "brand": "Volumic",
-            "color": "Generic",
-            "color_code": "#00ff00",
-            "description": "Professional grade ASA (Acrylonitirle Styrene Acrylate)",
-            "diameter": 1.75,
-            "guid": "831a6fdd-80a7-4f1b-936c-cf77b469a3d4",
-            "material_type": "ASA",
-            "native_id": "volumic_asa_ultra#resolved-9404d04fe567cdcc",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "volumic_asa_ultra"
-        },
-        "data": {
-            "adhesion_type": "skirt",
-            "cool_fan_speed": 30.0,
-            "cool_fan_speed_max": 30.0,
-            "cool_fan_speed_min": 30.0,
-            "cool_min_temperature": 245.0,
-            "default_material_bed_temperature": 90.0,
-            "default_material_print_temperature": 245.0,
-            "material_adhesion_tendency": 0,
-            "material_bed_temperature": 90.0,
-            "material_bed_temperature_layer_0": 90.0,
-            "material_brand": "Volumic",
-            "material_break_preparation_temperature": 245.0,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 245.0,
-            "material_guid": "831a6fdd-80a7-4f1b-936c-cf77b469a3d4",
-            "material_initial_print_temperature": 245.0,
-            "material_print_temperature": 245.0,
-            "material_print_temperature_layer_0": 245.0,
-            "material_standby_temperature": 180.0,
-            "material_type": "ASA",
-            "prime_tower_brim_enable": false,
-            "prime_tower_mode": "interleaved",
-            "retraction_amount": 1.2,
-            "retraction_combing": "noskin",
-            "retraction_prime_speed": 30.0,
-            "retraction_retract_speed": 30.0,
-            "retraction_speed": 30.0,
-            "wipe_retraction_prime_speed": 30.0,
-            "wipe_retraction_retract_speed": 30.0,
-            "wipe_retraction_speed": 30.0
-        },
-        "name": "ASA Ultra",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_adhesion_tendency": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_brim_enable": "global",
-            "prime_tower_mode": "global",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
             "nozzle_diameter": 1.0,
             "nozzle_volume_type": "standard"
         },
@@ -1040,321 +914,6 @@
             "wipe_retraction_speed": 25.0
         },
         "name": "PETG CARBONE Ultra",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_adhesion_tendency": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_brim_enable": "global",
-            "prime_tower_mode": "global",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 1.0,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "RatRig V-Core 3 200mm": [
-                "1"
-            ],
-            "RatRig V-Core 3 300mm": [
-                "1"
-            ],
-            "RatRig V-Core 3 400mm": [
-                "1"
-            ],
-            "RatRig V-Core 3 500mm": [
-                "1"
-            ],
-            "RatRig V-Minion": [
-                "1"
-            ]
-        },
-        "context": {
-            "brand": "Volumic",
-            "color": "Generic",
-            "color_code": "#00ff00",
-            "description": "PEKK, easier to print than PEEK, and having similar characteristics. Please note, this material requires a good knowledge of 3D printing.",
-            "diameter": 1.75,
-            "guid": "78b50ccb-12de-4119-8fb2-7b90a4c0fa46",
-            "material_type": "PEKK",
-            "native_id": "volumic_pekk_carbone#resolved-5d3ec58bce8d379d",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "volumic_pekk_carbone"
-        },
-        "data": {
-            "adhesion_type": "skirt",
-            "cool_fan_speed": 0.0,
-            "cool_fan_speed_max": 0.0,
-            "cool_fan_speed_min": 0.0,
-            "cool_min_temperature": 340.0,
-            "default_material_bed_temperature": 135.0,
-            "default_material_print_temperature": 340.0,
-            "material_adhesion_tendency": 0,
-            "material_bed_temperature": 135.0,
-            "material_bed_temperature_layer_0": 135.0,
-            "material_brand": "Volumic",
-            "material_break_preparation_temperature": 340.0,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 340.0,
-            "material_guid": "78b50ccb-12de-4119-8fb2-7b90a4c0fa46",
-            "material_initial_print_temperature": 340.0,
-            "material_print_temperature": 340.0,
-            "material_print_temperature_layer_0": 340.0,
-            "material_standby_temperature": 260.0,
-            "material_type": "PEKK",
-            "prime_tower_brim_enable": false,
-            "prime_tower_mode": "interleaved",
-            "retraction_amount": 2.0,
-            "retraction_combing": "noskin",
-            "retraction_prime_speed": 15.0,
-            "retraction_retract_speed": 15.0,
-            "retraction_speed": 15.0,
-            "wipe_retraction_prime_speed": 15.0,
-            "wipe_retraction_retract_speed": 15.0,
-            "wipe_retraction_speed": 15.0
-        },
-        "name": "PEKK Carbone",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_adhesion_tendency": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_brim_enable": "global",
-            "prime_tower_mode": "global",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.6,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "RatRig V-Core 3 200mm": [
-                "0.6"
-            ],
-            "RatRig V-Core 3 300mm": [
-                "0.6"
-            ],
-            "RatRig V-Core 3 400mm": [
-                "0.6"
-            ],
-            "RatRig V-Core 3 500mm": [
-                "0.6"
-            ],
-            "RatRig V-Minion": [
-                "0.6"
-            ]
-        },
-        "context": {
-            "brand": "Volumic",
-            "color": "Generic",
-            "color_code": "#00ff00",
-            "description": "The medical ULTRA have a USP Classe VI / ISO 10993-1 certification for medical use.",
-            "diameter": 1.75,
-            "guid": "397bdd04-a387-4cb8-84c5-f9ee2d792782",
-            "material_type": "ABS",
-            "native_id": "volumic_medical_ultra#resolved-c53173142b400504",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "volumic_medical_ultra"
-        },
-        "data": {
-            "adhesion_type": "skirt",
-            "cool_fan_speed": 30.0,
-            "cool_fan_speed_max": 30.0,
-            "cool_fan_speed_min": 30.0,
-            "cool_min_temperature": 235.0,
-            "default_material_bed_temperature": 100.0,
-            "default_material_print_temperature": 235.0,
-            "material_adhesion_tendency": 0,
-            "material_bed_temperature": 100.0,
-            "material_bed_temperature_layer_0": 100.0,
-            "material_brand": "Volumic",
-            "material_break_preparation_temperature": 235.0,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 235.0,
-            "material_guid": "397bdd04-a387-4cb8-84c5-f9ee2d792782",
-            "material_initial_print_temperature": 235.0,
-            "material_print_temperature": 235.0,
-            "material_print_temperature_layer_0": 235.0,
-            "material_standby_temperature": 175.0,
-            "material_type": "ABS",
-            "prime_tower_brim_enable": false,
-            "prime_tower_mode": "interleaved",
-            "retraction_amount": 1.2,
-            "retraction_combing": "noskin",
-            "retraction_prime_speed": 30.0,
-            "retraction_retract_speed": 30.0,
-            "retraction_speed": 30.0,
-            "wipe_retraction_prime_speed": 30.0,
-            "wipe_retraction_retract_speed": 30.0,
-            "wipe_retraction_speed": 30.0
-        },
-        "name": "MEDICAL Ultra",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_adhesion_tendency": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_brim_enable": "global",
-            "prime_tower_mode": "global",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 1.0,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "RatRig V-Core 3 200mm": [
-                "1"
-            ],
-            "RatRig V-Core 3 300mm": [
-                "1"
-            ],
-            "RatRig V-Core 3 400mm": [
-                "1"
-            ],
-            "RatRig V-Core 3 500mm": [
-                "1"
-            ],
-            "RatRig V-Minion": [
-                "1"
-            ]
-        },
-        "context": {
-            "brand": "Volumic",
-            "color": "Generic",
-            "color_code": "#00ff00",
-            "description": "Professional PETG, very easy to print, very good adhesion at low temperature, very high quality material (industrial grade) and a very nice finish.",
-            "diameter": 1.75,
-            "guid": "12bd6afe-0741-472f-970e-33ac4c3a6b15",
-            "material_type": "PETG",
-            "native_id": "volumic_petg_ultra#resolved-bbaa60b9bf67c138",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "volumic_petg_ultra"
-        },
-        "data": {
-            "adhesion_type": "skirt",
-            "cool_fan_speed": 50.0,
-            "cool_fan_speed_max": 50.0,
-            "cool_fan_speed_min": 50.0,
-            "cool_min_temperature": 235.0,
-            "default_material_bed_temperature": 50.0,
-            "default_material_print_temperature": 235.0,
-            "material_adhesion_tendency": 0,
-            "material_bed_temperature": 50.0,
-            "material_bed_temperature_layer_0": 50.0,
-            "material_brand": "Volumic",
-            "material_break_preparation_temperature": 235.0,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 235.0,
-            "material_guid": "12bd6afe-0741-472f-970e-33ac4c3a6b15",
-            "material_initial_print_temperature": 235.0,
-            "material_print_temperature": 235.0,
-            "material_print_temperature_layer_0": 235.0,
-            "material_standby_temperature": 175.0,
-            "material_type": "PETG",
-            "prime_tower_brim_enable": false,
-            "prime_tower_mode": "interleaved",
-            "retraction_amount": 2.0,
-            "retraction_combing": "noskin",
-            "retraction_prime_speed": 25.0,
-            "retraction_retract_speed": 25.0,
-            "retraction_speed": 25.0,
-            "wipe_retraction_prime_speed": 25.0,
-            "wipe_retraction_retract_speed": 25.0,
-            "wipe_retraction_speed": 25.0
-        },
-        "name": "PETG Ultra",
         "setting_scopes": {
             "adhesion_type": "global",
             "cool_fan_speed": "extruder.0",
@@ -1523,36 +1082,36 @@
             "brand": "Volumic",
             "color": "Generic",
             "color_code": "#00ff00",
-            "description": "The Support Ultra is a modified PVA to increase bed adhesion and to other materials, much easier than a standard PVA.",
+            "description": "Professional PETG, very easy to print, very good adhesion at low temperature, very high quality material (industrial grade) and a very nice finish.",
             "diameter": 1.75,
-            "guid": "a14eeb2d-3faa-4892-ade6-c56bb34d38eb",
-            "material_type": "PVA",
-            "native_id": "volumic_support_ultra#resolved-e74094b9a4c8173c",
+            "guid": "12bd6afe-0741-472f-970e-33ac4c3a6b15",
+            "material_type": "PETG",
+            "native_id": "volumic_petg_ultra#resolved-bbaa60b9bf67c138",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "volumic_support_ultra"
+            "source_native_id": "volumic_petg_ultra"
         },
         "data": {
             "adhesion_type": "skirt",
-            "cool_fan_speed": 0.0,
-            "cool_fan_speed_max": 0.0,
-            "cool_fan_speed_min": 0.0,
-            "cool_min_temperature": 245.0,
-            "default_material_bed_temperature": 65.0,
-            "default_material_print_temperature": 245.0,
+            "cool_fan_speed": 50.0,
+            "cool_fan_speed_max": 50.0,
+            "cool_fan_speed_min": 50.0,
+            "cool_min_temperature": 235.0,
+            "default_material_bed_temperature": 50.0,
+            "default_material_print_temperature": 235.0,
             "material_adhesion_tendency": 0,
-            "material_bed_temperature": 65.0,
-            "material_bed_temperature_layer_0": 65.0,
+            "material_bed_temperature": 50.0,
+            "material_bed_temperature_layer_0": 50.0,
             "material_brand": "Volumic",
-            "material_break_preparation_temperature": 245.0,
+            "material_break_preparation_temperature": 235.0,
             "material_diameter": 1.75,
-            "material_final_print_temperature": 245.0,
-            "material_guid": "a14eeb2d-3faa-4892-ade6-c56bb34d38eb",
-            "material_initial_print_temperature": 245.0,
-            "material_print_temperature": 245.0,
-            "material_print_temperature_layer_0": 245.0,
+            "material_final_print_temperature": 235.0,
+            "material_guid": "12bd6afe-0741-472f-970e-33ac4c3a6b15",
+            "material_initial_print_temperature": 235.0,
+            "material_print_temperature": 235.0,
+            "material_print_temperature_layer_0": 235.0,
             "material_standby_temperature": 175.0,
-            "material_type": "PVA",
+            "material_type": "PETG",
             "prime_tower_brim_enable": false,
             "prime_tower_mode": "interleaved",
             "retraction_amount": 2.0,
@@ -1564,7 +1123,7 @@
             "wipe_retraction_retract_speed": 25.0,
             "wipe_retraction_speed": 25.0
         },
-        "name": "SUPPORT Ultra",
+        "name": "PETG Ultra",
         "setting_scopes": {
             "adhesion_type": "global",
             "cool_fan_speed": "extruder.0",
@@ -1701,6 +1260,447 @@
             "wipe_retraction_prime_speed": "extruder.0",
             "wipe_retraction_retract_speed": "extruder.0",
             "wipe_retraction_speed": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.6,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": []
+        },
+        "compatible_printers": {
+            "RatRig V-Core 3 200mm": [
+                "0.6"
+            ],
+            "RatRig V-Core 3 300mm": [
+                "0.6"
+            ],
+            "RatRig V-Core 3 400mm": [
+                "0.6"
+            ],
+            "RatRig V-Core 3 500mm": [
+                "0.6"
+            ],
+            "RatRig V-Minion": [
+                "0.6"
+            ]
+        },
+        "context": {
+            "brand": "Volumic",
+            "color": "Generic",
+            "color_code": "#00ff00",
+            "description": "The medical ULTRA have a USP Classe VI / ISO 10993-1 certification for medical use.",
+            "diameter": 1.75,
+            "guid": "397bdd04-a387-4cb8-84c5-f9ee2d792782",
+            "material_type": "ABS",
+            "native_id": "volumic_medical_ultra#resolved-c53173142b400504",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "volumic_medical_ultra"
+        },
+        "data": {
+            "adhesion_type": "skirt",
+            "cool_fan_speed": 30.0,
+            "cool_fan_speed_max": 30.0,
+            "cool_fan_speed_min": 30.0,
+            "cool_min_temperature": 235.0,
+            "default_material_bed_temperature": 100.0,
+            "default_material_print_temperature": 235.0,
+            "material_adhesion_tendency": 0,
+            "material_bed_temperature": 100.0,
+            "material_bed_temperature_layer_0": 100.0,
+            "material_brand": "Volumic",
+            "material_break_preparation_temperature": 235.0,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": 235.0,
+            "material_guid": "397bdd04-a387-4cb8-84c5-f9ee2d792782",
+            "material_initial_print_temperature": 235.0,
+            "material_print_temperature": 235.0,
+            "material_print_temperature_layer_0": 235.0,
+            "material_standby_temperature": 175.0,
+            "material_type": "ABS",
+            "prime_tower_brim_enable": false,
+            "prime_tower_mode": "interleaved",
+            "retraction_amount": 1.2,
+            "retraction_combing": "noskin",
+            "retraction_prime_speed": 30.0,
+            "retraction_retract_speed": 30.0,
+            "retraction_speed": 30.0,
+            "wipe_retraction_prime_speed": 30.0,
+            "wipe_retraction_retract_speed": 30.0,
+            "wipe_retraction_speed": 30.0
+        },
+        "name": "MEDICAL Ultra",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_max": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_adhesion_tendency": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_brim_enable": "global",
+            "prime_tower_mode": "global",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global",
+            "retraction_prime_speed": "extruder.0",
+            "retraction_retract_speed": "extruder.0",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_prime_speed": "extruder.0",
+            "wipe_retraction_retract_speed": "extruder.0",
+            "wipe_retraction_speed": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 1.0,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": [
+                {
+                    "compatible": true,
+                    "hotends": {
+                        "Standard 0.4": true,
+                        "Standard 0.6": true,
+                        "Standard 0.8": true,
+                        "Standard 1.0 Experimental": true,
+                        "Standard 1.2 Experimental": true
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "eMotionTech",
+                            "product": "Strateo3D"
+                        }
+                    ]
+                }
+            ]
+        },
+        "compatible_printers": {
+            "RatRig V-Core 3 200mm": [
+                "1"
+            ],
+            "RatRig V-Core 3 300mm": [
+                "1"
+            ],
+            "RatRig V-Core 3 400mm": [
+                "1"
+            ],
+            "RatRig V-Core 3 500mm": [
+                "1"
+            ],
+            "RatRig V-Minion": [
+                "1"
+            ]
+        },
+        "context": {
+            "brand": "eMotionTech",
+            "color": "Generic",
+            "color_code": "#27292b",
+            "description": null,
+            "diameter": 1.75,
+            "guid": "cb7cbe23-bb0b-4d54-95e0-340aaac4541f",
+            "material_type": "Nylon",
+            "native_id": "emotiontech_nylon_1030#resolved-fafb587446691bb9",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "emotiontech_nylon_1030"
+        },
+        "data": {
+            "adhesion_type": "skirt",
+            "build_volume_temperature": 35,
+            "cool_min_temperature": 250,
+            "default_material_bed_temperature": 100,
+            "default_material_print_temperature": 250,
+            "material_bed_temperature": 100,
+            "material_bed_temperature_layer_0": 100,
+            "material_brand": "eMotionTech",
+            "material_break_preparation_temperature": 250,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": 250,
+            "material_guid": "cb7cbe23-bb0b-4d54-95e0-340aaac4541f",
+            "material_initial_print_temperature": 250,
+            "material_print_temperature": 250,
+            "material_print_temperature_layer_0": 250,
+            "material_standby_temperature": 150,
+            "material_type": "Nylon",
+            "prime_tower_brim_enable": false,
+            "prime_tower_mode": "interleaved",
+            "retraction_amount": 2,
+            "retraction_combing": "noskin"
+        },
+        "name": "Nylon 1030 - Deprecated",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "build_volume_temperature": "global",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_brim_enable": "global",
+            "prime_tower_mode": "global",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 1.0,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": [
+                {
+                    "compatible": true,
+                    "hotends": {
+                        "Standard 0.4": true,
+                        "Standard 0.6": true,
+                        "Standard 0.8": true,
+                        "Standard 1.0 Experimental": true,
+                        "Standard 1.2 Experimental": true
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "eMotionTech",
+                            "product": "Strateo3D"
+                        }
+                    ]
+                }
+            ]
+        },
+        "compatible_printers": {
+            "RatRig V-Core 3 200mm": [
+                "1"
+            ],
+            "RatRig V-Core 3 300mm": [
+                "1"
+            ],
+            "RatRig V-Core 3 400mm": [
+                "1"
+            ],
+            "RatRig V-Core 3 500mm": [
+                "1"
+            ],
+            "RatRig V-Minion": [
+                "1"
+            ]
+        },
+        "context": {
+            "brand": "eMotionTech",
+            "color": "Generic",
+            "color_code": "#27292b",
+            "description": null,
+            "diameter": 1.75,
+            "guid": "e8ec7612-b626-4861-af93-56549c209bad",
+            "material_type": "Nylon",
+            "native_id": "emotiontech_nylon_1070#resolved-7d3ac3019833a8a8",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "emotiontech_nylon_1070"
+        },
+        "data": {
+            "adhesion_type": "skirt",
+            "build_volume_temperature": 35,
+            "cool_min_temperature": 260,
+            "default_material_bed_temperature": 100,
+            "default_material_print_temperature": 260,
+            "material_bed_temperature": 100,
+            "material_bed_temperature_layer_0": 100,
+            "material_brand": "eMotionTech",
+            "material_break_preparation_temperature": 260,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": 260,
+            "material_guid": "e8ec7612-b626-4861-af93-56549c209bad",
+            "material_initial_print_temperature": 260,
+            "material_print_temperature": 260,
+            "material_print_temperature_layer_0": 260,
+            "material_standby_temperature": 150,
+            "material_type": "Nylon",
+            "prime_tower_brim_enable": false,
+            "prime_tower_mode": "interleaved",
+            "retraction_amount": 2,
+            "retraction_combing": "noskin"
+        },
+        "name": "Nylon 1070 - Deprecated",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "build_volume_temperature": "global",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_brim_enable": "global",
+            "prime_tower_mode": "global",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 1.0,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": [
+                {
+                    "compatible": true,
+                    "hotends": {
+                        "High temp 0.4": true,
+                        "Standard 0.4": true,
+                        "Standard 0.6": true,
+                        "Standard 0.8": false,
+                        "Standard 1.0 Experimental": false,
+                        "Standard 1.2 Experimental": false
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "eMotionTech",
+                            "product": "DUAL600"
+                        }
+                    ]
+                },
+                {
+                    "compatible": true,
+                    "hotends": {
+                        "IDEX420 Acier Durci 0.4": false,
+                        "IDEX420 Laiton 0.4": true,
+                        "IDEX420 Laiton 0.6": true,
+                        "IDEX420 Laiton 0.8": false
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "eMotionTech",
+                            "product": "IDEX420"
+                        },
+                        {
+                            "manufacturer": "eMotionTech",
+                            "product": "IDEX420 Duplicate"
+                        },
+                        {
+                            "manufacturer": "eMotionTech",
+                            "product": "IDEX420 Mirror"
+                        }
+                    ]
+                }
+            ]
+        },
+        "compatible_printers": {
+            "RatRig V-Core 3 200mm": [
+                "1"
+            ],
+            "RatRig V-Core 3 300mm": [
+                "1"
+            ],
+            "RatRig V-Core 3 400mm": [
+                "1"
+            ],
+            "RatRig V-Core 3 500mm": [
+                "1"
+            ],
+            "RatRig V-Minion": [
+                "1"
+            ]
+        },
+        "context": {
+            "brand": "eMotionTech",
+            "color": "Generic",
+            "color_code": "#D5D8DC",
+            "description": "The Acetate 3D filament is recognized for its biodegradable properties and its natural UV resistance. In addition, it is a material that behaves very well against chemical agents such as chlorine, which makes it a real asset in the printing of 3D parts intended for optics or intended to be in contact with the skin.",
+            "diameter": 1.75,
+            "guid": "3ae65b77-96f2-4a9e-a949-5b24e29a09b2",
+            "material_type": "Acetate",
+            "native_id": "emotiontech_acetate#resolved-5a040103222e285c",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "emotiontech_acetate"
+        },
+        "data": {
+            "adhesion_type": "skirt",
+            "build_volume_temperature": 0,
+            "cool_min_temperature": 235,
+            "default_material_bed_temperature": 65,
+            "default_material_print_temperature": 235,
+            "material_bed_temperature": 65,
+            "material_bed_temperature_layer_0": 65,
+            "material_brand": "eMotionTech",
+            "material_break_preparation_temperature": 235,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": 235,
+            "material_guid": "3ae65b77-96f2-4a9e-a949-5b24e29a09b2",
+            "material_initial_print_temperature": 235,
+            "material_print_temperature": 235,
+            "material_print_temperature_layer_0": 235,
+            "material_standby_temperature": 100,
+            "material_type": "Acetate",
+            "prime_tower_brim_enable": false,
+            "prime_tower_mode": "interleaved",
+            "retraction_amount": 2,
+            "retraction_combing": "noskin"
+        },
+        "name": "eMotionTech Acetate Generic",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "build_volume_temperature": "global",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_brim_enable": "global",
+            "prime_tower_mode": "global",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global"
         }
     }
 ]

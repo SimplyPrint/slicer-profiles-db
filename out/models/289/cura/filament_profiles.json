@@ -9,6 +9,234 @@
                 {
                     "compatible": true,
                     "hotends": {
+                        "0.25mm thermoplastic extruder": true,
+                        "0.4mm thermoplastic extruder": true,
+                        "0.8mm thermoplastic extruder": true
+                    },
+                    "identifiers": [
+                        {
+                            "manufacturer": "Cartesio bv",
+                            "product": "cartesio"
+                        }
+                    ]
+                }
+            ]
+        },
+        "compatible_printers": {
+            "Anycubic Mega Zero": [
+                "0.4"
+            ],
+            "Biqu B1": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "Biqu BX": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "Biqu Hurakan": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "Creality Ender-3 S1": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Plus": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Pro": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 V3 SE": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-5 S1": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality K1 Max": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ],
+            "Flying Bear Ghost 6": [
+                "0.25",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "RatRig V-Core 3 200mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 300mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 400mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 500mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Minion": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ]
+        },
+        "context": {
+            "brand": "Generic",
+            "color": "Generic",
+            "color_code": "#3DF266",
+            "description": "Nylon is strong, abrasion-resistant, durable and engineered for low moisture sensitivity.",
+            "diameter": 1.75,
+            "display_name": "Generic Nylon Generic",
+            "guid": "283d439a-3490-4481-920c-c51d8cdecf9c",
+            "material_type": "Nylon",
+            "native_id": "generic_nylon_175#resolved-d5227368ec47acb6",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "generic_nylon_175"
+        },
+        "data": {
+            "adhesion_type": "skirt",
+            "build_volume_temperature": 35,
+            "cool_min_temperature": 245,
+            "default_material_bed_temperature": 60,
+            "default_material_print_temperature": 245,
+            "material_adhesion_tendency": 2,
+            "material_brand": "Generic",
+            "material_break_preparation_temperature": 245,
+            "material_crystallinity": true,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": 245,
+            "material_guid": "283d439a-3490-4481-920c-c51d8cdecf9c",
+            "material_initial_print_temperature": 245,
+            "material_print_temperature": 245,
+            "material_print_temperature_layer_0": 245,
+            "material_standby_temperature": 175,
+            "material_surface_energy": 100,
+            "material_type": "Nylon",
+            "prime_tower_brim_enable": false,
+            "prime_tower_mode": "interleaved",
+            "retraction_amount": 8,
+            "retraction_combing": "noskin",
+            "retraction_prime_speed": 25,
+            "retraction_retract_speed": 25,
+            "retraction_speed": 25,
+            "wipe_retraction_amount": 8,
+            "wipe_retraction_prime_speed": 25,
+            "wipe_retraction_retract_speed": 25,
+            "wipe_retraction_speed": 25
+        },
+        "name": "Generic Nylon Generic · generic_nylon_175",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "build_volume_temperature": "global",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_adhesion_tendency": "extruder.0",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_crystallinity": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_surface_energy": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_brim_enable": "global",
+            "prime_tower_mode": "global",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global",
+            "retraction_prime_speed": "extruder.0",
+            "retraction_retract_speed": "extruder.0",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_amount": "extruder.0",
+            "wipe_retraction_prime_speed": "extruder.0",
+            "wipe_retraction_retract_speed": "extruder.0",
+            "wipe_retraction_speed": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": [
+                {
+                    "compatible": true,
+                    "hotends": {
                         "1A": true,
                         "1C": true,
                         "1XA": false,
@@ -243,44 +471,10 @@
         },
         "compatibility": {
             "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {
-                        "0.25mm thermoplastic extruder": true,
-                        "0.4mm thermoplastic extruder": true,
-                        "0.8mm thermoplastic extruder": true
-                    },
-                    "identifiers": [
-                        {
-                            "manufacturer": "Cartesio bv",
-                            "product": "cartesio"
-                        }
-                    ]
-                }
-            ]
+            "machines": []
         },
         "compatible_printers": {
-            "Anycubic Mega Zero": [
-                "0.4"
-            ],
-            "Biqu B1": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
             "Biqu BX": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "Biqu Hurakan": [
                 "0.2",
                 "0.3",
                 "0.4",
@@ -324,25 +518,8 @@
                 "0.8",
                 "1"
             ],
-            "Creality Ender-5 S1": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
             "Creality K1 Max": [
                 "0.4",
-                "0.6",
-                "0.8"
-            ],
-            "Flying Bear Ghost 6": [
-                "0.25",
-                "0.3",
-                "0.4",
-                "0.5",
                 "0.6",
                 "0.8"
             ],
@@ -385,84 +562,73 @@
                 "0.6",
                 "0.8",
                 "1"
+            ],
+            "Two Trees Sapphire Plus": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Two Trees Sapphire Pro": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
             ]
         },
         "context": {
-            "brand": "Generic",
-            "color": "Generic",
-            "color_code": "#3DF266",
-            "description": "Nylon is strong, abrasion-resistant, durable and engineered for low moisture sensitivity.",
+            "brand": "eSUN",
+            "color": "White",
+            "color_code": "#EEEEEE",
+            "description": null,
             "diameter": 1.75,
-            "display_name": "Generic Nylon Generic",
-            "guid": "283d439a-3490-4481-920c-c51d8cdecf9c",
-            "material_type": "Nylon",
-            "native_id": "generic_nylon_175#resolved-d5227368ec47acb6",
+            "guid": "832e163d-db99-4a58-80b9-f82073ae0a9b",
+            "material_type": "PLA",
+            "native_id": "eSUN_PLA_PRO_White#resolved-6bb8c630056a39f9",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "generic_nylon_175"
+            "source_native_id": "eSUN_PLA_PRO_White"
         },
         "data": {
             "adhesion_type": "skirt",
-            "build_volume_temperature": 35,
-            "cool_min_temperature": 245,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 245,
-            "material_adhesion_tendency": 2,
-            "material_brand": "Generic",
-            "material_break_preparation_temperature": 245,
-            "material_crystallinity": true,
+            "cool_fan_speed": 100.0,
+            "default_material_bed_temperature": 60.0,
+            "default_material_print_temperature": 210.0,
+            "material_brand": "eSUN",
             "material_diameter": 1.75,
-            "material_final_print_temperature": 245,
-            "material_guid": "283d439a-3490-4481-920c-c51d8cdecf9c",
-            "material_initial_print_temperature": 245,
-            "material_print_temperature": 245,
-            "material_print_temperature_layer_0": 245,
-            "material_standby_temperature": 175,
-            "material_surface_energy": 100,
-            "material_type": "Nylon",
+            "material_guid": "832e163d-db99-4a58-80b9-f82073ae0a9b",
+            "material_standby_temperature": 195.0,
+            "material_type": "PLA",
             "prime_tower_brim_enable": false,
             "prime_tower_mode": "interleaved",
-            "retraction_amount": 8,
+            "retraction_amount": 3,
             "retraction_combing": "noskin",
-            "retraction_prime_speed": 25,
-            "retraction_retract_speed": 25,
-            "retraction_speed": 25,
-            "wipe_retraction_amount": 8,
-            "wipe_retraction_prime_speed": 25,
-            "wipe_retraction_retract_speed": 25,
-            "wipe_retraction_speed": 25
+            "retraction_speed": 40.0,
+            "wipe_retraction_amount": 3
         },
-        "name": "Generic Nylon Generic · generic_nylon_175",
+        "name": "PLA+ White",
         "setting_scopes": {
             "adhesion_type": "global",
-            "build_volume_temperature": "global",
-            "cool_min_temperature": "extruder.0",
+            "cool_fan_speed": "extruder.0",
             "default_material_bed_temperature": "global",
             "default_material_print_temperature": "extruder.0",
-            "material_adhesion_tendency": "extruder.0",
             "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_crystallinity": "extruder.0",
             "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
             "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
             "material_standby_temperature": "extruder.0",
-            "material_surface_energy": "extruder.0",
             "material_type": "extruder.0",
             "prime_tower_brim_enable": "global",
             "prime_tower_mode": "global",
             "retraction_amount": "extruder.0",
             "retraction_combing": "global",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
             "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
+            "wipe_retraction_amount": "extruder.0"
         }
     },
     {
@@ -471,18 +637,7 @@
         },
         "compatibility": {
             "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Eryone",
-                            "product": "eryone_thinker_direct"
-                        }
-                    ]
-                }
-            ]
+            "machines": []
         },
         "compatible_printers": {
             "Biqu BX": [
@@ -573,63 +728,397 @@
                 "0.6",
                 "0.8",
                 "1"
+            ],
+            "Two Trees Sapphire Plus": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Two Trees Sapphire Pro": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
             ]
         },
         "context": {
-            "brand": "Eryone",
-            "color": "Generic",
-            "color_code": "#0055ff",
-            "description": "Wear and tear resistant. Eryone TPU features a Shore hardness of 95A. Suitable for applications that require slight flexibility, wear and tear, and chemical resistance.",
+            "brand": "eSUN",
+            "color": "Grey",
+            "color_code": "#999999",
+            "description": null,
             "diameter": 1.75,
-            "guid": "ff52b30e-5740-4f70-a7b5-8c436fc9954f",
-            "material_type": "TPU",
-            "native_id": "eryone_tpu#resolved-2693075cbf11f86e",
+            "guid": "061cc7c6-77b1-4d76-996f-d049546b41d2",
+            "material_type": "PLA",
+            "native_id": "eSUN_PLA_PRO_Grey#resolved-bc8b12b1888fb710",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "eryone_tpu"
+            "source_native_id": "eSUN_PLA_PRO_Grey"
         },
         "data": {
             "adhesion_type": "skirt",
             "cool_fan_speed": 100.0,
-            "cool_min_temperature": 235,
-            "default_material_bed_temperature": 50.0,
-            "default_material_print_temperature": 235,
-            "material_bed_temperature": 50.0,
-            "material_bed_temperature_layer_0": 50.0,
-            "material_brand": "Eryone",
-            "material_break_preparation_temperature": 235,
+            "default_material_bed_temperature": 60.0,
+            "default_material_print_temperature": 210.0,
+            "material_brand": "eSUN",
             "material_diameter": 1.75,
-            "material_final_print_temperature": 235,
-            "material_guid": "ff52b30e-5740-4f70-a7b5-8c436fc9954f",
-            "material_initial_print_temperature": 235,
-            "material_print_temperature": 235,
-            "material_print_temperature_layer_0": 235,
-            "material_standby_temperature": 175.0,
-            "material_type": "TPU",
+            "material_guid": "061cc7c6-77b1-4d76-996f-d049546b41d2",
+            "material_standby_temperature": 195.0,
+            "material_type": "PLA",
             "prime_tower_brim_enable": false,
             "prime_tower_mode": "interleaved",
-            "retraction_amount": 6.0,
+            "retraction_amount": 3,
             "retraction_combing": "noskin",
             "retraction_speed": 40.0,
-            "wipe_retraction_amount": 6.0
+            "wipe_retraction_amount": 3
         },
-        "name": "TPU DD",
+        "name": "PLA+ Grey",
         "setting_scopes": {
             "adhesion_type": "global",
             "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
             "default_material_bed_temperature": "global",
             "default_material_print_temperature": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
             "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
             "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
             "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_brim_enable": "global",
+            "prime_tower_mode": "global",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_amount": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": []
+        },
+        "compatible_printers": {
+            "Biqu BX": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "Creality Ender-3 S1": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Plus": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Pro": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 V3 SE": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality K1 Max": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ],
+            "RatRig V-Core 3 200mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 300mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 400mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 500mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Minion": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Two Trees Sapphire Plus": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Two Trees Sapphire Pro": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ]
+        },
+        "context": {
+            "brand": "eSUN",
+            "color": "Black",
+            "color_code": "#333333",
+            "description": null,
+            "diameter": 1.75,
+            "guid": "5c4e29a1-0722-4cfa-b147-338924afc075",
+            "material_type": "PLA",
+            "native_id": "eSUN_PLA_PRO_Black#resolved-e227c114dcb6d323",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "eSUN_PLA_PRO_Black"
+        },
+        "data": {
+            "adhesion_type": "skirt",
+            "cool_fan_speed": 100.0,
+            "default_material_bed_temperature": 60.0,
+            "default_material_print_temperature": 210.0,
+            "material_brand": "eSUN",
+            "material_diameter": 1.75,
+            "material_guid": "5c4e29a1-0722-4cfa-b147-338924afc075",
+            "material_standby_temperature": 195.0,
+            "material_type": "PLA",
+            "prime_tower_brim_enable": false,
+            "prime_tower_mode": "interleaved",
+            "retraction_amount": 3,
+            "retraction_combing": "noskin",
+            "retraction_speed": 40.0,
+            "wipe_retraction_amount": 3
+        },
+        "name": "PLA+ Black",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "cool_fan_speed": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_brand": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_brim_enable": "global",
+            "prime_tower_mode": "global",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_amount": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": []
+        },
+        "compatible_printers": {
+            "Biqu BX": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "Creality Ender-3 S1": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Plus": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Pro": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 V3 SE": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality K1 Max": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ],
+            "RatRig V-Core 3 200mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 300mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 400mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 500mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Minion": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Two Trees Sapphire Plus": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Two Trees Sapphire Pro": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ]
+        },
+        "context": {
+            "brand": "eSUN",
+            "color": "Purple",
+            "color_code": "#9900CC",
+            "description": null,
+            "diameter": 1.75,
+            "guid": "ae0c8895-b4b3-4a12-a5a5-3ae754940ced",
+            "material_type": "PLA",
+            "native_id": "eSUN_PLA_PRO_Purple#resolved-db0999651b6521f1",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "eSUN_PLA_PRO_Purple"
+        },
+        "data": {
+            "adhesion_type": "skirt",
+            "cool_fan_speed": 100.0,
+            "default_material_bed_temperature": 60.0,
+            "default_material_print_temperature": 210.0,
+            "material_brand": "eSUN",
+            "material_diameter": 1.75,
+            "material_guid": "ae0c8895-b4b3-4a12-a5a5-3ae754940ced",
+            "material_standby_temperature": 195.0,
+            "material_type": "PLA",
+            "prime_tower_brim_enable": false,
+            "prime_tower_mode": "interleaved",
+            "retraction_amount": 3,
+            "retraction_combing": "noskin",
+            "retraction_speed": 40.0,
+            "wipe_retraction_amount": 3
+        },
+        "name": "PLA+ Purple",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "cool_fan_speed": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_brand": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_guid": "extruder.0",
             "material_standby_temperature": "extruder.0",
             "material_type": "extruder.0",
             "prime_tower_brim_enable": "global",
@@ -847,6 +1336,181 @@
             "wipe_retraction_prime_speed": "extruder.0",
             "wipe_retraction_retract_speed": "extruder.0",
             "wipe_retraction_speed": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": [
+                {
+                    "compatible": true,
+                    "hotends": {},
+                    "identifiers": [
+                        {
+                            "manufacturer": "Eryone",
+                            "product": "eryone_thinker_direct"
+                        }
+                    ]
+                }
+            ]
+        },
+        "compatible_printers": {
+            "Biqu BX": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "Creality Ender-3 S1": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Plus": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Pro": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 V3 SE": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality K1 Max": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ],
+            "RatRig V-Core 3 200mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 300mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 400mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 500mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Minion": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ]
+        },
+        "context": {
+            "brand": "Eryone",
+            "color": "Generic",
+            "color_code": "#0055ff",
+            "description": "Wear and tear resistant. Eryone TPU features a Shore hardness of 95A. Suitable for applications that require slight flexibility, wear and tear, and chemical resistance.",
+            "diameter": 1.75,
+            "guid": "ff52b30e-5740-4f70-a7b5-8c436fc9954f",
+            "material_type": "TPU",
+            "native_id": "eryone_tpu#resolved-2693075cbf11f86e",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "eryone_tpu"
+        },
+        "data": {
+            "adhesion_type": "skirt",
+            "cool_fan_speed": 100.0,
+            "cool_min_temperature": 235,
+            "default_material_bed_temperature": 50.0,
+            "default_material_print_temperature": 235,
+            "material_bed_temperature": 50.0,
+            "material_bed_temperature_layer_0": 50.0,
+            "material_brand": "Eryone",
+            "material_break_preparation_temperature": 235,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": 235,
+            "material_guid": "ff52b30e-5740-4f70-a7b5-8c436fc9954f",
+            "material_initial_print_temperature": 235,
+            "material_print_temperature": 235,
+            "material_print_temperature_layer_0": 235,
+            "material_standby_temperature": 175.0,
+            "material_type": "TPU",
+            "prime_tower_brim_enable": false,
+            "prime_tower_mode": "interleaved",
+            "retraction_amount": 6.0,
+            "retraction_combing": "noskin",
+            "retraction_speed": 40.0,
+            "wipe_retraction_amount": 6.0
+        },
+        "name": "TPU DD",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_brim_enable": "global",
+            "prime_tower_mode": "global",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_amount": "extruder.0"
         }
     },
     {
@@ -1382,6 +2046,602 @@
                 "0.6",
                 "0.8"
             ],
+            "Biqu Hurakan": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "Creality Ender-3 S1": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Plus": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Pro": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 V3 SE": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality K1 Max": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ],
+            "Flying Bear Ghost 6": [
+                "0.25",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "RatRig V-Core 3 200mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 300mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 400mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 500mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Minion": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ]
+        },
+        "context": {
+            "brand": "Volumic",
+            "color": "Generic",
+            "color_code": "#00ff00",
+            "description": "PLA Ultra with 80% pure copper.",
+            "diameter": 1.75,
+            "guid": "b0dc1bca-2a22-43bc-bd06-4f9588aa2c6c",
+            "material_type": "Metal",
+            "native_id": "volumic_cu80_ultra#resolved-9dd0502763b9094c",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "volumic_cu80_ultra"
+        },
+        "data": {
+            "adhesion_type": "skirt",
+            "cool_fan_speed": 80.0,
+            "cool_fan_speed_max": 80.0,
+            "cool_fan_speed_min": 80.0,
+            "cool_min_temperature": 190.0,
+            "default_material_bed_temperature": 45.0,
+            "default_material_print_temperature": 190.0,
+            "material_bed_temperature": 45.0,
+            "material_bed_temperature_layer_0": 45.0,
+            "material_brand": "Volumic",
+            "material_break_preparation_temperature": 190.0,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": 190.0,
+            "material_guid": "b0dc1bca-2a22-43bc-bd06-4f9588aa2c6c",
+            "material_initial_print_temperature": 190.0,
+            "material_print_temperature": 190.0,
+            "material_print_temperature_layer_0": 190.0,
+            "material_standby_temperature": 165.0,
+            "material_type": "Metal",
+            "prime_tower_brim_enable": false,
+            "prime_tower_mode": "interleaved",
+            "retraction_amount": 1.0,
+            "retraction_combing": "noskin",
+            "retraction_prime_speed": 25.0,
+            "retraction_retract_speed": 25.0,
+            "retraction_speed": 25.0,
+            "wipe_retraction_amount": 1.0,
+            "wipe_retraction_prime_speed": 25.0,
+            "wipe_retraction_retract_speed": 25.0,
+            "wipe_retraction_speed": 25.0
+        },
+        "name": "CUIVRE80 Ultra",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_max": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_brim_enable": "global",
+            "prime_tower_mode": "global",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global",
+            "retraction_prime_speed": "extruder.0",
+            "retraction_retract_speed": "extruder.0",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_amount": "extruder.0",
+            "wipe_retraction_prime_speed": "extruder.0",
+            "wipe_retraction_retract_speed": "extruder.0",
+            "wipe_retraction_speed": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": []
+        },
+        "compatible_printers": {
+            "Anycubic Mega Zero": [
+                "0.4"
+            ],
+            "Biqu B1": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "Biqu Hurakan": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "Creality Ender-3 S1": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Plus": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Pro": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 V3 SE": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality K1 Max": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ],
+            "Flying Bear Ghost 6": [
+                "0.25",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "RatRig V-Core 3 200mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 300mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 400mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Core 3 500mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "RatRig V-Minion": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8",
+                "1"
+            ]
+        },
+        "context": {
+            "brand": "Volumic",
+            "color": "Generic",
+            "color_code": "#00ff00",
+            "description": "PLA Ultra with 80% pure bronze (no additive).",
+            "diameter": 1.75,
+            "guid": "948865b1-27bb-45ec-b8de-d56a1ff1bdd0",
+            "material_type": "Metal",
+            "native_id": "volumic_br80_ultra#resolved-6ea21f69c337e3ee",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "volumic_br80_ultra"
+        },
+        "data": {
+            "adhesion_type": "skirt",
+            "cool_fan_speed": 80.0,
+            "cool_fan_speed_max": 80.0,
+            "cool_fan_speed_min": 80.0,
+            "cool_min_temperature": 190.0,
+            "default_material_bed_temperature": 45.0,
+            "default_material_print_temperature": 190.0,
+            "material_bed_temperature": 45.0,
+            "material_bed_temperature_layer_0": 45.0,
+            "material_brand": "Volumic",
+            "material_break_preparation_temperature": 190.0,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": 190.0,
+            "material_guid": "948865b1-27bb-45ec-b8de-d56a1ff1bdd0",
+            "material_initial_print_temperature": 190.0,
+            "material_print_temperature": 190.0,
+            "material_print_temperature_layer_0": 190.0,
+            "material_standby_temperature": 165.0,
+            "material_type": "Metal",
+            "prime_tower_brim_enable": false,
+            "prime_tower_mode": "interleaved",
+            "retraction_amount": 1.0,
+            "retraction_combing": "noskin",
+            "retraction_prime_speed": 25.0,
+            "retraction_retract_speed": 25.0,
+            "retraction_speed": 25.0,
+            "wipe_retraction_amount": 1.0,
+            "wipe_retraction_prime_speed": 25.0,
+            "wipe_retraction_retract_speed": 25.0,
+            "wipe_retraction_speed": 25.0
+        },
+        "name": "BRONZE80 Ultra",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_max": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_brim_enable": "global",
+            "prime_tower_mode": "global",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global",
+            "retraction_prime_speed": "extruder.0",
+            "retraction_retract_speed": "extruder.0",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_amount": "extruder.0",
+            "wipe_retraction_prime_speed": "extruder.0",
+            "wipe_retraction_retract_speed": "extruder.0",
+            "wipe_retraction_speed": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": []
+        },
+        "compatible_printers": {
+            "Anycubic Mega Zero": [
+                "0.4"
+            ],
+            "Biqu B1": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "Biqu BX": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "Biqu Hurakan": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "Creality Ender-3 S1": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Plus": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 S1 Pro": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality Ender-3 V3 SE": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8",
+                "1"
+            ],
+            "Creality K1 Max": [
+                "0.4",
+                "0.6",
+                "0.8"
+            ],
+            "Flying Bear Ghost 6": [
+                "0.25",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
+            "RatRig V-Core 3 200mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8"
+            ],
+            "RatRig V-Core 3 300mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8"
+            ],
+            "RatRig V-Core 3 400mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8"
+            ],
+            "RatRig V-Core 3 500mm": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8"
+            ],
+            "RatRig V-Minion": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.6",
+                "0.8"
+            ]
+        },
+        "context": {
+            "brand": "Volumic",
+            "color": "Generic",
+            "color_code": "#00ff00",
+            "description": "The Support Ultra is a modified PVA to increase bed adhesion and to other materials, much easier than a standard PVA.",
+            "diameter": 1.75,
+            "guid": "a14eeb2d-3faa-4892-ade6-c56bb34d38eb",
+            "material_type": "PVA",
+            "native_id": "volumic_support_ultra#resolved-0256528a3b231258",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "volumic_support_ultra"
+        },
+        "data": {
+            "adhesion_type": "skirt",
+            "cool_fan_speed": 0.0,
+            "cool_fan_speed_max": 0.0,
+            "cool_fan_speed_min": 0.0,
+            "cool_min_temperature": 245.0,
+            "default_material_bed_temperature": 65.0,
+            "default_material_print_temperature": 245.0,
+            "material_adhesion_tendency": 0,
+            "material_bed_temperature": 65.0,
+            "material_bed_temperature_layer_0": 65.0,
+            "material_brand": "Volumic",
+            "material_break_preparation_temperature": 245.0,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": 245.0,
+            "material_guid": "a14eeb2d-3faa-4892-ade6-c56bb34d38eb",
+            "material_initial_print_temperature": 245.0,
+            "material_print_temperature": 245.0,
+            "material_print_temperature_layer_0": 245.0,
+            "material_standby_temperature": 175.0,
+            "material_type": "PVA",
+            "prime_tower_brim_enable": false,
+            "prime_tower_mode": "interleaved",
+            "retraction_amount": 2.0,
+            "retraction_combing": "noskin",
+            "retraction_prime_speed": 25.0,
+            "retraction_retract_speed": 25.0,
+            "retraction_speed": 25.0,
+            "wipe_retraction_amount": 2.0,
+            "wipe_retraction_prime_speed": 25.0,
+            "wipe_retraction_retract_speed": 25.0,
+            "wipe_retraction_speed": 25.0
+        },
+        "name": "SUPPORT Ultra",
+        "setting_scopes": {
+            "adhesion_type": "global",
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_max": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_adhesion_tendency": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "prime_tower_brim_enable": "global",
+            "prime_tower_mode": "global",
+            "retraction_amount": "extruder.0",
+            "retraction_combing": "global",
+            "retraction_prime_speed": "extruder.0",
+            "retraction_retract_speed": "extruder.0",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_amount": "extruder.0",
+            "wipe_retraction_prime_speed": "extruder.0",
+            "wipe_retraction_retract_speed": "extruder.0",
+            "wipe_retraction_speed": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": []
+        },
+        "compatible_printers": {
+            "Anycubic Mega Zero": [
+                "0.4"
+            ],
+            "Biqu B1": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
             "Biqu BX": [
                 "0.2",
                 "0.3",
@@ -1584,6 +2844,14 @@
                 "0.6",
                 "0.8"
             ],
+            "Biqu BX": [
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6",
+                "0.8"
+            ],
             "Biqu Hurakan": [
                 "0.2",
                 "0.3",
@@ -1627,11 +2895,6 @@
                 "0.6",
                 "0.8",
                 "1"
-            ],
-            "Creality K1 Max": [
-                "0.4",
-                "0.6",
-                "0.8"
             ],
             "Flying Bear Ghost 6": [
                 "0.25",
@@ -1686,53 +2949,49 @@
             "brand": "Volumic",
             "color": "Generic",
             "color_code": "#00ff00",
-            "description": "PLA Ultra with 80% pure copper.",
+            "description": "The Bumper ULTRA, high performance semi-flexible (Shore 60D) for impact-resistant objects.",
             "diameter": 1.75,
-            "guid": "b0dc1bca-2a22-43bc-bd06-4f9588aa2c6c",
-            "material_type": "Metal",
-            "native_id": "volumic_cu80_ultra#resolved-9dd0502763b9094c",
+            "guid": "7bebd9d6-d485-4c23-b644-34d535e97494",
+            "material_type": "PLA",
+            "native_id": "volumic_bumper_ultra#resolved-cfe8a77d8616c274",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "volumic_cu80_ultra"
+            "source_native_id": "volumic_bumper_ultra"
         },
         "data": {
             "adhesion_type": "skirt",
-            "cool_fan_speed": 80.0,
-            "cool_fan_speed_max": 80.0,
-            "cool_fan_speed_min": 80.0,
-            "cool_min_temperature": 190.0,
-            "default_material_bed_temperature": 45.0,
-            "default_material_print_temperature": 190.0,
-            "material_bed_temperature": 45.0,
-            "material_bed_temperature_layer_0": 45.0,
+            "cool_fan_speed": 100.0,
+            "cool_min_temperature": 230.0,
+            "default_material_bed_temperature": 50.0,
+            "default_material_print_temperature": 230.0,
+            "material_bed_temperature": 50.0,
+            "material_bed_temperature_layer_0": 50.0,
             "material_brand": "Volumic",
-            "material_break_preparation_temperature": 190.0,
+            "material_break_preparation_temperature": 230.0,
             "material_diameter": 1.75,
-            "material_final_print_temperature": 190.0,
-            "material_guid": "b0dc1bca-2a22-43bc-bd06-4f9588aa2c6c",
-            "material_initial_print_temperature": 190.0,
-            "material_print_temperature": 190.0,
-            "material_print_temperature_layer_0": 190.0,
-            "material_standby_temperature": 165.0,
-            "material_type": "Metal",
+            "material_final_print_temperature": 230.0,
+            "material_guid": "7bebd9d6-d485-4c23-b644-34d535e97494",
+            "material_initial_print_temperature": 230.0,
+            "material_print_temperature": 230.0,
+            "material_print_temperature_layer_0": 230.0,
+            "material_standby_temperature": 175.0,
+            "material_type": "PLA",
             "prime_tower_brim_enable": false,
             "prime_tower_mode": "interleaved",
-            "retraction_amount": 1.0,
+            "retraction_amount": 0.5,
             "retraction_combing": "noskin",
             "retraction_prime_speed": 25.0,
             "retraction_retract_speed": 25.0,
             "retraction_speed": 25.0,
-            "wipe_retraction_amount": 1.0,
+            "wipe_retraction_amount": 0.5,
             "wipe_retraction_prime_speed": 25.0,
             "wipe_retraction_retract_speed": 25.0,
             "wipe_retraction_speed": 25.0
         },
-        "name": "CUIVRE80 Ultra",
+        "name": "BUMPER Ultra",
         "setting_scopes": {
             "adhesion_type": "global",
             "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
             "cool_min_temperature": "extruder.0",
             "default_material_bed_temperature": "global",
             "default_material_print_temperature": "extruder.0",
@@ -2501,601 +3760,6 @@
             "brand": "Volumic",
             "color": "Generic",
             "color_code": "#00ff00",
-            "description": "Professional PETG, very easy to print, very good adhesion at low temperature, very high quality material (industrial grade) and a very nice finish.",
-            "diameter": 1.75,
-            "guid": "12bd6afe-0741-472f-970e-33ac4c3a6b15",
-            "material_type": "PETG",
-            "native_id": "volumic_petg_ultra#resolved-75f565f25be1b134",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "volumic_petg_ultra"
-        },
-        "data": {
-            "adhesion_type": "skirt",
-            "cool_fan_speed": 50.0,
-            "cool_fan_speed_max": 50.0,
-            "cool_fan_speed_min": 50.0,
-            "cool_min_temperature": 235.0,
-            "default_material_bed_temperature": 50.0,
-            "default_material_print_temperature": 235.0,
-            "material_adhesion_tendency": 0,
-            "material_bed_temperature": 50.0,
-            "material_bed_temperature_layer_0": 50.0,
-            "material_brand": "Volumic",
-            "material_break_preparation_temperature": 235.0,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 235.0,
-            "material_guid": "12bd6afe-0741-472f-970e-33ac4c3a6b15",
-            "material_initial_print_temperature": 235.0,
-            "material_print_temperature": 235.0,
-            "material_print_temperature_layer_0": 235.0,
-            "material_standby_temperature": 175.0,
-            "material_type": "PETG",
-            "prime_tower_brim_enable": false,
-            "prime_tower_mode": "interleaved",
-            "retraction_amount": 2.0,
-            "retraction_combing": "noskin",
-            "retraction_prime_speed": 25.0,
-            "retraction_retract_speed": 25.0,
-            "retraction_speed": 25.0,
-            "wipe_retraction_amount": 2.0,
-            "wipe_retraction_prime_speed": 25.0,
-            "wipe_retraction_retract_speed": 25.0,
-            "wipe_retraction_speed": 25.0
-        },
-        "name": "PETG Ultra",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_adhesion_tendency": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_brim_enable": "global",
-            "prime_tower_mode": "global",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Anycubic Mega Zero": [
-                "0.4"
-            ],
-            "Biqu B1": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "Biqu BX": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "Biqu Hurakan": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "Creality Ender-3 S1": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Plus": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Pro": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 V3 SE": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Flying Bear Ghost 6": [
-                "0.25",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "RatRig V-Core 3 200mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 300mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 400mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 500mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Minion": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ]
-        },
-        "context": {
-            "brand": "Volumic",
-            "color": "Generic",
-            "color_code": "#00ff00",
-            "description": "The Bumper ULTRA, high performance semi-flexible (Shore 60D) for impact-resistant objects.",
-            "diameter": 1.75,
-            "guid": "7bebd9d6-d485-4c23-b644-34d535e97494",
-            "material_type": "PLA",
-            "native_id": "volumic_bumper_ultra#resolved-cfe8a77d8616c274",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "volumic_bumper_ultra"
-        },
-        "data": {
-            "adhesion_type": "skirt",
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230.0,
-            "default_material_bed_temperature": 50.0,
-            "default_material_print_temperature": 230.0,
-            "material_bed_temperature": 50.0,
-            "material_bed_temperature_layer_0": 50.0,
-            "material_brand": "Volumic",
-            "material_break_preparation_temperature": 230.0,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 230.0,
-            "material_guid": "7bebd9d6-d485-4c23-b644-34d535e97494",
-            "material_initial_print_temperature": 230.0,
-            "material_print_temperature": 230.0,
-            "material_print_temperature_layer_0": 230.0,
-            "material_standby_temperature": 175.0,
-            "material_type": "PLA",
-            "prime_tower_brim_enable": false,
-            "prime_tower_mode": "interleaved",
-            "retraction_amount": 0.5,
-            "retraction_combing": "noskin",
-            "retraction_prime_speed": 25.0,
-            "retraction_retract_speed": 25.0,
-            "retraction_speed": 25.0,
-            "wipe_retraction_amount": 0.5,
-            "wipe_retraction_prime_speed": 25.0,
-            "wipe_retraction_retract_speed": 25.0,
-            "wipe_retraction_speed": 25.0
-        },
-        "name": "BUMPER Ultra",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_brim_enable": "global",
-            "prime_tower_mode": "global",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Anycubic Mega Zero": [
-                "0.4"
-            ],
-            "Biqu B1": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "Biqu Hurakan": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "Creality Ender-3 S1": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Plus": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Pro": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 V3 SE": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality K1 Max": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ],
-            "Flying Bear Ghost 6": [
-                "0.25",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "RatRig V-Core 3 200mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 300mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 400mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 500mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Minion": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ]
-        },
-        "context": {
-            "brand": "Volumic",
-            "color": "Generic",
-            "color_code": "#00ff00",
-            "description": "PLA Ultra with 80% pure bronze (no additive).",
-            "diameter": 1.75,
-            "guid": "948865b1-27bb-45ec-b8de-d56a1ff1bdd0",
-            "material_type": "Metal",
-            "native_id": "volumic_br80_ultra#resolved-6ea21f69c337e3ee",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "volumic_br80_ultra"
-        },
-        "data": {
-            "adhesion_type": "skirt",
-            "cool_fan_speed": 80.0,
-            "cool_fan_speed_max": 80.0,
-            "cool_fan_speed_min": 80.0,
-            "cool_min_temperature": 190.0,
-            "default_material_bed_temperature": 45.0,
-            "default_material_print_temperature": 190.0,
-            "material_bed_temperature": 45.0,
-            "material_bed_temperature_layer_0": 45.0,
-            "material_brand": "Volumic",
-            "material_break_preparation_temperature": 190.0,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 190.0,
-            "material_guid": "948865b1-27bb-45ec-b8de-d56a1ff1bdd0",
-            "material_initial_print_temperature": 190.0,
-            "material_print_temperature": 190.0,
-            "material_print_temperature_layer_0": 190.0,
-            "material_standby_temperature": 165.0,
-            "material_type": "Metal",
-            "prime_tower_brim_enable": false,
-            "prime_tower_mode": "interleaved",
-            "retraction_amount": 1.0,
-            "retraction_combing": "noskin",
-            "retraction_prime_speed": 25.0,
-            "retraction_retract_speed": 25.0,
-            "retraction_speed": 25.0,
-            "wipe_retraction_amount": 1.0,
-            "wipe_retraction_prime_speed": 25.0,
-            "wipe_retraction_retract_speed": 25.0,
-            "wipe_retraction_speed": 25.0
-        },
-        "name": "BRONZE80 Ultra",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_brim_enable": "global",
-            "prime_tower_mode": "global",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Anycubic Mega Zero": [
-                "0.4"
-            ],
-            "Biqu B1": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "Biqu BX": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "Biqu Hurakan": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "Creality Ender-3 S1": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Plus": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Pro": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 V3 SE": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality K1 Max": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ],
-            "Flying Bear Ghost 6": [
-                "0.25",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "RatRig V-Core 3 200mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8"
-            ],
-            "RatRig V-Core 3 300mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8"
-            ],
-            "RatRig V-Core 3 400mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8"
-            ],
-            "RatRig V-Core 3 500mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8"
-            ],
-            "RatRig V-Minion": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8"
-            ]
-        },
-        "context": {
-            "brand": "Volumic",
-            "color": "Generic",
-            "color_code": "#00ff00",
             "description": "The must of nylons, easy to print, with very good adhesion and low warping. Very high quality material (industrial grade) and a very nice finish.",
             "diameter": 1.75,
             "guid": "432b8465-48e2-4ef2-a02c-803250300a6e",
@@ -3298,36 +3962,36 @@
             "brand": "Volumic",
             "color": "Generic",
             "color_code": "#00ff00",
-            "description": "The Support Ultra is a modified PVA to increase bed adhesion and to other materials, much easier than a standard PVA.",
+            "description": "Professional PETG, very easy to print, very good adhesion at low temperature, very high quality material (industrial grade) and a very nice finish.",
             "diameter": 1.75,
-            "guid": "a14eeb2d-3faa-4892-ade6-c56bb34d38eb",
-            "material_type": "PVA",
-            "native_id": "volumic_support_ultra#resolved-0256528a3b231258",
+            "guid": "12bd6afe-0741-472f-970e-33ac4c3a6b15",
+            "material_type": "PETG",
+            "native_id": "volumic_petg_ultra#resolved-75f565f25be1b134",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "volumic_support_ultra"
+            "source_native_id": "volumic_petg_ultra"
         },
         "data": {
             "adhesion_type": "skirt",
-            "cool_fan_speed": 0.0,
-            "cool_fan_speed_max": 0.0,
-            "cool_fan_speed_min": 0.0,
-            "cool_min_temperature": 245.0,
-            "default_material_bed_temperature": 65.0,
-            "default_material_print_temperature": 245.0,
+            "cool_fan_speed": 50.0,
+            "cool_fan_speed_max": 50.0,
+            "cool_fan_speed_min": 50.0,
+            "cool_min_temperature": 235.0,
+            "default_material_bed_temperature": 50.0,
+            "default_material_print_temperature": 235.0,
             "material_adhesion_tendency": 0,
-            "material_bed_temperature": 65.0,
-            "material_bed_temperature_layer_0": 65.0,
+            "material_bed_temperature": 50.0,
+            "material_bed_temperature_layer_0": 50.0,
             "material_brand": "Volumic",
-            "material_break_preparation_temperature": 245.0,
+            "material_break_preparation_temperature": 235.0,
             "material_diameter": 1.75,
-            "material_final_print_temperature": 245.0,
-            "material_guid": "a14eeb2d-3faa-4892-ade6-c56bb34d38eb",
-            "material_initial_print_temperature": 245.0,
-            "material_print_temperature": 245.0,
-            "material_print_temperature_layer_0": 245.0,
+            "material_final_print_temperature": 235.0,
+            "material_guid": "12bd6afe-0741-472f-970e-33ac4c3a6b15",
+            "material_initial_print_temperature": 235.0,
+            "material_print_temperature": 235.0,
+            "material_print_temperature_layer_0": 235.0,
             "material_standby_temperature": 175.0,
-            "material_type": "PVA",
+            "material_type": "PETG",
             "prime_tower_brim_enable": false,
             "prime_tower_mode": "interleaved",
             "retraction_amount": 2.0,
@@ -3340,7 +4004,7 @@
             "wipe_retraction_retract_speed": 25.0,
             "wipe_retraction_speed": 25.0
         },
-        "name": "SUPPORT Ultra",
+        "name": "PETG Ultra",
         "setting_scopes": {
             "adhesion_type": "global",
             "cool_fan_speed": "extruder.0",
@@ -3575,670 +4239,6 @@
             "wipe_retraction_prime_speed": "extruder.0",
             "wipe_retraction_retract_speed": "extruder.0",
             "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Biqu BX": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "Creality Ender-3 S1": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Plus": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Pro": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 V3 SE": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality K1 Max": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ],
-            "RatRig V-Core 3 200mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 300mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 400mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 500mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Minion": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Two Trees Sapphire Plus": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Two Trees Sapphire Pro": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ]
-        },
-        "context": {
-            "brand": "eSUN",
-            "color": "Grey",
-            "color_code": "#999999",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "061cc7c6-77b1-4d76-996f-d049546b41d2",
-            "material_type": "PLA",
-            "native_id": "eSUN_PLA_PRO_Grey#resolved-bc8b12b1888fb710",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "eSUN_PLA_PRO_Grey"
-        },
-        "data": {
-            "adhesion_type": "skirt",
-            "cool_fan_speed": 100.0,
-            "default_material_bed_temperature": 60.0,
-            "default_material_print_temperature": 210.0,
-            "material_brand": "eSUN",
-            "material_diameter": 1.75,
-            "material_guid": "061cc7c6-77b1-4d76-996f-d049546b41d2",
-            "material_standby_temperature": 195.0,
-            "material_type": "PLA",
-            "prime_tower_brim_enable": false,
-            "prime_tower_mode": "interleaved",
-            "retraction_amount": 3,
-            "retraction_combing": "noskin",
-            "retraction_speed": 40.0,
-            "wipe_retraction_amount": 3
-        },
-        "name": "PLA+ Grey",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_brim_enable": "global",
-            "prime_tower_mode": "global",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Biqu BX": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "Creality Ender-3 S1": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Plus": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Pro": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 V3 SE": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality K1 Max": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ],
-            "RatRig V-Core 3 200mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 300mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 400mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 500mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Minion": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Two Trees Sapphire Plus": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Two Trees Sapphire Pro": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ]
-        },
-        "context": {
-            "brand": "eSUN",
-            "color": "Black",
-            "color_code": "#333333",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "5c4e29a1-0722-4cfa-b147-338924afc075",
-            "material_type": "PLA",
-            "native_id": "eSUN_PLA_PRO_Black#resolved-e227c114dcb6d323",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "eSUN_PLA_PRO_Black"
-        },
-        "data": {
-            "adhesion_type": "skirt",
-            "cool_fan_speed": 100.0,
-            "default_material_bed_temperature": 60.0,
-            "default_material_print_temperature": 210.0,
-            "material_brand": "eSUN",
-            "material_diameter": 1.75,
-            "material_guid": "5c4e29a1-0722-4cfa-b147-338924afc075",
-            "material_standby_temperature": 195.0,
-            "material_type": "PLA",
-            "prime_tower_brim_enable": false,
-            "prime_tower_mode": "interleaved",
-            "retraction_amount": 3,
-            "retraction_combing": "noskin",
-            "retraction_speed": 40.0,
-            "wipe_retraction_amount": 3
-        },
-        "name": "PLA+ Black",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_brim_enable": "global",
-            "prime_tower_mode": "global",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Biqu BX": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "Creality Ender-3 S1": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Plus": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Pro": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 V3 SE": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality K1 Max": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ],
-            "RatRig V-Core 3 200mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 300mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 400mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 500mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Minion": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Two Trees Sapphire Plus": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Two Trees Sapphire Pro": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ]
-        },
-        "context": {
-            "brand": "eSUN",
-            "color": "Purple",
-            "color_code": "#9900CC",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "ae0c8895-b4b3-4a12-a5a5-3ae754940ced",
-            "material_type": "PLA",
-            "native_id": "eSUN_PLA_PRO_Purple#resolved-db0999651b6521f1",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "eSUN_PLA_PRO_Purple"
-        },
-        "data": {
-            "adhesion_type": "skirt",
-            "cool_fan_speed": 100.0,
-            "default_material_bed_temperature": 60.0,
-            "default_material_print_temperature": 210.0,
-            "material_brand": "eSUN",
-            "material_diameter": 1.75,
-            "material_guid": "ae0c8895-b4b3-4a12-a5a5-3ae754940ced",
-            "material_standby_temperature": 195.0,
-            "material_type": "PLA",
-            "prime_tower_brim_enable": false,
-            "prime_tower_mode": "interleaved",
-            "retraction_amount": 3,
-            "retraction_combing": "noskin",
-            "retraction_speed": 40.0,
-            "wipe_retraction_amount": 3
-        },
-        "name": "PLA+ Purple",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_brim_enable": "global",
-            "prime_tower_mode": "global",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Biqu BX": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8"
-            ],
-            "Creality Ender-3 S1": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Plus": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 S1 Pro": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality Ender-3 V3 SE": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Creality K1 Max": [
-                "0.4",
-                "0.6",
-                "0.8"
-            ],
-            "RatRig V-Core 3 200mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 300mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 400mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Core 3 500mm": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "RatRig V-Minion": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Two Trees Sapphire Plus": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ],
-            "Two Trees Sapphire Pro": [
-                "0.2",
-                "0.3",
-                "0.4",
-                "0.5",
-                "0.6",
-                "0.8",
-                "1"
-            ]
-        },
-        "context": {
-            "brand": "eSUN",
-            "color": "White",
-            "color_code": "#EEEEEE",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "832e163d-db99-4a58-80b9-f82073ae0a9b",
-            "material_type": "PLA",
-            "native_id": "eSUN_PLA_PRO_White#resolved-6bb8c630056a39f9",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "eSUN_PLA_PRO_White"
-        },
-        "data": {
-            "adhesion_type": "skirt",
-            "cool_fan_speed": 100.0,
-            "default_material_bed_temperature": 60.0,
-            "default_material_print_temperature": 210.0,
-            "material_brand": "eSUN",
-            "material_diameter": 1.75,
-            "material_guid": "832e163d-db99-4a58-80b9-f82073ae0a9b",
-            "material_standby_temperature": 195.0,
-            "material_type": "PLA",
-            "prime_tower_brim_enable": false,
-            "prime_tower_mode": "interleaved",
-            "retraction_amount": 3,
-            "retraction_combing": "noskin",
-            "retraction_speed": 40.0,
-            "wipe_retraction_amount": 3
-        },
-        "name": "PLA+ White",
-        "setting_scopes": {
-            "adhesion_type": "global",
-            "cool_fan_speed": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "prime_tower_brim_enable": "global",
-            "prime_tower_mode": "global",
-            "retraction_amount": "extruder.0",
-            "retraction_combing": "global",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0"
         }
     }
 ]
