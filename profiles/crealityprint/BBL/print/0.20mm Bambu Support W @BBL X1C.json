@@ -4,10 +4,14 @@
   "name": "0.20mm Bambu Support W @BBL X1C",
   "vendor": "BBL",
   "first_seen": "7.1.0",
-  "last_seen": "7.1.0",
+  "last_seen": "7.3.0",
   "filament_id": null,
   "setting_id": "GP008",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "7.1.0": "process"
@@ -40,7 +44,10 @@
       "7.1.0": "by layer"
     },
     "default_acceleration": {
-      "7.1.0": "10000"
+      "7.1.0": "10000",
+      "7.3.0": [
+        "10000"
+      ]
     },
     "bridge_no_support": {
       "7.1.0": "0"
@@ -64,7 +71,8 @@
       "7.1.0": "15%"
     },
     "sparse_infill_pattern": {
-      "7.1.0": "crosshatch"
+      "7.1.0": "crosshatch",
+      "7.3.0": "grid"
     },
     "initial_layer_line_width": {
       "7.1.0": "0.5"
@@ -340,6 +348,234 @@
     },
     "setting_id": {
       "7.1.0": "GP008"
+    },
+    "bottom_color_penetration_layers": {
+      "7.3.0": "3"
+    },
+    "bottom_surface_density": {
+      "7.3.0": "100"
+    },
+    "circle_compensation_manual_offset": {
+      "7.3.0": "0"
+    },
+    "detect_floating_vertical_shell": {
+      "7.3.0": "1"
+    },
+    "enable_circle_compensation": {
+      "7.3.0": "0"
+    },
+    "enable_wrapping_detection": {
+      "7.3.0": "0"
+    },
+    "monotonic_travel_into_wall": {
+      "7.3.0": "0.0"
+    },
+    "ironing_inset": {
+      "7.3.0": "0.21"
+    },
+    "infill_lock_depth": {
+      "7.3.0": "1.0"
+    },
+    "initial_layer_travel_acceleration": {
+      "7.3.0": [
+        "6000"
+      ]
+    },
+    "infill_shift_step": {
+      "7.3.0": "0.4"
+    },
+    "infill_rotate_step": {
+      "7.3.0": "0"
+    },
+    "layer_time_smoothing": {
+      "7.3.0": "0"
+    },
+    "layer_time_smoothing_threshold": {
+      "7.3.0": "30"
+    },
+    "locked_skin_infill_pattern": {
+      "7.3.0": "cross-zag"
+    },
+    "locked_skeleton_infill_pattern": {
+      "7.3.0": "zig-zag2"
+    },
+    "max_bridge_length": {
+      "7.3.0": "0"
+    },
+    "avoid_crossing_wall_includes_support": {
+      "7.3.0": "0"
+    },
+    "overhang_totally_speed": {
+      "7.3.0": [
+        "10"
+      ]
+    },
+    "override_filament_scarf_seam_setting": {
+      "7.3.0": "0"
+    },
+    "pre_start_fan_time": {
+      "7.3.0": [
+        "0"
+      ]
+    },
+    "prime_tower_brim_width": {
+      "7.3.0": "3"
+    },
+    "prime_tower_enable_framework": {
+      "7.3.0": "0"
+    },
+    "prime_tower_lift_speed": {
+      "7.3.0": "90"
+    },
+    "prime_tower_lift_height": {
+      "7.3.0": "-1"
+    },
+    "prime_tower_max_speed": {
+      "7.3.0": "90"
+    },
+    "prime_tower_flat_ironing": {
+      "7.3.0": "0"
+    },
+    "reduce_infill_retraction_mode": {
+      "7.3.0": "Auto"
+    },
+    "scarf_angle_threshold": {
+      "7.3.0": "155"
+    },
+    "seam_placement_away_from_overhangs": {
+      "7.3.0": "0"
+    },
+    "skirt_per_object": {
+      "7.3.0": "1"
+    },
+    "smooth_coefficient": {
+      "7.3.0": "80"
+    },
+    "fill_multiline": {
+      "7.3.0": "1"
+    },
+    "skeleton_infill_density": {
+      "7.3.0": "15%"
+    },
+    "skin_infill_density": {
+      "7.3.0": "15%"
+    },
+    "skin_infill_line_width": {
+      "7.3.0": "0.45"
+    },
+    "skin_infill_depth": {
+      "7.3.0": "2.0"
+    },
+    "skeleton_infill_line_width": {
+      "7.3.0": "0.45"
+    },
+    "enable_support_ironing": {
+      "7.3.0": "0"
+    },
+    "support_ironing_pattern": {
+      "7.3.0": "zig-zag"
+    },
+    "support_ironing_speed": {
+      "7.3.0": "30"
+    },
+    "support_ironing_flow": {
+      "7.3.0": "10%"
+    },
+    "support_ironing_spacing": {
+      "7.3.0": "0.15"
+    },
+    "support_ironing_inset": {
+      "7.3.0": "0.0"
+    },
+    "support_ironing_direction": {
+      "7.3.0": "0"
+    },
+    "seam_slope_type": {
+      "7.3.0": "none"
+    },
+    "seam_slope_start_height": {
+      "7.3.0": "10%"
+    },
+    "seam_slope_gap": {
+      "7.3.0": "0"
+    },
+    "seam_slope_min_length": {
+      "7.3.0": "10"
+    },
+    "symmetric_infill_y_axis": {
+      "7.3.0": "0"
+    },
+    "sparse_infill_lattice_angle_1": {
+      "7.3.0": "-45"
+    },
+    "sparse_infill_lattice_angle_2": {
+      "7.3.0": "45"
+    },
+    "top_color_penetration_layers": {
+      "7.3.0": "3"
+    },
+    "top_surface_density": {
+      "7.3.0": "100"
+    },
+    "top_solid_infill_flow_ratio": {
+      "7.3.0": [
+        "1"
+      ]
+    },
+    "travel_acceleration": {
+      "7.3.0": [
+        "10000"
+      ]
+    },
+    "travel_short_distance_acceleration": {
+      "7.3.0": [
+        "250"
+      ]
+    },
+    "z_direction_outwall_speed_continuous": {
+      "7.3.0": "0"
+    },
+    "enable_tower_interface_features": {
+      "7.3.0": "0"
+    },
+    "sparse_infill_filament": {
+      "7.3.0": "0"
+    },
+    "wall_filament": {
+      "7.3.0": "0"
+    },
+    "solid_infill_filament": {
+      "7.3.0": "0"
+    },
+    "infill_instead_top_bottom_surfaces": {
+      "7.3.0": "0"
+    },
+    "fuzzy_skin": {
+      "7.3.0": "none"
+    },
+    "fuzzy_skin_thickness": {
+      "7.3.0": "0.3"
+    },
+    "fuzzy_skin_point_distance": {
+      "7.3.0": "0.8"
+    },
+    "fuzzy_skin_first_layer": {
+      "7.3.0": "0"
+    },
+    "fuzzy_skin_noise_type": {
+      "7.3.0": "classic"
+    },
+    "fuzzy_skin_mode": {
+      "7.3.0": "displacement"
+    },
+    "fuzzy_skin_scale": {
+      "7.3.0": "1.0"
+    },
+    "fuzzy_skin_octaves": {
+      "7.3.0": "4"
+    },
+    "fuzzy_skin_persistence": {
+      "7.3.0": "0.5"
     }
   }
 }
