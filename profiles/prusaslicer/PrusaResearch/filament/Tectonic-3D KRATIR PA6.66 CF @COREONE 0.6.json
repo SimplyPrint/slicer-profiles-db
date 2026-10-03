@@ -20,7 +20,7 @@
       "3.0.0": ""
     },
     "compatible_printers_condition": {
-      "3.0.0": "printer_model=~/(COREONE|COREONEOAK|COREONEL)/ and nozzle_diameter[0]==0.6 and ! single_extruder_multi_material and printer_notes!~/.*HT400.*/"
+      "3.0.0": "printer_model=~/(COREONE|COREONEOAK|COREONEL)/ and nozzle_diameter[0]==0.6 and ! single_extruder_multi_material"
     },
     "end_filament_gcode": {
       "3.0.0": "\"; Filament-specific end gcode\""
@@ -183,6 +183,9 @@
     },
     "filament_shrinkage_compensation_z": {
       "3.0.0": "0.24%"
+    },
+    "compatible_prints_condition": {
+      "3.0.0": "notes!~/.*HT_HOTEND_HT.*/"
     }
   }
 }
