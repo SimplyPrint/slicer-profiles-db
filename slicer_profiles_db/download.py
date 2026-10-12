@@ -398,7 +398,9 @@ def _extract_repo(
         zip_file_path.unlink(missing_ok=True)
 
 
-def apply_overlays(extracted_dir: Path, overlay_dir: Path, slicer: SlicerType) -> None:
+def apply_overlays(
+    extracted_dir: Path, overlay_dir: Path, slicer: SlicerType
+) -> list[Path]:
     """
     Copy overlay profiles into the extracted directory after squashing.
 
@@ -411,12 +413,14 @@ def apply_overlays(extracted_dir: Path, overlay_dir: Path, slicer: SlicerType) -
     extracted_dir without extra nesting.
 
     Copies all files (not just *.json) — overlays may include .stl, .png, .svg
-    assets alongside profile JSONs.
+    assets alongside profile JSONs.  Returns the copied files, so those
+    assets can be content-addressed like the upstream ones.
     """
     slicer_overlay = overlay_dir / slicer.value
     if not slicer_overlay.exists():
-        return
+        return []
 
+    copied: list[Path] = []
     for vendor_dir in slicer_overlay.iterdir():
         if not vendor_dir.is_dir():
             continue
@@ -429,3 +433,5 @@ def apply_overlays(extracted_dir: Path, overlay_dir: Path, slicer: SlicerType) -
             dest = dest_vendor / rel
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(overlay_file, dest)
+            copied.append(dest)
+    return copied

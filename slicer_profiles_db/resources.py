@@ -10,6 +10,7 @@ under /out.
 import hashlib
 import json
 import logging
+from collections.abc import Iterable
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
@@ -152,15 +153,20 @@ RESOURCE_SUFFIXES = frozenset(
 RESOURCE_SETTING_KEYS = {"bed_model", "bed_texture", "thumbnail", "hotend_model"}
 
 
-def collect_resources(extracted_dir: Path, store: ResourceStore) -> dict[str, str]:
-    """Walk extracted dir and content-address supported resource files.
+def collect_resources(
+    extracted_dir: Path,
+    store: ResourceStore,
+    files: Iterable[Path] | None = None,
+) -> dict[str, str]:
+    """Walk extracted dir (or only ``files`` in it) and content-address supported
+    resource files.
 
     Both the basename and the extraction-relative path are indexed.  Current
     slicer metadata generally uses basenames, while accepting relative paths
     keeps the resource layer independent from a particular slicer's layout.
     """
     resource_map: dict[str, str] = {}
-    for file_path in sorted(extracted_dir.rglob("*")):
+    for file_path in sorted(extracted_dir.rglob("*") if files is None else files):
         if not file_path.is_file() or file_path.suffix.lower() not in RESOURCE_SUFFIXES:
             continue
         hash_hex = store.store(file_path, relative_to=extracted_dir)

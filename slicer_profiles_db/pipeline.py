@@ -212,7 +212,10 @@ class ProfilePipeline:
         # Step 4: Apply overlays (after squash so they bypass inheritance
         # resolution — overlay profiles should be complete/pre-squashed)
         if self.overlay_dir:
-            apply_overlays(extracted, self.overlay_dir, slicer)
+            overlay_files = apply_overlays(extracted, self.overlay_dir, slicer)
+            resource_map.update(
+                collect_resources(extracted, resource_store, overlay_files)
+            )
 
         # Step 5: Determine storage/source version.  Pass the exact same value
         # to parsers that retain resource provenance in role context.
@@ -333,7 +336,12 @@ class ProfilePipeline:
                     # Apply overlays after split (overlay profiles should
                     # be complete/pre-squashed)
                     if self.overlay_dir:
-                        apply_overlays(split_dir, self.overlay_dir, slicer)
+                        overlay_files = apply_overlays(
+                            split_dir, self.overlay_dir, slicer
+                        )
+                        resource_map.update(
+                            collect_resources(split_dir, resource_store, overlay_files)
+                        )
 
                     # Parse the split directory
                     parsed = list(
