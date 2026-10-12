@@ -5,6 +5,13 @@ An open database of printer and filament profiles for various 3D printing slicer
 
 As we are working on the process, the simplest way to add profiles is to add them as "overlays" in the `overlay/` folder, these correspond 1:1 with the format from the slicer you'd want to add the profile to, and is the simplest way to integrate the profile consistently.
 
+To correct a few keys of an upstream profile instead of replacing it, add
+`<profile>.patch.json` beside where its `<profile>.json` sits upstream: its keys are
+set on the squashed upstream profile, which otherwise keeps following upstream. A
+patch whose profile a release does not have is logged and skipped. The store only
+changes when a release is ingested, so re-ingest the latest one with `--force` when
+adding a patch.
+
 The `profiles/` folder is a generated, centralized result of ingesting multiple data sources, including the overlays, while manual edits are possible, they are not intended.
 
 ## Cura resources
