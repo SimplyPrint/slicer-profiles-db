@@ -4,10 +4,14 @@
   "name": "Dremel 3D45 0.4 nozzle",
   "vendor": "Dremel",
   "first_seen": "7.1.0",
-  "last_seen": "7.1.0",
+  "last_seen": "7.3.0",
   "filament_id": null,
   "setting_id": "GM001",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "7.1.0": "machine"
@@ -240,7 +244,8 @@
       "7.1.0": "Normal Lift"
     },
     "before_layer_change_gcode": {
-      "7.1.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+      "7.1.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n",
+      "7.3.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\n"
     },
     "default_print_profile": {
       "7.1.0": ".20mm Standard @Dremel 3D45 0.4"

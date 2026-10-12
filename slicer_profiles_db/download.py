@@ -5,6 +5,7 @@ Handles ZIP download, extraction, and overlay application for all
 supported slicers.
 """
 
+import json
 import logging
 import re
 import shutil
@@ -398,12 +399,21 @@ def _extract_repo(
         zip_file_path.unlink(missing_ok=True)
 
 
-def apply_overlays(extracted_dir: Path, overlay_dir: Path, slicer: SlicerType) -> None:
+#: A partial overlay: ``X.patch.json`` sets keys on the squashed upstream ``X.json``.
+PATCH_SUFFIX = ".patch.json"
+
+
+def apply_overlays(
+    extracted_dir: Path, overlay_dir: Path, slicer: SlicerType
+) -> list[Path]:
     """
     Copy overlay profiles into the extracted directory after squashing.
 
     Overlay profiles are applied post-squash, so they bypass inheritance
-    resolution entirely.  They must be complete (pre-squashed) profiles.
+    resolution entirely.  They must be complete (pre-squashed) profiles,
+    except a ``<profile>.patch.json``, whose keys replace those of the
+    squashed upstream ``<profile>.json`` beside it: a correction to upstream
+    data that keeps following every other upstream change.
 
     Overlay structure: overlay_dir/{slicer}/{vendor}/...
     extracted_dir is already slicer-specific (e.g. work/bambustudio), so we
@@ -411,12 +421,15 @@ def apply_overlays(extracted_dir: Path, overlay_dir: Path, slicer: SlicerType) -
     extracted_dir without extra nesting.
 
     Copies all files (not just *.json) — overlays may include .stl, .png, .svg
-    assets alongside profile JSONs.
+    assets alongside profile JSONs.  Returns the copied files, so those
+    assets can be content-addressed like the upstream ones.
     """
     slicer_overlay = overlay_dir / slicer.value
     if not slicer_overlay.exists():
-        return
+        return []
 
+    copied: list[Path] = []
+    patches: list[tuple[Path, Path]] = []
     for vendor_dir in slicer_overlay.iterdir():
         if not vendor_dir.is_dir():
             continue
@@ -427,5 +440,25 @@ def apply_overlays(extracted_dir: Path, overlay_dir: Path, slicer: SlicerType) -
                 continue
             rel = overlay_file.relative_to(vendor_dir)
             dest = dest_vendor / rel
+            if overlay_file.name.endswith(PATCH_SUFFIX):
+                name = overlay_file.name.removesuffix(PATCH_SUFFIX) + ".json"
+                patches.append((overlay_file, dest.with_name(name)))
+                continue
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(overlay_file, dest)
+            copied.append(dest)
+
+    for patch, target in patches:
+        # A release without the profile (an older one, or a rename) is logged,
+        # never guessed at: the patch names exactly one upstream file.
+        if not target.is_file():
+            logger.warning(
+                "Overlay patch %s has no upstream profile at %s",
+                patch,
+                target.relative_to(extracted_dir),
+            )
+            continue
+        profile = json.loads(target.read_text(encoding="utf-8"))
+        profile.update(json.loads(patch.read_text(encoding="utf-8")))
+        target.write_text(json.dumps(profile, indent=4), encoding="utf-8")
+    return copied

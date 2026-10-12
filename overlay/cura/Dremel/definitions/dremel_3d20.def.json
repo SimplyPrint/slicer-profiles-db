@@ -1,0 +1,154 @@
+{
+    "name": "Dremel 3D20",
+    "inherits": "fdmprinter",
+    "version": 2,
+    "metadata": {
+        "author": "3PI Tech Solutions",
+        "file_formats": "application/x-g3drem;text/x-gcode",
+        "has_machine_quality": true,
+        "has_materials": true,
+        "machine_extruder_trains": {
+            "0": "dremel_3d20_extruder_0"
+        },
+        "manufacturer": "Dremel",
+        "platform": "dremel_3D20_platform.stl",
+        "preferred_material": "dremel_pla",
+        "preferred_quality": "normal",
+        "supports_usb_connection": false,
+        "visible": true
+    },
+    "overrides": {
+        "acceleration_enabled": {
+            "value": true
+        },
+        "acceleration_print": {
+            "value": 1200
+        },
+        "acceleration_travel": {
+            "value": 1500
+        },
+        "acceleration_travel_layer_0": {
+            "value": "acceleration_travel"
+        },
+        "adhesion_type": {
+            "default_value": "skirt"
+        },
+        "cool_min_speed": {
+            "default_value": 10
+        },
+        "gantry_height": {
+            "value": 30
+        },
+        "infill_sparse_density": {
+            "default_value": 20
+        },
+        "infill_sparse_thickness": {
+            "maximum_value_warning": 0.32
+        },
+        "jerk_enabled": {
+            "value": true
+        },
+        "jerk_print": {
+            "value": 5.0
+        },
+        "jerk_travel": {
+            "value": "jerk_print"
+        },
+        "jerk_travel_layer_0": {
+            "value": "jerk_travel"
+        },
+        "layer_height": {
+            "default_value": 0.2
+        },
+        "machine_center_is_zero": {
+            "default_value": true
+        },
+        "machine_depth": {
+            "default_value": 150
+        },
+        "machine_end_gcode": {
+            "default_value": "M104 S0 T0\nG1 Z140 F3300\nG28 X0 Y0\nM132 X Y Z A\nG91\nM18\n"
+        },
+        "machine_gcode_flavor": {
+            "default_value": "RepRap (Marlin/Sprinter)"
+        },
+        "machine_head_with_fans_polygon": {
+            "default_value": [
+                [
+                    -15,
+                    -25
+                ],
+                [
+                    -15,
+                    35
+                ],
+                [
+                    -25,
+                    40
+                ],
+                [
+                    35,
+                    40
+                ]
+            ]
+        },
+        "machine_heated_bed": {
+            "default_value": false
+        },
+        "machine_height": {
+            "default_value": 140
+        },
+        "machine_name": {
+            "default_value": "Dremel 3D20"
+        },
+        "machine_nozzle_size": {
+            "default_value": 0.4
+        },
+        "machine_start_gcode": {
+            "default_value": "G90\nG28\nM132 X Y Z A\nG1 Z100 F3300\nG1 X-110.5 Y-74 F6000\nM6 T0\nM907 X100 Y100 Z60 A100\nG1 Z0.6 F3300\nG4 P2000\nM108 T0\n"
+        },
+        "machine_width": {
+            "default_value": 230
+        },
+        "material_diameter": {
+            "default_value": 1.75
+        },
+        "prime_tower_size": {
+            "default_value": 8.660254037844387
+        },
+        "print_sequence": {
+            "default_value": "all_at_once",
+            "enabled": false
+        },
+        "retraction_speed": {
+            "default_value": 25
+        },
+        "speed_infill": {
+            "default_value": 48
+        },
+        "speed_print": {
+            "default_value": 60
+        },
+        "speed_topbottom": {
+            "default_value": 35
+        },
+        "speed_travel": {
+            "default_value": 120
+        },
+        "speed_wall_0": {
+            "default_value": 40
+        },
+        "speed_wall_x": {
+            "default_value": 45
+        },
+        "skirt_gap": {
+            "default_value": 1
+        },
+        "skirt_line_count": {
+            "default_value": 7
+        },
+        "support_enable": {
+            "default_value": false
+        }
+    }
+}
