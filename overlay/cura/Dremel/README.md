@@ -8,6 +8,9 @@ at `1993b6d` (LGPL-3.0, see `LICENSE`), ported to Cura 5.13:
 - quality `setting_version` is 27, and settings Cura 5.13 no longer has are dropped
   (`support_interface_skip_height`, `speed_equalize_flow_enabled`,
   `travel_compensate_overlapping_walls_x_enabled`);
+- enum values are option keys, not labels: the flavor is `RepRap (Marlin/Sprinter)`, not
+  `Marlin` (the web drops a value that is no option, and Cura then has no flavor), and
+  `travel_retract_before_outer_wall`, an enum since Cura 5, is `force_retracted`;
 - each material quality takes its quality type's global name, as Cura displays it;
 - `exclude_materials` is dropped, so generic 1.75 mm materials map to these printers.
 
