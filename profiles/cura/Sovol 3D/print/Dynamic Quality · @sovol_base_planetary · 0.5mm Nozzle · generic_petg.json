@@ -12,6 +12,7 @@
   "native_id": "quality:sovol_base_planetary:sovol/PETG/sovol_planetary_0.5_PETG_adaptive",
   "context": {
     "native_id": "quality:sovol_base_planetary:sovol/PETG/sovol_planetary_0.5_PETG_adaptive",
+    "display_name": "Dynamic Quality (0.16 mm) · 0.5mm Nozzle · Generic PETG",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "sovol_base_planetary",
@@ -20,6 +21,12 @@
     "variant_name": "0.5mm Nozzle",
     "material_id": "generic_petg",
     "global_quality_id": "quality:sovol_base_planetary:sovol/sovol_planetary_global_adaptive",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.5,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "sovol_base_planetary"
@@ -28,7 +35,11 @@
         "0.5mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_petg"
+        "generic_petg",
+        "generic_petg_175"
+      ],
+      "material_types": [
+        "PETG"
       ]
     }
   },

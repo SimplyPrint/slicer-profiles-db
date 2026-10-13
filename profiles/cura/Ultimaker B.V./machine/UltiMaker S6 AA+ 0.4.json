@@ -32,6 +32,15 @@
       "nozzle_volume_type": "standard",
       "hotend_id": "AA+ 0.4"
     },
+    "variant_identity": {
+      "native_id": "variant:ultimaker_s6:ultimaker_s6_aa_plus04",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "tool_indices": [
+        0
+      ],
+      "hotend_id": "AA+ 0.4"
+    },
     "tool_topology": {
       "tool_count": 2,
       "tools": [
@@ -72,6 +81,53 @@
       "variant:ultimaker_s6:ultimaker_s6_cc04",
       "variant:ultimaker_s6:ultimaker_s6_cc_plus04",
       "variant:ultimaker_s6:ultimaker_s6_dd04"
+    ],
+    "variant_identity_aliases": [
+      {
+        "native_id": "variant:ultimaker_s6:ultimaker_s6_aa04",
+        "nozzle_diameter": 0.4,
+        "nozzle_volume_type": "standard",
+        "tool_indices": [
+          0
+        ],
+        "hotend_id": "AA 0.4"
+      },
+      {
+        "native_id": "variant:ultimaker_s6:ultimaker_s6_bb04",
+        "nozzle_diameter": 0.4,
+        "nozzle_volume_type": "standard",
+        "tool_indices": [
+          0
+        ],
+        "hotend_id": "BB 0.4"
+      },
+      {
+        "native_id": "variant:ultimaker_s6:ultimaker_s6_cc04",
+        "nozzle_diameter": 0.4,
+        "nozzle_volume_type": "standard",
+        "tool_indices": [
+          0
+        ],
+        "hotend_id": "CC 0.4"
+      },
+      {
+        "native_id": "variant:ultimaker_s6:ultimaker_s6_cc_plus04",
+        "nozzle_diameter": 0.4,
+        "nozzle_volume_type": "standard",
+        "tool_indices": [
+          0
+        ],
+        "hotend_id": "CC+ 0.4"
+      },
+      {
+        "native_id": "variant:ultimaker_s6:ultimaker_s6_dd04",
+        "nozzle_diameter": 0.4,
+        "nozzle_volume_type": "standard",
+        "tool_indices": [
+          0
+        ],
+        "hotend_id": "DD 0.4"
+      }
     ],
     "_cura_material_recompute_plan": {
       "adhesion_extruder_nr": {
@@ -436,10 +492,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -453,10 +505,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -468,12 +516,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }

@@ -12,6 +12,7 @@
   "native_id": "intent:ultimaker_s3:ultimaker_s3/um_s3_aa0.4_tough-pla_0.3mm_quick",
   "context": {
     "native_id": "intent:ultimaker_s3:ultimaker_s3/um_s3_aa0.4_tough-pla_0.3mm_quick",
+    "display_name": "Quick · Extra Fast (0.3 mm) · AA 0.4 · Generic Tough PLA",
     "source_kind": "intent",
     "resource_version": "5.13.0",
     "definition": "ultimaker_s3",
@@ -20,6 +21,12 @@
     "variant_name": "AA 0.4",
     "material_id": "generic_tough_pla",
     "global_quality_id": null,
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "AA 0.4"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_s3"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "generic_tough_pla"
+      ],
+      "material_types": [
+        "Tough PLA"
       ]
-    },
-    "display_name": "Quick · @ultimaker_s3 · AA 0.4 · generic_tough_pla · quick"
+    }
   },
   "setting_scopes": {
     "speed_print": "extruder.0",

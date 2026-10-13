@@ -12,6 +12,7 @@
   "native_id": "quality:sovol_base_titan:sovol/TPU/sovol_titan_0.3_TPU_standard",
   "context": {
     "native_id": "quality:sovol_base_titan:sovol/TPU/sovol_titan_0.3_TPU_standard",
+    "display_name": "Standard Quality (0.2 mm) · 0.3mm Nozzle · Generic TPU 95A",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "sovol_base_titan",
@@ -20,6 +21,12 @@
     "variant_name": "0.3mm Nozzle",
     "material_id": "generic_tpu",
     "global_quality_id": "quality:sovol_base_titan:sovol/sovol_titan_global_standard",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.3,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "sovol_base_titan"
@@ -28,7 +35,11 @@
         "0.3mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_tpu"
+        "generic_tpu",
+        "generic_tpu_175"
+      ],
+      "material_types": [
+        "TPU 95A"
       ]
     }
   },

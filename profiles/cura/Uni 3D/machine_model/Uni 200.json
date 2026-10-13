@@ -23,6 +23,16 @@
     "quality_definition": "uni_base",
     "preferred_material": "generic_abs_175",
     "preferred_quality_type": "q020",
+    "selection_defaults": {
+      "process_profile": {
+        "match": {
+          "profile_context": {
+            "quality_type": "q020",
+            "intent_category": null
+          }
+        }
+      }
+    },
     "preferred_variant_name": "0.40mm Nozzle",
     "preferred_variant_key": "0.4",
     "machine_extruder_trains": {
@@ -66,7 +76,10 @@
       "texture": {
         "ref": "sha256:f38708891424b71746ed2964abbbd9bd36bef43d848ba3ca34bdb90af30c709b",
         "format": "png",
-        "media_type": "image/png"
+        "media_type": "image/png",
+        "target": "model",
+        "mapping": "uv",
+        "flip_y": true
       }
     },
     "scene": {
@@ -86,10 +99,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -103,10 +112,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -118,12 +123,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -151,6 +151,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "unknown"
         },
+        "identity": {
+          "native_id": "variant:uni_200:uni/uni_200_0.30",
+          "nozzle_diameter": 0.3,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "unknown"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -166,6 +175,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "unknown"
         },
+        "identity": {
+          "native_id": "variant:uni_200:uni/uni_200_0.40",
+          "nozzle_diameter": 0.4,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "unknown"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -179,6 +197,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.5,
           "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:uni_200:uni/uni_200_0.50",
+          "nozzle_diameter": 0.5,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -2608,7 +2635,7 @@
       "5.13.0": false
     },
     "prime_tower_mode": {
-      "5.13.0": "normal"
+      "5.13.0": "interleaved"
     },
     "prime_tower_size": {
       "5.13.0": 20

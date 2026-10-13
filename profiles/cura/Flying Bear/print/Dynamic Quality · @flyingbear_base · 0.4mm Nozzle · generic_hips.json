@@ -12,6 +12,7 @@
   "native_id": "quality:flyingbear_base:flyingbear/hips/flyingbear_0.40_hips_adaptive",
   "context": {
     "native_id": "quality:flyingbear_base:flyingbear/hips/flyingbear_0.40_hips_adaptive",
+    "display_name": "Dynamic Quality (0.16 mm) · 0.4mm Nozzle · Generic HIPS",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "flyingbear_base",
@@ -20,6 +21,12 @@
     "variant_name": "0.4mm Nozzle",
     "material_id": "generic_hips",
     "global_quality_id": "quality:flyingbear_base:flyingbear/flyingbear_global_0.16_adaptive",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "flyingbear_base"
@@ -28,7 +35,11 @@
         "0.4mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_hips"
+        "generic_hips",
+        "generic_hips_175"
+      ],
+      "material_types": [
+        "HIPS"
       ]
     }
   },

@@ -31,6 +31,15 @@
       "nozzle_volume_type": "standard",
       "hotend_id": "unknown"
     },
+    "variant_identity": {
+      "native_id": "variant:voron2_stealthchanger_250:draftshift/voron2_stealthchanger_250_v6_0.80",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "tool_indices": [
+        0
+      ],
+      "hotend_id": "unknown"
+    },
     "tool_topology": {
       "tool_count": 8,
       "tools": [
@@ -86,6 +95,21 @@
         0
       ]
     },
+    "variant_aliases": [
+      "Volcano 0.80mm",
+      "variant:voron2_stealthchanger_250:draftshift/voron2_stealthchanger_250_volcano_0.80"
+    ],
+    "variant_identity_aliases": [
+      {
+        "native_id": "variant:voron2_stealthchanger_250:draftshift/voron2_stealthchanger_250_volcano_0.80",
+        "nozzle_diameter": 0.8,
+        "nozzle_volume_type": "standard",
+        "tool_indices": [
+          0
+        ],
+        "hotend_id": "unknown"
+      }
+    ],
     "_cura_material_recompute_plan": {
       "acceleration_support_bottom": {
         "expression": "extruderValue(support_bottom_extruder_nr, 'acceleration_support_interface')",
@@ -517,10 +541,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -534,10 +554,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -549,12 +565,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -2981,7 +2992,7 @@
       "5.13.0": false
     },
     "prime_tower_mode": {
-      "5.13.0": "normal"
+      "5.13.0": "interleaved"
     },
     "prime_tower_size": {
       "5.13.0": 20

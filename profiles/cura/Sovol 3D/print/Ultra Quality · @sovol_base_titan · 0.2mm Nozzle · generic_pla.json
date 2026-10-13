@@ -12,6 +12,7 @@
   "native_id": "quality:sovol_base_titan:sovol/PLA/sovol_titan_0.2_PLA_ultra",
   "context": {
     "native_id": "quality:sovol_base_titan:sovol/PLA/sovol_titan_0.2_PLA_ultra",
+    "display_name": "Ultra Quality (0.08 mm) · 0.2mm Nozzle · Generic PLA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "sovol_base_titan",
@@ -20,6 +21,12 @@
     "variant_name": "0.2mm Nozzle",
     "material_id": "generic_pla",
     "global_quality_id": "quality:sovol_base_titan:sovol/sovol_titan_global_ultra",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.2,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "sovol_base_titan"
@@ -28,7 +35,11 @@
         "0.2mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_pla"
+        "generic_pla",
+        "generic_pla_175"
+      ],
+      "material_types": [
+        "PLA"
       ]
     }
   },
