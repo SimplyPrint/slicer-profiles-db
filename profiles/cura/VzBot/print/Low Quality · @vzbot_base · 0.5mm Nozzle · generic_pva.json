@@ -12,6 +12,7 @@
   "native_id": "quality:vzbot_base:vzbot/base/PVA/vzbot_0.5_PVA_low",
   "context": {
     "native_id": "quality:vzbot_base:vzbot/base/PVA/vzbot_0.5_PVA_low",
+    "display_name": "Low Quality (0.28 mm) · 0.5mm Nozzle · Generic PVA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "vzbot_base",
@@ -20,6 +21,12 @@
     "variant_name": "0.5mm Nozzle",
     "material_id": "generic_pva",
     "global_quality_id": "quality:vzbot_base:vzbot/base/vzbot_global_low",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.5,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "vzbot_base"
@@ -28,10 +35,13 @@
         "0.5mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_pva"
+        "generic_pva",
+        "generic_pva_175"
+      ],
+      "material_types": [
+        "PVA"
       ]
-    },
-    "display_name": "Low Quality (0.28 mm) · 0.5mm Nozzle · Generic PVA"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

@@ -12,6 +12,7 @@
   "native_id": "intent:ultimaker_factor4_plus:ultimaker_factor4_plus/um_f4_plus_aa0.25_petg_0.1mm_visual",
   "context": {
     "native_id": "intent:ultimaker_factor4_plus:ultimaker_factor4_plus/um_f4_plus_aa0.25_petg_0.1mm_visual",
+    "display_name": "Visual · Fine · AA 0.25 · Generic PETG",
     "source_kind": "intent",
     "resource_version": "5.13.0",
     "definition": "ultimaker_factor4_plus",
@@ -20,6 +21,12 @@
     "variant_name": "AA 0.25",
     "material_id": "generic_petg",
     "global_quality_id": null,
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.25,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "AA 0.25"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_factor4_plus"
@@ -28,10 +35,13 @@
         "AA 0.25"
       ],
       "material_native_ids": [
-        "generic_petg"
+        "generic_petg",
+        "generic_petg_175"
+      ],
+      "material_types": [
+        "PETG"
       ]
-    },
-    "display_name": "Visual · Fine · AA 0.25 · Generic PETG"
+    }
   },
   "setting_scopes": {
     "z_seam_type": "extruder.0"

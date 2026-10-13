@@ -12,6 +12,7 @@
   "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_TPU_normal",
   "context": {
     "native_id": "quality:tronxy_x:tronxy/tronxy_0.5_TPU_normal",
+    "display_name": "Normal Quality (0.2 mm) · 0.5mm Nozzle · Generic TPU 95A",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "tronxy_x",
@@ -20,6 +21,12 @@
     "variant_name": "0.5mm Nozzle",
     "material_id": "generic_tpu",
     "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_normal",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.5,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "tronxy_x"
@@ -28,10 +35,13 @@
         "0.5mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_tpu"
+        "generic_tpu",
+        "generic_tpu_175"
+      ],
+      "material_types": [
+        "TPU 95A"
       ]
-    },
-    "display_name": "Normal Quality (0.2 mm) · 0.5mm Nozzle · Generic TPU 95A"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

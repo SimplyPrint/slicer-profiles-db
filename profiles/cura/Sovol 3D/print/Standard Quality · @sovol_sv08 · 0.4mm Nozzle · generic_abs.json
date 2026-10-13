@@ -12,6 +12,7 @@
   "native_id": "quality:sovol_sv08:sovol/ABS/sovol_sv08_0.4_ABS_standard",
   "context": {
     "native_id": "quality:sovol_sv08:sovol/ABS/sovol_sv08_0.4_ABS_standard",
+    "display_name": "0.20mm Standard (0.2 mm) · 0.4mm Nozzle · Generic ABS",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "sovol_sv08",
@@ -20,6 +21,12 @@
     "variant_name": "0.4mm Nozzle",
     "material_id": "generic_abs",
     "global_quality_id": "quality:sovol_sv08:sovol/sovol_sv08_global",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "sovol_sv08"
@@ -28,10 +35,13 @@
         "0.4mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_abs"
+        "generic_abs",
+        "generic_abs_175"
+      ],
+      "material_types": [
+        "ABS"
       ]
-    },
-    "display_name": "0.20mm Standard (0.2 mm) · 0.4mm Nozzle · Generic ABS"
+    }
   },
   "setting_scopes": {
     "speed_print": "extruder.0",

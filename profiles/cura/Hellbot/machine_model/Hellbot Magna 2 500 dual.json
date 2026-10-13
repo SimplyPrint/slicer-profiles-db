@@ -22,6 +22,16 @@
     "quality_definition": "hellbot_magna_2_500_dual",
     "preferred_material": "generic_pla",
     "preferred_quality_type": "normal",
+    "selection_defaults": {
+      "process_profile": {
+        "match": {
+          "profile_context": {
+            "quality_type": "normal",
+            "intent_category": null
+          }
+        }
+      }
+    },
     "preferred_variant_name": null,
     "preferred_variant_key": null,
     "machine_extruder_trains": {
@@ -65,7 +75,10 @@
       "texture": {
         "ref": "sha256:8d0d72a2bed65fc7d07cf1680b3830033ba22dc1114d63f29f9790993cd0a7db",
         "format": "png",
-        "media_type": "image/png"
+        "media_type": "image/png",
+        "target": "model",
+        "mapping": "uv",
+        "flip_y": true
       }
     },
     "scene": {
@@ -85,10 +98,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -102,10 +111,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -117,12 +122,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -140,6 +140,15 @@
         "attributes": {
           "nozzle_diameter": 0.4,
           "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:hellbot_magna_2_500_dual:default",
+          "nozzle_diameter": 0.4,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -2567,7 +2576,7 @@
       "5.13.0": false
     },
     "prime_tower_mode": {
-      "5.13.0": "normal"
+      "5.13.0": "interleaved"
     },
     "prime_tower_size": {
       "5.13.0": 20

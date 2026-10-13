@@ -12,6 +12,7 @@
   "native_id": "quality:ultimaker_s5:ultimaker_s5/um_s5_aa0.8_cpe-plus_0.4mm",
   "context": {
     "native_id": "quality:ultimaker_s5:ultimaker_s5/um_s5_aa0.8_cpe-plus_0.4mm",
+    "display_name": "Sprint (0.4 mm) · AA 0.8 · Generic CPE+",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "ultimaker_s5",
@@ -20,6 +21,12 @@
     "variant_name": "AA 0.8",
     "material_id": "generic_cpe_plus",
     "global_quality_id": "quality:ultimaker_s5:ultimaker_s5/um_s5_global_Superdraft_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "AA 0.8"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_s5"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "generic_cpe_plus"
+      ],
+      "material_types": [
+        "CPE+"
       ]
-    },
-    "display_name": "Sprint (0.4 mm) · AA 0.8 · Generic CPE+"
+    }
   },
   "setting_scopes": {
     "material_print_temperature": "extruder.0",

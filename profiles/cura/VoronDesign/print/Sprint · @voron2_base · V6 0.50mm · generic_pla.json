@@ -12,6 +12,7 @@
   "native_id": "quality:voron2_base:voron2/voron2_v6_0.50_PLA_sprint",
   "context": {
     "native_id": "quality:voron2_base:voron2/voron2_v6_0.50_PLA_sprint",
+    "display_name": "Sprint (0.4 mm) · V6 0.50mm · Generic PLA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "voron2_base",
@@ -20,6 +21,12 @@
     "variant_name": "V6 0.50mm",
     "material_id": "generic_pla",
     "global_quality_id": "quality:voron2_base:voron2/voron2_global_sprint_quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.5,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "voron2_base"
@@ -28,10 +35,13 @@
         "V6 0.50mm"
       ],
       "material_native_ids": [
-        "generic_pla"
+        "generic_pla",
+        "generic_pla_175"
+      ],
+      "material_types": [
+        "PLA"
       ]
-    },
-    "display_name": "Sprint (0.4 mm) · V6 0.50mm · Generic PLA"
+    }
   },
   "setting_scopes": {
     "layer_height": "global"

@@ -12,6 +12,7 @@
   "native_id": "quality:mingda_base:mingda/ABS/mingda_0.4_ABS_adaptive",
   "context": {
     "native_id": "quality:mingda_base:mingda/ABS/mingda_0.4_ABS_adaptive",
+    "display_name": "Dynamic Quality (0.16 mm) · 0.4mm Nozzle · Generic ABS",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "mingda_base",
@@ -20,6 +21,12 @@
     "variant_name": "0.4mm Nozzle",
     "material_id": "generic_abs",
     "global_quality_id": "quality:mingda_base:mingda/mingda_global_adaptive",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "mingda_base"
@@ -28,10 +35,13 @@
         "0.4mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_abs"
+        "generic_abs",
+        "generic_abs_175"
+      ],
+      "material_types": [
+        "ABS"
       ]
-    },
-    "display_name": "Dynamic Quality (0.16 mm) · 0.4mm Nozzle · Generic ABS"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

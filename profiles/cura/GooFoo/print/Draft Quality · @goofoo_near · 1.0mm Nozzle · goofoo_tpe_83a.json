@@ -12,6 +12,7 @@
   "native_id": "quality:goofoo_near:goofoo/tpe/goofoo_near_1.0_tpe_draft",
   "context": {
     "native_id": "quality:goofoo_near:goofoo/tpe/goofoo_near_1.0_tpe_draft",
+    "display_name": "Draft Quality (0.3 mm) · 1.0mm Nozzle · GOOFOO TPE-83A",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "goofoo_near",
@@ -20,6 +21,12 @@
     "variant_name": "1.0mm Nozzle",
     "material_id": "goofoo_tpe_83a",
     "global_quality_id": "quality:goofoo_near:goofoo/goofoo_near_global_0.3_draft",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 1.0,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "goofoo_near"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "goofoo_tpe_83a"
+      ],
+      "material_types": [
+        "TPE"
       ]
-    },
-    "display_name": "Draft Quality (0.3 mm) · 1.0mm Nozzle · GOOFOO TPE-83A"
+    }
   },
   "setting_scopes": {
     "cool_fan_enabled": "extruder.0",

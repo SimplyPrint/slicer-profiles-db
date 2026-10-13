@@ -12,6 +12,7 @@
   "native_id": "intent:ultimaker_factor4:ultimaker_factor4/um_f4_cc0.4_gffpa_0.2mm_engineering",
   "context": {
     "native_id": "intent:ultimaker_factor4:ultimaker_factor4/um_f4_cc0.4_gffpa_0.2mm_engineering",
+    "display_name": "Accurate · Fast · CC 0.4 · Generic GFF PA",
     "source_kind": "intent",
     "resource_version": "5.13.0",
     "definition": "ultimaker_factor4",
@@ -20,6 +21,12 @@
     "variant_name": "CC 0.4",
     "material_id": "generic_gffpa",
     "global_quality_id": null,
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "CC 0.4"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_factor4"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "generic_gffpa"
+      ],
+      "material_types": [
+        "GFF PA"
       ]
-    },
-    "display_name": "Accurate · Fast · CC 0.4 · Generic GFF PA"
+    }
   },
   "setting_scopes": {
     "wall_thickness": "extruder.0",

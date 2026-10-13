@@ -12,6 +12,7 @@
   "native_id": "quality:fusion3:fusion3/fusion3_0.6_TPU_good",
   "context": {
     "native_id": "quality:fusion3:fusion3/fusion3_0.6_TPU_good",
+    "display_name": "Good Quality (0.3 mm) · 0.6mm Nozzle · Generic TPU 95A",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "fusion3",
@@ -20,6 +21,12 @@
     "variant_name": "0.6mm Nozzle",
     "material_id": "generic_tpu",
     "global_quality_id": "quality:fusion3:fusion3/fusion3_global_good",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "fusion3"
@@ -28,10 +35,13 @@
         "0.6mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_tpu"
+        "generic_tpu",
+        "generic_tpu_175"
+      ],
+      "material_types": [
+        "TPU 95A"
       ]
-    },
-    "display_name": "Good Quality (0.3 mm) · 0.6mm Nozzle · Generic TPU 95A"
+    }
   },
   "setting_scopes": {
     "speed_print": "extruder.0",

@@ -12,6 +12,7 @@
   "native_id": "quality:sovol_base_planetary:sovol/PLA/sovol_planetary_0.5_PLA_standard",
   "context": {
     "native_id": "quality:sovol_base_planetary:sovol/PLA/sovol_planetary_0.5_PLA_standard",
+    "display_name": "Standard Quality (0.2 mm) · 0.5mm Nozzle · Generic PLA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "sovol_base_planetary",
@@ -20,6 +21,12 @@
     "variant_name": "0.5mm Nozzle",
     "material_id": "generic_pla",
     "global_quality_id": "quality:sovol_base_planetary:sovol/sovol_planetary_global_standard",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.5,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "sovol_base_planetary"
@@ -28,10 +35,13 @@
         "0.5mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_pla"
+        "generic_pla",
+        "generic_pla_175"
+      ],
+      "material_types": [
+        "PLA"
       ]
-    },
-    "display_name": "Standard Quality (0.2 mm) · 0.5mm Nozzle · Generic PLA"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

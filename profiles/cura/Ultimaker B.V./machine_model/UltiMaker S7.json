@@ -24,6 +24,16 @@
     "quality_definition": "ultimaker_s5",
     "preferred_material": "ultimaker_pla_blue",
     "preferred_quality_type": "draft",
+    "selection_defaults": {
+      "process_profile": {
+        "match": {
+          "profile_context": {
+            "quality_type": "draft",
+            "intent_category": null
+          }
+        }
+      }
+    },
     "preferred_variant_name": "AA 0.4",
     "preferred_variant_key": "0.4",
     "machine_extruder_trains": {
@@ -79,7 +89,10 @@
       "texture": {
         "ref": "sha256:80ce204981a69a18777d073687111ba40d0c223dd4aa1009c493f8cb91263b07",
         "format": "png",
-        "media_type": "image/png"
+        "media_type": "image/png",
+        "target": "model",
+        "mapping": "uv",
+        "flip_y": true
       }
     },
     "scene": {
@@ -99,10 +112,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -116,10 +125,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -131,12 +136,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -163,6 +163,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "AA 0.25"
         },
+        "identity": {
+          "native_id": "variant:ultimaker_s7:ultimaker_s7_aa0.25",
+          "nozzle_diameter": 0.25,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "AA 0.25"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -176,6 +185,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.8,
           "nozzle_volume_type": "standard",
+          "hotend_id": "AA 0.8"
+        },
+        "identity": {
+          "native_id": "variant:ultimaker_s7:ultimaker_s7_aa0.8",
+          "nozzle_diameter": 0.8,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "AA 0.8"
         },
         "runtime_compatible_tool_indices": [
@@ -193,6 +211,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "AA 0.4"
         },
+        "identity": {
+          "native_id": "variant:ultimaker_s7:ultimaker_s7_aa04",
+          "nozzle_diameter": 0.4,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "AA 0.4"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -206,6 +233,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.6,
           "nozzle_volume_type": "standard",
+          "hotend_id": "CC 0.6"
+        },
+        "identity": {
+          "native_id": "variant:ultimaker_s7:ultimaker_s7_cc06",
+          "nozzle_diameter": 0.6,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "CC 0.6"
         },
         "runtime_compatible_tool_indices": [
@@ -2633,7 +2669,7 @@
       "5.13.0": false
     },
     "prime_tower_mode": {
-      "5.13.0": "normal"
+      "5.13.0": "interleaved"
     },
     "prime_tower_size": {
       "5.13.0": 20

@@ -12,6 +12,7 @@
   "native_id": "intent:ultimaker_methodxl:ultimaker_methodxl/um_methodxl_labs_um-asa-175_0.2mm_solid",
   "context": {
     "native_id": "intent:ultimaker_methodxl:ultimaker_methodxl/um_methodxl_labs_um-asa-175_0.2mm_solid",
+    "display_name": "Solid · Fast (0.2 mm) · LABS · Ultimaker ASA",
     "source_kind": "intent",
     "resource_version": "5.13.0",
     "definition": "ultimaker_methodxl",
@@ -20,6 +21,12 @@
     "variant_name": "LABS",
     "material_id": "ultimaker_asa_175",
     "global_quality_id": null,
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "LABS"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_methodxl"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "ultimaker_asa_175"
+      ],
+      "material_types": [
+        "ASA"
       ]
-    },
-    "display_name": "Solid · Fast (0.2 mm) · LABS · Ultimaker ASA"
+    }
   },
   "setting_scopes": {
     "infill_pattern": "extruder.0",

@@ -12,6 +12,7 @@
   "native_id": "quality:flashforge_adventurer4:flashforge/petg/flashforge_adventurer4_petg_0.4_normal",
   "context": {
     "native_id": "quality:flashforge_adventurer4:flashforge/petg/flashforge_adventurer4_petg_0.4_normal",
+    "display_name": "Standard (0.2 mm) · 0.4mm Nozzle · Generic PETG",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "flashforge_adventurer4",
@@ -20,6 +21,12 @@
     "variant_name": "0.4mm Nozzle",
     "material_id": "generic_petg",
     "global_quality_id": "quality:flashforge_adventurer4:flashforge/flashforge_adventurer4_normal",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "flashforge_adventurer4"
@@ -28,10 +35,13 @@
         "0.4mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_petg"
+        "generic_petg",
+        "generic_petg_175"
+      ],
+      "material_types": [
+        "PETG"
       ]
-    },
-    "display_name": "Standard (0.2 mm) · 0.4mm Nozzle · Generic PETG"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

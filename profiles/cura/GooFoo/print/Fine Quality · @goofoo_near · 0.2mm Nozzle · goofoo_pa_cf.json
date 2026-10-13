@@ -12,6 +12,7 @@
   "native_id": "quality:goofoo_near:goofoo/pa_cf/goofoo_near_0.2_pa_cf_fine",
   "context": {
     "native_id": "quality:goofoo_near:goofoo/pa_cf/goofoo_near_0.2_pa_cf_fine",
+    "display_name": "Fine Quality (0.15 mm) · 0.2mm Nozzle · GOOFOO PA-CF",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "goofoo_near",
@@ -20,6 +21,12 @@
     "variant_name": "0.2mm Nozzle",
     "material_id": "goofoo_pa_cf",
     "global_quality_id": "quality:goofoo_near:goofoo/goofoo_near_global_0.15_fine",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.2,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "goofoo_near"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "goofoo_pa_cf"
+      ],
+      "material_types": [
+        "PA"
       ]
-    },
-    "display_name": "Fine Quality (0.15 mm) · 0.2mm Nozzle · GOOFOO PA-CF"
+    }
   },
   "setting_scopes": {
     "cool_fan_enabled": "extruder.0",

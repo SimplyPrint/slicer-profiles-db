@@ -12,6 +12,7 @@
   "native_id": "quality:ratrig_base:ratrig_base/petg/ratrig_base_0.2_PETG_ultra",
   "context": {
     "native_id": "quality:ratrig_base:ratrig_base/petg/ratrig_base_0.2_PETG_ultra",
+    "display_name": "Ultra Quality (0.08 mm) · 0.2mm Nozzle · Generic PETG",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "ratrig_base",
@@ -20,6 +21,12 @@
     "variant_name": "0.2mm Nozzle",
     "material_id": "generic_petg",
     "global_quality_id": "quality:ratrig_base:ratrig_base/ratrig_base_global_ultra",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.2,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ratrig_base"
@@ -28,10 +35,13 @@
         "0.2mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_petg"
+        "generic_petg",
+        "generic_petg_175"
+      ],
+      "material_types": [
+        "PETG"
       ]
-    },
-    "display_name": "Ultra Quality (0.08 mm) · 0.2mm Nozzle · Generic PETG"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

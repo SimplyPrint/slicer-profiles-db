@@ -24,6 +24,16 @@
     "quality_definition": "creality_base",
     "preferred_material": "generic_pla",
     "preferred_quality_type": "standard",
+    "selection_defaults": {
+      "process_profile": {
+        "match": {
+          "profile_context": {
+            "quality_type": "standard",
+            "intent_category": null
+          }
+        }
+      }
+    },
     "preferred_variant_name": "0.4mm Nozzle",
     "preferred_variant_key": "0.4",
     "machine_extruder_trains": {
@@ -57,13 +67,24 @@
         "ref": "sha256:ae0bf87e31a50966acd3be7589e79433d6d5c063f80cde3a3ef6571929199120",
         "format": "3mf",
         "media_type": "model/3mf",
+        "mesh_selection": "largest_face_count",
+        "geometry_space": "raw_mesh",
         "transform": {
           "translation": [
             -150,
-            0,
-            150
+            -150,
+            0
           ],
-          "unit": "mm"
+          "unit": "mm",
+          "rotation": {
+            "euler": [
+              90,
+              0,
+              0
+            ],
+            "unit": "deg",
+            "order": "XYZ"
+          }
         }
       }
     },
@@ -84,10 +105,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -101,10 +118,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -116,12 +129,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -147,6 +155,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "unknown"
         },
+        "identity": {
+          "native_id": "variant:creality_cr10spro:creality/creality_cr10spro_0.2",
+          "nozzle_diameter": 0.2,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "unknown"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -160,6 +177,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.3,
           "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:creality_cr10spro:creality/creality_cr10spro_0.3",
+          "nozzle_diameter": 0.3,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -177,6 +203,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "unknown"
         },
+        "identity": {
+          "native_id": "variant:creality_cr10spro:creality/creality_cr10spro_0.4",
+          "nozzle_diameter": 0.4,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "unknown"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -190,6 +225,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.5,
           "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:creality_cr10spro:creality/creality_cr10spro_0.5",
+          "nozzle_diameter": 0.5,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -207,6 +251,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "unknown"
         },
+        "identity": {
+          "native_id": "variant:creality_cr10spro:creality/creality_cr10spro_0.6",
+          "nozzle_diameter": 0.6,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "unknown"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -222,6 +275,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "unknown"
         },
+        "identity": {
+          "native_id": "variant:creality_cr10spro:creality/creality_cr10spro_0.8",
+          "nozzle_diameter": 0.8,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "unknown"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -235,6 +297,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 1.0,
           "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:creality_cr10spro:creality/creality_cr10spro_1.0",
+          "nozzle_diameter": 1.0,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -2662,7 +2733,7 @@
       "5.13.0": false
     },
     "prime_tower_mode": {
-      "5.13.0": "normal"
+      "5.13.0": "interleaved"
     },
     "prime_tower_size": {
       "5.13.0": 20

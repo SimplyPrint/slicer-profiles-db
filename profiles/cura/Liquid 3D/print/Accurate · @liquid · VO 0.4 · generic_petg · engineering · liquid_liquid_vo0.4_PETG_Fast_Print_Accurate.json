@@ -12,6 +12,7 @@
   "native_id": "intent:liquid:liquid/liquid_vo0.4_PETG_Fast_Print_Accurate",
   "context": {
     "native_id": "intent:liquid:liquid/liquid_vo0.4_PETG_Fast_Print_Accurate",
+    "display_name": "Accurate · Normal (0.15 mm) · VO 0.4 · Generic PETG",
     "source_kind": "intent",
     "resource_version": "5.13.0",
     "definition": "liquid",
@@ -20,6 +21,12 @@
     "variant_name": "VO 0.4",
     "material_id": "generic_petg",
     "global_quality_id": null,
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "VO 0.4"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "liquid"
@@ -28,10 +35,13 @@
         "VO 0.4"
       ],
       "material_native_ids": [
-        "generic_petg"
+        "generic_petg",
+        "generic_petg_175"
+      ],
+      "material_types": [
+        "PETG"
       ]
-    },
-    "display_name": "Accurate · Normal (0.15 mm) · VO 0.4 · Generic PETG"
+    }
   },
   "setting_scopes": {
     "speed_print": "extruder.0",

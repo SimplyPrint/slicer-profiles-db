@@ -12,6 +12,7 @@
   "native_id": "quality:ultimaker_s8:ultimaker_s8/um_s8_aa0.8_pc_0.2mm",
   "context": {
     "native_id": "quality:ultimaker_s8:ultimaker_s8/um_s8_aa0.8_pc_0.2mm",
+    "display_name": "Fast (0.2 mm) · AA 0.8 · Generic PC",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "ultimaker_s8",
@@ -20,6 +21,12 @@
     "variant_name": "AA 0.8",
     "material_id": "generic_pc",
     "global_quality_id": "quality:ultimaker_s8:ultimaker_s8/um_s8_global_Draft_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "AA 0.8"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_s8"
@@ -28,10 +35,13 @@
         "AA 0.8"
       ],
       "material_native_ids": [
-        "generic_pc"
+        "generic_pc",
+        "generic_pc_175"
+      ],
+      "material_types": [
+        "PC"
       ]
-    },
-    "display_name": "Fast (0.2 mm) · AA 0.8 · Generic PC"
+    }
   },
   "setting_scopes": {
     "material_print_temperature": "extruder.0",

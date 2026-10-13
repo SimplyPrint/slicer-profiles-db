@@ -12,6 +12,7 @@
   "native_id": "quality:dagoma_pro_430_dual:dagoma/dagoma_pro_430_dual_generic_0.6_pla_h0.2",
   "context": {
     "native_id": "quality:dagoma_pro_430_dual:dagoma/dagoma_pro_430_dual_generic_0.6_pla_h0.2",
+    "display_name": "Normal (0.2 mm) · Serie 0.6mm · Generic PLA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "dagoma_pro_430_dual",
@@ -20,6 +21,12 @@
     "variant_name": "Serie 0.6mm",
     "material_id": "generic_pla",
     "global_quality_id": "quality:dagoma_pro_430_dual:dagoma/dagoma_pro_430_dual_global_h0.2",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "Serie 0.6mm"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "dagoma_pro_430_dual"
@@ -28,10 +35,13 @@
         "Serie 0.6mm"
       ],
       "material_native_ids": [
-        "generic_pla"
+        "generic_pla",
+        "generic_pla_175"
+      ],
+      "material_types": [
+        "PLA"
       ]
-    },
-    "display_name": "Normal (0.2 mm) · Serie 0.6mm · Generic PLA"
+    }
   },
   "setting_scopes": {
     "layer_height": "global"

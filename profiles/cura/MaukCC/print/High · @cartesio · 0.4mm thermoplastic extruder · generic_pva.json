@@ -12,6 +12,7 @@
   "native_id": "quality:cartesio:cartesio/pva/cartesio_0.4_pva_high",
   "context": {
     "native_id": "quality:cartesio:cartesio/pva/cartesio_0.4_pva_high",
+    "display_name": "High (0.1 mm) · 0.4mm thermoplastic extruder · Generic PVA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "cartesio",
@@ -20,6 +21,12 @@
     "variant_name": "0.4mm thermoplastic extruder",
     "material_id": "generic_pva",
     "global_quality_id": "quality:cartesio:cartesio/cartesio_global_High_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "cartesio"
@@ -28,10 +35,13 @@
         "0.4mm thermoplastic extruder"
       ],
       "material_native_ids": [
-        "generic_pva"
+        "generic_pva",
+        "generic_pva_175"
+      ],
+      "material_types": [
+        "PVA"
       ]
-    },
-    "display_name": "High (0.1 mm) · 0.4mm thermoplastic extruder · Generic PVA"
+    }
   },
   "setting_scopes": {
     "speed_print": "extruder.0",

@@ -12,6 +12,7 @@
   "native_id": "intent:uni_base:uni_base/pla/pla_nozzle_0.40_layer_0.30_quick",
   "context": {
     "native_id": "intent:uni_base:uni_base/pla/pla_nozzle_0.40_layer_0.30_quick",
+    "display_name": "Quick · Fast Print Quality (0.3 mm) · 0.40mm Nozzle · Generic PLA",
     "source_kind": "intent",
     "resource_version": "5.13.0",
     "definition": "uni_base",
@@ -20,6 +21,12 @@
     "variant_name": "0.40mm Nozzle",
     "material_id": "generic_pla",
     "global_quality_id": null,
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "uni_base"
@@ -28,10 +35,13 @@
         "0.40mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_pla"
+        "generic_pla",
+        "generic_pla_175"
+      ],
+      "material_types": [
+        "PLA"
       ]
-    },
-    "display_name": "Quick · Fast Print Quality (0.3 mm) · 0.40mm Nozzle · Generic PLA"
+    }
   },
   "setting_scopes": {
     "speed_layer_0": "extruder.0",

@@ -12,6 +12,7 @@
   "native_id": "quality:zyyx_pro:zyyx_pro/carbon06/flex/zyyx_pro_06_flex_fine",
   "context": {
     "native_id": "quality:zyyx_pro:zyyx_pro/carbon06/flex/zyyx_pro_06_flex_fine",
+    "display_name": "Fine (0.15 mm) · Carbon0.6 · Generic TPU 95A",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "zyyx_pro",
@@ -20,6 +21,12 @@
     "variant_name": "Carbon0.6",
     "material_id": "generic_tpu_175",
     "global_quality_id": "quality:zyyx_pro:zyyx_pro/carbon06/zyyx_pro_06_global_fine",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "Carbon0.6"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "zyyx_pro"
@@ -28,10 +35,13 @@
         "Carbon0.6"
       ],
       "material_native_ids": [
-        "generic_tpu_175"
+        "generic_tpu_175",
+        "generic_tpu"
+      ],
+      "material_types": [
+        "TPU 95A"
       ]
-    },
-    "display_name": "Fine (0.15 mm) · Carbon0.6 · Generic TPU 95A"
+    }
   },
   "setting_scopes": {
     "material_print_temperature": "extruder.0",

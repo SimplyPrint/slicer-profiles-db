@@ -12,6 +12,7 @@
   "native_id": "quality:sovol_base_planetary:sovol/PETG/sovol_planetary_0.3_PETG_standard",
   "context": {
     "native_id": "quality:sovol_base_planetary:sovol/PETG/sovol_planetary_0.3_PETG_standard",
+    "display_name": "Standard Quality (0.2 mm) · 0.3mm Nozzle · Generic PETG",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "sovol_base_planetary",
@@ -20,6 +21,12 @@
     "variant_name": "0.3mm Nozzle",
     "material_id": "generic_petg",
     "global_quality_id": "quality:sovol_base_planetary:sovol/sovol_planetary_global_standard",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.3,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "sovol_base_planetary"
@@ -28,10 +35,13 @@
         "0.3mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_petg"
+        "generic_petg",
+        "generic_petg_175"
+      ],
+      "material_types": [
+        "PETG"
       ]
-    },
-    "display_name": "Standard Quality (0.2 mm) · 0.3mm Nozzle · Generic PETG"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

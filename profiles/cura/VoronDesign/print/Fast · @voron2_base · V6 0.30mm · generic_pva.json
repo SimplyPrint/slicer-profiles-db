@@ -12,6 +12,7 @@
   "native_id": "quality:voron2_base:voron2/voron2_v6_0.30_PVA_fast",
   "context": {
     "native_id": "quality:voron2_base:voron2/voron2_v6_0.30_PVA_fast",
+    "display_name": "Fast (0.2 mm) · V6 0.30mm · Generic PVA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "voron2_base",
@@ -20,6 +21,12 @@
     "variant_name": "V6 0.30mm",
     "material_id": "generic_pva",
     "global_quality_id": "quality:voron2_base:voron2/voron2_global_fast_quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.3,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "voron2_base"
@@ -28,10 +35,13 @@
         "V6 0.30mm"
       ],
       "material_native_ids": [
-        "generic_pva"
+        "generic_pva",
+        "generic_pva_175"
+      ],
+      "material_types": [
+        "PVA"
       ]
-    },
-    "display_name": "Fast (0.2 mm) · V6 0.30mm · Generic PVA"
+    }
   },
   "setting_scopes": {
     "layer_height": "global"

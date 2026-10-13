@@ -24,6 +24,16 @@
     "quality_definition": "ultimaker_methodx",
     "preferred_material": "ultimaker_absr_175",
     "preferred_quality_type": "draft",
+    "selection_defaults": {
+      "process_profile": {
+        "match": {
+          "profile_context": {
+            "quality_type": "draft",
+            "intent_category": null
+          }
+        }
+      }
+    },
     "preferred_variant_name": "1XA",
     "preferred_variant_key": "0.4",
     "machine_extruder_trains": {
@@ -70,8 +80,8 @@
         "transform": {
           "translation": [
             0,
-            0,
-            16
+            -16,
+            0
           ],
           "unit": "mm"
         }
@@ -94,10 +104,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -111,10 +117,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -126,12 +128,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -186,6 +183,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.4,
           "nozzle_volume_type": "standard",
+          "hotend_id": "1XA"
+        },
+        "identity": {
+          "native_id": "variant:ultimaker_methodx:ultimaker_methodx_1XA",
+          "nozzle_diameter": 0.4,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "1XA"
         },
         "runtime_compatible_tool_indices": [

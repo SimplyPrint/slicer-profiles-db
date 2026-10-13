@@ -12,6 +12,7 @@
   "native_id": "quality:ultimaker3:ultimaker3/um3_aa0.4_ABS_High_Quality",
   "context": {
     "native_id": "quality:ultimaker3:ultimaker3/um3_aa0.4_ABS_High_Quality",
+    "display_name": "Extra Fine (0.06 mm) · AA 0.4 · Generic ABS",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "ultimaker3",
@@ -20,6 +21,12 @@
     "variant_name": "AA 0.4",
     "material_id": "generic_abs",
     "global_quality_id": "quality:ultimaker3:ultimaker3/um3_global_High_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "AA 0.4"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker3"
@@ -28,10 +35,13 @@
         "AA 0.4"
       ],
       "material_native_ids": [
-        "generic_abs"
+        "generic_abs",
+        "generic_abs_175"
+      ],
+      "material_types": [
+        "ABS"
       ]
-    },
-    "display_name": "Extra Fine (0.06 mm) · AA 0.4 · Generic ABS"
+    }
   },
   "setting_scopes": {
     "material_print_temperature": "extruder.0",

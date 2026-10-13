@@ -12,6 +12,7 @@
   "native_id": "quality:sovol_base_titan:sovol/PETG/sovol_titan_0.6_PETG_low",
   "context": {
     "native_id": "quality:sovol_base_titan:sovol/PETG/sovol_titan_0.6_PETG_low",
+    "display_name": "Low Quality (0.28 mm) · 0.6mm Nozzle · Generic PETG",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "sovol_base_titan",
@@ -20,6 +21,12 @@
     "variant_name": "0.6mm Nozzle",
     "material_id": "generic_petg",
     "global_quality_id": "quality:sovol_base_titan:sovol/sovol_titan_global_low",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "sovol_base_titan"
@@ -28,10 +35,13 @@
         "0.6mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_petg"
+        "generic_petg",
+        "generic_petg_175"
+      ],
+      "material_types": [
+        "PETG"
       ]
-    },
-    "display_name": "Low Quality (0.28 mm) · 0.6mm Nozzle · Generic PETG"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

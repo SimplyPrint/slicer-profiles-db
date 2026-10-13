@@ -12,6 +12,7 @@
   "native_id": "quality:goofoo_open:goofoo/pla/goofoo_open_wood_0.2_pla_draft",
   "context": {
     "native_id": "quality:goofoo_open:goofoo/pla/goofoo_open_wood_0.2_pla_draft",
+    "display_name": "Draft Quality (0.3 mm) · 0.2mm Nozzle · GOOFOO WOOD",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "goofoo_open",
@@ -20,6 +21,12 @@
     "variant_name": "0.2mm Nozzle",
     "material_id": "goofoo_wood_pla",
     "global_quality_id": "quality:goofoo_open:goofoo/goofoo_open_global_0.3_draft",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.2,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "goofoo_open"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "goofoo_wood_pla"
+      ],
+      "material_types": [
+        "PLA"
       ]
-    },
-    "display_name": "Draft Quality (0.3 mm) · 0.2mm Nozzle · GOOFOO WOOD"
+    }
   },
   "setting_scopes": {
     "cool_fan_enabled": "extruder.0",

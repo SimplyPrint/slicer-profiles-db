@@ -12,6 +12,7 @@
   "native_id": "quality:dagoma_sigma:dagoma/dagoma_sigma_0.8_pla_h0.8",
   "context": {
     "native_id": "quality:dagoma_sigma:dagoma/dagoma_sigma_0.8_pla_h0.8",
+    "display_name": "Coarse (0.8 mm) · 0.8mm · Generic PLA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "dagoma_sigma",
@@ -20,6 +21,12 @@
     "variant_name": "0.8mm",
     "material_id": "generic_pla",
     "global_quality_id": "quality:dagoma_sigma:dagoma/dagoma_sigma_global_h0.8",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "0.8mm"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "dagoma_sigma"
@@ -28,10 +35,13 @@
         "0.8mm"
       ],
       "material_native_ids": [
-        "generic_pla"
+        "generic_pla",
+        "generic_pla_175"
+      ],
+      "material_types": [
+        "PLA"
       ]
-    },
-    "display_name": "Coarse (0.8 mm) · 0.8mm · Generic PLA"
+    }
   },
   "setting_scopes": {
     "material_flow_layer_0": "extruder.0",

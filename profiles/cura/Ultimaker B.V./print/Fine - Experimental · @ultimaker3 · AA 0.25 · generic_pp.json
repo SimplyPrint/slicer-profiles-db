@@ -12,6 +12,7 @@
   "native_id": "quality:ultimaker3:ultimaker3/um3_aa0.25_PP_Normal_Quality",
   "context": {
     "native_id": "quality:ultimaker3:ultimaker3/um3_aa0.25_PP_Normal_Quality",
+    "display_name": "Fine (0.1 mm) · AA 0.25 · Generic PP",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "ultimaker3",
@@ -20,6 +21,12 @@
     "variant_name": "AA 0.25",
     "material_id": "generic_pp",
     "global_quality_id": "quality:ultimaker3:ultimaker3/um3_global_Normal_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.25,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "AA 0.25"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker3"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "generic_pp"
+      ],
+      "material_types": [
+        "PP"
       ]
-    },
-    "display_name": "Fine (0.1 mm) · AA 0.25 · Generic PP"
+    }
   },
   "setting_scopes": {
     "speed_print": "extruder.0",

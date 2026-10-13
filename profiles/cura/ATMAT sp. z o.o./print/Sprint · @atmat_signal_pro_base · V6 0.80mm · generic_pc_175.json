@@ -12,6 +12,7 @@
   "native_id": "quality:atmat_signal_pro_base:atmat_signal_pro/signal_pro_v6_0.80_PC_sprint",
   "context": {
     "native_id": "quality:atmat_signal_pro_base:atmat_signal_pro/signal_pro_v6_0.80_PC_sprint",
+    "display_name": "Sprint (0.4 mm) · V6 0.80mm · Generic PC",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "atmat_signal_pro_base",
@@ -20,6 +21,12 @@
     "variant_name": "V6 0.80mm",
     "material_id": "generic_pc_175",
     "global_quality_id": "quality:atmat_signal_pro_base:atmat_signal_pro/signal_pro_global_sprint_quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "atmat_signal_pro_base"
@@ -28,10 +35,13 @@
         "V6 0.80mm"
       ],
       "material_native_ids": [
-        "generic_pc_175"
+        "generic_pc_175",
+        "generic_pc"
+      ],
+      "material_types": [
+        "PC"
       ]
-    },
-    "display_name": "Sprint (0.4 mm) · V6 0.80mm · Generic PC"
+    }
   },
   "setting_scopes": {
     "cool_fan_enabled": "extruder.0",

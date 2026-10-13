@@ -12,6 +12,7 @@
   "native_id": "quality:voron2_base:voron2/voron2_v6_0.35_PLA_fine",
   "context": {
     "native_id": "quality:voron2_base:voron2/voron2_v6_0.35_PLA_fine",
+    "display_name": "Fine (0.1 mm) · V6 0.35mm · Generic PLA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "voron2_base",
@@ -20,6 +21,12 @@
     "variant_name": "V6 0.35mm",
     "material_id": "generic_pla",
     "global_quality_id": "quality:voron2_base:voron2/voron2_global_fine_quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.35,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "voron2_base"
@@ -28,10 +35,13 @@
         "V6 0.35mm"
       ],
       "material_native_ids": [
-        "generic_pla"
+        "generic_pla",
+        "generic_pla_175"
+      ],
+      "material_types": [
+        "PLA"
       ]
-    },
-    "display_name": "Fine (0.1 mm) · V6 0.35mm · Generic PLA"
+    }
   },
   "setting_scopes": {
     "layer_height": "global"

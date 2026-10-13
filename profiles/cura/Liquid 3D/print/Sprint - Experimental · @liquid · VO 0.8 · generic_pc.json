@@ -12,6 +12,7 @@
   "native_id": "quality:liquid:liquid/liquid_vo0.8_PC_Superdraft_Print",
   "context": {
     "native_id": "quality:liquid:liquid/liquid_vo0.8_PC_Superdraft_Print",
+    "display_name": "Sprint (0.4 mm) · VO 0.8 · Generic PC",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "liquid",
@@ -20,6 +21,12 @@
     "variant_name": "VO 0.8",
     "material_id": "generic_pc",
     "global_quality_id": "quality:liquid:liquid/liquid_global_Superdraft_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "VO 0.8"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "liquid"
@@ -28,10 +35,13 @@
         "VO 0.8"
       ],
       "material_native_ids": [
-        "generic_pc"
+        "generic_pc",
+        "generic_pc_175"
+      ],
+      "material_types": [
+        "PC"
       ]
-    },
-    "display_name": "Sprint (0.4 mm) · VO 0.8 · Generic PC"
+    }
   },
   "setting_scopes": {
     "speed_layer_0": "extruder.0",

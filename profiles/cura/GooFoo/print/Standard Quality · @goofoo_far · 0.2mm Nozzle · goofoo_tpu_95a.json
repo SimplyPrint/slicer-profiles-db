@@ -12,6 +12,7 @@
   "native_id": "quality:goofoo_far:goofoo/tpu/goofoo_far_0.2_tpu_95a_standard",
   "context": {
     "native_id": "quality:goofoo_far:goofoo/tpu/goofoo_far_0.2_tpu_95a_standard",
+    "display_name": "Standard Quality (0.2 mm) · 0.2mm Nozzle · GOOFOO TUP-95A",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "goofoo_far",
@@ -20,6 +21,12 @@
     "variant_name": "0.2mm Nozzle",
     "material_id": "goofoo_tpu_95a",
     "global_quality_id": "quality:goofoo_far:goofoo/goofoo_far_global_0.20_standard",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.2,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "goofoo_far"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "goofoo_tpu_95a"
+      ],
+      "material_types": [
+        "TPU"
       ]
-    },
-    "display_name": "Standard Quality (0.2 mm) · 0.2mm Nozzle · GOOFOO TUP-95A"
+    }
   },
   "setting_scopes": {
     "cool_fan_enabled": "extruder.0",

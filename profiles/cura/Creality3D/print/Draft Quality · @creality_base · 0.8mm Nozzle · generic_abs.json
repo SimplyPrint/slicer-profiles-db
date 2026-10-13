@@ -12,6 +12,7 @@
   "native_id": "quality:creality_base:creality/base/base_0.8_ABS_draft",
   "context": {
     "native_id": "quality:creality_base:creality/base/base_0.8_ABS_draft",
+    "display_name": "Draft Quality (0.32 mm) · 0.8mm Nozzle · Generic ABS",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "creality_base",
@@ -20,6 +21,12 @@
     "variant_name": "0.8mm Nozzle",
     "material_id": "generic_abs",
     "global_quality_id": "quality:creality_base:creality/base/base_global_draft",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "creality_base"
@@ -28,10 +35,13 @@
         "0.8mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_abs"
+        "generic_abs",
+        "generic_abs_175"
+      ],
+      "material_types": [
+        "ABS"
       ]
-    },
-    "display_name": "Draft Quality (0.32 mm) · 0.8mm Nozzle · Generic ABS"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

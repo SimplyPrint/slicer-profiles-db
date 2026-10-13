@@ -12,6 +12,7 @@
   "native_id": "quality:xyzprinting_da_vinci_jr_1p0a_pro:xyzprinting/carbon_fiber/xyzprinting_da_vinci_jr_1p0a_pro_hs_0.40_carbon_fiber_coarse",
   "context": {
     "native_id": "quality:xyzprinting_da_vinci_jr_1p0a_pro:xyzprinting/carbon_fiber/xyzprinting_da_vinci_jr_1p0a_pro_hs_0.40_carbon_fiber_coarse",
+    "display_name": "Coarse Quality (0.4 mm) · Hardened Steel 0.4mm Nozzle · XYZprinting Carbon Fiber",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "xyzprinting_da_vinci_jr_1p0a_pro",
@@ -20,6 +21,12 @@
     "variant_name": "Hardened Steel 0.4mm Nozzle",
     "material_id": "xyzprinting_carbon_fiber",
     "global_quality_id": "quality:xyzprinting_da_vinci_jr_1p0a_pro:xyzprinting/xyzprinting_da_vinci_jr_1p0a_pro_global_0.40_coarse",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "Hardened Steel 0.4mm Nozzle"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "xyzprinting_da_vinci_jr_1p0a_pro"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "xyzprinting_carbon_fiber"
+      ],
+      "material_types": [
+        "Carbon Fiber"
       ]
-    },
-    "display_name": "Coarse Quality (0.4 mm) · Hardened Steel 0.4mm Nozzle · XYZprinting Carbon Fiber"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

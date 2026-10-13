@@ -12,6 +12,7 @@
   "native_id": "quality:xyzprinting_da_vinci_super:xyzprinting/nylon/xyzprinting_da_vinci_super_copper_0.40_nylon_fine",
   "context": {
     "native_id": "quality:xyzprinting_da_vinci_super:xyzprinting/nylon/xyzprinting_da_vinci_super_copper_0.40_nylon_fine",
+    "display_name": "Fine Quality (0.1 mm) · Copper 0.4mm Nozzle · XYZprinting Nylon",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "xyzprinting_da_vinci_super",
@@ -20,6 +21,12 @@
     "variant_name": "Copper 0.4mm Nozzle",
     "material_id": "xyzprinting_nylon",
     "global_quality_id": "quality:xyzprinting_da_vinci_super:xyzprinting/xyzprinting_da_vinci_super_global_0.10_fine",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "Copper 0.4mm Nozzle"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "xyzprinting_da_vinci_super"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "xyzprinting_nylon"
+      ],
+      "material_types": [
+        "Nylon"
       ]
-    },
-    "display_name": "Fine Quality (0.1 mm) · Copper 0.4mm Nozzle · XYZprinting Nylon"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

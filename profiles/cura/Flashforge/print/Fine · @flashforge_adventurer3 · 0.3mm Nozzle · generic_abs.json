@@ -12,6 +12,7 @@
   "native_id": "quality:flashforge_adventurer3:flashforge/abs/flashforge_adventurer3_abs_0.3_fine",
   "context": {
     "native_id": "quality:flashforge_adventurer3:flashforge/abs/flashforge_adventurer3_abs_0.3_fine",
+    "display_name": "Fine (0.15 mm) · 0.3mm Nozzle · Generic ABS",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "flashforge_adventurer3",
@@ -20,6 +21,12 @@
     "variant_name": "0.3mm Nozzle",
     "material_id": "generic_abs",
     "global_quality_id": "quality:flashforge_adventurer3:flashforge/flashforge_adventurer3_fine",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.3,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "flashforge_adventurer3"
@@ -28,10 +35,13 @@
         "0.3mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_abs"
+        "generic_abs",
+        "generic_abs_175"
+      ],
+      "material_types": [
+        "ABS"
       ]
-    },
-    "display_name": "Fine (0.15 mm) · 0.3mm Nozzle · Generic ABS"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

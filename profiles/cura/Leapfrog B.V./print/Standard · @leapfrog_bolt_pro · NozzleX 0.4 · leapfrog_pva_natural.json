@@ -12,6 +12,7 @@
   "native_id": "quality:leapfrog_bolt_pro:Leapfrog_Bolt_Pro/pva/Leapfrog_Bolt_Pro_nozzlex0.4_pva_natural_standard",
   "context": {
     "native_id": "quality:leapfrog_bolt_pro:Leapfrog_Bolt_Pro/pva/Leapfrog_Bolt_Pro_nozzlex0.4_pva_natural_standard",
+    "display_name": "Standard (0.15 mm) · NozzleX 0.4 · Leapfrog PVA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "leapfrog_bolt_pro",
@@ -20,6 +21,12 @@
     "variant_name": "NozzleX 0.4",
     "material_id": "leapfrog_pva_natural",
     "global_quality_id": "quality:leapfrog_bolt_pro:Leapfrog_Bolt_Pro/Leapfrog_Bolt_Pro_global_standard",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "leapfrog_bolt_pro"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "leapfrog_pva_natural"
+      ],
+      "material_types": [
+        "PVA"
       ]
-    },
-    "display_name": "Standard (0.15 mm) · NozzleX 0.4 · Leapfrog PVA"
+    }
   },
   "setting_scopes": {
     "travel_avoid_supports": "extruder.0",

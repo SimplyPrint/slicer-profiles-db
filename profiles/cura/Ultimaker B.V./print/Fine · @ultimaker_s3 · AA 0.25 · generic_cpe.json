@@ -12,6 +12,7 @@
   "native_id": "quality:ultimaker_s3:ultimaker_s3/um_s3_aa0.25_cpe_0.1mm",
   "context": {
     "native_id": "quality:ultimaker_s3:ultimaker_s3/um_s3_aa0.25_cpe_0.1mm",
+    "display_name": "Fine (0.1 mm) · AA 0.25 · Generic CPE",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "ultimaker_s3",
@@ -20,6 +21,12 @@
     "variant_name": "AA 0.25",
     "material_id": "generic_cpe",
     "global_quality_id": "quality:ultimaker_s3:ultimaker_s3/um_s3_global_Normal_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.25,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "AA 0.25"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_s3"
@@ -28,10 +35,13 @@
         "AA 0.25"
       ],
       "material_native_ids": [
-        "generic_cpe"
+        "generic_cpe",
+        "generic_cpe_175"
+      ],
+      "material_types": [
+        "CPE"
       ]
-    },
-    "display_name": "Fine (0.1 mm) · AA 0.25 · Generic CPE"
+    }
   },
   "setting_scopes": {
     "material_print_temperature": "extruder.0",

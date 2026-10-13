@@ -12,6 +12,7 @@
   "native_id": "quality:sovol_base_planetary:sovol/PETG/sovol_planetary_1.0_PETG_draft",
   "context": {
     "native_id": "quality:sovol_base_planetary:sovol/PETG/sovol_planetary_1.0_PETG_draft",
+    "display_name": "Draft Quality (0.32 mm) · 1.0mm Nozzle · Generic PETG",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "sovol_base_planetary",
@@ -20,6 +21,12 @@
     "variant_name": "1.0mm Nozzle",
     "material_id": "generic_petg",
     "global_quality_id": "quality:sovol_base_planetary:sovol/sovol_planetary_global_draft",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 1.0,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "sovol_base_planetary"
@@ -28,10 +35,13 @@
         "1.0mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_petg"
+        "generic_petg",
+        "generic_petg_175"
+      ],
+      "material_types": [
+        "PETG"
       ]
-    },
-    "display_name": "Draft Quality (0.32 mm) · 1.0mm Nozzle · Generic PETG"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

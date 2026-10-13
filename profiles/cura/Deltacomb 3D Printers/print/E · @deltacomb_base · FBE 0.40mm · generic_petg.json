@@ -12,6 +12,7 @@
   "native_id": "quality:deltacomb_base:deltacomb/PETG/deltacomb_FBE0.40_PETG_E",
   "context": {
     "native_id": "quality:deltacomb_base:deltacomb/PETG/deltacomb_FBE0.40_PETG_E",
+    "display_name": "Extra Fast (0.3 mm) · FBE 0.40mm · Generic PETG",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "deltacomb_base",
@@ -20,6 +21,12 @@
     "variant_name": "FBE 0.40mm",
     "material_id": "generic_petg",
     "global_quality_id": "quality:deltacomb_base:deltacomb/deltacomb_global_E",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "deltacomb_base"
@@ -28,10 +35,13 @@
         "FBE 0.40mm"
       ],
       "material_native_ids": [
-        "generic_petg"
+        "generic_petg",
+        "generic_petg_175"
+      ],
+      "material_types": [
+        "PETG"
       ]
-    },
-    "display_name": "Extra Fast (0.3 mm) · FBE 0.40mm · Generic PETG"
+    }
   },
   "setting_scopes": {
     "speed_print": "extruder.0",

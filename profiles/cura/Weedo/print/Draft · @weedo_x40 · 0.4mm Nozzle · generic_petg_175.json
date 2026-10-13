@@ -12,6 +12,7 @@
   "native_id": "quality:weedo_x40:weedo_x40/weedo_x40_0.4_generic_PETG_Draft",
   "context": {
     "native_id": "quality:weedo_x40:weedo_x40/weedo_x40_0.4_generic_PETG_Draft",
+    "display_name": "Draft (0.24 mm) · 0.4mm Nozzle · Generic PETG",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "weedo_x40",
@@ -20,6 +21,12 @@
     "variant_name": "0.4mm Nozzle",
     "material_id": "generic_petg_175",
     "global_quality_id": "quality:weedo_x40:weedo_x40/weedo_x40_global_Draft",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "weedo_x40"
@@ -28,10 +35,13 @@
         "0.4mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_petg_175"
+        "generic_petg_175",
+        "generic_petg"
+      ],
+      "material_types": [
+        "PETG"
       ]
-    },
-    "display_name": "Draft (0.24 mm) · 0.4mm Nozzle · Generic PETG"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

@@ -12,6 +12,7 @@
   "native_id": "quality:flashforge_base:flashforge/petg/flashforge_0.60_petg_extra_coarse",
   "context": {
     "native_id": "quality:flashforge_base:flashforge/petg/flashforge_0.60_petg_extra_coarse",
+    "display_name": "Extra Coarse Quality (0.48 mm) · 0.6mm Nozzle · Generic PETG",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "flashforge_base",
@@ -20,6 +21,12 @@
     "variant_name": "0.6mm Nozzle",
     "material_id": "generic_petg",
     "global_quality_id": "quality:flashforge_base:flashforge/flashforge_global_0.48_extra_coarse",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "flashforge_base"
@@ -28,10 +35,13 @@
         "0.6mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_petg"
+        "generic_petg",
+        "generic_petg_175"
+      ],
+      "material_types": [
+        "PETG"
       ]
-    },
-    "display_name": "Extra Coarse Quality (0.48 mm) · 0.6mm Nozzle · Generic PETG"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

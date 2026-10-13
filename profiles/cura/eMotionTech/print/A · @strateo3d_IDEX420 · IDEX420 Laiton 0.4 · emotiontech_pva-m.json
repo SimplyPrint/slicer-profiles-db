@@ -12,6 +12,7 @@
   "native_id": "quality:strateo3d_IDEX420:strateo3d_IDEX420/Standard_0_4/s3d_IDEX420_std0.4_PVA-M_A",
   "context": {
     "native_id": "quality:strateo3d_IDEX420:strateo3d_IDEX420/Standard_0_4/s3d_IDEX420_std0.4_PVA-M_A",
+    "display_name": "Extra Fine Quality (0.1 mm) · IDEX420 Laiton 0.4 · eMotionTech PVA-M",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "strateo3d_IDEX420",
@@ -20,6 +21,12 @@
     "variant_name": "IDEX420 Laiton 0.4",
     "material_id": "emotiontech_pva-m",
     "global_quality_id": "quality:strateo3d_IDEX420:strateo3d_IDEX420/s3d_IDEX420_global_A",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "IDEX420 Laiton 0.4"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "strateo3d_IDEX420"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "emotiontech_pva-m"
+      ],
+      "material_types": [
+        "Soluble"
       ]
-    },
-    "display_name": "Extra Fine Quality (0.1 mm) · IDEX420 Laiton 0.4 · eMotionTech PVA-M"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

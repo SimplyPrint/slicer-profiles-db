@@ -12,6 +12,7 @@
   "native_id": "intent:ultimaker_factor4_plus:ultimaker_factor4_plus/um_f4_plus_ht0.6_cffpps_0.2mm_annealing",
   "context": {
     "native_id": "intent:ultimaker_factor4_plus:ultimaker_factor4_plus/um_f4_plus_ht0.6_cffpps_0.2mm_annealing",
+    "display_name": "Annealing · Fast · HT 0.6 · Generic PPS CF",
     "source_kind": "intent",
     "resource_version": "5.13.0",
     "definition": "ultimaker_factor4_plus",
@@ -20,6 +21,12 @@
     "variant_name": "HT 0.6",
     "material_id": "generic_cffpps",
     "global_quality_id": null,
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "HT 0.6"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_factor4_plus"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "generic_cffpps"
+      ],
+      "material_types": [
+        "PPS CF"
       ]
-    },
-    "display_name": "Annealing · Fast · HT 0.6 · Generic PPS CF"
+    }
   },
   "setting_scopes": {
     "speed_print": "extruder.0",

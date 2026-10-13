@@ -12,6 +12,7 @@
   "native_id": "quality:flashforge_adventurer4:flashforge/asa/flashforge_adventurer4_asa_0.4_fast",
   "context": {
     "native_id": "quality:flashforge_adventurer4:flashforge/asa/flashforge_adventurer4_asa_0.4_fast",
+    "display_name": "Fast (0.25 mm) · 0.4mm Nozzle · Generic ASA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "flashforge_adventurer4",
@@ -20,6 +21,12 @@
     "variant_name": "0.4mm Nozzle",
     "material_id": "generic_asa",
     "global_quality_id": "quality:flashforge_adventurer4:flashforge/flashforge_adventurer4_fast",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "flashforge_adventurer4"
@@ -28,10 +35,13 @@
         "0.4mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_asa"
+        "generic_asa",
+        "generic_asa_175"
+      ],
+      "material_types": [
+        "ASA"
       ]
-    },
-    "display_name": "Fast (0.25 mm) · 0.4mm Nozzle · Generic ASA"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

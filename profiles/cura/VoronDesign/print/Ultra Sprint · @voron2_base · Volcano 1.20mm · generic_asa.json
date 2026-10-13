@@ -12,6 +12,7 @@
   "native_id": "quality:voron2_base:voron2/voron2_volcano_1.20_ASA_ultrasprint",
   "context": {
     "native_id": "quality:voron2_base:voron2/voron2_volcano_1.20_ASA_ultrasprint",
+    "display_name": "Ultra Sprint (0.6 mm) · Volcano 1.20mm · Generic ASA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "voron2_base",
@@ -20,6 +21,12 @@
     "variant_name": "Volcano 1.20mm",
     "material_id": "generic_asa",
     "global_quality_id": "quality:voron2_base:voron2/voron2_global_ultrasprint_quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 1.2,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "voron2_base"
@@ -28,10 +35,13 @@
         "Volcano 1.20mm"
       ],
       "material_native_ids": [
-        "generic_asa"
+        "generic_asa",
+        "generic_asa_175"
+      ],
+      "material_types": [
+        "ASA"
       ]
-    },
-    "display_name": "Ultra Sprint (0.6 mm) · Volcano 1.20mm · Generic ASA"
+    }
   },
   "setting_scopes": {
     "speed_print": "extruder.0",

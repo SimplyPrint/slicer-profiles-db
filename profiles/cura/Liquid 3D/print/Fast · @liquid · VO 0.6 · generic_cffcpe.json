@@ -12,6 +12,7 @@
   "native_id": "quality:liquid:liquid/liquid_vo0.6_CFFCPE_Draft_Print",
   "context": {
     "native_id": "quality:liquid:liquid/liquid_vo0.6_CFFCPE_Draft_Print",
+    "display_name": "Fast (0.2 mm) · VO 0.6 · Generic CFF CPE",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "liquid",
@@ -20,6 +21,12 @@
     "variant_name": "VO 0.6",
     "material_id": "generic_cffcpe",
     "global_quality_id": "quality:liquid:liquid/liquid_global_Draft_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "VO 0.6"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "liquid"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "generic_cffcpe"
+      ],
+      "material_types": [
+        "CFF CPE"
       ]
-    },
-    "display_name": "Fast (0.2 mm) · VO 0.6 · Generic CFF CPE"
+    }
   },
   "setting_scopes": {
     "cool_fan_enabled": "extruder.0",

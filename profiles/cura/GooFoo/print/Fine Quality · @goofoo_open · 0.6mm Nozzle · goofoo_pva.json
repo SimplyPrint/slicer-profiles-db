@@ -12,6 +12,7 @@
   "native_id": "quality:goofoo_open:goofoo/pva/goofoo_open_0.6_pva_fine",
   "context": {
     "native_id": "quality:goofoo_open:goofoo/pva/goofoo_open_0.6_pva_fine",
+    "display_name": "Fine Quality (0.15 mm) · 0.6mm Nozzle · GOOFOO PVA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "goofoo_open",
@@ -20,6 +21,12 @@
     "variant_name": "0.6mm Nozzle",
     "material_id": "goofoo_pva",
     "global_quality_id": "quality:goofoo_open:goofoo/goofoo_open_global_0.15_fine",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "goofoo_open"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "goofoo_pva"
+      ],
+      "material_types": [
+        "PVA"
       ]
-    },
-    "display_name": "Fine Quality (0.15 mm) · 0.6mm Nozzle · GOOFOO PVA"
+    }
   },
   "setting_scopes": {
     "cool_fan_enabled": "extruder.0",

@@ -12,6 +12,7 @@
   "native_id": "quality:xyzprinting_da_vinci_pro_evo:xyzprinting/ppgf30/xyzprinting_da_vinci_pro_evo_hs_0.40_ppgf30_draft",
   "context": {
     "native_id": "quality:xyzprinting_da_vinci_pro_evo:xyzprinting/ppgf30/xyzprinting_da_vinci_pro_evo_hs_0.40_ppgf30_draft",
+    "display_name": "Draft Quality (0.3 mm) · Hardened Steel 0.4mm Nozzle · XYZprinting PP GF30",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "xyzprinting_da_vinci_pro_evo",
@@ -20,6 +21,12 @@
     "variant_name": "Hardened Steel 0.4mm Nozzle",
     "material_id": "xyzprinting_ppgf30",
     "global_quality_id": "quality:xyzprinting_da_vinci_pro_evo:xyzprinting/xyzprinting_da_vinci_pro_evo_global_0.30_draft",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "Hardened Steel 0.4mm Nozzle"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "xyzprinting_da_vinci_pro_evo"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "xyzprinting_ppgf30"
+      ],
+      "material_types": [
+        "PP"
       ]
-    },
-    "display_name": "Draft Quality (0.3 mm) · Hardened Steel 0.4mm Nozzle · XYZprinting PP GF30"
+    }
   },
   "setting_scopes": {
     "speed_print": "extruder.0",

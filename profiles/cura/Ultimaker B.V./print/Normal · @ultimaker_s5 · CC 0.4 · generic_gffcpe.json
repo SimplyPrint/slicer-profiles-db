@@ -12,6 +12,7 @@
   "native_id": "quality:ultimaker_s5:ultimaker_s5/um_s5_cc0.4_gffcpe_0.15mm",
   "context": {
     "native_id": "quality:ultimaker_s5:ultimaker_s5/um_s5_cc0.4_gffcpe_0.15mm",
+    "display_name": "Normal (0.15 mm) · CC 0.4 · Generic GFF CPE",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "ultimaker_s5",
@@ -20,6 +21,12 @@
     "variant_name": "CC 0.4",
     "material_id": "generic_gffcpe",
     "global_quality_id": "quality:ultimaker_s5:ultimaker_s5/um_s5_global_Fast_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "CC 0.4"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_s5"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "generic_gffcpe"
+      ],
+      "material_types": [
+        "GFF CPE"
       ]
-    },
-    "display_name": "Normal (0.15 mm) · CC 0.4 · Generic GFF CPE"
+    }
   },
   "setting_scopes": {
     "support_bottom_distance": "extruder.0",

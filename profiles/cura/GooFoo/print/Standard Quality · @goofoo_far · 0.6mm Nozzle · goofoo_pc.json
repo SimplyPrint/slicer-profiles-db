@@ -12,6 +12,7 @@
   "native_id": "quality:goofoo_far:goofoo/pc/goofoo_far_0.6_pc_standard",
   "context": {
     "native_id": "quality:goofoo_far:goofoo/pc/goofoo_far_0.6_pc_standard",
+    "display_name": "Standard Quality (0.2 mm) · 0.6mm Nozzle · GOOFOO PC",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "goofoo_far",
@@ -20,6 +21,12 @@
     "variant_name": "0.6mm Nozzle",
     "material_id": "goofoo_pc",
     "global_quality_id": "quality:goofoo_far:goofoo/goofoo_far_global_0.20_standard",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "goofoo_far"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "goofoo_pc"
+      ],
+      "material_types": [
+        "PC"
       ]
-    },
-    "display_name": "Standard Quality (0.2 mm) · 0.6mm Nozzle · GOOFOO PC"
+    }
   },
   "setting_scopes": {
     "cool_fan_enabled": "extruder.0",

@@ -12,6 +12,7 @@
   "native_id": "quality:strateo3d_IDEX420:strateo3d_IDEX420/Standard_0_8/s3d_IDEX420_std0.8_BVOH_C",
   "context": {
     "native_id": "quality:strateo3d_IDEX420:strateo3d_IDEX420/Standard_0_8/s3d_IDEX420_std0.8_BVOH_C",
+    "display_name": "High Quality (0.3 mm) · IDEX420 Laiton 0.8 · eMotionTech BVOH",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "strateo3d_IDEX420",
@@ -20,6 +21,12 @@
     "variant_name": "IDEX420 Laiton 0.8",
     "material_id": "emotiontech_bvoh",
     "global_quality_id": "quality:strateo3d_IDEX420:strateo3d_IDEX420/s3d_IDEX420_global_C",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "IDEX420 Laiton 0.8"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "strateo3d_IDEX420"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "emotiontech_bvoh"
+      ],
+      "material_types": [
+        "Soluble"
       ]
-    },
-    "display_name": "High Quality (0.3 mm) · IDEX420 Laiton 0.8 · eMotionTech BVOH"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

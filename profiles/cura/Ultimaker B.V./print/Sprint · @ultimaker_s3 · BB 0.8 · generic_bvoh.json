@@ -12,6 +12,7 @@
   "native_id": "quality:ultimaker_s3:ultimaker_s3/um_s3_bb0.8_bvoh_0.4mm",
   "context": {
     "native_id": "quality:ultimaker_s3:ultimaker_s3/um_s3_bb0.8_bvoh_0.4mm",
+    "display_name": "Sprint (0.4 mm) · BB 0.8 · Generic BVOH",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "ultimaker_s3",
@@ -20,6 +21,12 @@
     "variant_name": "BB 0.8",
     "material_id": "generic_bvoh",
     "global_quality_id": "quality:ultimaker_s3:ultimaker_s3/um_s3_global_Superdraft_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "BB 0.8"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_s3"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "generic_bvoh"
+      ],
+      "material_types": [
+        "BVOH"
       ]
-    },
-    "display_name": "Sprint (0.4 mm) · BB 0.8 · Generic BVOH"
+    }
   },
   "setting_scopes": {
     "retraction_amount": "extruder.0",

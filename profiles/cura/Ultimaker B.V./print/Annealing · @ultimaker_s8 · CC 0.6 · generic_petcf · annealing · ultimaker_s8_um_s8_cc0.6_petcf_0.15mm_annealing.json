@@ -12,6 +12,7 @@
   "native_id": "intent:ultimaker_s8:ultimaker_s8/um_s8_cc0.6_petcf_0.15mm_annealing",
   "context": {
     "native_id": "intent:ultimaker_s8:ultimaker_s8/um_s8_cc0.6_petcf_0.15mm_annealing",
+    "display_name": "Annealing · Normal · CC 0.6 · Generic PET CF",
     "source_kind": "intent",
     "resource_version": "5.13.0",
     "definition": "ultimaker_s8",
@@ -20,6 +21,12 @@
     "variant_name": "CC 0.6",
     "material_id": "generic_petcf",
     "global_quality_id": null,
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "CC 0.6"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_s8"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "generic_petcf"
+      ],
+      "material_types": [
+        "PET CF"
       ]
-    },
-    "display_name": "Annealing · Normal · CC 0.6 · Generic PET CF"
+    }
   },
   "setting_scopes": {
     "speed_layer_0": "extruder.0",

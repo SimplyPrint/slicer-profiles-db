@@ -12,6 +12,7 @@
   "native_id": "intent:ultimaker_s3:ultimaker_s3/um_s3_aa0.8_um-tough-pla_0.2mm_visual",
   "context": {
     "native_id": "intent:ultimaker_s3:ultimaker_s3/um_s3_aa0.8_um-tough-pla_0.2mm_visual",
+    "display_name": "Visual · Fast (0.2 mm) · AA 0.8 · Ultimaker Tough PLA",
     "source_kind": "intent",
     "resource_version": "5.13.0",
     "definition": "ultimaker_s3",
@@ -20,6 +21,12 @@
     "variant_name": "AA 0.8",
     "material_id": "ultimaker_tough_pla",
     "global_quality_id": null,
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "AA 0.8"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_s3"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "ultimaker_tough_pla"
+      ],
+      "material_types": [
+        "Tough PLA"
       ]
-    },
-    "display_name": "Visual · Fast (0.2 mm) · AA 0.8 · Ultimaker Tough PLA"
+    }
   },
   "setting_scopes": {
     "z_seam_type": "extruder.0",

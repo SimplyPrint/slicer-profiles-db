@@ -12,6 +12,7 @@
   "native_id": "quality:ultimaker_s3:ultimaker_s3/um_s3_aa0.8_pp_0.4mm",
   "context": {
     "native_id": "quality:ultimaker_s3:ultimaker_s3/um_s3_aa0.8_pp_0.4mm",
+    "display_name": "Sprint (0.4 mm) · AA 0.8 · Generic PP",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "ultimaker_s3",
@@ -20,6 +21,12 @@
     "variant_name": "AA 0.8",
     "material_id": "generic_pp",
     "global_quality_id": "quality:ultimaker_s3:ultimaker_s3/um_s3_global_Superdraft_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "AA 0.8"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_s3"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "generic_pp"
+      ],
+      "material_types": [
+        "PP"
       ]
-    },
-    "display_name": "Sprint (0.4 mm) · AA 0.8 · Generic PP"
+    }
   },
   "setting_scopes": {
     "retraction_prime_speed": "extruder.0",

@@ -12,6 +12,7 @@
   "native_id": "intent:ultimaker_sketch_sprint:ultimaker_sketch_sprint/um_sketch_sprint_0.4mm_um-pla-175_0.27mm_draft",
   "context": {
     "native_id": "intent:ultimaker_sketch_sprint:ultimaker_sketch_sprint/um_sketch_sprint_0.4mm_um-pla-175_0.27mm_draft",
+    "display_name": "Draft · Extra Fast (0.27 mm) · 0.4mm · Ultimaker PLA",
     "source_kind": "intent",
     "resource_version": "5.13.0",
     "definition": "ultimaker_sketch_sprint",
@@ -20,6 +21,12 @@
     "variant_name": "0.4mm",
     "material_id": "ultimaker_pla_175",
     "global_quality_id": null,
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "0.4mm"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_sketch_sprint"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "ultimaker_pla_175"
+      ],
+      "material_types": [
+        "PLA"
       ]
-    },
-    "display_name": "Draft · Extra Fast (0.27 mm) · 0.4mm · Ultimaker PLA"
+    }
   },
   "setting_scopes": {
     "speed_print": "extruder.0",

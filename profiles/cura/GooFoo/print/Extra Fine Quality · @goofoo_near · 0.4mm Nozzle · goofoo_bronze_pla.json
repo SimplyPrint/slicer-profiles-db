@@ -12,6 +12,7 @@
   "native_id": "quality:goofoo_near:goofoo/pla/goofoo_near_bronze_0.40_pla_efine",
   "context": {
     "native_id": "quality:goofoo_near:goofoo/pla/goofoo_near_bronze_0.40_pla_efine",
+    "display_name": "Extra Fine Quality (0.1 mm) · 0.4mm Nozzle · GOOFOO Bronze",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "goofoo_near",
@@ -20,6 +21,12 @@
     "variant_name": "0.4mm Nozzle",
     "material_id": "goofoo_bronze_pla",
     "global_quality_id": "quality:goofoo_near:goofoo/goofoo_near_global_0.1_efine",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "goofoo_near"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "goofoo_bronze_pla"
+      ],
+      "material_types": [
+        "PLA"
       ]
-    },
-    "display_name": "Extra Fine Quality (0.1 mm) · 0.4mm Nozzle · GOOFOO Bronze"
+    }
   },
   "setting_scopes": {
     "cool_fan_enabled": "extruder.0",

@@ -12,6 +12,7 @@
   "native_id": "quality:weedo_x40:weedo_x40/weedo_x40_0.4_generic_TPU_Normal",
   "context": {
     "native_id": "quality:weedo_x40:weedo_x40/weedo_x40_0.4_generic_TPU_Normal",
+    "display_name": "Normal (0.2 mm) · 0.4mm Nozzle · Generic TPU 95A",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "weedo_x40",
@@ -20,6 +21,12 @@
     "variant_name": "0.4mm Nozzle",
     "material_id": "generic_tpu_175",
     "global_quality_id": "quality:weedo_x40:weedo_x40/weedo_x40_global_Normal",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "weedo_x40"
@@ -28,10 +35,13 @@
         "0.4mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_tpu_175"
+        "generic_tpu_175",
+        "generic_tpu"
+      ],
+      "material_types": [
+        "TPU 95A"
       ]
-    },
-    "display_name": "Normal (0.2 mm) · 0.4mm Nozzle · Generic TPU 95A"
+    }
   },
   "setting_scopes": {
     "speed_print": "extruder.0",

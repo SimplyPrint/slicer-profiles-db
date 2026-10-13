@@ -12,6 +12,7 @@
   "native_id": "quality:liquid:liquid/liquid_vo0.8_Nylon_Draft_Print",
   "context": {
     "native_id": "quality:liquid:liquid/liquid_vo0.8_Nylon_Draft_Print",
+    "display_name": "Fast (0.2 mm) · VO 0.8 · Generic Nylon",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "liquid",
@@ -20,6 +21,12 @@
     "variant_name": "VO 0.8",
     "material_id": "generic_nylon",
     "global_quality_id": "quality:liquid:liquid/liquid_global_Draft_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "VO 0.8"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "liquid"
@@ -28,10 +35,13 @@
         "VO 0.8"
       ],
       "material_native_ids": [
-        "generic_nylon"
+        "generic_nylon",
+        "generic_nylon_175"
+      ],
+      "material_types": [
+        "Nylon"
       ]
-    },
-    "display_name": "Fast (0.2 mm) · VO 0.8 · Generic Nylon"
+    }
   },
   "setting_scopes": {
     "machine_nozzle_heat_up_speed": "extruder.0",

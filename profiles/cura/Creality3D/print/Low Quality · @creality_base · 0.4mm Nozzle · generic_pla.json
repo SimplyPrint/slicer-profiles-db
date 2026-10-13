@@ -12,6 +12,7 @@
   "native_id": "quality:creality_base:creality/base/base_0.4_PLA_low",
   "context": {
     "native_id": "quality:creality_base:creality/base/base_0.4_PLA_low",
+    "display_name": "Low Quality (0.28 mm) · 0.4mm Nozzle · Generic PLA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "creality_base",
@@ -20,6 +21,12 @@
     "variant_name": "0.4mm Nozzle",
     "material_id": "generic_pla",
     "global_quality_id": "quality:creality_base:creality/base/base_global_low",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "creality_base"
@@ -28,10 +35,13 @@
         "0.4mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_pla"
+        "generic_pla",
+        "generic_pla_175"
+      ],
+      "material_types": [
+        "PLA"
       ]
-    },
-    "display_name": "Low Quality (0.28 mm) · 0.4mm Nozzle · Generic PLA"
+    }
   },
   "setting_scopes": {
     "layer_height_0": "global",

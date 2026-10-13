@@ -22,6 +22,16 @@
     "quality_definition": "structur3d_discov3ry1_complete_um2plus",
     "preferred_material": "structur3d_dap100silicone",
     "preferred_quality_type": "extra_fast",
+    "selection_defaults": {
+      "process_profile": {
+        "match": {
+          "profile_context": {
+            "quality_type": "extra_fast",
+            "intent_category": null
+          }
+        }
+      }
+    },
     "preferred_variant_name": "0.84mm (Green)",
     "preferred_variant_key": "0.84",
     "machine_extruder_trains": {
@@ -71,7 +81,10 @@
       "texture": {
         "ref": "sha256:7bb9a64ed4a841b1f0618846af0bf57b7fb86dc722c4acbbc8eda51ccb9fdb88",
         "format": "png",
-        "media_type": "image/png"
+        "media_type": "image/png",
+        "target": "model",
+        "mapping": "uv",
+        "flip_y": true
       }
     },
     "scene": {
@@ -91,10 +104,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -108,10 +117,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -123,12 +128,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -149,6 +149,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "0.20mm (Clear)"
         },
+        "identity": {
+          "native_id": "variant:structur3d_discov3ry1_complete_um2plus:structur3d/structur3d_discov3ry1_complete_um2plus_0.20",
+          "nozzle_diameter": 0.2,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "0.20mm (Clear)"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -162,6 +171,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.25,
           "nozzle_volume_type": "standard",
+          "hotend_id": "0.25mm (Red)"
+        },
+        "identity": {
+          "native_id": "variant:structur3d_discov3ry1_complete_um2plus:structur3d/structur3d_discov3ry1_complete_um2plus_0.25",
+          "nozzle_diameter": 0.25,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "0.25mm (Red)"
         },
         "runtime_compatible_tool_indices": [
@@ -179,6 +197,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "0.41mm (Blue)"
         },
+        "identity": {
+          "native_id": "variant:structur3d_discov3ry1_complete_um2plus:structur3d/structur3d_discov3ry1_complete_um2plus_0.41",
+          "nozzle_diameter": 0.41,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "0.41mm (Blue)"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -192,6 +219,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.58,
           "nozzle_volume_type": "standard",
+          "hotend_id": "0.58mm (Pink)"
+        },
+        "identity": {
+          "native_id": "variant:structur3d_discov3ry1_complete_um2plus:structur3d/structur3d_discov3ry1_complete_um2plus_0.58",
+          "nozzle_diameter": 0.58,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "0.58mm (Pink)"
         },
         "runtime_compatible_tool_indices": [
@@ -209,6 +245,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "0.84mm (Green)"
         },
+        "identity": {
+          "native_id": "variant:structur3d_discov3ry1_complete_um2plus:structur3d/structur3d_discov3ry1_complete_um2plus_0.84",
+          "nozzle_diameter": 0.84,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "0.84mm (Green)"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -224,6 +269,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "1.19mm (Grey)"
         },
+        "identity": {
+          "native_id": "variant:structur3d_discov3ry1_complete_um2plus:structur3d/structur3d_discov3ry1_complete_um2plus_1.19",
+          "nozzle_diameter": 1.19,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "1.19mm (Grey)"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -237,6 +291,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 1.6,
           "nozzle_volume_type": "standard",
+          "hotend_id": "1.60mm (Olive)"
+        },
+        "identity": {
+          "native_id": "variant:structur3d_discov3ry1_complete_um2plus:structur3d/structur3d_discov3ry1_complete_um2plus_1.60",
+          "nozzle_diameter": 1.6,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "1.60mm (Olive)"
         },
         "runtime_compatible_tool_indices": [
@@ -2737,7 +2800,7 @@
       "5.13.0": false
     },
     "prime_tower_mode": {
-      "5.13.0": "normal"
+      "5.13.0": "interleaved"
     },
     "prime_tower_size": {
       "5.13.0": 20
