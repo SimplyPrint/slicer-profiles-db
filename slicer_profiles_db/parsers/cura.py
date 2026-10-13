@@ -44,6 +44,69 @@ def _resource_context(resource_version: str | None) -> dict[str, str]:
     return {"resource_version": resource_version} if resource_version else {}
 
 
+def _print_label(
+    instance: _InstanceResource,
+    quality: _InstanceResource | None,
+    layer_height: Any,
+    variant_name: str,
+    material: ParsedProfile | None,
+    material_id: str,
+) -> str:
+    """A print role's name as a person reads it, without resource ids.
+
+    The stored name keeps the definition and material ids because it is the
+    profile's identity; this is what a profile list shows instead.
+    """
+    quality_type = str(instance.metadata.get("quality_type") or "")
+    # Cura names a quality level after its global quality; the per-material
+    # resources under it are often named like ids ("pla_noz0.40_lay0.25").
+    level = quality.name.strip() if quality is not None else ""
+    if instance.source_kind == "intent":
+        name = instance.name.strip()
+        if level and level != name:
+            name = f"{name} · {level}" if name else level
+        if layer_height is None and quality is not None:
+            layer_height = quality.values.get("layer_height")
+    else:
+        name = level or instance.name.strip()
+    name = name or quality_type.replace("_", " ").title()
+    try:
+        height = float(layer_height)
+    except (TypeError, ValueError):
+        height = math.nan
+    if math.isfinite(height) and height > 0:
+        name = f"{name} ({round(height, 3):g} mm)"
+    parts = [name]
+    if variant_name:
+        parts.append(variant_name)
+    if material is not None:
+        parts.append(_material_label(material))
+    elif material_id:
+        parts.append(material_id)
+    return " · ".join(part for part in parts if part)
+
+
+def _material_label(material: ParsedProfile) -> str:
+    """The brand and the material's own label (GOOFOO eSilk), else its type
+    (Generic PLA). A base file's color is only the color its resource was
+    written for, not part of the quality.
+    """
+    brand = str(material.context.get("brand") or "").strip()
+    material_type = str(material.context.get("material_type") or "").strip()
+    color = str(material.context.get("color") or "").strip()
+    label = material.name.strip()
+    if label in ("", material.native_id, f"{brand} {material_type} {color}".strip()):
+        label = material_type
+    else:
+        # Ultimaker labels its base files "Any color PLA" under color "Generic".
+        for word in {color, "Any color"} - {""}:
+            label = re.sub(re.escape(word), "", label, flags=re.IGNORECASE)
+        label = " ".join(label.split()) or material_type
+    if brand and not label.casefold().startswith(brand.casefold()):
+        label = f"{brand} {label}"
+    return label.strip() or material.native_id or ""
+
+
 def _material_compatibility_aliases(
     profiles: Sequence[ParsedProfile],
 ) -> dict[str, tuple[str, ...]]:
@@ -1294,6 +1357,7 @@ class CuraParser(BaseParser):
                     single_extruder_schema,
                     material_settings,
                     material_aliases,
+                    materials_by_native_id,
                     resource_version,
                 )
             )
@@ -1638,12 +1702,22 @@ class CuraParser(BaseParser):
         base_schema: Mapping[str, Mapping[str, Any]],
         material_settings: Mapping[str, Mapping[str, Any]],
         material_aliases: Mapping[str, Sequence[str]],
+        materials: Mapping[str, ParsedProfile],
         resource_version: str | None,
     ) -> list[ParsedProfile]:
         global_instances: dict[tuple[str, str, str, str, str], _InstanceResource] = {}
         leaves: list[_InstanceResource] = []
+        # The global quality of each level, which names it in Cura's list.
+        qualities: dict[tuple[str, str], _InstanceResource] = {}
         for instance in instances:
             metadata = instance.metadata
+            quality_type = str(metadata.get("quality_type") or "")
+            if (
+                instance.source_kind == "quality"
+                and quality_type
+                and metadata.get("global_quality") is True
+            ):
+                qualities.setdefault((instance.definition, quality_type), instance)
             key = (
                 instance.source_kind,
                 instance.definition,
@@ -1689,6 +1763,8 @@ class CuraParser(BaseParser):
                     variant_seed_cache,
                     material_settings,
                     material_aliases,
+                    materials,
+                    qualities,
                     resource_version,
                 )
             )
@@ -1709,9 +1785,27 @@ class CuraParser(BaseParser):
                         variant_seed_cache,
                         material_settings,
                         material_aliases,
+                        materials,
+                        qualities,
                         resource_version,
                     )
                 )
+
+        # Upstream sometimes gives two resources of one printer the same name
+        # (a "fast" quality called "Fine"); only their ids tell them apart.
+        labelled: dict[tuple[str, str], list[ParsedProfile]] = {}
+        for profile in result:
+            key = (
+                str(profile.context.get("definition")),
+                profile.context["display_name"],
+            )
+            labelled.setdefault(key, []).append(profile)
+        for (_, label), profiles in labelled.items():
+            if len(profiles) < 2:
+                continue
+            for profile in profiles:
+                suffix = (profile.native_id or "").rsplit("/", 1)[-1]
+                profile.context["display_name"] = f"{label} · {suffix}"
         return result
 
     def _normalise_print_instance(
@@ -1726,6 +1820,8 @@ class CuraParser(BaseParser):
         variant_seed_cache: dict[tuple[str, str], dict[str, Any]],
         material_settings: Mapping[str, Mapping[str, Any]],
         material_aliases: Mapping[str, Sequence[str]],
+        materials: Mapping[str, ParsedProfile],
+        qualities: Mapping[tuple[str, str], _InstanceResource],
         resource_version: str | None,
     ) -> ParsedProfile:
         cached_seed = definition_seed_cache.get(instance.definition)
@@ -1809,8 +1905,17 @@ class CuraParser(BaseParser):
         if intent_category:
             name_parts.append(intent_category)
         display_name = " · ".join(name_parts)
+        label = _print_label(
+            instance,
+            qualities.get((instance.definition, quality_type)),
+            data.get("layer_height"),
+            variant_name,
+            materials.get(material_id),
+            material_id,
+        )
         context: dict[str, Any] = {
             "native_id": instance.native_id,
+            "display_name": label,
             "source_kind": instance.source_kind,
             **_resource_context(resource_version),
             "definition": instance.definition,
