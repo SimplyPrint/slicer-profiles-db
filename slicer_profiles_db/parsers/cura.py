@@ -470,6 +470,10 @@ class _SafeExpressionEvaluator:
                 tool_index = int(args[0])
             except (TypeError, ValueError) as exc:
                 raise _UnresolvedExpression(str(args[0])) from exc
+            # As in Cura's getValueInExtruder: -1 ("not overridden", the default
+            # of every *_extruder_nr setting) means the default extruder.
+            if tool_index == -1:
+                tool_index = self.default_extruder_position
             tool_values = self.extruder_values.get(key)
             if tool_values is not None:
                 try:
