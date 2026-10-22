@@ -97,6 +97,79 @@
         },
         "compatibility": {
             "default": true,
+            "machines": []
+        },
+        "compatible_printers": {
+            "Dremel 3D20": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "brand": "Eazao",
+            "color": "White",
+            "color_code": "#eeeeee",
+            "description": null,
+            "diameter": 1.75,
+            "guid": "e0752072-a685-8721-dfd4-837075eb4f57",
+            "material_type": "Clay",
+            "native_id": "eazao_clay#resolved-948d46f26b4b05ee",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "eazao_clay"
+        },
+        "data": {
+            "cool_fan_speed": 100.0,
+            "cool_min_temperature": 0,
+            "default_material_bed_temperature": 0,
+            "default_material_print_temperature": 0,
+            "material_bed_temperature": 0,
+            "material_bed_temperature_layer_0": 0,
+            "material_brand": "Eazao",
+            "material_break_preparation_temperature": 0,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": -15,
+            "material_guid": "e0752072-a685-8721-dfd4-837075eb4f57",
+            "material_initial_print_temperature": -10,
+            "material_print_temperature": 0,
+            "material_print_temperature_layer_0": 0,
+            "material_standby_temperature": 0,
+            "material_type": "Clay",
+            "retraction_amount": 3,
+            "retraction_extrusion_window": 3,
+            "retraction_speed": 25,
+            "wipe_retraction_amount": 3
+        },
+        "name": "Clay",
+        "setting_scopes": {
+            "cool_fan_speed": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "retraction_amount": "extruder.0",
+            "retraction_extrusion_window": "extruder.0",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_amount": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
             "machines": [
                 {
                     "compatible": true,
@@ -198,307 +271,62 @@
         },
         "compatibility": {
             "default": true,
-            "machines": []
+            "machines": [
+                {
+                    "compatible": true,
+                    "hotends": {},
+                    "identifiers": [
+                        {
+                            "manufacturer": "Dremel",
+                            "product": "Dremel3D45"
+                        }
+                    ]
+                }
+            ]
         },
         "compatible_printers": {
             "Dremel 3D20": [
                 "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
             ]
         },
         "context": {
-            "brand": "GOOFOO",
-            "color": "Generic",
-            "color_code": "#ee51f8",
-            "description": null,
+            "brand": "Dremel",
+            "color": "Black",
+            "color_code": "#231f20",
+            "description": "Fast, safe and reliable printing material from Dremel. Nylon is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
             "diameter": 1.75,
-            "guid": "76fc11c6-a0e3-4e5e-a363-5a0b3010b07e",
-            "material_type": "PLA",
-            "native_id": "goofoo_esilk_pla#resolved-55c93613497c9754",
+            "guid": "d29d5390-6fa1-4794-968c-5397c5b07c85",
+            "material_type": "NYLON",
+            "native_id": "dremel_nylon#resolved-eecbafc51379090b",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "goofoo_esilk_pla"
+            "source_native_id": "dremel_nylon"
         },
         "data": {
-            "cool_min_temperature": 200,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 200,
-            "material_brand": "GOOFOO",
-            "material_break_preparation_temperature": 200,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 185,
-            "material_guid": "76fc11c6-a0e3-4e5e-a363-5a0b3010b07e",
-            "material_initial_print_temperature": 190,
-            "material_print_temperature": 200,
-            "material_print_temperature_layer_0": 200,
-            "material_standby_temperature": 200,
-            "material_type": "PLA",
-            "retraction_amount": 4.5,
-            "retraction_extrusion_window": 4.5,
-            "retraction_prime_speed": 60,
-            "retraction_retract_speed": 60,
-            "retraction_speed": 60,
-            "wipe_retraction_amount": 4.5,
-            "wipe_retraction_prime_speed": 60,
-            "wipe_retraction_retract_speed": 60,
-            "wipe_retraction_speed": 60
-        },
-        "name": "eSilk",
-        "setting_scopes": {
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "GOOFOO",
-            "color": "Generic",
-            "color_code": "#ee51f8",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "89e8eee3-574e-35c5-54c8-c3adf4b53bf8",
-            "material_type": "PLA",
-            "native_id": "goofoo_pla#resolved-c6450566d06713fa",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "goofoo_pla"
-        },
-        "data": {
-            "cool_min_temperature": 190,
-            "default_material_bed_temperature": 50,
-            "default_material_print_temperature": 190,
-            "material_bed_temperature": 50,
-            "material_bed_temperature_layer_0": 50,
-            "material_brand": "GOOFOO",
-            "material_break_preparation_temperature": 190,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 175,
-            "material_guid": "89e8eee3-574e-35c5-54c8-c3adf4b53bf8",
-            "material_initial_print_temperature": 180,
-            "material_print_temperature": 190,
-            "material_print_temperature_layer_0": 190,
-            "material_standby_temperature": 190,
-            "material_type": "PLA",
-            "retraction_amount": 4.5,
-            "retraction_extrusion_window": 4.5,
-            "retraction_prime_speed": 60,
-            "retraction_retract_speed": 60,
-            "retraction_speed": 60,
-            "wipe_retraction_amount": 4.5,
-            "wipe_retraction_prime_speed": 60,
-            "wipe_retraction_retract_speed": 60,
-            "wipe_retraction_speed": 60
-        },
-        "name": "PLA+",
-        "setting_scopes": {
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "GOOFOO",
-            "color": "Generic",
-            "color_code": "#ee51f8",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "5793ca11-4b63-46cb-87d6-0162413ebd4a",
-            "material_type": "PC",
-            "native_id": "goofoo_pc#resolved-e61c3aeb41409ed3",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "goofoo_pc"
-        },
-        "data": {
-            "cool_min_temperature": 250,
-            "default_material_bed_temperature": 100,
-            "default_material_print_temperature": 250,
-            "material_bed_temperature": 100,
-            "material_bed_temperature_layer_0": 100,
-            "material_brand": "GOOFOO",
-            "material_break_preparation_temperature": 250,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 235,
-            "material_guid": "5793ca11-4b63-46cb-87d6-0162413ebd4a",
-            "material_initial_print_temperature": 240,
-            "material_print_temperature": 250,
-            "material_print_temperature_layer_0": 250,
-            "material_standby_temperature": 250,
-            "material_type": "PC",
-            "retraction_amount": 4.5,
-            "retraction_extrusion_window": 4.5,
-            "retraction_prime_speed": 60,
-            "retraction_retract_speed": 60,
-            "retraction_speed": 60,
-            "wipe_retraction_amount": 4.5,
-            "wipe_retraction_prime_speed": 60,
-            "wipe_retraction_retract_speed": 60,
-            "wipe_retraction_speed": 60
-        },
-        "name": "PC",
-        "setting_scopes": {
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "GOOFOO",
-            "color": "Generic",
-            "color_code": "#ee51f8",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "ba91a8a4-ea28-4af8-a7ef-0e9e1bba1994",
-            "material_type": "ASA",
-            "native_id": "goofoo_asa#resolved-c4f69e7712088d74",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "goofoo_asa"
-        },
-        "data": {
-            "cool_fan_speed": 0,
-            "cool_fan_speed_max": 0,
-            "cool_fan_speed_min": 0,
+            "cool_fan_speed": 50.0,
+            "cool_fan_speed_max": 50.0,
+            "cool_fan_speed_min": 50.0,
             "cool_min_temperature": 240,
-            "default_material_bed_temperature": 100,
+            "default_material_bed_temperature": 80.0,
             "default_material_print_temperature": 240,
-            "material_bed_temperature": 100,
-            "material_bed_temperature_layer_0": 100,
-            "material_brand": "GOOFOO",
+            "material_bed_temperature": 80.0,
+            "material_bed_temperature_layer_0": 80.0,
+            "material_brand": "Dremel",
             "material_break_preparation_temperature": 240,
             "material_diameter": 1.75,
             "material_final_print_temperature": 225,
-            "material_guid": "ba91a8a4-ea28-4af8-a7ef-0e9e1bba1994",
+            "material_guid": "d29d5390-6fa1-4794-968c-5397c5b07c85",
             "material_initial_print_temperature": 230,
             "material_print_temperature": 240,
             "material_print_temperature_layer_0": 240,
-            "material_standby_temperature": 240,
-            "material_type": "ASA",
-            "retraction_amount": 4.5,
-            "retraction_extrusion_window": 4.5,
-            "retraction_prime_speed": 60,
-            "retraction_retract_speed": 60,
-            "retraction_speed": 60,
-            "wipe_retraction_amount": 4.5,
-            "wipe_retraction_prime_speed": 60,
-            "wipe_retraction_retract_speed": 60,
-            "wipe_retraction_speed": 60
+            "material_standby_temperature": 175,
+            "material_type": "NYLON",
+            "retraction_amount": 3.0,
+            "retraction_extrusion_window": 3.0,
+            "retraction_speed": 25.0,
+            "wipe_retraction_amount": 3.0
         },
-        "name": "ASA",
+        "name": "Dremel NYLON Black",
         "setting_scopes": {
             "cool_fan_speed": "extruder.0",
             "cool_fan_speed_max": "extruder.0",
@@ -520,13 +348,8 @@
             "material_type": "extruder.0",
             "retraction_amount": "extruder.0",
             "retraction_extrusion_window": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
             "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
+            "wipe_retraction_amount": "extruder.0"
         }
     },
     {
@@ -536,559 +359,18 @@
         },
         "compatibility": {
             "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
+            "machines": [
+                {
+                    "compatible": true,
+                    "hotends": {},
+                    "identifiers": [
+                        {
+                            "manufacturer": "Dremel",
+                            "product": "Dremel3D45"
+                        }
+                    ]
+                }
             ]
-        },
-        "context": {
-            "brand": "GOOFOO",
-            "color": "Generic",
-            "color_code": "#ee51f8",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "018afb87-7e12-4489-87ee-ad482137a583",
-            "material_type": "HIPS",
-            "native_id": "goofoo_hips#resolved-87c9fb152d1ee9c4",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "goofoo_hips"
-        },
-        "data": {
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 210,
-            "material_brand": "GOOFOO",
-            "material_diameter": 1.75,
-            "material_guid": "018afb87-7e12-4489-87ee-ad482137a583",
-            "material_standby_temperature": 210,
-            "material_type": "HIPS",
-            "retraction_amount": 4.5,
-            "retraction_extrusion_window": 4.5,
-            "retraction_prime_speed": 60,
-            "retraction_retract_speed": 60,
-            "retraction_speed": 60,
-            "wipe_retraction_amount": 4.5,
-            "wipe_retraction_prime_speed": 60,
-            "wipe_retraction_retract_speed": 60,
-            "wipe_retraction_speed": 60
-        },
-        "name": "HIPS",
-        "setting_scopes": {
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "GOOFOO",
-            "color": "Generic",
-            "color_code": "#ee51f8",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "749281e3-7bec-4432-aa4b-71f38379997f",
-            "material_type": "PETG",
-            "native_id": "goofoo_petg#resolved-3c093235f410cc16",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "goofoo_petg"
-        },
-        "data": {
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 210,
-            "material_brand": "GOOFOO",
-            "material_diameter": 1.75,
-            "material_guid": "749281e3-7bec-4432-aa4b-71f38379997f",
-            "material_standby_temperature": 210,
-            "material_type": "PETG",
-            "retraction_amount": 4.5,
-            "retraction_extrusion_window": 4.5,
-            "retraction_prime_speed": 60,
-            "retraction_retract_speed": 60,
-            "retraction_speed": 60,
-            "wipe_retraction_amount": 4.5,
-            "wipe_retraction_prime_speed": 60,
-            "wipe_retraction_retract_speed": 60,
-            "wipe_retraction_speed": 60
-        },
-        "name": "PETG",
-        "setting_scopes": {
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "GOOFOO",
-            "color": "Generic",
-            "color_code": "#ee51f8",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "7236ce0c-2e2a-4c5a-90f1-00537482761f",
-            "material_type": "PEEK",
-            "native_id": "goofoo_peek#resolved-0f3a119072ca6677",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "goofoo_peek"
-        },
-        "data": {
-            "cool_min_temperature": 420,
-            "default_material_bed_temperature": 120,
-            "default_material_print_temperature": 420,
-            "material_bed_temperature": 120,
-            "material_bed_temperature_layer_0": 120,
-            "material_brand": "GOOFOO",
-            "material_break_preparation_temperature": 420,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 405,
-            "material_guid": "7236ce0c-2e2a-4c5a-90f1-00537482761f",
-            "material_initial_print_temperature": 410,
-            "material_print_temperature": 420,
-            "material_print_temperature_layer_0": 420,
-            "material_standby_temperature": 420,
-            "material_type": "PEEK",
-            "retraction_amount": 4.5,
-            "retraction_extrusion_window": 4.5,
-            "retraction_prime_speed": 60,
-            "retraction_retract_speed": 60,
-            "retraction_speed": 60,
-            "wipe_retraction_amount": 4.5,
-            "wipe_retraction_prime_speed": 60,
-            "wipe_retraction_retract_speed": 60,
-            "wipe_retraction_speed": 60
-        },
-        "name": "PEEK",
-        "setting_scopes": {
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "GOOFOO",
-            "color": "Generic",
-            "color_code": "#ee51f8",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "b288a835-0e10-45cd-b47c-cb32673d4ec1",
-            "material_type": "PA",
-            "native_id": "goofoo_pa_cf#resolved-ff0b928c92e636a1",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "goofoo_pa_cf"
-        },
-        "data": {
-            "cool_min_temperature": 260,
-            "default_material_bed_temperature": 120,
-            "default_material_print_temperature": 260,
-            "material_bed_temperature": 120,
-            "material_bed_temperature_layer_0": 120,
-            "material_brand": "GOOFOO",
-            "material_break_preparation_temperature": 260,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 245,
-            "material_guid": "b288a835-0e10-45cd-b47c-cb32673d4ec1",
-            "material_initial_print_temperature": 250,
-            "material_print_temperature": 260,
-            "material_print_temperature_layer_0": 260,
-            "material_standby_temperature": 260,
-            "material_type": "PA",
-            "retraction_amount": 4.5,
-            "retraction_extrusion_window": 4.5,
-            "retraction_prime_speed": 60,
-            "retraction_retract_speed": 60,
-            "retraction_speed": 60,
-            "wipe_retraction_amount": 4.5,
-            "wipe_retraction_prime_speed": 60,
-            "wipe_retraction_retract_speed": 60,
-            "wipe_retraction_speed": 60
-        },
-        "name": "PA-CF",
-        "setting_scopes": {
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "GOOFOO",
-            "color": "Generic",
-            "color_code": "#ee51f8",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "67e9f8b1-bd26-44da-874c-cc62f52df739",
-            "material_type": "PA",
-            "native_id": "goofoo_pa#resolved-8af4da38797f0f74",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "goofoo_pa"
-        },
-        "data": {
-            "cool_min_temperature": 260,
-            "default_material_bed_temperature": 120,
-            "default_material_print_temperature": 260,
-            "material_bed_temperature": 120,
-            "material_bed_temperature_layer_0": 120,
-            "material_brand": "GOOFOO",
-            "material_break_preparation_temperature": 260,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 245,
-            "material_guid": "67e9f8b1-bd26-44da-874c-cc62f52df739",
-            "material_initial_print_temperature": 250,
-            "material_print_temperature": 260,
-            "material_print_temperature_layer_0": 260,
-            "material_standby_temperature": 260,
-            "material_type": "PA",
-            "retraction_amount": 4.5,
-            "retraction_extrusion_window": 4.5,
-            "retraction_prime_speed": 60,
-            "retraction_retract_speed": 60,
-            "retraction_speed": 60,
-            "wipe_retraction_amount": 4.5,
-            "wipe_retraction_prime_speed": 60,
-            "wipe_retraction_retract_speed": 60,
-            "wipe_retraction_speed": 60
-        },
-        "name": "PA",
-        "setting_scopes": {
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "GOOFOO",
-            "color": "Generic",
-            "color_code": "#ee51f8",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "f975e1d4-734f-5a0c-b5ac-6551704c2c37",
-            "material_type": "ABS",
-            "native_id": "goofoo_abs#resolved-59827bcd46a219e4",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "goofoo_abs"
-        },
-        "data": {
-            "cool_min_temperature": 240,
-            "default_material_bed_temperature": 80,
-            "default_material_print_temperature": 240,
-            "material_bed_temperature": 80,
-            "material_bed_temperature_layer_0": 80,
-            "material_brand": "GOOFOO",
-            "material_break_preparation_temperature": 240,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 225,
-            "material_guid": "f975e1d4-734f-5a0c-b5ac-6551704c2c37",
-            "material_initial_print_temperature": 230,
-            "material_print_temperature": 240,
-            "material_print_temperature_layer_0": 240,
-            "material_standby_temperature": 240,
-            "material_type": "ABS",
-            "retraction_amount": 4.5,
-            "retraction_extrusion_window": 4.5,
-            "retraction_prime_speed": 60,
-            "retraction_retract_speed": 60,
-            "retraction_speed": 60,
-            "wipe_retraction_amount": 4.5,
-            "wipe_retraction_prime_speed": 60,
-            "wipe_retraction_retract_speed": 60,
-            "wipe_retraction_speed": 60
-        },
-        "name": "ABS+",
-        "setting_scopes": {
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "GOOFOO",
-            "color": "Generic",
-            "color_code": "#ee51f8",
-            "description": null,
-            "diameter": 1.75,
-            "guid": "15d15996-4f14-4edb-bc4c-f8ba06544578",
-            "material_type": "PLA",
-            "native_id": "goofoo_emarble_pla#resolved-167b3a5ef2410a50",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "goofoo_emarble_pla"
-        },
-        "data": {
-            "cool_min_temperature": 200,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 200,
-            "material_brand": "GOOFOO",
-            "material_break_preparation_temperature": 200,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 185,
-            "material_guid": "15d15996-4f14-4edb-bc4c-f8ba06544578",
-            "material_initial_print_temperature": 190,
-            "material_print_temperature": 200,
-            "material_print_temperature_layer_0": 200,
-            "material_standby_temperature": 200,
-            "material_type": "PLA",
-            "retraction_amount": 4.5,
-            "retraction_extrusion_window": 4.5,
-            "retraction_prime_speed": 60,
-            "retraction_retract_speed": 60,
-            "retraction_speed": 60,
-            "wipe_retraction_amount": 4.5,
-            "wipe_retraction_prime_speed": 60,
-            "wipe_retraction_retract_speed": 60,
-            "wipe_retraction_speed": 60
-        },
-        "name": "eMarble",
-        "setting_scopes": {
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
         },
         "compatible_printers": {
             "Dremel 3D20": [
@@ -1096,46 +378,192 @@
             ]
         },
         "context": {
-            "brand": "Eazao",
-            "color": "White",
-            "color_code": "#eeeeee",
-            "description": null,
+            "brand": "Dremel",
+            "color": "Black",
+            "color_code": "#231f20",
+            "description": "Thermoplastic Polyurethanes (TPU95) based filament specifically engineered for the Dremel 3D45 printer. It is a flexible, rubber-like filament which can stretch and bend with ease.  Ideal for printing objects which need to be flexible or can absorb shock.  Earth friendly cardboard spool holders are made from recycled materials.",
             "diameter": 1.75,
-            "guid": "e0752072-a685-8721-dfd4-837075eb4f57",
-            "material_type": "Clay",
-            "native_id": "eazao_clay#resolved-948d46f26b4b05ee",
+            "guid": "58e363ec-e158-499e-a69b-cb8fbf0924b5",
+            "material_type": "TPU",
+            "native_id": "dremel_tpu#resolved-dd3961d4cd6785f9",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "eazao_clay"
+            "source_native_id": "dremel_tpu"
         },
         "data": {
             "cool_fan_speed": 100.0,
-            "cool_min_temperature": 0,
-            "default_material_bed_temperature": 0,
-            "default_material_print_temperature": 0,
-            "material_bed_temperature": 0,
-            "material_bed_temperature_layer_0": 0,
-            "material_brand": "Eazao",
-            "material_break_preparation_temperature": 0,
+            "cool_min_temperature": 230,
+            "default_material_bed_temperature": 60,
+            "default_material_print_temperature": 230,
+            "material_brand": "Dremel",
+            "material_break_preparation_temperature": 230,
             "material_diameter": 1.75,
-            "material_final_print_temperature": -15,
-            "material_guid": "e0752072-a685-8721-dfd4-837075eb4f57",
-            "material_initial_print_temperature": -10,
-            "material_print_temperature": 0,
-            "material_print_temperature_layer_0": 0,
-            "material_standby_temperature": 0,
-            "material_type": "Clay",
-            "retraction_amount": 3,
-            "retraction_extrusion_window": 3,
-            "retraction_speed": 25,
-            "wipe_retraction_amount": 3
+            "material_final_print_temperature": 215,
+            "material_guid": "58e363ec-e158-499e-a69b-cb8fbf0924b5",
+            "material_initial_print_temperature": 220,
+            "material_print_temperature": 230,
+            "material_print_temperature_layer_0": 230,
+            "material_standby_temperature": 175,
+            "material_type": "TPU",
+            "retraction_speed": 25.0
         },
-        "name": "Clay",
+        "name": "Dremel TPU Black",
         "setting_scopes": {
             "cool_fan_speed": "extruder.0",
             "cool_min_temperature": "extruder.0",
             "default_material_bed_temperature": "global",
             "default_material_print_temperature": "extruder.0",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "retraction_speed": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": []
+        },
+        "compatible_printers": {
+            "Dremel 3D20": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "brand": "Volumic",
+            "color": "Generic",
+            "color_code": "#00ff00",
+            "description": "PLA Ultra with 80% pure bronze (no additive).",
+            "diameter": 1.75,
+            "guid": "948865b1-27bb-45ec-b8de-d56a1ff1bdd0",
+            "material_type": "Metal",
+            "native_id": "volumic_br80_ultra#resolved-3d5cba8db37a46d6",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "volumic_br80_ultra"
+        },
+        "data": {
+            "cool_fan_speed": 80.0,
+            "cool_fan_speed_max": 80.0,
+            "cool_fan_speed_min": 80.0,
+            "cool_min_temperature": 190.0,
+            "default_material_bed_temperature": 45.0,
+            "default_material_print_temperature": 190.0,
+            "material_bed_temperature": 45.0,
+            "material_bed_temperature_layer_0": 45.0,
+            "material_brand": "Volumic",
+            "material_break_preparation_temperature": 190.0,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": 175.0,
+            "material_guid": "948865b1-27bb-45ec-b8de-d56a1ff1bdd0",
+            "material_initial_print_temperature": 180.0,
+            "material_print_temperature": 190.0,
+            "material_print_temperature_layer_0": 190.0,
+            "material_standby_temperature": 165.0,
+            "material_type": "Metal",
+            "retraction_amount": 1.0,
+            "retraction_extrusion_window": 1.0,
+            "retraction_speed": 25.0,
+            "wipe_retraction_amount": 1.0
+        },
+        "name": "BRONZE80 Ultra",
+        "setting_scopes": {
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_max": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
+            "material_brand": "extruder.0",
+            "material_break_preparation_temperature": "extruder.0",
+            "material_diameter": "extruder.0",
+            "material_final_print_temperature": "extruder.0",
+            "material_guid": "extruder.0",
+            "material_initial_print_temperature": "extruder.0",
+            "material_print_temperature": "extruder.0",
+            "material_print_temperature_layer_0": "extruder.0",
+            "material_standby_temperature": "extruder.0",
+            "material_type": "extruder.0",
+            "retraction_amount": "extruder.0",
+            "retraction_extrusion_window": "extruder.0",
+            "retraction_speed": "extruder.0",
+            "wipe_retraction_amount": "extruder.0"
+        }
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatibility": {
+            "default": true,
+            "machines": []
+        },
+        "compatible_printers": {
+            "Dremel 3D20": [
+                "0.4"
+            ]
+        },
+        "context": {
+            "brand": "Volumic",
+            "color": "Generic",
+            "color_code": "#00ff00",
+            "description": "The must of nylons, easy to print, with very good adhesion and low warping. Very high quality material (industrial grade) and a very nice finish.",
+            "diameter": 1.75,
+            "guid": "432b8465-48e2-4ef2-a02c-803250300a6e",
+            "material_type": "Nylon",
+            "native_id": "volumic_nylon_ultra#resolved-e6503060514e0648",
+            "resource_version": "5.13.0",
+            "source_kind": "material",
+            "source_native_id": "volumic_nylon_ultra"
+        },
+        "data": {
+            "cool_fan_speed": 0.0,
+            "cool_fan_speed_max": 0.0,
+            "cool_fan_speed_min": 0.0,
+            "cool_min_temperature": 238.0,
+            "default_material_bed_temperature": 65.0,
+            "default_material_print_temperature": 238.0,
+            "material_adhesion_tendency": 0,
+            "material_bed_temperature": 65.0,
+            "material_bed_temperature_layer_0": 65.0,
+            "material_brand": "Volumic",
+            "material_break_preparation_temperature": 238.0,
+            "material_diameter": 1.75,
+            "material_final_print_temperature": 223.0,
+            "material_guid": "432b8465-48e2-4ef2-a02c-803250300a6e",
+            "material_initial_print_temperature": 228.0,
+            "material_print_temperature": 238.0,
+            "material_print_temperature_layer_0": 238.0,
+            "material_standby_temperature": 175.0,
+            "material_type": "Nylon",
+            "retraction_amount": 2.0,
+            "retraction_extrusion_window": 2.0,
+            "retraction_speed": 25.0,
+            "wipe_retraction_amount": 2.0
+        },
+        "name": "NYLON Ultra",
+        "setting_scopes": {
+            "cool_fan_speed": "extruder.0",
+            "cool_fan_speed_max": "extruder.0",
+            "cool_fan_speed_min": "extruder.0",
+            "cool_min_temperature": "extruder.0",
+            "default_material_bed_temperature": "global",
+            "default_material_print_temperature": "extruder.0",
+            "material_adhesion_tendency": "extruder.0",
             "material_bed_temperature": "global",
             "material_bed_temperature_layer_0": "global",
             "material_brand": "extruder.0",
@@ -1249,40 +677,41 @@
             "brand": "Volumic",
             "color": "Generic",
             "color_code": "#00ff00",
-            "description": "PLA Ultra with 80% pure bronze (no additive).",
+            "description": "Polypropylene ULTRA, with its exceptional properties, makes it a very versatile material for prototyping as well as for the functional part.",
             "diameter": 1.75,
-            "guid": "948865b1-27bb-45ec-b8de-d56a1ff1bdd0",
-            "material_type": "Metal",
-            "native_id": "volumic_br80_ultra#resolved-3d5cba8db37a46d6",
+            "guid": "e9b053a4-bb38-4ad5-be20-3fa8198c08be",
+            "material_type": "PP",
+            "native_id": "volumic_pp_ultra#resolved-04fc1f87e0be62ac",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "volumic_br80_ultra"
+            "source_native_id": "volumic_pp_ultra"
         },
         "data": {
-            "cool_fan_speed": 80.0,
-            "cool_fan_speed_max": 80.0,
-            "cool_fan_speed_min": 80.0,
-            "cool_min_temperature": 190.0,
-            "default_material_bed_temperature": 45.0,
-            "default_material_print_temperature": 190.0,
-            "material_bed_temperature": 45.0,
-            "material_bed_temperature_layer_0": 45.0,
+            "cool_fan_speed": 50.0,
+            "cool_fan_speed_max": 50.0,
+            "cool_fan_speed_min": 50.0,
+            "cool_min_temperature": 230.0,
+            "default_material_bed_temperature": 90.0,
+            "default_material_print_temperature": 230.0,
+            "material_adhesion_tendency": 0,
+            "material_bed_temperature": 90.0,
+            "material_bed_temperature_layer_0": 90.0,
             "material_brand": "Volumic",
-            "material_break_preparation_temperature": 190.0,
+            "material_break_preparation_temperature": 230.0,
             "material_diameter": 1.75,
-            "material_final_print_temperature": 175.0,
-            "material_guid": "948865b1-27bb-45ec-b8de-d56a1ff1bdd0",
-            "material_initial_print_temperature": 180.0,
-            "material_print_temperature": 190.0,
-            "material_print_temperature_layer_0": 190.0,
-            "material_standby_temperature": 165.0,
-            "material_type": "Metal",
-            "retraction_amount": 1.0,
-            "retraction_extrusion_window": 1.0,
+            "material_final_print_temperature": 215.0,
+            "material_guid": "e9b053a4-bb38-4ad5-be20-3fa8198c08be",
+            "material_initial_print_temperature": 220.0,
+            "material_print_temperature": 230.0,
+            "material_print_temperature_layer_0": 230.0,
+            "material_standby_temperature": 175.0,
+            "material_type": "PP",
+            "retraction_amount": 1.2,
+            "retraction_extrusion_window": 1.2,
             "retraction_speed": 25.0,
-            "wipe_retraction_amount": 1.0
+            "wipe_retraction_amount": 1.2
         },
-        "name": "BRONZE80 Ultra",
+        "name": "POLYPRO Ultra",
         "setting_scopes": {
             "cool_fan_speed": "extruder.0",
             "cool_fan_speed_max": "extruder.0",
@@ -1290,6 +719,7 @@
             "cool_min_temperature": "extruder.0",
             "default_material_bed_temperature": "global",
             "default_material_print_temperature": "extruder.0",
+            "material_adhesion_tendency": "extruder.0",
             "material_bed_temperature": "global",
             "material_bed_temperature_layer_0": "global",
             "material_brand": "extruder.0",
@@ -1405,219 +835,6 @@
             "brand": "Volumic",
             "color": "Generic",
             "color_code": "#00ff00",
-            "description": "The Armadillo Ultra is a Nylon-Kevlar (Aramid) filament, giving it unparalleled resistance to large impacts. Make your own custom bulletproof armor! Hardened steel nozzle and training compulsory.",
-            "diameter": 1.75,
-            "guid": "a0cf166b-0c06-4873-a2be-b46190edc25c",
-            "material_type": "Nylon",
-            "native_id": "volumic_arma_ultra#resolved-642b42c247087599",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "volumic_arma_ultra"
-        },
-        "data": {
-            "cool_fan_speed": 0.0,
-            "cool_fan_speed_max": 0.0,
-            "cool_fan_speed_min": 0.0,
-            "cool_min_temperature": 245.0,
-            "default_material_bed_temperature": 65.0,
-            "default_material_print_temperature": 245.0,
-            "material_adhesion_tendency": 0,
-            "material_bed_temperature": 65.0,
-            "material_bed_temperature_layer_0": 65.0,
-            "material_brand": "Volumic",
-            "material_break_preparation_temperature": 245.0,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 230.0,
-            "material_guid": "a0cf166b-0c06-4873-a2be-b46190edc25c",
-            "material_initial_print_temperature": 235.0,
-            "material_print_temperature": 245.0,
-            "material_print_temperature_layer_0": 245.0,
-            "material_standby_temperature": 175.0,
-            "material_type": "Nylon",
-            "retraction_amount": 2.0,
-            "retraction_extrusion_window": 2.0,
-            "retraction_speed": 25.0,
-            "wipe_retraction_amount": 2.0
-        },
-        "name": "ARMADILLO Ultra",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_adhesion_tendency": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Volumic",
-            "color": "Generic",
-            "color_code": "#00ff00",
-            "description": "The Bumper ULTRA, high performance semi-flexible (Shore 60D) for impact-resistant objects.",
-            "diameter": 1.75,
-            "guid": "7bebd9d6-d485-4c23-b644-34d535e97494",
-            "material_type": "PLA",
-            "native_id": "volumic_bumper_ultra#resolved-ee90871899e05dd9",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "volumic_bumper_ultra"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230.0,
-            "default_material_bed_temperature": 50.0,
-            "default_material_print_temperature": 230.0,
-            "material_bed_temperature": 50.0,
-            "material_bed_temperature_layer_0": 50.0,
-            "material_brand": "Volumic",
-            "material_break_preparation_temperature": 230.0,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215.0,
-            "material_guid": "7bebd9d6-d485-4c23-b644-34d535e97494",
-            "material_initial_print_temperature": 220.0,
-            "material_print_temperature": 230.0,
-            "material_print_temperature_layer_0": 230.0,
-            "material_standby_temperature": 175.0,
-            "material_type": "PLA",
-            "retraction_amount": 0.5,
-            "retraction_extrusion_window": 0.5,
-            "retraction_speed": 25.0,
-            "wipe_retraction_amount": 0.5
-        },
-        "name": "BUMPER Ultra",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Volumic",
-            "color": "Generic",
-            "color_code": "#00ff00",
-            "description": "The professional PLA. Very easy to print, excellent adhesion at low temperature, flexibility worthy of ABS, a very high quality material (industrial grade) and a perfect finish.",
-            "diameter": 1.75,
-            "guid": "3f84ad4e-5fc8-4b1a-83d1-1c2636053e07",
-            "material_type": "PLA",
-            "native_id": "volumic_pla_ultra#resolved-20573450305e4ae0",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "volumic_pla_ultra"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "default_material_bed_temperature": 50.0,
-            "default_material_print_temperature": 210.0,
-            "material_bed_temperature": 50.0,
-            "material_bed_temperature_layer_0": 50.0,
-            "material_brand": "Volumic",
-            "material_diameter": 1.75,
-            "material_guid": "3f84ad4e-5fc8-4b1a-83d1-1c2636053e07",
-            "material_standby_temperature": 165.0,
-            "material_type": "PLA",
-            "retraction_amount": 2.0,
-            "retraction_extrusion_window": 2.0,
-            "retraction_speed": 25.0,
-            "wipe_retraction_amount": 2.0
-        },
-        "name": "PLA Ultra",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Volumic",
-            "color": "Generic",
-            "color_code": "#00ff00",
             "description": "Strong Ultra is a nylon filled with fiberglass, giving it unparalleled resistance. Made with a unique anti-abrasive technology that drastically decreases abrasion making it much easier to print with reasonable nozzle / drag wear. Hardened steel nozzle and stainless steel drive compulsory.",
             "diameter": 1.75,
             "guid": "e266efca-37e9-4af8-bb04-a4c43877073a",
@@ -1653,164 +870,6 @@
             "wipe_retraction_amount": 2.0
         },
         "name": "STRONG Ultra",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_adhesion_tendency": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Volumic",
-            "color": "Generic",
-            "color_code": "#00ff00",
-            "description": "Professional PETG loaded with carbon, very easy to print, increased strength and Tg with significant weight gain, the best technical PETG.",
-            "diameter": 1.75,
-            "guid": "64569342-86c5-4bc2-90a7-e85af1acbb58",
-            "material_type": "PETG",
-            "native_id": "volumic_petgcarbone_ultra#resolved-a24352c05039a29f",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "volumic_petgcarbone_ultra"
-        },
-        "data": {
-            "cool_fan_speed": 30.0,
-            "cool_fan_speed_max": 30.0,
-            "cool_fan_speed_min": 30.0,
-            "cool_min_temperature": 240.0,
-            "default_material_bed_temperature": 70.0,
-            "default_material_print_temperature": 240.0,
-            "material_adhesion_tendency": 0,
-            "material_bed_temperature": 70.0,
-            "material_bed_temperature_layer_0": 70.0,
-            "material_brand": "Volumic",
-            "material_break_preparation_temperature": 240.0,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 225.0,
-            "material_guid": "64569342-86c5-4bc2-90a7-e85af1acbb58",
-            "material_initial_print_temperature": 230.0,
-            "material_print_temperature": 240.0,
-            "material_print_temperature_layer_0": 240.0,
-            "material_standby_temperature": 175.0,
-            "material_type": "PETG",
-            "retraction_amount": 2.0,
-            "retraction_extrusion_window": 2.0,
-            "retraction_speed": 25.0,
-            "wipe_retraction_amount": 2.0
-        },
-        "name": "PETG CARBONE Ultra",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_fan_speed_max": "extruder.0",
-            "cool_fan_speed_min": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_adhesion_tendency": "extruder.0",
-            "material_bed_temperature": "global",
-            "material_bed_temperature_layer_0": "global",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_amount": "extruder.0",
-            "retraction_extrusion_window": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_amount": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": []
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Volumic",
-            "color": "Generic",
-            "color_code": "#00ff00",
-            "description": "The must of nylons, easy to print, with very good adhesion and low warping. Very high quality material (industrial grade) and a very nice finish.",
-            "diameter": 1.75,
-            "guid": "432b8465-48e2-4ef2-a02c-803250300a6e",
-            "material_type": "Nylon",
-            "native_id": "volumic_nylon_ultra#resolved-e6503060514e0648",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "volumic_nylon_ultra"
-        },
-        "data": {
-            "cool_fan_speed": 0.0,
-            "cool_fan_speed_max": 0.0,
-            "cool_fan_speed_min": 0.0,
-            "cool_min_temperature": 238.0,
-            "default_material_bed_temperature": 65.0,
-            "default_material_print_temperature": 238.0,
-            "material_adhesion_tendency": 0,
-            "material_bed_temperature": 65.0,
-            "material_bed_temperature_layer_0": 65.0,
-            "material_brand": "Volumic",
-            "material_break_preparation_temperature": 238.0,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 223.0,
-            "material_guid": "432b8465-48e2-4ef2-a02c-803250300a6e",
-            "material_initial_print_temperature": 228.0,
-            "material_print_temperature": 238.0,
-            "material_print_temperature_layer_0": 238.0,
-            "material_standby_temperature": 175.0,
-            "material_type": "Nylon",
-            "retraction_amount": 2.0,
-            "retraction_extrusion_window": 2.0,
-            "retraction_speed": 25.0,
-            "wipe_retraction_amount": 2.0
-        },
-        "name": "NYLON Ultra",
         "setting_scopes": {
             "cool_fan_speed": "extruder.0",
             "cool_fan_speed_max": "extruder.0",
@@ -1934,41 +993,41 @@
             "brand": "Volumic",
             "color": "Generic",
             "color_code": "#00ff00",
-            "description": "Polypropylene ULTRA, with its exceptional properties, makes it a very versatile material for prototyping as well as for the functional part.",
+            "description": "The Armadillo Ultra is a Nylon-Kevlar (Aramid) filament, giving it unparalleled resistance to large impacts. Make your own custom bulletproof armor! Hardened steel nozzle and training compulsory.",
             "diameter": 1.75,
-            "guid": "e9b053a4-bb38-4ad5-be20-3fa8198c08be",
-            "material_type": "PP",
-            "native_id": "volumic_pp_ultra#resolved-04fc1f87e0be62ac",
+            "guid": "a0cf166b-0c06-4873-a2be-b46190edc25c",
+            "material_type": "Nylon",
+            "native_id": "volumic_arma_ultra#resolved-642b42c247087599",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "volumic_pp_ultra"
+            "source_native_id": "volumic_arma_ultra"
         },
         "data": {
-            "cool_fan_speed": 50.0,
-            "cool_fan_speed_max": 50.0,
-            "cool_fan_speed_min": 50.0,
-            "cool_min_temperature": 230.0,
-            "default_material_bed_temperature": 90.0,
-            "default_material_print_temperature": 230.0,
+            "cool_fan_speed": 0.0,
+            "cool_fan_speed_max": 0.0,
+            "cool_fan_speed_min": 0.0,
+            "cool_min_temperature": 245.0,
+            "default_material_bed_temperature": 65.0,
+            "default_material_print_temperature": 245.0,
             "material_adhesion_tendency": 0,
-            "material_bed_temperature": 90.0,
-            "material_bed_temperature_layer_0": 90.0,
+            "material_bed_temperature": 65.0,
+            "material_bed_temperature_layer_0": 65.0,
             "material_brand": "Volumic",
-            "material_break_preparation_temperature": 230.0,
+            "material_break_preparation_temperature": 245.0,
             "material_diameter": 1.75,
-            "material_final_print_temperature": 215.0,
-            "material_guid": "e9b053a4-bb38-4ad5-be20-3fa8198c08be",
-            "material_initial_print_temperature": 220.0,
-            "material_print_temperature": 230.0,
-            "material_print_temperature_layer_0": 230.0,
+            "material_final_print_temperature": 230.0,
+            "material_guid": "a0cf166b-0c06-4873-a2be-b46190edc25c",
+            "material_initial_print_temperature": 235.0,
+            "material_print_temperature": 245.0,
+            "material_print_temperature_layer_0": 245.0,
             "material_standby_temperature": 175.0,
-            "material_type": "PP",
-            "retraction_amount": 1.2,
-            "retraction_extrusion_window": 1.2,
+            "material_type": "Nylon",
+            "retraction_amount": 2.0,
+            "retraction_extrusion_window": 2.0,
             "retraction_speed": 25.0,
-            "wipe_retraction_amount": 1.2
+            "wipe_retraction_amount": 2.0
         },
-        "name": "POLYPRO Ultra",
+        "name": "ARMADILLO Ultra",
         "setting_scopes": {
             "cool_fan_speed": "extruder.0",
             "cool_fan_speed_max": "extruder.0",
@@ -2002,232 +1061,7 @@
         },
         "compatibility": {
             "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Purple",
-            "color_code": "#5d388b",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_type": "PLA",
-            "native_id": "dremel_pla_purple#resolved-9a35116e1880d344",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla_purple"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Purple PLA",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Red",
-            "color_code": "#e01e26",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "f91ac42e-ccc1-4c8b-82b1-04ad6c127bcb",
-            "material_type": "PLA",
-            "native_id": "dremel_pla_red#resolved-795b6c52da88bd21",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla_red"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "f91ac42e-ccc1-4c8b-82b1-04ad6c127bcb",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Dremel PLA Red",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                }
-            ]
+            "machines": []
         },
         "compatible_printers": {
             "Dremel 3D20": [
@@ -2235,43 +1069,44 @@
             ]
         },
         "context": {
-            "brand": "Dremel",
-            "color": "Black",
-            "color_code": "#231f20",
-            "description": "Fast, safe and reliable printing material from Dremel. Nylon is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
+            "brand": "Volumic",
+            "color": "Generic",
+            "color_code": "#00ff00",
+            "description": "Professional PETG loaded with carbon, very easy to print, increased strength and Tg with significant weight gain, the best technical PETG.",
             "diameter": 1.75,
-            "guid": "d29d5390-6fa1-4794-968c-5397c5b07c85",
-            "material_type": "NYLON",
-            "native_id": "dremel_nylon#resolved-eecbafc51379090b",
+            "guid": "64569342-86c5-4bc2-90a7-e85af1acbb58",
+            "material_type": "PETG",
+            "native_id": "volumic_petgcarbone_ultra#resolved-a24352c05039a29f",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "dremel_nylon"
+            "source_native_id": "volumic_petgcarbone_ultra"
         },
         "data": {
-            "cool_fan_speed": 50.0,
-            "cool_fan_speed_max": 50.0,
-            "cool_fan_speed_min": 50.0,
-            "cool_min_temperature": 240,
-            "default_material_bed_temperature": 80.0,
-            "default_material_print_temperature": 240,
-            "material_bed_temperature": 80.0,
-            "material_bed_temperature_layer_0": 80.0,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 240,
+            "cool_fan_speed": 30.0,
+            "cool_fan_speed_max": 30.0,
+            "cool_fan_speed_min": 30.0,
+            "cool_min_temperature": 240.0,
+            "default_material_bed_temperature": 70.0,
+            "default_material_print_temperature": 240.0,
+            "material_adhesion_tendency": 0,
+            "material_bed_temperature": 70.0,
+            "material_bed_temperature_layer_0": 70.0,
+            "material_brand": "Volumic",
+            "material_break_preparation_temperature": 240.0,
             "material_diameter": 1.75,
-            "material_final_print_temperature": 225,
-            "material_guid": "d29d5390-6fa1-4794-968c-5397c5b07c85",
-            "material_initial_print_temperature": 230,
-            "material_print_temperature": 240,
-            "material_print_temperature_layer_0": 240,
-            "material_standby_temperature": 175,
-            "material_type": "NYLON",
-            "retraction_amount": 3.0,
-            "retraction_extrusion_window": 3.0,
+            "material_final_print_temperature": 225.0,
+            "material_guid": "64569342-86c5-4bc2-90a7-e85af1acbb58",
+            "material_initial_print_temperature": 230.0,
+            "material_print_temperature": 240.0,
+            "material_print_temperature_layer_0": 240.0,
+            "material_standby_temperature": 175.0,
+            "material_type": "PETG",
+            "retraction_amount": 2.0,
+            "retraction_extrusion_window": 2.0,
             "retraction_speed": 25.0,
-            "wipe_retraction_amount": 3.0
+            "wipe_retraction_amount": 2.0
         },
-        "name": "Dremel NYLON Black",
+        "name": "PETG CARBONE Ultra",
         "setting_scopes": {
             "cool_fan_speed": "extruder.0",
             "cool_fan_speed_max": "extruder.0",
@@ -2279,6 +1114,7 @@
             "cool_min_temperature": "extruder.0",
             "default_material_bed_temperature": "global",
             "default_material_print_temperature": "extruder.0",
+            "material_adhesion_tendency": "extruder.0",
             "material_bed_temperature": "global",
             "material_bed_temperature_layer_0": "global",
             "material_brand": "extruder.0",
@@ -2304,104 +1140,58 @@
         },
         "compatibility": {
             "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                }
-            ]
+            "machines": []
         },
         "compatible_printers": {
             "Dremel 3D20": [
                 "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
             ]
         },
         "context": {
-            "brand": "Dremel",
-            "color": "Black",
-            "color_code": "#111111",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
+            "brand": "Volumic",
+            "color": "Generic",
+            "color_code": "#00ff00",
+            "description": "The professional PLA. Very easy to print, excellent adhesion at low temperature, flexibility worthy of ABS, a very high quality material (industrial grade) and a perfect finish.",
             "diameter": 1.75,
-            "guid": "b38fc355-86c0-4305-a2f8-8bc2178eb83a",
+            "guid": "3f84ad4e-5fc8-4b1a-83d1-1c2636053e07",
             "material_type": "PLA",
-            "native_id": "dremel_pla_black#resolved-376d37b80a94b973",
+            "native_id": "volumic_pla_ultra#resolved-20573450305e4ae0",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "dremel_pla_black"
+            "source_native_id": "volumic_pla_ultra"
         },
         "data": {
             "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
+            "default_material_bed_temperature": 50.0,
+            "default_material_print_temperature": 210.0,
+            "material_bed_temperature": 50.0,
+            "material_bed_temperature_layer_0": 50.0,
+            "material_brand": "Volumic",
             "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "b38fc355-86c0-4305-a2f8-8bc2178eb83a",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
+            "material_guid": "3f84ad4e-5fc8-4b1a-83d1-1c2636053e07",
+            "material_standby_temperature": 165.0,
             "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
+            "retraction_amount": 2.0,
+            "retraction_extrusion_window": 2.0,
+            "retraction_speed": 25.0,
+            "wipe_retraction_amount": 2.0
         },
-        "name": "Dremel PLA Black",
+        "name": "PLA Ultra",
         "setting_scopes": {
             "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
             "default_material_bed_temperature": "global",
             "default_material_print_temperature": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
             "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
             "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
             "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
             "material_standby_temperature": "extruder.0",
             "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
+            "retraction_amount": "extruder.0",
+            "retraction_extrusion_window": "extruder.0",
             "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
+            "wipe_retraction_amount": "extruder.0"
         }
     },
     {
@@ -2411,88 +1201,56 @@
         },
         "compatibility": {
             "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                }
-            ]
+            "machines": []
         },
         "compatible_printers": {
             "Dremel 3D20": [
                 "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
             ]
         },
         "context": {
-            "brand": "Dremel",
-            "color": "Navy Blue",
-            "color_code": "#1f4060",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
+            "brand": "Volumic",
+            "color": "Generic",
+            "color_code": "#00ff00",
+            "description": "The Bumper ULTRA, high performance semi-flexible (Shore 60D) for impact-resistant objects.",
             "diameter": 1.75,
-            "guid": "a3eb7626-4495-47cc-b242-7eec5172bed5",
+            "guid": "7bebd9d6-d485-4c23-b644-34d535e97494",
             "material_type": "PLA",
-            "native_id": "dremel_pla_matte_navy_blue#resolved-8212aec0b1d8c0e0",
+            "native_id": "volumic_bumper_ultra#resolved-ee90871899e05dd9",
             "resource_version": "5.13.0",
             "source_kind": "material",
-            "source_native_id": "dremel_pla_matte_navy_blue"
+            "source_native_id": "volumic_bumper_ultra"
         },
         "data": {
             "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
+            "cool_min_temperature": 230.0,
+            "default_material_bed_temperature": 50.0,
+            "default_material_print_temperature": 230.0,
+            "material_bed_temperature": 50.0,
+            "material_bed_temperature_layer_0": 50.0,
+            "material_brand": "Volumic",
+            "material_break_preparation_temperature": 230.0,
             "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "a3eb7626-4495-47cc-b242-7eec5172bed5",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
+            "material_final_print_temperature": 215.0,
+            "material_guid": "7bebd9d6-d485-4c23-b644-34d535e97494",
+            "material_initial_print_temperature": 220.0,
+            "material_print_temperature": 230.0,
+            "material_print_temperature_layer_0": 230.0,
+            "material_standby_temperature": 175.0,
             "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
+            "retraction_amount": 0.5,
+            "retraction_extrusion_window": 0.5,
+            "retraction_speed": 25.0,
+            "wipe_retraction_amount": 0.5
         },
-        "name": "Matte Navy Blue PLA",
+        "name": "BUMPER Ultra",
         "setting_scopes": {
             "cool_fan_speed": "extruder.0",
             "cool_min_temperature": "extruder.0",
             "default_material_bed_temperature": "global",
             "default_material_print_temperature": "extruder.0",
+            "material_bed_temperature": "global",
+            "material_bed_temperature_layer_0": "global",
             "material_brand": "extruder.0",
             "material_break_preparation_temperature": "extruder.0",
             "material_diameter": "extruder.0",
@@ -2503,1544 +1261,10 @@
             "material_print_temperature_layer_0": "extruder.0",
             "material_standby_temperature": "extruder.0",
             "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
+            "retraction_amount": "extruder.0",
+            "retraction_extrusion_window": "extruder.0",
             "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Blue",
-            "color_code": "#397FC1",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "a3eb7626-4495-47cc-b242-7eec5172bed5",
-            "material_type": "PLA",
-            "native_id": "dremel_pla#resolved-e9a60f77b9cbec68",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "a3eb7626-4495-47cc-b242-7eec5172bed5",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Dremel PLA Blue",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "White",
-            "color_code": "#ffffff",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_type": "PLA",
-            "native_id": "dremel_pla_white#resolved-5f5ce6ba0fdce8b3",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla_white"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "White PLA",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Black",
-            "color_code": "#231f20",
-            "description": "Thermoplastic Polyurethanes (TPU95) based filament specifically engineered for the Dremel 3D45 printer. It is a flexible, rubber-like filament which can stretch and bend with ease.  Ideal for printing objects which need to be flexible or can absorb shock.  Earth friendly cardboard spool holders are made from recycled materials.",
-            "diameter": 1.75,
-            "guid": "58e363ec-e158-499e-a69b-cb8fbf0924b5",
-            "material_type": "TPU",
-            "native_id": "dremel_tpu#resolved-dd3961d4cd6785f9",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_tpu"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "58e363ec-e158-499e-a69b-cb8fbf0924b5",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "TPU",
-            "retraction_speed": 25.0
-        },
-        "name": "Dremel TPU Black",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Yellow",
-            "color_code": "#ede011",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_type": "PLA",
-            "native_id": "dremel_pla_yellow#resolved-9bbed9c4ac906e14",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla_yellow"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Yellow PLA",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Pink",
-            "color_code": "#f24599",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_type": "PLA",
-            "native_id": "dremel_pla_pink#resolved-4c6b219f520495eb",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla_pink"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Pink PLA",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Orange",
-            "color_code": "#f39200",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "a3eb7626-4495-47cc-b242-7eec5172bed5",
-            "material_type": "PLA",
-            "native_id": "dremel_pla_orange#resolved-0684ff384f2912ae",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla_orange"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "a3eb7626-4495-47cc-b242-7eec5172bed5",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Dremel PLA Orange",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Beige",
-            "color_code": "#cca897",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "976527db-df45-4fb0-84e8-939c99c4d3a8",
-            "material_type": "PLA",
-            "native_id": "dremel_pla_matte_beige#resolved-2485810ac7dbcf56",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla_matte_beige"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "976527db-df45-4fb0-84e8-939c99c4d3a8",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Matte Beige PLA",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Brown",
-            "color_code": "#724e3d",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "976527db-df45-4fb0-84e8-939c99c4d3a8",
-            "material_type": "PLA",
-            "native_id": "dremel_pla_matte_brown#resolved-8e992531b98ba724",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla_matte_brown"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "976527db-df45-4fb0-84e8-939c99c4d3a8",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Matte Brown PLA",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Green",
-            "color_code": "#04aa5b",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "de46318e-77c7-4f61-a24b-62c065cb4e8e",
-            "material_type": "PLA",
-            "native_id": "dremel_pla_green#resolved-40103febf47ba796",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla_green"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "de46318e-77c7-4f61-a24b-62c065cb4e8e",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Dremel PLA Green",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "White",
-            "color_code": "#FFFFFF",
-            "description": "Fast, safe and reliable printing material from Dremel. ECO-ABS is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "f0468f92-e7ba-4453-84bb-78f1be876a61",
-            "material_type": "ECO-ABS",
-            "native_id": "dremel_eco_abs_white#resolved-4648809ca6a12ecf",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_eco_abs_white"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "f0468f92-e7ba-4453-84bb-78f1be876a61",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "ECO-ABS",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Dremel ECO-ABS White",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Gray",
-            "color_code": "#82817b",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_type": "PLA",
-            "native_id": "dremel_pla_gray#resolved-17e5466248f611b1",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla_gray"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Gray PLA",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Olive",
-            "color_code": "#515234",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "976527db-df45-4fb0-84e8-939c99c4d3a8",
-            "material_type": "PLA",
-            "native_id": "dremel_pla_matte_olive#resolved-7f2d6ac94b62a0d6",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla_matte_olive"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "976527db-df45-4fb0-84e8-939c99c4d3a8",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Matte Olive PLA",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Translucent",
-            "color_code": "#e6d4b7",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_type": "PLA",
-            "native_id": "dremel_pla_translucent#resolved-aad7fc45640dd193",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla_translucent"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Translucent PLA",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Black",
-            "color_code": "#231f20",
-            "description": "Fast, safe and reliable printing material from Dremel. ECO-ABS is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "7193e86e-00df-46fd-9295-94c96191809d",
-            "material_type": "ECO-ABS",
-            "native_id": "dremel_eco_abs#resolved-6071f6ec14c6ba93",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_eco_abs"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "7193e86e-00df-46fd-9295-94c96191809d",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "ECO-ABS",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Dremel ECO-ABS Black",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
-        }
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatibility": {
-            "default": true,
-            "machines": [
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D45"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D40"
-                        }
-                    ]
-                },
-                {
-                    "compatible": true,
-                    "hotends": {},
-                    "identifiers": [
-                        {
-                            "manufacturer": "Dremel",
-                            "product": "Dremel3D20"
-                        }
-                    ]
-                }
-            ]
-        },
-        "compatible_printers": {
-            "Dremel 3D20": [
-                "0.4"
-            ],
-            "Dremel 3D40": [
-                "0.4"
-            ]
-        },
-        "context": {
-            "brand": "Dremel",
-            "color": "Gold",
-            "color_code": "#fdcd25",
-            "description": "Fast, safe and reliable printing material from Dremel. PLA is ideal for the fast and reliable printing of parts and prototypes with a great surface quality.",
-            "diameter": 1.75,
-            "guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_type": "PLA",
-            "native_id": "dremel_pla_gold#resolved-3c4b3afac04a3794",
-            "resource_version": "5.13.0",
-            "source_kind": "material",
-            "source_native_id": "dremel_pla_gold"
-        },
-        "data": {
-            "cool_fan_speed": 100.0,
-            "cool_min_temperature": 230,
-            "default_material_bed_temperature": 60,
-            "default_material_print_temperature": 230,
-            "material_brand": "Dremel",
-            "material_break_preparation_temperature": 230,
-            "material_diameter": 1.75,
-            "material_final_print_temperature": 215,
-            "material_guid": "c1c605bf-6da6-494c-be6c-f2fb95b0f6df",
-            "material_initial_print_temperature": 220,
-            "material_print_temperature": 230,
-            "material_print_temperature_layer_0": 230,
-            "material_standby_temperature": 175,
-            "material_type": "PLA",
-            "retraction_prime_speed": 60.0,
-            "retraction_retract_speed": 60.0,
-            "retraction_speed": 60.0,
-            "wipe_retraction_prime_speed": 60.0,
-            "wipe_retraction_retract_speed": 60.0,
-            "wipe_retraction_speed": 60.0
-        },
-        "name": "Gold PLA",
-        "setting_scopes": {
-            "cool_fan_speed": "extruder.0",
-            "cool_min_temperature": "extruder.0",
-            "default_material_bed_temperature": "global",
-            "default_material_print_temperature": "extruder.0",
-            "material_brand": "extruder.0",
-            "material_break_preparation_temperature": "extruder.0",
-            "material_diameter": "extruder.0",
-            "material_final_print_temperature": "extruder.0",
-            "material_guid": "extruder.0",
-            "material_initial_print_temperature": "extruder.0",
-            "material_print_temperature": "extruder.0",
-            "material_print_temperature_layer_0": "extruder.0",
-            "material_standby_temperature": "extruder.0",
-            "material_type": "extruder.0",
-            "retraction_prime_speed": "extruder.0",
-            "retraction_retract_speed": "extruder.0",
-            "retraction_speed": "extruder.0",
-            "wipe_retraction_prime_speed": "extruder.0",
-            "wipe_retraction_retract_speed": "extruder.0",
-            "wipe_retraction_speed": "extruder.0"
+            "wipe_retraction_amount": "extruder.0"
         }
     }
 ]
