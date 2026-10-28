@@ -41,9 +41,10 @@ the versioned setting definitions and is never copied into profile rows. Only
 allowlisted, profile-specific historical values are attached to their owning machine,
 filament, or process profile; equal values for several engine ABIs are stored once.
 BambuStudio currently needs overrides only for G-code settings, but the mechanism is
-setting-agnostic. It publishes canonical nightly settings with sparse overrides for
-older releases and its two other supported releases. User-created SimplyPrint
-profiles remain override-free.
+setting-agnostic. Its canonical settings are those of the newest release SimplyPrint
+runs, with sparse overrides for the two older supported releases. Pin the lock to
+a deployed release: every setting outside the allowlist reaches all releases with
+the canonical value. User-created SimplyPrint profiles remain override-free.
 
 ## Cura resources
 
