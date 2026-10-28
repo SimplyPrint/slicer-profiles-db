@@ -191,6 +191,12 @@ def collect_records(
             record_id = f"{engine}:filament:generic:{source_id}"
             if catalog_lane:
                 record_id += f"@{catalog_lane}"
+            # The slicer-wide library and a vendor's own list can carry the same
+            # profile; each list's copy is a separate record.
+            if record_id in records:
+                record_id += f":vendor:{source_vendor or '*'}"
+            if record_id in records:
+                raise ValueError(f"Duplicate generic filament record: {record_id}")
             records[record_id] = {
                 "engine": engine,
                 "generic": True,

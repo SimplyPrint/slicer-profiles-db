@@ -160,6 +160,26 @@ def test_profiles_with_one_source_id_and_different_payloads_remain_distinct(tmp_
     }
 
 
+def test_generic_filament_in_library_and_vendor_list_keeps_both_copies(tmp_path):
+    profile = {
+        "name": "Generic FLEX",
+        "data": {"temperature": [240]},
+        "context": {"source_id": "PrusaResearch/filament/Generic FLEX"},
+    }
+    _write(tmp_path / "brands/prusaslicer/generic_filament_profiles.json", [profile])
+    _write(
+        tmp_path / "brands/prusaslicer/PrusaResearch/generic_filament_profiles.json",
+        [profile],
+    )
+
+    records = collect_records(tmp_path)
+
+    assert sorted(record["source_vendor"] or "" for record in records.values()) == [
+        "",
+        "PrusaResearch",
+    ]
+
+
 def test_bundle_rejects_incomplete_model_coverage(tmp_path):
     coverage = _coverage()
     coverage["base"]["models"][0]["outcomes"] = {}
