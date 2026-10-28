@@ -15,14 +15,14 @@
             ],
             "activate_chamber_temp_control": "0",
             "additional_cooling_fan_speed": [
-                "0"
+                "80"
             ],
             "bed_type": [
                 "Cool Plate"
             ],
             "chamber_temperature": "35",
             "close_fan_the_first_x_layers": [
-                "3"
+                "1"
             ],
             "compatible_printers": [
                 "Creality Ender-3 V4 0.4 nozzle"
@@ -32,46 +32,487 @@
             ],
             "cool_cds_fan_start_at_height": "0.5",
             "cool_plate_temp": [
-                "70"
+                "55"
             ],
             "cool_plate_temp_initial_layer": [
-                "70"
+                "55"
             ],
             "cool_special_cds_fan_speed": "0",
-            "customized_plate_temp": "80",
-            "customized_plate_temp_initial_layer": "80",
+            "customized_plate_temp": "60",
+            "customized_plate_temp_initial_layer": "60",
             "default_filament_colour": "\"\"",
             "during_print_exhaust_fan_speed": [
                 "60"
             ],
             "enable_overhang_bridge_fan": "1",
-            "enable_pressure_advance": "0",
+            "enable_pressure_advance": "1",
             "enable_special_area_additional_cooling_fan": "0",
             "eng_plate_temp": [
-                "0"
+                "50"
             ],
             "eng_plate_temp_initial_layer": [
-                "0"
+                "50"
             ],
-            "epoxy_resin_plate_temp": "70",
-            "epoxy_resin_plate_temp_initial_layer": "70",
+            "epoxy_resin_plate_temp": "50",
+            "epoxy_resin_plate_temp_initial_layer": "50",
             "fan_cooling_layer_time": [
-                "30"
+                "100"
             ],
             "fan_max_speed": [
-                "80"
+                "100"
             ],
             "fan_min_speed": [
-                "40"
-            ],
-            "filament_adhesiveness_category": [
-                "300"
+                "100"
             ],
             "filament_cooling_final_speed": "3.4",
             "filament_cooling_initial_speed": "2.2",
             "filament_cooling_moves": "4",
             "filament_cost": [
-                "14"
+                "32"
+            ],
+            "filament_density": [
+                "1.27"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.95"
+            ],
+            "filament_id": "02001",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_load_time": "0",
+            "filament_loading_speed": "28",
+            "filament_loading_speed_start": "3",
+            "filament_max_volumetric_speed": [
+                "23"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_multitool_ramming": "0",
+            "filament_multitool_ramming_flow": "10",
+            "filament_multitool_ramming_volume": "10",
+            "filament_notes": "\"\"",
+            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_lift_above": "nil",
+            "filament_retract_lift_below": "nil",
+            "filament_retract_lift_enforce": "nil",
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "1"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": "100%",
+            "filament_shrinkage_compensation_z": "100%",
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
+            ],
+            "filament_toolchange_delay": "0",
+            "filament_type": [
+                "PLA-CF"
+            ],
+            "filament_unload_time": "0",
+            "filament_unloading_speed": "90",
+            "filament_unloading_speed_start": "100",
+            "filament_vendor": [
+                "Creality"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "instantiation": "true",
+            "material_flow_dependent_temperature": "0",
+            "material_flow_temp_graph": "[[1.0,210],[1.2,220]]",
+            "name": "Hyper PLA-CF @Ender-3 V4-all",
+            "nozzle_temperature": [
+                "220"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "220"
+            ],
+            "nozzle_temperature_range_high": [
+                "240"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "pressure_advance": "0.028",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "0"
+            ],
+            "setting_id": "30n5mJl8L6az4Ugt",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "8"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "support_material_interface_fan_speed": "-1",
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "60"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "60"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFL98",
+        "name": "Hyper PLA-CF @Ender-3 V4-all"
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatible_printers": {
+            "Creality Ender-3 V4": [
+                "0.4"
+            ]
+        },
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "activate_chamber_temp_control": "0",
+            "additional_cooling_fan_speed": [
+                "80"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": "35",
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Creality Ender-3 V4 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "80"
+            ],
+            "cool_cds_fan_start_at_height": "0.5",
+            "cool_plate_temp": [
+                "55"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "55"
+            ],
+            "cool_special_cds_fan_speed": "0",
+            "customized_plate_temp": "60",
+            "customized_plate_temp_initial_layer": "60",
+            "default_filament_colour": "\"\"",
+            "during_print_exhaust_fan_speed": [
+                "60"
+            ],
+            "enable_overhang_bridge_fan": "1",
+            "enable_pressure_advance": "1",
+            "enable_special_area_additional_cooling_fan": "0",
+            "eng_plate_temp": [
+                "50"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "50"
+            ],
+            "epoxy_resin_plate_temp": "50",
+            "epoxy_resin_plate_temp_initial_layer": "50",
+            "fan_cooling_layer_time": [
+                "100"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "100"
+            ],
+            "filament_cooling_final_speed": "3.4",
+            "filament_cooling_initial_speed": "2.2",
+            "filament_cooling_moves": "4",
+            "filament_cost": [
+                "30"
+            ],
+            "filament_density": [
+                "1.21"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.95"
+            ],
+            "filament_id": "00006",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_load_time": "0",
+            "filament_loading_speed": "28",
+            "filament_loading_speed_start": "3",
+            "filament_max_volumetric_speed": [
+                "18"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_multitool_ramming": "0",
+            "filament_multitool_ramming_flow": "10",
+            "filament_multitool_ramming_volume": "10",
+            "filament_notes": "\"\"",
+            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_lift_above": "nil",
+            "filament_retract_lift_below": "nil",
+            "filament_retract_lift_enforce": "nil",
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "1"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": "100%",
+            "filament_shrinkage_compensation_z": "100%",
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
+            ],
+            "filament_toolchange_delay": "0",
+            "filament_type": [
+                "PLA-CF"
+            ],
+            "filament_unload_time": "0",
+            "filament_unloading_speed": "90",
+            "filament_unloading_speed_start": "100",
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "instantiation": "true",
+            "material_flow_dependent_temperature": "0",
+            "material_flow_temp_graph": "[[1.0,210],[1.2,220]]",
+            "name": "Generic PLA-CF @Ender-3 V4-all",
+            "nozzle_temperature": [
+                "220"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "220"
+            ],
+            "nozzle_temperature_range_high": [
+                "240"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "pressure_advance": "0.028",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "0"
+            ],
+            "setting_id": "9EtBYoxLtP3BuplP",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "10"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "support_material_interface_fan_speed": "-1",
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "60"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "60"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFL98",
+        "name": "Generic PLA-CF @Ender-3 V4-all"
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatible_printers": {
+            "Creality Ender-3 V4": [
+                "0.4"
+            ]
+        },
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "activate_chamber_temp_control": "0",
+            "additional_cooling_fan_speed": [
+                "80"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": "35",
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Creality Ender-3 V4 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "80"
+            ],
+            "cool_cds_fan_start_at_height": "0.5",
+            "cool_plate_temp": [
+                "55"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "55"
+            ],
+            "cool_special_cds_fan_speed": "0",
+            "customized_plate_temp": "60",
+            "customized_plate_temp_initial_layer": "60",
+            "default_filament_colour": "\"\"",
+            "during_print_exhaust_fan_speed": [
+                "60"
+            ],
+            "enable_overhang_bridge_fan": "1",
+            "enable_pressure_advance": "1",
+            "enable_special_area_additional_cooling_fan": "0",
+            "eng_plate_temp": [
+                "50"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "50"
+            ],
+            "epoxy_resin_plate_temp": "50",
+            "epoxy_resin_plate_temp_initial_layer": "50",
+            "fan_cooling_layer_time": [
+                "100"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "100"
+            ],
+            "filament_cooling_final_speed": "3.4",
+            "filament_cooling_initial_speed": "2.2",
+            "filament_cooling_moves": "4",
+            "filament_cost": [
+                "20"
             ],
             "filament_density": [
                 "1.24"
@@ -88,7 +529,7 @@
             "filament_flow_ratio": [
                 "0.95"
             ],
-            "filament_id": "00003",
+            "filament_id": "08001",
             "filament_is_support": [
                 "0"
             ],
@@ -119,7 +560,676 @@
                 "nil"
             ],
             "filament_retraction_length": [
-                "1.2"
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "1"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": "100%",
+            "filament_shrinkage_compensation_z": "100%",
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
+            ],
+            "filament_toolchange_delay": "0",
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_unload_time": "0",
+            "filament_unloading_speed": "90",
+            "filament_unloading_speed_start": "100",
+            "filament_vendor": [
+                "Creality"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "instantiation": "true",
+            "material_flow_dependent_temperature": "0",
+            "material_flow_temp_graph": "[[1.0,200],[1.2,220]]",
+            "name": "Ender-PLA @Ender-3 V4-all",
+            "nozzle_temperature": [
+                "220"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "220"
+            ],
+            "nozzle_temperature_range_high": [
+                "240"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "pressure_advance": "0.024",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "0"
+            ],
+            "setting_id": "4ZsPBPTcW7Nbud94",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "10"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "support_material_interface_fan_speed": "-1",
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "60"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "60"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFL99",
+        "name": "Ender-PLA @Ender-3 V4-all"
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatible_printers": {
+            "Creality Ender-3 V4": [
+                "0.4"
+            ]
+        },
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "activate_chamber_temp_control": "0",
+            "additional_cooling_fan_speed": [
+                "0"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": "35",
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Creality Ender-3 V4 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "80"
+            ],
+            "cool_cds_fan_start_at_height": "0.5",
+            "cool_plate_temp": [
+                "70"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "70"
+            ],
+            "cool_special_cds_fan_speed": "0",
+            "customized_plate_temp": "90",
+            "customized_plate_temp_initial_layer": "90",
+            "default_filament_colour": "\"\"",
+            "during_print_exhaust_fan_speed": [
+                "60"
+            ],
+            "enable_overhang_bridge_fan": "1",
+            "enable_pressure_advance": "0",
+            "enable_special_area_additional_cooling_fan": "0",
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "epoxy_resin_plate_temp": "0",
+            "epoxy_resin_plate_temp_initial_layer": "0",
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "80"
+            ],
+            "fan_min_speed": [
+                "40"
+            ],
+            "filament_cooling_final_speed": "3.4",
+            "filament_cooling_initial_speed": "2.2",
+            "filament_cooling_moves": "4",
+            "filament_cost": [
+                "22"
+            ],
+            "filament_density": [
+                "1.08"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.95"
+            ],
+            "filament_id": "03001",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_load_time": "0",
+            "filament_loading_speed": "28",
+            "filament_loading_speed_start": "3",
+            "filament_max_volumetric_speed": [
+                "23"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_multitool_ramming": "0",
+            "filament_multitool_ramming_flow": "10",
+            "filament_multitool_ramming_volume": "10",
+            "filament_notes": "\"\"",
+            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_lift_above": "nil",
+            "filament_retract_lift_below": "nil",
+            "filament_retract_lift_enforce": "nil",
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": "100%",
+            "filament_shrinkage_compensation_z": "100%",
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
+            ],
+            "filament_toolchange_delay": "0",
+            "filament_type": [
+                "ABS"
+            ],
+            "filament_unload_time": "0",
+            "filament_unloading_speed": "90",
+            "filament_unloading_speed_start": "100",
+            "filament_vendor": [
+                "Creality"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "90"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "90"
+            ],
+            "instantiation": "true",
+            "material_flow_dependent_temperature": "0",
+            "material_flow_temp_graph": "[[0.5,240],[0.8,240],[1.0,260]]",
+            "name": "Hyper ABS @Ender-3 V4-all",
+            "nozzle_temperature": [
+                "260"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "260"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "230"
+            ],
+            "overhang_fan_speed": [
+                "90"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "pressure_advance": "0.038",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "0"
+            ],
+            "setting_id": "utCV4AwQPV4Ums35",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "10"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "support_material_interface_fan_speed": "-1",
+            "temperature_vitrification": [
+                "80"
+            ],
+            "textured_plate_temp": [
+                "90"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "90"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFB99",
+        "name": "Hyper ABS @Ender-3 V4-all"
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatible_printers": {
+            "Creality Ender-3 V4": [
+                "0.4"
+            ]
+        },
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "activate_chamber_temp_control": "0",
+            "additional_cooling_fan_speed": [
+                "80"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": "35",
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Creality Ender-3 V4 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "80"
+            ],
+            "cool_cds_fan_start_at_height": "0.5",
+            "cool_plate_temp": [
+                "55"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "55"
+            ],
+            "cool_special_cds_fan_speed": "0",
+            "customized_plate_temp": "60",
+            "customized_plate_temp_initial_layer": "60",
+            "default_filament_colour": "\"\"",
+            "during_print_exhaust_fan_speed": [
+                "60"
+            ],
+            "enable_overhang_bridge_fan": "1",
+            "enable_pressure_advance": "1",
+            "enable_special_area_additional_cooling_fan": "0",
+            "eng_plate_temp": [
+                "50"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "50"
+            ],
+            "epoxy_resin_plate_temp": "50",
+            "epoxy_resin_plate_temp_initial_layer": "50",
+            "fan_cooling_layer_time": [
+                "100"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "100"
+            ],
+            "filament_cooling_final_speed": "3.4",
+            "filament_cooling_initial_speed": "2.2",
+            "filament_cooling_moves": "4",
+            "filament_cost": [
+                "19"
+            ],
+            "filament_density": [
+                "1.3"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.97"
+            ],
+            "filament_id": "14001",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_load_time": "0",
+            "filament_loading_speed": "28",
+            "filament_loading_speed_start": "3",
+            "filament_max_volumetric_speed": [
+                "16"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_multitool_ramming": "0",
+            "filament_multitool_ramming_flow": "10",
+            "filament_multitool_ramming_volume": "10",
+            "filament_notes": "\"\"",
+            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_lift_above": "nil",
+            "filament_retract_lift_below": "nil",
+            "filament_retract_lift_enforce": "nil",
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "1"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": "100%",
+            "filament_shrinkage_compensation_z": "100%",
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
+            ],
+            "filament_toolchange_delay": "0",
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_unload_time": "0",
+            "filament_unloading_speed": "90",
+            "filament_unloading_speed_start": "100",
+            "filament_vendor": [
+                "Creality"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "instantiation": "true",
+            "material_flow_dependent_temperature": "0",
+            "material_flow_temp_graph": "[[1.0,200],[1.2,220]]",
+            "name": "CR-PLA Matte @Ender-3 V4-all",
+            "nozzle_temperature": [
+                "220"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "220"
+            ],
+            "nozzle_temperature_range_high": [
+                "240"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "pressure_advance": "0.03",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "0"
+            ],
+            "setting_id": "0edq8qWqKaGPZc1t",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "14"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "support_material_interface_fan_speed": "-1",
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "60"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "60"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFL99",
+        "name": "CR-PLA Matte @Ender-3 V4-all"
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatible_printers": {
+            "Creality Ender-3 V4": [
+                "0.4"
+            ]
+        },
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "activate_chamber_temp_control": "0",
+            "additional_cooling_fan_speed": [
+                "0"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": "35",
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Creality Ender-3 V4 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "80"
+            ],
+            "cool_cds_fan_start_at_height": "0.5",
+            "cool_plate_temp": [
+                "70"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "70"
+            ],
+            "cool_special_cds_fan_speed": "0",
+            "customized_plate_temp": "80",
+            "customized_plate_temp_initial_layer": "80",
+            "default_filament_colour": "\"\"",
+            "during_print_exhaust_fan_speed": [
+                "60"
+            ],
+            "enable_overhang_bridge_fan": "1",
+            "enable_pressure_advance": "1",
+            "enable_special_area_additional_cooling_fan": "0",
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "epoxy_resin_plate_temp": "70",
+            "epoxy_resin_plate_temp_initial_layer": "70",
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "80"
+            ],
+            "fan_min_speed": [
+                "40"
+            ],
+            "filament_adhesiveness_category": [
+                "300"
+            ],
+            "filament_cooling_final_speed": "3.4",
+            "filament_cooling_initial_speed": "2.2",
+            "filament_cooling_moves": "4",
+            "filament_cost": [
+                "25"
+            ],
+            "filament_density": [
+                "1.23"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.95"
+            ],
+            "filament_id": "06002",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_load_time": "0",
+            "filament_loading_speed": "28",
+            "filament_loading_speed_start": "3",
+            "filament_max_volumetric_speed": [
+                "23"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_multitool_ramming": "0",
+            "filament_multitool_ramming_flow": "10",
+            "filament_multitool_ramming_volume": "10",
+            "filament_notes": "\"\"",
+            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_lift_above": "nil",
+            "filament_retract_lift_below": "nil",
+            "filament_retract_lift_enforce": "nil",
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
             ],
             "filament_retraction_minimum_travel": [
                 "nil"
@@ -146,7 +1256,7 @@
             "filament_unloading_speed": "90",
             "filament_unloading_speed_start": "100",
             "filament_vendor": [
-                "Generic"
+                "Creality"
             ],
             "filament_wipe": [
                 "nil"
@@ -172,8 +1282,8 @@
             ],
             "instantiation": "true",
             "material_flow_dependent_temperature": "0",
-            "material_flow_temp_graph": "[[0.5,230],[1.0,230],[1.2,250]]",
-            "name": "Generic PETG @Ender-3 V4-all",
+            "material_flow_temp_graph": "[[1.0,230],[1.2,250]]",
+            "name": "Hyper PETG @Ender-3 V4-all",
             "nozzle_temperature": [
                 "250"
             ],
@@ -187,24 +1297,24 @@
                 "220"
             ],
             "overhang_fan_speed": [
-                "80"
+                "90"
             ],
             "overhang_fan_threshold": [
                 "25%"
             ],
-            "pressure_advance": "0.05",
+            "pressure_advance": "0.06",
             "reduce_fan_stop_start_freq": [
                 "1"
             ],
             "required_nozzle_HRC": [
                 "0"
             ],
-            "setting_id": "P9ZP95oPCCBeXhGC",
+            "setting_id": "EDl8nfZRP1T8CBOs",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
             "slow_down_layer_time": [
-                "16"
+                "12"
             ],
             "slow_down_min_speed": [
                 "20"
@@ -222,7 +1332,7 @@
             "type": "filament"
         },
         "generic_id": "GFG99",
-        "name": "Generic PETG @Ender-3 V4-all"
+        "name": "Hyper PETG @Ender-3 V4-all"
     },
     {
         "attributes": {
@@ -492,7 +1602,7 @@
                 "60"
             ],
             "enable_overhang_bridge_fan": "1",
-            "enable_pressure_advance": "1",
+            "enable_pressure_advance": "0",
             "enable_special_area_additional_cooling_fan": "0",
             "eng_plate_temp": [
                 "50"
@@ -515,7 +1625,7 @@
             "filament_cooling_initial_speed": "2.2",
             "filament_cooling_moves": "4",
             "filament_cost": [
-                "20"
+                "30"
             ],
             "filament_density": [
                 "1.24"
@@ -532,7 +1642,7 @@
             "filament_flow_ratio": [
                 "0.95"
             ],
-            "filament_id": "08001",
+            "filament_id": "01001",
             "filament_is_support": [
                 "0"
             ],
@@ -540,7 +1650,7 @@
             "filament_loading_speed": "28",
             "filament_loading_speed_start": "3",
             "filament_max_volumetric_speed": [
-                "14"
+                "23"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -616,8 +1726,8 @@
             ],
             "instantiation": "true",
             "material_flow_dependent_temperature": "0",
-            "material_flow_temp_graph": "[[1.0,200],[1.2,220]]",
-            "name": "Ender-PLA @Ender-3 V4-all",
+            "material_flow_temp_graph": "[[0.5,210],[1.0,210],[1.2,220]]",
+            "name": "Hyper PLA @Ender-3 V4-all",
             "nozzle_temperature": [
                 "220"
             ],
@@ -636,19 +1746,19 @@
             "overhang_fan_threshold": [
                 "50%"
             ],
-            "pressure_advance": "0.024",
+            "pressure_advance": "0.04",
             "reduce_fan_stop_start_freq": [
                 "1"
             ],
             "required_nozzle_HRC": [
                 "0"
             ],
-            "setting_id": "4ZsPBPTcW7Nbud94",
+            "setting_id": "jO61I2nsJ2yY0WG4",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
             "slow_down_layer_time": [
-                "10"
+                "8"
             ],
             "slow_down_min_speed": [
                 "20"
@@ -666,229 +1776,7 @@
             "type": "filament"
         },
         "generic_id": "GFL99",
-        "name": "Ender-PLA @Ender-3 V4-all"
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatible_printers": {
-            "Creality Ender-3 V4": [
-                "0.4"
-            ]
-        },
-        "data": {
-            "activate_air_filtration": [
-                "0"
-            ],
-            "activate_chamber_temp_control": "0",
-            "additional_cooling_fan_speed": [
-                "80"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperature": "35",
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "compatible_printers": [
-                "Creality Ender-3 V4 0.4 nozzle"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "80"
-            ],
-            "cool_cds_fan_start_at_height": "0.5",
-            "cool_plate_temp": [
-                "55"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "55"
-            ],
-            "cool_special_cds_fan_speed": "0",
-            "customized_plate_temp": "60",
-            "customized_plate_temp_initial_layer": "60",
-            "default_filament_colour": "\"\"",
-            "during_print_exhaust_fan_speed": [
-                "60"
-            ],
-            "enable_overhang_bridge_fan": "1",
-            "enable_pressure_advance": "0",
-            "enable_special_area_additional_cooling_fan": "0",
-            "eng_plate_temp": [
-                "50"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "50"
-            ],
-            "epoxy_resin_plate_temp": "50",
-            "epoxy_resin_plate_temp_initial_layer": "50",
-            "fan_cooling_layer_time": [
-                "100"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "100"
-            ],
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": [
-                "20"
-            ],
-            "filament_density": [
-                "1.24"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "0.95"
-            ],
-            "filament_id": "00002",
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": [
-                "8"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_multitool_ramming": "0",
-            "filament_multitool_ramming_flow": "10",
-            "filament_multitool_ramming_volume": "10",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_lift_above": "nil",
-            "filament_retract_lift_below": "nil",
-            "filament_retract_lift_enforce": "nil",
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_shrink": "100%",
-            "filament_shrinkage_compensation_z": "100%",
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
-            ],
-            "filament_toolchange_delay": "0",
-            "filament_type": [
-                "PLA"
-            ],
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": [
-                "Generic"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "60"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "60"
-            ],
-            "instantiation": "true",
-            "material_flow_dependent_temperature": "0",
-            "material_flow_temp_graph": "[[0.5,210],[1.0,210],[1.2,220]]",
-            "name": "Generic PLA-Silk @Ender-3 V4-all",
-            "nozzle_temperature": [
-                "220"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "220"
-            ],
-            "nozzle_temperature_range_high": [
-                "240"
-            ],
-            "nozzle_temperature_range_low": [
-                "190"
-            ],
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "50%"
-            ],
-            "pressure_advance": "0.068",
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "0"
-            ],
-            "setting_id": "4oKiaxCpzOVuq7JT",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "16"
-            ],
-            "slow_down_min_speed": [
-                "20"
-            ],
-            "support_material_interface_fan_speed": "-1",
-            "temperature_vitrification": [
-                "60"
-            ],
-            "textured_plate_temp": [
-                "60"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "60"
-            ],
-            "type": "filament"
-        },
-        "generic_id": "GFL96",
-        "name": "Generic PLA-Silk @Ender-3 V4-all"
+        "name": "Hyper PLA @Ender-3 V4-all"
     },
     {
         "attributes": {
@@ -1181,6 +2069,228 @@
             "filament_cooling_initial_speed": "2.2",
             "filament_cooling_moves": "4",
             "filament_cost": [
+                "30"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "30"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.95"
+            ],
+            "filament_id": "05001",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_load_time": "0",
+            "filament_loading_speed": "28",
+            "filament_loading_speed_start": "3",
+            "filament_max_volumetric_speed": [
+                "10"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_multitool_ramming": "0",
+            "filament_multitool_ramming_flow": "10",
+            "filament_multitool_ramming_volume": "10",
+            "filament_notes": "\"\"",
+            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
+            "filament_retract_before_wipe": [
+                "90%"
+            ],
+            "filament_retract_lift_above": "nil",
+            "filament_retract_lift_below": "nil",
+            "filament_retract_lift_enforce": "nil",
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "0.4"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "30"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": "100%",
+            "filament_shrinkage_compensation_z": "100%",
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
+            ],
+            "filament_toolchange_delay": "0",
+            "filament_type": [
+                "PLA"
+            ],
+            "filament_unload_time": "0",
+            "filament_unloading_speed": "90",
+            "filament_unloading_speed_start": "100",
+            "filament_vendor": [
+                "Creality"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "60"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "60"
+            ],
+            "instantiation": "true",
+            "material_flow_dependent_temperature": "0",
+            "material_flow_temp_graph": "[[0.5,210],[1.0,210],[1.2,220]]",
+            "name": "CR-Silk @Ender-3 V4-all",
+            "nozzle_temperature": [
+                "220"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "220"
+            ],
+            "nozzle_temperature_range_high": [
+                "240"
+            ],
+            "nozzle_temperature_range_low": [
+                "190"
+            ],
+            "overhang_fan_speed": [
+                "100"
+            ],
+            "overhang_fan_threshold": [
+                "50%"
+            ],
+            "pressure_advance": "0.048",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "0"
+            ],
+            "setting_id": "96xBgfns6PJljRBO",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "14"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "support_material_interface_fan_speed": "-1",
+            "temperature_vitrification": [
+                "60"
+            ],
+            "textured_plate_temp": [
+                "60"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "60"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFL96",
+        "name": "CR-Silk @Ender-3 V4-all"
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatible_printers": {
+            "Creality Ender-3 V4": [
+                "0.4"
+            ]
+        },
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "activate_chamber_temp_control": "0",
+            "additional_cooling_fan_speed": [
+                "80"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": "35",
+            "close_fan_the_first_x_layers": [
+                "1"
+            ],
+            "compatible_printers": [
+                "Creality Ender-3 V4 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "80"
+            ],
+            "cool_cds_fan_start_at_height": "0.5",
+            "cool_plate_temp": [
+                "55"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "55"
+            ],
+            "cool_special_cds_fan_speed": "0",
+            "customized_plate_temp": "60",
+            "customized_plate_temp_initial_layer": "60",
+            "default_filament_colour": "\"\"",
+            "during_print_exhaust_fan_speed": [
+                "60"
+            ],
+            "enable_overhang_bridge_fan": "1",
+            "enable_pressure_advance": "0",
+            "enable_special_area_additional_cooling_fan": "0",
+            "eng_plate_temp": [
+                "50"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "50"
+            ],
+            "epoxy_resin_plate_temp": "50",
+            "epoxy_resin_plate_temp_initial_layer": "50",
+            "fan_cooling_layer_time": [
+                "100"
+            ],
+            "fan_max_speed": [
+                "100"
+            ],
+            "fan_min_speed": [
+                "100"
+            ],
+            "filament_cooling_final_speed": "3.4",
+            "filament_cooling_initial_speed": "2.2",
+            "filament_cooling_moves": "4",
+            "filament_cost": [
                 "20"
             ],
             "filament_density": [
@@ -1350,14 +2460,14 @@
             ],
             "activate_chamber_temp_control": "0",
             "additional_cooling_fan_speed": [
-                "0"
+                "80"
             ],
             "bed_type": [
                 "Cool Plate"
             ],
             "chamber_temperature": "35",
             "close_fan_the_first_x_layers": [
-                "3"
+                "1"
             ],
             "compatible_printers": [
                 "Creality Ender-3 V4 0.4 nozzle"
@@ -1367,14 +2477,14 @@
             ],
             "cool_cds_fan_start_at_height": "0.5",
             "cool_plate_temp": [
-                "70"
+                "55"
             ],
             "cool_plate_temp_initial_layer": [
-                "70"
+                "55"
             ],
             "cool_special_cds_fan_speed": "0",
-            "customized_plate_temp": "90",
-            "customized_plate_temp_initial_layer": "90",
+            "customized_plate_temp": "60",
+            "customized_plate_temp_initial_layer": "60",
             "default_filament_colour": "\"\"",
             "during_print_exhaust_fan_speed": [
                 "60"
@@ -1383,30 +2493,30 @@
             "enable_pressure_advance": "0",
             "enable_special_area_additional_cooling_fan": "0",
             "eng_plate_temp": [
-                "0"
+                "50"
             ],
             "eng_plate_temp_initial_layer": [
-                "0"
+                "50"
             ],
-            "epoxy_resin_plate_temp": "0",
-            "epoxy_resin_plate_temp_initial_layer": "0",
+            "epoxy_resin_plate_temp": "50",
+            "epoxy_resin_plate_temp_initial_layer": "50",
             "fan_cooling_layer_time": [
-                "30"
+                "100"
             ],
             "fan_max_speed": [
-                "80"
+                "100"
             ],
             "fan_min_speed": [
-                "40"
+                "100"
             ],
             "filament_cooling_final_speed": "3.4",
             "filament_cooling_initial_speed": "2.2",
             "filament_cooling_moves": "4",
             "filament_cost": [
-                "22"
+                "20"
             ],
             "filament_density": [
-                "1.08"
+                "1.24"
             ],
             "filament_deretraction_speed": [
                 "nil"
@@ -1420,7 +2530,7 @@
             "filament_flow_ratio": [
                 "0.95"
             ],
-            "filament_id": "03001",
+            "filament_id": "00002",
             "filament_is_support": [
                 "0"
             ],
@@ -1428,7 +2538,7 @@
             "filament_loading_speed": "28",
             "filament_loading_speed_start": "3",
             "filament_max_volumetric_speed": [
-                "23"
+                "8"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -1472,229 +2582,7 @@
             ],
             "filament_toolchange_delay": "0",
             "filament_type": [
-                "ABS"
-            ],
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": [
-                "Creality"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "90"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "90"
-            ],
-            "instantiation": "true",
-            "material_flow_dependent_temperature": "0",
-            "material_flow_temp_graph": "[[0.5,240],[0.8,240],[1.0,260]]",
-            "name": "Hyper ABS @Ender-3 V4-all",
-            "nozzle_temperature": [
-                "260"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "260"
-            ],
-            "nozzle_temperature_range_high": [
-                "270"
-            ],
-            "nozzle_temperature_range_low": [
-                "230"
-            ],
-            "overhang_fan_speed": [
-                "90"
-            ],
-            "overhang_fan_threshold": [
-                "25%"
-            ],
-            "pressure_advance": "0.038",
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "0"
-            ],
-            "setting_id": "utCV4AwQPV4Ums35",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "10"
-            ],
-            "slow_down_min_speed": [
-                "20"
-            ],
-            "support_material_interface_fan_speed": "-1",
-            "temperature_vitrification": [
-                "80"
-            ],
-            "textured_plate_temp": [
-                "90"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "90"
-            ],
-            "type": "filament"
-        },
-        "generic_id": "GFB99",
-        "name": "Hyper ABS @Ender-3 V4-all"
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatible_printers": {
-            "Creality Ender-3 V4": [
-                "0.4"
-            ]
-        },
-        "data": {
-            "activate_air_filtration": [
-                "0"
-            ],
-            "activate_chamber_temp_control": "0",
-            "additional_cooling_fan_speed": [
-                "70"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperature": "35",
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "compatible_printers": [
-                "Creality Ender-3 V4 0.4 nozzle"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "80"
-            ],
-            "cool_cds_fan_start_at_height": "0.5",
-            "cool_plate_temp": [
-                "55"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "55"
-            ],
-            "cool_special_cds_fan_speed": "0",
-            "customized_plate_temp": "40",
-            "customized_plate_temp_initial_layer": "40",
-            "default_filament_colour": "\"\"",
-            "during_print_exhaust_fan_speed": [
-                "60"
-            ],
-            "enable_overhang_bridge_fan": "1",
-            "enable_pressure_advance": "1",
-            "enable_special_area_additional_cooling_fan": "0",
-            "eng_plate_temp": [
-                "50"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "50"
-            ],
-            "epoxy_resin_plate_temp": "30",
-            "epoxy_resin_plate_temp_initial_layer": "30",
-            "fan_cooling_layer_time": [
-                "100"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "100"
-            ],
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": [
-                "25"
-            ],
-            "filament_density": [
-                "1.24"
-            ],
-            "filament_deretraction_speed": [
-                "30"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "0.96"
-            ],
-            "filament_id": "00005",
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": [
-                "1.6"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_multitool_ramming": "0",
-            "filament_multitool_ramming_flow": "10",
-            "filament_multitool_ramming_volume": "10",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_retract_before_wipe": [
-                "80%"
-            ],
-            "filament_retract_lift_above": "nil",
-            "filament_retract_lift_below": "nil",
-            "filament_retract_lift_enforce": "nil",
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "30"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_shrink": "100%",
-            "filament_shrinkage_compensation_z": "100%",
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
-            ],
-            "filament_toolchange_delay": "0",
-            "filament_type": [
-                "TPU"
+                "PLA"
             ],
             "filament_unload_time": "0",
             "filament_unloading_speed": "90",
@@ -1719,15 +2607,15 @@
                 "0"
             ],
             "hot_plate_temp": [
-                "40"
+                "60"
             ],
             "hot_plate_temp_initial_layer": [
-                "40"
+                "60"
             ],
             "instantiation": "true",
             "material_flow_dependent_temperature": "0",
             "material_flow_temp_graph": "[[0.5,210],[1.0,210],[1.2,220]]",
-            "name": "Generic TPU @Ender-3 V4-all",
+            "name": "Generic PLA-Silk @Ender-3 V4-all",
             "nozzle_temperature": [
                 "220"
             ],
@@ -1735,10 +2623,10 @@
                 "220"
             ],
             "nozzle_temperature_range_high": [
-                "250"
+                "240"
             ],
             "nozzle_temperature_range_low": [
-                "200"
+                "190"
             ],
             "overhang_fan_speed": [
                 "100"
@@ -1746,37 +2634,487 @@
             "overhang_fan_threshold": [
                 "50%"
             ],
-            "pressure_advance": "0.46",
+            "pressure_advance": "0.068",
             "reduce_fan_stop_start_freq": [
                 "1"
             ],
             "required_nozzle_HRC": [
                 "0"
             ],
-            "setting_id": "iJozGH7KvOHz8smj",
+            "setting_id": "4oKiaxCpzOVuq7JT",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
             "slow_down_layer_time": [
-                "12"
+                "16"
             ],
             "slow_down_min_speed": [
-                "10"
+                "20"
             ],
             "support_material_interface_fan_speed": "-1",
             "temperature_vitrification": [
                 "60"
             ],
             "textured_plate_temp": [
-                "40"
+                "60"
             ],
             "textured_plate_temp_initial_layer": [
-                "40"
+                "60"
             ],
             "type": "filament"
         },
-        "generic_id": "GFU99",
-        "name": "Generic TPU @Ender-3 V4-all"
+        "generic_id": "GFL96",
+        "name": "Generic PLA-Silk @Ender-3 V4-all"
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatible_printers": {
+            "Creality Ender-3 V4": [
+                "0.4"
+            ]
+        },
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "activate_chamber_temp_control": "0",
+            "additional_cooling_fan_speed": [
+                "0"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": "35",
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Creality Ender-3 V4 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "80"
+            ],
+            "cool_cds_fan_start_at_height": "0.5",
+            "cool_plate_temp": [
+                "70"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "70"
+            ],
+            "cool_special_cds_fan_speed": "0",
+            "customized_plate_temp": "80",
+            "customized_plate_temp_initial_layer": "80",
+            "default_filament_colour": "\"\"",
+            "during_print_exhaust_fan_speed": [
+                "60"
+            ],
+            "enable_overhang_bridge_fan": "1",
+            "enable_pressure_advance": "0",
+            "enable_special_area_additional_cooling_fan": "0",
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "epoxy_resin_plate_temp": "70",
+            "epoxy_resin_plate_temp_initial_layer": "70",
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "80"
+            ],
+            "fan_min_speed": [
+                "40"
+            ],
+            "filament_adhesiveness_category": [
+                "300"
+            ],
+            "filament_cooling_final_speed": "3.4",
+            "filament_cooling_initial_speed": "2.2",
+            "filament_cooling_moves": "4",
+            "filament_cost": [
+                "14"
+            ],
+            "filament_density": [
+                "1.23"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.95"
+            ],
+            "filament_id": "06001",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_load_time": "0",
+            "filament_loading_speed": "28",
+            "filament_loading_speed_start": "3",
+            "filament_max_volumetric_speed": [
+                "12"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_multitool_ramming": "0",
+            "filament_multitool_ramming_flow": "10",
+            "filament_multitool_ramming_volume": "10",
+            "filament_notes": "\"\"",
+            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_lift_above": "nil",
+            "filament_retract_lift_below": "nil",
+            "filament_retract_lift_enforce": "nil",
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "nil"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": "100%",
+            "filament_shrinkage_compensation_z": "100%",
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
+            ],
+            "filament_toolchange_delay": "0",
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_unload_time": "0",
+            "filament_unloading_speed": "90",
+            "filament_unloading_speed_start": "100",
+            "filament_vendor": [
+                "Creality"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "80"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "80"
+            ],
+            "instantiation": "true",
+            "material_flow_dependent_temperature": "0",
+            "material_flow_temp_graph": "[[0.5,230],[1.0,230],[1.2,250]]",
+            "name": "CR-PETG @Ender-3 V4-all",
+            "nozzle_temperature": [
+                "250"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "250"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "220"
+            ],
+            "overhang_fan_speed": [
+                "90"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "pressure_advance": "0.05",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "0"
+            ],
+            "setting_id": "ZucTDurgG1yttTTE",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "14"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "support_material_interface_fan_speed": "-1",
+            "temperature_vitrification": [
+                "80"
+            ],
+            "textured_plate_temp": [
+                "80"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFG99",
+        "name": "CR-PETG @Ender-3 V4-all"
+    },
+    {
+        "attributes": {
+            "nozzle_diameter": 0.4,
+            "nozzle_volume_type": "standard"
+        },
+        "compatible_printers": {
+            "Creality Ender-3 V4": [
+                "0.4"
+            ]
+        },
+        "data": {
+            "activate_air_filtration": [
+                "0"
+            ],
+            "activate_chamber_temp_control": "0",
+            "additional_cooling_fan_speed": [
+                "0"
+            ],
+            "bed_type": [
+                "Cool Plate"
+            ],
+            "chamber_temperature": "35",
+            "close_fan_the_first_x_layers": [
+                "3"
+            ],
+            "compatible_printers": [
+                "Creality Ender-3 V4 0.4 nozzle"
+            ],
+            "complete_print_exhaust_fan_speed": [
+                "80"
+            ],
+            "cool_cds_fan_start_at_height": "0.5",
+            "cool_plate_temp": [
+                "70"
+            ],
+            "cool_plate_temp_initial_layer": [
+                "70"
+            ],
+            "cool_special_cds_fan_speed": "0",
+            "customized_plate_temp": "80",
+            "customized_plate_temp_initial_layer": "80",
+            "default_filament_colour": "\"\"",
+            "during_print_exhaust_fan_speed": [
+                "60"
+            ],
+            "enable_overhang_bridge_fan": "1",
+            "enable_pressure_advance": "0",
+            "enable_special_area_additional_cooling_fan": "0",
+            "eng_plate_temp": [
+                "0"
+            ],
+            "eng_plate_temp_initial_layer": [
+                "0"
+            ],
+            "epoxy_resin_plate_temp": "70",
+            "epoxy_resin_plate_temp_initial_layer": "70",
+            "fan_cooling_layer_time": [
+                "30"
+            ],
+            "fan_max_speed": [
+                "80"
+            ],
+            "fan_min_speed": [
+                "40"
+            ],
+            "filament_adhesiveness_category": [
+                "300"
+            ],
+            "filament_cooling_final_speed": "3.4",
+            "filament_cooling_initial_speed": "2.2",
+            "filament_cooling_moves": "4",
+            "filament_cost": [
+                "14"
+            ],
+            "filament_density": [
+                "1.24"
+            ],
+            "filament_deretraction_speed": [
+                "nil"
+            ],
+            "filament_diameter": [
+                "1.75"
+            ],
+            "filament_end_gcode": [
+                "; filament end gcode \n"
+            ],
+            "filament_flow_ratio": [
+                "0.95"
+            ],
+            "filament_id": "00003",
+            "filament_is_support": [
+                "0"
+            ],
+            "filament_load_time": "0",
+            "filament_loading_speed": "28",
+            "filament_loading_speed_start": "3",
+            "filament_max_volumetric_speed": [
+                "14"
+            ],
+            "filament_minimal_purge_on_wipe_tower": [
+                "15"
+            ],
+            "filament_multitool_ramming": "0",
+            "filament_multitool_ramming_flow": "10",
+            "filament_multitool_ramming_volume": "10",
+            "filament_notes": "\"\"",
+            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
+            "filament_retract_before_wipe": [
+                "nil"
+            ],
+            "filament_retract_lift_above": "nil",
+            "filament_retract_lift_below": "nil",
+            "filament_retract_lift_enforce": "nil",
+            "filament_retract_restart_extra": [
+                "nil"
+            ],
+            "filament_retract_when_changing_layer": [
+                "nil"
+            ],
+            "filament_retraction_length": [
+                "1.2"
+            ],
+            "filament_retraction_minimum_travel": [
+                "nil"
+            ],
+            "filament_retraction_speed": [
+                "nil"
+            ],
+            "filament_settings_id": [
+                ""
+            ],
+            "filament_shrink": "100%",
+            "filament_shrinkage_compensation_z": "100%",
+            "filament_soluble": [
+                "0"
+            ],
+            "filament_start_gcode": [
+                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
+            ],
+            "filament_toolchange_delay": "0",
+            "filament_type": [
+                "PETG"
+            ],
+            "filament_unload_time": "0",
+            "filament_unloading_speed": "90",
+            "filament_unloading_speed_start": "100",
+            "filament_vendor": [
+                "Generic"
+            ],
+            "filament_wipe": [
+                "nil"
+            ],
+            "filament_wipe_distance": [
+                "nil"
+            ],
+            "filament_z_hop": [
+                "nil"
+            ],
+            "filament_z_hop_types": [
+                "nil"
+            ],
+            "from": "system",
+            "full_fan_speed_layer": [
+                "0"
+            ],
+            "hot_plate_temp": [
+                "80"
+            ],
+            "hot_plate_temp_initial_layer": [
+                "80"
+            ],
+            "instantiation": "true",
+            "material_flow_dependent_temperature": "0",
+            "material_flow_temp_graph": "[[0.5,230],[1.0,230],[1.2,250]]",
+            "name": "Generic PETG @Ender-3 V4-all",
+            "nozzle_temperature": [
+                "250"
+            ],
+            "nozzle_temperature_initial_layer": [
+                "250"
+            ],
+            "nozzle_temperature_range_high": [
+                "270"
+            ],
+            "nozzle_temperature_range_low": [
+                "220"
+            ],
+            "overhang_fan_speed": [
+                "80"
+            ],
+            "overhang_fan_threshold": [
+                "25%"
+            ],
+            "pressure_advance": "0.05",
+            "reduce_fan_stop_start_freq": [
+                "1"
+            ],
+            "required_nozzle_HRC": [
+                "0"
+            ],
+            "setting_id": "P9ZP95oPCCBeXhGC",
+            "slow_down_for_layer_cooling": [
+                "1"
+            ],
+            "slow_down_layer_time": [
+                "16"
+            ],
+            "slow_down_min_speed": [
+                "20"
+            ],
+            "support_material_interface_fan_speed": "-1",
+            "temperature_vitrification": [
+                "80"
+            ],
+            "textured_plate_temp": [
+                "80"
+            ],
+            "textured_plate_temp_initial_layer": [
+                "80"
+            ],
+            "type": "filament"
+        },
+        "generic_id": "GFG99",
+        "name": "Generic PETG @Ender-3 V4-all"
     },
     {
         "attributes": {
@@ -1999,1341 +3337,6 @@
         },
         "generic_id": "GFU99",
         "name": "HP-TPU @Ender-3 V4-all"
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatible_printers": {
-            "Creality Ender-3 V4": [
-                "0.4"
-            ]
-        },
-        "data": {
-            "activate_air_filtration": [
-                "0"
-            ],
-            "activate_chamber_temp_control": "0",
-            "additional_cooling_fan_speed": [
-                "80"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperature": "35",
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "compatible_printers": [
-                "Creality Ender-3 V4 0.4 nozzle"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "80"
-            ],
-            "cool_cds_fan_start_at_height": "0.5",
-            "cool_plate_temp": [
-                "55"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "55"
-            ],
-            "cool_special_cds_fan_speed": "0",
-            "customized_plate_temp": "60",
-            "customized_plate_temp_initial_layer": "60",
-            "default_filament_colour": "\"\"",
-            "during_print_exhaust_fan_speed": [
-                "60"
-            ],
-            "enable_overhang_bridge_fan": "1",
-            "enable_pressure_advance": "0",
-            "enable_special_area_additional_cooling_fan": "0",
-            "eng_plate_temp": [
-                "50"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "50"
-            ],
-            "epoxy_resin_plate_temp": "50",
-            "epoxy_resin_plate_temp_initial_layer": "50",
-            "fan_cooling_layer_time": [
-                "100"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "100"
-            ],
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": [
-                "30"
-            ],
-            "filament_density": [
-                "1.24"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "0.95"
-            ],
-            "filament_id": "01001",
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": [
-                "23"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_multitool_ramming": "0",
-            "filament_multitool_ramming_flow": "10",
-            "filament_multitool_ramming_volume": "10",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_lift_above": "nil",
-            "filament_retract_lift_below": "nil",
-            "filament_retract_lift_enforce": "nil",
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "1"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_shrink": "100%",
-            "filament_shrinkage_compensation_z": "100%",
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
-            ],
-            "filament_toolchange_delay": "0",
-            "filament_type": [
-                "PLA"
-            ],
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": [
-                "Creality"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "60"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "60"
-            ],
-            "instantiation": "true",
-            "material_flow_dependent_temperature": "0",
-            "material_flow_temp_graph": "[[0.5,210],[1.0,210],[1.2,220]]",
-            "name": "Hyper PLA @Ender-3 V4-all",
-            "nozzle_temperature": [
-                "220"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "220"
-            ],
-            "nozzle_temperature_range_high": [
-                "240"
-            ],
-            "nozzle_temperature_range_low": [
-                "190"
-            ],
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "50%"
-            ],
-            "pressure_advance": "0.04",
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "0"
-            ],
-            "setting_id": "jO61I2nsJ2yY0WG4",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "8"
-            ],
-            "slow_down_min_speed": [
-                "20"
-            ],
-            "support_material_interface_fan_speed": "-1",
-            "temperature_vitrification": [
-                "60"
-            ],
-            "textured_plate_temp": [
-                "60"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "60"
-            ],
-            "type": "filament"
-        },
-        "generic_id": "GFL99",
-        "name": "Hyper PLA @Ender-3 V4-all"
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatible_printers": {
-            "Creality Ender-3 V4": [
-                "0.4"
-            ]
-        },
-        "data": {
-            "activate_air_filtration": [
-                "0"
-            ],
-            "activate_chamber_temp_control": "0",
-            "additional_cooling_fan_speed": [
-                "0"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperature": "35",
-            "close_fan_the_first_x_layers": [
-                "3"
-            ],
-            "compatible_printers": [
-                "Creality Ender-3 V4 0.4 nozzle"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "80"
-            ],
-            "cool_cds_fan_start_at_height": "0.5",
-            "cool_plate_temp": [
-                "70"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "70"
-            ],
-            "cool_special_cds_fan_speed": "0",
-            "customized_plate_temp": "80",
-            "customized_plate_temp_initial_layer": "80",
-            "default_filament_colour": "\"\"",
-            "during_print_exhaust_fan_speed": [
-                "60"
-            ],
-            "enable_overhang_bridge_fan": "1",
-            "enable_pressure_advance": "1",
-            "enable_special_area_additional_cooling_fan": "0",
-            "eng_plate_temp": [
-                "0"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "0"
-            ],
-            "epoxy_resin_plate_temp": "70",
-            "epoxy_resin_plate_temp_initial_layer": "70",
-            "fan_cooling_layer_time": [
-                "30"
-            ],
-            "fan_max_speed": [
-                "80"
-            ],
-            "fan_min_speed": [
-                "40"
-            ],
-            "filament_adhesiveness_category": [
-                "300"
-            ],
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": [
-                "25"
-            ],
-            "filament_density": [
-                "1.23"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "0.95"
-            ],
-            "filament_id": "06002",
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": [
-                "23"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_multitool_ramming": "0",
-            "filament_multitool_ramming_flow": "10",
-            "filament_multitool_ramming_volume": "10",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_lift_above": "nil",
-            "filament_retract_lift_below": "nil",
-            "filament_retract_lift_enforce": "nil",
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_shrink": "100%",
-            "filament_shrinkage_compensation_z": "100%",
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
-            ],
-            "filament_toolchange_delay": "0",
-            "filament_type": [
-                "PETG"
-            ],
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": [
-                "Creality"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "80"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "80"
-            ],
-            "instantiation": "true",
-            "material_flow_dependent_temperature": "0",
-            "material_flow_temp_graph": "[[1.0,230],[1.2,250]]",
-            "name": "Hyper PETG @Ender-3 V4-all",
-            "nozzle_temperature": [
-                "250"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "250"
-            ],
-            "nozzle_temperature_range_high": [
-                "270"
-            ],
-            "nozzle_temperature_range_low": [
-                "220"
-            ],
-            "overhang_fan_speed": [
-                "90"
-            ],
-            "overhang_fan_threshold": [
-                "25%"
-            ],
-            "pressure_advance": "0.06",
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "0"
-            ],
-            "setting_id": "EDl8nfZRP1T8CBOs",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "12"
-            ],
-            "slow_down_min_speed": [
-                "20"
-            ],
-            "support_material_interface_fan_speed": "-1",
-            "temperature_vitrification": [
-                "80"
-            ],
-            "textured_plate_temp": [
-                "80"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "80"
-            ],
-            "type": "filament"
-        },
-        "generic_id": "GFG99",
-        "name": "Hyper PETG @Ender-3 V4-all"
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatible_printers": {
-            "Creality Ender-3 V4": [
-                "0.4"
-            ]
-        },
-        "data": {
-            "activate_air_filtration": [
-                "0"
-            ],
-            "activate_chamber_temp_control": "0",
-            "additional_cooling_fan_speed": [
-                "80"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperature": "35",
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "compatible_printers": [
-                "Creality Ender-3 V4 0.4 nozzle"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "80"
-            ],
-            "cool_cds_fan_start_at_height": "0.5",
-            "cool_plate_temp": [
-                "55"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "55"
-            ],
-            "cool_special_cds_fan_speed": "0",
-            "customized_plate_temp": "60",
-            "customized_plate_temp_initial_layer": "60",
-            "default_filament_colour": "\"\"",
-            "during_print_exhaust_fan_speed": [
-                "60"
-            ],
-            "enable_overhang_bridge_fan": "1",
-            "enable_pressure_advance": "1",
-            "enable_special_area_additional_cooling_fan": "0",
-            "eng_plate_temp": [
-                "50"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "50"
-            ],
-            "epoxy_resin_plate_temp": "50",
-            "epoxy_resin_plate_temp_initial_layer": "50",
-            "fan_cooling_layer_time": [
-                "100"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "100"
-            ],
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": [
-                "19"
-            ],
-            "filament_density": [
-                "1.3"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "0.97"
-            ],
-            "filament_id": "14001",
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": [
-                "16"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_multitool_ramming": "0",
-            "filament_multitool_ramming_flow": "10",
-            "filament_multitool_ramming_volume": "10",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_lift_above": "nil",
-            "filament_retract_lift_below": "nil",
-            "filament_retract_lift_enforce": "nil",
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "1"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_shrink": "100%",
-            "filament_shrinkage_compensation_z": "100%",
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
-            ],
-            "filament_toolchange_delay": "0",
-            "filament_type": [
-                "PLA"
-            ],
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": [
-                "Creality"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "60"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "60"
-            ],
-            "instantiation": "true",
-            "material_flow_dependent_temperature": "0",
-            "material_flow_temp_graph": "[[1.0,200],[1.2,220]]",
-            "name": "CR-PLA Matte @Ender-3 V4-all",
-            "nozzle_temperature": [
-                "220"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "220"
-            ],
-            "nozzle_temperature_range_high": [
-                "240"
-            ],
-            "nozzle_temperature_range_low": [
-                "190"
-            ],
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "50%"
-            ],
-            "pressure_advance": "0.03",
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "0"
-            ],
-            "setting_id": "0edq8qWqKaGPZc1t",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "14"
-            ],
-            "slow_down_min_speed": [
-                "20"
-            ],
-            "support_material_interface_fan_speed": "-1",
-            "temperature_vitrification": [
-                "60"
-            ],
-            "textured_plate_temp": [
-                "60"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "60"
-            ],
-            "type": "filament"
-        },
-        "generic_id": "GFL99",
-        "name": "CR-PLA Matte @Ender-3 V4-all"
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatible_printers": {
-            "Creality Ender-3 V4": [
-                "0.4"
-            ]
-        },
-        "data": {
-            "activate_air_filtration": [
-                "0"
-            ],
-            "activate_chamber_temp_control": "0",
-            "additional_cooling_fan_speed": [
-                "80"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperature": "35",
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "compatible_printers": [
-                "Creality Ender-3 V4 0.4 nozzle"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "80"
-            ],
-            "cool_cds_fan_start_at_height": "0.5",
-            "cool_plate_temp": [
-                "55"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "55"
-            ],
-            "cool_special_cds_fan_speed": "0",
-            "customized_plate_temp": "60",
-            "customized_plate_temp_initial_layer": "60",
-            "default_filament_colour": "\"\"",
-            "during_print_exhaust_fan_speed": [
-                "60"
-            ],
-            "enable_overhang_bridge_fan": "1",
-            "enable_pressure_advance": "1",
-            "enable_special_area_additional_cooling_fan": "0",
-            "eng_plate_temp": [
-                "50"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "50"
-            ],
-            "epoxy_resin_plate_temp": "50",
-            "epoxy_resin_plate_temp_initial_layer": "50",
-            "fan_cooling_layer_time": [
-                "100"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "100"
-            ],
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": [
-                "30"
-            ],
-            "filament_density": [
-                "1.21"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "0.95"
-            ],
-            "filament_id": "00006",
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": [
-                "18"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_multitool_ramming": "0",
-            "filament_multitool_ramming_flow": "10",
-            "filament_multitool_ramming_volume": "10",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_lift_above": "nil",
-            "filament_retract_lift_below": "nil",
-            "filament_retract_lift_enforce": "nil",
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "1"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_shrink": "100%",
-            "filament_shrinkage_compensation_z": "100%",
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
-            ],
-            "filament_toolchange_delay": "0",
-            "filament_type": [
-                "PLA-CF"
-            ],
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": [
-                "Generic"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "60"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "60"
-            ],
-            "instantiation": "true",
-            "material_flow_dependent_temperature": "0",
-            "material_flow_temp_graph": "[[1.0,210],[1.2,220]]",
-            "name": "Generic PLA-CF @Ender-3 V4-all",
-            "nozzle_temperature": [
-                "220"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "220"
-            ],
-            "nozzle_temperature_range_high": [
-                "240"
-            ],
-            "nozzle_temperature_range_low": [
-                "190"
-            ],
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "50%"
-            ],
-            "pressure_advance": "0.028",
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "0"
-            ],
-            "setting_id": "9EtBYoxLtP3BuplP",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "10"
-            ],
-            "slow_down_min_speed": [
-                "20"
-            ],
-            "support_material_interface_fan_speed": "-1",
-            "temperature_vitrification": [
-                "60"
-            ],
-            "textured_plate_temp": [
-                "60"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "60"
-            ],
-            "type": "filament"
-        },
-        "generic_id": "GFL98",
-        "name": "Generic PLA-CF @Ender-3 V4-all"
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatible_printers": {
-            "Creality Ender-3 V4": [
-                "0.4"
-            ]
-        },
-        "data": {
-            "activate_air_filtration": [
-                "0"
-            ],
-            "activate_chamber_temp_control": "0",
-            "additional_cooling_fan_speed": [
-                "80"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperature": "35",
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "compatible_printers": [
-                "Creality Ender-3 V4 0.4 nozzle"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "80"
-            ],
-            "cool_cds_fan_start_at_height": "0.5",
-            "cool_plate_temp": [
-                "55"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "55"
-            ],
-            "cool_special_cds_fan_speed": "0",
-            "customized_plate_temp": "60",
-            "customized_plate_temp_initial_layer": "60",
-            "default_filament_colour": "\"\"",
-            "during_print_exhaust_fan_speed": [
-                "60"
-            ],
-            "enable_overhang_bridge_fan": "1",
-            "enable_pressure_advance": "0",
-            "enable_special_area_additional_cooling_fan": "0",
-            "eng_plate_temp": [
-                "50"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "50"
-            ],
-            "epoxy_resin_plate_temp": "50",
-            "epoxy_resin_plate_temp_initial_layer": "50",
-            "fan_cooling_layer_time": [
-                "100"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "100"
-            ],
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": [
-                "30"
-            ],
-            "filament_density": [
-                "1.24"
-            ],
-            "filament_deretraction_speed": [
-                "30"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "0.95"
-            ],
-            "filament_id": "05001",
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": [
-                "10"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_multitool_ramming": "0",
-            "filament_multitool_ramming_flow": "10",
-            "filament_multitool_ramming_volume": "10",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_retract_before_wipe": [
-                "90%"
-            ],
-            "filament_retract_lift_above": "nil",
-            "filament_retract_lift_below": "nil",
-            "filament_retract_lift_enforce": "nil",
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "0.4"
-            ],
-            "filament_retraction_minimum_travel": [
-                "nil"
-            ],
-            "filament_retraction_speed": [
-                "30"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_shrink": "100%",
-            "filament_shrinkage_compensation_z": "100%",
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
-            ],
-            "filament_toolchange_delay": "0",
-            "filament_type": [
-                "PLA"
-            ],
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": [
-                "Creality"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "60"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "60"
-            ],
-            "instantiation": "true",
-            "material_flow_dependent_temperature": "0",
-            "material_flow_temp_graph": "[[0.5,210],[1.0,210],[1.2,220]]",
-            "name": "CR-Silk @Ender-3 V4-all",
-            "nozzle_temperature": [
-                "220"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "220"
-            ],
-            "nozzle_temperature_range_high": [
-                "240"
-            ],
-            "nozzle_temperature_range_low": [
-                "190"
-            ],
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "50%"
-            ],
-            "pressure_advance": "0.048",
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "0"
-            ],
-            "setting_id": "96xBgfns6PJljRBO",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "14"
-            ],
-            "slow_down_min_speed": [
-                "20"
-            ],
-            "support_material_interface_fan_speed": "-1",
-            "temperature_vitrification": [
-                "60"
-            ],
-            "textured_plate_temp": [
-                "60"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "60"
-            ],
-            "type": "filament"
-        },
-        "generic_id": "GFL96",
-        "name": "CR-Silk @Ender-3 V4-all"
-    },
-    {
-        "attributes": {
-            "nozzle_diameter": 0.4,
-            "nozzle_volume_type": "standard"
-        },
-        "compatible_printers": {
-            "Creality Ender-3 V4": [
-                "0.4"
-            ]
-        },
-        "data": {
-            "activate_air_filtration": [
-                "0"
-            ],
-            "activate_chamber_temp_control": "0",
-            "additional_cooling_fan_speed": [
-                "80"
-            ],
-            "bed_type": [
-                "Cool Plate"
-            ],
-            "chamber_temperature": "35",
-            "close_fan_the_first_x_layers": [
-                "1"
-            ],
-            "compatible_printers": [
-                "Creality Ender-3 V4 0.4 nozzle"
-            ],
-            "complete_print_exhaust_fan_speed": [
-                "80"
-            ],
-            "cool_cds_fan_start_at_height": "0.5",
-            "cool_plate_temp": [
-                "55"
-            ],
-            "cool_plate_temp_initial_layer": [
-                "55"
-            ],
-            "cool_special_cds_fan_speed": "0",
-            "customized_plate_temp": "60",
-            "customized_plate_temp_initial_layer": "60",
-            "default_filament_colour": "\"\"",
-            "during_print_exhaust_fan_speed": [
-                "60"
-            ],
-            "enable_overhang_bridge_fan": "1",
-            "enable_pressure_advance": "1",
-            "enable_special_area_additional_cooling_fan": "0",
-            "eng_plate_temp": [
-                "50"
-            ],
-            "eng_plate_temp_initial_layer": [
-                "50"
-            ],
-            "epoxy_resin_plate_temp": "50",
-            "epoxy_resin_plate_temp_initial_layer": "50",
-            "fan_cooling_layer_time": [
-                "100"
-            ],
-            "fan_max_speed": [
-                "100"
-            ],
-            "fan_min_speed": [
-                "100"
-            ],
-            "filament_cooling_final_speed": "3.4",
-            "filament_cooling_initial_speed": "2.2",
-            "filament_cooling_moves": "4",
-            "filament_cost": [
-                "32"
-            ],
-            "filament_density": [
-                "1.27"
-            ],
-            "filament_deretraction_speed": [
-                "nil"
-            ],
-            "filament_diameter": [
-                "1.75"
-            ],
-            "filament_end_gcode": [
-                "; filament end gcode \n"
-            ],
-            "filament_flow_ratio": [
-                "0.95"
-            ],
-            "filament_id": "02001",
-            "filament_is_support": [
-                "0"
-            ],
-            "filament_load_time": "0",
-            "filament_loading_speed": "28",
-            "filament_loading_speed_start": "3",
-            "filament_max_volumetric_speed": [
-                "23"
-            ],
-            "filament_minimal_purge_on_wipe_tower": [
-                "15"
-            ],
-            "filament_multitool_ramming": "0",
-            "filament_multitool_ramming_flow": "10",
-            "filament_multitool_ramming_volume": "10",
-            "filament_notes": "\"\"",
-            "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
-            "filament_retract_before_wipe": [
-                "nil"
-            ],
-            "filament_retract_lift_above": "nil",
-            "filament_retract_lift_below": "nil",
-            "filament_retract_lift_enforce": "nil",
-            "filament_retract_restart_extra": [
-                "nil"
-            ],
-            "filament_retract_when_changing_layer": [
-                "nil"
-            ],
-            "filament_retraction_length": [
-                "nil"
-            ],
-            "filament_retraction_minimum_travel": [
-                "1"
-            ],
-            "filament_retraction_speed": [
-                "nil"
-            ],
-            "filament_settings_id": [
-                ""
-            ],
-            "filament_shrink": "100%",
-            "filament_shrinkage_compensation_z": "100%",
-            "filament_soluble": [
-                "0"
-            ],
-            "filament_start_gcode": [
-                "; filament start gcode\n{if (layer_z > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}\n"
-            ],
-            "filament_toolchange_delay": "0",
-            "filament_type": [
-                "PLA-CF"
-            ],
-            "filament_unload_time": "0",
-            "filament_unloading_speed": "90",
-            "filament_unloading_speed_start": "100",
-            "filament_vendor": [
-                "Creality"
-            ],
-            "filament_wipe": [
-                "nil"
-            ],
-            "filament_wipe_distance": [
-                "nil"
-            ],
-            "filament_z_hop": [
-                "nil"
-            ],
-            "filament_z_hop_types": [
-                "nil"
-            ],
-            "from": "system",
-            "full_fan_speed_layer": [
-                "0"
-            ],
-            "hot_plate_temp": [
-                "60"
-            ],
-            "hot_plate_temp_initial_layer": [
-                "60"
-            ],
-            "instantiation": "true",
-            "material_flow_dependent_temperature": "0",
-            "material_flow_temp_graph": "[[1.0,210],[1.2,220]]",
-            "name": "Hyper PLA-CF @Ender-3 V4-all",
-            "nozzle_temperature": [
-                "220"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "220"
-            ],
-            "nozzle_temperature_range_high": [
-                "240"
-            ],
-            "nozzle_temperature_range_low": [
-                "190"
-            ],
-            "overhang_fan_speed": [
-                "100"
-            ],
-            "overhang_fan_threshold": [
-                "50%"
-            ],
-            "pressure_advance": "0.028",
-            "reduce_fan_stop_start_freq": [
-                "1"
-            ],
-            "required_nozzle_HRC": [
-                "0"
-            ],
-            "setting_id": "30n5mJl8L6az4Ugt",
-            "slow_down_for_layer_cooling": [
-                "1"
-            ],
-            "slow_down_layer_time": [
-                "8"
-            ],
-            "slow_down_min_speed": [
-                "20"
-            ],
-            "support_material_interface_fan_speed": "-1",
-            "temperature_vitrification": [
-                "60"
-            ],
-            "textured_plate_temp": [
-                "60"
-            ],
-            "textured_plate_temp_initial_layer": [
-                "60"
-            ],
-            "type": "filament"
-        },
-        "generic_id": "GFL98",
-        "name": "Hyper PLA-CF @Ender-3 V4-all"
     },
     {
         "attributes": {
@@ -3795,14 +3798,14 @@
             ],
             "activate_chamber_temp_control": "0",
             "additional_cooling_fan_speed": [
-                "0"
+                "70"
             ],
             "bed_type": [
                 "Cool Plate"
             ],
             "chamber_temperature": "35",
             "close_fan_the_first_x_layers": [
-                "3"
+                "1"
             ],
             "compatible_printers": [
                 "Creality Ender-3 V4 0.4 nozzle"
@@ -3812,52 +3815,49 @@
             ],
             "cool_cds_fan_start_at_height": "0.5",
             "cool_plate_temp": [
-                "70"
+                "55"
             ],
             "cool_plate_temp_initial_layer": [
-                "70"
+                "55"
             ],
             "cool_special_cds_fan_speed": "0",
-            "customized_plate_temp": "80",
-            "customized_plate_temp_initial_layer": "80",
+            "customized_plate_temp": "40",
+            "customized_plate_temp_initial_layer": "40",
             "default_filament_colour": "\"\"",
             "during_print_exhaust_fan_speed": [
                 "60"
             ],
             "enable_overhang_bridge_fan": "1",
-            "enable_pressure_advance": "0",
+            "enable_pressure_advance": "1",
             "enable_special_area_additional_cooling_fan": "0",
             "eng_plate_temp": [
-                "0"
+                "50"
             ],
             "eng_plate_temp_initial_layer": [
-                "0"
+                "50"
             ],
-            "epoxy_resin_plate_temp": "70",
-            "epoxy_resin_plate_temp_initial_layer": "70",
+            "epoxy_resin_plate_temp": "30",
+            "epoxy_resin_plate_temp_initial_layer": "30",
             "fan_cooling_layer_time": [
-                "30"
+                "100"
             ],
             "fan_max_speed": [
-                "80"
+                "100"
             ],
             "fan_min_speed": [
-                "40"
-            ],
-            "filament_adhesiveness_category": [
-                "300"
+                "100"
             ],
             "filament_cooling_final_speed": "3.4",
             "filament_cooling_initial_speed": "2.2",
             "filament_cooling_moves": "4",
             "filament_cost": [
-                "14"
+                "25"
             ],
             "filament_density": [
-                "1.23"
+                "1.24"
             ],
             "filament_deretraction_speed": [
-                "nil"
+                "30"
             ],
             "filament_diameter": [
                 "1.75"
@@ -3866,9 +3866,9 @@
                 "; filament end gcode \n"
             ],
             "filament_flow_ratio": [
-                "0.95"
+                "0.96"
             ],
-            "filament_id": "06001",
+            "filament_id": "00005",
             "filament_is_support": [
                 "0"
             ],
@@ -3876,7 +3876,7 @@
             "filament_loading_speed": "28",
             "filament_loading_speed_start": "3",
             "filament_max_volumetric_speed": [
-                "12"
+                "1.6"
             ],
             "filament_minimal_purge_on_wipe_tower": [
                 "15"
@@ -3887,7 +3887,7 @@
             "filament_notes": "\"\"",
             "filament_ramming_parameters": "\"120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6\"",
             "filament_retract_before_wipe": [
-                "nil"
+                "80%"
             ],
             "filament_retract_lift_above": "nil",
             "filament_retract_lift_below": "nil",
@@ -3905,7 +3905,7 @@
                 "nil"
             ],
             "filament_retraction_speed": [
-                "nil"
+                "30"
             ],
             "filament_settings_id": [
                 ""
@@ -3920,13 +3920,13 @@
             ],
             "filament_toolchange_delay": "0",
             "filament_type": [
-                "PETG"
+                "TPU"
             ],
             "filament_unload_time": "0",
             "filament_unloading_speed": "90",
             "filament_unloading_speed_start": "100",
             "filament_vendor": [
-                "Creality"
+                "Generic"
             ],
             "filament_wipe": [
                 "nil"
@@ -3945,63 +3945,63 @@
                 "0"
             ],
             "hot_plate_temp": [
-                "80"
+                "40"
             ],
             "hot_plate_temp_initial_layer": [
-                "80"
+                "40"
             ],
             "instantiation": "true",
             "material_flow_dependent_temperature": "0",
-            "material_flow_temp_graph": "[[0.5,230],[1.0,230],[1.2,250]]",
-            "name": "CR-PETG @Ender-3 V4-all",
+            "material_flow_temp_graph": "[[0.5,210],[1.0,210],[1.2,220]]",
+            "name": "Generic TPU @Ender-3 V4-all",
             "nozzle_temperature": [
-                "250"
-            ],
-            "nozzle_temperature_initial_layer": [
-                "250"
-            ],
-            "nozzle_temperature_range_high": [
-                "270"
-            ],
-            "nozzle_temperature_range_low": [
                 "220"
             ],
+            "nozzle_temperature_initial_layer": [
+                "220"
+            ],
+            "nozzle_temperature_range_high": [
+                "250"
+            ],
+            "nozzle_temperature_range_low": [
+                "200"
+            ],
             "overhang_fan_speed": [
-                "90"
+                "100"
             ],
             "overhang_fan_threshold": [
-                "25%"
+                "50%"
             ],
-            "pressure_advance": "0.05",
+            "pressure_advance": "0.46",
             "reduce_fan_stop_start_freq": [
                 "1"
             ],
             "required_nozzle_HRC": [
                 "0"
             ],
-            "setting_id": "ZucTDurgG1yttTTE",
+            "setting_id": "iJozGH7KvOHz8smj",
             "slow_down_for_layer_cooling": [
                 "1"
             ],
             "slow_down_layer_time": [
-                "14"
+                "12"
             ],
             "slow_down_min_speed": [
-                "20"
+                "10"
             ],
             "support_material_interface_fan_speed": "-1",
             "temperature_vitrification": [
-                "80"
+                "60"
             ],
             "textured_plate_temp": [
-                "80"
+                "40"
             ],
             "textured_plate_temp_initial_layer": [
-                "80"
+                "40"
             ],
             "type": "filament"
         },
-        "generic_id": "GFG99",
-        "name": "CR-PETG @Ender-3 V4-all"
+        "generic_id": "GFU99",
+        "name": "Generic TPU @Ender-3 V4-all"
     }
 ]
