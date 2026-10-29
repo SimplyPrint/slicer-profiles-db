@@ -2899,8 +2899,7 @@ def _write_resource_manifest(store: ProfileStore, output_dir: Path) -> None:
             suffix = f".{meta['type']}" if meta.get("type") else ""
             manifest[ref_key] = {
                 "path": (
-                    f"{store.root.name}/{slicer.value}/_resources/"
-                    f"{hash_hex}{suffix}"
+                    f"{store.root.name}/{slicer.value}/_resources/{hash_hex}{suffix}"
                 ),
                 "filename": meta.get("filename", ""),
                 "source_path": meta.get("source_path", ""),
@@ -3019,7 +3018,15 @@ def run_mapping_pipeline(
                         f"Missing {slicer.value} lane {lane_name} version {lane.version}"
                     )
                 lane_index = ProfileIndex(store)
-                lane_index.build([slicer], required_formats={slicer: lane.format})
+                # A lane is one release's complete catalogue: a profile a later
+                # release dropped or renamed is not part of it. Lane formats carry
+                # their release in context, so every profile a release has is saved
+                # with that release as its last_seen.
+                lane_index.build(
+                    [slicer],
+                    required_formats={slicer: lane.format},
+                    snapshot_versions={slicer: lane.version},
+                )
                 lane_guards = {slicer: lane.version}
                 lane_model_map = map_printer_models(
                     store, lane_index, sp_data, [slicer], lane_guards

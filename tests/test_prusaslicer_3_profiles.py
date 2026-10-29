@@ -176,6 +176,40 @@ def test_catalog_indexes_are_partitioned_by_source_format(tmp_path):
     ] == ["Evaluated"]
 
 
+def test_a_lane_snapshot_leaves_out_profiles_its_release_dropped(tmp_path):
+    store = ProfileStore(tmp_path / "store")
+
+    def evaluated(name, release):
+        return ParsedProfile(
+            slicer=SlicerType.PRUSASLICER,
+            profile_type=ProfileType.PRINT,
+            name=name,
+            vendor="Prusa",
+            settings={"value": 1},
+            context={"format": "prusa-evaluated-profiles", "slicer_version": release},
+        )
+
+    for release, names in (
+        ("3.0.0-alpha11", ["Kept", "Old"]),
+        ("3.0.0-alpha12", ["Kept", "New"]),
+    ):
+        store.ingest_profiles(
+            SlicerType.PRUSASLICER, release, [evaluated(n, release) for n in names]
+        )
+
+    lane = ProfileIndex(store)
+    lane.build(
+        [SlicerType.PRUSASLICER],
+        required_formats={SlicerType.PRUSASLICER: "prusa-evaluated-profiles"},
+        snapshot_versions={SlicerType.PRUSASLICER: "3.0.0-alpha12"},
+    )
+
+    assert sorted(
+        profile.name
+        for profile in lane.find_by_type(SlicerType.PRUSASLICER, ProfileType.PRINT)
+    ) == ["Kept", "New"]
+
+
 def test_machine_name_nozzle_variants_support_native_3_names():
     parser = PrusaSlicerParser()
 

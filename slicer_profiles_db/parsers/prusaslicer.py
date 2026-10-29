@@ -239,9 +239,7 @@ class PrusaSlicerParser(BaseParser):
                     native_id=str(record["native_id"]),
                     storage_key=storage_key,
                     context=context,
-                    setting_scopes={
-                        key: "extruder.0" for key in tool_settings
-                    },
+                    setting_scopes={key: "extruder.0" for key in tool_settings},
                 )
 
     def _machine_models(
