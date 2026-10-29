@@ -1,8 +1,8 @@
-import os
+import json
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import Mock, patch
+from unittest.mock import Mock
 
 from slicer_profiles_db.mapping import (
     ModelMap,
@@ -22,7 +22,8 @@ from slicer_profiles_db.mapping import (
     _public_variant_payload,
     _same_variant,
     _write_import_manifest,
-    fetch_sp_slicer_versions,
+    _write_resource_manifest,
+    map_print_profiles,
     map_printer_models,
 )
 from slicer_profiles_db.models import (
@@ -32,9 +33,100 @@ from slicer_profiles_db.models import (
     StoredProfile,
 )
 from slicer_profiles_db.parsers.cura import _material_compatibility_aliases
+from slicer_profiles_db.resources import ResourceStore
+from slicer_profiles_db.store import ProfileStore
 
 
 class MappingVersionGuardTests(unittest.TestCase):
+    def test_resource_manifest_uses_configured_store_directory(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            store = ProfileStore(root / "custom-store")
+            resources = ResourceStore(
+                store.root / SlicerType.PRUSASLICER.value / "_resources"
+            )
+            source = root / "bed.stl"
+            source.write_bytes(b"solid bed\nendsolid bed\n")
+            digest = resources.store(source)
+            resources.save_manifest()
+            output = root / "output"
+            output.mkdir()
+
+            _write_resource_manifest(store, output)
+
+            manifest = json.loads((output / "resources.json").read_text())
+            self.assertEqual(
+                manifest[f"sha256:{digest}"]["path"],
+                f"custom-store/prusaslicer/_resources/{digest}.stl",
+            )
+
+    def test_prusa_evaluated_print_variants_with_same_name_are_not_collapsed(
+        self,
+    ) -> None:
+        machine_model = StoredProfile(
+            slicer=SlicerType.PRUSASLICER.value,
+            profile_type=ProfileType.MACHINE_MODEL.value,
+            name="Original Prusa MK4",
+            vendor="PrusaResearch",
+            first_seen="3.0.0",
+            last_seen="3.0.0",
+            context={
+                "display_name": "Original Prusa MK4",
+                "variants": [{"key": "0.4"}],
+            },
+            settings={"name": {"3.0.0": "Original Prusa MK4"}},
+        )
+        print_profiles = [
+            StoredProfile(
+                slicer=SlicerType.PRUSASLICER.value,
+                profile_type=ProfileType.PRINT.value,
+                name="0.20mm QUALITY",
+                vendor="PrusaResearch",
+                first_seen="3.0.0",
+                last_seen="3.0.0",
+                storage_key=f"process:quality:{variant}",
+                settings={
+                    "print_settings_id": {"3.0.0": "0.20mm QUALITY"},
+                    "compatible_printers": {"3.0.0": ["Original Prusa MK4 0.4 nozzle"]},
+                    "variant": {"3.0.0": variant},
+                },
+            )
+            for variant in ("one", "two")
+        ]
+        index = Mock()
+
+        def find_by_type(_slicer, profile_type, *_args):
+            if profile_type == ProfileType.MACHINE_MODEL:
+                return [machine_model]
+            if profile_type == ProfileType.PRINT:
+                return print_profiles
+            return []
+
+        index.find_by_type.side_effect = find_by_type
+        model_map = ModelMap(
+            model_to_profiles={
+                1: {SlicerType.PRUSASLICER.value: ["PrusaResearch/Original Prusa MK4"]}
+            },
+            variant_map={
+                SlicerType.PRUSASLICER.value: {
+                    "__profile_name__:Original Prusa MK4 0.4 nozzle": {
+                        "name": "Original Prusa MK4 0.4 nozzle",
+                        "data": {
+                            "printer_settings_id": ("Original Prusa MK4 0.4 nozzle"),
+                            "nozzle_diameter": [0.4],
+                        },
+                        "context": {},
+                    }
+                }
+            },
+        )
+
+        result = map_print_profiles(Mock(), index, model_map)
+
+        exported = result[1][SlicerType.PRUSASLICER.value]
+        self.assertEqual(len(exported), 2)
+        self.assertEqual({item["data"]["variant"] for item in exported}, {"one", "two"})
+
     def test_coverage_report_checks_roles_across_owner_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             output_dir = Path(directory)
@@ -485,8 +577,7 @@ class MappingVersionGuardTests(unittest.TestCase):
             _profile_matches_printer(
                 **shared,
                 condition=(
-                    "nozzle_diameter[0]==0.4 "
-                    "and printer_notes!~/.*HF_NOZZLE.*/"
+                    "nozzle_diameter[0]==0.4 and printer_notes!~/.*HF_NOZZLE.*/"
                 ),
             )
         )
@@ -494,8 +585,7 @@ class MappingVersionGuardTests(unittest.TestCase):
             _profile_matches_printer(
                 **shared,
                 condition=(
-                    "nozzle_diameter[0]==0.4 "
-                    "and printer_notes=~/.*HF_NOZZLE.*/"
+                    "nozzle_diameter[0]==0.4 and printer_notes=~/.*HF_NOZZLE.*/"
                 ),
             )
         )
@@ -566,9 +656,7 @@ class MappingVersionGuardTests(unittest.TestCase):
     ) -> None:
         model_map = ModelMap(
             model_to_profiles={
-                model_id: {
-                    SlicerType.KIRIMOTO.value: ["Creality/Creality Ender 3"]
-                }
+                model_id: {SlicerType.KIRIMOTO.value: ["Creality/Creality Ender 3"]}
                 for model_id in (6, 42, 43)
             }
         )
@@ -607,10 +695,8 @@ class MappingVersionGuardTests(unittest.TestCase):
             settings={"name": {"4.7.1": "Creality Ender 3"}},
         )
         index = Mock()
-        index.find_by_type.side_effect = (
-            lambda _slicer, profile_type, *_args: (
-                [profile] if profile_type == ProfileType.MACHINE_MODEL else []
-            )
+        index.find_by_type.side_effect = lambda _slicer, profile_type, *_args: (
+            [profile] if profile_type == ProfileType.MACHINE_MODEL else []
         )
 
         result = map_printer_models(
@@ -628,33 +714,6 @@ class MappingVersionGuardTests(unittest.TestCase):
 
         self.assertIn(SlicerType.KIRIMOTO.value, result.model_to_profiles[43])
         self.assertIn(SlicerType.KIRIMOTO.value, result.model_to_profiles[42])
-
-    @patch.dict(
-        os.environ,
-        {},
-        clear=True,
-    )
-    @patch("slicer_profiles_db.mapping.requests.get")
-    def test_fetch_slicer_versions_uses_the_default_simplyprint_endpoint(
-        self, get: Mock
-    ) -> None:
-        response = Mock()
-        response.json.return_value = {
-            "slicers": [
-                {"name": "BambuStudio", "latest": "02.07.01.62"},
-                {"name": "PrusaSlicer", "latest": "2.9.6"},
-                {"name": "UnsupportedSlicer", "latest": "1.0.0"},
-            ]
-        }
-        get.return_value = response
-
-        versions = fetch_sp_slicer_versions()
-
-        self.assertEqual(versions, {SlicerType.BAMBUSTUDIO: "02.07.01.62"})
-        get.assert_called_once_with(
-            "https://slicing-test.simplyprint.io/api/v1/slicers/versions", timeout=30
-        )
-        response.raise_for_status.assert_called_once_with()
 
 
 if __name__ == "__main__":

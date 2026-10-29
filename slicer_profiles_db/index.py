@@ -33,16 +33,38 @@ class ProfileIndex:
             SlicerType, dict[str, dict[str, list[StoredProfile]]]
         ] = {}
 
-    def build(self, slicers: list[SlicerType] | None = None) -> None:
-        """Build indexes from the store."""
+    def build(
+        self,
+        slicers: list[SlicerType] | None = None,
+        *,
+        required_formats: dict[SlicerType, str] | None = None,
+        excluded_formats: set[str] | None = None,
+        snapshot_versions: dict[SlicerType, str] | None = None,
+    ) -> None:
+        """Build indexes from the store.
+
+        ``snapshot_versions`` keeps only the profiles a slicer's given release still has.
+        """
         self._by_slicer_id.clear()
         self._by_name.clear()
         self._generics.clear()
         self._by_type.clear()
         self._by_base_name.clear()
+        required_formats = required_formats or {}
+        excluded_formats = excluded_formats or set()
+        snapshot_versions = snapshot_versions or {}
 
         for slicer in slicers or list(SlicerType):
             for profile in self.store.list_profiles(slicer):
+                profile_format = profile.context.get("format")
+                required = required_formats.get(slicer)
+                if required is not None and profile_format != required:
+                    continue
+                if required is None and profile_format in excluded_formats:
+                    continue
+                snapshot = snapshot_versions.get(slicer)
+                if snapshot is not None and profile.last_seen != snapshot:
+                    continue
                 self._index(slicer, profile)
 
     def _index(self, slicer: SlicerType, profile: StoredProfile) -> None:
