@@ -12,6 +12,7 @@
   "native_id": "quality:liquid:liquid/liquid_vo0.8_PLA_Verydraft_Print",
   "context": {
     "native_id": "quality:liquid:liquid/liquid_vo0.8_PLA_Verydraft_Print",
+    "display_name": "Extra Fast (0.3 mm) · VO 0.8 · Generic PLA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "liquid",
@@ -20,6 +21,12 @@
     "variant_name": "VO 0.8",
     "material_id": "generic_pla",
     "global_quality_id": "quality:liquid:liquid/liquid_global_Verydraft_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "VO 0.8"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "liquid"
@@ -28,7 +35,11 @@
         "VO 0.8"
       ],
       "material_native_ids": [
-        "generic_pla"
+        "generic_pla",
+        "generic_pla_175"
+      ],
+      "material_types": [
+        "PLA"
       ]
     }
   },

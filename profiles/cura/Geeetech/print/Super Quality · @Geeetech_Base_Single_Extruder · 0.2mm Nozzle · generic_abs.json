@@ -12,6 +12,7 @@
   "native_id": "quality:Geeetech_Base_Single_Extruder:geeetech_quality/geeetech_quality_0.2_ABS_super",
   "context": {
     "native_id": "quality:Geeetech_Base_Single_Extruder:geeetech_quality/geeetech_quality_0.2_ABS_super",
+    "display_name": "Super Quality (0.12 mm) · 0.2mm Nozzle · Generic ABS",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "Geeetech_Base_Single_Extruder",
@@ -20,6 +21,12 @@
     "variant_name": "0.2mm Nozzle",
     "material_id": "generic_abs",
     "global_quality_id": "quality:Geeetech_Base_Single_Extruder:geeetech_quality/geeetech_quality_global_super",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.2,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "Geeetech_Base_Single_Extruder"
@@ -28,7 +35,11 @@
         "0.2mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_abs"
+        "generic_abs",
+        "generic_abs_175"
+      ],
+      "material_types": [
+        "ABS"
       ]
     }
   },

@@ -12,6 +12,7 @@
   "native_id": "quality:vzbot_base:vzbot/base/PLA/vzbot_0.5_PLA_adaptive",
   "context": {
     "native_id": "quality:vzbot_base:vzbot/base/PLA/vzbot_0.5_PLA_adaptive",
+    "display_name": "Dynamic Quality (0.16 mm) · 0.5mm Nozzle · Generic PLA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "vzbot_base",
@@ -20,6 +21,12 @@
     "variant_name": "0.5mm Nozzle",
     "material_id": "generic_pla",
     "global_quality_id": "quality:vzbot_base:vzbot/base/vzbot_global_adaptive",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.5,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "vzbot_base"
@@ -28,7 +35,11 @@
         "0.5mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_pla"
+        "generic_pla",
+        "generic_pla_175"
+      ],
+      "material_types": [
+        "PLA"
       ]
     }
   },

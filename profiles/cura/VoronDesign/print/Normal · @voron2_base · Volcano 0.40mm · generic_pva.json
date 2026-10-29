@@ -12,6 +12,7 @@
   "native_id": "quality:voron2_base:voron2/voron2_volcano_0.40_PVA_normal",
   "context": {
     "native_id": "quality:voron2_base:voron2/voron2_volcano_0.40_PVA_normal",
+    "display_name": "Normal (0.15 mm) · Volcano 0.40mm · Generic PVA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "voron2_base",
@@ -20,6 +21,12 @@
     "variant_name": "Volcano 0.40mm",
     "material_id": "generic_pva",
     "global_quality_id": "quality:voron2_base:voron2/voron2_global_normal_quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "voron2_base"
@@ -28,7 +35,11 @@
         "Volcano 0.40mm"
       ],
       "material_native_ids": [
-        "generic_pva"
+        "generic_pva",
+        "generic_pva_175"
+      ],
+      "material_types": [
+        "PVA"
       ]
     }
   },

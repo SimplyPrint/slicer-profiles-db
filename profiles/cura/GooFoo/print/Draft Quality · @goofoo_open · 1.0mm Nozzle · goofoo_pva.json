@@ -12,6 +12,7 @@
   "native_id": "quality:goofoo_open:goofoo/pva/goofoo_open_1.0_pva_draft",
   "context": {
     "native_id": "quality:goofoo_open:goofoo/pva/goofoo_open_1.0_pva_draft",
+    "display_name": "Draft Quality (0.3 mm) · 1.0mm Nozzle · GOOFOO PVA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "goofoo_open",
@@ -20,6 +21,12 @@
     "variant_name": "1.0mm Nozzle",
     "material_id": "goofoo_pva",
     "global_quality_id": "quality:goofoo_open:goofoo/goofoo_open_global_0.3_draft",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 1.0,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "goofoo_open"
@@ -29,6 +36,9 @@
       ],
       "material_native_ids": [
         "goofoo_pva"
+      ],
+      "material_types": [
+        "PVA"
       ]
     }
   },

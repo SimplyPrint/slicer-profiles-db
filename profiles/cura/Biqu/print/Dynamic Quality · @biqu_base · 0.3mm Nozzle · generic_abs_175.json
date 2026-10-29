@@ -12,6 +12,7 @@
   "native_id": "quality:biqu_base:biqu/base/biqu_base_0.3_ABS_adaptive",
   "context": {
     "native_id": "quality:biqu_base:biqu/base/biqu_base_0.3_ABS_adaptive",
+    "display_name": "Dynamic Quality (0.16 mm) · 0.3mm Nozzle · Generic ABS",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "biqu_base",
@@ -20,6 +21,12 @@
     "variant_name": "0.3mm Nozzle",
     "material_id": "generic_abs_175",
     "global_quality_id": "quality:biqu_base:biqu/base/biqu_base_global_adaptive",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.3,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "biqu_base"
@@ -28,7 +35,11 @@
         "0.3mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_abs_175"
+        "generic_abs_175",
+        "generic_abs"
+      ],
+      "material_types": [
+        "ABS"
       ]
     }
   },

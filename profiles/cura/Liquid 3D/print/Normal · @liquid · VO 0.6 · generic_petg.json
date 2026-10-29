@@ -12,6 +12,7 @@
   "native_id": "quality:liquid:liquid/liquid_vo0.6_PETG_Fast_Print",
   "context": {
     "native_id": "quality:liquid:liquid/liquid_vo0.6_PETG_Fast_Print",
+    "display_name": "Normal (0.15 mm) · VO 0.6 · Generic PETG",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "liquid",
@@ -20,6 +21,12 @@
     "variant_name": "VO 0.6",
     "material_id": "generic_petg",
     "global_quality_id": "quality:liquid:liquid/liquid_global_Fast_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "VO 0.6"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "liquid"
@@ -28,7 +35,11 @@
         "VO 0.6"
       ],
       "material_native_ids": [
-        "generic_petg"
+        "generic_petg",
+        "generic_petg_175"
+      ],
+      "material_types": [
+        "PETG"
       ]
     }
   },

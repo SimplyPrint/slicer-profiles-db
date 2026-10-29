@@ -12,6 +12,7 @@
   "native_id": "quality:voron2_base:voron2/voron2_v6_0.60_ASA_fast",
   "context": {
     "native_id": "quality:voron2_base:voron2/voron2_v6_0.60_ASA_fast",
+    "display_name": "Fast (0.2 mm) · V6 0.60mm · Generic ASA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "voron2_base",
@@ -20,6 +21,12 @@
     "variant_name": "V6 0.60mm",
     "material_id": "generic_asa",
     "global_quality_id": "quality:voron2_base:voron2/voron2_global_fast_quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "voron2_base"
@@ -28,7 +35,11 @@
         "V6 0.60mm"
       ],
       "material_native_ids": [
-        "generic_asa"
+        "generic_asa",
+        "generic_asa_175"
+      ],
+      "material_types": [
+        "ASA"
       ]
     }
   },

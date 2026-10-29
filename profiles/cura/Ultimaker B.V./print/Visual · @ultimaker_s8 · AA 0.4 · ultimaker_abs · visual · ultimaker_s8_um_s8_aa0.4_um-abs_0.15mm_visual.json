@@ -12,6 +12,7 @@
   "native_id": "intent:ultimaker_s8:ultimaker_s8/um_s8_aa0.4_um-abs_0.15mm_visual",
   "context": {
     "native_id": "intent:ultimaker_s8:ultimaker_s8/um_s8_aa0.4_um-abs_0.15mm_visual",
+    "display_name": "Visual · Normal · AA 0.4 · Ultimaker ABS",
     "source_kind": "intent",
     "resource_version": "5.13.0",
     "definition": "ultimaker_s8",
@@ -20,6 +21,12 @@
     "variant_name": "AA 0.4",
     "material_id": "ultimaker_abs",
     "global_quality_id": null,
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "AA 0.4"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_s8"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "ultimaker_abs"
+      ],
+      "material_types": [
+        "ABS"
       ]
-    },
-    "display_name": "Visual · @ultimaker_s8 · AA 0.4 · ultimaker_abs · visual"
+    }
   },
   "setting_scopes": {
     "z_seam_type": "extruder.0",
