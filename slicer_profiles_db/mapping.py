@@ -42,7 +42,7 @@ from .parsers.cura import (
     build_cura_scene_context,
     resolve_cura_overlay,
 )
-from .profile_overrides import apply_profile_overrides
+from .release_history import apply_release_history
 from .resources import ResourceStore
 from .store import ProfileStore
 from .versions import is_prerelease, version_key
@@ -3058,7 +3058,7 @@ def run_mapping_pipeline(
                 )
                 coverage[lane_name] = lane_model_map.coverage
 
-        apply_profile_overrides(records, store, targets)
+        apply_release_history(records, store, targets)
         resources = {
             key: value
             for manifest in resource_manifests

@@ -265,92 +265,44 @@ def _validate_coverage(coverage: Mapping[str, Any]) -> None:
             raise ValueError(f"Inconsistent {snapshot} model coverage totals")
 
 
-def _validate_profile_overrides(
-    record: Mapping[str, Any], target: EngineTarget
-) -> dict[str, dict[str, int]]:
+def _version_settings_owners(record: Mapping[str, Any], target: EngineTarget) -> int:
+    """Validate a record's release history; the number of profiles carrying one."""
     profile = record.get("profile")
-    if not isinstance(profile, Mapping) or "profile_overrides" not in profile:
-        return {}
-    payload = profile["profile_overrides"]
+    if not isinstance(profile, Mapping):
+        return 0
     variants = profile.get("variants") if record.get("kind") == "machine" else None
-    if (
-        not isinstance(payload, list)
-        or not payload
-        or (record.get("kind") == "machine" and not isinstance(variants, Mapping))
-    ):
-        raise TypeError(f"Invalid profile overrides for {record['id']}")
-    declared = {item.profile_abi for item in target.profile_targets}
-    allowed = set(target.profile_override_settings)
-    counts: dict[str, dict[str, int]] = {}
-    owner_targets: set[str] = set()
-    seen: set[tuple[str, str, str]] = set()
-    seen_values: set[tuple[str, str, bytes]] = set()
-    grouped: set[bytes] = set()
-    for override in payload:
-        expected = {"targets", "settings"} | (
-            {"variants"} if variants is not None else set()
-        )
-        targets = override.get("targets") if isinstance(override, Mapping) else None
-        settings = override.get("settings") if isinstance(override, Mapping) else None
-        block_variants = (
-            override.get("variants")
-            if variants is not None and isinstance(override, Mapping)
-            else [""]
-        )
+    owners = (
+        [value for value in variants.values() if isinstance(value, Mapping)]
+        if isinstance(variants, Mapping)
+        else [profile]
+    )
+    count = 0
+    for owner in owners:
+        if "version_settings" not in owner:
+            continue
+        index = owner["version_settings"]
+        renamed = index.get("renamed_from") if isinstance(index, Mapping) else None
+        versions = index.get("versions") if isinstance(index, Mapping) else None
         if (
-            not isinstance(override, Mapping)
-            or set(override) != expected
-            or not isinstance(targets, list)
-            or not targets
-            or not all(isinstance(abi, str) for abi in targets)
-            or len(set(targets)) != len(targets)
-            or not set(targets) <= declared
-            or not isinstance(settings, Mapping)
-            or not settings
-            or not set(settings) <= allowed
-            or not isinstance(block_variants, list)
-            or not block_variants
-            or not all(isinstance(variant, str) for variant in block_variants)
-            or len(set(block_variants)) != len(block_variants)
-            or (variants is not None and not set(block_variants) <= set(variants))
+            not target.release_history
+            or not isinstance(index, Mapping)
+            or not set(index) <= {"base", "versions", "renamed_from"}
+            or (renamed is not None and (not isinstance(renamed, str) or not renamed))
+            or ("base" in index) != ("versions" in index)
+            or (
+                versions is not None
+                and (
+                    not isinstance(versions, Mapping)
+                    or index["base"] not in versions
+                    or versions[index["base"]] != {}
+                    or not all(isinstance(item, Mapping) for item in versions.values())
+                )
+            )
+            or (versions is None and renamed is None)
         ):
-            raise ValueError(f"Invalid profile overrides for {record['id']}")
-        identity = _json_bytes({"settings": settings, "targets": targets})
-        if identity in grouped:
-            raise ValueError(f"Duplicate profile override block for {record['id']}")
-        grouped.add(identity)
-        for variant in block_variants:
-            current = (
-                profile.get("data")
-                if variants is None
-                else variants[variant].get("data")
-            )
-            if not isinstance(current, Mapping):
-                raise TypeError(f"Invalid profile owner for {record['id']}")
-            for setting, value in settings.items():
-                if current.get(setting, _MISSING) == value:
-                    raise ValueError(f"Unchanged profile override for {record['id']}")
-                value_key = (variant, str(setting), _json_bytes(value))
-                if value_key in seen_values:
-                    raise ValueError(
-                        f"Duplicate profile override value for {record['id']}"
-                    )
-                seen_values.add(value_key)
-                for abi in targets:
-                    key = (variant, str(setting), abi)
-                    if key in seen:
-                        raise ValueError(
-                            f"Overlapping profile override for {record['id']}"
-                        )
-                    seen.add(key)
-        for abi in targets:
-            owner_targets.add(abi)
-            counts.setdefault(abi, {"owners": 0, "settings": 0})["settings"] += len(
-                settings
-            )
-    for abi in owner_targets:
-        counts.setdefault(abi, {"owners": 0, "settings": 0})["owners"] += 1
-    return counts
+            raise ValueError(f"Invalid version settings for {record['id']}")
+        count += 1
+    return count
 
 
 def write_bundle(
@@ -396,7 +348,7 @@ def write_bundle(
         resource_content[member] = content
 
     engine_counts: dict[tuple[str, str | None], int] = {}
-    override_counts: dict[tuple[str, str], dict[str, int]] = {}
+    history_counts: dict[str, int] = {}
     for record in ordered:
         engine = str(record["engine"])
         lane = record.get("catalog_lane")
@@ -406,29 +358,19 @@ def write_bundle(
             target = targets[SlicerType(engine)]
         except (KeyError, ValueError) as error:
             raise ValueError(f"Unknown record engine {engine}") from error
-        for abi, actual in _validate_profile_overrides(record, target).items():
-            counts = override_counts.setdefault(
-                (engine, abi), {"owners": 0, "settings": 0}
-            )
-            counts["owners"] += actual["owners"]
-            counts["settings"] += actual["settings"]
+        history_counts[engine] = history_counts.get(
+            engine, 0
+        ) + _version_settings_owners(record, target)
     manifest = {
         "coverage": coverage,
         "engines": {
             slicer.value: {
                 "gcode_abi": target.gcode_abi,
-                "profile_override_settings": list(target.profile_override_settings),
                 "records": engine_counts.get((slicer.value, None), 0),
                 "version": target.version,
-                "profile_targets": {
-                    compatibility.profile_abi: {
-                        **override_counts.get(
-                            (slicer.value, compatibility.profile_abi),
-                            {"owners": 0, "settings": 0},
-                        ),
-                        "version": compatibility.version,
-                    }
-                    for compatibility in target.profile_targets
+                "release_history": {
+                    "enabled": target.release_history,
+                    "profiles": history_counts.get(slicer.value, 0),
                 },
                 "lanes": {
                     lane: {

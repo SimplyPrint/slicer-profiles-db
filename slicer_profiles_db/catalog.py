@@ -18,18 +18,11 @@ class LaneTarget:
 
 
 @dataclass(frozen=True)
-class ProfileTarget:
-    version: str
-    profile_abi: str
-
-
-@dataclass(frozen=True)
 class EngineTarget:
     version: str
     gcode_abi: str = "text-gcode/v1"
     lanes: dict[str, LaneTarget] | None = None
-    profile_override_settings: tuple[str, ...] = ()
-    profile_targets: tuple[ProfileTarget, ...] = ()
+    release_history: bool = False
 
 
 def load_engine_targets(path: Path) -> dict[SlicerType, EngineTarget]:
@@ -73,42 +66,14 @@ def load_engine_targets(path: Path) -> dict[SlicerType, EngineTarget]:
                     or "text-gcode/v1"
                 ),
             )
-        target_values = value.get("profile_targets") or []
-        if not isinstance(target_values, list):
-            raise TypeError(f"Engine {name!r} has invalid profile targets")
-        profile_targets = tuple(
-            ProfileTarget(
-                version=normalize_version(target["version"]),
-                profile_abi=str(target["profile_abi"]),
-            )
-            for target in target_values
-            if isinstance(target, dict)
-            and isinstance(target.get("version"), str)
-            and isinstance(target.get("profile_abi"), str)
-        )
-        if len(profile_targets) != len(target_values):
-            raise TypeError(f"Engine {name!r} has an invalid profile target")
-        if len({target.profile_abi for target in profile_targets}) != len(
-            profile_targets
-        ):
-            raise ValueError(f"Engine {name!r} has duplicate profile target ABIs")
-        settings_value = value.get("profile_override_settings") or []
-        if (
-            not isinstance(settings_value, list)
-            or not all(
-                isinstance(setting, str) and setting for setting in settings_value
-            )
-            or len(set(settings_value)) != len(settings_value)
-        ):
-            raise TypeError(f"Engine {name!r} has invalid profile override settings")
-        if profile_targets and not settings_value:
-            raise TypeError(f"Engine {name!r} profile targets need override settings")
+        release_history = value.get("release_history", False)
+        if not isinstance(release_history, bool):
+            raise TypeError(f"Engine {name!r} has invalid release history flag")
         targets[slicer] = EngineTarget(
             version=normalize_version(value["version"]),
             gcode_abi=str(value.get("gcode_abi") or "text-gcode/v1"),
             lanes=lanes,
-            profile_override_settings=tuple(settings_value),
-            profile_targets=profile_targets,
+            release_history=release_history,
         )
 
     missing = sorted(slicer.value for slicer in SlicerType if slicer not in targets)

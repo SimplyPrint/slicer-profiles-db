@@ -37,14 +37,15 @@ it has an explicit reason.
 Engine targets live in `engines.lock.json`. A catalog lane is a complete snapshot
 selected by an authoritative source format and is used only for a real topology
 boundary such as PrusaSlicer 3. Ordinary setting compatibility is derived from
-the versioned setting definitions and is never copied into profile rows. Only
-allowlisted, profile-specific historical values are attached to their owning machine,
-filament, or process profile; equal values for several engine ABIs are stored once.
-BambuStudio currently needs overrides only for G-code settings, but the mechanism is
-setting-agnostic. Its canonical settings are those of the newest release SimplyPrint
-runs, with sparse overrides for the two older supported releases. Pin the lock to
-a deployed release: every setting outside the allowlist reaches all releases with
-the canonical value. User-created SimplyPrint profiles remain override-free.
+the versioned setting definitions and is never copied into profile rows.
+
+An engine with `"release_history": true` exports its profiles at the locked version
+and attaches `version_settings` to each one: for every ingested release, the
+settings that differ from the export (`null` for one that release does not have),
+from the store's history. Web applies them when a slicer asks for a specific
+release, so the locked version only picks the baseline. A profile whose export no
+release gives (an overlay or patch changed it) has no history and is the same at
+every release.
 
 ## Cura resources
 
