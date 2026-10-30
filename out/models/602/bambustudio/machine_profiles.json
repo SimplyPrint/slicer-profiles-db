@@ -5,6 +5,7 @@
             "bed_texture": "sha256:0646f3aea7db04954f73e6232d2a52a4f9431bd8b4ed80e54bfc24dd23c65ec6",
             "bottom_texture_rect": "40,-14.5,70,8",
             "bottom_texture_rect_longer": "40,-14.5,260,8",
+            "bottom_texture_rect_longer_ignore_list": "High Temp Plate;Textured PEI Plate",
             "default_bed_type": "Textured PEI Plate",
             "default_materials": "Bambu PLA Basic @BBL H2S;Bambu PLA Matte @BBL H2S;Bambu PLA Tough @BBL H2S;Bambu PLA Marble @BBL H2S;Bambu PLA Metal @BBL H2S;Bambu PLA Silk @BBL H2S;Bambu TPU 95A HF @BBL H2S;Bambu PETG Basic @BBL H2S;Bambu PLA Pure @BBL H2S",
             "family": "BBL-3DP",
@@ -37,6 +38,10 @@
                         "Standard"
                     ],
                     "default_print_profile": "0.10mm Standard @BBL H2S 0.2 nozzle",
+                    "deretract_speed_extruder_change": [
+                        "30",
+                        "30"
+                    ],
                     "deretraction_speed": [
                         "30",
                         "30"
@@ -67,6 +72,7 @@
                         "Direct Drive Standard,Direct Drive High Flow"
                     ],
                     "fan_direction": "left",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -342,7 +348,13 @@
                         "Standard"
                     ],
                     "default_print_profile": "0.20mm Standard @BBL H2S",
+                    "deretract_speed_extruder_change": [
+                        "30",
+                        "30",
+                        "30"
+                    ],
                     "deretraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -369,9 +381,10 @@
                         "Direct Drive"
                     ],
                     "extruder_variant_list": [
-                        "Direct Drive Standard,Direct Drive High Flow"
+                        "Direct Drive Standard,Direct Drive High Flow,Direct Drive E3D High Flow"
                     ],
                     "fan_direction": "left",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -381,15 +394,18 @@
                     "head_wrap_detect_zone": [],
                     "hotend_cooling_rate": [
                         "2",
+                        "2",
                         "2"
                     ],
                     "hotend_heating_rate": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "instantiation": "true",
                     "layer_change_gcode": ";============= H2S 20250611 =============\n; layer num/total_layer_count: {layer_num+1}/[total_layer_count]\n; update layer progress\nM73 L{layer_num+1}\nM991 S0 P{layer_num} ;notify layer change",
                     "long_retractions_when_cut": [
+                        "0",
                         "0",
                         "0"
                     ],
@@ -401,9 +417,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000",
                         "20000",
                         "20000",
                         "20000",
@@ -413,9 +433,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_travel": [
+                        "9000",
+                        "9000",
                         "9000",
                         "9000",
                         "9000",
@@ -425,15 +449,21 @@
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_y": [
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
+                        "500",
+                        "500",
                         "500",
                         "500",
                         "500",
@@ -444,9 +474,13 @@
                         "2.5",
                         "2.5",
                         "2.5",
+                        "2.5",
+                        "2.5",
                         "2.5"
                     ],
                     "machine_max_jerk_x": [
+                        "9",
+                        "9",
                         "9",
                         "9",
                         "9",
@@ -456,9 +490,13 @@
                         "9",
                         "9",
                         "9",
+                        "9",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_z": [
+                        "3",
+                        "3",
                         "3",
                         "3",
                         "3",
@@ -469,9 +507,13 @@
                         "30",
                         "30",
                         "30",
+                        "30",
+                        "30",
                         "30"
                     ],
                     "machine_max_speed_x": [
+                        "1000",
+                        "1000",
                         "1000",
                         "1000",
                         "1000",
@@ -481,9 +523,13 @@
                         "1000",
                         "1000",
                         "1000",
+                        "1000",
+                        "1000",
                         "1000"
                     ],
                     "machine_max_speed_z": [
+                        "30",
+                        "30",
                         "30",
                         "30",
                         "30",
@@ -513,15 +559,18 @@
                     ],
                     "nozzle_flush_dataset": [
                         "1",
+                        "2",
                         "2"
                     ],
                     "nozzle_height": "4",
                     "nozzle_type": [
                         "hardened_steel",
+                        "hardened_steel",
                         "hardened_steel"
                     ],
                     "nozzle_volume": [
                         "145",
+                        "148",
                         "148"
                     ],
                     "physical_extruder_map": [
@@ -537,11 +586,13 @@
                     "printable_height": "340",
                     "printer_extruder_id": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "printer_extruder_variant": [
                         "Direct Drive Standard",
-                        "Direct Drive High Flow"
+                        "Direct Drive High Flow",
+                        "Direct Drive E3D High Flow"
                     ],
                     "printer_model": "Bambu Lab H2S",
                     "printer_settings_id": "",
@@ -550,45 +601,56 @@
                     "printer_variant": "0.4",
                     "retract_before_wipe": [
                         "0%",
+                        "0%",
                         "0%"
                     ],
                     "retract_length_toolchange": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "retract_lift_above": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_lift_below": [
+                        "339",
                         "339",
                         "339"
                     ],
                     "retract_restart_extra": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_restart_extra_toolchange": [
+                        "0",
                         "0",
                         "0"
                     ],
                     "retract_when_changing_layer": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_distances_when_cut": [
+                        "18",
                         "18",
                         "18"
                     ],
                     "retraction_length": [
                         "0.8",
+                        "0.8",
                         "0.8"
                     ],
                     "retraction_minimum_travel": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -606,9 +668,11 @@
                     "upward_compatible_machine": [],
                     "wipe": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "wipe_distance": [
+                        "2",
                         "2",
                         "2"
                     ],
@@ -621,9 +685,11 @@
                     ],
                     "z_hop": [
                         "0.4",
+                        "0.4",
                         "0.4"
                     ],
                     "z_hop_types": [
+                        "Auto Lift",
                         "Auto Lift",
                         "Auto Lift"
                     ]
@@ -647,7 +713,13 @@
                         "Standard"
                     ],
                     "default_print_profile": "0.30mm Standard @BBL H2S 0.6 nozzle",
+                    "deretract_speed_extruder_change": [
+                        "30",
+                        "30",
+                        "30"
+                    ],
                     "deretraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -674,9 +746,10 @@
                         "Direct Drive"
                     ],
                     "extruder_variant_list": [
-                        "Direct Drive Standard,Direct Drive High Flow"
+                        "Direct Drive Standard,Direct Drive High Flow,Direct Drive E3D High Flow"
                     ],
                     "fan_direction": "left",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -686,15 +759,18 @@
                     "head_wrap_detect_zone": [],
                     "hotend_cooling_rate": [
                         "2",
+                        "2",
                         "2"
                     ],
                     "hotend_heating_rate": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "instantiation": "true",
                     "layer_change_gcode": ";============= H2S 20250611 =============\n; layer num/total_layer_count: {layer_num+1}/[total_layer_count]\n; update layer progress\nM73 L{layer_num+1}\nM991 S0 P{layer_num} ;notify layer change",
                     "long_retractions_when_cut": [
+                        "0",
                         "0",
                         "0"
                     ],
@@ -706,9 +782,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000",
                         "20000",
                         "20000",
                         "20000",
@@ -718,9 +798,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_travel": [
+                        "9000",
+                        "9000",
                         "9000",
                         "9000",
                         "9000",
@@ -730,15 +814,21 @@
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_y": [
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
+                        "500",
+                        "500",
                         "500",
                         "500",
                         "500",
@@ -749,9 +839,13 @@
                         "2.5",
                         "2.5",
                         "2.5",
+                        "2.5",
+                        "2.5",
                         "2.5"
                     ],
                     "machine_max_jerk_x": [
+                        "9",
+                        "9",
                         "9",
                         "9",
                         "9",
@@ -761,9 +855,13 @@
                         "9",
                         "9",
                         "9",
+                        "9",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_z": [
+                        "3",
+                        "3",
                         "3",
                         "3",
                         "3",
@@ -774,9 +872,13 @@
                         "30",
                         "30",
                         "30",
+                        "30",
+                        "30",
                         "30"
                     ],
                     "machine_max_speed_x": [
+                        "1000",
+                        "1000",
                         "1000",
                         "1000",
                         "1000",
@@ -786,9 +888,13 @@
                         "1000",
                         "1000",
                         "1000",
+                        "1000",
+                        "1000",
                         "1000"
                     ],
                     "machine_max_speed_z": [
+                        "30",
+                        "30",
                         "30",
                         "30",
                         "30",
@@ -818,15 +924,18 @@
                     ],
                     "nozzle_flush_dataset": [
                         "1",
+                        "2",
                         "2"
                     ],
                     "nozzle_height": "4",
                     "nozzle_type": [
                         "hardened_steel",
+                        "hardened_steel",
                         "hardened_steel"
                     ],
                     "nozzle_volume": [
                         "145",
+                        "148",
                         "148"
                     ],
                     "physical_extruder_map": [
@@ -842,11 +951,13 @@
                     "printable_height": "340",
                     "printer_extruder_id": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "printer_extruder_variant": [
                         "Direct Drive Standard",
-                        "Direct Drive High Flow"
+                        "Direct Drive High Flow",
+                        "Direct Drive E3D High Flow"
                     ],
                     "printer_model": "Bambu Lab H2S",
                     "printer_settings_id": "",
@@ -855,45 +966,56 @@
                     "printer_variant": "0.6",
                     "retract_before_wipe": [
                         "0%",
+                        "0%",
                         "0%"
                     ],
                     "retract_length_toolchange": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "retract_lift_above": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_lift_below": [
+                        "339",
                         "339",
                         "339"
                     ],
                     "retract_restart_extra": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_restart_extra_toolchange": [
+                        "0",
                         "0",
                         "0"
                     ],
                     "retract_when_changing_layer": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_distances_when_cut": [
+                        "18",
                         "18",
                         "18"
                     ],
                     "retraction_length": [
                         "1.4",
+                        "1.4",
                         "1.4"
                     ],
                     "retraction_minimum_travel": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -911,9 +1033,11 @@
                     "upward_compatible_machine": [],
                     "wipe": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "wipe_distance": [
+                        "2",
                         "2",
                         "2"
                     ],
@@ -926,9 +1050,11 @@
                     ],
                     "z_hop": [
                         "0.4",
+                        "0.4",
                         "0.4"
                     ],
                     "z_hop_types": [
+                        "Auto Lift",
                         "Auto Lift",
                         "Auto Lift"
                     ]
@@ -952,6 +1078,10 @@
                         "Standard"
                     ],
                     "default_print_profile": "0.40mm Standard @BBL H2S 0.8 nozzle",
+                    "deretract_speed_extruder_change": [
+                        "30",
+                        "30"
+                    ],
                     "deretraction_speed": [
                         "30",
                         "30"
@@ -982,6 +1112,7 @@
                         "Direct Drive Standard,Direct Drive High Flow"
                     ],
                     "fan_direction": "left",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -1261,6 +1392,10 @@
                         "High Flow"
                     ],
                     "default_print_profile": "0.10mm Standard @BBL H2S 0.2 nozzle",
+                    "deretract_speed_extruder_change": [
+                        "30",
+                        "30"
+                    ],
                     "deretraction_speed": [
                         "30",
                         "30"
@@ -1291,6 +1426,7 @@
                         "Direct Drive Standard,Direct Drive High Flow"
                     ],
                     "fan_direction": "left",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -1570,7 +1706,13 @@
                         "High Flow"
                     ],
                     "default_print_profile": "0.20mm Standard @BBL H2S",
+                    "deretract_speed_extruder_change": [
+                        "30",
+                        "30",
+                        "30"
+                    ],
                     "deretraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -1597,9 +1739,10 @@
                         "Direct Drive"
                     ],
                     "extruder_variant_list": [
-                        "Direct Drive Standard,Direct Drive High Flow"
+                        "Direct Drive Standard,Direct Drive High Flow,Direct Drive E3D High Flow"
                     ],
                     "fan_direction": "left",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -1609,15 +1752,18 @@
                     "head_wrap_detect_zone": [],
                     "hotend_cooling_rate": [
                         "2",
+                        "2",
                         "2"
                     ],
                     "hotend_heating_rate": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "instantiation": "true",
                     "layer_change_gcode": ";============= H2S 20250611 =============\n; layer num/total_layer_count: {layer_num+1}/[total_layer_count]\n; update layer progress\nM73 L{layer_num+1}\nM991 S0 P{layer_num} ;notify layer change",
                     "long_retractions_when_cut": [
+                        "0",
                         "0",
                         "0"
                     ],
@@ -1629,9 +1775,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000",
                         "20000",
                         "20000",
                         "20000",
@@ -1641,9 +1791,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_travel": [
+                        "9000",
+                        "9000",
                         "9000",
                         "9000",
                         "9000",
@@ -1653,15 +1807,21 @@
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_y": [
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
+                        "500",
+                        "500",
                         "500",
                         "500",
                         "500",
@@ -1672,9 +1832,13 @@
                         "2.5",
                         "2.5",
                         "2.5",
+                        "2.5",
+                        "2.5",
                         "2.5"
                     ],
                     "machine_max_jerk_x": [
+                        "9",
+                        "9",
                         "9",
                         "9",
                         "9",
@@ -1684,9 +1848,13 @@
                         "9",
                         "9",
                         "9",
+                        "9",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_z": [
+                        "3",
+                        "3",
                         "3",
                         "3",
                         "3",
@@ -1697,9 +1865,13 @@
                         "30",
                         "30",
                         "30",
+                        "30",
+                        "30",
                         "30"
                     ],
                     "machine_max_speed_x": [
+                        "1000",
+                        "1000",
                         "1000",
                         "1000",
                         "1000",
@@ -1709,9 +1881,13 @@
                         "1000",
                         "1000",
                         "1000",
+                        "1000",
+                        "1000",
                         "1000"
                     ],
                     "machine_max_speed_z": [
+                        "30",
+                        "30",
                         "30",
                         "30",
                         "30",
@@ -1741,15 +1917,18 @@
                     ],
                     "nozzle_flush_dataset": [
                         "1",
+                        "2",
                         "2"
                     ],
                     "nozzle_height": "4",
                     "nozzle_type": [
                         "hardened_steel",
+                        "hardened_steel",
                         "hardened_steel"
                     ],
                     "nozzle_volume": [
                         "145",
+                        "148",
                         "148"
                     ],
                     "physical_extruder_map": [
@@ -1765,11 +1944,13 @@
                     "printable_height": "340",
                     "printer_extruder_id": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "printer_extruder_variant": [
                         "Direct Drive Standard",
-                        "Direct Drive High Flow"
+                        "Direct Drive High Flow",
+                        "Direct Drive E3D High Flow"
                     ],
                     "printer_model": "Bambu Lab H2S",
                     "printer_settings_id": "",
@@ -1778,45 +1959,56 @@
                     "printer_variant": "0.4",
                     "retract_before_wipe": [
                         "0%",
+                        "0%",
                         "0%"
                     ],
                     "retract_length_toolchange": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "retract_lift_above": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_lift_below": [
+                        "339",
                         "339",
                         "339"
                     ],
                     "retract_restart_extra": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_restart_extra_toolchange": [
+                        "0",
                         "0",
                         "0"
                     ],
                     "retract_when_changing_layer": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_distances_when_cut": [
+                        "18",
                         "18",
                         "18"
                     ],
                     "retraction_length": [
                         "0.8",
+                        "0.8",
                         "0.8"
                     ],
                     "retraction_minimum_travel": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -1834,9 +2026,11 @@
                     "upward_compatible_machine": [],
                     "wipe": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "wipe_distance": [
+                        "2",
                         "2",
                         "2"
                     ],
@@ -1849,9 +2043,11 @@
                     ],
                     "z_hop": [
                         "0.4",
+                        "0.4",
                         "0.4"
                     ],
                     "z_hop_types": [
+                        "Auto Lift",
                         "Auto Lift",
                         "Auto Lift"
                     ]
@@ -1879,7 +2075,13 @@
                         "High Flow"
                     ],
                     "default_print_profile": "0.30mm Standard @BBL H2S 0.6 nozzle",
+                    "deretract_speed_extruder_change": [
+                        "30",
+                        "30",
+                        "30"
+                    ],
                     "deretraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -1906,9 +2108,10 @@
                         "Direct Drive"
                     ],
                     "extruder_variant_list": [
-                        "Direct Drive Standard,Direct Drive High Flow"
+                        "Direct Drive Standard,Direct Drive High Flow,Direct Drive E3D High Flow"
                     ],
                     "fan_direction": "left",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
@@ -1918,15 +2121,18 @@
                     "head_wrap_detect_zone": [],
                     "hotend_cooling_rate": [
                         "2",
+                        "2",
                         "2"
                     ],
                     "hotend_heating_rate": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "instantiation": "true",
                     "layer_change_gcode": ";============= H2S 20250611 =============\n; layer num/total_layer_count: {layer_num+1}/[total_layer_count]\n; update layer progress\nM73 L{layer_num+1}\nM991 S0 P{layer_num} ;notify layer change",
                     "long_retractions_when_cut": [
+                        "0",
                         "0",
                         "0"
                     ],
@@ -1938,9 +2144,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_extruding": [
+                        "20000",
+                        "20000",
                         "20000",
                         "20000",
                         "20000",
@@ -1950,9 +2160,13 @@
                         "5000",
                         "5000",
                         "5000",
+                        "5000",
+                        "5000",
                         "5000"
                     ],
                     "machine_max_acceleration_travel": [
+                        "9000",
+                        "9000",
                         "9000",
                         "9000",
                         "9000",
@@ -1962,15 +2176,21 @@
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_y": [
                         "20000",
                         "20000",
                         "20000",
+                        "20000",
+                        "20000",
                         "20000"
                     ],
                     "machine_max_acceleration_z": [
+                        "500",
+                        "500",
                         "500",
                         "500",
                         "500",
@@ -1981,9 +2201,13 @@
                         "2.5",
                         "2.5",
                         "2.5",
+                        "2.5",
+                        "2.5",
                         "2.5"
                     ],
                     "machine_max_jerk_x": [
+                        "9",
+                        "9",
                         "9",
                         "9",
                         "9",
@@ -1993,9 +2217,13 @@
                         "9",
                         "9",
                         "9",
+                        "9",
+                        "9",
                         "9"
                     ],
                     "machine_max_jerk_z": [
+                        "3",
+                        "3",
                         "3",
                         "3",
                         "3",
@@ -2006,9 +2234,13 @@
                         "30",
                         "30",
                         "30",
+                        "30",
+                        "30",
                         "30"
                     ],
                     "machine_max_speed_x": [
+                        "1000",
+                        "1000",
                         "1000",
                         "1000",
                         "1000",
@@ -2018,9 +2250,13 @@
                         "1000",
                         "1000",
                         "1000",
+                        "1000",
+                        "1000",
                         "1000"
                     ],
                     "machine_max_speed_z": [
+                        "30",
+                        "30",
                         "30",
                         "30",
                         "30",
@@ -2050,15 +2286,18 @@
                     ],
                     "nozzle_flush_dataset": [
                         "1",
+                        "2",
                         "2"
                     ],
                     "nozzle_height": "4",
                     "nozzle_type": [
                         "hardened_steel",
+                        "hardened_steel",
                         "hardened_steel"
                     ],
                     "nozzle_volume": [
                         "145",
+                        "148",
                         "148"
                     ],
                     "physical_extruder_map": [
@@ -2074,11 +2313,13 @@
                     "printable_height": "340",
                     "printer_extruder_id": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "printer_extruder_variant": [
                         "Direct Drive Standard",
-                        "Direct Drive High Flow"
+                        "Direct Drive High Flow",
+                        "Direct Drive E3D High Flow"
                     ],
                     "printer_model": "Bambu Lab H2S",
                     "printer_settings_id": "",
@@ -2087,45 +2328,56 @@
                     "printer_variant": "0.6",
                     "retract_before_wipe": [
                         "0%",
+                        "0%",
                         "0%"
                     ],
                     "retract_length_toolchange": [
+                        "2",
                         "2",
                         "2"
                     ],
                     "retract_lift_above": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_lift_below": [
+                        "339",
                         "339",
                         "339"
                     ],
                     "retract_restart_extra": [
                         "0",
+                        "0",
                         "0"
                     ],
                     "retract_restart_extra_toolchange": [
+                        "0",
                         "0",
                         "0"
                     ],
                     "retract_when_changing_layer": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_distances_when_cut": [
+                        "18",
                         "18",
                         "18"
                     ],
                     "retraction_length": [
                         "1.4",
+                        "1.4",
                         "1.4"
                     ],
                     "retraction_minimum_travel": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "retraction_speed": [
+                        "30",
                         "30",
                         "30"
                     ],
@@ -2143,9 +2395,11 @@
                     "upward_compatible_machine": [],
                     "wipe": [
                         "1",
+                        "1",
                         "1"
                     ],
                     "wipe_distance": [
+                        "2",
                         "2",
                         "2"
                     ],
@@ -2158,9 +2412,11 @@
                     ],
                     "z_hop": [
                         "0.4",
+                        "0.4",
                         "0.4"
                     ],
                     "z_hop_types": [
+                        "Auto Lift",
                         "Auto Lift",
                         "Auto Lift"
                     ]
@@ -2188,6 +2444,10 @@
                         "High Flow"
                     ],
                     "default_print_profile": "0.40mm Standard @BBL H2S 0.8 nozzle",
+                    "deretract_speed_extruder_change": [
+                        "30",
+                        "30"
+                    ],
                     "deretraction_speed": [
                         "30",
                         "30"
@@ -2218,6 +2478,7 @@
                         "Direct Drive Standard,Direct Drive High Flow"
                     ],
                     "fan_direction": "left",
+                    "farthest_point_timelapse": "1",
                     "from": "system",
                     "gcode_flavor": "marlin",
                     "grab_length": [
