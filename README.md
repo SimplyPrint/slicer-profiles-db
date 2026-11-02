@@ -1,6 +1,15 @@
 # slicer-profiles-db
 An open database of printer and filament profiles for various 3D printing slicers. Integrated directly with the SimplyPrint slicer, allowing you to use PrusaSlicer, BambuStudio and OrcaSlicer in the browser. Contribute by adding profiles here that everyone can benefit from - for users and brands alike.
 
+PrusaSlicer 3.0 profiles are ingested from the evaluated `profile-bundle.json`
+published by `SimplyPrint/slicer-builds`. These profiles retain their upstream
+native ID and explicit compatibility contexts. A stable storage key allows
+multiple evaluated variants with the same display name to coexist; legacy 2.x
+INI profiles continue to use their existing name-based layout. Mapping-friendly
+machine-model roles are derived from evaluated machine variants, and each
+process role carries its matching per-tool process configs in context so the
+3.0 output does not flatten away the new split configuration model.
+
 ## Contributing
 
 As we are working on the process, the simplest way to add profiles is to add them as "overlays" in the `overlay/` folder, these correspond 1:1 with the format from the slicer you'd want to add the profile to, and is the simplest way to integrate the profile consistently.
@@ -13,6 +22,30 @@ changes when a release is ingested, so re-ingest the latest one with `--force` w
 adding a patch.
 
 The `profiles/` folder is a generated, centralized result of ingesting multiple data sources, including the overlays, while manual edits are possible, they are not intended.
+
+## Import bundle
+
+`uv run slicer-profiles-db map` produces one deterministic
+`dist/profiles.spdb` bundle. It replaces the duplicated per-model `out/` tree:
+profiles are stored once under a stable producer ID, model relationships are ID
+lists, and resources are content-addressed. The manifest records the stable and
+lane engine inputs, G-code ABI, hashes, and a model-by-engine mapping
+outcome for every SimplyPrint printer model. Bundle creation fails unless that
+classification matrix is 100% complete; an unmatched model is valid only when
+it has an explicit reason.
+
+Engine targets live in `engines.lock.json`. A catalog lane is a complete snapshot
+selected by an authoritative source format and is used only for a real topology
+boundary such as PrusaSlicer 3. Ordinary setting compatibility is derived from
+the versioned setting definitions and is never copied into profile rows.
+
+An engine with `"release_history": true` exports its profiles at the locked version
+and attaches `version_settings` to each one: for every ingested release, the
+settings that differ from the export (`null` for one that release does not have),
+from the store's history. Web applies them when a slicer asks for a specific
+release, so the locked version only picks the baseline. A profile whose export no
+release gives (an overlay or patch changed it) has no history and is the same at
+every release.
 
 ## Cura resources
 

@@ -2,9 +2,8 @@
 Content-addressed store for slicer profile binary resource files.
 
 Resources are stored once under their SHA-256 hash. Profile settings may refer to
-resources as ``sha256:{hash}``, and /out/resources.json maps those refs to
-repo-relative files under profiles/{slicer}/_resources without duplicating assets
-under /out.
+resources as ``sha256:{hash}``, and the staging resource manifest maps those refs
+to files under the configured store without duplicating assets.
 """
 
 import hashlib
