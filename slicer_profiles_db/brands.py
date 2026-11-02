@@ -19,10 +19,9 @@ _SHARED_BRAND_MAP: dict[str, str] = {
 _SLICER_OVERRIDES: dict[SlicerType, dict[str, str]] = {
     SlicerType.PRUSASLICER: {
         "prusaresearch": "prusa",
-        "qiditechnology": "qidi tech",
+        "qiditechnology": "qidi",
     },
     SlicerType.ORCASLICER: {
-        "qidi": "qidi tech",
         "bbl": "bambu lab",
         "twotrees": "two trees",
         "positron3d": "positron 3d",
@@ -31,7 +30,6 @@ _SLICER_OVERRIDES: dict[SlicerType, dict[str, str]] = {
         "custom": "any generic printer",
     },
     SlicerType.BAMBUSTUDIO: {
-        "qidi": "qidi tech",
         "bbl": "bambu lab",
         "twotrees": "two trees",
         "positron3d": "positron 3d",
@@ -39,7 +37,6 @@ _SLICER_OVERRIDES: dict[SlicerType, dict[str, str]] = {
         "flyingbear": "flying bear",
     },
     SlicerType.CREALITYPRINT: {
-        "qidi": "qidi tech",
         "bbl": "bambu lab",
         "twotrees": "two trees",
         "positron3d": "positron 3d",
@@ -48,7 +45,6 @@ _SLICER_OVERRIDES: dict[SlicerType, dict[str, str]] = {
         "custom": "any generic printer",
     },
     SlicerType.ELEGOOSLICER: {
-        "qidi": "qidi tech",
         "bbl": "bambu lab",
         "twotrees": "two trees",
         "positron3d": "positron 3d",
@@ -56,7 +52,6 @@ _SLICER_OVERRIDES: dict[SlicerType, dict[str, str]] = {
         "flyingbear": "flying bear",
     },
     SlicerType.ANYCUBICSLICER: {
-        "qidi": "qidi tech",
         "bbl": "bambu lab",
         "twotrees": "two trees",
         "positron3d": "positron 3d",
@@ -87,7 +82,7 @@ _SLICER_OVERRIDES: dict[SlicerType, dict[str, str]] = {
     },
     SlicerType.SUPERSLICER: {
         "prusaresearch": "prusa",
-        "qiditechnology": "qidi tech",
+        "qiditechnology": "qidi",
     },
 }
 
