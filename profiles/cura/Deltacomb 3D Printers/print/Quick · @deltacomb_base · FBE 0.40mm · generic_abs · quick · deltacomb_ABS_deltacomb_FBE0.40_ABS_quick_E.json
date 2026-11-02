@@ -12,6 +12,7 @@
   "native_id": "intent:deltacomb_base:deltacomb/ABS/deltacomb_FBE0.40_ABS_quick_E",
   "context": {
     "native_id": "intent:deltacomb_base:deltacomb/ABS/deltacomb_FBE0.40_ABS_quick_E",
+    "display_name": "Quick · Extra Fast (0.3 mm) · FBE 0.40mm · Generic ABS",
     "source_kind": "intent",
     "resource_version": "5.13.0",
     "definition": "deltacomb_base",
@@ -20,6 +21,12 @@
     "variant_name": "FBE 0.40mm",
     "material_id": "generic_abs",
     "global_quality_id": null,
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "deltacomb_base"
@@ -28,10 +35,13 @@
         "FBE 0.40mm"
       ],
       "material_native_ids": [
-        "generic_abs"
+        "generic_abs",
+        "generic_abs_175"
+      ],
+      "material_types": [
+        "ABS"
       ]
-    },
-    "display_name": "Quick · @deltacomb_base · FBE 0.40mm · generic_abs · quick"
+    }
   },
   "setting_scopes": {
     "jerk_topbottom": "extruder.0",

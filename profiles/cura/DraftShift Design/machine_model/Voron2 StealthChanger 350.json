@@ -24,6 +24,16 @@
     "quality_definition": "voron2_base",
     "preferred_material": "generic_abs",
     "preferred_quality_type": "fast",
+    "selection_defaults": {
+      "process_profile": {
+        "match": {
+          "profile_context": {
+            "quality_type": "fast",
+            "intent_category": null
+          }
+        }
+      }
+    },
     "preferred_variant_name": "V6 0.40mm",
     "preferred_variant_key": "0.4",
     "machine_extruder_trains": {
@@ -98,7 +108,20 @@
       "model": {
         "ref": "sha256:df6c0779d1a11efd55ffceac479c574f42f296b9858ac27ad97735888c1ab7e4",
         "format": "3mf",
-        "media_type": "model/3mf"
+        "media_type": "model/3mf",
+        "mesh_selection": "largest_face_count",
+        "geometry_space": "raw_mesh",
+        "transform": {
+          "rotation": {
+            "euler": [
+              90,
+              0,
+              0
+            ],
+            "unit": "deg",
+            "order": "XYZ"
+          }
+        }
       }
     },
     "scene": {
@@ -118,10 +141,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -135,10 +154,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -150,12 +165,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -167,13 +177,22 @@
     "variants": [
       {
         "id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_250_volcano_1.00",
-        "key": "HF1",
+        "key": "1",
         "name": "Volcano 1.00mm",
         "nozzle_diameter": 1.0,
         "attributes": {
           "hardware_type": "nozzle",
           "nozzle_diameter": 1.0,
-          "nozzle_volume_type": "high_flow",
+          "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_250_volcano_1.00",
+          "nozzle_diameter": 1.0,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -191,6 +210,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "unknown"
         },
+        "identity": {
+          "native_id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_350_v6_0.25",
+          "nozzle_diameter": 0.25,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "unknown"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -204,6 +232,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.3,
           "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_350_v6_0.30",
+          "nozzle_diameter": 0.3,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -221,6 +258,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "unknown"
         },
+        "identity": {
+          "native_id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_350_v6_0.35",
+          "nozzle_diameter": 0.35,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "unknown"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -234,6 +280,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.4,
           "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_350_v6_0.40",
+          "nozzle_diameter": 0.4,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -251,6 +306,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "unknown"
         },
+        "identity": {
+          "native_id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_350_v6_0.50",
+          "nozzle_diameter": 0.5,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "unknown"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -264,6 +328,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.6,
           "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_350_v6_0.60",
+          "nozzle_diameter": 0.6,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -281,49 +354,13 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "unknown"
         },
-        "runtime_compatible_tool_indices": [
-          0
-        ]
-      },
-      {
-        "id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_350_volcano_0.40",
-        "key": "HF0.4",
-        "name": "Volcano 0.40mm",
-        "nozzle_diameter": 0.4,
-        "attributes": {
-          "hardware_type": "nozzle",
-          "nozzle_diameter": 0.4,
-          "nozzle_volume_type": "high_flow",
-          "hotend_id": "unknown"
-        },
-        "runtime_compatible_tool_indices": [
-          0
-        ]
-      },
-      {
-        "id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_350_volcano_0.60",
-        "key": "HF0.6",
-        "name": "Volcano 0.60mm",
-        "nozzle_diameter": 0.6,
-        "attributes": {
-          "hardware_type": "nozzle",
-          "nozzle_diameter": 0.6,
-          "nozzle_volume_type": "high_flow",
-          "hotend_id": "unknown"
-        },
-        "runtime_compatible_tool_indices": [
-          0
-        ]
-      },
-      {
-        "id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_350_volcano_0.80",
-        "key": "HF0.8",
-        "name": "Volcano 0.80mm",
-        "nozzle_diameter": 0.8,
-        "attributes": {
-          "hardware_type": "nozzle",
+        "identity": {
+          "native_id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_350_v6_0.80",
           "nozzle_diameter": 0.8,
-          "nozzle_volume_type": "high_flow",
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -332,13 +369,22 @@
       },
       {
         "id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_350_volcano_1.20",
-        "key": "HF1.2",
+        "key": "1.2",
         "name": "Volcano 1.20mm",
         "nozzle_diameter": 1.2,
         "attributes": {
           "hardware_type": "nozzle",
           "nozzle_diameter": 1.2,
-          "nozzle_volume_type": "high_flow",
+          "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:voron2_stealthchanger_350:draftshift/voron2_stealthchanger_350_volcano_1.20",
+          "nozzle_diameter": 1.2,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -2768,7 +2814,7 @@
       "5.13.0": false
     },
     "prime_tower_mode": {
-      "5.13.0": "normal"
+      "5.13.0": "interleaved"
     },
     "prime_tower_size": {
       "5.13.0": 20

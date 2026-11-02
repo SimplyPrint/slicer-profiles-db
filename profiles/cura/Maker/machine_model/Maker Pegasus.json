@@ -22,6 +22,16 @@
     "quality_definition": "makeR_pegasus",
     "preferred_material": "generic_pla",
     "preferred_quality_type": "normal",
+    "selection_defaults": {
+      "process_profile": {
+        "match": {
+          "profile_context": {
+            "quality_type": "normal",
+            "intent_category": null
+          }
+        }
+      }
+    },
     "preferred_variant_name": null,
     "preferred_variant_key": null,
     "machine_extruder_trains": {
@@ -55,13 +65,24 @@
         "ref": "sha256:3f9e4de6bf9e7a35cdfa5ad56637983aa052e3271699a7ec88a9499050bc8386",
         "format": "3mf",
         "media_type": "model/3mf",
+        "mesh_selection": "largest_face_count",
+        "geometry_space": "raw_mesh",
         "transform": {
           "translation": [
             -200,
-            -10,
-            200
+            -200,
+            -10
           ],
-          "unit": "mm"
+          "unit": "mm",
+          "rotation": {
+            "euler": [
+              90,
+              0,
+              0
+            ],
+            "unit": "deg",
+            "order": "XYZ"
+          }
         }
       }
     },
@@ -82,10 +103,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -99,10 +116,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -114,12 +127,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -137,6 +145,15 @@
         "attributes": {
           "nozzle_diameter": 0.4,
           "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:makeR_pegasus:default",
+          "nozzle_diameter": 0.4,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -2564,7 +2581,7 @@
       "5.13.0": false
     },
     "prime_tower_mode": {
-      "5.13.0": "normal"
+      "5.13.0": "interleaved"
     },
     "prime_tower_size": {
       "5.13.0": 20

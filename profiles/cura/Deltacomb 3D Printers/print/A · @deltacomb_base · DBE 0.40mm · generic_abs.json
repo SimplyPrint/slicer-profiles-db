@@ -12,6 +12,7 @@
   "native_id": "quality:deltacomb_base:deltacomb/ABS/deltacomb_DBE0.40_ABS_A",
   "context": {
     "native_id": "quality:deltacomb_base:deltacomb/ABS/deltacomb_DBE0.40_ABS_A",
+    "display_name": "Extra Fine (0.05 mm) · DBE 0.40mm · Generic ABS",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "deltacomb_base",
@@ -20,6 +21,12 @@
     "variant_name": "DBE 0.40mm",
     "material_id": "generic_abs",
     "global_quality_id": "quality:deltacomb_base:deltacomb/deltacomb_global_A",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "deltacomb_base"
@@ -28,7 +35,11 @@
         "DBE 0.40mm"
       ],
       "material_native_ids": [
-        "generic_abs"
+        "generic_abs",
+        "generic_abs_175"
+      ],
+      "material_types": [
+        "ABS"
       ]
     }
   },

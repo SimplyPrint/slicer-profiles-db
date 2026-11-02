@@ -12,6 +12,7 @@
   "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_PLA_rough",
   "context": {
     "native_id": "quality:tronxy_x:tronxy/tronxy_0.6_PLA_rough",
+    "display_name": "Rough Quality (0.3 mm) · 0.6mm Nozzle · Generic PLA",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "tronxy_x",
@@ -20,6 +21,12 @@
     "variant_name": "0.6mm Nozzle",
     "material_id": "generic_pla",
     "global_quality_id": "quality:tronxy_x:tronxy/tronxy_global_rough",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "tronxy_x"
@@ -28,7 +35,11 @@
         "0.6mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_pla"
+        "generic_pla",
+        "generic_pla_175"
+      ],
+      "material_types": [
+        "PLA"
       ]
     }
   },

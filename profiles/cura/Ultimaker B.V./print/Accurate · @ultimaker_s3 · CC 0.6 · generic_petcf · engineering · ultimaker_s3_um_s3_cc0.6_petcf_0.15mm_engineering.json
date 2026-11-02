@@ -12,6 +12,7 @@
   "native_id": "intent:ultimaker_s3:ultimaker_s3/um_s3_cc0.6_petcf_0.15mm_engineering",
   "context": {
     "native_id": "intent:ultimaker_s3:ultimaker_s3/um_s3_cc0.6_petcf_0.15mm_engineering",
+    "display_name": "Accurate · Normal (0.15 mm) · CC 0.6 · Generic PET CF",
     "source_kind": "intent",
     "resource_version": "5.13.0",
     "definition": "ultimaker_s3",
@@ -20,6 +21,12 @@
     "variant_name": "CC 0.6",
     "material_id": "generic_petcf",
     "global_quality_id": null,
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.6,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "CC 0.6"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker_s3"
@@ -29,9 +36,11 @@
       ],
       "material_native_ids": [
         "generic_petcf"
+      ],
+      "material_types": [
+        "PET CF"
       ]
-    },
-    "display_name": "Accurate · @ultimaker_s3 · CC 0.6 · generic_petcf · engineering"
+    }
   },
   "setting_scopes": {
     "speed_print": "extruder.0",

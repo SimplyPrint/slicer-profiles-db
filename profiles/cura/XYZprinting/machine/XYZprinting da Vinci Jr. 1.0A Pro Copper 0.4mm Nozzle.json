@@ -30,6 +30,15 @@
       "nozzle_volume_type": "standard",
       "hotend_id": "Copper 0.4mm Nozzle"
     },
+    "variant_identity": {
+      "native_id": "variant:xyzprinting_da_vinci_jr_1p0a_pro:xyz_printing/xyzprinting_da_vinci_jr_1p0a_pro_copper_0.40",
+      "nozzle_diameter": 0.4,
+      "nozzle_volume_type": "standard",
+      "tool_indices": [
+        0
+      ],
+      "hotend_id": "Copper 0.4mm Nozzle"
+    },
     "tool_topology": {
       "tool_count": 1,
       "tools": [
@@ -53,6 +62,17 @@
     "variant_aliases": [
       "Hardened Steel 0.4mm Nozzle",
       "variant:xyzprinting_da_vinci_jr_1p0a_pro:xyz_printing/xyzprinting_da_vinci_jr_1p0a_pro_hs_0.40"
+    ],
+    "variant_identity_aliases": [
+      {
+        "native_id": "variant:xyzprinting_da_vinci_jr_1p0a_pro:xyz_printing/xyzprinting_da_vinci_jr_1p0a_pro_hs_0.40",
+        "nozzle_diameter": 0.4,
+        "nozzle_volume_type": "standard",
+        "tool_indices": [
+          0
+        ],
+        "hotend_id": "Hardened Steel 0.4mm Nozzle"
+      }
     ],
     "_cura_material_recompute_plan": {
       "acceleration_support_bottom": {
@@ -453,10 +473,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -470,10 +486,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -485,12 +497,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -2915,7 +2922,7 @@
       "5.13.0": false
     },
     "prime_tower_mode": {
-      "5.13.0": "normal"
+      "5.13.0": "interleaved"
     },
     "prime_tower_size": {
       "5.13.0": 20

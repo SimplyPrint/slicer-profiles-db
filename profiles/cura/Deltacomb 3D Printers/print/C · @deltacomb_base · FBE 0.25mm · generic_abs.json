@@ -12,6 +12,7 @@
   "native_id": "quality:deltacomb_base:deltacomb/ABS/deltacomb_FBE0.25_ABS_C",
   "context": {
     "native_id": "quality:deltacomb_base:deltacomb/ABS/deltacomb_FBE0.25_ABS_C",
+    "display_name": "Normal (0.15 mm) · FBE 0.25mm · Generic ABS",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "deltacomb_base",
@@ -20,6 +21,12 @@
     "variant_name": "FBE 0.25mm",
     "material_id": "generic_abs",
     "global_quality_id": "quality:deltacomb_base:deltacomb/deltacomb_global_C",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.25,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "deltacomb_base"
@@ -28,7 +35,11 @@
         "FBE 0.25mm"
       ],
       "material_native_ids": [
-        "generic_abs"
+        "generic_abs",
+        "generic_abs_175"
+      ],
+      "material_types": [
+        "ABS"
       ]
     }
   },

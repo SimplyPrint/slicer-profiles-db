@@ -23,6 +23,16 @@
     "quality_definition": "dagoma_pro_430_bowden",
     "preferred_material": "generic_pla",
     "preferred_quality_type": "h0.2",
+    "selection_defaults": {
+      "process_profile": {
+        "match": {
+          "profile_context": {
+            "quality_type": "h0.2",
+            "intent_category": null
+          }
+        }
+      }
+    },
     "preferred_variant_name": "Brass 0.4mm",
     "preferred_variant_key": "0.4",
     "machine_extruder_trains": {
@@ -75,10 +85,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -92,10 +98,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -107,12 +109,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -133,6 +130,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "Brass 0.4mm"
         },
+        "identity": {
+          "native_id": "variant:dagoma_pro_430_bowden:dagoma/dagoma_pro_430_bowden_brass_0.4",
+          "nozzle_diameter": 0.4,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "Brass 0.4mm"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -146,6 +152,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.8,
           "nozzle_volume_type": "standard",
+          "hotend_id": "Brass 0.8mm"
+        },
+        "identity": {
+          "native_id": "variant:dagoma_pro_430_bowden:dagoma/dagoma_pro_430_bowden_brass_0.8",
+          "nozzle_diameter": 0.8,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "Brass 0.8mm"
         },
         "runtime_compatible_tool_indices": [
@@ -163,6 +178,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "Brass 1.0mm"
         },
+        "identity": {
+          "native_id": "variant:dagoma_pro_430_bowden:dagoma/dagoma_pro_430_bowden_brass_1.0",
+          "nozzle_diameter": 1.0,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "Brass 1.0mm"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -176,6 +200,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.2,
           "nozzle_volume_type": "standard",
+          "hotend_id": "Serie 0.2mm"
+        },
+        "identity": {
+          "native_id": "variant:dagoma_pro_430_bowden:dagoma/dagoma_pro_430_bowden_generic_0.2",
+          "nozzle_diameter": 0.2,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "Serie 0.2mm"
         },
         "runtime_compatible_tool_indices": [
@@ -193,6 +226,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "Serie 0.6mm"
         },
+        "identity": {
+          "native_id": "variant:dagoma_pro_430_bowden:dagoma/dagoma_pro_430_bowden_generic_0.6",
+          "nozzle_diameter": 0.6,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "Serie 0.6mm"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -206,6 +248,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 1.2,
           "nozzle_volume_type": "standard",
+          "hotend_id": "Serie 1.2mm"
+        },
+        "identity": {
+          "native_id": "variant:dagoma_pro_430_bowden:dagoma/dagoma_pro_430_bowden_generic_1.2",
+          "nozzle_diameter": 1.2,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "Serie 1.2mm"
         },
         "runtime_compatible_tool_indices": [
@@ -2662,7 +2713,7 @@
       "5.13.0": false
     },
     "prime_tower_mode": {
-      "5.13.0": "normal"
+      "5.13.0": "interleaved"
     },
     "prime_tower_size": {
       "5.13.0": 20

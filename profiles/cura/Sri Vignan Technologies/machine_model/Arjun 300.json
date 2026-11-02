@@ -22,6 +22,16 @@
     "quality_definition": "arjun300",
     "preferred_material": "generic_pla",
     "preferred_quality_type": "normal",
+    "selection_defaults": {
+      "process_profile": {
+        "match": {
+          "profile_context": {
+            "quality_type": "normal",
+            "intent_category": null
+          }
+        }
+      }
+    },
     "preferred_variant_name": "0.4 mm Nozzle",
     "preferred_variant_key": "0.4",
     "machine_extruder_trains": {
@@ -64,8 +74,8 @@
         "transform": {
           "translation": [
             -155,
-            -6,
-            190
+            -190,
+            -6
           ],
           "unit": "mm"
         }
@@ -88,10 +98,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -105,10 +111,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -120,12 +122,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -146,6 +143,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "unknown"
         },
+        "identity": {
+          "native_id": "variant:arjun300:arjun/arjun300_0.2",
+          "nozzle_diameter": 0.2,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "unknown"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -159,6 +165,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.3,
           "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:arjun300:arjun/arjun300_0.3",
+          "nozzle_diameter": 0.3,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -176,6 +191,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "unknown"
         },
+        "identity": {
+          "native_id": "variant:arjun300:arjun/arjun300_0.4",
+          "nozzle_diameter": 0.4,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "unknown"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -189,6 +213,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.5,
           "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:arjun300:arjun/arjun300_0.5",
+          "nozzle_diameter": 0.5,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -206,6 +239,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "unknown"
         },
+        "identity": {
+          "native_id": "variant:arjun300:arjun/arjun300_0.6",
+          "nozzle_diameter": 0.6,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "unknown"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -219,6 +261,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.8,
           "nozzle_volume_type": "standard",
+          "hotend_id": "unknown"
+        },
+        "identity": {
+          "native_id": "variant:arjun300:arjun/arjun300_0.8",
+          "nozzle_diameter": 0.8,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "unknown"
         },
         "runtime_compatible_tool_indices": [
@@ -2646,7 +2697,7 @@
       "5.13.0": false
     },
     "prime_tower_mode": {
-      "5.13.0": "normal"
+      "5.13.0": "interleaved"
     },
     "prime_tower_size": {
       "5.13.0": 20

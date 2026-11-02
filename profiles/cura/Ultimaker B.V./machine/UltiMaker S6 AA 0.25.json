@@ -32,6 +32,15 @@
       "nozzle_volume_type": "standard",
       "hotend_id": "AA 0.25"
     },
+    "variant_identity": {
+      "native_id": "variant:ultimaker_s6:ultimaker_s6_aa025",
+      "nozzle_diameter": 0.25,
+      "nozzle_volume_type": "standard",
+      "tool_indices": [
+        0
+      ],
+      "hotend_id": "AA 0.25"
+    },
     "tool_topology": {
       "tool_count": 2,
       "tools": [
@@ -424,10 +433,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -441,10 +446,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -456,12 +457,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }

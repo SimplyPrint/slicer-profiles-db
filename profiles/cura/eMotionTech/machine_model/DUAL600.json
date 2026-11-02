@@ -22,6 +22,16 @@
     "quality_definition": "strateo3d",
     "preferred_material": "emotiontech_pla",
     "preferred_quality_type": "c",
+    "selection_defaults": {
+      "process_profile": {
+        "match": {
+          "profile_context": {
+            "quality_type": "c",
+            "intent_category": null
+          }
+        }
+      }
+    },
     "preferred_variant_name": "Standard 0.6",
     "preferred_variant_key": "0.6",
     "machine_extruder_trains": {
@@ -72,10 +82,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -89,10 +95,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -104,12 +106,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -130,6 +127,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "Standard 0.4"
         },
+        "identity": {
+          "native_id": "variant:strateo3d:strateo3d/strateo3d_standard_04",
+          "nozzle_diameter": 0.4,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "Standard 0.4"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -143,6 +149,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.6,
           "nozzle_volume_type": "standard",
+          "hotend_id": "Standard 0.6"
+        },
+        "identity": {
+          "native_id": "variant:strateo3d:strateo3d/strateo3d_standard_06",
+          "nozzle_diameter": 0.6,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "Standard 0.6"
         },
         "runtime_compatible_tool_indices": [
@@ -160,6 +175,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "Standard 0.8"
         },
+        "identity": {
+          "native_id": "variant:strateo3d:strateo3d/strateo3d_standard_08",
+          "nozzle_diameter": 0.8,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "Standard 0.8"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -175,6 +199,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "Standard 1.0 Experimental"
         },
+        "identity": {
+          "native_id": "variant:strateo3d:strateo3d/strateo3d_standard_10",
+          "nozzle_diameter": 1.0,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "Standard 1.0 Experimental"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -188,6 +221,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 1.2,
           "nozzle_volume_type": "standard",
+          "hotend_id": "Standard 1.2 Experimental"
+        },
+        "identity": {
+          "native_id": "variant:strateo3d:strateo3d/strateo3d_standard_12",
+          "nozzle_diameter": 1.2,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "Standard 1.2 Experimental"
         },
         "runtime_compatible_tool_indices": [
@@ -2615,7 +2657,7 @@
       "5.13.0": false
     },
     "prime_tower_mode": {
-      "5.13.0": "normal"
+      "5.13.0": "interleaved"
     },
     "prime_tower_size": {
       "5.13.0": 20

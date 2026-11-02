@@ -22,6 +22,16 @@
     "quality_definition": "strateo3d_IDEX420",
     "preferred_material": "emotiontech_pla",
     "preferred_quality_type": "b",
+    "selection_defaults": {
+      "process_profile": {
+        "match": {
+          "profile_context": {
+            "quality_type": "b",
+            "intent_category": null
+          }
+        }
+      }
+    },
     "preferred_variant_name": "IDEX420 Standard 0.4",
     "preferred_variant_key": null,
     "machine_extruder_trains": {
@@ -72,10 +82,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_x",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_width",
                 "scale": -0.5,
                 "when": {
@@ -89,10 +95,6 @@
             "constant": 0.0,
             "terms": [
               {
-                "setting": "mesh_position_y",
-                "scale": 1.0
-              },
-              {
                 "setting": "machine_depth",
                 "scale": -0.5,
                 "when": {
@@ -104,12 +106,7 @@
           },
           "z": {
             "constant": 0.0,
-            "terms": [
-              {
-                "setting": "mesh_position_z",
-                "scale": 1.0
-              }
-            ]
+            "terms": []
           }
         }
       }
@@ -130,6 +127,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "IDEX420 Laiton 0.4"
         },
+        "identity": {
+          "native_id": "variant:strateo3d_IDEX420:strateo3d/strateo3d_IDEX420_brass_04",
+          "nozzle_diameter": 0.4,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "IDEX420 Laiton 0.4"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -145,6 +151,15 @@
           "nozzle_volume_type": "standard",
           "hotend_id": "IDEX420 Laiton 0.6"
         },
+        "identity": {
+          "native_id": "variant:strateo3d_IDEX420:strateo3d/strateo3d_IDEX420_brass_06",
+          "nozzle_diameter": 0.6,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
+          "hotend_id": "IDEX420 Laiton 0.6"
+        },
         "runtime_compatible_tool_indices": [
           0
         ]
@@ -158,6 +173,15 @@
           "hardware_type": "nozzle",
           "nozzle_diameter": 0.8,
           "nozzle_volume_type": "standard",
+          "hotend_id": "IDEX420 Laiton 0.8"
+        },
+        "identity": {
+          "native_id": "variant:strateo3d_IDEX420:strateo3d/strateo3d_IDEX420_brass_08",
+          "nozzle_diameter": 0.8,
+          "nozzle_volume_type": "standard",
+          "tool_indices": [
+            0
+          ],
           "hotend_id": "IDEX420 Laiton 0.8"
         },
         "runtime_compatible_tool_indices": [
@@ -2585,7 +2609,7 @@
       "5.13.0": true
     },
     "prime_tower_mode": {
-      "5.13.0": "normal"
+      "5.13.0": "interleaved"
     },
     "prime_tower_size": {
       "5.13.0": 20

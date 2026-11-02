@@ -12,6 +12,7 @@
   "native_id": "quality:ultimaker3:ultimaker3/um3_aa0.8_CPE_Draft_Print",
   "context": {
     "native_id": "quality:ultimaker3:ultimaker3/um3_aa0.8_CPE_Draft_Print",
+    "display_name": "Fast (0.2 mm) · AA 0.8 · Generic CPE",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "ultimaker3",
@@ -20,6 +21,12 @@
     "variant_name": "AA 0.8",
     "material_id": "generic_cpe",
     "global_quality_id": "quality:ultimaker3:ultimaker3/um3_global_Draft_Quality",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.8,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "AA 0.8"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "ultimaker3"
@@ -28,7 +35,11 @@
         "AA 0.8"
       ],
       "material_native_ids": [
-        "generic_cpe"
+        "generic_cpe",
+        "generic_cpe_175"
+      ],
+      "material_types": [
+        "CPE"
       ]
     }
   },

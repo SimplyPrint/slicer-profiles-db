@@ -12,6 +12,7 @@
   "native_id": "quality:flyingbear_base:flyingbear/petg/flyingbear_0.50_petg_low",
   "context": {
     "native_id": "quality:flyingbear_base:flyingbear/petg/flyingbear_0.50_petg_low",
+    "display_name": "Low Quality (0.28 mm) · 0.5mm Nozzle · Generic PETG",
     "source_kind": "quality",
     "resource_version": "5.13.0",
     "definition": "flyingbear_base",
@@ -20,6 +21,12 @@
     "variant_name": "0.5mm Nozzle",
     "material_id": "generic_petg",
     "global_quality_id": "quality:flyingbear_base:flyingbear/flyingbear_global_0.28_low",
+    "attributes": {
+      "hardware_type": "nozzle",
+      "nozzle_diameter": 0.5,
+      "nozzle_volume_type": "standard",
+      "hotend_id": "unknown"
+    },
     "compatibility": {
       "machine_definition_ids": [
         "flyingbear_base"
@@ -28,7 +35,11 @@
         "0.5mm Nozzle"
       ],
       "material_native_ids": [
-        "generic_petg"
+        "generic_petg",
+        "generic_petg_175"
+      ],
+      "material_types": [
+        "PETG"
       ]
     }
   },
