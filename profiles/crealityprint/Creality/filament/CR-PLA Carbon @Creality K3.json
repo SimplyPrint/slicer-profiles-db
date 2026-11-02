@@ -4,7 +4,7 @@
   "name": "CR-PLA Carbon @Creality K3",
   "vendor": "Creality",
   "first_seen": "7.3.0",
-  "last_seen": "7.3.0",
+  "last_seen": "7.3.1",
   "filament_id": "13001",
   "setting_id": "GFSA04",
   "renamed_from": null,
@@ -53,7 +53,8 @@
       "7.3.0": "50%"
     },
     "overhang_fan_speed": {
-      "7.3.0": "100"
+      "7.3.0": "100",
+      "7.3.1": "60"
     },
     "slow_down_for_layer_cooling": {
       "7.3.0": "1"
@@ -223,10 +224,12 @@
       "7.3.0": "0"
     },
     "fan_max_speed": {
-      "7.3.0": "100"
+      "7.3.0": "100",
+      "7.3.1": "60"
     },
     "fan_min_speed": {
-      "7.3.0": "100"
+      "7.3.0": "100",
+      "7.3.1": "60"
     },
     "slow_down_min_speed": {
       "7.3.0": [
@@ -242,6 +245,9 @@
     "filament_start_gcode": {
       "7.3.0": [
         ";filament start gcode"
+      ],
+      "7.3.1": [
+        ";filament start gcode\n{if (position[2] > first_layer_height) }\nM104 S[nozzle_temperature]\n{else} \nM104 S[first_layer_temperature]\n{endif}"
       ]
     },
     "nozzle_temperature": {
@@ -319,6 +325,24 @@
         "0",
         "0",
         "0"
+      ],
+      "7.3.1": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
       ]
     },
     "enable_special_area_additional_cooling_fan": {
@@ -365,6 +389,12 @@
         "nil",
         "nil",
         "nil"
+      ],
+      "7.3.1": [
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "filament_multitool_ramming": {
@@ -396,7 +426,8 @@
         "nil",
         "nil",
         "nil"
-      ]
+      ],
+      "7.3.1": null
     },
     "filament_retract_lift_above": {
       "7.3.0": [
@@ -428,7 +459,8 @@
         "nil",
         "nil",
         "nil"
-      ]
+      ],
+      "7.3.1": null
     },
     "filament_retraction_distances_when_cut": {
       "7.3.0": [
@@ -436,6 +468,12 @@
         "nil",
         "nil",
         "nil"
+      ],
+      "7.3.1": [
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "filament_shrink": {
@@ -458,6 +496,24 @@
     },
     "pressure_advance": {
       "7.3.0": [
+        "0.036",
+        "0.036",
+        "0.036",
+        "0.036"
+      ],
+      "7.3.1": [
+        "0.036",
+        "0.036",
+        "0.036",
+        "0.036",
+        "0.036",
+        "0.036",
+        "0.036",
+        "0.036",
+        "0.036",
+        "0.036",
+        "0.036",
+        "0.036",
         "0.036",
         "0.036",
         "0.036",
