@@ -4,12 +4,13 @@
   "name": "Bambu TPU 95A HF @BBL P2S 0.8 nozzle",
   "vendor": "BBL",
   "first_seen": "02.08.01.55",
-  "last_seen": "02.08.02.60",
+  "last_seen": "02.09.01.70",
   "filament_id": "GFU00",
   "setting_id": "GFSU00_32",
   "renamed_from": null,
   "filament_type": "TPU",
   "native_id": null,
+  "storage_key": null,
   "context": {},
   "setting_scopes": {},
   "settings": {
@@ -197,10 +198,21 @@
     "filament_dev_ams_drying_ams_limitations": {
       "02.08.01.55": [
         "1"
+      ],
+      "02.09.01.70": [
+        "1",
+        "2",
+        "3"
       ]
     },
     "filament_dev_ams_drying_heat_distortion_temperature": {
       "02.08.01.55": [
+        "45"
+      ],
+      "02.09.01.70": [
+        "45",
+        "45",
+        "70",
         "45"
       ]
     },
@@ -237,6 +249,12 @@
     },
     "filament_dev_drying_softening_temperature": {
       "02.08.01.55": [
+        "50"
+      ],
+      "02.09.01.70": [
+        "50",
+        "50",
+        "70",
         "50"
       ]
     },
@@ -695,6 +713,9 @@
     "temperature_vitrification": {
       "02.08.01.55": [
         "30"
+      ],
+      "02.09.01.70": [
+        "70"
       ]
     },
     "textured_plate_temp": {
@@ -745,6 +766,28 @@
     "first_x_layer_fan_speed": {
       "02.08.01.55": [
         "40"
+      ]
+    },
+    "filament_pre_heating_enabled": {
+      "02.09.01.70": [
+        "1"
+      ]
+    },
+    "fins_extrude_safe_temp": {
+      "02.09.01.70": [
+        "60"
+      ]
+    },
+    "filament_retract_length_toolchange": {
+      "02.09.01.70": [
+        "nil",
+        "nil"
+      ]
+    },
+    "filament_retract_restart_extra_toolchange": {
+      "02.09.01.70": [
+        "nil",
+        "nil"
       ]
     }
   }
