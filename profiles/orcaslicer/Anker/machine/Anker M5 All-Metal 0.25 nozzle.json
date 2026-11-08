@@ -4,10 +4,15 @@
   "name": "Anker M5 All-Metal 0.25 nozzle",
   "vendor": "Anker",
   "first_seen": "2.3.1",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": "GM008",
+  "setting_id": "imIr5Mjp5nZ3e7Od",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.1": "machine"
@@ -43,7 +48,8 @@
       ]
     },
     "silent_mode": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.5.0": null
     },
     "machine_max_acceleration_e": {
       "2.3.1": [
@@ -244,6 +250,9 @@
     "default_filament_profile": {
       "2.3.1": [
         "Anker Generic PLA+"
+      ],
+      "2.5.0": [
+        "Generic PLA+ @Anker"
       ]
     },
     "default_print_profile": {
@@ -281,6 +290,9 @@
     },
     "upward_compatible_machine": {
       "2.3.1": []
+    },
+    "file_start_gcode": {
+      "2.5.0": ";TIME:{print_time_sec}s\n;Filament weight: {total_weight}g\n;Filament used: {used_filament}m\n;Layer height: {layer_height}\n;material_print_temperature_layer_0: {first_layer_temperature[0]}"
     }
   }
 }

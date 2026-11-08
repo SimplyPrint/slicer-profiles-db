@@ -4,10 +4,15 @@
   "name": "0.30 Standard @Snapmaker U1 (0.6 nozzle)",
   "vendor": "Snapmaker",
   "first_seen": "2.4.1",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
   "setting_id": "TWxp6qgz1DJa8Ngo",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.4.1": "process"
@@ -22,7 +27,8 @@
       "2.4.1": "true"
     },
     "adaptive_layer_height": {
-      "2.4.1": "0"
+      "2.4.1": "0",
+      "2.5.0": null
     },
     "reduce_crossing_wall": {
       "2.4.1": "0"
@@ -52,7 +58,17 @@
       "2.4.1": "0.62"
     },
     "outer_wall_speed": {
-      "2.4.1": "120"
+      "2.4.1": "120",
+      "2.5.0": [
+        "120",
+        "500",
+        "120",
+        "500",
+        "120",
+        "500",
+        "120",
+        "500"
+      ]
     },
     "line_width": {
       "2.4.1": "0.62"
@@ -67,7 +83,8 @@
       "2.4.1": "crosshatch"
     },
     "initial_layer_line_width": {
-      "2.4.1": "0.72"
+      "2.4.1": "0.72",
+      "2.5.0": "0.62"
     },
     "initial_layer_print_height": {
       "2.4.1": "0.3"
@@ -88,7 +105,17 @@
       "2.4.1": "15%"
     },
     "sparse_infill_speed": {
-      "2.4.1": "100"
+      "2.4.1": "100",
+      "2.5.0": [
+        "100",
+        "600",
+        "100",
+        "600",
+        "100",
+        "600",
+        "100",
+        "600"
+      ]
     },
     "interface_shells": {
       "2.4.1": "0"
@@ -100,7 +127,8 @@
       "2.4.1": "1"
     },
     "filename_format": {
-      "2.4.1": "{input_filename_base}_{filament_type[0]}_{print_time}.gcode"
+      "2.4.1": "{input_filename_base}_{filament_type[0]}_{print_time}.gcode",
+      "2.5.0": "{input_filename_base}_{filament_type[initial_no_support_extruder]}_{int(total_weight*10) / 10.0}g_{print_time}.gcode"
     },
     "wall_loops": {
       "2.4.1": "2"
@@ -109,10 +137,21 @@
       "2.4.1": "0.62"
     },
     "inner_wall_speed": {
-      "2.4.1": "150"
+      "2.4.1": "150",
+      "2.5.0": [
+        "150",
+        "600",
+        "150",
+        "600",
+        "150",
+        "600",
+        "150",
+        "600"
+      ]
     },
     "print_settings_id": {
-      "2.4.1": ""
+      "2.4.1": "",
+      "2.5.0": null
     },
     "raft_layers": {
       "2.4.1": "0"
@@ -133,7 +172,17 @@
       "2.4.1": "0.62"
     },
     "internal_solid_infill_speed": {
-      "2.4.1": "150"
+      "2.4.1": "150",
+      "2.5.0": [
+        "150",
+        "600",
+        "150",
+        "600",
+        "150",
+        "600",
+        "150",
+        "600"
+      ]
     },
     "spiral_mode": {
       "2.4.1": "0"
@@ -219,10 +268,12 @@
       ]
     },
     "smooth_coefficient": {
-      "2.4.1": "150"
+      "2.4.1": "150",
+      "2.5.0": null
     },
     "overhang_totally_speed": {
-      "2.4.1": "50"
+      "2.4.1": "50",
+      "2.5.0": null
     },
     "max_travel_detour_distance": {
       "2.4.1": "0"
@@ -246,7 +297,8 @@
       "2.4.1": "disabled"
     },
     "enable_arc_fitting": {
-      "2.4.1": "1"
+      "2.4.1": "1",
+      "2.5.0": "0"
     },
     "exclude_object": {
       "2.4.1": "1"
@@ -258,7 +310,8 @@
       "2.4.1": "inner wall/outer wall/infill"
     },
     "internal_bridge_support_thickness": {
-      "2.4.1": "0.8"
+      "2.4.1": "0.8",
+      "2.5.0": null
     },
     "initial_layer_acceleration": {
       "2.4.1": "500"
@@ -342,7 +395,8 @@
       "2.4.1": "0"
     },
     "wipe_tower_cone_angle": {
-      "2.4.1": "30"
+      "2.4.1": "30",
+      "2.5.0": null
     },
     "wipe_tower_wall_type": {
       "2.4.1": "rib"
@@ -369,7 +423,17 @@
       "2.4.1": "topbottom"
     },
     "internal_bridge_speed": {
-      "2.4.1": "100%"
+      "2.4.1": "100%",
+      "2.5.0": [
+        "100%",
+        "100%",
+        "100%",
+        "100%",
+        "100%",
+        "100%",
+        "100%",
+        "100%"
+      ]
     },
     "prime_tower_brim_width": {
       "2.4.1": "5"
@@ -384,10 +448,51 @@
       "2.4.1": "1"
     },
     "precise_outer_wall": {
-      "2.4.1": "0"
+      "2.4.1": "0",
+      "2.5.0": "1"
     },
     "slowdown_for_curled_perimeters": {
-      "2.4.1": "0"
+      "2.4.1": "0",
+      "2.5.0": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "top_color_penetration_layers": {
+      "2.5.0": "4"
+    },
+    "bottom_color_penetration_layers": {
+      "2.5.0": "3"
+    },
+    "print_extruder_id": {
+      "2.5.0": [
+        "1",
+        "1",
+        "2",
+        "2",
+        "3",
+        "3",
+        "4",
+        "4"
+      ]
+    },
+    "print_extruder_variant": {
+      "2.5.0": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow",
+        "Direct Drive Standard",
+        "Direct Drive High Flow",
+        "Direct Drive Standard",
+        "Direct Drive High Flow",
+        "Direct Drive Standard",
+        "Direct Drive High Flow"
+      ]
     }
   }
 }

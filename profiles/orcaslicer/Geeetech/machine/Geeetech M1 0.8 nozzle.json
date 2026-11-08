@@ -4,10 +4,15 @@
   "name": "Geeetech M1 0.8 nozzle",
   "vendor": "Geeetech",
   "first_seen": "2.3.1",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": "GM_GEEETECH_042",
+  "setting_id": "X32Nb2ZYiOOXsSXM",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.1": "machine"
@@ -43,7 +48,8 @@
       "2.3.1": "marlin"
     },
     "silent_mode": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.5.0": null
     },
     "machine_max_acceleration_e": {
       "2.3.1": [
@@ -234,7 +240,8 @@
       ]
     },
     "z_lift_type": {
-      "2.3.1": "NormalLift"
+      "2.3.1": "NormalLift",
+      "2.5.0": null
     },
     "machine_start_gcode": {
       "2.3.1": ";Geeetech M1 official wiki URL：https://www.geeetech.com/wiki/index.php/Geeetech_M1_3D_printer \nM104 S[first_layer_temperature] ; Set Hotend Temperature\nM140 S[first_layer_bed_temperature] ; set Bed Temperature\nM190 S[first_layer_bed_temperature] ; Wait for Bed Temperature\nM109 S[first_layer_temperature] ; wait for Hotend Temperature\nM220 S100 ;Reset Feedrate\nM221 S100 ;Reset Flowrate\nG92 E0 ; Reset Extruder\nG28 ; Home all axes\nM107 ;Off Main Fan\nM300 S2500 P1000 ;Play a short tune\nG1 Z0.28 ;Move Z Axis up little to prevent scratching of Heat Bed\nG92 E0 ;Reset Extruder\nG1 Y3 F2400 ;Move to start position\nG1 X75 E40 F500 ;Draw a filament line\nG92 E0 ;Reset Extruder\n;G1 E-0.2 F3000 ;Retract a little\nG1 Z2.0 F3000 ;Move Z Axis up little to prevent scratching of Heat Bed\nG1 X70 Y3 Z0.27 F3000 ;Quickly wipe away from the filament line\nG92 E0 ;Reset Extruder",

@@ -1,0 +1,286 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "M3D Enabler D7500 0.4 nozzle",
+  "vendor": "M3D",
+  "first_seen": "2.5.0",
+  "last_seen": "2.5.0",
+  "filament_id": null,
+  "setting_id": "8bIf0UX18MlL4IsW",
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
+  "settings": {
+    "type": {
+      "2.5.0": "machine"
+    },
+    "name": {
+      "2.5.0": "M3D Enabler D7500 0.4 nozzle"
+    },
+    "from": {
+      "2.5.0": "system"
+    },
+    "instantiation": {
+      "2.5.0": "true"
+    },
+    "printer_technology": {
+      "2.5.0": "FFF"
+    },
+    "printer_settings_id": {
+      "2.5.0": "M3D Enabler D7500 0.4 nozzle"
+    },
+    "nozzle_diameter": {
+      "2.5.0": [
+        "0.4"
+      ]
+    },
+    "thumbnails": {
+      "2.5.0": "120x60/PNG"
+    },
+    "machine_max_acceleration_e": {
+      "2.5.0": [
+        "10000",
+        "10000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.5.0": [
+        "2000",
+        "2000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.5.0": [
+        "2000",
+        "2000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.5.0": [
+        "400",
+        "400"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.5.0": [
+        "30",
+        "30"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.5.0": [
+        "60",
+        "60"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.5.0": [
+        "60",
+        "60"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.5.0": [
+        "12",
+        "12"
+      ]
+    },
+    "max_layer_height": {
+      "2.5.0": [
+        "0.32"
+      ]
+    },
+    "min_layer_height": {
+      "2.5.0": [
+        "0.1"
+      ]
+    },
+    "setting_id": {
+      "2.5.0": "8bIf0UX18MlL4IsW"
+    },
+    "printer_model": {
+      "2.5.0": "M3D Enabler D7500"
+    },
+    "printer_variant": {
+      "2.5.0": "0.4"
+    },
+    "default_print_profile": {
+      "2.5.0": "0.20mm Standard @M3D Enabler D7500"
+    },
+    "default_filament_profile": {
+      "2.5.0": [
+        "Enabler PLA @M3D"
+      ]
+    },
+    "auxiliary_fan": {
+      "2.5.0": "0"
+    },
+    "change_filament_gcode": {
+      "2.5.0": "M18 E"
+    },
+    "deretraction_speed": {
+      "2.5.0": [
+        "50"
+      ]
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.5.0": "19"
+    },
+    "extruder_clearance_radius": {
+      "2.5.0": "100"
+    },
+    "extruder_colour": {
+      "2.5.0": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "2.5.0": [
+        "0x0"
+      ]
+    },
+    "fan_speedup_time": {
+      "2.5.0": "1"
+    },
+    "host_type": {
+      "2.5.0": "esp3d"
+    },
+    "long_retractions_when_cut": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "machine_end_gcode": {
+      "2.5.0": "M104 S0\n;Retract the filament\nG92 E1\nG1 E-1 F300\nG1 X0 Y140\nG1 Y150 F4000\nM18 X Y E\nM18 S36000"
+    },
+    "machine_load_filament_time": {
+      "2.5.0": "0.5"
+    },
+    "machine_start_gcode": {
+      "2.5.0": "M104 S{first_layer_temperature[0]} ; Begin Heating\n\nG91 ; Relative coordinates\nG1 Z10 ; Lift the head abit\nG90 ; Back to absolute coordinates\nG28 ; Home All\nG1 Z10 F500 ; Dont want to burn the bed while heating\nM109 S{first_layer_temperature[0]} ; Wait for pre-heat\n; Prime the extruder\nG92 E0 ; Set Extruder position to be 0\nG1 E5 F100 ; Extrude a bit in the air\nG1 X0 Y5 Z0.1 F500 ; Touch Down\nG92 E0 ; Set Extruder position to be 0\nG1 X100 Z0.3 E10 F500 ; Nozzle wipe\nG92 E0 ; Set Extruder position to be 0"
+    },
+    "machine_tool_change_time": {
+      "2.5.0": "0.5"
+    },
+    "machine_unload_filament_time": {
+      "2.5.0": "0.5"
+    },
+    "before_layer_change_gcode": {
+      "2.5.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0"
+    },
+    "layer_change_gcode": {
+      "2.5.0": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "machine_pause_gcode": {
+      "2.5.0": "M601"
+    },
+    "nozzle_type": {
+      "2.5.0": "brass"
+    },
+    "print_host": {
+      "2.5.0": "m3d-enabler.local"
+    },
+    "printable_area": {
+      "2.5.0": [
+        "0x0",
+        "150x0",
+        "150x150",
+        "0x150"
+      ]
+    },
+    "printable_height": {
+      "2.5.0": "150"
+    },
+    "retract_before_wipe": {
+      "2.5.0": [
+        "100%"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.5.0": [
+        "17"
+      ]
+    },
+    "retract_lift_above": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retract_lift_below": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retract_lift_enforce": {
+      "2.5.0": [
+        "All Surfaces"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.5.0": [
+        "1"
+      ]
+    },
+    "retraction_distances_when_cut": {
+      "2.5.0": [
+        "18"
+      ]
+    },
+    "retraction_length": {
+      "2.5.0": [
+        "4.5"
+      ]
+    },
+    "retraction_minimum_travel": {
+      "2.5.0": [
+        "2.5"
+      ]
+    },
+    "retraction_speed": {
+      "2.5.0": [
+        "60"
+      ]
+    },
+    "single_extruder_multi_material": {
+      "2.5.0": "0"
+    },
+    "travel_slope": {
+      "2.5.0": [
+        "45"
+      ]
+    },
+    "wipe": {
+      "2.5.0": [
+        "1"
+      ]
+    },
+    "wipe_distance": {
+      "2.5.0": [
+        "2"
+      ]
+    },
+    "z_hop": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "z_hop_types": {
+      "2.5.0": [
+        "Normal Lift"
+      ]
+    }
+  }
+}

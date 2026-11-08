@@ -1,0 +1,279 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "Goofoo GP1 0.4 nozzle",
+  "vendor": "Goofoo",
+  "first_seen": "2.5.0",
+  "last_seen": "2.5.0",
+  "filament_id": null,
+  "setting_id": "x4GJ08PooNDQ8WJj",
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
+  "settings": {
+    "type": {
+      "2.5.0": "machine"
+    },
+    "name": {
+      "2.5.0": "Goofoo GP1 0.4 nozzle"
+    },
+    "from": {
+      "2.5.0": "system"
+    },
+    "instantiation": {
+      "2.5.0": "true"
+    },
+    "printer_technology": {
+      "2.5.0": "FFF"
+    },
+    "deretraction_speed": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "extruder_colour": {
+      "2.5.0": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "2.5.0": [
+        "0x0"
+      ]
+    },
+    "gcode_flavor": {
+      "2.5.0": "klipper"
+    },
+    "machine_max_acceleration_e": {
+      "2.5.0": [
+        "20000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.5.0": [
+        "10000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.5.0": [
+        "15000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.5.0": [
+        "10000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.5.0": [
+        "10000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.5.0": [
+        "100",
+        "200"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.5.0": [
+        "25",
+        "25"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.5.0": [
+        "500",
+        "200"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.5.0": [
+        "500",
+        "200"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.5.0": [
+        "12",
+        "12"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.5.0": [
+        "1",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.5.0": [
+        "5",
+        "9"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.5.0": [
+        "5",
+        "9"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.5.0": [
+        "0.4"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "2.5.0": [
+        "0.32"
+      ]
+    },
+    "min_layer_height": {
+      "2.5.0": [
+        "0.08"
+      ]
+    },
+    "printable_height": {
+      "2.5.0": "250"
+    },
+    "extruder_clearance_radius": {
+      "2.5.0": "65"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.5.0": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.5.0": "140"
+    },
+    "nozzle_diameter": {
+      "2.5.0": [
+        "0.4"
+      ]
+    },
+    "printer_settings_id": {
+      "2.5.0": ""
+    },
+    "printer_variant": {
+      "2.5.0": "0.4"
+    },
+    "retraction_minimum_travel": {
+      "2.5.0": [
+        "2"
+      ]
+    },
+    "retract_before_wipe": {
+      "2.5.0": [
+        "100%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.5.0": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "2.5.0": [
+        "0.5"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.5.0": [
+        "10"
+      ]
+    },
+    "z_hop": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "2.5.0": [
+        "50"
+      ]
+    },
+    "single_extruder_multi_material": {
+      "2.5.0": "1"
+    },
+    "change_filament_gcode": {
+      "2.5.0": "G5"
+    },
+    "wipe": {
+      "2.5.0": [
+        "1"
+      ]
+    },
+    "default_print_profile": {
+      "2.5.0": "0.20mm Standard @Goofoo GP1"
+    },
+    "machine_start_gcode": {
+      "2.5.0": "M117 Printing...\nM107 ; Turn off the fan\nG21  ; set units to millimeters\nG90  ; use absolute coordinates\nM83  ; use relative distances for extrusion\nM104 S140\nM190 S[first_layer_bed_temperature]  ; wait for bed temp\n;G32  ;Load bed mesh\nG28   ;home\nG29   bed leveling\nM104 S[first_layer_temperature]      ; set extruder temp\nM140 S[first_layer_bed_temperature]  ; set bed temp\nM109 S[first_layer_temperature]      ; wait for extruder temp\nM190 S[first_layer_bed_temperature]  ; wait for bed temp\nG0 Z2.0 F600;\nG0 X50 Y10 F8000;\nG92 E0.0 ; reset extruder distance position\nG0 Z0.4 F600;\nG1 X100.0 E10 F3000.0 ; intro line\nG92 E0.0 ; reset extruder distance position\nG1 X200.0 E15 F3000.0 ; intro line\nG92 E0.0 ; reset extruder distance position\nG0 Z0.8 F600;\nG1 X100.0 E15 F3000.0 ; intro line\nG1 Z0.4 F600     ;Wipe\nG0 Y12 F6000    ;Wipe\nG1 X100 F6000    ;Wipe\nG0 Y8 F12000   ;Wipe\nG1 X200 F6000    ;Wipe\nG1 X190 Y12 F6000 ;Wipe\nG1 X180 Y8 F6000 ;Wipe\nG1 X170 Y12 F6000 ;Wipe\nG1 X160 Y8 F6000 ;Wipe\nG1 X150 Y12 F6000 ;Wipe\n;G0 Z2.0 F600;\nG92 E0.0 ; reset extruder distance position\n;START_PRINT"
+    },
+    "machine_end_gcode": {
+      "2.5.0": "; End G-code\nEND_PRINT"
+    },
+    "layer_change_gcode": {
+      "2.5.0": ";AFTER_LAYER_CHANGE\n;[layer_z]\n;layer\n;{if layer_num == 2}\n;M106 P1 S255\n;{endif}\nSET_PRINT_STATS_INFO CURRENT_LAYER=[layer_num]\n"
+    },
+    "before_layer_change_gcode": {
+      "2.5.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\n;G92 E0"
+    },
+    "machine_pause_gcode": {
+      "2.5.0": "G5"
+    },
+    "setting_id": {
+      "2.5.0": "x4GJ08PooNDQ8WJj"
+    },
+    "default_filament_profile": {
+      "2.5.0": [
+        "Goofoo ABS @System"
+      ]
+    },
+    "printer_model": {
+      "2.5.0": "Goofoo GP1"
+    },
+    "purge_in_prime_tower": {
+      "2.5.0": "0"
+    },
+    "time_lapse_gcode": {
+      "2.5.0": ";TIMELAPSE_TAKE_FRAME"
+    },
+    "printable_area": {
+      "2.5.0": [
+        "0x0",
+        "250x0",
+        "250x250",
+        "0x250"
+      ]
+    },
+    "thumbnails": {
+      "2.5.0": "300x300/PNG"
+    },
+    "upward_compatible_machine": {
+      "2.5.0": []
+    }
+  }
+}

@@ -4,10 +4,15 @@
   "name": "Sovol Zero 0.4 nozzle",
   "vendor": "Sovol",
   "first_seen": "2.3.1",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": "GM001",
+  "setting_id": "QclEa2nmpBiii6Y0",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.1": "machine"
@@ -43,75 +48,132 @@
       "2.3.1": "klipper"
     },
     "silent_mode": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.5.0": null
     },
     "machine_max_acceleration_e": {
       "2.3.1": [
+        "20000"
+      ],
+      "2.5.0": [
+        "20000",
         "20000"
       ]
     },
     "machine_max_acceleration_extruding": {
       "2.3.1": [
         "40000"
+      ],
+      "2.5.0": [
+        "40000",
+        "40000"
       ]
     },
     "machine_max_acceleration_retracting": {
       "2.3.1": [
+        "20000"
+      ],
+      "2.5.0": [
+        "20000",
         "20000"
       ]
     },
     "machine_max_acceleration_x": {
       "2.3.1": [
         "40000"
+      ],
+      "2.5.0": [
+        "40000",
+        "40000"
       ]
     },
     "machine_max_acceleration_y": {
       "2.3.1": [
+        "40000"
+      ],
+      "2.5.0": [
+        "40000",
         "40000"
       ]
     },
     "machine_max_acceleration_z": {
       "2.3.1": [
         "1000"
+      ],
+      "2.5.0": [
+        "1000",
+        "1000"
       ]
     },
     "machine_max_speed_e": {
       "2.3.1": [
+        "50"
+      ],
+      "2.5.0": [
+        "50",
         "50"
       ]
     },
     "machine_max_speed_x": {
       "2.3.1": [
         "1200"
+      ],
+      "2.5.0": [
+        "1200",
+        "1200"
       ]
     },
     "machine_max_speed_y": {
       "2.3.1": [
+        "1200"
+      ],
+      "2.5.0": [
+        "1200",
         "1200"
       ]
     },
     "machine_max_speed_z": {
       "2.3.1": [
         "30"
+      ],
+      "2.5.0": [
+        "30",
+        "30"
       ]
     },
     "machine_max_jerk_e": {
       "2.3.1": [
+        "2.5"
+      ],
+      "2.5.0": [
+        "2.5",
         "2.5"
       ]
     },
     "machine_max_jerk_x": {
       "2.3.1": [
         "5"
+      ],
+      "2.5.0": [
+        "5",
+        "5"
       ]
     },
     "machine_max_jerk_y": {
       "2.3.1": [
         "5"
+      ],
+      "2.5.0": [
+        "5",
+        "5"
       ]
     },
     "machine_max_jerk_z": {
       "2.3.1": [
+        "0.5"
+      ],
+      "2.5.0": [
+        "0.5",
         "0.5"
       ]
     },
@@ -166,6 +228,9 @@
     "retract_before_wipe": {
       "2.3.1": [
         "100%"
+      ],
+      "2.5.0": [
+        "0%"
       ]
     },
     "retract_when_changing_layer": {
@@ -176,6 +241,9 @@
     "retraction_length": {
       "2.3.1": [
         "0.8"
+      ],
+      "2.5.0": [
+        "1.8"
       ]
     },
     "retract_length_toolchange": {
@@ -186,6 +254,9 @@
     "z_hop": {
       "2.3.1": [
         "0.4"
+      ],
+      "2.5.0": [
+        "0.6"
       ]
     },
     "retract_restart_extra": {
@@ -220,7 +291,8 @@
       ]
     },
     "z_lift_type": {
-      "2.3.1": "NormalLift"
+      "2.3.1": "NormalLift",
+      "2.5.0": null
     },
     "z_hop_types": {
       "2.3.1": [
@@ -234,7 +306,8 @@
       "2.3.1": "TIMELAPSE_TAKE_FRAME\nG92 E0\nSET_PRINT_STATS_INFO CURRENT_LAYER=[layer_num]\n"
     },
     "machine_start_gcode": {
-      "2.3.1": "M140 S[bed_temperature_initial_layer_single] ;set bed temp\nM190 S[bed_temperature_initial_layer_single] ;wait for bed temp\nG28\nSTART_PRINT\nG28\nG90\nG1 X0 Y0 F12000\nG1 Z0.300 F600\nM104 S[nozzle_temperature_initial_layer] ;set extruder temp\nM109 S[nozzle_temperature_initial_layer];wait for extruder temp\n{if first_layer_print_min[1] - 6 > print_bed_min[1]}\nG90\nM83\nG1 E-0.5 F600\nG1 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4} Y{first_layer_print_min[1] - 5} F12000\nG0 Z0.3 F600 ;Move to start position\nG1 E0.200 F600\n{if first_layer_print_max[0] - first_layer_print_min[0] > 50}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*1} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*2} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*3} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*4} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*5} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*6} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*7} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*8} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*9} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*10} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\n{else}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 2} E{(first_layer_print_max[0] - first_layer_print_min[0]) / 2 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0])} E{(first_layer_print_max[0] - first_layer_print_min[0]) / 2 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\n{endif}\nG1 E-0.300 F600\nG0 Z1 F600\nG1 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4} Y{first_layer_print_min[1] - 4} F12000\nG0 Z0.3 F600 ;Move to start position\nG1 E0.200 F600\n{if first_layer_print_max[0] - first_layer_print_min[0] > 50}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*1} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*2} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*3} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*4} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*5} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*6} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*7} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*8} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*9} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*10} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\n{else}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 2} E{(first_layer_print_max[0] - first_layer_print_min[0]) / 2 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0])} E{(first_layer_print_max[0] - first_layer_print_min[0]) / 2 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\n{endif}\nG1 E-0.300 F600\nG0 Z5 F600\nM400\n{else}\nG90\nM83\nG1 E-0.300 Z3 F600\nG1 X{print_bed_max[1] / 3} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 Z0.3 F600\nG1 E0.300 F600\nG1 X{print_bed_max[1] / 3 + 5*1} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*2} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*3} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*4} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*5} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*6} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*7} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*8} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*9} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*10} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3} Y1 F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*1} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*2} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*3} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*4} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*5} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*6} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*7} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*8} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*9} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*10} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 E-0.300 Z3 F600\nM400\n{endif}\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]\n\n"
+      "2.3.1": "M140 S[bed_temperature_initial_layer_single] ;set bed temp\nM190 S[bed_temperature_initial_layer_single] ;wait for bed temp\nG28\nSTART_PRINT\nG28\nG90\nG1 X0 Y0 F12000\nG1 Z0.300 F600\nM104 S[nozzle_temperature_initial_layer] ;set extruder temp\nM109 S[nozzle_temperature_initial_layer];wait for extruder temp\n{if first_layer_print_min[1] - 6 > print_bed_min[1]}\nG90\nM83\nG1 E-0.5 F600\nG1 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4} Y{first_layer_print_min[1] - 5} F12000\nG0 Z0.3 F600 ;Move to start position\nG1 E0.200 F600\n{if first_layer_print_max[0] - first_layer_print_min[0] > 50}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*1} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*2} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*3} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*4} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*5} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*6} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*7} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*8} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*9} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*10} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\n{else}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 2} E{(first_layer_print_max[0] - first_layer_print_min[0]) / 2 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0])} E{(first_layer_print_max[0] - first_layer_print_min[0]) / 2 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\n{endif}\nG1 E-0.300 F600\nG0 Z1 F600\nG1 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4} Y{first_layer_print_min[1] - 4} F12000\nG0 Z0.3 F600 ;Move to start position\nG1 E0.200 F600\n{if first_layer_print_max[0] - first_layer_print_min[0] > 50}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*1} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*2} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*3} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*4} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*5} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*6} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*7} E{5 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*8} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*9} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*10} E{5 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\n{else}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 2} E{(first_layer_print_max[0] - first_layer_print_min[0]) / 2 * 0.2}  F{outer_wall_volumetric_speed/(24/20)    * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0])} E{(first_layer_print_max[0] - first_layer_print_min[0]) / 2 * 0.2}  F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\n{endif}\nG1 E-0.300 F600\nG0 Z5 F600\nM400\n{else}\nG90\nM83\nG1 E-0.300 Z3 F600\nG1 X{print_bed_max[1] / 3} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 Z0.3 F600\nG1 E0.300 F600\nG1 X{print_bed_max[1] / 3 + 5*1} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*2} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*3} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*4} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*5} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*6} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*7} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*8} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*9} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*10} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3} Y1 F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*1} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*2} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*3} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*4} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*5} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*6} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*7} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*8} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 X{print_bed_max[1] / 3 + 5*9} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)    * 60}\nG1 X{print_bed_max[1] / 3 + 5*10} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4     * 60}\nG1 E-0.300 Z3 F600\nM400\n{endif}\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]\n\n",
+      "2.5.0": "M140 S[bed_temperature_initial_layer_single] ;set bed temp\nM190 S[bed_temperature_initial_layer_single] ;wait for bed temp\nG28\nSTART_PRINT\nG28\nG90\nG1 X0 Y0 F12000\nG1 Z0.300 F600\nM104 S[nozzle_temperature_initial_layer] ;set extruder temp\nM109 S[nozzle_temperature_initial_layer];wait for extruder temp\n{if first_layer_print_min[1] - 6 > print_bed_min[1]}\nG90\nM83\nG1 E-0.5 F600\nG1 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4} Y{first_layer_print_min[1] - 5} F12000\nG0 Z0.3 F600 ;Move to start position\nG1 E0.200 F600\n{if first_layer_print_max[0] - first_layer_print_min[0] > 50}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*1} E{5 * 0.2}F{outer_wall_volumetric_speed/(24/20) * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*2} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4 * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*3} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)* 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*4} E{5 * 0.2}F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*5} E{5 * 0.2}F{outer_wall_volumetric_speed/(24/20) * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*6} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4 * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*7} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)* 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*8} E{5 * 0.2}F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*9} E{5 * 0.2}F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*10} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4 * 60}\n{else}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 2} E{(first_layer_print_max[0] - first_layer_print_min[0]) / 2 * 0.2} F{outer_wall_volumetric_speed/(24/20)* 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0])} E{(first_layer_print_max[0] - first_layer_print_min[0]) / 2 * 0.2}F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\n{endif}\nG1 E-0.300 F600\nG0 Z1 F600\nG1 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4} Y{first_layer_print_min[1] - 4} F12000\nG0 Z0.3 F600 ;Move to start position\nG1 E0.200 F600\n{if first_layer_print_max[0] - first_layer_print_min[0] > 50}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*1} E{5 * 0.2}F{outer_wall_volumetric_speed/(24/20) * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*2} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4 * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*3} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)* 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*4} E{5 * 0.2}F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*5} E{5 * 0.2}F{outer_wall_volumetric_speed/(24/20) * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*6} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4 * 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*7} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)* 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*8} E{5 * 0.2}F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*9} E{5 * 0.2}F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 4 + 5*10} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4 * 60}\n{else}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0]) / 2} E{(first_layer_print_max[0] - first_layer_print_min[0]) / 2 * 0.2} F{outer_wall_volumetric_speed/(24/20)* 60}\nG0 X{first_layer_print_min[0] + (first_layer_print_max[0] - first_layer_print_min[0])} E{(first_layer_print_max[0] - first_layer_print_min[0]) / 2 * 0.2}F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\n{endif}\nG1 E-0.300 F600\nG0 Z5 F600\nM400\n{else}\nG90\nM83\nG1 E-0.300 Z3 F600\nG1 X{print_bed_max[1] / 3} F{outer_wall_volumetric_speed/(24/20) * 60}\nG1 Z0.3 F600\nG1 E0.300 F600\nG1 X{print_bed_max[1] / 3 + 5*1} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20) * 60}\nG1 X{print_bed_max[1] / 3 + 5*2} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\nG1 X{print_bed_max[1] / 3 + 5*3} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)* 60}\nG1 X{print_bed_max[1] / 3 + 5*4} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4 * 60}\nG1 X{print_bed_max[1] / 3 + 5*5} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20) * 60}\nG1 X{print_bed_max[1] / 3 + 5*6} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\nG1 X{print_bed_max[1] / 3 + 5*7} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)* 60}\nG1 X{print_bed_max[1] / 3 + 5*8} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4 * 60}\nG1 X{print_bed_max[1] / 3 + 5*9} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20) * 60}\nG1 X{print_bed_max[1] / 3 + 5*10} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4 * 60}\nG1 X{print_bed_max[1] / 3} Y1 F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\nG1 X{print_bed_max[1] / 3 + 5*1} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)* 60}\nG1 X{print_bed_max[1] / 3 + 5*2} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4 * 60}\nG1 X{print_bed_max[1] / 3 + 5*3} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20) * 60}\nG1 X{print_bed_max[1] / 3 + 5*4} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\nG1 X{print_bed_max[1] / 3 + 5*5} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)* 60}\nG1 X{print_bed_max[1] / 3 + 5*6} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4 * 60}\nG1 X{print_bed_max[1] / 3 + 5*7} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20) * 60}\nG1 X{print_bed_max[1] / 3 + 5*8} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\nG1 X{print_bed_max[1] / 3 + 5*9} E{5 * 0.2} F{outer_wall_volumetric_speed/(24/20)* 60}\nG1 X{print_bed_max[1] / 3 + 5*10} E{5 * 0.2} F{outer_wall_volumetric_speed/(0.3*0.5)/4* 60}\nG1 E-0.300 Z3 F600\nM400\n{endif}\nSET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]\n\n"
     },
     "machine_end_gcode": {
       "2.3.1": "END_PRINT\n"
@@ -257,11 +330,18 @@
     "machine_max_acceleration_travel": {
       "2.3.1": [
         "40000"
+      ],
+      "2.5.0": [
+        "40000",
+        "40000"
       ]
     },
     "wipe_distance": {
       "2.3.1": [
         "2"
+      ],
+      "2.5.0": [
+        "3"
       ]
     },
     "thumbnails": {
@@ -279,6 +359,9 @@
     "default_filament_profile": {
       "2.3.1": [
         "Sovol Zero PLA Basic"
+      ],
+      "2.5.0": [
+        "Generic PLA @Sovol Zero"
       ]
     }
   }

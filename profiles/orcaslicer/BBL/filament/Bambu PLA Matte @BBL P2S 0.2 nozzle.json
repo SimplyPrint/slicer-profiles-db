@@ -4,10 +4,15 @@
   "name": "Bambu PLA Matte @BBL P2S 0.2 nozzle",
   "vendor": "BBL",
   "first_seen": "2.3.2",
-  "last_seen": "2.4.0",
-  "filament_id": "GFA01",
+  "last_seen": "2.5.0",
+  "filament_id": "OFXIbw5D",
   "setting_id": "GFSA01_15",
   "renamed_from": null,
+  "filament_type": "PLA",
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.2": "filament"
@@ -28,6 +33,10 @@
     },
     "additional_cooling_fan_speed": {
       "2.3.2": [
+        "100"
+      ],
+      "2.5.0": [
+        "100",
         "100"
       ]
     },
@@ -64,21 +73,33 @@
     "counter_coef_2": {
       "2.3.2": [
         "0.008"
+      ],
+      "2.5.0": [
+        "0.003"
       ]
     },
     "counter_coef_3": {
       "2.3.2": [
         "-0.041"
+      ],
+      "2.5.0": [
+        "0.0066"
       ]
     },
     "counter_limit_min": {
       "2.3.2": [
         "-0.035"
+      ],
+      "2.5.0": [
+        "0.0066"
       ]
     },
     "counter_limit_max": {
       "2.3.2": [
         "0.033"
+      ],
+      "2.5.0": [
+        "0.082"
       ]
     },
     "circle_compensation_speed": {
@@ -124,6 +145,9 @@
     "filament_cost": {
       "2.3.2": [
         "24.99"
+      ],
+      "2.5.0": [
+        "15.99"
       ]
     },
     "filament_density": {
@@ -385,21 +409,33 @@
     "hole_coef_2": {
       "2.3.2": [
         "-0.008"
+      ],
+      "2.5.0": [
+        "-0.0026"
       ]
     },
     "hole_coef_3": {
       "2.3.2": [
         "0.23415"
+      ],
+      "2.5.0": [
+        "0.1116"
       ]
     },
     "hole_limit_min": {
       "2.3.2": [
         "0.088"
+      ],
+      "2.5.0": [
+        "0.046"
       ]
     },
     "hole_limit_max": {
       "2.3.2": [
         "0.22"
+      ],
+      "2.5.0": [
+        "0.1116"
       ]
     },
     "impact_strength_z": {
@@ -464,11 +500,17 @@
     "supertack_plate_temp": {
       "2.3.2": [
         "45"
+      ],
+      "2.5.0": [
+        "40"
       ]
     },
     "supertack_plate_temp_initial_layer": {
       "2.3.2": [
         "45"
+      ],
+      "2.5.0": [
+        "40"
       ]
     },
     "slow_down_for_layer_cooling": {
@@ -483,6 +525,10 @@
     },
     "slow_down_min_speed": {
       "2.3.2": [
+        "20"
+      ],
+      "2.5.0": [
+        "20",
         "20"
       ]
     },
@@ -539,7 +585,8 @@
       ]
     },
     "filament_id": {
-      "2.3.2": "GFA01"
+      "2.3.2": "GFA01",
+      "2.5.0": "OFXIbw5D"
     },
     "setting_id": {
       "2.3.2": "GFSA01_15"
@@ -612,11 +659,135 @@
     "close_additional_fan_first_x_layers": {
       "2.4.0": [
         "3"
+      ],
+      "2.5.0": [
+        "1"
       ]
     },
     "additional_fan_full_speed_layer": {
       "2.4.0": [
         "0"
+      ]
+    },
+    "filament_extruder_compatibility": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "filament_cooling_before_tower": {
+      "2.5.0": [
+        "10",
+        "10"
+      ]
+    },
+    "filament_preheat_temperature_delta": {
+      "2.5.0": [
+        "10",
+        "10"
+      ]
+    },
+    "filament_dev_ams_drying_ams_limitations": {
+      "2.5.0": [
+        "1",
+        "0"
+      ]
+    },
+    "filament_dev_ams_drying_heat_distortion_temperature": {
+      "2.5.0": [
+        "45"
+      ]
+    },
+    "filament_dev_ams_drying_temperature": {
+      "2.5.0": [
+        "45",
+        "45",
+        "45",
+        "45"
+      ]
+    },
+    "filament_dev_ams_drying_time": {
+      "2.5.0": [
+        "12",
+        "12",
+        "12",
+        "12"
+      ]
+    },
+    "filament_dev_chamber_drying_bed_temperature": {
+      "2.5.0": [
+        "70"
+      ]
+    },
+    "filament_dev_chamber_drying_time": {
+      "2.5.0": [
+        "12.0"
+      ]
+    },
+    "filament_dev_drying_cooling_temperature": {
+      "2.5.0": [
+        "45"
+      ]
+    },
+    "filament_dev_drying_softening_temperature": {
+      "2.5.0": [
+        "50"
+      ]
+    },
+    "filament_flush_temp_fast": {
+      "2.5.0": [
+        "0",
+        "0"
+      ]
+    },
+    "filament_metal_stickiness": {
+      "2.5.0": [
+        "None"
+      ]
+    },
+    "filament_prime_volume_nc": {
+      "2.5.0": [
+        "60"
+      ]
+    },
+    "filament_retract_length_nc": {
+      "2.5.0": [
+        "14",
+        "14"
+      ]
+    },
+    "filament_bridge_speed": {
+      "2.5.0": [
+        "25",
+        "25"
+      ]
+    },
+    "filament_change_length": {
+      "2.5.0": [
+        "10"
+      ]
+    },
+    "filament_ingredients_safe": {
+      "2.5.0": "1"
+    },
+    "filament_emission_safe": {
+      "2.5.0": "1"
+    },
+    "filament_contact_safe": {
+      "2.5.0": "1"
+    },
+    "no_slow_down_for_cooling_on_outwalls": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "cooling_slowdown_logic": {
+      "2.5.0": [
+        "uniform_cooling"
+      ]
+    },
+    "cooling_perimeter_transition_distance": {
+      "2.5.0": [
+        "10"
       ]
     }
   }

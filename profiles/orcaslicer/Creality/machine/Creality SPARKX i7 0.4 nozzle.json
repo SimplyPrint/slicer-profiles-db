@@ -4,10 +4,15 @@
   "name": "Creality SPARKX i7 0.4 nozzle",
   "vendor": "Creality",
   "first_seen": "2.4.0",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": "88315",
+  "setting_id": "4usBaKppjmBSZy8N",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.4.0": "machine"
@@ -37,7 +42,8 @@
       "2.4.0": "klipper"
     },
     "silent_mode": {
-      "2.4.0": "0"
+      "2.4.0": "0",
+      "2.5.0": null
     },
     "support_chamber_temp_control": {
       "2.4.0": "0"
@@ -46,46 +52,102 @@
       "2.4.0": "0"
     },
     "machine_max_acceleration_e": {
-      "2.4.0": "5000"
+      "2.4.0": "5000",
+      "2.5.0": [
+        "5000",
+        "5000"
+      ]
     },
     "machine_max_acceleration_extruding": {
-      "2.4.0": "10000"
+      "2.4.0": "10000",
+      "2.5.0": [
+        "10000",
+        "10000"
+      ]
     },
     "machine_max_acceleration_retracting": {
-      "2.4.0": "5000"
+      "2.4.0": "5000",
+      "2.5.0": [
+        "5000",
+        "5000"
+      ]
     },
     "machine_max_acceleration_x": {
-      "2.4.0": "10000"
+      "2.4.0": "10000",
+      "2.5.0": [
+        "10000",
+        "10000"
+      ]
     },
     "machine_max_acceleration_y": {
-      "2.4.0": "10000"
+      "2.4.0": "10000",
+      "2.5.0": [
+        "10000",
+        "10000"
+      ]
     },
     "machine_max_acceleration_z": {
-      "2.4.0": "500"
+      "2.4.0": "500",
+      "2.5.0": [
+        "500",
+        "500"
+      ]
     },
     "machine_max_speed_e": {
-      "2.4.0": "14"
+      "2.4.0": "14",
+      "2.5.0": [
+        "14",
+        "14"
+      ]
     },
     "machine_max_speed_x": {
-      "2.4.0": "500"
+      "2.4.0": "500",
+      "2.5.0": [
+        "500",
+        "500"
+      ]
     },
     "machine_max_speed_y": {
-      "2.4.0": "500"
+      "2.4.0": "500",
+      "2.5.0": [
+        "500",
+        "500"
+      ]
     },
     "machine_max_speed_z": {
-      "2.4.0": "20"
+      "2.4.0": "20",
+      "2.5.0": [
+        "20",
+        "20"
+      ]
     },
     "machine_max_jerk_e": {
-      "2.4.0": "3"
+      "2.4.0": "3",
+      "2.5.0": [
+        "3",
+        "3"
+      ]
     },
     "machine_max_jerk_x": {
-      "2.4.0": "9"
+      "2.4.0": "9",
+      "2.5.0": [
+        "9",
+        "9"
+      ]
     },
     "machine_max_jerk_y": {
-      "2.4.0": "9"
+      "2.4.0": "9",
+      "2.5.0": [
+        "9",
+        "9"
+      ]
     },
     "machine_max_jerk_z": {
-      "2.4.0": "3"
+      "2.4.0": "3",
+      "2.5.0": [
+        "3",
+        "3"
+      ]
     },
     "machine_min_extruding_rate": {
       "2.4.0": "0,0"
@@ -168,13 +230,18 @@
       "2.4.0": "0.20mm Standard @Creality SPARKX i7 0.4 nozzle"
     },
     "machine_start_gcode": {
-      "2.4.0": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nM83 \nM8200 P S[initial_no_support_extruder]\nM220 S100\n\nSET_VELOCITY_LIMIT ACCEL=5000 ACCEL_TO_DECEL=5000\nG0 X267 F18000 \nG0 X278 F2400\nM104 S[nozzle_temperature_initial_layer]\nM106 S0\nT[initial_no_support_extruder]\n\nM8200 O\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y0 F12000\nG1 X150 F30000\nG1 Z0.2 F600\nG1 X120 Y0 E15 F{filament_max_volumetric_speed[initial_extruder]/0.3*60*0.1}\nG1 X115 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)/4*60}\nG1 X110 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)*60}\nG1 X105 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)/4*60}\nG1 X100 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)*60}\nG1 X95 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)/4*60}\nG91\nG1 X-1 Z-0.3\nG1 X-4\nG92 E0"
+      "2.4.0": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nM83 \nM8200 P S[initial_no_support_extruder]\nM220 S100\n\nSET_VELOCITY_LIMIT ACCEL=5000 ACCEL_TO_DECEL=5000\nG0 X267 F18000 \nG0 X278 F2400\nM104 S[nozzle_temperature_initial_layer]\nM106 S0\nT[initial_no_support_extruder]\n\nM8200 O\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y0 F12000\nG1 X150 F30000\nG1 Z0.2 F600\nG1 X120 Y0 E15 F{filament_max_volumetric_speed[initial_extruder]/0.3*60*0.1}\nG1 X115 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)/4*60}\nG1 X110 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)*60}\nG1 X105 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)/4*60}\nG1 X100 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)*60}\nG1 X95 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)/4*60}\nG91\nG1 X-1 Z-0.3\nG1 X-4\nG92 E0",
+      "2.5.0": "M140 S0\nM104 S0 \nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nM83 \nM8200 P S[initial_no_support_extruder]\nM220 S100\n\nSET_VELOCITY_LIMIT ACCEL=5000 ACCEL_TO_DECEL=5000\nG0 X267 F18000 \nG0 X278 F2400\nM109 S[nozzle_temperature_initial_layer]\nM106 S0\nT[initial_no_support_extruder]\n\nM8200 O\nM204 S2000\nG1 Z3 F600\nM83\nG1 Y0 F12000\nG1 X150 F30000\nG1 Z0.2 F600\nG1 X120 Y0 E15 F{filament_max_volumetric_speed[initial_extruder]/0.3*60*0.1}\nG1 X115 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)/4*60}\nG1 X110 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)*60}\nG1 X105 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)/4*60}\nG1 X100 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)*60}\nG1 X95 E.3742  F{outer_wall_volumetric_speed/(0.3*0.5)/4*60}\nG91\nG1 X-1 Z-0.3\nG1 X-4\nG92 E0"
     },
     "machine_end_gcode": {
       "2.4.0": "G1 E-0.8 F2400 ; retract\nG2 Z{position[2]+3} I0.86 J0.86 P1 F10000 ; spiral lift a little from second lift\nG92 E0 ; zero the extruder\n{if print_sequence == \"by object\"}\nG0 Z{max_layer_z + 1} F1800\n{endif}\nG1 X0 Y180 F8000\nEND_PRINT"
     },
     "machine_max_acceleration_travel": {
-      "2.4.0": "30000"
+      "2.4.0": "30000",
+      "2.5.0": [
+        "30000",
+        "30000"
+      ]
     },
     "machine_pause_gcode": {
       "2.4.0": "PAUSE"

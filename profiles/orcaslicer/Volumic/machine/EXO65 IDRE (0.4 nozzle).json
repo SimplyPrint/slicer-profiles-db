@@ -4,10 +4,15 @@
   "name": "EXO65 IDRE (0.4 nozzle)",
   "vendor": "Volumic",
   "first_seen": "2.3.1",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": "GM001",
+  "setting_id": "eInlnTPT9RXNQe0H",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.1": "machine"
@@ -61,20 +66,33 @@
     "retraction_minimum_travel": {
       "2.3.1": [
         "1"
+      ],
+      "2.5.0": [
+        "1",
+        "1"
       ]
     },
     "retraction_length": {
       "2.3.1": [
+        "2.4"
+      ],
+      "2.5.0": [
+        "2.4",
         "2.4"
       ]
     },
     "retraction_speed": {
       "2.3.1": [
         "30"
+      ],
+      "2.5.0": [
+        "30",
+        "30"
       ]
     },
     "silent_mode": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.5.0": null
     },
     "machine_max_acceleration_e": {
       "2.3.1": [
@@ -103,15 +121,33 @@
     "machine_max_acceleration_x": {
       "2.3.1": [
         "4500"
+      ],
+      "2.5.0": [
+        "4500",
+        "4500",
+        "4500",
+        "4500"
       ]
     },
     "machine_max_acceleration_y": {
       "2.3.1": [
         "4500"
+      ],
+      "2.5.0": [
+        "4500",
+        "4500",
+        "4500",
+        "4500"
       ]
     },
     "machine_max_acceleration_z": {
       "2.3.1": [
+        "50"
+      ],
+      "2.5.0": [
+        "50",
+        "50",
+        "50",
         "50"
       ]
     },
@@ -205,7 +241,11 @@
       "2.3.1": "0"
     },
     "nozzle_type": {
-      "2.3.1": "undefine"
+      "2.3.1": "undefine",
+      "2.5.0": [
+        "undefine",
+        "undefine"
+      ]
     },
     "machine_start_gcode": {
       "2.3.1": "START_PRINT BED=[first_layer_bed_temperature] EXTRUDER={first_layer_temperature[0]} EXTRUDER1={first_layer_temperature[1]}"
@@ -264,6 +304,10 @@
     },
     "deretraction_speed": {
       "2.3.1": [
+        "30"
+      ],
+      "2.5.0": [
+        "30",
         "30"
       ]
     },

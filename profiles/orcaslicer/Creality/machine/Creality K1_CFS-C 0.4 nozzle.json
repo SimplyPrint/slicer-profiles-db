@@ -4,10 +4,15 @@
   "name": "Creality K1_CFS-C 0.4 nozzle",
   "vendor": "Creality",
   "first_seen": "2.4.0",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": "62995",
+  "setting_id": "AnvSIapWvZ2Jpc3T",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.4.0": "machine"
@@ -37,7 +42,8 @@
       "2.4.0": "klipper"
     },
     "silent_mode": {
-      "2.4.0": "0"
+      "2.4.0": "0",
+      "2.5.0": null
     },
     "support_chamber_temp_control": {
       "2.4.0": "0"
@@ -46,46 +52,102 @@
       "2.4.0": "1"
     },
     "machine_max_acceleration_e": {
-      "2.4.0": "5000"
+      "2.4.0": "5000",
+      "2.5.0": [
+        "5000",
+        "5000"
+      ]
     },
     "machine_max_acceleration_extruding": {
-      "2.4.0": "20000"
+      "2.4.0": "20000",
+      "2.5.0": [
+        "20000",
+        "20000"
+      ]
     },
     "machine_max_acceleration_retracting": {
-      "2.4.0": "5000"
+      "2.4.0": "5000",
+      "2.5.0": [
+        "5000",
+        "5000"
+      ]
     },
     "machine_max_acceleration_x": {
-      "2.4.0": "20000"
+      "2.4.0": "20000",
+      "2.5.0": [
+        "20000",
+        "20000"
+      ]
     },
     "machine_max_acceleration_y": {
-      "2.4.0": "20000"
+      "2.4.0": "20000",
+      "2.5.0": [
+        "20000",
+        "20000"
+      ]
     },
     "machine_max_acceleration_z": {
-      "2.4.0": "300"
+      "2.4.0": "300",
+      "2.5.0": [
+        "300",
+        "300"
+      ]
     },
     "machine_max_speed_e": {
-      "2.4.0": "100"
+      "2.4.0": "100",
+      "2.5.0": [
+        "100",
+        "100"
+      ]
     },
     "machine_max_speed_x": {
-      "2.4.0": "800"
+      "2.4.0": "800",
+      "2.5.0": [
+        "800",
+        "800"
+      ]
     },
     "machine_max_speed_y": {
-      "2.4.0": "800"
+      "2.4.0": "800",
+      "2.5.0": [
+        "800",
+        "800"
+      ]
     },
     "machine_max_speed_z": {
-      "2.4.0": "20"
+      "2.4.0": "20",
+      "2.5.0": [
+        "20",
+        "20"
+      ]
     },
     "machine_max_jerk_e": {
-      "2.4.0": "10"
+      "2.4.0": "10",
+      "2.5.0": [
+        "10",
+        "10"
+      ]
     },
     "machine_max_jerk_x": {
-      "2.4.0": "20"
+      "2.4.0": "20",
+      "2.5.0": [
+        "20",
+        "20"
+      ]
     },
     "machine_max_jerk_y": {
-      "2.4.0": "20"
+      "2.4.0": "20",
+      "2.5.0": [
+        "20",
+        "20"
+      ]
     },
     "machine_max_jerk_z": {
-      "2.4.0": "5"
+      "2.4.0": "5",
+      "2.5.0": [
+        "5",
+        "5"
+      ]
     },
     "machine_min_extruding_rate": {
       "2.4.0": "0,0"
@@ -168,13 +230,18 @@
       "2.4.0": "0.20mm Standard @Creality K1_CFS-C 0.4 nozzle"
     },
     "machine_start_gcode": {
-      "2.4.0": "START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM204 S2000\nM104 S[nozzle_temperature_initial_layer]\nG1 Z3 F600\nM83\nG92 E0\nG1 Z1 F600"
+      "2.4.0": "START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM204 S2000\nM104 S[nozzle_temperature_initial_layer]\nG1 Z3 F600\nM83\nG92 E0\nG1 Z1 F600",
+      "2.5.0": "START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]\nT[initial_no_support_extruder]\nM204 S2000\nM109 S[nozzle_temperature_initial_layer]\nG1 Z3 F600\nM83\nG92 E0\nG1 Z1 F600"
     },
     "machine_end_gcode": {
       "2.4.0": "END_PRINT"
     },
     "machine_max_acceleration_travel": {
-      "2.4.0": "20000"
+      "2.4.0": "20000",
+      "2.5.0": [
+        "20000",
+        "20000"
+      ]
     },
     "machine_pause_gcode": {
       "2.4.0": "PAUSE"
@@ -182,6 +249,9 @@
     "default_filament_profile": {
       "2.4.0": [
         "Creality Generic PLA @K1-all"
+      ],
+      "2.5.0": [
+        "Generic PLA @Creality K1-all"
       ]
     },
     "bed_exclude_area": {
@@ -251,7 +321,8 @@
       "2.4.0": "0"
     },
     "host_type": {
-      "2.4.0": "octoprint"
+      "2.4.0": "octoprint",
+      "2.5.0": "crealityprint"
     },
     "machine_LED_light_exist": {
       "2.4.0": "1"
@@ -334,6 +405,9 @@
     "setting_id": {
       "2.4.0": "62995",
       "2.4.1": "AnvSIapWvZ2Jpc3T"
+    },
+    "printer_agent": {
+      "2.5.0": "crealityprint"
     }
   }
 }

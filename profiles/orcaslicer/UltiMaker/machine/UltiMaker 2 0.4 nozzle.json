@@ -4,10 +4,15 @@
   "name": "UltiMaker 2 0.4 nozzle",
   "vendor": "UltiMaker",
   "first_seen": "2.3.1",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": "GM001",
+  "setting_id": "Jl8sUeuACVyrnrst",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.1": "machine"
@@ -27,6 +32,9 @@
     "deretraction_speed": {
       "2.3.1": [
         "0"
+      ],
+      "2.5.0": [
+        "40"
       ]
     },
     "extruder_colour": {
@@ -43,11 +51,15 @@
       "2.3.1": "marlin"
     },
     "silent_mode": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.5.0": null
     },
     "machine_max_acceleration_e": {
       "2.3.1": [
         "10000"
+      ],
+      "2.5.0": [
+        "5000"
       ]
     },
     "machine_max_acceleration_extruding": {
@@ -84,24 +96,40 @@
       "2.3.1": [
         "120",
         "120"
+      ],
+      "2.5.0": [
+        "100",
+        "100"
       ]
     },
     "machine_max_speed_x": {
       "2.3.1": [
         "500",
         "500"
+      ],
+      "2.5.0": [
+        "300",
+        "300"
       ]
     },
     "machine_max_speed_y": {
       "2.3.1": [
         "500",
         "500"
+      ],
+      "2.5.0": [
+        "300",
+        "300"
       ]
     },
     "machine_max_speed_z": {
       "2.3.1": [
         "12",
         "12"
+      ],
+      "2.5.0": [
+        "40",
+        "40"
       ]
     },
     "machine_max_jerk_e": {
@@ -149,7 +177,8 @@
       ]
     },
     "printable_height": {
-      "2.3.1": "212"
+      "2.3.1": "212",
+      "2.5.0": "205"
     },
     "extruder_clearance_radius": {
       "2.3.1": "65"
@@ -166,7 +195,8 @@
       ]
     },
     "printer_settings_id": {
-      "2.3.1": "Qidi"
+      "2.3.1": "Qidi",
+      "2.5.0": ""
     },
     "printer_variant": {
       "2.3.1": "0.4"
@@ -174,11 +204,17 @@
     "retraction_minimum_travel": {
       "2.3.1": [
         "5"
+      ],
+      "2.5.0": [
+        "2"
       ]
     },
     "retract_before_wipe": {
       "2.3.1": [
         "70%"
+      ],
+      "2.5.0": [
+        "0%"
       ]
     },
     "retract_when_changing_layer": {
@@ -189,11 +225,17 @@
     "retraction_length": {
       "2.3.1": [
         "4.5"
+      ],
+      "2.5.0": [
+        "6"
       ]
     },
     "retract_length_toolchange": {
       "2.3.1": [
         "10"
+      ],
+      "2.5.0": [
+        "25"
       ]
     },
     "z_hop": {
@@ -214,6 +256,9 @@
     "retraction_speed": {
       "2.3.1": [
         "35"
+      ],
+      "2.5.0": [
+        "50"
       ]
     },
     "single_extruder_multi_material": {
@@ -228,10 +273,12 @@
       ]
     },
     "z_lift_type": {
-      "2.3.1": "NormalLift"
+      "2.3.1": "NormalLift",
+      "2.5.0": null
     },
     "default_print_profile": {
-      "2.3.1": "0.18mm Standard @UltiMaker 2"
+      "2.3.1": "0.18mm Standard @UltiMaker 2",
+      "2.5.0": "0.15mm Standard @UltiMaker 2"
     },
     "before_layer_change_gcode": {
       "2.3.1": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
@@ -255,6 +302,12 @@
         "224x0",
         "224x225",
         "0x225"
+      ],
+      "2.5.0": [
+        "0x0",
+        "223x0",
+        "223x223",
+        "0x223"
       ]
     },
     "nozzle_type": {
@@ -280,6 +333,9 @@
     "default_filament_profile": {
       "2.3.1": [
         "Generic PLA @System"
+      ],
+      "2.5.0": [
+        "Generic PLA @UltiMaker 2 0.4 nozzle"
       ]
     },
     "scan_first_layer": {
@@ -290,6 +346,9 @@
         "0.013",
         "0"
       ]
+    },
+    "thumbnails": {
+      "2.5.0": ""
     }
   }
 }

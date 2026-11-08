@@ -4,10 +4,15 @@
   "name": "Geeetech A10 M 0.4 nozzle",
   "vendor": "Geeetech",
   "first_seen": "2.3.1",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": "GM_GEEETECH_025",
+  "setting_id": "aopa7gY8D0nHvg4f",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.1": "machine"
@@ -43,7 +48,8 @@
       "2.3.1": "marlin"
     },
     "silent_mode": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.5.0": null
     },
     "machine_max_acceleration_e": {
       "2.3.1": [
@@ -234,7 +240,8 @@
       ]
     },
     "z_lift_type": {
-      "2.3.1": "NormalLift"
+      "2.3.1": "NormalLift",
+      "2.5.0": null
     },
     "machine_start_gcode": {
       "2.3.1": ";Geeetech official wiki homepage for A10M：https://www.geeetech.com/wiki/index.php/Geeetech_A10M_3D_printer \nM104 S[first_layer_temperature] ; set extruder temp\nM140 S[first_layer_bed_temperature] ; set bed temp\nM190 S[first_layer_bed_temperature] ; wait for bed temp\nM109 S[first_layer_temperature] ; wait for extruder temp\nM220 S100 ;Reset Feedrate\nM221 S100 ;Reset Flowrate\nG92 E0 ; Reset Extruder\nG28 ; Home all axes\nM107 ;Off Fan\nG1 Z5.0 F3000 ;Move Z Axis up little to prevent scratching of Heat Bed\nG1 X0.1 Y20 Z1.4 F6000 ; Move to start position\nG1 X0.1 Y80.0 Z1.4 F1000 E25 ; Draw the first line\nG92 E0 ; Reset Extruder\nG1 X0.4 Y80.0 Z1.4 F6000 ; Move to side a little\nG1 X1.4 Y20 Z1.4 F1000 E20 ; Draw the second line\nG92 E0 ; Reset Extruder\nG1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed\nG1 X5 Y20 Z0.28 F3000.0 ; Move over to prevent blob squish\nG92 E0",

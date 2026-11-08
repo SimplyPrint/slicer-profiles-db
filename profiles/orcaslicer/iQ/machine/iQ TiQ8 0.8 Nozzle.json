@@ -4,10 +4,15 @@
   "name": "iQ TiQ8 0.8 Nozzle",
   "vendor": "iQ",
   "first_seen": "2.3.2",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": null,
+  "setting_id": "KmISSZMOnHtmrfRD",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.2": "machine"
@@ -59,7 +64,8 @@
       ]
     },
     "default_print_profile": {
-      "2.3.2": "0.20mm Standard @iQ TiQ2 P1 - PACF Pro Fiberthree (0.4 Nozzle)"
+      "2.3.2": "0.20mm Standard @iQ TiQ2 P1 - PACF Pro Fiberthree (0.4 Nozzle)",
+      "2.5.0": "0.40mm Standard @iQ TiQ8 (0.8 Nozzle)"
     },
     "deretraction_speed": {
       "2.3.2": [
@@ -155,10 +161,22 @@
       "2.3.2": [
         "1500",
         "1500"
+      ],
+      "2.5.0": [
+        "1500",
+        "1500",
+        "1500",
+        "1500"
       ]
     },
     "machine_max_acceleration_y": {
       "2.3.2": [
+        "1500",
+        "1500"
+      ],
+      "2.5.0": [
+        "1500",
+        "1500",
         "1500",
         "1500"
       ]
@@ -213,6 +231,12 @@
     },
     "machine_max_speed_z": {
       "2.3.2": [
+        "15",
+        "12"
+      ],
+      "2.5.0": [
+        "15",
+        "12",
         "15",
         "12"
       ]
@@ -383,7 +407,8 @@
       "2.3.2": "0"
     },
     "silent_mode": {
-      "2.3.2": "0"
+      "2.3.2": "0",
+      "2.5.0": null
     },
     "single_extruder_multi_material": {
       "2.3.2": "0"

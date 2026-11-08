@@ -4,10 +4,15 @@
   "name": "WonderMaker ZR Ultra 0.4 nozzle",
   "vendor": "WonderMaker",
   "first_seen": "2.3.1",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": "GM013",
+  "setting_id": "xJBdCljSZVDINXnP",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.1": "machine"
@@ -65,7 +70,8 @@
       "2.3.1": "klipper"
     },
     "silent_mode": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.5.0": null
     },
     "long_retractions_when_cut": {
       "2.3.1": [
@@ -376,6 +382,12 @@
     },
     "machine_unload_filament_time": {
       "2.3.1": "0"
+    },
+    "enable_filament_mapping": {
+      "2.5.0": "1"
+    },
+    "filament_swap_gcode": {
+      "2.5.0": "M117 Swap filament for tool {next_extruder}\nPAUSE"
     }
   }
 }

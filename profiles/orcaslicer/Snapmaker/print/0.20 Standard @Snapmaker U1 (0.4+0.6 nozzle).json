@@ -4,10 +4,15 @@
   "name": "0.20 Standard @Snapmaker U1 (0.4+0.6 nozzle)",
   "vendor": "Snapmaker",
   "first_seen": "2.4.0",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": "GP004_0406_020",
+  "setting_id": "RDaUoAylHaD0M0F1",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.4.0": "process"
@@ -22,7 +27,8 @@
       "2.4.0": "true"
     },
     "adaptive_layer_height": {
-      "2.4.0": "0"
+      "2.4.0": "0",
+      "2.5.0": null
     },
     "reduce_crossing_wall": {
       "2.4.0": "0"
@@ -100,7 +106,8 @@
       "2.4.0": "1"
     },
     "filename_format": {
-      "2.4.0": "{input_filename_base}_{filament_type[0]}_{print_time}.gcode"
+      "2.4.0": "{input_filename_base}_{filament_type[0]}_{print_time}.gcode",
+      "2.5.0": "{input_filename_base}_{filament_type[initial_no_support_extruder]}_{int(total_weight*10) / 10.0}g_{print_time}.gcode"
     },
     "wall_loops": {
       "2.4.0": "2"
@@ -112,7 +119,8 @@
       "2.4.0": "300"
     },
     "print_settings_id": {
-      "2.4.0": ""
+      "2.4.0": "",
+      "2.5.0": null
     },
     "raft_layers": {
       "2.4.0": "0"
@@ -205,7 +213,8 @@
       "2.4.0": "1"
     },
     "prime_tower_width": {
-      "2.4.0": "35"
+      "2.4.0": "35",
+      "2.5.0": "30"
     },
     "xy_hole_compensation": {
       "2.4.0": "0"
@@ -219,10 +228,12 @@
       ]
     },
     "smooth_coefficient": {
-      "2.4.0": "150"
+      "2.4.0": "150",
+      "2.5.0": null
     },
     "overhang_totally_speed": {
-      "2.4.0": "50"
+      "2.4.0": "50",
+      "2.5.0": null
     },
     "max_travel_detour_distance": {
       "2.4.0": "0"
@@ -246,7 +257,8 @@
       "2.4.0": "disabled"
     },
     "enable_arc_fitting": {
-      "2.4.0": "1"
+      "2.4.0": "1",
+      "2.5.0": "0"
     },
     "exclude_object": {
       "2.4.0": "1"
@@ -258,7 +270,8 @@
       "2.4.0": "inner wall/outer wall/infill"
     },
     "internal_bridge_support_thickness": {
-      "2.4.0": "0.8"
+      "2.4.0": "0.8",
+      "2.5.0": null
     },
     "initial_layer_acceleration": {
       "2.4.0": "500"
@@ -303,7 +316,8 @@
       "2.4.0": "0.012"
     },
     "support_type": {
-      "2.4.0": "normal(auto)"
+      "2.4.0": "normal(auto)",
+      "2.5.0": "tree(auto)"
     },
     "support_style": {
       "2.4.0": "default"
@@ -345,13 +359,16 @@
       "2.4.0": "15"
     },
     "wipe_tower_wall_type": {
-      "2.4.0": "rib"
+      "2.4.0": "rib",
+      "2.5.0": null
     },
     "wipe_tower_extra_rib_length": {
-      "2.4.0": "0"
+      "2.4.0": "0",
+      "2.5.0": "8"
     },
     "prime_volume": {
-      "2.4.0": "30"
+      "2.4.0": "30",
+      "2.5.0": null
     },
     "wall_generator": {
       "2.4.0": "arachne"
@@ -377,6 +394,12 @@
     },
     "prime_tower_brim_width": {
       "2.4.0": "5"
+    },
+    "top_color_penetration_layers": {
+      "2.5.0": "5"
+    },
+    "bottom_color_penetration_layers": {
+      "2.5.0": "3"
     }
   }
 }

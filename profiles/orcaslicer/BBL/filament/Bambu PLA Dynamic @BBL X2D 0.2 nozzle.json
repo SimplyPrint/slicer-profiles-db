@@ -4,10 +4,15 @@
   "name": "Bambu PLA Dynamic @BBL X2D 0.2 nozzle",
   "vendor": "BBL",
   "first_seen": "2.4.0",
-  "last_seen": "2.4.0",
-  "filament_id": "GFA13",
+  "last_seen": "2.5.0",
+  "filament_id": "OFDGigEI",
   "setting_id": "GFSA13_22",
   "renamed_from": null,
+  "filament_type": "PLA",
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.4.0": "filament"
@@ -44,6 +49,9 @@
     "close_additional_fan_first_x_layers": {
       "2.4.0": [
         "3"
+      ],
+      "2.5.0": [
+        "1"
       ]
     },
     "complete_print_exhaust_fan_speed": {
@@ -524,11 +532,17 @@
     "supertack_plate_temp": {
       "2.4.0": [
         "45"
+      ],
+      "2.5.0": [
+        "40"
       ]
     },
     "supertack_plate_temp_initial_layer": {
       "2.4.0": [
         "45"
+      ],
+      "2.5.0": [
+        "40"
       ]
     },
     "slow_down_for_layer_cooling": {
@@ -606,7 +620,8 @@
       ]
     },
     "filament_id": {
-      "2.4.0": "GFA13"
+      "2.4.0": "GFA13",
+      "2.5.0": "OFDGigEI"
     },
     "setting_id": {
       "2.4.0": "GFSA13_22"
@@ -723,6 +738,105 @@
     "first_x_layer_fan_speed": {
       "2.4.0": [
         "40"
+      ]
+    },
+    "filament_preheat_temperature_delta": {
+      "2.5.0": [
+        "10",
+        "10",
+        "10",
+        "10"
+      ]
+    },
+    "filament_dev_ams_drying_ams_limitations": {
+      "2.5.0": [
+        "1",
+        "0"
+      ]
+    },
+    "filament_dev_ams_drying_heat_distortion_temperature": {
+      "2.5.0": [
+        "45"
+      ]
+    },
+    "filament_dev_ams_drying_temperature": {
+      "2.5.0": [
+        "45",
+        "45",
+        "45",
+        "45"
+      ]
+    },
+    "filament_dev_ams_drying_time": {
+      "2.5.0": [
+        "12",
+        "12",
+        "12",
+        "12"
+      ]
+    },
+    "filament_dev_chamber_drying_bed_temperature": {
+      "2.5.0": [
+        "70"
+      ]
+    },
+    "filament_dev_chamber_drying_time": {
+      "2.5.0": [
+        "12.0"
+      ]
+    },
+    "filament_dev_drying_cooling_temperature": {
+      "2.5.0": [
+        "45"
+      ]
+    },
+    "filament_dev_drying_softening_temperature": {
+      "2.5.0": [
+        "50"
+      ]
+    },
+    "filament_flush_temp_fast": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "filament_metal_stickiness": {
+      "2.5.0": [
+        "None"
+      ]
+    },
+    "filament_prime_volume_nc": {
+      "2.5.0": [
+        "60"
+      ]
+    },
+    "filament_change_length": {
+      "2.5.0": [
+        "10"
+      ]
+    },
+    "filament_ingredients_safe": {
+      "2.5.0": "1"
+    },
+    "filament_emission_safe": {
+      "2.5.0": "1"
+    },
+    "filament_contact_safe": {
+      "2.5.0": "1"
+    },
+    "no_slow_down_for_cooling_on_outwalls": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "cooling_slowdown_logic": {
+      "2.5.0": [
+        "uniform_cooling"
+      ]
+    },
+    "cooling_perimeter_transition_distance": {
+      "2.5.0": [
+        "10"
       ]
     }
   }

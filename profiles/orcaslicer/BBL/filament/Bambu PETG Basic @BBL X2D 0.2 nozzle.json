@@ -4,10 +4,15 @@
   "name": "Bambu PETG Basic @BBL X2D 0.2 nozzle",
   "vendor": "BBL",
   "first_seen": "2.4.0",
-  "last_seen": "2.4.0",
-  "filament_id": "GFG00",
+  "last_seen": "2.5.0",
+  "filament_id": "OFFvzqcd",
   "setting_id": "GFSG00_13",
   "renamed_from": null,
+  "filament_type": "PETG",
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.4.0": "filament"
@@ -119,16 +124,31 @@
     "fan_max_speed": {
       "2.4.0": [
         "60"
+      ],
+      "2.5.0": [
+        "60",
+        "60",
+        "60",
+        "60"
       ]
     },
     "fan_min_speed": {
       "2.4.0": [
+        "30"
+      ],
+      "2.5.0": [
+        "30",
+        "30",
+        "30",
         "30"
       ]
     },
     "filament_cost": {
       "2.4.0": [
         "24.99"
+      ],
+      "2.5.0": [
+        "13.99"
       ]
     },
     "filament_density": {
@@ -524,11 +544,17 @@
     "supertack_plate_temp": {
       "2.4.0": [
         "70"
+      ],
+      "2.5.0": [
+        "60"
       ]
     },
     "supertack_plate_temp_initial_layer": {
       "2.4.0": [
         "70"
+      ],
+      "2.5.0": [
+        "60"
       ]
     },
     "slow_down_for_layer_cooling": {
@@ -606,7 +632,8 @@
       ]
     },
     "filament_id": {
-      "2.4.0": "GFG00"
+      "2.4.0": "GFG00",
+      "2.5.0": "OFFvzqcd"
     },
     "description": {
       "2.4.0": "To get better transparent or translucent results with the corresponding filament, please refer to this wiki: Printing tips for transparent PETG."
@@ -741,6 +768,95 @@
     "filament_extruder_compatibility": {
       "2.4.0": [
         "24"
+      ]
+    },
+    "filament_preheat_temperature_delta": {
+      "2.5.0": [
+        "10",
+        "10",
+        "10",
+        "10"
+      ]
+    },
+    "filament_dev_ams_drying_ams_limitations": {
+      "2.5.0": [
+        "1",
+        "0"
+      ]
+    },
+    "filament_dev_ams_drying_heat_distortion_temperature": {
+      "2.5.0": [
+        "75"
+      ]
+    },
+    "filament_dev_ams_drying_temperature": {
+      "2.5.0": [
+        "65",
+        "65",
+        "55",
+        "55"
+      ]
+    },
+    "filament_dev_ams_drying_time": {
+      "2.5.0": [
+        "12",
+        "12",
+        "12",
+        "12"
+      ]
+    },
+    "filament_dev_chamber_drying_bed_temperature": {
+      "2.5.0": [
+        "80"
+      ]
+    },
+    "filament_dev_chamber_drying_time": {
+      "2.5.0": [
+        "12.0"
+      ]
+    },
+    "filament_dev_drying_cooling_temperature": {
+      "2.5.0": [
+        "55"
+      ]
+    },
+    "filament_dev_drying_softening_temperature": {
+      "2.5.0": [
+        "60"
+      ]
+    },
+    "filament_flush_temp_fast": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "filament_metal_stickiness": {
+      "2.5.0": [
+        "High"
+      ]
+    },
+    "filament_ingredients_safe": {
+      "2.5.0": "1"
+    },
+    "filament_emission_safe": {
+      "2.5.0": "1"
+    },
+    "filament_contact_safe": {
+      "2.5.0": "1"
+    },
+    "no_slow_down_for_cooling_on_outwalls": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "cooling_slowdown_logic": {
+      "2.5.0": [
+        "uniform_cooling"
+      ]
+    },
+    "cooling_perimeter_transition_distance": {
+      "2.5.0": [
+        "10"
       ]
     }
   }

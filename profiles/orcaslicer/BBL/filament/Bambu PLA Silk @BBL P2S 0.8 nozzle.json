@@ -4,10 +4,15 @@
   "name": "Bambu PLA Silk @BBL P2S 0.8 nozzle",
   "vendor": "BBL",
   "first_seen": "2.3.2",
-  "last_seen": "2.4.0",
-  "filament_id": "GFA05",
+  "last_seen": "2.5.0",
+  "filament_id": "OFEGNJD4",
   "setting_id": "GFSA05_27",
   "renamed_from": null,
+  "filament_type": "PLA",
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.2": "filament"
@@ -28,6 +33,10 @@
     },
     "additional_cooling_fan_speed": {
       "2.3.2": [
+        "100"
+      ],
+      "2.5.0": [
+        "100",
         "100"
       ]
     },
@@ -64,21 +73,33 @@
     "counter_coef_2": {
       "2.3.2": [
         "0.008"
+      ],
+      "2.5.0": [
+        "0.0036"
       ]
     },
     "counter_coef_3": {
       "2.3.2": [
         "-0.041"
+      ],
+      "2.5.0": [
+        "-0.0218"
       ]
     },
     "counter_limit_min": {
       "2.3.2": [
         "-0.035"
+      ],
+      "2.5.0": [
+        "-0.0218"
       ]
     },
     "counter_limit_max": {
       "2.3.2": [
         "0.033"
+      ],
+      "2.5.0": [
+        "0.0682"
       ]
     },
     "circle_compensation_speed": {
@@ -124,6 +145,9 @@
     "filament_cost": {
       "2.3.2": [
         "29.99"
+      ],
+      "2.5.0": [
+        "21.99"
       ]
     },
     "filament_density": {
@@ -385,21 +409,33 @@
     "hole_coef_2": {
       "2.3.2": [
         "-0.008"
+      ],
+      "2.5.0": [
+        "-0.0037"
       ]
     },
     "hole_coef_3": {
       "2.3.2": [
         "0.23415"
+      ],
+      "2.5.0": [
+        "0.1261"
       ]
     },
     "hole_limit_min": {
       "2.3.2": [
         "0.088"
+      ],
+      "2.5.0": [
+        "0.0336"
       ]
     },
     "hole_limit_max": {
       "2.3.2": [
         "0.22"
+      ],
+      "2.5.0": [
+        "0.1261"
       ]
     },
     "impact_strength_z": {
@@ -484,6 +520,10 @@
     "slow_down_min_speed": {
       "2.3.2": [
         "20"
+      ],
+      "2.5.0": [
+        "20",
+        "20"
       ]
     },
     "temperature_vitrification": {
@@ -539,7 +579,8 @@
       ]
     },
     "filament_id": {
-      "2.3.2": "GFA05"
+      "2.3.2": "GFA05",
+      "2.5.0": "OFEGNJD4"
     },
     "description": {
       "2.3.2": "To make the prints get higher gloss, please dry the filament before use, and set the outer wall speed to be 40 to 60 mm/s when slicing."
@@ -615,11 +656,135 @@
     "close_additional_fan_first_x_layers": {
       "2.4.0": [
         "3"
+      ],
+      "2.5.0": [
+        "1"
       ]
     },
     "additional_fan_full_speed_layer": {
       "2.4.0": [
         "0"
+      ]
+    },
+    "filament_extruder_compatibility": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "filament_cooling_before_tower": {
+      "2.5.0": [
+        "10",
+        "10"
+      ]
+    },
+    "filament_preheat_temperature_delta": {
+      "2.5.0": [
+        "10",
+        "10"
+      ]
+    },
+    "filament_dev_ams_drying_ams_limitations": {
+      "2.5.0": [
+        "1",
+        "0"
+      ]
+    },
+    "filament_dev_ams_drying_heat_distortion_temperature": {
+      "2.5.0": [
+        "45"
+      ]
+    },
+    "filament_dev_ams_drying_temperature": {
+      "2.5.0": [
+        "45",
+        "45",
+        "45",
+        "45"
+      ]
+    },
+    "filament_dev_ams_drying_time": {
+      "2.5.0": [
+        "12",
+        "12",
+        "12",
+        "12"
+      ]
+    },
+    "filament_dev_chamber_drying_bed_temperature": {
+      "2.5.0": [
+        "70"
+      ]
+    },
+    "filament_dev_chamber_drying_time": {
+      "2.5.0": [
+        "12.0"
+      ]
+    },
+    "filament_dev_drying_cooling_temperature": {
+      "2.5.0": [
+        "45"
+      ]
+    },
+    "filament_dev_drying_softening_temperature": {
+      "2.5.0": [
+        "50"
+      ]
+    },
+    "filament_flush_temp_fast": {
+      "2.5.0": [
+        "0",
+        "0"
+      ]
+    },
+    "filament_metal_stickiness": {
+      "2.5.0": [
+        "None"
+      ]
+    },
+    "filament_prime_volume_nc": {
+      "2.5.0": [
+        "60"
+      ]
+    },
+    "filament_retract_length_nc": {
+      "2.5.0": [
+        "14",
+        "14"
+      ]
+    },
+    "filament_bridge_speed": {
+      "2.5.0": [
+        "25",
+        "25"
+      ]
+    },
+    "filament_change_length": {
+      "2.5.0": [
+        "10"
+      ]
+    },
+    "filament_ingredients_safe": {
+      "2.5.0": "1"
+    },
+    "filament_emission_safe": {
+      "2.5.0": "1"
+    },
+    "filament_contact_safe": {
+      "2.5.0": "1"
+    },
+    "no_slow_down_for_cooling_on_outwalls": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "cooling_slowdown_logic": {
+      "2.5.0": [
+        "uniform_cooling"
+      ]
+    },
+    "cooling_perimeter_transition_distance": {
+      "2.5.0": [
+        "10"
       ]
     }
   }

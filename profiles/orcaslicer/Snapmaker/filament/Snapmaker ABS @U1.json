@@ -4,10 +4,15 @@
   "name": "Snapmaker ABS @U1",
   "vendor": "Snapmaker",
   "first_seen": "2.3.1",
-  "last_seen": "2.4.1",
-  "filament_id": "1682237920",
-  "setting_id": "937533070",
+  "last_seen": "2.5.0",
+  "filament_id": "OF72YYTd",
+  "setting_id": "UFMRgwmOOQhOa3kB",
   "renamed_from": null,
+  "filament_type": "ABS",
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.1": "filament"
@@ -64,11 +69,17 @@
     "hot_plate_temp": {
       "2.3.1": [
         "110"
+      ],
+      "2.5.0": [
+        "100"
       ]
     },
     "hot_plate_temp_initial_layer": {
       "2.3.1": [
         "105"
+      ],
+      "2.5.0": [
+        "100"
       ]
     },
     "overhang_fan_threshold": {
@@ -129,11 +140,19 @@
     "filament_max_volumetric_speed": {
       "2.3.1": [
         "8"
+      ],
+      "2.5.0": [
+        "8",
+        "22"
       ]
     },
     "filament_minimal_purge_on_wipe_tower": {
       "2.3.1": [
         "0"
+      ],
+      "2.5.0": [
+        "0",
+        "15"
       ]
     },
     "filament_retraction_minimum_travel": {
@@ -154,6 +173,10 @@
     "filament_retraction_length": {
       "2.3.1": [
         "0.6"
+      ],
+      "2.5.0": [
+        "0.6",
+        "0.2"
       ]
     },
     "filament_z_hop": {
@@ -164,6 +187,10 @@
     "filament_z_hop_types": {
       "2.3.1": [
         "nil"
+      ],
+      "2.5.0": [
+        "nil",
+        "Slope Lift"
       ]
     },
     "filament_retract_restart_extra": {
@@ -209,12 +236,14 @@
     "filament_load_time": {
       "2.3.1": [
         "2"
-      ]
+      ],
+      "2.5.0": null
     },
     "filament_unload_time": {
       "2.3.1": [
         "2"
-      ]
+      ],
+      "2.5.0": null
     },
     "filament_toolchange_delay": {
       "2.3.1": [
@@ -239,26 +268,45 @@
     "filament_multitool_ramming": {
       "2.3.1": [
         "0"
+      ],
+      "2.5.0": [
+        "0",
+        "1"
       ]
     },
     "filament_multitool_ramming_volume": {
       "2.3.1": [
         "0"
+      ],
+      "2.5.0": [
+        "0",
+        "5"
       ]
     },
     "nozzle_temperature_initial_layer": {
       "2.3.1": [
         "260"
+      ],
+      "2.5.0": [
+        "260",
+        "280"
       ]
     },
     "nozzle_temperature": {
       "2.3.1": [
         "260"
+      ],
+      "2.5.0": [
+        "260",
+        "280"
       ]
     },
     "temperature_vitrification": {
       "2.3.1": [
         "189"
+      ],
+      "2.5.0": [
+        "100"
       ]
     },
     "full_fan_speed_layer": {
@@ -269,11 +317,19 @@
     "fan_max_speed": {
       "2.3.1": [
         "15"
+      ],
+      "2.5.0": [
+        "15",
+        "60"
       ]
     },
     "fan_min_speed": {
       "2.3.1": [
         "15"
+      ],
+      "2.5.0": [
+        "15",
+        "10"
       ]
     },
     "slow_down_min_speed": {
@@ -352,7 +408,8 @@
       ]
     },
     "filament_id": {
-      "2.3.1": "1682237920"
+      "2.3.1": "1682237920",
+      "2.5.0": "OF72YYTd"
     },
     "setting_id": {
       "2.3.1": "937533070",
@@ -361,6 +418,30 @@
     "compatible_printers": {
       "2.3.1": [
         "Snapmaker U1 (0.4 nozzle)"
+      ]
+    },
+    "filament_retract_length_toolchange": {
+      "2.5.0": [
+        "5",
+        "5"
+      ]
+    },
+    "filament_extruder_variant": {
+      "2.5.0": [
+        "Direct Drive Standard",
+        "Direct Drive High Flow"
+      ]
+    },
+    "additional_cooling_fan_speed": {
+      "2.5.0": [
+        "0",
+        "0"
+      ]
+    },
+    "filament_multitool_ramming_flow": {
+      "2.5.0": [
+        "10",
+        "30"
       ]
     }
   }

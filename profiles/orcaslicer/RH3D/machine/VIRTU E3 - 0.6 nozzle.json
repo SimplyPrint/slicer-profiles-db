@@ -1,0 +1,260 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "VIRTU E3 - 0.6 nozzle",
+  "vendor": "RH3D",
+  "first_seen": "2.5.0",
+  "last_seen": "2.5.0",
+  "filament_id": null,
+  "setting_id": "T1RuDWhyFkI1GH1h",
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
+  "settings": {
+    "type": {
+      "2.5.0": "machine"
+    },
+    "name": {
+      "2.5.0": "VIRTU E3 - 0.6 nozzle"
+    },
+    "from": {
+      "2.5.0": "system"
+    },
+    "instantiation": {
+      "2.5.0": "true"
+    },
+    "printer_structure": {
+      "2.5.0": "corexy"
+    },
+    "gcode_flavor": {
+      "2.5.0": "klipper"
+    },
+    "machine_start_gcode": {
+      "2.5.0": "M104 S0 ; Stops OrcaSlicer from sending temp waits separately\nM140 S0\nPRINT_START EXTRUDER=[first_layer_temperature] BED=[first_layer_bed_temperature] CHAMBER=[chamber_temperature] PROFILE=[notes]\n; Start of actual GCode for the print"
+    },
+    "machine_end_gcode": {
+      "2.5.0": "PRINT_END"
+    },
+    "extruder_colour": {
+      "2.5.0": "#02aba2"
+    },
+    "extruder_offset": {
+      "2.5.0": "0x0"
+    },
+    "emit_machine_limits_to_gcode": {
+      "2.5.0": "0"
+    },
+    "machine_min_extruding_rate": {
+      "2.5.0": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.5.0": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "2.5.0": "0.30"
+    },
+    "min_layer_height": {
+      "2.5.0": "0.10"
+    },
+    "nozzle_diameter": {
+      "2.5.0": [
+        "0.6"
+      ]
+    },
+    "printer_settings_id": {
+      "2.5.0": ""
+    },
+    "printer_technology": {
+      "2.5.0": "FFF"
+    },
+    "printer_variant": {
+      "2.5.0": "0.6"
+    },
+    "retraction_minimum_travel": {
+      "2.5.0": "1.5"
+    },
+    "retract_when_changing_layer": {
+      "2.5.0": "1"
+    },
+    "retraction_length": {
+      "2.5.0": "0.6"
+    },
+    "retract_length_toolchange": {
+      "2.5.0": "0"
+    },
+    "z_hop": {
+      "2.5.0": "0.0"
+    },
+    "z_hop_types": {
+      "2.5.0": "Slope Lift"
+    },
+    "use_firmware_retraction": {
+      "2.5.0": "1"
+    },
+    "use_relative_e_distances": {
+      "2.5.0": "1"
+    },
+    "retract_restart_extra": {
+      "2.5.0": "0"
+    },
+    "retract_restart_extra_toolchange": {
+      "2.5.0": "0"
+    },
+    "retraction_speed": {
+      "2.5.0": "40"
+    },
+    "deretraction_speed": {
+      "2.5.0": "60"
+    },
+    "single_extruder_multi_material": {
+      "2.5.0": "0"
+    },
+    "thumbnails": {
+      "2.5.0": [
+        "16x16/QOI",
+        "313x173/QOI",
+        "440x240/QOI",
+        "480x240/QOI",
+        "32x32/PNG",
+        "320x240/PNG",
+        "640x480/PNG"
+      ]
+    },
+    "change_filament_gcode": {
+      "2.5.0": "G1 E1.0 F300 ; prime after color change"
+    },
+    "before_layer_change_gcode": {
+      "2.5.0": ";BEFORE_LAYER_CHANGE\nG92 E0"
+    },
+    "layer_change_gcode": {
+      "2.5.0": ";AFTER_LAYER_CHANGE"
+    },
+    "machine_pause_gcode": {
+      "2.5.0": "PAUSE\n"
+    },
+    "wipe": {
+      "2.5.0": "1"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.5.0": "140"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.5.0": "36"
+    },
+    "extruder_clearance_radius": {
+      "2.5.0": "65"
+    },
+    "default_filament_profile": {
+      "2.5.0": "Generic PLA @VIRTU E3"
+    },
+    "machine_max_acceleration_e": {
+      "2.5.0": [
+        "7500",
+        "7500"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.5.0": [
+        "35000",
+        "35000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.5.0": [
+        "35000",
+        "35000"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "2.5.0": [
+        "10000",
+        "10000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.5.0": [
+        "35000",
+        "35000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.5.0": [
+        "35000",
+        "35000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.5.0": [
+        "2000",
+        "2000"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.5.0": [
+        "25",
+        "25"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.5.0": [
+        "900",
+        "900"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.5.0": [
+        "900",
+        "900"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.5.0": [
+        "400",
+        "400"
+      ]
+    },
+    "printable_area": {
+      "2.5.0": [
+        "0x0",
+        "230x0",
+        "230x232",
+        "0x232"
+      ]
+    },
+    "printable_height": {
+      "2.5.0": "232"
+    },
+    "printer_model": {
+      "2.5.0": "VIRTU E3"
+    },
+    "printer_notes": {
+      "2.5.0": [
+        "Design by RH3D"
+      ]
+    },
+    "retract_before_wipe": {
+      "2.5.0": "80%"
+    },
+    "retract_lift_below": {
+      "2.5.0": "230"
+    },
+    "travel_slope": {
+      "2.5.0": "1"
+    },
+    "setting_id": {
+      "2.5.0": "T1RuDWhyFkI1GH1h"
+    },
+    "default_print_profile": {
+      "2.5.0": "0.25mm Standard @VIRTU E3"
+    }
+  }
+}

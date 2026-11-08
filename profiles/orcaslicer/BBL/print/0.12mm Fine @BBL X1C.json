@@ -4,10 +4,15 @@
   "name": "0.12mm Fine @BBL X1C",
   "vendor": "BBL",
   "first_seen": "2.3.1",
-  "last_seen": "2.3.2",
+  "last_seen": "2.5.0",
   "filament_id": null,
   "setting_id": "GP002",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.1": "process"
@@ -22,7 +27,8 @@
       "2.3.1": "true"
     },
     "adaptive_layer_height": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.5.0": null
     },
     "bottom_shell_layers": {
       "2.3.1": "5"
@@ -129,7 +135,8 @@
       "2.3.1": "0"
     },
     "internal_bridge_support_thickness": {
-      "2.3.1": "0.8"
+      "2.3.1": "0.8",
+      "2.5.0": null
     },
     "internal_solid_infill_line_width": {
       "2.3.1": "0.42"
@@ -189,7 +196,8 @@
       "2.3.2": [
         "10",
         "10"
-      ]
+      ],
+      "2.5.0": null
     },
     "prime_tower_width": {
       "2.3.1": "35"
@@ -228,7 +236,8 @@
       "2.3.1": "0"
     },
     "smooth_coefficient": {
-      "2.3.1": "150"
+      "2.3.1": "150",
+      "2.5.0": null
     },
     "sparse_infill_density": {
       "2.3.1": "15%"
@@ -237,7 +246,8 @@
       "2.3.1": "0.45"
     },
     "sparse_infill_pattern": {
-      "2.3.1": "crosshatch"
+      "2.3.1": "crosshatch",
+      "2.5.0": "grid"
     },
     "sparse_infill_speed": {
       "2.3.1": "430",
@@ -354,7 +364,8 @@
       "2.3.1": "2"
     },
     "tree_support_wall_count": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.5.0": "-1"
     },
     "wall_generator": {
       "2.3.1": "classic"
@@ -519,7 +530,8 @@
       "2.3.2": "0"
     },
     "enable_tower_interface_cooldown_during_tower": {
-      "2.3.2": "0"
+      "2.3.2": "0",
+      "2.5.0": null
     },
     "seam_placement_away_from_overhangs": {
       "2.3.2": "0"
@@ -658,6 +670,105 @@
         "80%",
         "80%"
       ]
+    },
+    "bottom_surface_density": {
+      "2.5.0": "100"
+    },
+    "monotonic_travel_into_wall": {
+      "2.5.0": "0.0"
+    },
+    "initial_layer_infill_line_width": {
+      "2.5.0": "0.5"
+    },
+    "avoid_crossing_wall_includes_support": {
+      "2.5.0": "0"
+    },
+    "skirt_per_object": {
+      "2.5.0": "1"
+    },
+    "fill_multiline": {
+      "2.5.0": "1"
+    },
+    "enable_support_ironing": {
+      "2.5.0": "0"
+    },
+    "support_ironing_pattern": {
+      "2.5.0": "zig-zag"
+    },
+    "support_ironing_speed": {
+      "2.5.0": "30"
+    },
+    "support_ironing_flow": {
+      "2.5.0": "10%"
+    },
+    "support_ironing_spacing": {
+      "2.5.0": "0.15"
+    },
+    "support_ironing_inset": {
+      "2.5.0": "0.0"
+    },
+    "support_ironing_direction": {
+      "2.5.0": "0"
+    },
+    "sparse_infill_lattice_angle_1": {
+      "2.5.0": "-45"
+    },
+    "sparse_infill_lattice_angle_2": {
+      "2.5.0": "45"
+    },
+    "top_surface_density": {
+      "2.5.0": "100"
+    },
+    "top_solid_infill_flow_ratio": {
+      "2.5.0": [
+        "1",
+        "1"
+      ]
+    },
+    "travel_short_distance_acceleration": {
+      "2.5.0": [
+        "250",
+        "250"
+      ]
+    },
+    "sparse_infill_filament": {
+      "2.5.0": "0"
+    },
+    "wall_filament": {
+      "2.5.0": "0"
+    },
+    "solid_infill_filament": {
+      "2.5.0": "0"
+    },
+    "infill_instead_top_bottom_surfaces": {
+      "2.5.0": "0"
+    },
+    "fuzzy_skin": {
+      "2.5.0": "none"
+    },
+    "fuzzy_skin_thickness": {
+      "2.5.0": "0.3"
+    },
+    "fuzzy_skin_point_distance": {
+      "2.5.0": "0.8"
+    },
+    "fuzzy_skin_first_layer": {
+      "2.5.0": "0"
+    },
+    "fuzzy_skin_noise_type": {
+      "2.5.0": "classic"
+    },
+    "fuzzy_skin_mode": {
+      "2.5.0": "displacement"
+    },
+    "fuzzy_skin_scale": {
+      "2.5.0": "1.0"
+    },
+    "fuzzy_skin_octaves": {
+      "2.5.0": "4"
+    },
+    "fuzzy_skin_persistence": {
+      "2.5.0": "0.5"
     }
   }
 }

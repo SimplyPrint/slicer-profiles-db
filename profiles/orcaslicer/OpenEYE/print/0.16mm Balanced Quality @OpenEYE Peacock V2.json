@@ -4,10 +4,15 @@
   "name": "0.16mm Balanced Quality @OpenEYE Peacock V2",
   "vendor": "OpenEYE",
   "first_seen": "2.3.2",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": "GP174",
+  "setting_id": "PBks1gcyPcxRhGtr",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.2": "process"
@@ -22,7 +27,8 @@
       "2.3.2": "true"
     },
     "adaptive_layer_height": {
-      "2.3.2": "0"
+      "2.3.2": "0",
+      "2.5.0": null
     },
     "bottom_shell_layers": {
       "2.3.2": "4"
@@ -79,7 +85,8 @@
       "2.3.2": "0"
     },
     "filename_format": {
-      "2.3.2": "{input_filename_base}_{filament_type[initial_tool]}_{print_time}.gcode"
+      "2.3.2": "{input_filename_base}_{filament_type[initial_tool]}_{print_time}.gcode",
+      "2.5.0": "{if model_name != \"\"}{model_name}{else}{input_filename_base}{endif}{if plate_name != \"\"}_{plate_name}{endif}_{filament_type[initial_tool]}_{print_time}.gcode"
     },
     "gap_infill_speed": {
       "2.3.2": "250"
@@ -112,7 +119,8 @@
       "2.3.2": "0"
     },
     "internal_bridge_support_thickness": {
-      "2.3.2": "0.8"
+      "2.3.2": "0.8",
+      "2.5.0": null
     },
     "internal_solid_infill_line_width": {
       "2.3.2": "0.42"
@@ -295,10 +303,12 @@
       "2.3.2": "none"
     },
     "seam_slope_start_height": {
-      "2.3.2": "0"
+      "2.3.2": "0",
+      "2.5.0": "10%"
     },
     "seam_slope_min_length": {
-      "2.3.2": "20"
+      "2.3.2": "20",
+      "2.5.0": "10"
     },
     "symmetric_infill_y_axis": {
       "2.3.2": "0"
@@ -400,13 +410,15 @@
       "2.3.2": "10%"
     },
     "seam_slope_conditional": {
-      "2.3.2": "1"
+      "2.3.2": "1",
+      "2.5.0": "0"
     },
     "seam_slope_entire_loop": {
       "2.3.2": "0"
     },
     "seam_slope_inner_walls": {
-      "2.3.2": "1"
+      "2.3.2": "1",
+      "2.5.0": "0"
     },
     "seam_slope_steps": {
       "2.3.2": "10"
@@ -449,6 +461,23 @@
       "2.3.2": [
         "OpenEYE Peacock V2 0.4 nozzle"
       ]
+    },
+    "fuzzy_skin": {
+      "2.5.0": "none"
+    },
+    "fuzzy_skin_point_distance": {
+      "2.5.0": "0.8"
+    },
+    "fuzzy_skin_thickness": {
+      "2.5.0": "0.3"
+    },
+    "initial_layer_travel_acceleration": {
+      "2.5.0": [
+        "6000"
+      ]
+    },
+    "support_ironing_spacing": {
+      "2.5.0": "0.15"
     }
   }
 }

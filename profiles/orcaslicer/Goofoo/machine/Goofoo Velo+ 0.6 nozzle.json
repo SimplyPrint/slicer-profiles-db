@@ -1,0 +1,282 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "Goofoo Velo+ 0.6 nozzle",
+  "vendor": "Goofoo",
+  "first_seen": "2.5.0",
+  "last_seen": "2.5.0",
+  "filament_id": null,
+  "setting_id": "Pauu7JRq7u2OD6kv",
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
+  "settings": {
+    "type": {
+      "2.5.0": "machine"
+    },
+    "name": {
+      "2.5.0": "Goofoo Velo+ 0.6 nozzle"
+    },
+    "from": {
+      "2.5.0": "system"
+    },
+    "instantiation": {
+      "2.5.0": "true"
+    },
+    "printer_technology": {
+      "2.5.0": "FFF"
+    },
+    "deretraction_speed": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "extruder_colour": {
+      "2.5.0": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "2.5.0": [
+        "0x0"
+      ]
+    },
+    "gcode_flavor": {
+      "2.5.0": "klipper"
+    },
+    "machine_max_acceleration_e": {
+      "2.5.0": [
+        "20000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.5.0": [
+        "10000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.5.0": [
+        "15000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.5.0": [
+        "10000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.5.0": [
+        "10000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.5.0": [
+        "100",
+        "200"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.5.0": [
+        "50",
+        "25"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.5.0": [
+        "730",
+        "200"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.5.0": [
+        "730",
+        "200"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.5.0": [
+        "15",
+        "12"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.5.0": [
+        "1",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.5.0": [
+        "5",
+        "9"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.5.0": [
+        "5",
+        "9"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.5.0": [
+        "0.4"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "2.5.0": [
+        "0.4"
+      ]
+    },
+    "min_layer_height": {
+      "2.5.0": [
+        "0.12"
+      ]
+    },
+    "printable_height": {
+      "2.5.0": "600"
+    },
+    "extruder_clearance_radius": {
+      "2.5.0": "50"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.5.0": "60"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.5.0": "350"
+    },
+    "nozzle_diameter": {
+      "2.5.0": [
+        "0.6"
+      ]
+    },
+    "printer_settings_id": {
+      "2.5.0": ""
+    },
+    "printer_variant": {
+      "2.5.0": "0.6"
+    },
+    "retraction_minimum_travel": {
+      "2.5.0": [
+        "2"
+      ]
+    },
+    "retract_before_wipe": {
+      "2.5.0": [
+        "100%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.5.0": [
+        "1"
+      ]
+    },
+    "retraction_length": {
+      "2.5.0": [
+        "0.5"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.5.0": [
+        "10"
+      ]
+    },
+    "z_hop": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "2.5.0": [
+        "50"
+      ]
+    },
+    "single_extruder_multi_material": {
+      "2.5.0": "1"
+    },
+    "change_filament_gcode": {
+      "2.5.0": "PAUSE"
+    },
+    "wipe": {
+      "2.5.0": [
+        "1"
+      ]
+    },
+    "default_print_profile": {
+      "2.5.0": "0.30mm Standard @Goofoo Velo+"
+    },
+    "machine_start_gcode": {
+      "2.5.0": "G90 ; 绝对坐标模式\nM83 ; 挤出机相对模式\nM140 S[first_layer_bed_temperature] ; 设置热床温度\nM104 S140 ; 临时喷嘴温度=切片首层设定（防止归零渗料）\nG4 S10 ; 预热等待10秒\nG28 ; 归零所有轴\nG1 Z50 F240 ; Z轴抬升\nG1 X2 Y10 F3000 ; 移动至起始位置\nM104 S[nozzle_temperature_initial_layer] ; 正式设置喷嘴温度（与切片设置一致）\nM190 S[bed_temperature_initial_layer_single] ; 等待热床温度稳定\nM109 S[nozzle_temperature_initial_layer] ; 等待喷嘴温度稳定\nG1 Z0.28 F240 ; 喷嘴下降至打印高度\nG92 E0 ; 挤出机归零\nG1 Y140 E10 F1500 ; 画第一条 priming 线\nG1 X2.3 F5000 ; X轴微调\nG92 E0 ; 挤出机归零\nG1 Y10 E10 F1200 ; 画第二条 priming 线\nG92 E0 ; 最终挤出机归零"
+    },
+    "machine_end_gcode": {
+      "2.5.0": "{if max_layer_z < printable_height}G1 Z{z_offset+min(max_layer_z+2, printable_height)} F600 ; Move print head up{endif}\nG1 X5 Y{print_bed_max[1]*0.8} F{travel_speed*60} ; present print\n{if max_layer_z < printable_height-10}G1 Z{z_offset+min(max_layer_z+70, printable_height-10)} F600 ; Move print head further up{endif}\n{if max_layer_z < max_print_height*0.6}G1 Z{printable_height*0.6} F600 ; Move print head further up{endif}\nM140 S0 ; turn off heatbed\nM104 S0 ; turn off temperature\nM107 ; turn off fan\nM84 X Y E ; disable motors"
+    },
+    "layer_change_gcode": {
+      "2.5.0": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "before_layer_change_gcode": {
+      "2.5.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0"
+    },
+    "machine_pause_gcode": {
+      "2.5.0": "PAUSE"
+    },
+    "setting_id": {
+      "2.5.0": "Pauu7JRq7u2OD6kv"
+    },
+    "nozzle_type": {
+      "2.5.0": "hardened_steel"
+    },
+    "printer_model": {
+      "2.5.0": "Goofoo Velo+"
+    },
+    "default_filament_profile": {
+      "2.5.0": [
+        "Goofoo ABS @System"
+      ]
+    },
+    "printable_area": {
+      "2.5.0": [
+        "0x0",
+        "600x0",
+        "600x500",
+        "0x500"
+      ]
+    },
+    "thumbnails": {
+      "2.5.0": "300x300/PNG"
+    },
+    "machine_max_acceleration_travel": {
+      "2.5.0": [
+        "10000",
+        "10000"
+      ]
+    },
+    "upward_compatible_machine": {
+      "2.5.0": []
+    }
+  }
+}

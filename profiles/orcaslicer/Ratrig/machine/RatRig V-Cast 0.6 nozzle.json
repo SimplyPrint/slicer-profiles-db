@@ -4,10 +4,15 @@
   "name": "RatRig V-Cast 0.6 nozzle",
   "vendor": "Ratrig",
   "first_seen": "2.3.1",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": "GM007",
+  "setting_id": "fl0b82S0kojy84FO",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.1": "machine"
@@ -43,7 +48,8 @@
       "2.3.1": "klipper"
     },
     "silent_mode": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.5.0": null
     },
     "machine_max_acceleration_e": {
       "2.3.1": [
@@ -237,7 +243,8 @@
       "2.3.1": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
     },
     "machine_start_gcode": {
-      "2.3.1": "START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]"
+      "2.3.1": "START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]",
+      "2.5.0": "START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] EXTRUDER_OTHER_LAYER_TEMP=[nozzle_temperature] BED_TEMP=[bed_temperature_initial_layer_single]"
     },
     "machine_end_gcode": {
       "2.3.1": "END_PRINT"
@@ -260,6 +267,9 @@
     "default_filament_profile": {
       "2.3.1": [
         "RatRig Generic ABS"
+      ],
+      "2.5.0": [
+        "Generic ABS @RatRig"
       ]
     },
     "bed_exclude_area": {

@@ -1,0 +1,499 @@
+{
+  "slicer": "orcaslicer",
+  "profile_type": "machine",
+  "name": "KINARB 1HB 1.2 nozzle",
+  "vendor": "Pragostroj",
+  "first_seen": "2.5.0",
+  "last_seen": "2.5.0",
+  "filament_id": null,
+  "setting_id": "FbeIpEH1KB3OxbWZ",
+  "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
+  "settings": {
+    "type": {
+      "2.5.0": "machine"
+    },
+    "name": {
+      "2.5.0": "KINARB 1HB 1.2 nozzle"
+    },
+    "from": {
+      "2.5.0": "system"
+    },
+    "instantiation": {
+      "2.5.0": "true"
+    },
+    "gcode_flavor": {
+      "2.5.0": "reprapfirmware"
+    },
+    "machine_start_gcode": {
+      "2.5.0": "M109 S[nozzle_temperature_initial_layer]\nG1 Z10 F6000 ;Move the platform down 10mm\nG1 X60 Y10 F10000\nG1 Z0.25 F6000 ;Move the platform down 0,25mm\nG92 E0\nG1 X200 E20 F1000\nG1 X450 E40 F1000\nG92 E0"
+    },
+    "machine_end_gcode": {
+      "2.5.0": "{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+1, max_print_height)} F720 ; Move print head up{endif}\nG1 X0 Y200 F3600 ; park\n{if max_layer_z < max_print_height}G1 Z{z_offset+min(max_layer_z+49, max_print_height)} F720 ; Move print head further up{endif}\nM221 S100 ; reset flow\nM900 K0 ; reset LA\nM104 S0 ; turn off temperature\nM140 S0 ; turn off heatbed\nM107 ; turn off fan\nM84 ; disable motors"
+    },
+    "extruder_colour": {
+      "2.5.0": [
+        "#FCE94F"
+      ]
+    },
+    "extruder_offset": {
+      "2.5.0": [
+        "0x0"
+      ]
+    },
+    "machine_max_acceleration_e": {
+      "2.5.0": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_extruding": {
+      "2.5.0": [
+        "500",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_retracting": {
+      "2.5.0": [
+        "5000",
+        "5000"
+      ]
+    },
+    "machine_max_acceleration_travel": {
+      "2.5.0": [
+        "2500",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_x": {
+      "2.5.0": [
+        "2000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_y": {
+      "2.5.0": [
+        "2000",
+        "20000"
+      ]
+    },
+    "machine_max_acceleration_z": {
+      "2.5.0": [
+        "200",
+        "200"
+      ]
+    },
+    "machine_max_speed_e": {
+      "2.5.0": [
+        "500",
+        "25"
+      ]
+    },
+    "machine_max_speed_x": {
+      "2.5.0": [
+        "200",
+        "200"
+      ]
+    },
+    "machine_max_speed_y": {
+      "2.5.0": [
+        "200",
+        "200"
+      ]
+    },
+    "machine_max_speed_z": {
+      "2.5.0": [
+        "12",
+        "12"
+      ]
+    },
+    "machine_max_jerk_e": {
+      "2.5.0": [
+        "2.5",
+        "2.5"
+      ]
+    },
+    "machine_max_jerk_x": {
+      "2.5.0": [
+        "10",
+        "9"
+      ]
+    },
+    "machine_max_jerk_y": {
+      "2.5.0": [
+        "10",
+        "9"
+      ]
+    },
+    "machine_max_jerk_z": {
+      "2.5.0": [
+        "0.2",
+        "0.4"
+      ]
+    },
+    "machine_min_extruding_rate": {
+      "2.5.0": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_min_travel_rate": {
+      "2.5.0": [
+        "0",
+        "0"
+      ]
+    },
+    "max_layer_height": {
+      "2.5.0": [
+        "0.96"
+      ]
+    },
+    "min_layer_height": {
+      "2.5.0": [
+        "0.3"
+      ]
+    },
+    "printable_height": {
+      "2.5.0": "500"
+    },
+    "extruder_clearance_radius": {
+      "2.5.0": "65"
+    },
+    "extruder_clearance_height_to_rod": {
+      "2.5.0": "36"
+    },
+    "extruder_clearance_height_to_lid": {
+      "2.5.0": "140"
+    },
+    "nozzle_diameter": {
+      "2.5.0": [
+        "1.2"
+      ]
+    },
+    "printer_settings_id": {
+      "2.5.0": ""
+    },
+    "printer_technology": {
+      "2.5.0": "FFF"
+    },
+    "printer_variant": {
+      "2.5.0": "1.2"
+    },
+    "retraction_minimum_travel": {
+      "2.5.0": [
+        "1"
+      ]
+    },
+    "retract_before_wipe": {
+      "2.5.0": [
+        "70%"
+      ]
+    },
+    "retract_when_changing_layer": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retraction_length": {
+      "2.5.0": [
+        "1.6"
+      ]
+    },
+    "retract_length_toolchange": {
+      "2.5.0": [
+        "2"
+      ]
+    },
+    "z_hop": {
+      "2.5.0": [
+        "0.2"
+      ]
+    },
+    "retract_restart_extra": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retract_restart_extra_toolchange": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retraction_speed": {
+      "2.5.0": [
+        "45"
+      ]
+    },
+    "deretraction_speed": {
+      "2.5.0": [
+        "45"
+      ]
+    },
+    "single_extruder_multi_material": {
+      "2.5.0": "1"
+    },
+    "change_filament_gcode": {
+      "2.5.0": ""
+    },
+    "before_layer_change_gcode": {
+      "2.5.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+    },
+    "layer_change_gcode": {
+      "2.5.0": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+    },
+    "machine_pause_gcode": {
+      "2.5.0": "M601"
+    },
+    "wipe": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "thumbnails": {
+      "2.5.0": "48x48/PNG, 300x300/PNG"
+    },
+    "thumbnails_format": {
+      "2.5.0": "PNG"
+    },
+    "adaptive_bed_mesh_margin": {
+      "2.5.0": "0"
+    },
+    "auxiliary_fan": {
+      "2.5.0": "0"
+    },
+    "bbl_use_printhost": {
+      "2.5.0": "0"
+    },
+    "bed_custom_model": {
+      "2.5.0": ""
+    },
+    "bed_custom_texture": {
+      "2.5.0": ""
+    },
+    "bed_mesh_max": {
+      "2.5.0": "99999,99999"
+    },
+    "bed_mesh_min": {
+      "2.5.0": "-99999,-99999"
+    },
+    "bed_mesh_probe_distance": {
+      "2.5.0": "50,50"
+    },
+    "best_object_pos": {
+      "2.5.0": "0.5,0.5"
+    },
+    "change_extrusion_role_gcode": {
+      "2.5.0": ""
+    },
+    "cooling_tube_length": {
+      "2.5.0": "5"
+    },
+    "cooling_tube_retraction": {
+      "2.5.0": "91.5"
+    },
+    "default_bed_type": {
+      "2.5.0": ""
+    },
+    "bed_exclude_area": {
+      "2.5.0": []
+    },
+    "disable_m73": {
+      "2.5.0": "0"
+    },
+    "emit_machine_limits_to_gcode": {
+      "2.5.0": "1"
+    },
+    "enable_filament_ramming": {
+      "2.5.0": "1"
+    },
+    "enable_long_retraction_when_cut": {
+      "2.5.0": "0"
+    },
+    "extra_loading_move": {
+      "2.5.0": "-2"
+    },
+    "fan_kickstart": {
+      "2.5.0": "0"
+    },
+    "fan_speedup_overhangs": {
+      "2.5.0": "1"
+    },
+    "fan_speedup_time": {
+      "2.5.0": "0"
+    },
+    "head_wrap_detect_zone": {
+      "2.5.0": []
+    },
+    "high_current_on_filament_swap": {
+      "2.5.0": "0"
+    },
+    "host_type": {
+      "2.5.0": "duet"
+    },
+    "long_retractions_when_cut": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "machine_load_filament_time": {
+      "2.5.0": "0"
+    },
+    "machine_max_junction_deviation": {
+      "2.5.0": [
+        "0",
+        "0"
+      ]
+    },
+    "machine_tool_change_time": {
+      "2.5.0": "0"
+    },
+    "machine_unload_filament_time": {
+      "2.5.0": "0"
+    },
+    "manual_filament_change": {
+      "2.5.0": "0"
+    },
+    "max_resonance_avoidance_speed": {
+      "2.5.0": "120"
+    },
+    "min_resonance_avoidance_speed": {
+      "2.5.0": "70"
+    },
+    "nozzle_height": {
+      "2.5.0": "2.5"
+    },
+    "nozzle_hrc": {
+      "2.5.0": "0"
+    },
+    "nozzle_type": {
+      "2.5.0": "undefine"
+    },
+    "nozzle_volume": {
+      "2.5.0": "0"
+    },
+    "parking_pos_retraction": {
+      "2.5.0": "92"
+    },
+    "pellet_modded_printer": {
+      "2.5.0": "0"
+    },
+    "preferred_orientation": {
+      "2.5.0": "0"
+    },
+    "printable_area": {
+      "2.5.0": [
+        "0x0",
+        "600x0",
+        "600x460",
+        "0x460"
+      ]
+    },
+    "printer_notes": {
+      "2.5.0": ""
+    },
+    "printer_structure": {
+      "2.5.0": "undefine"
+    },
+    "printhost_authorization_type": {
+      "2.5.0": "key"
+    },
+    "printhost_ssl_ignore_revoke": {
+      "2.5.0": "0"
+    },
+    "printing_by_object_gcode": {
+      "2.5.0": ""
+    },
+    "purge_in_prime_tower": {
+      "2.5.0": "1"
+    },
+    "resonance_avoidance": {
+      "2.5.0": "0"
+    },
+    "retract_lift_above": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retract_lift_below": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "retract_lift_enforce": {
+      "2.5.0": [
+        "All Surfaces"
+      ]
+    },
+    "retraction_distances_when_cut": {
+      "2.5.0": [
+        "18"
+      ]
+    },
+    "scan_first_layer": {
+      "2.5.0": "0"
+    },
+    "support_air_filtration": {
+      "2.5.0": "1"
+    },
+    "support_chamber_temp_control": {
+      "2.5.0": "1"
+    },
+    "support_multi_bed_types": {
+      "2.5.0": "0"
+    },
+    "template_custom_gcode": {
+      "2.5.0": ""
+    },
+    "time_cost": {
+      "2.5.0": "0"
+    },
+    "time_lapse_gcode": {
+      "2.5.0": ""
+    },
+    "travel_slope": {
+      "2.5.0": [
+        "3"
+      ]
+    },
+    "upward_compatible_machine": {
+      "2.5.0": []
+    },
+    "use_firmware_retraction": {
+      "2.5.0": "0"
+    },
+    "use_relative_e_distances": {
+      "2.5.0": "1"
+    },
+    "wipe_distance": {
+      "2.5.0": [
+        "1"
+      ]
+    },
+    "z_hop_types": {
+      "2.5.0": [
+        "Spiral Lift"
+      ]
+    },
+    "z_offset": {
+      "2.5.0": "0"
+    },
+    "setting_id": {
+      "2.5.0": "FbeIpEH1KB3OxbWZ"
+    },
+    "printer_model": {
+      "2.5.0": "KINARB 1HB"
+    },
+    "default_print_profile": {
+      "2.5.0": "0.6mm Draft @Pragostroj 1.2"
+    },
+    "default_filament_profile": {
+      "2.5.0": [
+        "Fillamentum PLA Concret Grey @Pragostroj 330 AWD 0.4 nozzle"
+      ]
+    }
+  }
+}

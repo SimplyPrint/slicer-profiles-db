@@ -4,10 +4,15 @@
   "name": "Flashforge Adventurer 5M Pro 0.4 Nozzle",
   "vendor": "Flashforge",
   "first_seen": "2.3.1",
-  "last_seen": "2.4.1",
+  "last_seen": "2.5.0",
   "filament_id": null,
-  "setting_id": "GM001",
+  "setting_id": "ThBrRFxO6erzqndo",
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "type": {
       "2.3.1": "machine"
@@ -43,7 +48,8 @@
       "2.3.1": "klipper"
     },
     "silent_mode": {
-      "2.3.1": "0"
+      "2.3.1": "0",
+      "2.5.0": null
     },
     "machine_max_acceleration_e": {
       "2.3.1": [
@@ -237,7 +243,8 @@
       ]
     },
     "z_lift_type": {
-      "2.3.1": "NormalLift"
+      "2.3.1": "NormalLift",
+      "2.5.0": null
     },
     "default_print_profile": {
       "2.3.1": "0.20mm Standard @Flashforge AD5M Pro 0.4 Nozzle"
@@ -264,6 +271,9 @@
     "default_filament_profile": {
       "2.3.1": [
         "Flashforge Generic PLA"
+      ],
+      "2.5.0": [
+        "Generic PLA @Flashforge"
       ]
     },
     "bed_exclude_area": {
@@ -317,6 +327,9 @@
     },
     "use_3mf": {
       "2.4.0": "1"
+    },
+    "file_start_gcode": {
+      "2.5.0": "; estimated printing time (normal mode) = {print_time_day}d {print_time_hour}h {print_time_minute}m {print_time_sec}s"
     }
   }
 }
