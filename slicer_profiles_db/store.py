@@ -366,10 +366,8 @@ class ProfileStore:
         if not path.exists():
             return None
         document = json.loads(path.read_text(encoding="utf-8"))
-        if not isinstance(document, dict):
-            raise ValueError(f"Invalid release manifest {path}")
-        profiles = document.get("profiles")
-        if document.get("release") != release or not isinstance(profiles, dict):
+        profiles = document.get("profiles") if isinstance(document, dict) else None
+        if not isinstance(profiles, dict) or document.get("release") != release:
             raise ValueError(f"Invalid release manifest {path}")
         return profiles
 
