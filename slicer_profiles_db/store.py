@@ -349,7 +349,7 @@ class ProfileStore:
         for path in sorted((self.root / slicer.value / "_releases").glob("*.json")):
             document = json.loads(path.read_text(encoding="utf-8"))
             release = document.get("release") if isinstance(document, dict) else None
-            if not isinstance(release, str):
+            if not isinstance(release, str) or not release:
                 raise ValueError(f"Invalid release manifest {path}")
             releases.append(release)
         return releases
