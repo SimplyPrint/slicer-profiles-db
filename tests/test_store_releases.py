@@ -220,3 +220,46 @@ def test_generic_ids_follow_the_exported_release(tmp_path):
     )
 
     assert generics[ORCA.value] == [("generic pla", "PLA", "GFL99")]
+
+
+def test_vendors_inherit_the_filament_librarys_base_profiles(tmp_path):
+    import json
+
+    from slicer_profiles_db.squash import squash_all_slic3r_vendors
+
+    def write(path, data):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(data))
+
+    library = tmp_path / "OrcaFilamentLibrary" / "filament"
+    write(
+        library / "base" / "fdm_filament_pla.json",
+        {"name": "fdm_filament_pla", "instantiation": "false", "filament_cost": ["20"]},
+    )
+    write(
+        library / "Generic PLA @System.json",
+        {
+            "type": "filament",
+            "name": "Generic PLA @System",
+            "inherits": "fdm_filament_pla",
+            "instantiation": "true",
+        },
+    )
+    write(
+        tmp_path / "Ratrig" / "filament" / "Generic PLA @RatRig.json",
+        {
+            "type": "filament",
+            "name": "Generic PLA @RatRig",
+            "inherits": "fdm_filament_pla",
+            "instantiation": "true",
+        },
+    )
+
+    squash_all_slic3r_vendors(tmp_path, None, "OrcaFilamentLibrary")
+
+    vendor = json.loads(
+        (tmp_path / "Ratrig" / "filament" / "Generic PLA @RatRig.json").read_text()
+    )
+    assert vendor["filament_cost"] == ["20"]
+    assert not (library / "base" / "fdm_filament_pla.json").exists()
+    assert (library / "Generic PLA @System.json").exists()

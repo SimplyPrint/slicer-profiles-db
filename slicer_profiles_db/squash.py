@@ -23,6 +23,7 @@ import json
 import logging
 import re
 import shutil
+import tempfile
 from pathlib import Path
 
 import iniconfig
@@ -511,21 +512,31 @@ def squash_all_slic3r_vendors(
 
     all_created: list[Path] = []
 
-    # Squash the shared library too; it contains concrete @System filament
-    # profiles that are valid presets, not only inheritance bases.
-    if filament_library_dir and filament_library_dir.exists():
-        all_created.extend(squash_slic3r_profiles(filament_library_dir, profile_type))
+    with tempfile.TemporaryDirectory(prefix="filament-library-") as directory:
+        # Vendors inherit the library's base profiles as upstream ships them
+        # (OrcaSlicer 2.5 vendors inherit fdm_filament_pla and the like from it
+        # instead of shipping their own). Squashing the library keeps only its
+        # instantiable profiles, so resolve against an untouched copy.
+        library_source = None
+        if filament_library_dir and filament_library_dir.exists():
+            library_source = Path(directory) / filament_library_dir.name
+            shutil.copytree(filament_library_dir, library_source)
+            # Squash the shared library too; it contains concrete @System filament
+            # profiles that are valid presets, not only inheritance bases.
+            all_created.extend(
+                squash_slic3r_profiles(filament_library_dir, profile_type)
+            )
 
-    # Squash all vendor directories (except the already-processed library) with
-    # the library available for inheritance resolution.
-    for vendor_dir in sorted(slicer_dir.iterdir()):
-        if not vendor_dir.is_dir():
-            continue
-        if filament_library_name and vendor_dir.name == filament_library_name:
-            continue
+        # Squash all vendor directories (except the already-processed library)
+        # with the library available for inheritance resolution.
+        for vendor_dir in sorted(slicer_dir.iterdir()):
+            if not vendor_dir.is_dir():
+                continue
+            if filament_library_name and vendor_dir.name == filament_library_name:
+                continue
 
-        created = squash_slic3r_profiles(vendor_dir, profile_type, filament_library_dir)
-        all_created.extend(created)
+            created = squash_slic3r_profiles(vendor_dir, profile_type, library_source)
+            all_created.extend(created)
 
     return all_created
 
