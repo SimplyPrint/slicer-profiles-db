@@ -304,3 +304,33 @@ def test_the_vendor_index_picks_between_files_sharing_a_name(tmp_path):
 
     squashed = json.loads((machine / "InfiMech TX.json").read_text())
     assert squashed["nozzle_type"] == "hardened_steel"
+
+
+def test_printers_get_the_library_filaments_that_name_them():
+    from types import SimpleNamespace
+
+    from slicer_profiles_db.mapping import _library_printer_filaments
+
+    moved = SimpleNamespace(name="AliZ PETG @P1-X1")
+    generic = SimpleNamespace(name="Generic PLA @System")
+    data = {
+        "AliZ PETG @P1-X1": {"compatible_printers": ["Bambu Lab X1 0.4 nozzle"]},
+        "Generic PLA @System": {"compatible_printers": []},
+    }
+    index = SimpleNamespace(
+        find_by_type=lambda slicer, kind, vendor: (
+            [moved, generic] if vendor == "OrcaFilamentLibrary" else []
+        )
+    )
+
+    found = _library_printer_filaments(
+        index, ORCA, "BBL", lambda profile: data[profile.name]
+    )
+
+    assert found == [moved]
+    assert (
+        _library_printer_filaments(
+            index, SlicerType.BAMBUSTUDIO, "BBL", lambda profile: data[profile.name]
+        )
+        == []
+    )

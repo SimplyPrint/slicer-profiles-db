@@ -1765,12 +1765,20 @@ def map_filament_profiles(
                             "printer_settings_id", printer_name
                         )
 
-                    # Find all filament profiles for this vendor
+                    # Find all filament profiles for this vendor, and the shared
+                    # library's that name their printers
                     filament_profiles = index.find_by_type(
                         slicer,
                         ProfileType.FILAMENT,
                         None if uses_resource_constraints else vendor,
                     )
+                    if not uses_resource_constraints:
+                        filament_profiles = [
+                            *filament_profiles,
+                            *_library_printer_filaments(
+                                index, slicer, vendor, snapshot
+                            ),
+                        ]
                     for fp in filament_profiles:
                         fp_data = snapshot(fp)
                         if not fp_data:
@@ -2026,6 +2034,33 @@ def _profile_matches_printer(
         printer_identities.intersection(compat)
         or _compat_matches_printer(compat, printer_name, model_name, variant)
     )
+
+
+def _library_printer_filaments(
+    index: ProfileIndex,
+    slicer: SlicerType,
+    vendor: str,
+    snapshot: Any,
+) -> list[StoredProfile]:
+    """The shared filament library's profiles for named printers.
+
+    OrcaSlicer 2.5 moved vendor filaments such as ``AliZ PETG @P1-X1`` from
+    ``BBL`` into ``OrcaFilamentLibrary``; they still list the printers they
+    fit in ``compatible_printers``, which the caller matches. Library profiles
+    without such a list (the ``@System`` generics) are left to
+    :func:`_global_filament_templates`.
+    """
+    library = DEFAULT_CONFIGS[slicer].filament_library_name
+    if not library or library == vendor:
+        return []
+    found = []
+    for profile in index.find_by_type(slicer, ProfileType.FILAMENT, library):
+        compat = snapshot(profile).get("compatible_printers")
+        if isinstance(compat, str):
+            compat = [item for item in compat.split(";") if item.strip()]
+        if compat:
+            found.append(profile)
+    return found
 
 
 def _global_filament_templates(
