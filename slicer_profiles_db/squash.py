@@ -186,12 +186,16 @@ def squash_slic3r_profiles(
 
     # Load ALL JSON profiles from the vendor directory — no type filtering here,
     # because gcode templates and base profiles must be available for resolution
-    profiles = _load_json_from_folder(vendor_dir, profile_type_filter=None)
+    profiles = _load_json_from_folder(
+        vendor_dir, profile_type_filter=None, listed=_vendor_index_paths(vendor_dir)
+    )
 
     # Also load shared library profiles if provided
     if filament_library_dir and filament_library_dir.exists():
         library_profiles = _load_json_from_folder(
-            filament_library_dir, profile_type_filter=None
+            filament_library_dir,
+            profile_type_filter=None,
+            listed=_vendor_index_paths(filament_library_dir),
         )
         # Library profiles serve as base; vendor profiles with same name override
         merged = library_profiles.copy()
@@ -521,6 +525,9 @@ def squash_all_slic3r_vendors(
         if filament_library_dir and filament_library_dir.exists():
             library_source = Path(directory) / filament_library_dir.name
             shutil.copytree(filament_library_dir, library_source)
+            library_index = slicer_dir / f"{filament_library_dir.name}.json"
+            if library_index.is_file():
+                shutil.copy(library_index, Path(directory) / library_index.name)
             # Squash the shared library too; it contains concrete @System filament
             # profiles that are valid presets, not only inheritance bases.
             all_created.extend(
@@ -557,9 +564,31 @@ def _load_ini_config(path: Path) -> IniConfig | None:
         return None
 
 
+def _vendor_index_paths(vendor_dir: Path) -> set[Path]:
+    """The files a BBS/Orca vendor index (``<vendor>.json`` beside the vendor
+    directory) lists: the ones the slicer loads when several share a name."""
+    index_path = vendor_dir.parent / f"{vendor_dir.name}.json"
+    try:
+        index = json.loads(index_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return set()
+    if not isinstance(index, dict):
+        return set()
+    listed = set()
+    for key, entries in index.items():
+        if not key.endswith("_list") or not isinstance(entries, list):
+            continue
+        for entry in entries:
+            sub_path = entry.get("sub_path") if isinstance(entry, dict) else None
+            if isinstance(sub_path, str):
+                listed.add(vendor_dir / sub_path)
+    return listed
+
+
 def _load_json_from_folder(
     folder: Path,
     profile_type_filter: ProfileType | None = None,
+    listed: set[Path] | None = None,
 ) -> dict[str, tuple[Path, dict]]:
     """
     Recursively load all JSON profiles from a folder.
@@ -568,22 +597,37 @@ def _load_json_from_folder(
     the filter are skipped. Files WITHOUT a "type" field (gcode templates, base
     profiles) are always loaded — they're needed for include/inherits resolution.
 
+    Several files may share a name (InfiMech 2.4.2 ships two
+    ``fdm_machine_common``): one in ``listed`` (the vendor index) wins, else
+    the last in sorted path order, so the result does not depend on the
+    filesystem's directory order.
+
     Args:
         folder: Directory to scan.
         profile_type_filter: If set, only load profiles of this type.
                            For BBS/Orca, checks the "type" field.
+        listed: Files the vendor index lists.
 
     Returns:
         Dict mapping profile name to (path, data).
     """
     profiles: dict[str, tuple[Path, dict]] = {}
+    listed = listed or set()
 
     if not folder.exists():
         return profiles
 
-    for item in folder.iterdir():
+    def keep(name: str, entry: tuple[Path, dict]) -> None:
+        current = profiles.get(name)
+        if current is None or entry[0] in listed or current[0] not in listed:
+            profiles[name] = entry
+
+    for item in sorted(folder.iterdir()):
         if item.is_dir():
-            profiles.update(_load_json_from_folder(item, profile_type_filter))
+            for name, entry in _load_json_from_folder(
+                item, profile_type_filter, listed
+            ).items():
+                keep(name, entry)
             continue
         if item.suffix != ".json":
             continue
@@ -616,6 +660,6 @@ def _load_json_from_folder(
         if not name:
             continue
 
-        profiles[name] = (item, file_data)
+        keep(name, (item, file_data))
 
     return profiles

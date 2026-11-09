@@ -380,10 +380,18 @@ def _extract_repo(
             for file in zip_f.namelist():
                 if not file.startswith(member) or file.endswith("/"):
                     continue
-                if not pattern.match(file):
+                rel_path = Path(file).relative_to(member)
+                # A JSON slicer's vendor index (``<vendor>.json`` beside its
+                # directory) says which file the slicer loads when several
+                # share a profile name.
+                vendor_index = (
+                    bool(profile_type_dirs)
+                    and len(rel_path.parts) == 1
+                    and rel_path.suffix == ".json"
+                )
+                if not pattern.match(file) and not vendor_index:
                     continue
 
-                rel_path = Path(file).relative_to(member)
                 if config.slicer == SlicerType.CURA and "fdm_materials" in repo:
                     rel_path = Path("materials") / rel_path
                 dest_path = slicer_output / rel_path

@@ -263,3 +263,44 @@ def test_vendors_inherit_the_filament_librarys_base_profiles(tmp_path):
     assert vendor["filament_cost"] == ["20"]
     assert not (library / "base" / "fdm_filament_pla.json").exists()
     assert (library / "Generic PLA @System.json").exists()
+
+
+def test_the_vendor_index_picks_between_files_sharing_a_name(tmp_path):
+    import json
+
+    from slicer_profiles_db.squash import squash_all_slic3r_vendors
+
+    def write(path, data):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(data))
+
+    machine = tmp_path / "InfiMech" / "machine"
+    write(
+        machine / "fdm_machine_common.json", {"name": "common", "nozzle_type": "brass"}
+    )
+    write(
+        machine / "HSN" / "fdm_machine_common.json",
+        {"name": "common", "nozzle_type": "hardened_steel"},
+    )
+    write(
+        machine / "InfiMech TX.json",
+        {
+            "type": "machine",
+            "name": "InfiMech TX",
+            "inherits": "common",
+            "instantiation": "true",
+        },
+    )
+    write(
+        tmp_path / "InfiMech.json",
+        {
+            "machine_list": [
+                {"name": "common", "sub_path": "machine/HSN/fdm_machine_common.json"}
+            ]
+        },
+    )
+
+    squash_all_slic3r_vendors(tmp_path)
+
+    squashed = json.loads((machine / "InfiMech TX.json").read_text())
+    assert squashed["nozzle_type"] == "hardened_steel"
