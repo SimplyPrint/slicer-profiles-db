@@ -1,8 +1,10 @@
 import json
+from copy import deepcopy
 
 from slicer_profiles_db.catalog import EngineTarget
-from slicer_profiles_db.models import SlicerType
+from slicer_profiles_db.models import ParsedProfile, ProfileType, SlicerType
 from slicer_profiles_db.release_history import (
+    ReleaseHistoryError,
     apply_release_history,
     release_index,
     twin,
@@ -79,68 +81,224 @@ def test_a_high_flow_twin_takes_its_standard_changes_on_the_settings_it_keeps():
     assert copy["versions"]["02.05.01.52"] == {}
 
 
-def _store(tmp_path):
-    root = tmp_path / "profiles"
-    engine = root / "bambustudio"
-    engine.mkdir(parents=True)
-    (engine / "_meta.json").write_text(json.dumps({"versions": RELEASES}))
-    stored = {
-        "slicer": "bambustudio",
-        "profile_type": "filament",
-        "name": EXPORTED["name"],
-        "vendor": "BBL",
-        "first_seen": "02.05.01.52",
-        "last_seen": "02.08.02.60",
-        "renamed_from": "Bambu PLA Basic (old)",
-        "settings": HISTORY,
-    }
-    path = engine / "BBL" / "filament" / "profile.json"
-    path.parent.mkdir(parents=True)
-    path.write_text(json.dumps(stored))
-    return ProfileStore(root)
+BAMBU = SlicerType.BAMBUSTUDIO
+INGESTED = ("02.07.01.62", "02.08.00.50", "02.08.02.61", "02.09.01.70")
+TARGET = EngineTarget(version="02.09.01.70", release_history=True)
+MACHINE = "Bambu Lab X1 Carbon 0.4 nozzle"
+FILAMENT = "Bambu PLA Basic @BBL X1C"
+TIME_LAPSE = ";TIMELAPSE\nM971 S11 C10 O0\n"
+# The machine as each release ships it: its start G-code changes in every one.
+MACHINES = {
+    "02.07.01.62": {
+        "name": MACHINE,
+        "machine_start_gcode": "M104 S[nozzle_temperature_initial_layer]\nG28\n",
+        "time_lapse_gcode": TIME_LAPSE,
+    },
+    "02.08.00.50": {
+        "name": MACHINE,
+        "machine_start_gcode": "M104 S{nozzle_temperature_initial_layer[0]}\nG28\n",
+        "time_lapse_gcode": TIME_LAPSE,
+    },
+    "02.08.02.61": {
+        "name": MACHINE,
+        "machine_start_gcode": "M190 S[bed_temperature_initial_layer_single]\n",
+        "time_lapse_gcode": TIME_LAPSE,
+        "machine_pause_gcode": "M400 U1\n",
+    },
+    "02.09.01.70": {
+        "name": MACHINE,
+        "machine_start_gcode": "M1002 set_filament_type:{filament_type[0]}\n",
+        "machine_pause_gcode": "M400 U1\n",
+    },
+}
+# A filament the catalogue gained in 02.08.02.61.
+FILAMENTS = {
+    "02.08.02.61": {"name": FILAMENT, "filament_start_gcode": "; filament start\n"},
+    "02.09.01.70": {"name": FILAMENT, "filament_start_gcode": "; filament start\n"},
+}
 
 
-def _record(data, engine="bambustudio"):
-    return {
-        "engine": engine,
-        "kind": "filament",
-        "id": "record",
-        "profile": {
-            "data": data,
-            "context": {"source_id": f"BBL/filament/{EXPORTED['name']}"},
-        },
-    }
-
-
-def test_records_carry_their_release_history_and_former_name(tmp_path):
-    records = {"exact": _record(EXPORTED), "changed": _record({**EXPORTED, "x": 1})}
-
-    apply_release_history(
-        records,
-        _store(tmp_path),
-        {
-            SlicerType.BAMBUSTUDIO: EngineTarget(
-                version="02.07.01.62", release_history=True
-            )
-        },
+def _profile(profile_type, name, settings):
+    return ParsedProfile(
+        slicer=BAMBU,
+        profile_type=profile_type,
+        name=name,
+        vendor="BBL",
+        settings=deepcopy(settings),
     )
 
-    assert records["exact"]["profile"]["version_settings"] == {
-        **release_index(HISTORY, EXPORTED, RELEASES),
-        "renamed_from": "Bambu PLA Basic (old)",
+
+def _parsed(release):
+    profiles = [_profile(ProfileType.MACHINE, MACHINE, MACHINES[release])]
+    if release in FILAMENTS:
+        profiles.append(_profile(ProfileType.FILAMENT, FILAMENT, FILAMENTS[release]))
+    return profiles
+
+
+def _store(path, releases=INGESTED):
+    store = ProfileStore(path)
+    for release in releases:
+        store.ingest_profiles(BAMBU, release, _parsed(release), complete_release=True)
+    return store
+
+
+def _records():
+    machine = {
+        "data": deepcopy(MACHINES["02.09.01.70"]),
+        "context": {"source_id": f"BBL/machine/{MACHINE}"},
     }
-    assert records["changed"]["profile"]["version_settings"] == {
-        "renamed_from": "Bambu PLA Basic (old)"
+    filament = {
+        "data": deepcopy(FILAMENTS["02.09.01.70"]),
+        "context": {"source_id": f"BBL/filament/{FILAMENT}"},
     }
+    return {
+        "machine": {
+            "engine": "bambustudio",
+            "kind": "machine",
+            "id": "machine",
+            "profile": {"variants": {"0.4": machine}},
+        },
+        "filament": {
+            "engine": "bambustudio",
+            "kind": "filament",
+            "id": "filament",
+            "profile": filament,
+        },
+    }
+
+
+def _machine_index(records):
+    return records["machine"]["profile"]["variants"]["0.4"]["version_settings"]
+
+
+def _read(baseline, index, release):
+    """Web's CatalogVersions::at() for a release the index describes."""
+    changes = index["versions"][release]
+    if changes is None:
+        return None
+    settings = dict(baseline)
+    for key, value in changes.items():
+        if value is None:
+            settings.pop(key, None)
+        else:
+            settings[key] = value
+    return settings
+
+
+def _fails(records, store, target, message):
+    try:
+        apply_release_history(records, store, {BAMBU: target})
+    except ReleaseHistoryError as error:
+        assert message in str(error), str(error)
+    else:
+        raise AssertionError(f"expected a failure: {message}")
+
+
+def test_each_ingested_release_gets_exactly_its_own_gcode(tmp_path):
+    records = _records()
+
+    apply_release_history(records, _store(tmp_path), {BAMBU: TARGET})
+
+    index = _machine_index(records)
+    exported = MACHINES["02.09.01.70"]
+    starts = {MACHINES[release]["machine_start_gcode"] for release in INGESTED}
+    assert len(starts) == len(INGESTED)
+    assert index["base"] == "02.09.01.70"
+    for release in INGESTED:
+        assert _read(exported, index, release) == MACHINES[release]
+    # 02.07.01.62 has no pause G-code yet; 02.09.01.70 dropped the time-lapse one.
+    assert index["versions"]["02.07.01.62"]["machine_pause_gcode"] is None
+    assert "time_lapse_gcode" not in exported
+    # The filament did not exist before 02.08.02.61.
+    filament = records["filament"]["profile"]
+    index = filament["version_settings"]
+    assert index["versions"]["02.08.00.50"] is None
+    assert _read(filament["data"], index, "02.08.02.61") == FILAMENTS["02.08.02.61"]
+
+
+def test_every_ingested_release_is_described_oldest_first(tmp_path):
+    records = _records()
+
+    apply_release_history(records, _store(tmp_path), {BAMBU: TARGET})
+
+    filament = records["filament"]["profile"]["version_settings"]
+    assert list(_machine_index(records)["versions"]) == list(INGESTED)
+    assert list(filament["versions"]) == list(INGESTED)
+
+
+def test_a_release_ingested_in_part_fails(tmp_path):
+    store = _store(tmp_path, INGESTED[:2])
+    store.ingest_profiles(BAMBU, "02.08.02.61", _parsed("02.08.02.61")[:1])
+    store.ingest_profiles(
+        BAMBU, "02.09.01.70", _parsed("02.09.01.70"), complete_release=True
+    )
+
+    _fails(_records(), store, TARGET, "has 02.08.02.61 but no complete ingest")
+
+
+def test_a_release_without_a_manifest_fails(tmp_path):
+    store = _store(tmp_path)
+    (tmp_path / "bambustudio" / "_releases" / "02.08.00.50.json").unlink()
+
+    _fails(_records(), store, TARGET, "ingest-releases bambustudio")
+
+
+def test_a_pinned_version_that_was_not_ingested_fails(tmp_path):
+    target = EngineTarget(version="02.10.00.10", release_history=True)
+
+    _fails(_records(), _store(tmp_path), target, "not an ingested release")
+
+
+def test_a_store_that_no_longer_reproduces_a_release_fails(tmp_path):
+    store = _store(tmp_path)
+    stored = store.get(BAMBU, "machine", "BBL", MACHINE)
+    stored.settings["machine_start_gcode"]["02.08.02.61"] += "; edited\n"
+    store._save(stored)
+
+    _fails(_records(), store, TARGET, "does not reproduce 02.08.02.61")
+
+
+def test_an_export_no_ingested_release_gives_fails(tmp_path):
+    records = _records()
+    records["filament"]["profile"]["data"]["filament_start_gcode"] = "; changed\n"
+
+    _fails(records, _store(tmp_path), TARGET, "filament is exported")
+
+
+def test_the_same_releases_give_the_same_settings(tmp_path):
+    outputs = []
+    for path in (tmp_path / "first", tmp_path / "second"):
+        records = _records()
+        apply_release_history(records, _store(path), {BAMBU: TARGET})
+        outputs.append(json.dumps(records, sort_keys=True))
+
+    assert outputs[0] == outputs[1]
+
+
+def test_a_renamed_profile_keeps_its_former_releases(tmp_path):
+    store = ProfileStore(tmp_path)
+    old = {"name": "Old X1C", "filament_start_gcode": "; old\n"}
+    new = {"name": FILAMENT, "filament_start_gcode": "; new\n"}
+    renamed = {**new, "renamed_from": "Old X1C"}
+    for release, profile in (
+        ("02.08.02.61", _profile(ProfileType.FILAMENT, "Old X1C", old)),
+        ("02.09.01.70", _profile(ProfileType.FILAMENT, FILAMENT, renamed)),
+    ):
+        store.ingest_profiles(BAMBU, release, [profile], complete_release=True)
+    records = {"filament": _records()["filament"]}
+    records["filament"]["profile"]["data"] = new
+
+    apply_release_history(records, store, {BAMBU: TARGET})
+
+    index = records["filament"]["profile"]["version_settings"]
+    assert index["renamed_from"] == "Old X1C"
+    assert _read(new, index, "02.08.02.61") == old
 
 
 def test_engines_without_release_history_are_left_alone(tmp_path):
-    records = {"exact": _record(EXPORTED)}
+    records = _records()
+    target = EngineTarget(version="02.09.01.70")
 
-    apply_release_history(
-        records,
-        _store(tmp_path),
-        {SlicerType.BAMBUSTUDIO: EngineTarget(version="02.07.01.62")},
-    )
+    apply_release_history(records, _store(tmp_path), {BAMBU: target})
 
-    assert "version_settings" not in records["exact"]["profile"]
+    assert "version_settings" not in records["filament"]["profile"]

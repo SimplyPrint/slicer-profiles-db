@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any
 
 from .catalog import EngineTarget
-from .models import SlicerType
+from .models import SlicerType, _version_key
 
 logger = logging.getLogger(__name__)
 
@@ -265,18 +265,20 @@ def _validate_coverage(coverage: Mapping[str, Any]) -> None:
             raise ValueError(f"Inconsistent {snapshot} model coverage totals")
 
 
-def _version_settings_owners(record: Mapping[str, Any], target: EngineTarget) -> int:
-    """Validate a record's release history; the number of profiles carrying one."""
+def _version_settings_owners(
+    record: Mapping[str, Any], target: EngineTarget
+) -> list[tuple[str, ...]]:
+    """Validate a record's release history; the releases of each profile with one."""
     profile = record.get("profile")
     if not isinstance(profile, Mapping):
-        return 0
+        return []
     variants = profile.get("variants") if record.get("kind") == "machine" else None
     owners = (
         [value for value in variants.values() if isinstance(value, Mapping)]
         if isinstance(variants, Mapping)
         else [profile]
     )
-    count = 0
+    described = []
     for owner in owners:
         if "version_settings" not in owner:
             continue
@@ -288,24 +290,29 @@ def _version_settings_owners(record: Mapping[str, Any], target: EngineTarget) ->
             or not isinstance(index, Mapping)
             or not set(index) <= {"base", "versions", "renamed_from"}
             or (renamed is not None and (not isinstance(renamed, str) or not renamed))
-            or ("base" in index) != ("versions" in index)
-            or (
-                versions is not None
-                and (
-                    not isinstance(versions, Mapping)
-                    or index["base"] not in versions
-                    or versions[index["base"]] != {}
-                    or not all(
-                        item is None or isinstance(item, Mapping)
-                        for item in versions.values()
-                    )
-                )
+            or "base" not in index
+            or not isinstance(versions, Mapping)
+            or index["base"] not in versions
+            or versions[index["base"]] != {}
+            or not all(
+                item is None or isinstance(item, Mapping) for item in versions.values()
             )
-            or (versions is None and renamed is None)
         ):
             raise ValueError(f"Invalid version settings for {record['id']}")
-        count += 1
-    return count
+        described.append(tuple(sorted(versions, key=_version_key)))
+    return described
+
+
+def _engine_releases(
+    engine: str, described: set[tuple[str, ...]], target: EngineTarget
+) -> list[str]:
+    """The releases every profile of an engine describes, which include its version."""
+    if len(described) != 1:
+        raise ValueError(f"{engine} profiles describe different releases")
+    releases = list(next(iter(described)))
+    if target.version not in releases:
+        raise ValueError(f"{engine} profiles do not describe {target.version}")
+    return releases
 
 
 def write_bundle(
@@ -352,6 +359,7 @@ def write_bundle(
 
     engine_counts: dict[tuple[str, str | None], int] = {}
     history_counts: dict[str, int] = {}
+    history_releases: dict[str, set[tuple[str, ...]]] = {}
     for record in ordered:
         engine = str(record["engine"])
         lane = record.get("catalog_lane")
@@ -361,9 +369,16 @@ def write_bundle(
             target = targets[SlicerType(engine)]
         except (KeyError, ValueError) as error:
             raise ValueError(f"Unknown record engine {engine}") from error
-        history_counts[engine] = history_counts.get(
-            engine, 0
-        ) + _version_settings_owners(record, target)
+        described = _version_settings_owners(record, target)
+        history_counts[engine] = history_counts.get(engine, 0) + len(described)
+        history_releases.setdefault(engine, set()).update(described)
+    releases = {
+        engine: _engine_releases(engine, seen, targets[SlicerType(engine)])
+        for engine, seen in history_releases.items()
+        if seen
+    }
+    # A nightly is built after the newest release; its profiles are not ingested.
+    nightly = {engine: values[-1] for engine, values in releases.items()}
     manifest = {
         "coverage": coverage,
         "engines": {
@@ -374,6 +389,14 @@ def write_bundle(
                 "release_history": {
                     "enabled": target.release_history,
                     "profiles": history_counts.get(slicer.value, 0),
+                    **(
+                        {
+                            "releases": releases.get(slicer.value, []),
+                            "nightly": nightly.get(slicer.value),
+                        }
+                        if target.release_history
+                        else {}
+                    ),
                 },
                 "lanes": {
                     lane: {

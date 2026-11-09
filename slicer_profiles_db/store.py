@@ -52,6 +52,7 @@ class ProfileStore:
 
     MAX_FILENAME_STEM_BYTES = 240
     FILENAME_HASH_LENGTH = 12
+    RELEASE_DIGEST_LENGTH = 32
 
     def __init__(self, store_path: str | Path):
         self.root = Path(store_path)
@@ -152,6 +153,19 @@ class ProfileStore:
             raise ValueError(
                 f"Refusing to change immutable {slicer.value} snapshot {version}"
             )
+        newest = self.newest_release(slicer)
+        if (
+            complete_release
+            and not version.startswith("nightly")
+            and newest is not None
+            and _version_key(version) < _version_key(newest)
+        ):
+            # History is recorded as changes from the release ingested before,
+            # so an older release ingested now would leak into the newer ones.
+            raise ValueError(
+                f"Refusing to ingest {slicer.value} {version} after {newest}: "
+                f"rebuild with `slicer-profiles-db ingest-releases {slicer.value} --rebuild`"
+            )
 
         added = []
         changed = {}
@@ -236,6 +250,8 @@ class ProfileStore:
             or (version in meta.get("versions", []) and not isinstance(recorded, str))
         ):
             self._update_meta(slicer, version, snapshot_scope, snapshot_hash)
+        if complete_release and self._is_release(version):
+            self._save_release_manifest(slicer, version, profiles)
 
         return IngestionReport(
             slicer=slicer,
@@ -311,6 +327,103 @@ class ProfileStore:
         """Get all ingested versions for a slicer, in order."""
         meta = self._load_meta(slicer)
         return meta.get("versions", [])
+
+    def newest_release(self, slicer: SlicerType) -> str | None:
+        """The newest non-nightly version ingested for a slicer."""
+        versions = [v for v in self.get_versions(slicer) if not v.startswith("nightly")]
+        versions += self._manifest_releases(slicer)
+        return max(versions, key=_version_key) if versions else None
+
+    def ingested_releases(self, slicer: SlicerType) -> list[str]:
+        """Every stable release ingested for a slicer, oldest first.
+
+        A release is in the version log when it changed the store, and has a
+        release manifest when it was ingested whole; either one counts.
+        """
+        releases = {v for v in self.get_versions(slicer) if self._is_release(v)}
+        releases.update(self._manifest_releases(slicer))
+        return sorted(releases, key=_version_key)
+
+    def _manifest_releases(self, slicer: SlicerType) -> list[str]:
+        releases = []
+        for path in sorted((self.root / slicer.value / "_releases").glob("*.json")):
+            document = json.loads(path.read_text(encoding="utf-8"))
+            release = document.get("release") if isinstance(document, dict) else None
+            if not isinstance(release, str) or not release:
+                raise ValueError(f"Invalid release manifest {path}")
+            releases.append(release)
+        return releases
+
+    @classmethod
+    def settings_digest(cls, settings: dict) -> str:
+        """A release snapshot's identity: its settings as the store evaluates them.
+
+        ``None`` is how the store records a removed setting, and metadata keys
+        are not stored, so neither is part of it.
+        """
+        canonical = json.dumps(
+            cls._snapshot_settings(settings),
+            sort_keys=True,
+            ensure_ascii=False,
+            separators=(",", ":"),
+        )
+        digest = hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+        return digest[: cls.RELEASE_DIGEST_LENGTH]
+
+    @classmethod
+    def _snapshot_settings(cls, settings: dict) -> dict:
+        return {
+            key: value
+            for key, value in settings.items()
+            if value is not None and key not in cls._META_KEYS
+        }
+
+    def release_manifest(
+        self, slicer: SlicerType, release: str
+    ) -> dict[str, str] | None:
+        """``{profile key: settings digest}`` of every profile a complete ingest of
+        ``release`` parsed, or None when the store never ingested it whole."""
+        path = self._release_manifest_path(slicer, release)
+        if not path.exists():
+            return None
+        document = json.loads(path.read_text(encoding="utf-8"))
+        profiles = document.get("profiles") if isinstance(document, dict) else None
+        if not isinstance(profiles, dict) or document.get("release") != release:
+            raise ValueError(f"Invalid release manifest {path}")
+        return profiles
+
+    def _release_manifest_path(self, slicer: SlicerType, release: str) -> Path:
+        return (
+            self.root / slicer.value / "_releases" / f"{self._sanitize(release)}.json"
+        )
+
+    def _save_release_manifest(
+        self, slicer: SlicerType, release: str, profiles: list[ParsedProfile]
+    ) -> None:
+        manifest = {}
+        for profile in profiles:
+            # A profile without settings evaluates as absent.
+            if not self._snapshot_settings(profile.settings):
+                continue
+            key = self._profile_key(
+                slicer,
+                profile.profile_type,
+                profile.vendor,
+                profile.name,
+                profile.storage_key,
+            )
+            manifest[key] = self.settings_digest(profile.settings)
+        document = {"release": release, "profiles": manifest}
+        text = json.dumps(document, indent=2, sort_keys=True, ensure_ascii=False)
+        path = self._release_manifest_path(slicer, release)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text + "\n", encoding="utf-8")
+
+    @staticmethod
+    def _is_release(version: str) -> bool:
+        from .versions import is_prerelease
+
+        return not version.startswith("nightly") and not is_prerelease(version)
 
     def deduplicate_settings(self, slicer: SlicerType) -> int:
         """Remove consecutive duplicate values from all profiles for a slicer.

@@ -151,7 +151,7 @@ def test_a_complete_release_tombstones_the_profiles_it_dropped(tmp_path):
     assert _get(store, "Dropped").evaluate("2.5.0") == {}
 
 
-def test_only_complete_newest_stable_releases_tombstone(tmp_path):
+def test_only_complete_stable_releases_tombstone(tmp_path):
     store = ProfileStore(tmp_path)
     store.ingest_profiles(
         ORCA, "2.5.0", [_filament("A"), _filament("B")], complete_release=True
@@ -161,13 +161,58 @@ def test_only_complete_newest_stable_releases_tombstone(tmp_path):
         ("2.5.1", False),
         ("2.6.0-beta", True),
         ("nightly-2026-11-09", True),
-        ("2.4.2", True),
     ):
         store.ingest_profiles(
             ORCA, version, [_filament("A")], complete_release=complete
         )
 
     assert _get(store, "B").evaluate("2.6.0") == {"name": "B"}
+
+
+def test_a_complete_release_older_than_the_newest_is_refused(tmp_path):
+    store = ProfileStore(tmp_path)
+    store.ingest_profiles(ORCA, "2.5.0", [_filament("A", temp=["200"])])
+
+    try:
+        store.ingest_profiles(
+            ORCA, "2.4.1", [_filament("A", temp=["180"])], complete_release=True
+        )
+    except ValueError as error:
+        assert "ingest-releases orcaslicer --rebuild" in str(error)
+    else:
+        raise AssertionError("an older whole release must not rewrite newer ones")
+    assert _get(store, "A").evaluate("2.5.0")["temp"] == ["200"]
+    assert store.release_manifest(ORCA, "2.4.1") is None
+
+
+def test_a_complete_stable_release_writes_its_manifest(tmp_path):
+    store = ProfileStore(tmp_path)
+    store.ingest_profiles(
+        ORCA, "2.5.0", [_filament("A", temp=["200"])], complete_release=True
+    )
+    store.ingest_profiles(
+        ORCA, "nightly-2026-11-09", [_filament("A")], complete_release=True
+    )
+    store.ingest_profiles(ORCA, "2.6.0", [_filament("A")])
+
+    key = "orcaslicer/Prusa/filament/A"
+    digest = ProfileStore.settings_digest({"name": "A", "temp": ["200"]})
+    assert store.release_manifest(ORCA, "2.5.0") == {key: digest}
+    assert store.release_manifest(ORCA, "nightly-2026-11-09") is None
+    assert store.release_manifest(ORCA, "2.6.0") is None
+
+
+def test_ingested_releases_include_one_that_changed_nothing(tmp_path):
+    store = ProfileStore(tmp_path)
+    for version in ("2.4.2", "2.4.3"):
+        store.ingest_profiles(ORCA, version, [_filament("A")], complete_release=True)
+    store.ingest_profiles(
+        ORCA, "nightly-2026-11-09", [_filament("A")], complete_release=True
+    )
+
+    assert store.get_versions(ORCA) == ["2.4.2"]
+    assert store.ingested_releases(ORCA) == ["2.4.2", "2.4.3"]
+    assert store.newest_release(ORCA) == "2.4.3"
 
 
 def test_tombstones_stay_within_the_ingested_profile_types(tmp_path):

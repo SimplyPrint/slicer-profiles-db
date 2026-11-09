@@ -3,278 +3,288 @@
   "profile_type": "machine",
   "name": "Artillery Sidewinder X1 0.4 nozzle",
   "vendor": "Artillery",
-  "first_seen": "1.3.0.11",
+  "first_seen": "1.1.6.2",
   "last_seen": "1.5.3.4",
   "filament_id": null,
   "setting_id": "nY4RXX9Ylh7AIc4U",
   "renamed_from": null,
   "filament_type": null,
   "native_id": null,
+  "storage_key": null,
   "context": {},
   "setting_scopes": {},
   "settings": {
     "type": {
-      "1.3.0.11": "machine"
+      "1.1.6.2": "machine"
     },
     "name": {
-      "1.3.0.11": "Artillery Sidewinder X1 0.4 nozzle"
+      "1.1.6.2": "Artillery Sidewinder X1 0.4 nozzle"
     },
     "from": {
-      "1.3.0.11": "system"
+      "1.1.6.2": "system"
     },
     "instantiation": {
-      "1.3.0.11": "true"
+      "1.1.6.2": "true"
     },
     "gcode_flavor": {
-      "1.3.0.11": "marlin"
+      "1.1.6.2": "marlin"
     },
     "machine_start_gcode": {
-      "1.3.0.11": "; Initial setups\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\nM220 S100 ; reset speed factor to 100%\nM221 S100 ; reset extrusion rate to 100%\n\n; Set the heating\nM190 S[bed_temperature_initial_layer_single] ; wait for bed to heat up\nM104 S[nozzle_temperature_initial_layer] ; start nozzle heating but don't wait\n\n; Home\nG1 Z3 F3000 ; move z up little to prevent scratching of surface\nG28 ; home all axes\nG1 X3 Y3 F5000 ; move to corner of the bed to avoid ooze over centre\n\n; Wait for final heating\nM109 S[nozzle_temperature_initial_layer] ; wait for the nozzle to heat up\nM190 S[bed_temperature_initial_layer_single] ; wait for the bed to heat up\n\n; Return to prime position, Prime line routine\nG92 E0 ; Reset Extruder\nG1 Z3 F3000 ; move z up little to prevent scratching of surface\nG1 X10 Y.5 Z0.25 F5000.0 ; Move to start position\nG1 X100 Y.5 Z0.25 F1500.0 E15 ; Draw the first line\nG1 X100 Y.2 Z0.25 F5000.0 ; Move to side a little\nG1 X10 Y.2 Z0.25 F1500.0 E30 ; Draw the second line\nG92 E0 ; Reset Extruder\nM221 S{if layer_height<0.075}100{else}95{endif}"
+      "1.1.6.2": "; Initial setups\nG90 ; use absolute coordinates\nM83 ; extruder relative mode\nM220 S100 ; reset speed factor to 100%\nM221 S100 ; reset extrusion rate to 100%\n\n; Set the heating\nM190 S[bed_temperature_initial_layer_single] ; wait for bed to heat up\nM104 S[nozzle_temperature_initial_layer] ; start nozzle heating but don't wait\n\n; Home\nG1 Z3 F3000 ; move z up little to prevent scratching of surface\nG28 ; home all axes\nG1 X3 Y3 F5000 ; move to corner of the bed to avoid ooze over centre\n\n; Wait for final heating\nM109 S[nozzle_temperature_initial_layer] ; wait for the nozzle to heat up\nM190 S[bed_temperature_initial_layer_single] ; wait for the bed to heat up\n\n; Return to prime position, Prime line routine\nG92 E0 ; Reset Extruder\nG1 Z3 F3000 ; move z up little to prevent scratching of surface\nG1 X10 Y.5 Z0.25 F5000.0 ; Move to start position\nG1 X100 Y.5 Z0.25 F1500.0 E15 ; Draw the first line\nG1 X100 Y.2 Z0.25 F5000.0 ; Move to side a little\nG1 X10 Y.2 Z0.25 F1500.0 E30 ; Draw the second line\nG92 E0 ; Reset Extruder\nM221 S{if layer_height<0.075}100{else}95{endif}"
     },
     "machine_end_gcode": {
-      "1.3.0.11": "G4 ; wait\nG92 E0 ; prepare to retract\nG1 E-0.5 F3000; retract to avoid stringing\n\n; Anti-stringing end wiggle\nG91 ; use relative coordinates\nG1 X1 Y1 F1200\n\n; Raise nozzle and present bed\n{if layer_z < printable_height}G1 Z{z_offset+min(layer_z+120, printable_height)}{endif} ; Move print head up\nG90 ; use absolute coordinates\n\n; Reset print setting overrides\nM200 D0 ; disable volumetric e\nM220 S100 ; reset speed factor to 100%\nM221 S100 ; reset extrusion rate to 100%\n\n; Shut down printer\nM106 S0 ; turn-off fan\nM104 S0 ; turn-off hotend\nM140 S0 ; turn-off bed\nM150 P0 ; turn off led\nM85 S0 ; deactivate idle timeout\nM84 ; disable motors\n"
+      "1.1.6.2": "G4 ; wait\nG92 E0 ; prepare to retract\nG1 E-0.5 F3000; retract to avoid stringing\n\n; Anti-stringing end wiggle\nG91 ; use relative coordinates\nG1 X1 Y1 F1200\n\n; Raise nozzle and present bed\n{if layer_z < printable_height}G1 Z{z_offset+min(layer_z+120, printable_height)}{endif} ; Move print head up\nG90 ; use absolute coordinates\n\n; Reset print setting overrides\nM200 D0 ; disable volumetric e\nM220 S100 ; reset speed factor to 100%\nM221 S100 ; reset extrusion rate to 100%\n\n; Shut down printer\nM106 S0 ; turn-off fan\nM104 S0 ; turn-off hotend\nM140 S0 ; turn-off bed\nM150 P0 ; turn off led\nM85 S0 ; deactivate idle timeout\nM84 ; disable motors\n"
     },
     "extruder_colour": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "#018001"
       ]
     },
     "extruder_offset": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "0x0"
       ]
     },
     "machine_max_acceleration_e": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "5000",
         "5000"
       ]
     },
     "machine_max_acceleration_extruding": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "1250",
         "1250"
       ]
     },
     "machine_max_acceleration_retracting": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "1250",
         "1250"
       ]
     },
     "machine_max_acceleration_travel": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "1000",
         "1000"
       ]
     },
     "machine_max_acceleration_x": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "1000",
         "960"
       ]
     },
     "machine_max_acceleration_y": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "1000",
         "960"
       ]
     },
     "machine_max_acceleration_z": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "100",
         "100"
       ]
     },
     "machine_max_speed_e": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "120",
         "120"
       ]
     },
     "machine_max_speed_x": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "200",
         "100"
       ]
     },
     "machine_max_speed_y": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "200",
         "100"
       ]
     },
     "machine_max_speed_z": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "12",
         "12"
       ]
     },
     "machine_max_jerk_e": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "1.5",
         "1.5"
       ]
     },
     "machine_max_jerk_x": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "8",
         "8"
       ]
     },
     "machine_max_jerk_y": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "8",
         "8"
       ]
     },
     "machine_max_jerk_z": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "0.4",
         "0.4"
       ]
     },
     "machine_min_extruding_rate": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "0",
         "0"
       ]
     },
     "machine_min_travel_rate": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "0",
         "0"
       ]
     },
     "max_layer_height": {
-      "1.3.0.11": [
+      "1.1.6.2": [
+        "0.25"
+      ],
+      "1.3.0.6": [
         "0.32"
       ]
     },
     "min_layer_height": {
-      "1.3.0.11": [
+      "1.1.6.2": [
+        "0.07"
+      ],
+      "1.3.0.6": [
         "0.08"
       ]
     },
     "printable_height": {
-      "1.3.0.11": "400"
+      "1.1.6.2": "400"
     },
     "extruder_clearance_radius": {
-      "1.3.0.11": "65"
+      "1.1.6.2": "65"
     },
     "extruder_clearance_height_to_rod": {
-      "1.3.0.11": "36"
+      "1.1.6.2": "36"
     },
     "extruder_clearance_height_to_lid": {
-      "1.3.0.11": "140"
+      "1.1.6.2": "140"
     },
     "nozzle_diameter": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "0.4"
       ]
     },
     "printer_settings_id": {
-      "1.3.0.11": "Artillery"
+      "1.1.6.2": "Artillery"
     },
     "printer_technology": {
-      "1.3.0.11": "FFF"
+      "1.1.6.2": "FFF"
     },
     "printer_variant": {
-      "1.3.0.11": "0.4"
+      "1.1.6.2": "0.4"
     },
     "retraction_minimum_travel": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "1"
       ]
     },
     "retract_before_wipe": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "0%"
       ]
     },
     "retract_when_changing_layer": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "1"
       ]
     },
     "retraction_length": {
-      "1.3.0.11": [
+      "1.1.6.2": [
+        "0.8"
+      ],
+      "1.3.0.6": [
         "1"
       ]
     },
     "retract_length_toolchange": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "4"
       ]
     },
     "z_hop": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "0.4"
       ]
     },
     "retract_restart_extra": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "0"
       ]
     },
     "retract_restart_extra_toolchange": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "0"
       ]
     },
     "retraction_speed": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "35"
       ]
     },
     "deretraction_speed": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "0"
       ]
     },
     "silent_mode": {
-      "1.3.0.11": "0"
+      "1.1.6.2": "0"
     },
     "single_extruder_multi_material": {
-      "1.3.0.11": "1"
+      "1.1.6.2": "1"
     },
     "change_filament_gcode": {
-      "1.3.0.11": ""
+      "1.1.6.2": ""
     },
     "before_layer_change_gcode": {
-      "1.3.0.11": ";BEFORE_LAYER_CHANGE\nG92 E0\n;[layer_z]\n\n"
+      "1.1.6.2": ";BEFORE_LAYER_CHANGE\nG92 E0\n;[layer_z]\n\n"
     },
     "layer_change_gcode": {
-      "1.3.0.11": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+      "1.1.6.2": ";AFTER_LAYER_CHANGE\n;[layer_z]"
     },
     "machine_pause_gcode": {
-      "1.3.0.11": "M0"
+      "1.1.6.2": "M0"
     },
     "wipe": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "0"
       ]
     },
     "z_hop_types": {
-      "1.3.0.11": "Normal Lift"
+      "1.1.6.2": "Normal Lift"
     },
     "setting_id": {
-      "1.3.0.11": "GM003",
+      "1.1.6.2": "GM003",
       "1.5.3.4": "nY4RXX9Ylh7AIc4U"
     },
     "printer_model": {
-      "1.3.0.11": "Artillery Sidewinder X1"
+      "1.1.6.2": "Artillery Sidewinder X1"
     },
     "default_print_profile": {
-      "1.3.0.11": "0.20mm Standard @Artillery X1"
+      "1.1.6.2": "0.20mm Standard @Artillery X1"
     },
     "bed_exclude_area": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "0x0"
       ]
     },
     "printable_area": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "0x0",
         "300x0",
         "300x300",
@@ -282,18 +292,19 @@
       ]
     },
     "nozzle_type": {
-      "1.3.0.11": "brass"
+      "1.1.6.2": "hardened_steel",
+      "1.3.0.6": "brass"
     },
     "auxiliary_fan": {
-      "1.3.0.11": "0"
+      "1.1.6.2": "0"
     },
     "default_filament_profile": {
-      "1.3.0.11": [
+      "1.1.6.2": [
         "Artillery Generic PLA"
       ]
     },
     "scan_first_layer": {
-      "1.3.0.11": "0"
+      "1.1.6.2": "0"
     },
     "machine_max_junction_deviation": {
       "1.5.2.2": [

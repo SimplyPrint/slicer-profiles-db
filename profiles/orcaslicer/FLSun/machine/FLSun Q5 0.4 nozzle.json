@@ -3,7 +3,7 @@
   "profile_type": "machine",
   "name": "FLSun Q5 0.4 nozzle",
   "vendor": "FLSun",
-  "first_seen": "2.3.1",
+  "first_seen": "2.2.0",
   "last_seen": "2.5.0",
   "filament_id": null,
   "setting_id": "LKmuanzzJdFhP8fy",
@@ -15,268 +15,268 @@
   "setting_scopes": {},
   "settings": {
     "type": {
-      "2.3.1": "machine"
+      "2.2.0": "machine"
     },
     "name": {
-      "2.3.1": "FLSun Q5 0.4 nozzle"
+      "2.2.0": "FLSun Q5 0.4 nozzle"
     },
     "from": {
-      "2.3.1": "system"
+      "2.2.0": "system"
     },
     "instantiation": {
-      "2.3.1": "true"
+      "2.2.0": "true"
     },
     "gcode_flavor": {
-      "2.3.1": "marlin"
+      "2.2.0": "marlin"
     },
     "machine_start_gcode": {
-      "2.3.1": ";STARTGCODE\nM117 Initializing\n; G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM107\nG28 ;Home\nM140 S[bed_temperature_initial_layer_single] ; set bed temp\nM190 S[bed_temperature_initial_layer_single] ; wait for bed temp\nM104 S[nozzle_temperature_initial_layer] ; set extruder temp\nM109 S[nozzle_temperature_initial_layer] ; wait for extruder temp\n\nG92 E0\nG1 X-98 Y0 Z0.2 F4000 ; move to arc start\nG3 X0 Y-98 I98 Z0.2 E40 F400 ; lay arc stripe 90deg\nG0 Z1 \nG92 E0.0\n"
+      "2.2.0": ";STARTGCODE\nM117 Initializing\n; G90 ; use absolute coordinates\nM83 ; extruder relative mode\nM107\nG28 ;Home\nM140 S[bed_temperature_initial_layer_single] ; set bed temp\nM190 S[bed_temperature_initial_layer_single] ; wait for bed temp\nM104 S[nozzle_temperature_initial_layer] ; set extruder temp\nM109 S[nozzle_temperature_initial_layer] ; wait for extruder temp\n\nG92 E0\nG1 X-98 Y0 Z0.2 F4000 ; move to arc start\nG3 X0 Y-98 I98 Z0.2 E40 F400 ; lay arc stripe 90deg\nG0 Z1 \nG92 E0.0\n"
     },
     "machine_end_gcode": {
-      "2.3.1": "M107\nM104 S0\nM140 S0\nG92 E1\nG1 E-1 F300\nG28 X0 Y0\n;M84\nM18 S180 ;disable motors after 180s\n"
+      "2.2.0": "M107\nM104 S0\nM140 S0\nG92 E1\nG1 E-1 F300\nG28 X0 Y0\n;M84\nM18 S180 ;disable motors after 180s\n"
     },
     "extruder_colour": {
-      "2.3.1": [
+      "2.2.0": [
         "#018001"
       ]
     },
     "extruder_offset": {
-      "2.3.1": [
+      "2.2.0": [
         "0x0"
       ]
     },
     "machine_max_acceleration_e": {
-      "2.3.1": [
+      "2.2.0": [
         "3000",
         "800"
       ]
     },
     "machine_max_acceleration_extruding": {
-      "2.3.1": [
+      "2.2.0": [
         "1500",
         "800"
       ]
     },
     "machine_max_acceleration_retracting": {
-      "2.3.1": [
+      "2.2.0": [
         "2000",
         "800"
       ]
     },
     "machine_max_acceleration_travel": {
-      "2.3.1": [
+      "2.2.0": [
         "1500",
         "800"
       ]
     },
     "machine_max_acceleration_x": {
-      "2.3.1": [
+      "2.2.0": [
         "1500",
         "800"
       ]
     },
     "machine_max_acceleration_y": {
-      "2.3.1": [
+      "2.2.0": [
         "1500",
         "800"
       ]
     },
     "machine_max_acceleration_z": {
-      "2.3.1": [
+      "2.2.0": [
         "1500",
         "800"
       ]
     },
     "machine_max_speed_e": {
-      "2.3.1": [
+      "2.2.0": [
         "60",
         "30"
       ]
     },
     "machine_max_speed_x": {
-      "2.3.1": [
+      "2.2.0": [
         "200",
         "150"
       ]
     },
     "machine_max_speed_y": {
-      "2.3.1": [
+      "2.2.0": [
         "200",
         "150"
       ]
     },
     "machine_max_speed_z": {
-      "2.3.1": [
+      "2.2.0": [
         "200",
         "150"
       ]
     },
     "machine_max_jerk_e": {
-      "2.3.1": [
+      "2.2.0": [
         "5",
         "5"
       ]
     },
     "machine_max_jerk_x": {
-      "2.3.1": [
+      "2.2.0": [
         "5",
         "10"
       ]
     },
     "machine_max_jerk_y": {
-      "2.3.1": [
+      "2.2.0": [
         "5",
         "10"
       ]
     },
     "machine_max_jerk_z": {
-      "2.3.1": [
+      "2.2.0": [
         "5",
         "10"
       ]
     },
     "machine_min_extruding_rate": {
-      "2.3.1": [
+      "2.2.0": [
         "0",
         "0"
       ]
     },
     "machine_min_travel_rate": {
-      "2.3.1": [
+      "2.2.0": [
         "0",
         "0"
       ]
     },
     "max_layer_height": {
-      "2.3.1": [
+      "2.2.0": [
         "0.32"
       ]
     },
     "min_layer_height": {
-      "2.3.1": [
+      "2.2.0": [
         "0.08"
       ]
     },
     "printable_height": {
-      "2.3.1": "200"
+      "2.2.0": "200"
     },
     "extruder_clearance_radius": {
-      "2.3.1": "65"
+      "2.2.0": "65"
     },
     "extruder_clearance_height_to_rod": {
-      "2.3.1": "36"
+      "2.2.0": "36"
     },
     "extruder_clearance_height_to_lid": {
-      "2.3.1": "140"
+      "2.2.0": "140"
     },
     "nozzle_diameter": {
-      "2.3.1": [
+      "2.2.0": [
         "0.4"
       ]
     },
     "printer_settings_id": {
-      "2.3.1": "FLSun"
+      "2.2.0": "FLSun"
     },
     "printer_technology": {
-      "2.3.1": "FFF"
+      "2.2.0": "FFF"
     },
     "printer_variant": {
-      "2.3.1": "0.4"
+      "2.2.0": "0.4"
     },
     "retraction_minimum_travel": {
-      "2.3.1": [
+      "2.2.0": [
         "2"
       ]
     },
     "retract_before_wipe": {
-      "2.3.1": [
+      "2.2.0": [
         "70%"
       ]
     },
     "retract_when_changing_layer": {
-      "2.3.1": [
+      "2.2.0": [
         "1"
       ]
     },
     "retraction_length": {
-      "2.3.1": [
+      "2.2.0": [
         "3"
       ]
     },
     "retract_length_toolchange": {
-      "2.3.1": [
+      "2.2.0": [
         "1"
       ]
     },
     "z_hop": {
-      "2.3.1": [
+      "2.2.0": [
         "0.4"
       ]
     },
     "retract_restart_extra": {
-      "2.3.1": [
+      "2.2.0": [
         "0"
       ]
     },
     "retract_restart_extra_toolchange": {
-      "2.3.1": [
+      "2.2.0": [
         "0"
       ]
     },
     "retraction_speed": {
-      "2.3.1": [
+      "2.2.0": [
         "30"
       ]
     },
     "deretraction_speed": {
-      "2.3.1": [
+      "2.2.0": [
         "40"
       ]
     },
     "silent_mode": {
-      "2.3.1": "0",
+      "2.2.0": "0",
       "2.5.0": null
     },
     "single_extruder_multi_material": {
-      "2.3.1": "1"
+      "2.2.0": "1"
     },
     "change_filament_gcode": {
-      "2.3.1": ""
+      "2.2.0": ""
     },
     "before_layer_change_gcode": {
-      "2.3.1": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
+      "2.2.0": ";BEFORE_LAYER_CHANGE\n;[layer_z]\nG92 E0\n"
     },
     "layer_change_gcode": {
-      "2.3.1": ";AFTER_LAYER_CHANGE\n;[layer_z]"
+      "2.2.0": ";AFTER_LAYER_CHANGE\n;[layer_z]"
     },
     "machine_pause_gcode": {
-      "2.3.1": "M400 U1\n"
+      "2.2.0": "M400 U1\n"
     },
     "wipe": {
-      "2.3.1": [
+      "2.2.0": [
         "1"
       ]
     },
     "z_hop_types": {
-      "2.3.1": "Normal Lift"
+      "2.2.0": "Normal Lift"
     },
     "setting_id": {
-      "2.3.1": "GM003",
+      "2.2.0": "GM003",
       "2.4.1": "LKmuanzzJdFhP8fy"
     },
     "printer_model": {
-      "2.3.1": "FLSun Q5"
+      "2.2.0": "FLSun Q5"
     },
     "default_print_profile": {
-      "2.3.1": "0.20mm Standard @FLSun Q5"
+      "2.2.0": "0.20mm Standard @FLSun Q5"
     },
     "thumbnails": {
-      "2.3.1": [
+      "2.2.0": [
         "260x260"
       ]
     },
     "printable_area": {
-      "2.3.1": [
+      "2.2.0": [
         "99.6195x8.71557",
         "98.4808x17.3648",
         "96.5926x25.8819",
@@ -352,13 +352,13 @@
       ]
     },
     "nozzle_type": {
-      "2.3.1": "hardened_steel"
+      "2.2.0": "hardened_steel"
     },
     "auxiliary_fan": {
-      "2.3.1": "0"
+      "2.2.0": "0"
     },
     "default_filament_profile": {
-      "2.3.1": [
+      "2.2.0": [
         "FLSun Generic PLA"
       ],
       "2.5.0": [
@@ -366,7 +366,7 @@
       ]
     },
     "scan_first_layer": {
-      "2.3.1": "0"
+      "2.2.0": "0"
     }
   }
 }
