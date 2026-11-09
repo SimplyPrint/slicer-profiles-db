@@ -229,13 +229,10 @@ def test_bundle_rejects_release_history_for_an_engine_without_it(tmp_path):
         raise AssertionError("undeclared release history must fail the build")
 
 
-ORCA_HISTORY = EngineTarget(
-    version="2.4.2", release_history=True, releases=("2.3.1", "2.4.2")
-)
+ORCA_HISTORY = EngineTarget(version="2.4.2", release_history=True)
 
 
-def _rejects(tmp_path, version_settings, message):
-    records = _history_records(tmp_path, version_settings)
+def _rejects(tmp_path, records, message):
     try:
         write_bundle(
             tmp_path / "invalid.spdb",
@@ -246,34 +243,50 @@ def _rejects(tmp_path, version_settings, message):
             _coverage(),
         )
     except ValueError as error:
-        assert "Invalid version settings" in str(error)
+        assert message in str(error), str(error)
     else:
         raise AssertionError(message)
 
 
 def test_bundle_rejects_a_base_release_with_changes(tmp_path):
-    _rejects(
-        tmp_path,
-        {"base": "2.4.2", "versions": {"2.4.2": {"speed": 50}, "2.3.1": {}}},
-        "a base release must equal the exported settings",
+    records = _history_records(
+        tmp_path, {"base": "2.4.2", "versions": {"2.4.2": {"speed": 50}, "2.3.1": {}}}
     )
 
+    _rejects(tmp_path, records, "Invalid version settings")
 
-def test_bundle_rejects_versions_other_than_the_listed_releases(tmp_path):
-    for versions in (
-        {"2.4.2": {}},
-        {"2.4.2": {}, "2.3.1": {}, "2.3.0": {"speed": 40}},
+
+def test_bundle_rejects_profiles_describing_different_releases(tmp_path):
+    staging = tmp_path / "staging"
+    _write(
+        staging / "models/1/orcaslicer/print_profiles.json",
+        [
+            {"name": "Quality", "data": {"speed": 60}, "context": {"source_id": "a"}},
+            {"name": "Draft", "data": {"speed": 80}, "context": {"source_id": "b"}},
+        ],
+    )
+    records = collect_records(staging)
+    for record, versions in zip(
+        records.values(),
+        ({"2.4.2": {}, "2.3.1": {}}, {"2.4.2": {}}),
+        strict=True,
     ):
-        _rejects(
-            tmp_path,
-            {"base": "2.4.2", "versions": versions},
-            "version settings must describe exactly the listed releases",
-        )
+        record["profile"]["version_settings"] = {"base": "2.4.2", "versions": versions}
+
+    _rejects(tmp_path, records, "orcaslicer profiles describe different releases")
+
+
+def test_bundle_rejects_releases_without_the_locked_version(tmp_path):
+    records = _history_records(
+        tmp_path, {"base": "2.3.1", "versions": {"2.3.1": {}, "2.3.2": {"speed": 50}}}
+    )
+
+    _rejects(tmp_path, records, "orcaslicer profiles do not describe 2.4.2")
 
 
 def test_bundle_reports_release_history_counts_and_releases(tmp_path):
     records = _history_records(
-        tmp_path, {"base": "2.4.2", "versions": {"2.4.2": {}, "2.3.1": None}}
+        tmp_path, {"base": "2.4.2", "versions": {"2.3.1": None, "2.4.2": {}}}
     )
 
     manifest = write_bundle(

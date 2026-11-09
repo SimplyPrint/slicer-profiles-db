@@ -210,7 +210,7 @@ Environment variables:
     # --- ingest-releases ---
     releases_parser = subparsers.add_parser(
         "ingest-releases",
-        help="Ingest the listed releases the store cannot give exactly yet",
+        help="Ingest every upstream release the store cannot give exactly yet",
     )
     releases_parser.add_argument(
         "slicers",
@@ -221,7 +221,7 @@ Environment variables:
     releases_parser.add_argument(
         "--rebuild",
         action="store_true",
-        help="Clear each slicer's store and ingest its listed releases in order",
+        help="Clear each slicer's store and ingest every release in order",
     )
     releases_parser.add_argument(
         "--engine-lock",
@@ -751,10 +751,7 @@ def run_ingest_releases(args: argparse.Namespace) -> int:
         reporter=_make_reporter(False),
     )
     for slicer in sorted(slicers, key=lambda item: item.value):
-        releases = list(targets[slicer].releases)
-        if not releases:
-            raise ValueError(f"engines.lock.json lists no {slicer.value} releases")
-        reports = pipeline.ingest_releases(slicer, releases, rebuild=args.rebuild)
+        reports = pipeline.ingest_releases(slicer, rebuild=args.rebuild)
         ingested = ", ".join(report.version for report in reports) or "none needed"
         print(f"  {slicer.value}: {ingested}")
     return 0

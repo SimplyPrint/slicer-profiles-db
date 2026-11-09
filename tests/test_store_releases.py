@@ -202,6 +202,19 @@ def test_a_complete_stable_release_writes_its_manifest(tmp_path):
     assert store.release_manifest(ORCA, "2.6.0") is None
 
 
+def test_ingested_releases_include_one_that_changed_nothing(tmp_path):
+    store = ProfileStore(tmp_path)
+    for version in ("2.4.2", "2.4.3"):
+        store.ingest_profiles(ORCA, version, [_filament("A")], complete_release=True)
+    store.ingest_profiles(
+        ORCA, "nightly-2026-11-09", [_filament("A")], complete_release=True
+    )
+
+    assert store.get_versions(ORCA) == ["2.4.2"]
+    assert store.ingested_releases(ORCA) == ["2.4.2", "2.4.3"]
+    assert store.newest_release(ORCA) == "2.4.3"
+
+
 def test_tombstones_stay_within_the_ingested_profile_types(tmp_path):
     store = ProfileStore(tmp_path)
     process = ParsedProfile(

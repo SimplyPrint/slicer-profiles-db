@@ -82,10 +82,8 @@ def test_a_high_flow_twin_takes_its_standard_changes_on_the_settings_it_keeps():
 
 
 BAMBU = SlicerType.BAMBUSTUDIO
-LISTED = ("02.07.01.62", "02.08.02.61", "02.09.01.70")
-# Ingested by the nightly job, but not a release the cloud slicer slices with.
-UNLISTED = "02.08.00.50"
-TARGET = EngineTarget(version="02.09.01.70", release_history=True, releases=LISTED)
+INGESTED = ("02.07.01.62", "02.08.00.50", "02.08.02.61", "02.09.01.70")
+TARGET = EngineTarget(version="02.09.01.70", release_history=True)
 MACHINE = "Bambu Lab X1 Carbon 0.4 nozzle"
 FILAMENT = "Bambu PLA Basic @BBL X1C"
 TIME_LAPSE = ";TIMELAPSE\nM971 S11 C10 O0\n"
@@ -96,7 +94,7 @@ MACHINES = {
         "machine_start_gcode": "M104 S[nozzle_temperature_initial_layer]\nG28\n",
         "time_lapse_gcode": TIME_LAPSE,
     },
-    UNLISTED: {
+    "02.08.00.50": {
         "name": MACHINE,
         "machine_start_gcode": "M104 S{nozzle_temperature_initial_layer[0]}\nG28\n",
         "time_lapse_gcode": TIME_LAPSE,
@@ -137,9 +135,9 @@ def _parsed(release):
     return profiles
 
 
-def _store(path, releases):
+def _store(path, releases=INGESTED):
     store = ProfileStore(path)
-    for release in sorted(releases):
+    for release in releases:
         store.ingest_profiles(BAMBU, release, _parsed(release), complete_release=True)
     return store
 
@@ -174,7 +172,7 @@ def _machine_index(records):
 
 
 def _read(baseline, index, release):
-    """Web's CatalogVersions::at() for a listed release."""
+    """Web's CatalogVersions::at() for a release the index describes."""
     changes = index["versions"][release]
     if changes is None:
         return None
@@ -196,17 +194,17 @@ def _fails(records, store, target, message):
         raise AssertionError(f"expected a failure: {message}")
 
 
-def test_each_listed_release_gets_exactly_its_own_gcode(tmp_path):
+def test_each_ingested_release_gets_exactly_its_own_gcode(tmp_path):
     records = _records()
-    store = _store(tmp_path, [*LISTED, UNLISTED])
 
-    apply_release_history(records, store, {BAMBU: TARGET})
+    apply_release_history(records, _store(tmp_path), {BAMBU: TARGET})
 
     index = _machine_index(records)
     exported = MACHINES["02.09.01.70"]
-    assert len({MACHINES[release]["machine_start_gcode"] for release in LISTED}) == 3
+    starts = {MACHINES[release]["machine_start_gcode"] for release in INGESTED}
+    assert len(starts) == len(INGESTED)
     assert index["base"] == "02.09.01.70"
-    for release in LISTED:
+    for release in INGESTED:
         assert _read(exported, index, release) == MACHINES[release]
     # 02.07.01.62 has no pause G-code yet; 02.09.01.70 dropped the time-lapse one.
     assert index["versions"]["02.07.01.62"]["machine_pause_gcode"] is None
@@ -214,45 +212,45 @@ def test_each_listed_release_gets_exactly_its_own_gcode(tmp_path):
     # The filament did not exist before 02.08.02.61.
     filament = records["filament"]["profile"]
     index = filament["version_settings"]
-    assert index["versions"]["02.07.01.62"] is None
+    assert index["versions"]["02.08.00.50"] is None
     assert _read(filament["data"], index, "02.08.02.61") == FILAMENTS["02.08.02.61"]
 
 
-def test_an_ingested_release_that_is_not_listed_is_not_described(tmp_path):
+def test_every_ingested_release_is_described_oldest_first(tmp_path):
     records = _records()
-    store = _store(tmp_path, [*LISTED, UNLISTED])
 
-    apply_release_history(records, store, {BAMBU: TARGET})
+    apply_release_history(records, _store(tmp_path), {BAMBU: TARGET})
 
-    versions = _machine_index(records)["versions"]
-    assert list(versions) == list(LISTED)
-    assert UNLISTED not in json.dumps(records)
-    starts = [changes.get("machine_start_gcode") for changes in versions.values()]
-    assert MACHINES[UNLISTED]["machine_start_gcode"] not in starts
+    filament = records["filament"]["profile"]["version_settings"]
+    assert list(_machine_index(records)["versions"]) == list(INGESTED)
+    assert list(filament["versions"]) == list(INGESTED)
 
 
-def test_a_listed_release_missing_from_the_store_fails(tmp_path):
-    target = EngineTarget(
-        version="02.09.01.70",
-        release_history=True,
-        releases=("02.06.01.55", *LISTED),
-    )
-
-    _fails(_records(), _store(tmp_path, LISTED), target, "02.06.01.55")
-
-
-def test_a_release_ingested_in_part_is_not_a_listed_release(tmp_path):
-    store = _store(tmp_path, ["02.07.01.62"])
+def test_a_release_ingested_in_part_fails(tmp_path):
+    store = _store(tmp_path, INGESTED[:2])
     store.ingest_profiles(BAMBU, "02.08.02.61", _parsed("02.08.02.61")[:1])
     store.ingest_profiles(
         BAMBU, "02.09.01.70", _parsed("02.09.01.70"), complete_release=True
     )
 
-    _fails(_records(), store, TARGET, "no complete ingest")
+    _fails(_records(), store, TARGET, "has 02.08.02.61 but no complete ingest")
+
+
+def test_a_release_without_a_manifest_fails(tmp_path):
+    store = _store(tmp_path)
+    (tmp_path / "bambustudio" / "_releases" / "02.08.00.50.json").unlink()
+
+    _fails(_records(), store, TARGET, "ingest-releases bambustudio")
+
+
+def test_a_pinned_version_that_was_not_ingested_fails(tmp_path):
+    target = EngineTarget(version="02.10.00.10", release_history=True)
+
+    _fails(_records(), _store(tmp_path), target, "not an ingested release")
 
 
 def test_a_store_that_no_longer_reproduces_a_release_fails(tmp_path):
-    store = _store(tmp_path, LISTED)
+    store = _store(tmp_path)
     stored = store.get(BAMBU, "machine", "BBL", MACHINE)
     stored.settings["machine_start_gcode"]["02.08.02.61"] += "; edited\n"
     store._save(stored)
@@ -260,25 +258,21 @@ def test_a_store_that_no_longer_reproduces_a_release_fails(tmp_path):
     _fails(_records(), store, TARGET, "does not reproduce 02.08.02.61")
 
 
-def test_an_export_no_listed_release_gives_fails(tmp_path):
+def test_an_export_no_ingested_release_gives_fails(tmp_path):
     records = _records()
     records["filament"]["profile"]["data"]["filament_start_gcode"] = "; changed\n"
 
-    _fails(records, _store(tmp_path, LISTED), TARGET, "filament is exported")
+    _fails(records, _store(tmp_path), TARGET, "filament is exported")
 
 
-def test_the_same_listed_releases_give_the_same_settings(tmp_path):
+def test_the_same_releases_give_the_same_settings(tmp_path):
     outputs = []
-    for path, releases in (
-        (tmp_path / "listed", LISTED),
-        (tmp_path / "listed-again", LISTED),
-        (tmp_path / "with-unlisted", [*LISTED, UNLISTED]),
-    ):
+    for path in (tmp_path / "first", tmp_path / "second"):
         records = _records()
-        apply_release_history(records, _store(path, releases), {BAMBU: TARGET})
+        apply_release_history(records, _store(path), {BAMBU: TARGET})
         outputs.append(json.dumps(records, sort_keys=True))
 
-    assert outputs[0] == outputs[1] == outputs[2]
+    assert outputs[0] == outputs[1]
 
 
 def test_a_renamed_profile_keeps_its_former_releases(tmp_path):
@@ -293,13 +287,8 @@ def test_a_renamed_profile_keeps_its_former_releases(tmp_path):
         store.ingest_profiles(BAMBU, release, [profile], complete_release=True)
     records = {"filament": _records()["filament"]}
     records["filament"]["profile"]["data"] = new
-    target = EngineTarget(
-        version="02.09.01.70",
-        release_history=True,
-        releases=("02.08.02.61", "02.09.01.70"),
-    )
 
-    apply_release_history(records, store, {BAMBU: target})
+    apply_release_history(records, store, {BAMBU: TARGET})
 
     index = records["filament"]["profile"]["version_settings"]
     assert index["renamed_from"] == "Old X1C"
@@ -310,6 +299,6 @@ def test_engines_without_release_history_are_left_alone(tmp_path):
     records = _records()
     target = EngineTarget(version="02.09.01.70")
 
-    apply_release_history(records, _store(tmp_path, LISTED), {BAMBU: target})
+    apply_release_history(records, _store(tmp_path), {BAMBU: target})
 
     assert "version_settings" not in records["filament"]["profile"]

@@ -30,7 +30,6 @@ jobs:
 
       - name: Ingest profiles
         run: |
-          uv run python tools/check_release_lock.py
           uv run slicer-profiles-db ingest-releases --overlay overlay
           uv run slicer-profiles-db ingest-all --version latest --overlay overlay --skip prusaslicer
           uv run slicer-profiles-db ingest prusaslicer --version latest --legacy-source --force --overlay overlay

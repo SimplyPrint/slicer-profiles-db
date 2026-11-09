@@ -21,6 +21,7 @@ from .models import (
     IngestionReport,
     ProfileType,
     SlicerType,
+    VersionInfo,
 )
 from .parsers import (
     AnycubicSlicerParser,
@@ -450,20 +451,8 @@ class ProfilePipeline:
             return [report]
 
         # Tag-based slicers: enumerate tags and ingest each
-        tags = enumerate_github_tags(
-            config.github_repo,
-            tag_pattern=config.tag_pattern,
-            slicer=slicer,
-        )
-
-        # Filter pre-releases, sort, and apply min_version filter
-        stable_tags = [t for t in tags if not is_prerelease(t.raw)]
-        tag_map = {t.normalized: t for t in stable_tags}
-        sorted_versions = sort_versions(list(tag_map.keys()))
-
-        if config.min_version:
-            min_key = version_key(config.min_version)
-            sorted_versions = [v for v in sorted_versions if version_key(v) >= min_key]
+        tag_map = self._release_tags(slicer)
+        sorted_versions = list(tag_map)
 
         # Pre-filter: skip tags already in the store (they're immutable)
         existing_versions = set(self.store.get_versions(slicer))
@@ -502,58 +491,66 @@ class ProfilePipeline:
 
         return reports
 
+    def _release_tags(self, slicer: SlicerType) -> dict[str, VersionInfo]:
+        """Stable tags from ``min_version`` on, by version, oldest first."""
+        config = get_source_config(slicer)
+        tags = enumerate_github_tags(
+            config.github_repo,
+            tag_pattern=config.tag_pattern,
+            slicer=slicer,
+        )
+        tag_map = {t.normalized: t for t in tags if not is_prerelease(t.raw)}
+        versions = sort_versions(list(tag_map))
+        if config.min_version:
+            min_key = version_key(config.min_version)
+            versions = [v for v in versions if version_key(v) >= min_key]
+        return {version: tag_map[version] for version in versions}
+
     def ingest_releases(
         self,
         slicer: SlicerType,
-        releases: list[str],
         rebuild: bool = False,
     ) -> list[IngestionReport]:
-        """Make the store give each of ``releases`` exactly, from its own upstream tag.
+        """Make the store give every stable upstream release exactly.
 
-        Ingests every release that has no release manifest yet, oldest first.
-        History is recorded in release order, so when one of them is older than
-        a release already ingested (or ``rebuild`` is set), the slicer's store is
-        cleared and rebuilt from ``releases`` alone.
+        Ingests each tagged release (as ``ingest_all_versions`` finds them) that
+        has no release manifest yet, oldest first. History is recorded in
+        release order, so when one of them is older than a release already
+        ingested, or the store has a release without a manifest that upstream
+        no longer tags (or ``rebuild`` is set), the slicer's store is cleared
+        and rebuilt from every tagged release in order.
         """
         config = get_source_config(slicer)
         if not config.complete_releases or not config.tag_pattern:
             raise ValueError(f"{slicer.value} releases are not whole tagged catalogues")
-        ordered = sort_versions(list(releases))
-        missing = [
+        tags = self._release_tags(slicer)
+        unproven = [
             release
-            for release in ordered
+            for release in [*tags, *self.store.ingested_releases(slicer)]
             if self.store.release_manifest(slicer, release) is None
         ]
+        missing = [release for release in tags if release in unproven]
+        stale = [release for release in unproven if release not in tags]
         newest = self.store.newest_release(slicer)
         if not rebuild and newest is not None:
-            rebuild = any(
+            rebuild = bool(stale) or any(
                 version_key(release) < version_key(newest) for release in missing
             )
         if not rebuild and not missing:
             return []
-
-        tags = enumerate_github_tags(
-            config.github_repo, tag_pattern=config.tag_pattern, slicer=slicer
-        )
-        raw_tags = {tag.normalized: tag.raw for tag in tags}
-        unknown = [release for release in ordered if release not in raw_tags]
-        if unknown:
-            raise DownloadError(
-                f"{config.github_repo} has no tag for {', '.join(unknown)}"
-            )
 
         if rebuild:
             slicer_dir = self.store.root / slicer.value
             if slicer_dir.exists():
                 shutil.rmtree(slicer_dir)
             self.reporter.update_status(
-                f"Rebuilding {slicer.value} from {', '.join(ordered)}"
+                f"Rebuilding {slicer.value} from {len(tags)} releases"
             )
-        to_ingest = ordered if rebuild else missing
+        to_ingest = list(tags) if rebuild else missing
         reports = []
         for i, release in enumerate(to_ingest, 1):
             self.reporter.step(f"{slicer.value} {release}", i, len(to_ingest))
-            reports.append(self.ingest(slicer, raw_tags[release], force=True))
+            reports.append(self.ingest(slicer, tags[release].raw, force=True))
             if self.store.release_manifest(slicer, release) is None:
                 raise StoreError(f"Ingesting {slicer.value} {release} left no manifest")
         return reports

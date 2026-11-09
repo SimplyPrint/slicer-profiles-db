@@ -331,7 +331,28 @@ class ProfileStore:
     def newest_release(self, slicer: SlicerType) -> str | None:
         """The newest non-nightly version ingested for a slicer."""
         versions = [v for v in self.get_versions(slicer) if not v.startswith("nightly")]
+        versions += self._manifest_releases(slicer)
         return max(versions, key=_version_key) if versions else None
+
+    def ingested_releases(self, slicer: SlicerType) -> list[str]:
+        """Every stable release ingested for a slicer, oldest first.
+
+        A release is in the version log when it changed the store, and has a
+        release manifest when it was ingested whole; either one counts.
+        """
+        releases = {v for v in self.get_versions(slicer) if self._is_release(v)}
+        releases.update(self._manifest_releases(slicer))
+        return sorted(releases, key=_version_key)
+
+    def _manifest_releases(self, slicer: SlicerType) -> list[str]:
+        releases = []
+        for path in sorted((self.root / slicer.value / "_releases").glob("*.json")):
+            document = json.loads(path.read_text(encoding="utf-8"))
+            release = document.get("release") if isinstance(document, dict) else None
+            if not isinstance(release, str):
+                raise ValueError(f"Invalid release manifest {path}")
+            releases.append(release)
+        return releases
 
     @classmethod
     def settings_digest(cls, settings: dict) -> str:

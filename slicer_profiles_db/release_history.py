@@ -1,12 +1,11 @@
 """Per-release settings of official profiles, in the shape web's CatalogVersions reads.
 
-Each profile carries its values for every release the engine lock lists, as changes
-from its exported settings. Web applies them when a slicer asks for a specific release.
+Each profile carries its values for every stable release the store has ingested, as
+changes from its exported settings. Web applies them when a slicer asks for a release.
 
-The listed releases are a committed input, not whatever the store happens to have
-ingested, and each one must be exact: the store evaluated at the release must give
-the very settings a complete ingest of that release parsed (its release manifest).
-A listed release the store cannot give that way fails the build.
+Each release must be exact: the store evaluated at the release must give the very
+settings a complete ingest of that release parsed (its release manifest). A release
+the store cannot give that way fails the build.
 """
 
 from __future__ import annotations
@@ -21,7 +20,7 @@ from .store import ProfileStore
 
 
 class ReleaseHistoryError(ValueError):
-    """A listed release or an exported profile the store cannot describe exactly."""
+    """An ingested release or an exported profile the store cannot describe exactly."""
 
 
 def _nightly(release: str) -> bool:
@@ -159,9 +158,8 @@ def verify_release(
     manifest = store.release_manifest(slicer, release)
     if manifest is None:
         raise ReleaseHistoryError(
-            f"{slicer.value} {release} is listed in engines.lock.json but the store "
-            f"has no complete ingest of it; run `slicer-profiles-db ingest-releases "
-            f"{slicer.value}`"
+            f"The {slicer.value} store has {release} but no complete ingest of it; "
+            f"re-ingest with `slicer-profiles-db ingest-releases {slicer.value}`"
         )
     expected = Counter(manifest.values())
     actual = Counter(
@@ -183,11 +181,13 @@ def verify_release(
 
 class _History:
     def __init__(self, store: ProfileStore, slicer: SlicerType, target: EngineTarget):
-        if not target.releases:
+        self.releases = store.ingested_releases(slicer)
+        if target.version not in self.releases:
             raise ReleaseHistoryError(
-                f"{slicer.value} keeps release history but lists no releases"
+                f"{slicer.value} {target.version}, the version engines.lock.json "
+                f"exports, is not an ingested release; ingest it with "
+                f"`slicer-profiles-db ingest-releases {slicer.value}`"
             )
-        self.releases = _ordered(target.releases)
         self.profiles: dict[str, list[tuple[StoredProfile, dict[str, dict]]]] = {}
         every_snapshot: dict[str, list[dict]] = {r: [] for r in self.releases}
         for profile in sorted(
@@ -223,7 +223,7 @@ class _History:
 def _require(index: dict[str, Any] | None, record: Mapping[str, Any]) -> dict:
     if index is None:
         raise ReleaseHistoryError(
-            f"{record.get('id')} is exported with settings no listed release has, "
+            f"{record.get('id')} is exported with settings no ingested release has, "
             "so it cannot be given per release"
         )
     return index
@@ -236,7 +236,7 @@ def apply_release_history(
 ) -> None:
     """Attach ``version_settings`` to the profiles of engines that keep release history.
 
-    Every such profile gets one entry per listed release, so web never has to
+    Every such profile gets one entry per ingested release, so web never has to
     guess a release; one the store cannot give exactly fails the build.
     """
     histories = {
