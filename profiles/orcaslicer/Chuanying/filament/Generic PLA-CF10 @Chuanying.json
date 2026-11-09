@@ -26,28 +26,19 @@
       "2.3.1": "system",
       "2.5.0": "system"
     },
-    "setting_id": {
-      "2.3.1": "GFSA04",
-      "2.4.1": "EZA59VPwew1cpyUJ",
-      "2.5.0": "I4FjaXNkWl8Mr4ie"
-    },
-    "filament_id": {
-      "2.3.1": "GFL99",
-      "2.5.0": "OFX2zcrM"
-    },
     "instantiation": {
       "2.3.1": "true",
       "2.5.0": "true"
     },
-    "additional_cooling_fan_speed": {
+    "activate_air_filtration": {
       "2.3.1": [
-        "100"
+        "0"
       ],
       "2.5.0": [
-        "100"
+        "0"
       ]
     },
-    "chamber_temperature": {
+    "chamber_temperatures": {
       "2.3.1": [
         "0"
       ],
@@ -63,29 +54,13 @@
         "1"
       ]
     },
-    "compatible_printers": {
+    "complete_print_exhaust_fan_speed": {
       "2.3.1": [
-        "Chuanying X1 0.4 Nozzle",
-        "Chuanying X1 0.6 Nozzle",
-        "Chuanying X1 0.8 Nozzle"
+        "70"
       ],
       "2.5.0": [
-        "Chuanying X1 0.4 Nozzle",
-        "Chuanying X1 0.6 Nozzle",
-        "Chuanying X1 0.8 Nozzle"
+        "70"
       ]
-    },
-    "compatible_printers_condition": {
-      "2.3.1": "",
-      "2.5.0": ""
-    },
-    "compatible_prints": {
-      "2.3.1": [],
-      "2.5.0": []
-    },
-    "compatible_prints_condition": {
-      "2.3.1": "",
-      "2.5.0": ""
     },
     "cool_plate_temp": {
       "2.3.1": [
@@ -103,28 +78,12 @@
         "60"
       ]
     },
-    "default_filament_colour": {
+    "during_print_exhaust_fan_speed": {
       "2.3.1": [
-        ""
+        "70"
       ],
       "2.5.0": [
-        ""
-      ]
-    },
-    "enable_overhang_bridge_fan": {
-      "2.3.1": [
-        "1"
-      ],
-      "2.5.0": [
-        "1"
-      ]
-    },
-    "enable_pressure_advance": {
-      "2.3.1": [
-        "1"
-      ],
-      "2.5.0": [
-        "1"
+        "70"
       ]
     },
     "eng_plate_temp": {
@@ -167,30 +126,6 @@
         "100"
       ]
     },
-    "filament_cooling_final_speed": {
-      "2.3.1": [
-        "3.4"
-      ],
-      "2.5.0": [
-        "3.4"
-      ]
-    },
-    "filament_cooling_initial_speed": {
-      "2.3.1": [
-        "2.2"
-      ],
-      "2.5.0": [
-        "2.2"
-      ]
-    },
-    "filament_cooling_moves": {
-      "2.3.1": [
-        "4"
-      ],
-      "2.5.0": [
-        "4"
-      ]
-    },
     "filament_cost": {
       "2.3.1": [
         "20"
@@ -223,14 +158,6 @@
         "1.75"
       ]
     },
-    "filament_end_gcode": {
-      "2.3.1": [
-        "; filament end gcode \n"
-      ],
-      "2.5.0": [
-        "; filament end gcode \n"
-      ]
-    },
     "filament_flow_ratio": {
       "2.3.1": [
         "1"
@@ -247,20 +174,12 @@
         "0"
       ]
     },
-    "filament_loading_speed": {
+    "filament_long_retractions_when_cut": {
       "2.3.1": [
-        "28"
+        "nil"
       ],
       "2.5.0": [
-        "28"
-      ]
-    },
-    "filament_loading_speed_start": {
-      "2.3.1": [
-        "3"
-      ],
-      "2.5.0": [
-        "3"
+        "nil"
       ]
     },
     "filament_max_volumetric_speed": {
@@ -287,14 +206,6 @@
         "0"
       ]
     },
-    "filament_multitool_ramming_flow": {
-      "2.3.1": [
-        "10"
-      ],
-      "2.5.0": [
-        "10"
-      ]
-    },
     "filament_multitool_ramming_volume": {
       "2.3.1": [
         "10"
@@ -303,47 +214,7 @@
         "10"
       ]
     },
-    "filament_notes": {
-      "2.3.1": [
-        ""
-      ],
-      "2.5.0": [
-        ""
-      ]
-    },
-    "filament_ramming_parameters": {
-      "2.3.1": [
-        "120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6"
-      ],
-      "2.5.0": [
-        "120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6"
-      ]
-    },
     "filament_retract_before_wipe": {
-      "2.3.1": [
-        "nil"
-      ],
-      "2.5.0": [
-        "nil"
-      ]
-    },
-    "filament_retract_lift_above": {
-      "2.3.1": [
-        "nil"
-      ],
-      "2.5.0": [
-        "nil"
-      ]
-    },
-    "filament_retract_lift_below": {
-      "2.3.1": [
-        "nil"
-      ],
-      "2.5.0": [
-        "nil"
-      ]
-    },
-    "filament_retract_lift_enforce": {
       "2.3.1": [
         "nil"
       ],
@@ -360,6 +231,14 @@
       ]
     },
     "filament_retract_when_changing_layer": {
+      "2.3.1": [
+        "nil"
+      ],
+      "2.5.0": [
+        "nil"
+      ]
+    },
+    "filament_retraction_distances_when_cut": {
       "2.3.1": [
         "nil"
       ],
@@ -399,31 +278,7 @@
         "Chuanying PLA"
       ]
     },
-    "filament_shrink": {
-      "2.3.1": [
-        "100%"
-      ],
-      "2.5.0": [
-        "100%"
-      ]
-    },
     "filament_soluble": {
-      "2.3.1": [
-        "0"
-      ],
-      "2.5.0": [
-        "0"
-      ]
-    },
-    "filament_start_gcode": {
-      "2.3.1": [
-        "; filament start gcode\n;right_extruder_material:PLA-CF10\n"
-      ],
-      "2.5.0": [
-        "; filament start gcode\n;right_extruder_material:PLA-CF10\n"
-      ]
-    },
-    "filament_toolchange_delay": {
       "2.3.1": [
         "0"
       ],
@@ -437,22 +292,6 @@
       ],
       "2.5.0": [
         "PLA-CF"
-      ]
-    },
-    "filament_unloading_speed": {
-      "2.3.1": [
-        "90"
-      ],
-      "2.5.0": [
-        "90"
-      ]
-    },
-    "filament_unloading_speed_start": {
-      "2.3.1": [
-        "100"
-      ],
-      "2.5.0": [
-        "100"
       ]
     },
     "filament_vendor": {
@@ -503,12 +342,44 @@
         "0"
       ]
     },
-    "hot_plate_temp_initial_layer": {
+    "filament_scarf_seam_type": {
       "2.3.1": [
-        "55"
+        "none"
       ],
       "2.5.0": [
-        "55"
+        "none"
+      ]
+    },
+    "filament_scarf_height": {
+      "2.3.1": [
+        "10%"
+      ],
+      "2.5.0": [
+        "10%"
+      ]
+    },
+    "filament_scarf_gap": {
+      "2.3.1": [
+        "15%"
+      ],
+      "2.5.0": [
+        "15%"
+      ]
+    },
+    "filament_scarf_length": {
+      "2.3.1": [
+        "10"
+      ],
+      "2.5.0": [
+        "10"
+      ]
+    },
+    "filament_shrink": {
+      "2.3.1": [
+        "100%"
+      ],
+      "2.5.0": [
+        "100%"
       ]
     },
     "hot_plate_temp": {
@@ -517,6 +388,14 @@
       ],
       "2.5.0": [
         "50"
+      ]
+    },
+    "hot_plate_temp_initial_layer": {
+      "2.3.1": [
+        "55"
+      ],
+      "2.5.0": [
+        "55"
       ]
     },
     "nozzle_temperature": {
@@ -535,22 +414,6 @@
         "220"
       ]
     },
-    "nozzle_temperature_range_high": {
-      "2.3.1": [
-        "230"
-      ],
-      "2.5.0": [
-        "230"
-      ]
-    },
-    "nozzle_temperature_range_low": {
-      "2.3.1": [
-        "190"
-      ],
-      "2.5.0": [
-        "190"
-      ]
-    },
     "overhang_fan_speed": {
       "2.3.1": [
         "100"
@@ -567,14 +430,6 @@
         "50%"
       ]
     },
-    "pressure_advance": {
-      "2.3.1": [
-        "0.025"
-      ],
-      "2.5.0": [
-        "0.025"
-      ]
-    },
     "reduce_fan_stop_start_freq": {
       "2.3.1": [
         "1"
@@ -589,6 +444,22 @@
       ],
       "2.5.0": [
         "0"
+      ]
+    },
+    "supertack_plate_temp": {
+      "2.3.1": [
+        "45"
+      ],
+      "2.5.0": [
+        "45"
+      ]
+    },
+    "supertack_plate_temp_initial_layer": {
+      "2.3.1": [
+        "45"
+      ],
+      "2.5.0": [
+        "45"
       ]
     },
     "slow_down_for_layer_cooling": {
@@ -615,14 +486,6 @@
         "20"
       ]
     },
-    "support_material_interface_fan_speed": {
-      "2.3.1": [
-        "100"
-      ],
-      "2.5.0": [
-        "100"
-      ]
-    },
     "temperature_vitrification": {
       "2.3.1": [
         "60"
@@ -647,92 +510,256 @@
         "60"
       ]
     },
-    "activate_air_filtration": {
+    "filament_start_gcode": {
       "2.3.1": [
-        "0"
+        "; filament start gcode\n;right_extruder_material:PLA-CF10\n"
       ],
-      "2.3.2": null
+      "2.5.0": [
+        "; filament start gcode\n;right_extruder_material:PLA-CF10\n"
+      ]
     },
-    "chamber_temperatures": {
+    "filament_end_gcode": {
       "2.3.1": [
-        "0"
+        "; filament end gcode \n"
       ],
-      "2.3.2": null
+      "2.5.0": [
+        "; filament end gcode \n"
+      ]
     },
-    "complete_print_exhaust_fan_speed": {
+    "compatible_printers": {
       "2.3.1": [
-        "70"
+        "Chuanying X1 0.4 Nozzle",
+        "Chuanying X1 0.6 Nozzle",
+        "Chuanying X1 0.8 Nozzle"
       ],
-      "2.3.2": null
+      "2.5.0": [
+        "Chuanying X1 0.4 Nozzle",
+        "Chuanying X1 0.6 Nozzle",
+        "Chuanying X1 0.8 Nozzle"
+      ]
     },
-    "during_print_exhaust_fan_speed": {
+    "additional_cooling_fan_speed": {
       "2.3.1": [
-        "70"
+        "100"
       ],
-      "2.3.2": null
+      "2.5.0": [
+        "100"
+      ]
     },
-    "filament_long_retractions_when_cut": {
-      "2.3.1": [
-        "nil"
-      ],
-      "2.3.2": null
-    },
-    "filament_retraction_distances_when_cut": {
-      "2.3.1": [
-        "nil"
-      ],
-      "2.3.2": null
-    },
-    "filament_scarf_seam_type": {
-      "2.3.1": [
-        "none"
-      ],
-      "2.3.2": null
-    },
-    "filament_scarf_height": {
-      "2.3.1": [
-        "10%"
-      ],
-      "2.3.2": null
-    },
-    "filament_scarf_gap": {
-      "2.3.1": [
-        "15%"
-      ],
-      "2.3.2": null
-    },
-    "filament_scarf_length": {
+    "filament_multitool_ramming_flow": {
       "2.3.1": [
         "10"
       ],
-      "2.3.2": null
+      "2.5.0": [
+        "10"
+      ]
     },
-    "supertack_plate_temp": {
+    "nozzle_temperature_range_low": {
       "2.3.1": [
-        "45"
+        "190"
       ],
-      "2.3.2": null
+      "2.5.0": [
+        "190"
+      ]
     },
-    "supertack_plate_temp_initial_layer": {
+    "nozzle_temperature_range_high": {
       "2.3.1": [
-        "45"
+        "230"
       ],
-      "2.3.2": null
+      "2.5.0": [
+        "230"
+      ]
+    },
+    "setting_id": {
+      "2.3.1": "GFSA04",
+      "2.4.1": "EZA59VPwew1cpyUJ",
+      "2.5.0": "I4FjaXNkWl8Mr4ie"
+    },
+    "filament_id": {
+      "2.3.1": "GFL99",
+      "2.5.0": "OFX2zcrM"
+    },
+    "chamber_temperature": {
+      "2.3.1": [
+        "0"
+      ],
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "compatible_printers_condition": {
+      "2.3.1": "",
+      "2.5.0": ""
+    },
+    "compatible_prints": {
+      "2.3.1": [],
+      "2.5.0": []
+    },
+    "compatible_prints_condition": {
+      "2.3.1": "",
+      "2.5.0": ""
+    },
+    "default_filament_colour": {
+      "2.3.1": [
+        ""
+      ],
+      "2.5.0": [
+        ""
+      ]
+    },
+    "enable_overhang_bridge_fan": {
+      "2.3.1": [
+        "1"
+      ],
+      "2.5.0": [
+        "1"
+      ]
+    },
+    "enable_pressure_advance": {
+      "2.3.1": [
+        "1"
+      ],
+      "2.5.0": [
+        "1"
+      ]
+    },
+    "filament_cooling_final_speed": {
+      "2.3.1": [
+        "3.4"
+      ],
+      "2.5.0": [
+        "3.4"
+      ]
+    },
+    "filament_cooling_initial_speed": {
+      "2.3.1": [
+        "2.2"
+      ],
+      "2.5.0": [
+        "2.2"
+      ]
+    },
+    "filament_cooling_moves": {
+      "2.3.1": [
+        "4"
+      ],
+      "2.5.0": [
+        "4"
+      ]
+    },
+    "filament_loading_speed": {
+      "2.3.1": [
+        "28"
+      ],
+      "2.5.0": [
+        "28"
+      ]
+    },
+    "filament_loading_speed_start": {
+      "2.3.1": [
+        "3"
+      ],
+      "2.5.0": [
+        "3"
+      ]
+    },
+    "filament_notes": {
+      "2.3.1": [
+        ""
+      ],
+      "2.5.0": [
+        ""
+      ]
+    },
+    "filament_ramming_parameters": {
+      "2.3.1": [
+        "120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6"
+      ],
+      "2.5.0": [
+        "120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6"
+      ]
+    },
+    "filament_retract_lift_above": {
+      "2.3.1": [
+        "nil"
+      ],
+      "2.5.0": [
+        "nil"
+      ]
+    },
+    "filament_retract_lift_below": {
+      "2.3.1": [
+        "nil"
+      ],
+      "2.5.0": [
+        "nil"
+      ]
+    },
+    "filament_retract_lift_enforce": {
+      "2.3.1": [
+        "nil"
+      ],
+      "2.5.0": [
+        "nil"
+      ]
+    },
+    "filament_toolchange_delay": {
+      "2.3.1": [
+        "0"
+      ],
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "filament_unloading_speed": {
+      "2.3.1": [
+        "90"
+      ],
+      "2.5.0": [
+        "90"
+      ]
+    },
+    "filament_unloading_speed_start": {
+      "2.3.1": [
+        "100"
+      ],
+      "2.5.0": [
+        "100"
+      ]
+    },
+    "pressure_advance": {
+      "2.3.1": [
+        "0.025"
+      ],
+      "2.5.0": [
+        "0.025"
+      ]
+    },
+    "support_material_interface_fan_speed": {
+      "2.3.1": [
+        "100"
+      ],
+      "2.5.0": [
+        "100"
+      ]
     },
     "bed_temperature_difference": {
       "2.3.1": [
         "10"
-      ]
+      ],
+      "2.5.0": null
     },
     "filament_load_time": {
       "2.3.1": [
         "0"
-      ]
+      ],
+      "2.5.0": null
     },
     "filament_unload_time": {
       "2.3.1": [
         "0"
-      ]
+      ],
+      "2.5.0": null
     }
   }
 }

@@ -26,14 +26,69 @@
     "instantiation": {
       "2.5.0": "true"
     },
-    "activate_air_filtration": {
+    "filament_vendor": {
+      "2.5.0": [
+        "Snapmaker"
+      ]
+    },
+    "filament_start_gcode": {
+      "2.5.0": [
+        ""
+      ]
+    },
+    "filament_end_gcode": {
+      "2.5.0": [
+        ""
+      ]
+    },
+    "filament_is_support": {
       "2.5.0": [
         "0"
       ]
     },
-    "chamber_temperatures": {
+    "filament_soluble": {
       "2.5.0": [
         "0"
+      ]
+    },
+    "filament_settings_id": {
+      "2.5.0": [
+        ""
+      ]
+    },
+    "required_nozzle_HRC": {
+      "2.5.0": [
+        "3"
+      ]
+    },
+    "bed_type": {
+      "2.5.0": [
+        "Hot Plate"
+      ]
+    },
+    "hot_plate_temp": {
+      "2.5.0": [
+        "60"
+      ]
+    },
+    "hot_plate_temp_initial_layer": {
+      "2.5.0": [
+        "60"
+      ]
+    },
+    "overhang_fan_threshold": {
+      "2.5.0": [
+        "0%"
+      ]
+    },
+    "overhang_fan_speed": {
+      "2.5.0": [
+        "100"
+      ]
+    },
+    "slow_down_for_layer_cooling": {
+      "2.5.0": [
+        "1"
       ]
     },
     "close_fan_the_first_x_layers": {
@@ -41,34 +96,14 @@
         "1"
       ]
     },
-    "complete_print_exhaust_fan_speed": {
+    "filament_flow_ratio": {
       "2.5.0": [
-        "70"
+        "0.98"
       ]
     },
-    "cool_plate_temp": {
+    "reduce_fan_stop_start_freq": {
       "2.5.0": [
-        "35"
-      ]
-    },
-    "cool_plate_temp_initial_layer": {
-      "2.5.0": [
-        "35"
-      ]
-    },
-    "during_print_exhaust_fan_speed": {
-      "2.5.0": [
-        "70"
-      ]
-    },
-    "eng_plate_temp": {
-      "2.5.0": [
-        "0"
-      ]
-    },
-    "eng_plate_temp_initial_layer": {
-      "2.5.0": [
-        "0"
+        "1"
       ]
     },
     "fan_cooling_layer_time": {
@@ -76,21 +111,9 @@
         "100"
       ]
     },
-    "fan_max_speed": {
-      "2.5.0": [
-        "100",
-        "100"
-      ]
-    },
-    "fan_min_speed": {
-      "2.5.0": [
-        "100",
-        "100"
-      ]
-    },
     "filament_cost": {
       "2.5.0": [
-        "20"
+        "60"
       ]
     },
     "filament_density": {
@@ -108,21 +131,6 @@
         "1.75"
       ]
     },
-    "filament_flow_ratio": {
-      "2.5.0": [
-        "0.98"
-      ]
-    },
-    "filament_is_support": {
-      "2.5.0": [
-        "0"
-      ]
-    },
-    "filament_long_retractions_when_cut": {
-      "2.5.0": [
-        "nil"
-      ]
-    },
     "filament_max_volumetric_speed": {
       "2.5.0": [
         "7.5",
@@ -135,17 +143,12 @@
     },
     "filament_minimal_purge_on_wipe_tower": {
       "2.5.0": [
-        "15"
+        "0"
       ]
     },
-    "filament_multitool_ramming": {
+    "filament_retraction_minimum_travel": {
       "2.5.0": [
-        "1"
-      ]
-    },
-    "filament_multitool_ramming_volume": {
-      "2.5.0": [
-        "5"
+        "nil"
       ]
     },
     "filament_retract_before_wipe": {
@@ -153,17 +156,7 @@
         "nil"
       ]
     },
-    "filament_retract_restart_extra": {
-      "2.5.0": [
-        "nil"
-      ]
-    },
     "filament_retract_when_changing_layer": {
-      "2.5.0": [
-        "nil"
-      ]
-    },
-    "filament_retraction_distances_when_cut": {
       "2.5.0": [
         "nil"
       ]
@@ -178,34 +171,24 @@
         "0.5"
       ]
     },
-    "filament_retraction_minimum_travel": {
+    "filament_z_hop": {
+      "2.5.0": [
+        "nil"
+      ]
+    },
+    "filament_z_hop_types": {
+      "2.5.0": [
+        "nil"
+      ]
+    },
+    "filament_retract_restart_extra": {
       "2.5.0": [
         "nil"
       ]
     },
     "filament_retraction_speed": {
       "2.5.0": [
-        "nil"
-      ]
-    },
-    "filament_settings_id": {
-      "2.5.0": [
-        ""
-      ]
-    },
-    "filament_soluble": {
-      "2.5.0": [
-        "0"
-      ]
-    },
-    "filament_type": {
-      "2.5.0": [
-        "PLA"
-      ]
-    },
-    "filament_vendor": {
-      "2.5.0": [
-        "Generic"
+        "60"
       ]
     },
     "filament_wipe": {
@@ -218,59 +201,54 @@
         "nil"
       ]
     },
-    "filament_z_hop": {
+    "filament_loading_speed_start": {
       "2.5.0": [
-        "nil"
+        "3"
       ]
     },
-    "filament_z_hop_types": {
+    "filament_loading_speed": {
       "2.5.0": [
-        "nil"
+        "25"
       ]
     },
-    "full_fan_speed_layer": {
+    "filament_unloading_speed_start": {
+      "2.5.0": [
+        "3"
+      ]
+    },
+    "filament_unloading_speed": {
+      "2.5.0": [
+        "25"
+      ]
+    },
+    "filament_toolchange_delay": {
       "2.5.0": [
         "0"
       ]
     },
-    "filament_scarf_seam_type": {
+    "filament_cooling_moves": {
       "2.5.0": [
-        "none"
+        "0"
       ]
     },
-    "filament_scarf_height": {
+    "filament_cooling_initial_speed": {
       "2.5.0": [
-        "10%"
+        "2.2"
       ]
     },
-    "filament_scarf_gap": {
+    "filament_cooling_final_speed": {
       "2.5.0": [
-        "15%"
+        "3.4"
       ]
     },
-    "filament_scarf_length": {
+    "filament_multitool_ramming": {
       "2.5.0": [
-        "10"
+        "0"
       ]
     },
-    "filament_shrink": {
+    "filament_multitool_ramming_volume": {
       "2.5.0": [
-        "100%"
-      ]
-    },
-    "hot_plate_temp": {
-      "2.5.0": [
-        "55"
-      ]
-    },
-    "hot_plate_temp_initial_layer": {
-      "2.5.0": [
-        "55"
-      ]
-    },
-    "nozzle_temperature": {
-      "2.5.0": [
-        "220"
+        "0"
       ]
     },
     "nozzle_temperature_initial_layer": {
@@ -278,39 +256,36 @@
         "220"
       ]
     },
-    "overhang_fan_speed": {
+    "nozzle_temperature": {
       "2.5.0": [
+        "210"
+      ]
+    },
+    "temperature_vitrification": {
+      "2.5.0": [
+        "154"
+      ]
+    },
+    "full_fan_speed_layer": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "fan_max_speed": {
+      "2.5.0": [
+        "100",
         "100"
       ]
     },
-    "overhang_fan_threshold": {
+    "fan_min_speed": {
       "2.5.0": [
-        "50%"
+        "100",
+        "100"
       ]
     },
-    "reduce_fan_stop_start_freq": {
+    "slow_down_min_speed": {
       "2.5.0": [
-        "1"
-      ]
-    },
-    "required_nozzle_HRC": {
-      "2.5.0": [
-        "3"
-      ]
-    },
-    "supertack_plate_temp": {
-      "2.5.0": [
-        "45"
-      ]
-    },
-    "supertack_plate_temp_initial_layer": {
-      "2.5.0": [
-        "45"
-      ]
-    },
-    "slow_down_for_layer_cooling": {
-      "2.5.0": [
-        "1"
+        "15"
       ]
     },
     "slow_down_layer_time": {
@@ -318,50 +293,54 @@
         "8"
       ]
     },
-    "slow_down_min_speed": {
+    "enable_pressure_advance": {
       "2.5.0": [
-        "10"
+        "1"
       ]
     },
-    "temperature_vitrification": {
+    "pressure_advance": {
       "2.5.0": [
-        "45"
+        "0.02"
+      ]
+    },
+    "cool_plate_temp": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "eng_plate_temp": {
+      "2.5.0": [
+        "0"
       ]
     },
     "textured_plate_temp": {
       "2.5.0": [
-        "55"
+        "0"
+      ]
+    },
+    "cool_plate_temp_initial_layer": {
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "eng_plate_temp_initial_layer": {
+      "2.5.0": [
+        "0"
       ]
     },
     "textured_plate_temp_initial_layer": {
       "2.5.0": [
-        "55"
+        "0"
       ]
     },
-    "filament_start_gcode": {
+    "default_filament_colour": {
       "2.5.0": [
-        "; Filament gcode\n"
+        ""
       ]
     },
-    "filament_end_gcode": {
+    "filament_type": {
       "2.5.0": [
-        "; filament end gcode\n"
-      ]
-    },
-    "compatible_printers": {
-      "2.5.0": [
-        "Snapmaker U1 (0.6 nozzle)"
-      ]
-    },
-    "additional_cooling_fan_speed": {
-      "2.5.0": [
-        "70",
-        "70"
-      ]
-    },
-    "filament_multitool_ramming_flow": {
-      "2.5.0": [
-        "10"
+        "PLA"
       ]
     },
     "nozzle_temperature_range_low": {
@@ -374,8 +353,19 @@
         "240"
       ]
     },
+    "additional_cooling_fan_speed": {
+      "2.5.0": [
+        "70",
+        "70"
+      ]
+    },
     "description": {
       "2.5.0": "To make the prints get higher gloss, please dry the filament before use, and set the outer wall speed to be 40 to 60 mm/s when slicing."
+    },
+    "filament_multitool_ramming_flow": {
+      "2.5.0": [
+        "10"
+      ]
     },
     "setting_id": {
       "2.5.0": "8rhmpBFmMj9vVZwG"
@@ -387,6 +377,11 @@
       "2.5.0": [
         "Direct Drive Standard",
         "Direct Drive High Flow"
+      ]
+    },
+    "compatible_printers": {
+      "2.5.0": [
+        "Snapmaker U1 (0.6 nozzle)"
       ]
     }
   }
