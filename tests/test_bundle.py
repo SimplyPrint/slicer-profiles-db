@@ -229,20 +229,18 @@ def test_bundle_rejects_release_history_for_an_engine_without_it(tmp_path):
         raise AssertionError("undeclared release history must fail the build")
 
 
-def test_bundle_rejects_a_base_release_with_changes(tmp_path):
-    records = _history_records(
-        tmp_path, {"base": "2.4.2", "versions": {"2.4.2": {"speed": 50}}}
-    )
+ORCA_HISTORY = EngineTarget(
+    version="2.4.2", release_history=True, releases=("2.3.1", "2.4.2")
+)
 
+
+def _rejects(tmp_path, version_settings, message):
+    records = _history_records(tmp_path, version_settings)
     try:
         write_bundle(
             tmp_path / "invalid.spdb",
             records,
-            {
-                SlicerType.ORCASLICER: EngineTarget(
-                    version="2.4.2", release_history=True
-                )
-            },
+            {SlicerType.ORCASLICER: ORCA_HISTORY},
             {},
             tmp_path,
             _coverage(),
@@ -250,18 +248,38 @@ def test_bundle_rejects_a_base_release_with_changes(tmp_path):
     except ValueError as error:
         assert "Invalid version settings" in str(error)
     else:
-        raise AssertionError("a base release must equal the exported settings")
+        raise AssertionError(message)
 
 
-def test_bundle_reports_release_history_counts(tmp_path):
+def test_bundle_rejects_a_base_release_with_changes(tmp_path):
+    _rejects(
+        tmp_path,
+        {"base": "2.4.2", "versions": {"2.4.2": {"speed": 50}, "2.3.1": {}}},
+        "a base release must equal the exported settings",
+    )
+
+
+def test_bundle_rejects_versions_other_than_the_listed_releases(tmp_path):
+    for versions in (
+        {"2.4.2": {}},
+        {"2.4.2": {}, "2.3.1": {}, "2.3.0": {"speed": 40}},
+    ):
+        _rejects(
+            tmp_path,
+            {"base": "2.4.2", "versions": versions},
+            "version settings must describe exactly the listed releases",
+        )
+
+
+def test_bundle_reports_release_history_counts_and_releases(tmp_path):
     records = _history_records(
-        tmp_path, {"base": "2.4.2", "versions": {"2.4.2": {}, "2.3.1": {"speed": 50}}}
+        tmp_path, {"base": "2.4.2", "versions": {"2.4.2": {}, "2.3.1": None}}
     )
 
     manifest = write_bundle(
         tmp_path / "history.spdb",
         records,
-        {SlicerType.ORCASLICER: EngineTarget(version="2.4.2", release_history=True)},
+        {SlicerType.ORCASLICER: ORCA_HISTORY},
         {},
         tmp_path,
         _coverage(),
@@ -270,4 +288,6 @@ def test_bundle_reports_release_history_counts(tmp_path):
     assert manifest["engines"]["orcaslicer"]["release_history"] == {
         "enabled": True,
         "profiles": 1,
+        "releases": ["2.3.1", "2.4.2"],
+        "nightly": "2.4.2",
     }

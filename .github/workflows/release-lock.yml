@@ -1,0 +1,46 @@
+name: Release lock
+
+# engines.lock.json's releases are the ones version_settings describes. They must
+# be exactly the releases the cloud slicer can slice with.
+on:
+  push:
+    paths:
+      - ".github/workflows/release-lock.yml"
+      - "engines.lock.json"
+      - "slicer_profiles_db/catalog.py"
+      - "tools/check_release_lock.py"
+  pull_request:
+    paths:
+      - ".github/workflows/release-lock.yml"
+      - "engines.lock.json"
+      - "slicer_profiles_db/catalog.py"
+      - "tools/check_release_lock.py"
+  schedule:
+    - cron: "30 23 * * *"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - uses: astral-sh/setup-uv@v5
+
+      - run: uv sync
+
+      - name: Pinned versions are listed releases
+        run: uv run python tools/check_release_lock.py
+
+      - name: Releases match the cloud slicer
+        env:
+          # Read access to SimplyPrint/site-cloud-slicer.
+          GH_TOKEN: ${{ secrets.CLOUD_SLICER_LOCK_TOKEN }}
+        run: |
+          gh api repos/SimplyPrint/site-cloud-slicer/contents/slicers.lock.json \
+            --jq .content | base64 -d > "$RUNNER_TEMP/slicers.lock.json"
+          uv run python tools/check_release_lock.py "$RUNNER_TEMP/slicers.lock.json"

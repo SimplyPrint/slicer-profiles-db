@@ -473,6 +473,16 @@ class ProfilePipeline:
             self.reporter.update_status(
                 f"Skipping {skipped} already-ingested versions for {slicer.value}"
             )
+        # A whole release older than the newest ingested one would rewrite the
+        # history of the newer ones; ingest-releases --rebuild takes it in order.
+        newest = self.store.newest_release(slicer)
+        if config.complete_releases and newest is not None:
+            older = [v for v in new_versions if version_key(v) < version_key(newest)]
+            if older:
+                self.reporter.update_status(
+                    f"Skipping {len(older)} {slicer.value} versions older than {newest}"
+                )
+                new_versions = [v for v in new_versions if v not in older]
 
         reports = []
         for i, norm_ver in enumerate(new_versions, 1):
@@ -490,6 +500,62 @@ class ProfilePipeline:
                 )
                 continue
 
+        return reports
+
+    def ingest_releases(
+        self,
+        slicer: SlicerType,
+        releases: list[str],
+        rebuild: bool = False,
+    ) -> list[IngestionReport]:
+        """Make the store give each of ``releases`` exactly, from its own upstream tag.
+
+        Ingests every release that has no release manifest yet, oldest first.
+        History is recorded in release order, so when one of them is older than
+        a release already ingested (or ``rebuild`` is set), the slicer's store is
+        cleared and rebuilt from ``releases`` alone.
+        """
+        config = get_source_config(slicer)
+        if not config.complete_releases or not config.tag_pattern:
+            raise ValueError(f"{slicer.value} releases are not whole tagged catalogues")
+        ordered = sort_versions(list(releases))
+        missing = [
+            release
+            for release in ordered
+            if self.store.release_manifest(slicer, release) is None
+        ]
+        newest = self.store.newest_release(slicer)
+        if not rebuild and newest is not None:
+            rebuild = any(
+                version_key(release) < version_key(newest) for release in missing
+            )
+        if not rebuild and not missing:
+            return []
+
+        tags = enumerate_github_tags(
+            config.github_repo, tag_pattern=config.tag_pattern, slicer=slicer
+        )
+        raw_tags = {tag.normalized: tag.raw for tag in tags}
+        unknown = [release for release in ordered if release not in raw_tags]
+        if unknown:
+            raise DownloadError(
+                f"{config.github_repo} has no tag for {', '.join(unknown)}"
+            )
+
+        if rebuild:
+            slicer_dir = self.store.root / slicer.value
+            if slicer_dir.exists():
+                shutil.rmtree(slicer_dir)
+            self.reporter.update_status(
+                f"Rebuilding {slicer.value} from {', '.join(ordered)}"
+            )
+        to_ingest = ordered if rebuild else missing
+        reports = []
+        for i, release in enumerate(to_ingest, 1):
+            self.reporter.step(f"{slicer.value} {release}", i, len(to_ingest))
+            reports.append(self.ingest(slicer, raw_tags[release], force=True))
+            if self.store.release_manifest(slicer, release) is None:
+                raise StoreError(f"Ingesting {slicer.value} {release} left no manifest")
         return reports
 
     def ingest_evaluated_profile_bundle(

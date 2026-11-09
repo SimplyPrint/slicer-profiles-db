@@ -30,6 +30,8 @@ jobs:
 
       - name: Ingest profiles
         run: |
+          uv run python tools/check_release_lock.py
+          uv run slicer-profiles-db ingest-releases --overlay overlay
           uv run slicer-profiles-db ingest-all --version latest --overlay overlay --skip prusaslicer
           uv run slicer-profiles-db ingest prusaslicer --version latest --legacy-source --force --overlay overlay
           prusa_lane_version=$(jq -r '.engines.prusaslicer.lanes["prusaslicer-3"].version' engines.lock.json)

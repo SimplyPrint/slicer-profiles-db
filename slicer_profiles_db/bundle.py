@@ -288,20 +288,15 @@ def _version_settings_owners(record: Mapping[str, Any], target: EngineTarget) ->
             or not isinstance(index, Mapping)
             or not set(index) <= {"base", "versions", "renamed_from"}
             or (renamed is not None and (not isinstance(renamed, str) or not renamed))
-            or ("base" in index) != ("versions" in index)
-            or (
-                versions is not None
-                and (
-                    not isinstance(versions, Mapping)
-                    or index["base"] not in versions
-                    or versions[index["base"]] != {}
-                    or not all(
-                        item is None or isinstance(item, Mapping)
-                        for item in versions.values()
-                    )
-                )
+            or "base" not in index
+            or not isinstance(versions, Mapping)
+            # Exactly the listed releases: web never has to guess one.
+            or set(versions) != set(target.releases)
+            or index["base"] not in versions
+            or versions[index["base"]] != {}
+            or not all(
+                item is None or isinstance(item, Mapping) for item in versions.values()
             )
-            or (versions is None and renamed is None)
         ):
             raise ValueError(f"Invalid version settings for {record['id']}")
         count += 1
@@ -374,6 +369,14 @@ def write_bundle(
                 "release_history": {
                     "enabled": target.release_history,
                     "profiles": history_counts.get(slicer.value, 0),
+                    **(
+                        {
+                            "releases": list(target.releases),
+                            "nightly": target.nightly_release,
+                        }
+                        if target.release_history
+                        else {}
+                    ),
                 },
                 "lanes": {
                     lane: {

@@ -207,6 +207,40 @@ Environment variables:
     )
     pipeline_all_parser.set_defaults(func=run_ingest_all)
 
+    # --- ingest-releases ---
+    releases_parser = subparsers.add_parser(
+        "ingest-releases",
+        help="Ingest the listed releases the store cannot give exactly yet",
+    )
+    releases_parser.add_argument(
+        "slicers",
+        nargs="*",
+        choices=[s.value for s in SlicerType],
+        help="Slicers (default: every engine that keeps release history)",
+    )
+    releases_parser.add_argument(
+        "--rebuild",
+        action="store_true",
+        help="Clear each slicer's store and ingest its listed releases in order",
+    )
+    releases_parser.add_argument(
+        "--engine-lock",
+        default="engines.lock.json",
+        help="Committed engine target lock (default: engines.lock.json)",
+    )
+    releases_parser.add_argument(
+        "--store",
+        "-s",
+        default=None,
+        help="Store directory path (default: $SLICER_PROFILES_STORE or 'profiles')",
+    )
+    releases_parser.add_argument(
+        "--overlay",
+        default=None,
+        help="Overlay directory path (default: $SLICER_PROFILES_OVERLAY or 'overlay')",
+    )
+    releases_parser.set_defaults(func=run_ingest_releases)
+
     # --- diff ---
     diff_parser = subparsers.add_parser(
         "diff",
@@ -689,6 +723,40 @@ def run_ingest_all(args: argparse.Namespace) -> int:
         return 1  # All failed
     if errors:
         return 2  # Partial success
+    return 0
+
+
+def run_ingest_releases(args: argparse.Namespace) -> int:
+    """Execute the ingest-releases command."""
+    from slicer_profiles_db.catalog import load_engine_targets
+    from slicer_profiles_db.pipeline import ProfilePipeline
+    from slicer_profiles_db.versions import check_github_token
+
+    check_github_token(required=False)
+    lock_path = Path(args.engine_lock)
+    if not lock_path.is_absolute():
+        lock_path = project_root / lock_path
+    targets = load_engine_targets(lock_path)
+    slicers = (
+        [SlicerType(value) for value in args.slicers]
+        if args.slicers
+        else [slicer for slicer, target in targets.items() if target.release_history]
+    )
+    overlay_dir = Path(args.overlay or _default_overlay())
+    if not overlay_dir.is_absolute():
+        overlay_dir = project_root / overlay_dir
+    pipeline = ProfilePipeline(
+        store=ProfileStore(project_root / (args.store or _default_store())),
+        overlay_dir=overlay_dir,
+        reporter=_make_reporter(False),
+    )
+    for slicer in sorted(slicers, key=lambda item: item.value):
+        releases = list(targets[slicer].releases)
+        if not releases:
+            raise ValueError(f"engines.lock.json lists no {slicer.value} releases")
+        reports = pipeline.ingest_releases(slicer, releases, rebuild=args.rebuild)
+        ingested = ", ".join(report.version for report in reports) or "none needed"
+        print(f"  {slicer.value}: {ingested}")
     return 0
 
 
