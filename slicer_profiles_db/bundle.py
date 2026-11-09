@@ -295,7 +295,10 @@ def _version_settings_owners(record: Mapping[str, Any], target: EngineTarget) ->
                     not isinstance(versions, Mapping)
                     or index["base"] not in versions
                     or versions[index["base"]] != {}
-                    or not all(isinstance(item, Mapping) for item in versions.values())
+                    or not all(
+                        item is None or isinstance(item, Mapping)
+                        for item in versions.values()
+                    )
                 )
             )
             or (versions is None and renamed is None)

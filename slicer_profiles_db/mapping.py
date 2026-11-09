@@ -94,6 +94,23 @@ def _stable_version(profile: StoredProfile) -> str | None:
     return best or (last if last.startswith("nightly") else None)
 
 
+def _snapshot_filament_id(
+    profile: StoredProfile, data: Mapping[str, Any]
+) -> str | None:
+    """The filament ID of the exported release, not of the newest ingested one.
+
+    ``StoredProfile.filament_id`` follows the newest release; OrcaSlicer 2.5
+    renumbered its generics (``GFL99`` to ``OFDSrzZ8``), which a 2.4.2 export
+    must not carry.
+    """
+    value = data.get("filament_id")
+    if isinstance(value, list):
+        value = value[0] if value else None
+    if isinstance(value, str) and value:
+        return value
+    return profile.filament_id
+
+
 def _evaluate_stable(
     profile: StoredProfile,
     version_guards: Mapping[SlicerType, str] | None = None,
@@ -1697,7 +1714,10 @@ def map_filament_profiles(
     for slicer_profiles in model_map.model_to_profiles.values():
         active_slicers.update(slicer_profiles.keys())
     _generic_profiles = build_generic_profile_index(
-        index, [SlicerType(s) for s in active_slicers]
+        index,
+        [SlicerType(s) for s in active_slicers],
+        evaluate=snapshot,
+        filament_id=_snapshot_filament_id,
     )
     _global_templates = {
         slicer: _global_filament_templates(index, SlicerType(slicer), version_guards)
@@ -2022,6 +2042,8 @@ def _global_filament_templates(
         slicer, ProfileType.FILAMENT, "OrcaFilamentLibrary"
     ):
         data = _evaluate_stable(profile, version_guards)
+        if not data:
+            continue
         name = data.get("name", profile.name)
         if not isinstance(name, str) or not name.endswith("@System"):
             continue
@@ -2065,7 +2087,7 @@ def _add_filament_output(
             filament_type,
             filament_name,
             slicer_val,
-            filament_id=profile.filament_id,
+            filament_id=_snapshot_filament_id(profile, profile_data),
         )
 
     entries_by_payload = compatible_filaments.setdefault(output_name, {})
@@ -2692,7 +2714,7 @@ def _export_generic_filaments(
                                 filament_type,
                                 name,
                                 slicer_val,
-                                filament_id=fp.filament_id,
+                                filament_id=_snapshot_filament_id(fp, fp_data),
                             )
                         # Skip non-generic profiles without OFD linkage
                         is_generic_name = name.lower().startswith("generic")
@@ -2772,7 +2794,7 @@ def _export_global_generic_filaments(
                 filament_type,
                 name,
                 slicer.value,
-                filament_id=fp.filament_id,
+                filament_id=_snapshot_filament_id(fp, fp_data),
             )
             if filament_db_id:
                 entry["filament_db_ids"] = [filament_db_id]

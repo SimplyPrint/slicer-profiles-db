@@ -2,6 +2,9 @@
 ProfileIndex: in-memory O(1) lookups over stored profiles.
 """
 
+from collections.abc import Callable, Mapping
+from typing import Any
+
 from .conditions import evaluate_printer_condition
 from .models import ProfileType, SlicerType, StoredProfile
 from .store import ProfileStore
@@ -351,8 +354,14 @@ def is_profile_model_specific(
 def build_generic_profile_index(
     index: ProfileIndex,
     slicers: list[SlicerType] | None = None,
+    evaluate: Callable[[StoredProfile], Mapping[str, Any]] | None = None,
+    filament_id: Callable[[StoredProfile, Mapping[str, Any]], str | None] | None = None,
 ) -> dict[str, list[tuple[str, str, str]]]:
     """Build a generic profile index for resolving generic_id values.
+
+    ``evaluate`` gives a profile's settings at the exported release and
+    ``filament_id`` its ID there; by default the newest ingested release is used.
+    A profile ``evaluate`` finds empty is not in that release and is skipped.
 
     Returns: {slicer_val: [(generic_name_lower, filament_type_upper, filament_id), ...]}
     Sorted longest-name-first so specific generics (e.g. "Generic PLA Silk") match
@@ -367,14 +376,17 @@ def build_generic_profile_index(
         for fp in index.find_by_type(slicer, ProfileType.FILAMENT):
             if "Generic" not in fp.name or " @" in fp.name:
                 continue
-            if not fp.filament_id or " " in fp.filament_id:
+            fp_data = evaluate(fp) if evaluate else fp.evaluate(fp.last_seen)
+            if not fp_data:
                 continue
-            fp_data = fp.evaluate(fp.last_seen)
+            fid = filament_id(fp, fp_data) if filament_id else fp.filament_id
+            if not fid or " " in fid:
+                continue
             ft = fp_data.get("filament_type", "")
             if isinstance(ft, list):
                 ft = ft[0] if ft else ""
             if ft:
-                entries.append((fp.name.lower(), ft.upper(), fp.filament_id))
+                entries.append((fp.name.lower(), ft.upper(), fid))
         entries.sort(key=lambda e: -len(e[0]))
         result[slicer.value] = entries
     return result

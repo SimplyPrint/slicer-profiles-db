@@ -227,6 +227,9 @@ class SourceConfig(BaseModel):
     additional_repos: list[str] = Field(default_factory=list)
     evaluated_profile_bundle_index: str | None = None
     runtime_version_guard: bool = False
+    # Each tagged release ships the slicer's whole profile catalogue, so a
+    # profile missing from one was removed (or renamed or moved) upstream.
+    complete_releases: bool = False
 
 
 class VersionInfo(BaseModel):

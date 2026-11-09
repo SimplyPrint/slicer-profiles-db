@@ -65,20 +65,21 @@ def release_index(
     baseline: Mapping[str, Any],
     releases: list[str],
 ) -> dict[str, Any] | None:
-    """The changes from ``baseline`` per release; None when no release exports it."""
+    """The changes from ``baseline`` per release; None when no release exports it.
+
+    A release without the profile (before it was added, or after the store
+    tombstoned it as removed) maps to ``None``, so a slicer asking for that
+    release, or for a newer one when it is the newest, gets no profile.
+    """
     ordered = sorted(
         (release for release in releases if not _nightly(release)), key=_version_key
     )
-    snapshots = {}
-    for release in ordered:
-        snapshot = _evaluate(history, release)
-        if snapshot:
-            snapshots[release] = snapshot
+    snapshots = {release: _evaluate(history, release) for release in ordered}
     base = next(
         (
             release
             for release in reversed(snapshots)
-            if not _changes(snapshots[release], baseline)
+            if snapshots[release] and not _changes(snapshots[release], baseline)
         ),
         None,
     )
@@ -87,7 +88,7 @@ def release_index(
     return {
         "base": base,
         "versions": {
-            release: _changes(snapshot, baseline)
+            release: _changes(snapshot, baseline) if snapshot else None
             for release, snapshot in snapshots.items()
         },
     }
@@ -100,7 +101,9 @@ def twin(
     return {
         "base": index["base"],
         "versions": {
-            release: {
+            release: None
+            if changes is None
+            else {
                 key: value
                 for key, value in changes.items()
                 if _same(source.get(key), copy.get(key))
