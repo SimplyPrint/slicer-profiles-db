@@ -38,6 +38,7 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
         nightly_branch="master",
         min_version="02.04.00.70",
         runtime_version_guard=True,
+        complete_releases=True,
         profile_type_dirs={
             ProfileType.FILAMENT: "filament",
             ProfileType.MACHINE: "machine",
@@ -52,6 +53,7 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
         tag_pattern=r"^v\d+",
         min_version="2.2.0",
         runtime_version_guard=True,
+        complete_releases=True,
         filament_library_name="OrcaFilamentLibrary",
         profile_type_dirs={
             ProfileType.FILAMENT: "filament",
@@ -68,6 +70,7 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
         min_version="7.1.0",
         nightly_branch="master",
         runtime_version_guard=True,
+        complete_releases=True,
         profile_type_dirs={
             ProfileType.FILAMENT: "filament",
             ProfileType.MACHINE: "machine",
@@ -110,6 +113,7 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
         tag_pattern=r"^v\d+",
         min_version="1.1.5",
         runtime_version_guard=True,
+        complete_releases=True,
         profile_type_dirs={
             ProfileType.FILAMENT: "filament",
             ProfileType.MACHINE: "machine",
@@ -124,6 +128,7 @@ DEFAULT_CONFIGS: dict[SlicerType, SourceConfig] = {
         tag_pattern=r"^v\d+",
         min_version="2.3.0",
         runtime_version_guard=True,
+        complete_releases=True,
         profile_type_dirs={
             ProfileType.FILAMENT: "filament",
             ProfileType.MACHINE: "machine",
@@ -375,10 +380,18 @@ def _extract_repo(
             for file in zip_f.namelist():
                 if not file.startswith(member) or file.endswith("/"):
                     continue
-                if not pattern.match(file):
+                rel_path = Path(file).relative_to(member)
+                # A JSON slicer's vendor index (``<vendor>.json`` beside its
+                # directory) says which file the slicer loads when several
+                # share a profile name.
+                vendor_index = (
+                    bool(profile_type_dirs)
+                    and len(rel_path.parts) == 1
+                    and rel_path.suffix == ".json"
+                )
+                if not pattern.match(file) and not vendor_index:
                     continue
 
-                rel_path = Path(file).relative_to(member)
                 if config.slicer == SlicerType.CURA and "fdm_materials" in repo:
                     rel_path = Path("materials") / rel_path
                 dest_path = slicer_output / rel_path

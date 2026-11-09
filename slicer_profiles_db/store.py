@@ -14,6 +14,7 @@ from .models import (
     ProfileType,
     SlicerType,
     StoredProfile,
+    _version_key,
 )
 
 logger = logging.getLogger(__name__)
@@ -114,14 +115,20 @@ class ProfileStore:
         slicer: SlicerType,
         version: str,
         profiles: list[ParsedProfile],
+        complete_release: bool = False,
     ) -> IngestionReport:
         """
         Ingest pre-parsed profiles into the store for a given version.
 
-        - New profiles: creates StoredProfile with first_seen = version
+        - New profiles: creates StoredProfile with first_seen = version.  A new
+          profile that upstream renamed (``renamed_from``) or moved to another
+          vendor takes over the history of the profile it replaces.
         - Existing profiles: compares each setting value; adds new version
           entry only if the value changed
-        - Missing profiles: keeps them but doesn't update last_seen
+        - Missing profiles: kept.  When ``complete_release`` says ``profiles``
+          is a whole stable release of the types it covers, each one missing
+          is tombstoned at ``version`` (every setting set to ``None``), so it
+          evaluates empty from that release on.  Otherwise they are left as is.
         - Returns IngestionReport with adds, removes, changes
         """
         # Deduplicate: when multiple parsed profiles share the same key
@@ -148,14 +155,29 @@ class ProfileStore:
 
         added = []
         changed = {}
-        seen_keys = set()
+        seen_keys = set(deduped)
+        scope_types = {profile.profile_type.value for profile in profiles}
+        # Stored profiles this release no longer has, by type and name: the
+        # profiles a rename or a vendor move can take over.
+        replaceable: dict[tuple[str, str], list[StoredProfile]] = {}
+        for stored_profile in self.list_profiles(slicer):
+            if (
+                stored_profile.storage_key
+                or stored_profile.profile_type not in scope_types
+            ):
+                continue
+            stored_key = self._profile_key(
+                slicer,
+                stored_profile.profile_type,
+                stored_profile.vendor,
+                stored_profile.name,
+            )
+            if stored_key not in seen_keys:
+                replaceable.setdefault(
+                    (stored_profile.profile_type, stored_profile.name), []
+                ).append(stored_profile)
 
         for p in profiles:
-            key = self._profile_key(
-                slicer, p.profile_type, p.vendor, p.name, p.storage_key
-            )
-            seen_keys.add(key)
-
             existing = self._load(
                 slicer,
                 p.profile_type.value,
@@ -165,15 +187,19 @@ class ProfileStore:
             )
             if existing is None:
                 stored = self._create_stored(p, version)
-                # Handle renames: merge history from old-name profile
-                old_name = self._extract_renamed_from(p.settings)
-                if old_name:
-                    old_profile = self._load(
-                        slicer, p.profile_type.value, p.vendor, old_name
+                old_profile = (
+                    None
+                    if p.storage_key
+                    else self._replaced_profile(p, replaceable, complete_release)
+                )
+                if old_profile is not None:
+                    self._merge_rename(stored, old_profile, version)
+                    self._delete(
+                        slicer,
+                        old_profile.profile_type,
+                        old_profile.vendor,
+                        old_profile.name,
                     )
-                    if old_profile is not None:
-                        self._merge_rename(stored, old_profile)
-                        self._delete(slicer, p.profile_type.value, p.vendor, old_name)
                 self._save(stored)
                 added.append(p.name)
             else:
@@ -185,6 +211,20 @@ class ProfileStore:
         # Detect removed profiles
         all_keys = self._list_profile_keys(slicer)
         removed = [k for k in all_keys if k not in seen_keys]
+        if complete_release and self._tombstones_at(meta, version):
+            for stored_profile in self.list_profiles(slicer):
+                key = self._profile_key(
+                    slicer,
+                    stored_profile.profile_type,
+                    stored_profile.vendor,
+                    stored_profile.name,
+                    stored_profile.storage_key,
+                )
+                if key in seen_keys or stored_profile.profile_type not in scope_types:
+                    continue
+                if self._tombstone(stored_profile, version):
+                    changed[stored_profile.name] = ["__removed__"]
+                    self._save(stored_profile)
 
         # Only advance slicer metadata when this ingest changed stored state.
         # This avoids synthetic branch-based versions (for example daily Cura
@@ -554,36 +594,82 @@ class ProfileStore:
         return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
     @staticmethod
-    def _extract_renamed_from(settings: dict) -> str | None:
-        """Extract the old profile name from a renamed_from field.
+    def _extract_renamed_from(settings: dict) -> list[str]:
+        """Extract the old profile names from a renamed_from field.
 
-        OrcaSlicer raw profiles use a plain string:
-        ``"renamed_from": "Old Profile Name"``
+        OrcaSlicer and BambuStudio write one string listing the old names
+        separated by ``;``, each optionally quoted C-style:
+        ``"renamed_from": "Old Name;Older Name"``.  A dict form
+        (``{"version": "old name"}``) is accepted too.
 
-        Returns the old name string, or None if not present.
+        Returns the old names in the order given, or an empty list.
         """
         rf = settings.get("renamed_from")
-        if not rf:
-            return None
-        if isinstance(rf, str):
-            return rf
-        # Handle dict form (e.g. {"version": "old name"}) in case any source uses it
         if isinstance(rf, dict):
-            for old_name in rf.values():
-                if isinstance(old_name, str):
-                    return old_name
+            rf = ";".join(value for value in rf.values() if isinstance(value, str))
+        if not isinstance(rf, str):
+            return []
+        names = []
+        for part in rf.split(";"):
+            name = part.strip()
+            if len(name) >= 2 and name[0] == name[-1] == '"':
+                name = name[1:-1].replace('\\"', '"').replace("\\\\", "\\")
+            if name and name not in names:
+                names.append(name)
+        return names
+
+    def _replaced_profile(
+        self,
+        parsed: ParsedProfile,
+        replaceable: dict[tuple[str, str], list[StoredProfile]],
+        complete_release: bool,
+    ) -> StoredProfile | None:
+        """The stored profile a new profile replaces, if any, removed from ``replaceable``.
+
+        A profile replaces one this release no longer has when it names it in
+        ``renamed_from`` (same vendor first, then any vendor), or, in a complete
+        release, when it has the same name and type and only another vendor had
+        it (a move, such as OrcaSlicer 2.5 moving BBL filaments to the
+        OrcaFilamentLibrary).
+        """
+        profile_type = parsed.profile_type.value
+
+        def take(name: str, same_vendor: bool) -> StoredProfile | None:
+            candidates = [
+                candidate
+                for candidate in replaceable.get((profile_type, name), [])
+                if (candidate.vendor == parsed.vendor) == same_vendor
+            ]
+            if len(candidates) != 1:
+                return None
+            replaceable[(profile_type, name)].remove(candidates[0])
+            return candidates[0]
+
+        old_names = self._extract_renamed_from(parsed.settings)
+        for same_vendor in (True, False):
+            for old_name in old_names:
+                found = take(old_name, same_vendor)
+                if found is not None:
+                    return found
+        if complete_release:
+            return take(parsed.name, False)
         return None
 
     def _merge_rename(
-        self, new_profile: StoredProfile, old_profile: StoredProfile
+        self, new_profile: StoredProfile, old_profile: StoredProfile, version: str
     ) -> None:
-        """Merge version history from an old (renamed) profile into a new one.
+        """Merge version history from an old (renamed or moved) profile into a new one.
 
         Prepends the old profile's versioned settings so that the new profile
-        carries the full history.  Updates first_seen and sets renamed_from.
+        carries the full history, and tombstones at ``version`` the settings the
+        new profile no longer has.  Updates first_seen and, for a rename, sets
+        renamed_from.
         """
         new_profile.first_seen = old_profile.first_seen
-        new_profile.renamed_from = old_profile.name
+        if old_profile.name != new_profile.name:
+            new_profile.renamed_from = old_profile.name
+        else:
+            new_profile.renamed_from = old_profile.renamed_from
 
         for key, old_versions in old_profile.settings.items():
             if key in new_profile.settings:
@@ -592,7 +678,43 @@ class ProfileStore:
                 merged.update(new_profile.settings[key])
                 new_profile.settings[key] = merged
             else:
-                new_profile.settings[key] = dict(old_versions)
+                merged = dict(old_versions)
+                if list(merged.values())[-1] is not None:
+                    merged[version] = None
+                new_profile.settings[key] = merged
+
+    @staticmethod
+    def _tombstones_at(meta: dict, version: str) -> bool:
+        """Whether removals may be recorded at ``version``.
+
+        Only a stable release that is not older than any stable release already
+        ingested: tombstoning an older one would sort after newer values in the
+        insertion-ordered history.
+        """
+        from .versions import is_prerelease
+
+        if version.startswith("nightly") or is_prerelease(version):
+            return False
+        target = _version_key(version)
+        return all(
+            _version_key(known) <= target
+            for known in meta.get("versions", [])
+            if not known.startswith("nightly") and not is_prerelease(known)
+        )
+
+    @staticmethod
+    def _tombstone(stored: StoredProfile, version: str) -> bool:
+        """Set every live setting of a profile to ``None`` at ``version``."""
+        if _version_key(stored.first_seen) > _version_key(version):
+            return False
+        tombstoned = False
+        for history in stored.settings.values():
+            if history and list(history.values())[-1] is not None:
+                history[version] = None
+                tombstoned = True
+        if tombstoned:
+            stored.last_seen = version
+        return tombstoned
 
     def _delete(
         self,

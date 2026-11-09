@@ -271,7 +271,12 @@ class ProfilePipeline:
         self.reporter.update_status(
             f"Storing {len(parsed)} {slicer.value} profiles (version {normalized_version})..."
         )
-        report = self.store.ingest_profiles(slicer, normalized_version, parsed)
+        report = self.store.ingest_profiles(
+            slicer,
+            normalized_version,
+            parsed,
+            complete_release=config.complete_releases and not profile_types,
+        )
 
         # Step 9: Garbage-collect orphaned resources
         referenced = collect_referenced_hashes(self.store.root, slicer.value)

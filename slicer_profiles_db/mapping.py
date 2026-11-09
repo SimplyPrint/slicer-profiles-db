@@ -94,6 +94,23 @@ def _stable_version(profile: StoredProfile) -> str | None:
     return best or (last if last.startswith("nightly") else None)
 
 
+def _snapshot_filament_id(
+    profile: StoredProfile, data: Mapping[str, Any]
+) -> str | None:
+    """The filament ID of the exported release, not of the newest ingested one.
+
+    ``StoredProfile.filament_id`` follows the newest release; OrcaSlicer 2.5
+    renumbered its generics (``GFL99`` to ``OFDSrzZ8``), which a 2.4.2 export
+    must not carry.
+    """
+    value = data.get("filament_id")
+    if isinstance(value, list):
+        value = value[0] if value else None
+    if isinstance(value, str) and value:
+        return value
+    return profile.filament_id
+
+
 def _evaluate_stable(
     profile: StoredProfile,
     version_guards: Mapping[SlicerType, str] | None = None,
@@ -1697,7 +1714,10 @@ def map_filament_profiles(
     for slicer_profiles in model_map.model_to_profiles.values():
         active_slicers.update(slicer_profiles.keys())
     _generic_profiles = build_generic_profile_index(
-        index, [SlicerType(s) for s in active_slicers]
+        index,
+        [SlicerType(s) for s in active_slicers],
+        evaluate=snapshot,
+        filament_id=_snapshot_filament_id,
     )
     _global_templates = {
         slicer: _global_filament_templates(index, SlicerType(slicer), version_guards)
@@ -1745,12 +1765,20 @@ def map_filament_profiles(
                             "printer_settings_id", printer_name
                         )
 
-                    # Find all filament profiles for this vendor
+                    # Find all filament profiles for this vendor, and the shared
+                    # library's that name their printers
                     filament_profiles = index.find_by_type(
                         slicer,
                         ProfileType.FILAMENT,
                         None if uses_resource_constraints else vendor,
                     )
+                    if not uses_resource_constraints:
+                        filament_profiles = [
+                            *filament_profiles,
+                            *_library_printer_filaments(
+                                index, slicer, vendor, snapshot
+                            ),
+                        ]
                     for fp in filament_profiles:
                         fp_data = snapshot(fp)
                         if not fp_data:
@@ -2008,6 +2036,33 @@ def _profile_matches_printer(
     )
 
 
+def _library_printer_filaments(
+    index: ProfileIndex,
+    slicer: SlicerType,
+    vendor: str,
+    snapshot: Any,
+) -> list[StoredProfile]:
+    """The shared filament library's profiles for named printers.
+
+    OrcaSlicer 2.5 moved vendor filaments such as ``AliZ PETG @P1-X1`` from
+    ``BBL`` into ``OrcaFilamentLibrary``; they still list the printers they
+    fit in ``compatible_printers``, which the caller matches. Library profiles
+    without such a list (the ``@System`` generics) are left to
+    :func:`_global_filament_templates`.
+    """
+    library = DEFAULT_CONFIGS[slicer].filament_library_name
+    if not library or library == vendor:
+        return []
+    found = []
+    for profile in index.find_by_type(slicer, ProfileType.FILAMENT, library):
+        compat = snapshot(profile).get("compatible_printers")
+        if isinstance(compat, str):
+            compat = [item for item in compat.split(";") if item.strip()]
+        if compat:
+            found.append(profile)
+    return found
+
+
 def _global_filament_templates(
     index: ProfileIndex,
     slicer: SlicerType,
@@ -2022,6 +2077,8 @@ def _global_filament_templates(
         slicer, ProfileType.FILAMENT, "OrcaFilamentLibrary"
     ):
         data = _evaluate_stable(profile, version_guards)
+        if not data:
+            continue
         name = data.get("name", profile.name)
         if not isinstance(name, str) or not name.endswith("@System"):
             continue
@@ -2065,7 +2122,7 @@ def _add_filament_output(
             filament_type,
             filament_name,
             slicer_val,
-            filament_id=profile.filament_id,
+            filament_id=_snapshot_filament_id(profile, profile_data),
         )
 
     entries_by_payload = compatible_filaments.setdefault(output_name, {})
@@ -2692,7 +2749,7 @@ def _export_generic_filaments(
                                 filament_type,
                                 name,
                                 slicer_val,
-                                filament_id=fp.filament_id,
+                                filament_id=_snapshot_filament_id(fp, fp_data),
                             )
                         # Skip non-generic profiles without OFD linkage
                         is_generic_name = name.lower().startswith("generic")
@@ -2772,7 +2829,7 @@ def _export_global_generic_filaments(
                 filament_type,
                 name,
                 slicer.value,
-                filament_id=fp.filament_id,
+                filament_id=_snapshot_filament_id(fp, fp_data),
             )
             if filament_db_id:
                 entry["filament_db_ids"] = [filament_db_id]

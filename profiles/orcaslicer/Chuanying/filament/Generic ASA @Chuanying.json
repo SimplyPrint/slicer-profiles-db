@@ -26,20 +26,11 @@
       "2.3.1": "system",
       "2.5.0": "system"
     },
-    "setting_id": {
-      "2.3.1": "GFSA04",
-      "2.4.1": "wBBQiy8JV2LrnIav",
-      "2.5.0": "39OBrSE3RugtTPPR"
-    },
-    "filament_id": {
-      "2.3.1": "GFL99",
-      "2.5.0": "OFLPAxz3"
-    },
     "instantiation": {
       "2.3.1": "true",
       "2.5.0": "true"
     },
-    "additional_cooling_fan_speed": {
+    "activate_air_filtration": {
       "2.3.1": [
         "0"
       ],
@@ -47,9 +38,13 @@
         "0"
       ]
     },
-    "chamber_temperature": {
-      "2.3.1": "0",
-      "2.5.0": "0"
+    "chamber_temperatures": {
+      "2.3.1": [
+        "0"
+      ],
+      "2.5.0": [
+        "0"
+      ]
     },
     "close_fan_the_first_x_layers": {
       "2.3.1": [
@@ -59,29 +54,13 @@
         "2"
       ]
     },
-    "compatible_printers": {
+    "complete_print_exhaust_fan_speed": {
       "2.3.1": [
-        "Chuanying X1 0.4 Nozzle",
-        "Chuanying X1 0.6 Nozzle",
-        "Chuanying X1 0.8 Nozzle"
+        "70"
       ],
       "2.5.0": [
-        "Chuanying X1 0.4 Nozzle",
-        "Chuanying X1 0.6 Nozzle",
-        "Chuanying X1 0.8 Nozzle"
+        "70"
       ]
-    },
-    "compatible_printers_condition": {
-      "2.3.1": "",
-      "2.5.0": ""
-    },
-    "compatible_prints": {
-      "2.3.1": [],
-      "2.5.0": []
-    },
-    "compatible_prints_condition": {
-      "2.3.1": "",
-      "2.5.0": ""
     },
     "cool_plate_temp": {
       "2.3.1": [
@@ -99,28 +78,12 @@
         "60"
       ]
     },
-    "default_filament_colour": {
+    "during_print_exhaust_fan_speed": {
       "2.3.1": [
-        ""
+        "70"
       ],
       "2.5.0": [
-        ""
-      ]
-    },
-    "enable_overhang_bridge_fan": {
-      "2.3.1": [
-        "1"
-      ],
-      "2.5.0": [
-        "1"
-      ]
-    },
-    "enable_pressure_advance": {
-      "2.3.1": [
-        "1"
-      ],
-      "2.5.0": [
-        "1"
+        "70"
       ]
     },
     "eng_plate_temp": {
@@ -211,6 +174,14 @@
         "0"
       ]
     },
+    "filament_long_retractions_when_cut": {
+      "2.3.1": [
+        "nil"
+      ],
+      "2.5.0": [
+        "nil"
+      ]
+    },
     "filament_max_volumetric_speed": {
       "2.3.1": [
         "18"
@@ -225,6 +196,16 @@
       ],
       "2.5.0": [
         "15"
+      ]
+    },
+    "filament_multitool_ramming": {
+      "2.5.0": [
+        "1"
+      ]
+    },
+    "filament_multitool_ramming_volume": {
+      "2.5.0": [
+        "10"
       ]
     },
     "filament_retract_before_wipe": {
@@ -244,6 +225,14 @@
       ]
     },
     "filament_retract_when_changing_layer": {
+      "2.3.1": [
+        "nil"
+      ],
+      "2.5.0": [
+        "nil"
+      ]
+    },
+    "filament_retraction_distances_when_cut": {
       "2.3.1": [
         "nil"
       ],
@@ -283,36 +272,12 @@
         "Chuanying  ASA"
       ]
     },
-    "filament_shrink": {
-      "2.3.1": [
-        "100%"
-      ],
-      "2.5.0": [
-        "100%"
-      ]
-    },
     "filament_soluble": {
       "2.3.1": [
         "0"
       ],
       "2.5.0": [
         "0"
-      ]
-    },
-    "filament_start_gcode": {
-      "2.3.1": [
-        "; filament start gcode \n;right_extruder_material:ASA"
-      ],
-      "2.5.0": [
-        "; filament start gcode \n;right_extruder_material:ASA"
-      ]
-    },
-    "filament_end_gcode": {
-      "2.3.1": [
-        "; filament end gcode\n"
-      ],
-      "2.5.0": [
-        "; filament end gcode\n"
       ]
     },
     "filament_type": {
@@ -371,6 +336,46 @@
         "0"
       ]
     },
+    "filament_scarf_seam_type": {
+      "2.3.1": [
+        "none"
+      ],
+      "2.5.0": [
+        "none"
+      ]
+    },
+    "filament_scarf_height": {
+      "2.3.1": [
+        "10%"
+      ],
+      "2.5.0": [
+        "10%"
+      ]
+    },
+    "filament_scarf_gap": {
+      "2.3.1": [
+        "0%"
+      ],
+      "2.5.0": [
+        "0%"
+      ]
+    },
+    "filament_scarf_length": {
+      "2.3.1": [
+        "10"
+      ],
+      "2.5.0": [
+        "10"
+      ]
+    },
+    "filament_shrink": {
+      "2.3.1": [
+        "100%"
+      ],
+      "2.5.0": [
+        "100%"
+      ]
+    },
     "hot_plate_temp": {
       "2.3.1": [
         "105"
@@ -403,22 +408,6 @@
         "260"
       ]
     },
-    "nozzle_temperature_range_high": {
-      "2.3.1": [
-        "270"
-      ],
-      "2.5.0": [
-        "270"
-      ]
-    },
-    "nozzle_temperature_range_low": {
-      "2.3.1": [
-        "230"
-      ],
-      "2.5.0": [
-        "230"
-      ]
-    },
     "overhang_fan_speed": {
       "2.3.1": [
         "80"
@@ -435,14 +424,6 @@
         "25%"
       ]
     },
-    "pressure_advance": {
-      "2.3.1": [
-        "0.04"
-      ],
-      "2.5.0": [
-        "0.04"
-      ]
-    },
     "reduce_fan_stop_start_freq": {
       "2.3.1": [
         "1"
@@ -452,6 +433,22 @@
       ]
     },
     "required_nozzle_HRC": {
+      "2.3.1": [
+        "0"
+      ],
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "supertack_plate_temp": {
+      "2.3.1": [
+        "0"
+      ],
+      "2.5.0": [
+        "0"
+      ]
+    },
+    "supertack_plate_temp_initial_layer": {
       "2.3.1": [
         "0"
       ],
@@ -483,14 +480,6 @@
         "20"
       ]
     },
-    "support_material_interface_fan_speed": {
-      "2.3.1": [
-        "80"
-      ],
-      "2.5.0": [
-        "80"
-      ]
-    },
     "temperature_vitrification": {
       "2.3.1": [
         "100"
@@ -515,82 +504,133 @@
         "60"
       ]
     },
-    "activate_air_filtration": {
+    "filament_start_gcode": {
+      "2.3.1": [
+        "; filament start gcode \n;right_extruder_material:ASA"
+      ],
+      "2.5.0": [
+        "; filament start gcode \n;right_extruder_material:ASA"
+      ]
+    },
+    "filament_end_gcode": {
+      "2.3.1": [
+        "; filament end gcode\n"
+      ],
+      "2.5.0": [
+        "; filament end gcode\n"
+      ]
+    },
+    "compatible_printers": {
+      "2.3.1": [
+        "Chuanying X1 0.4 Nozzle",
+        "Chuanying X1 0.6 Nozzle",
+        "Chuanying X1 0.8 Nozzle"
+      ],
+      "2.5.0": [
+        "Chuanying X1 0.4 Nozzle",
+        "Chuanying X1 0.6 Nozzle",
+        "Chuanying X1 0.8 Nozzle"
+      ]
+    },
+    "filament_multitool_ramming_flow": {
+      "2.5.0": [
+        "12"
+      ]
+    },
+    "nozzle_temperature_range_high": {
+      "2.3.1": [
+        "270"
+      ],
+      "2.5.0": [
+        "270"
+      ]
+    },
+    "nozzle_temperature_range_low": {
+      "2.3.1": [
+        "230"
+      ],
+      "2.5.0": [
+        "230"
+      ]
+    },
+    "setting_id": {
+      "2.3.1": "GFSA04",
+      "2.4.1": "wBBQiy8JV2LrnIav",
+      "2.5.0": "39OBrSE3RugtTPPR"
+    },
+    "filament_id": {
+      "2.3.1": "GFL99",
+      "2.5.0": "OFLPAxz3"
+    },
+    "additional_cooling_fan_speed": {
       "2.3.1": [
         "0"
       ],
-      "2.3.2": null
-    },
-    "chamber_temperatures": {
-      "2.3.1": [
+      "2.5.0": [
         "0"
-      ],
-      "2.3.2": null
+      ]
     },
-    "complete_print_exhaust_fan_speed": {
-      "2.3.1": [
-        "70"
-      ],
-      "2.3.2": null
+    "chamber_temperature": {
+      "2.3.1": "0",
+      "2.5.0": "0"
     },
-    "during_print_exhaust_fan_speed": {
-      "2.3.1": [
-        "70"
-      ],
-      "2.3.2": null
+    "compatible_printers_condition": {
+      "2.3.1": "",
+      "2.5.0": ""
     },
-    "filament_long_retractions_when_cut": {
-      "2.3.1": [
-        "nil"
-      ],
-      "2.3.2": null
+    "compatible_prints": {
+      "2.3.1": [],
+      "2.5.0": []
     },
-    "filament_retraction_distances_when_cut": {
-      "2.3.1": [
-        "nil"
-      ],
-      "2.3.2": null
+    "compatible_prints_condition": {
+      "2.3.1": "",
+      "2.5.0": ""
     },
-    "filament_scarf_seam_type": {
+    "default_filament_colour": {
       "2.3.1": [
-        "none"
+        ""
       ],
-      "2.3.2": null
+      "2.5.0": [
+        ""
+      ]
     },
-    "filament_scarf_height": {
+    "enable_overhang_bridge_fan": {
       "2.3.1": [
-        "10%"
+        "1"
       ],
-      "2.3.2": null
+      "2.5.0": [
+        "1"
+      ]
     },
-    "filament_scarf_gap": {
+    "enable_pressure_advance": {
       "2.3.1": [
-        "0%"
+        "1"
       ],
-      "2.3.2": null
+      "2.5.0": [
+        "1"
+      ]
     },
-    "filament_scarf_length": {
+    "pressure_advance": {
       "2.3.1": [
-        "10"
+        "0.04"
       ],
-      "2.3.2": null
+      "2.5.0": [
+        "0.04"
+      ]
     },
-    "supertack_plate_temp": {
+    "support_material_interface_fan_speed": {
       "2.3.1": [
-        "0"
+        "80"
       ],
-      "2.3.2": null
-    },
-    "supertack_plate_temp_initial_layer": {
-      "2.3.1": [
-        "0"
-      ],
-      "2.3.2": null
+      "2.5.0": [
+        "80"
+      ]
     },
     "bed_temperature_difference": {
       "2.3.1": [
         "10"
-      ]
+      ],
+      "2.5.0": null
     }
   }
 }

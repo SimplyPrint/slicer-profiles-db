@@ -26,39 +26,9 @@
     "instantiation": {
       "2.4.0": "true"
     },
-    "activate_air_filtration": {
-      "2.4.0": [
-        "0"
-      ]
-    },
-    "chamber_temperatures": {
-      "2.4.0": [
-        "0"
-      ]
-    },
-    "close_fan_the_first_x_layers": {
-      "2.4.0": [
-        "3"
-      ]
-    },
-    "complete_print_exhaust_fan_speed": {
-      "2.4.0": [
-        "40"
-      ]
-    },
     "cool_plate_temp": {
       "2.4.0": [
-        "0"
-      ]
-    },
-    "cool_plate_temp_initial_layer": {
-      "2.4.0": [
-        "0"
-      ]
-    },
-    "during_print_exhaust_fan_speed": {
-      "2.4.0": [
-        "40"
+        "80"
       ]
     },
     "eng_plate_temp": {
@@ -66,24 +36,74 @@
         "110"
       ]
     },
+    "hot_plate_temp": {
+      "2.4.0": [
+        "110"
+      ]
+    },
+    "textured_plate_temp": {
+      "2.4.0": [
+        "110"
+      ]
+    },
+    "cool_plate_temp_initial_layer": {
+      "2.4.0": [
+        "80"
+      ]
+    },
     "eng_plate_temp_initial_layer": {
       "2.4.0": [
         "110"
       ]
     },
+    "hot_plate_temp_initial_layer": {
+      "2.4.0": [
+        "110"
+      ]
+    },
+    "textured_plate_temp_initial_layer": {
+      "2.4.0": [
+        "110"
+      ]
+    },
+    "overhang_fan_threshold": {
+      "2.4.0": [
+        "25%"
+      ]
+    },
+    "overhang_fan_speed": {
+      "2.4.0": [
+        "80"
+      ]
+    },
+    "slow_down_for_layer_cooling": {
+      "2.4.0": [
+        "1"
+      ]
+    },
+    "close_fan_the_first_x_layers": {
+      "2.4.0": [
+        "2"
+      ]
+    },
+    "filament_end_gcode": {
+      "2.4.0": [
+        "; filament end gcode \n"
+      ]
+    },
+    "filament_flow_ratio": {
+      "2.4.0": [
+        "0.95"
+      ]
+    },
+    "reduce_fan_stop_start_freq": {
+      "2.4.0": [
+        "1"
+      ]
+    },
     "fan_cooling_layer_time": {
       "2.4.0": [
         "30"
-      ]
-    },
-    "fan_max_speed": {
-      "2.4.0": [
-        "40"
-      ]
-    },
-    "fan_min_speed": {
-      "2.4.0": [
-        "10"
       ]
     },
     "filament_cost": {
@@ -93,7 +113,7 @@
     },
     "filament_density": {
       "2.4.0": [
-        "1.04"
+        "1.10"
       ]
     },
     "filament_deretraction_speed": {
@@ -106,24 +126,9 @@
         "1.75"
       ]
     },
-    "filament_flow_ratio": {
-      "2.4.0": [
-        "0.95"
-      ]
-    },
-    "filament_is_support": {
-      "2.4.0": [
-        "0"
-      ]
-    },
-    "filament_long_retractions_when_cut": {
-      "2.4.0": [
-        "nil"
-      ]
-    },
     "filament_max_volumetric_speed": {
       "2.4.0": [
-        "12"
+        "15"
       ],
       "2.5.0": [
         "12",
@@ -139,12 +144,12 @@
         "15"
       ]
     },
-    "filament_retract_before_wipe": {
+    "filament_retraction_minimum_travel": {
       "2.4.0": [
         "nil"
       ]
     },
-    "filament_retract_restart_extra": {
+    "filament_retract_before_wipe": {
       "2.4.0": [
         "nil"
       ]
@@ -154,17 +159,22 @@
         "nil"
       ]
     },
-    "filament_retraction_distances_when_cut": {
-      "2.4.0": [
-        "nil"
-      ]
-    },
     "filament_retraction_length": {
       "2.4.0": [
         "nil"
       ]
     },
-    "filament_retraction_minimum_travel": {
+    "filament_z_hop": {
+      "2.4.0": [
+        "nil"
+      ]
+    },
+    "filament_z_hop_types": {
+      "2.4.0": [
+        "nil"
+      ]
+    },
+    "filament_retract_restart_extra": {
       "2.4.0": [
         "nil"
       ]
@@ -207,59 +217,9 @@
         "nil"
       ]
     },
-    "filament_z_hop": {
+    "bed_type": {
       "2.4.0": [
-        "nil"
-      ]
-    },
-    "filament_z_hop_types": {
-      "2.4.0": [
-        "nil"
-      ]
-    },
-    "full_fan_speed_layer": {
-      "2.4.0": [
-        "0"
-      ]
-    },
-    "filament_scarf_seam_type": {
-      "2.4.0": [
-        "none"
-      ]
-    },
-    "filament_scarf_height": {
-      "2.4.0": [
-        "10%"
-      ]
-    },
-    "filament_scarf_gap": {
-      "2.4.0": [
-        "0%"
-      ]
-    },
-    "filament_scarf_length": {
-      "2.4.0": [
-        "10"
-      ]
-    },
-    "filament_shrink": {
-      "2.4.0": [
-        "100%"
-      ]
-    },
-    "hot_plate_temp": {
-      "2.4.0": [
-        "110"
-      ]
-    },
-    "hot_plate_temp_initial_layer": {
-      "2.4.0": [
-        "110"
-      ]
-    },
-    "nozzle_temperature": {
-      "2.4.0": [
-        "270"
+        "Textured PEI Plate"
       ]
     },
     "nozzle_temperature_initial_layer": {
@@ -267,44 +227,19 @@
         "265"
       ]
     },
-    "overhang_fan_speed": {
-      "2.4.0": [
-        "80"
-      ]
-    },
-    "overhang_fan_threshold": {
-      "2.4.0": [
-        "25%"
-      ]
-    },
-    "reduce_fan_stop_start_freq": {
-      "2.4.0": [
-        "1"
-      ]
-    },
-    "required_nozzle_HRC": {
-      "2.4.0": [
-        "3"
-      ]
-    },
-    "supertack_plate_temp": {
+    "full_fan_speed_layer": {
       "2.4.0": [
         "0"
       ]
     },
-    "supertack_plate_temp_initial_layer": {
+    "fan_max_speed": {
       "2.4.0": [
-        "0"
+        "40"
       ]
     },
-    "slow_down_for_layer_cooling": {
+    "fan_min_speed": {
       "2.4.0": [
-        "1"
-      ]
-    },
-    "slow_down_layer_time": {
-      "2.4.0": [
-        "8"
+        "10"
       ]
     },
     "slow_down_min_speed": {
@@ -312,19 +247,9 @@
         "15"
       ]
     },
-    "temperature_vitrification": {
+    "slow_down_layer_time": {
       "2.4.0": [
-        "110"
-      ]
-    },
-    "textured_plate_temp": {
-      "2.4.0": [
-        "110"
-      ]
-    },
-    "textured_plate_temp_initial_layer": {
-      "2.4.0": [
-        "110"
+        "8"
       ]
     },
     "filament_start_gcode": {
@@ -332,26 +257,24 @@
         "; filament start gcode"
       ]
     },
-    "filament_end_gcode": {
+    "nozzle_temperature": {
       "2.4.0": [
-        "; filament end gcode\n"
+        "270"
       ]
     },
-    "compatible_printers": {
+    "temperature_vitrification": {
       "2.4.0": [
-        "Flashforge Creator 5 Pro 0.4 nozzle",
-        "Flashforge Creator 5 Pro 0.6 nozzle",
-        "Flashforge Creator 5 Pro 0.8 nozzle"
-      ]
-    },
-    "nozzle_temperature_range_high": {
-      "2.4.0": [
-        "280"
+        "110"
       ]
     },
     "nozzle_temperature_range_low": {
       "2.4.0": [
-        "240"
+        "230"
+      ]
+    },
+    "nozzle_temperature_range_high": {
+      "2.4.0": [
+        "270"
       ]
     },
     "setting_id": {
@@ -362,6 +285,13 @@
       "2.4.0": "OGFB99",
       "2.5.0": "OFibWuBd"
     },
+    "compatible_printers": {
+      "2.4.0": [
+        "Flashforge Creator 5 Pro 0.4 nozzle",
+        "Flashforge Creator 5 Pro 0.6 nozzle",
+        "Flashforge Creator 5 Pro 0.8 nozzle"
+      ]
+    },
     "activate_chamber_temp_control": {
       "2.4.0": [
         "1"
@@ -370,6 +300,16 @@
     "chamber_temperature": {
       "2.4.0": [
         "60"
+      ]
+    },
+    "complete_print_exhaust_fan_speed": {
+      "2.4.0": [
+        "40"
+      ]
+    },
+    "during_print_exhaust_fan_speed": {
+      "2.4.0": [
+        "40"
       ]
     },
     "enable_pressure_advance": {
@@ -385,21 +325,6 @@
     "textured_cool_plate_temp_initial_layer": {
       "2.4.0": [
         "0"
-      ]
-    },
-    "filament_multitool_ramming": {
-      "2.5.0": [
-        "1"
-      ]
-    },
-    "filament_multitool_ramming_volume": {
-      "2.5.0": [
-        "10"
-      ]
-    },
-    "filament_multitool_ramming_flow": {
-      "2.5.0": [
-        "15"
       ]
     },
     "filament_extruder_variant": {
