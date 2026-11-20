@@ -117,6 +117,7 @@ class ProfileStore:
         version: str,
         profiles: list[ParsedProfile],
         complete_release: bool = False,
+        mutable_snapshot: bool = False,
     ) -> IngestionReport:
         """
         Ingest pre-parsed profiles into the store for a given version.
@@ -149,7 +150,13 @@ class ProfileStore:
         )
         meta = self._load_meta(slicer)
         recorded = meta.get("snapshots", {}).get(version, {}).get(snapshot_scope)
-        if isinstance(recorded, str) and recorded != snapshot_hash:
+        # A branch head is labelled with the version it declares, and keeps
+        # changing under that label; only tagged releases are frozen.
+        if (
+            not mutable_snapshot
+            and isinstance(recorded, str)
+            and recorded != snapshot_hash
+        ):
             raise ValueError(
                 f"Refusing to change immutable {slicer.value} snapshot {version}"
             )
