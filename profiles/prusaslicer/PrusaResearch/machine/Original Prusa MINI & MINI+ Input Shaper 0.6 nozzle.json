@@ -8,6 +8,11 @@
   "filament_id": null,
   "setting_id": null,
   "renamed_from": null,
+  "filament_type": null,
+  "native_id": null,
+  "storage_key": null,
+  "context": {},
+  "setting_scopes": {},
   "settings": {
     "printer_technology": {
       "3.0.0": "FFF"
@@ -160,7 +165,7 @@
       "3.0.0": "0"
     },
     "start_gcode": {
-      "3.0.0": "M862.3 P \"MINI\" ; printer model check\\nM862.1 P[nozzle_diameter] A{(filament_abrasive[0] ? 1 : 0)} F{(nozzle_high_flow[0] ? 1 : 0)} ; nozzle check\\nM862.5 P2 ; g-code level check\\nM862.6 P\"Input shaper\" ; FW feature check\\nM115 U6.4.0+11974\\nG90 ; use absolute coordinates\\nM83 ; extruder relative mode\\nM104 S170 ; set extruder temp for bed leveling\\nM140 S[first_layer_bed_temperature] ; set bed temp\\nM109 R170 ; wait for bed leveling temp\\nM190 S[first_layer_bed_temperature] ; wait for bed temp\\nM569 S1 X Y ; set stealthchop for X Y\\nM204 T1250 ; set travel acceleration\\nG28 ; home all without mesh bed level\\nG29 ; mesh bed leveling \\nM104 S[first_layer_temperature] ; set extruder temp\\nG92 E0\\n\\nG1 X0 Y-2 Z3 F2400\\n\\nM109 S[first_layer_temperature] ; wait for extruder temp\\n\\n; intro line\\nG1 X10 Z0.2 F1000\\nG1 X70 E8 F900\\nG1 X140 E10 F700\\nG92 E0\\n\\nM569 S0 X Y ; set spreadcycle for X Y\\nM204 T[machine_max_acceleration_travel] ; restore travel acceleration\\nM572 W0.06 ; set smooth time\\nM221 S95 ; set flow\\n"
+      "3.0.0": "M862.3 P \"MINI\" ; printer model check\\nM862.1 P[nozzle_diameter] A{(filament_abrasive[0] ? 1 : 0)} F{(nozzle_high_flow[0] ? 1 : 0)} ; nozzle check\\nM862.5 P2 ; g-code level check\\nM862.6 P\"Input shaper\" ; FW feature check\\nM115 U8.0.1+17071\\nG90 ; use absolute coordinates\\nM83 ; extruder relative mode\\nM104 S170 ; set extruder temp for bed leveling\\nM140 S[first_layer_bed_temperature] ; set bed temp\\nM109 R170 ; wait for bed leveling temp\\nM190 S[first_layer_bed_temperature] ; wait for bed temp\\nM569 S1 X Y ; set stealthchop for X Y\\nM204 T1250 ; set travel acceleration\\nG28 ; home all without mesh bed level\\nG29 ; mesh bed leveling \\nM104 S[first_layer_temperature] ; set extruder temp\\nG92 E0\\n\\nG1 X0 Y-2 Z3 F2400\\n\\nM109 S[first_layer_temperature] ; wait for extruder temp\\n\\n; intro line\\nG1 X10 Z0.2 F1000\\nG1 X70 E8 F900\\nG1 X140 E10 F700\\nG92 E0\\n\\nM569 S0 X Y ; set spreadcycle for X Y\\nM204 T[machine_max_acceleration_travel] ; restore travel acceleration\\nM572 W0.06 ; set smooth time\\nM221 S95 ; set flow\\n"
     },
     "toolchange_gcode": {
       "3.0.0": ""
@@ -190,7 +195,7 @@
       "3.0.0": "0.6"
     },
     "default_print_profile": {
-      "3.0.0": "0.30mm QUALITY @MINIIS 0.6"
+      "3.0.0": "0.25mm SPEED @MINIIS 0.6"
     },
     "default_filament_profile": {
       "3.0.0": "\"Prusament PLA @MINIIS\""
