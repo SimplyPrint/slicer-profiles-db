@@ -138,6 +138,26 @@ def test_same_version_snapshot_is_immutable(tmp_path):
         store.ingest_profiles(SlicerType.PRUSASLICER, "3.0.0-alpha11", [profile])
 
 
+def test_branch_snapshot_follows_its_branch(tmp_path):
+    store = ProfileStore(tmp_path / "store")
+    profile = ParsedProfile(
+        slicer=SlicerType.PRUSASLICER,
+        profile_type=ProfileType.PRINT,
+        name="Profile",
+        vendor="Prusa",
+        settings={"value": 1},
+    )
+    store.ingest_profiles(
+        SlicerType.PRUSASLICER, "3.0.0", [profile], mutable_snapshot=True
+    )
+
+    profile.settings["value"] = 2
+    report = store.ingest_profiles(
+        SlicerType.PRUSASLICER, "3.0.0", [profile], mutable_snapshot=True
+    )
+    assert report.changed
+
+
 def test_catalog_indexes_are_partitioned_by_source_format(tmp_path):
     store = ProfileStore(tmp_path / "store")
     legacy = ParsedProfile(

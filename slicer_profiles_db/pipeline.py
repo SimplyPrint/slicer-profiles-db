@@ -277,6 +277,7 @@ class ProfilePipeline:
             normalized_version,
             parsed,
             complete_release=config.complete_releases and not profile_types,
+            mutable_snapshot=self._is_version_mutable(version),
         )
 
         # Step 9: Garbage-collect orphaned resources
