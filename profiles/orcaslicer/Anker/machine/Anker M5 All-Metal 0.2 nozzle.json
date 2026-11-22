@@ -4,7 +4,7 @@
   "name": "Anker M5 All-Metal 0.2 nozzle",
   "vendor": "Anker",
   "first_seen": "2.2.0",
-  "last_seen": "2.5.0",
+  "last_seen": "2.5.2",
   "filament_id": null,
   "setting_id": "oGl7LwEgqjA1YhCr",
   "renamed_from": null,
@@ -341,7 +341,8 @@
       "2.2.0": []
     },
     "file_start_gcode": {
-      "2.5.0": ";TIME:{print_time_sec}s\n;Filament weight: {total_weight}g\n;Filament used: {used_filament}m\n;Layer height: {layer_height}\n;material_print_temperature_layer_0: {first_layer_temperature[0]}"
+      "2.5.0": ";TIME:{print_time_sec}s\n;Filament weight: {total_weight}g\n;Filament used: {used_filament}m\n;Layer height: {layer_height}\n;material_print_temperature_layer_0: {first_layer_temperature[0]}",
+      "2.5.2": ";TIME:{print_time_total_sec}\n;Filament weight: {total_weight}g\n;Filament used: {used_filament}m\n;Layer height: {layer_height}\n;material_print_temperature_layer_0: {first_layer_temperature[0]}"
     }
   }
 }
